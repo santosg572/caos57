@@ -7,11 +7,12 @@
 
     <title>1 OVERVIEW &#8212; документација caos57 01</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
     <script src="_static/documentation_options.js?v=cb95fe6c"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
     <link rel="prev" title="caos57 documentation" href="index.html" />
@@ -41,6 +42,7 @@ Peitgen and Richter (1986) can be found on coffee tables in living rooms everywh
 people are captivated by the infinite patterns found in fractals (Figure 1.0.1). Perhaps most important of all, chaos and
 fractals represent hands-on mathematics that is alive and changing. You can turn on a home computer and create stunning
 mathematical images that no one has ever seen before.</p>
+<p>Hoy en día existe una tremenda fascinación por el caos y los fractales. El libro de James Gleick, Caos (Gleick, 1987), fue un éxito de ventas durante meses, un logro asombroso para un libro sobre matemáticas y ciencia. Libros ilustrados como La belleza de los fractales, de Peitgen y Richter (1986), se pueden encontrar en las mesas de centro de las salas de estar de todo el mundo. Parece que incluso las personas sin conocimientos matemáticos se sienten cautivadas por los patrones infinitos que se encuentran en los fractales (Figura 1.0.1). Quizás lo más importante de todo es que el caos y los fractales representan una matemática práctica, viva y en constante evolución. Se puede encender un ordenador doméstico y crear imágenes matemáticas asombrosas que nadie ha visto antes.</p>
 <p>The aesthetic appeal of chaos and fractals may explain why so many people have become intrigued by these ideas. But maybe
 you feel the urge to go deeperto learn the mathematics behind the pictures, and to see how the ideas can be applied to
 problems in science and engineering. If so, this is a textbook for you. The style of the book is informal (as you can see),
@@ -50,15 +52,18 @@ the applications are drawn from the recent research literature. Of course, one p
 not everyone is an expert in physics and biology and fluid mechanics . . . so the science as well as the mathematics will
 need to be explained from scratch. But that should
 be fun, and it can be instructive to see the connections among different fields.</p>
+<p>El atractivo estético del caos y los fractales puede explicar por qué tantas personas se han sentido atraídas por estas ideas. Pero tal vez sientas la necesidad de profundizar para aprender las matemáticas que subyacen a las imágenes y ver cómo se pueden aplicar estas ideas a problemas de ciencia e ingeniería. Si es así, este es el libro de texto ideal para ti. El estilo del libro es informal (como puedes ver), con énfasis en ejemplos concretos y pensamiento geométrico, en lugar de demostraciones y argumentos abstractos. También es un libro sumamente aplicado: prácticamente cada idea se ilustra con alguna aplicación a la ciencia o la ingeniería. En muchos casos, las aplicaciones provienen de la literatura de investigación reciente. Por supuesto, un problema con este enfoque aplicado es que no todos son expertos en física, biología y mecánica de fluidos... por lo que tanto la ciencia como las matemáticas deberán explicarse desde cero. Pero eso debería ser divertido, y puede ser instructivo ver las conexiones entre diferentes campos.</p>
 <p>Before we start, we should agree about something: chaos and fractals are part of an even grander subject known as dynamics.
 This is the subject that deals with change, with systems that evolve in time. Whether the system in question settles down to
 equilibrium, keeps repeating in cycles, or does something more complicated, it is dynamics that we use to analyze the
 behavior. You have probably been exposed to dynamical ideas in various places—in courses in differential equations,
 classical mechanics, chemical kinetics, population biology, and so on. Viewed from the perspective of dynamics, all of these
 subjects can be placed in a common framework, as we discuss at the end of this chapter.</p>
+<p>Antes de comenzar, debemos ponernos de acuerdo en algo: el caos y los fractales forman parte de un campo aún más amplio conocido como dinámica. Este campo se ocupa del cambio, de los sistemas que evolucionan con el tiempo. Ya sea que el sistema en cuestión alcance el equilibrio, se repita en ciclos o realice algún proceso más complejo, la dinámica es la herramienta que utilizamos para analizar su comportamiento. Probablemente ya hayas tenido contacto con conceptos de dinámica en diversos contextos: en cursos de ecuaciones diferenciales, mecánica clásica, cinética química, biología de poblaciones, etc. Desde la perspectiva de la dinámica, todos estos temas pueden integrarse en un marco común, como veremos al final de este capítulo.</p>
 <p>Our study of dynamics begins in earnest in Chapter 2. But before digging in, we present two overviews of the subject, one
 historical and one logical. Our treatment is intuitive; careful definitions will come later. This chapter concludes with a
 “dynamical view of the world,” a framework that will guide our studies for the rest of the book.</p>
+<p>Nuestro estudio de la dinámica comienza formalmente en el Capítulo 2. Pero antes de profundizar, presentamos dos panoramas generales del tema: uno histórico y otro lógico. Nuestro enfoque es intuitivo; las definiciones precisas se presentarán más adelante. Este capítulo concluye con una «visión dinámica del mundo», un marco que guiará nuestros estudios durante el resto del libro.</p>
 <p><strong>1.1 Capsule History of Dynamics</strong></p>
 <p>Although dynamics is an interdisciplinary subject today, it was originally a branch of physics. The subject began in the
 mid-1600s, when Newton invented differential equations, discovered his laws of motion and universal gravitation, and
@@ -68,6 +73,7 @@ Subsequent generations of mathematicians and physicists tried to extend Newton�
 problem (e.g., sun, earth, and moon) but curiously this problem turned out to be much more difficult to solve. After decades
 of effort, it was eventually realized that the three-body problem was essentially impossible to solve, in the sense of
 obtaining explicit formulas for the motions of the three bodies. At this point the situation seemed hopeless.</p>
+<p>Aunque la dinámica es hoy una disciplina interdisciplinaria, originalmente era una rama de la física. Su origen se remonta a mediados del siglo XVII, cuando Newton inventó las ecuaciones diferenciales, descubrió sus leyes del movimiento y de la gravitación universal, y las combinó para explicar las leyes de Kepler sobre el movimiento planetario. En concreto, Newton resolvió el problema de los dos cuerpos: el problema de calcular el movimiento de la Tierra alrededor del Sol, dada la ley de atracción gravitatoria inversamente proporcional al cuadrado de la distancia entre ellos. Las generaciones posteriores de matemáticos y físicos intentaron extender los métodos analíticos de Newton al problema de los tres cuerpos (por ejemplo, el Sol, la Tierra y la Luna), pero, curiosamente, este problema resultó ser mucho más difícil de resolver. Tras décadas de esfuerzo, finalmente se comprendió que el problema de los tres cuerpos era esencialmente imposible de resolver, en el sentido de obtener fórmulas explícitas para los movimientos de los tres cuerpos. En ese momento, la situación parecía desesperada.</p>
 <p>The breakthrough came with the work of Poincaré in the late 1800s. He introduced a new point of view that emphasized
 qualitative rather than quantitative questions. For example, instead of asking for the exact positions of the planets at all
 times, he asked “Is the solar system stable forever, or will some planets eventually fly off to infinity?” Poincaré
@@ -75,6 +81,7 @@ developed a powerful geometric approach to analyzing such questions. That approa
 dynamics, with applications reaching far beyond celestial mechanics. Poincaré was also the first person to glimpse the
 possibility of chaos, in which a deterministic system exhibits aperiodic behavior that depends sensitively on the initial
 conditions, thereby rendering long-term prediction impossible.</p>
+<p>El gran avance se produjo con el trabajo de Poincaré a finales del siglo XIX. Introdujo un nuevo punto de vista que hacía hincapié en las cuestiones cualitativas en lugar de las cuantitativas. Por ejemplo, en lugar de preguntar por las posiciones exactas de los planetas en todo momento, se preguntó: &quot;¿Es el sistema solar estable para siempre, o algunos planetas acabarán desapareciendo hacia el infinito?&quot;. Poincaré desarrolló un potente enfoque geométrico para analizar estas cuestiones. Este enfoque ha florecido hasta convertirse en la disciplina moderna de la dinámica, con aplicaciones que van mucho más allá de la mecánica celeste. Poincaré también fue el primero en vislumbrar la posibilidad del caos, en el que un sistema determinista exhibe un comportamiento aperiódico que depende sensiblemente de las condiciones iniciales, lo que imposibilita la predicción a largo plazo.</p>
 <p>But chaos remained in the background in the first half of the twentieth century; instead dynamics was largely concerned with
 nonlinear oscillators and their applications in physics and engineering. Nonlinear oscillators played a vital role in the
 development of such technologies as radio, radar, phase-locked loops, and lasers. On the theoretical side, nonlinear
@@ -82,10 +89,12 @@ oscillators also stimulated the invention of new mathematical techniques—pione
 Andronov, Littlewood, Cartwright, Levinson, and Smale. Meanwhile, in a separate development, Poincaré’s geometric methods
 were being extended to yield a much deeper understanding of classical mechanics, thanks to the work of Birkhoff and later
 Kolmogorov, Arnol’d, and Moser.</p>
+<p>Pero el caos permaneció en un segundo plano durante la primera mitad del siglo XX; en cambio, la dinámica se centró principalmente en los osciladores no lineales y sus aplicaciones en física e ingeniería. Los osciladores no lineales desempeñaron un papel fundamental en el desarrollo de tecnologías como la radio, el radar, los bucles de enganche de fase y los láseres. En el ámbito teórico, los osciladores no lineales también impulsaron la invención de nuevas técnicas matemáticas; entre los pioneros de este campo se encuentran van der Pol, Andronov, Littlewood, Cartwright, Levinson y Smale. Mientras tanto, en un desarrollo paralelo, los métodos geométricos de Poincaré se extendieron para lograr una comprensión mucho más profunda de la mecánica clásica, gracias al trabajo de Birkhoff y, posteriormente, de Kolmogorov, Arnol'd y Moser.</p>
 <p>The invention of the high-speed computer in the 1950s was a watershed in the history of dynamics. The computer allowed one
 to experiment with equations in a way that was impossible before, and thereby to develop some intuition about nonlinear
 systems. Such experiments led to Lorenz’s discovery in 1963 of chaotic motion on a strange attractor. He studied a
 simplified model of convection rolls in the atmosphere to gain insight into the notorious unpredictability of the weather.</p>
+<p>La invención de la computadora de alta velocidad en la década de 1950 marcó un hito en la historia de la dinámica. La computadora permitió experimentar con ecuaciones de una manera antes imposible, desarrollando así una intuición sobre los sistemas no lineales. Estos experimentos llevaron al descubrimiento de Lorenz en 1963 del movimiento caótico en un atractor extraño. Estudió un modelo simplificado de vórtices de convección en la atmósfera para comprender mejor la notoria imprevisibilidad del clima.</p>
 <p>Lorenz found that the solutions to his equations never settled down to equilibrium or to a periodic state—instead they
 continued to oscillate in an irregular, aperiodic fashion. Moreover, if he started his simulations from two slightly
 different initial conditions, the resulting behaviors would soon become totally different. The implication was that the
@@ -94,6 +103,7 @@ system) would be amplified rapidly, eventually leading to embarrassing forecasts
 structure in the chaos—when plotted in three dimensions, the solutions to his equations fell onto a butterfly-shaped set of
 points (Figure 1.1.1). He argued that this set had to be “an infinite complex of surfaces”today we would regard it as an
 example of a fractal.</p>
+<p>Lorenz descubrió que las soluciones a sus ecuaciones nunca alcanzaban el equilibrio ni un estado periódico; en cambio, seguían oscilando de forma irregular y aperiódica. Además, si iniciaba sus simulaciones desde dos condiciones iniciales ligeramente diferentes, los comportamientos resultantes pronto se volvían totalmente distintos. Esto implicaba que el sistema era inherentemente impredecible: pequeños errores al medir el estado actual de la atmósfera (o de cualquier otro sistema caótico) se amplificarían rápidamente, lo que eventualmente daría lugar a pronósticos erróneos. Pero Lorenz también demostró que existía una estructura en el caos: al representarlas en tres dimensiones, las soluciones a sus ecuaciones se concentraban en un conjunto de puntos con forma de mariposa (Figura 1.1.1). Sostuvo que este conjunto debía ser «un complejo infinito de superficies»; hoy lo consideraríamos un ejemplo de fractal.</p>
 <p>Lorenz’s work had little impact until the 1970s, the boom years for chaos. Here are some of the main developments of that
 glorious decade. In 1971, Ruelle and Takens proposed a new theory for the onset of turbulence in fluids, based on abstract
 considerations about strange attractors. A few years later, May found examples of chaos in iterated mappings arising in
@@ -105,12 +115,15 @@ the same way. His work established a link between chaos and phase transitions, a
 study of dynamics. Finally, experimentalists such as Gollub, Libchaber, Swinney, Linsay, Moon, and Westervelt tested the new
 ideas about chaos in experiments on fluids, chemical reactions, electronic circuits, mechanical oscillators, and
 semiconductors.</p>
+<p>El trabajo de Lorenz tuvo poca repercusión hasta la década de 1970, el auge del caos. He aquí algunos de los principales avances de esa década gloriosa. En 1971, Ruelle y Takens propusieron una nueva teoría sobre el inicio de la turbulencia en fluidos, basada en consideraciones abstractas sobre atractores extraños. Unos años más tarde, May encontró ejemplos de caos en mapeos iterados que surgían en biología de poblaciones y escribió un influyente artículo de revisión que destacaba la importancia pedagógica del estudio de sistemas no lineales simples, para contrarrestar la intuición lineal, a menudo engañosa, fomentada por la educación tradicional. A continuación, se produjo el descubrimiento más sorprendente de todos, gracias al físico Feigenbaum. Descubrió que existen ciertas leyes universales que rigen la transición del comportamiento regular al caótico; en términos generales, sistemas completamente diferentes pueden volverse caóticos de la misma manera. Su trabajo estableció un vínculo entre el caos y las transiciones de fase, e impulsó a una generación de físicos al estudio de la dinámica. Finalmente, experimentadores como Gollub, Libchaber, Swinney, Linsay, Moon y Westervelt pusieron a prueba las nuevas ideas sobre el caos en experimentos con fluidos, reacciones químicas, circuitos electrónicos, osciladores mecánicos y semiconductores.</p>
 <p>Although chaos stole the spotlight, there were two other major developments in dynamics in the 1970s. Mandelbrot codified
 and popularized fractals, produced magnificent computer graphics of them, and showed how they could be applied in a variety
 of subjects. And in the emerging area of mathematical biology, Winfree applied the geometric methods of dynamics to
 biological oscillations, especially circadian (roughly 24-hour) rhythms and heart rhythms.</p>
+<p>Aunque el caos acaparó toda la atención, en la década de 1970 se produjeron otros dos avances importantes en el campo de la dinámica. Mandelbrot codificó y popularizó los fractales, creó magníficas representaciones gráficas por ordenador de los mismos y demostró su aplicación en diversos ámbitos. Por su parte, en el incipiente campo de la biología matemática, Winfree aplicó los métodos geométricos de la dinámica a las oscilaciones biológicas, especialmente a los ritmos circadianos (de aproximadamente 24 horas) y a los ritmos cardíacos.</p>
 <p>By the 1980s many people were working on dynamics, with contributions too numerous to list. Table 1.1.1 summarizes this
 history.</p>
+<p>En la década de 1980, muchas personas trabajaban en dinámica, con contribuciones demasiado numerosas para enumerarlas. La tabla 1.1.1 resume esta historia.</p>
 <p><strong>1.2 The Importance of Being Nonlinear</strong></p>
 <p>Now we turn from history to the logical structure of dynamics. First we need to introduce some terminology and make some
 distinctions.</p>
@@ -141,31 +154,40 @@ purely temporal behavior, and so we deal with ordinary differential equations al
 \dot{x}_n &amp; = f_n(x_1, ..., x_n)  \\
 \end{matrix}\end{split}\]</div>
 <ol class="arabic simple" start="2">
-<li><p>Here the overdots denote differentiation with respect to t. Thus <span class="math notranslate nohighlight">\(\dot{x}_1 \equiv dx_i /dt\)</span>. The variables</p></li>
+<li></li>
 </ol>
-<p><span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> might represent
+<p>Here the overdots denote differentiation with respect to t. Thus <span class="math notranslate nohighlight">\(\dot{x}_1 \equiv dx_i /dt\)</span>. The variables <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> might represent
 concentrations of chemicals in a reactor, populations of different species in an ecosystem, or the positions and velocities
 of the planets in the solar system. The functions <span class="math notranslate nohighlight">\(f_1, ..., f_n\)</span> are determined by the problem at hand.</p>
 <p>For example, the damped oscillator (1) can be rewritten in the form of (2),  thanks to the following trick: we introduce new
-variables x 1  x and x 2  x . Then  x 1  x 2 , from the definitions, and</p>
-<p>b k x  2 = x  = −  x x m m</p>
-<p>b k =− x2  x1  m m</p>
+variables <span class="math notranslate nohighlight">\(x_1 = x\)</span> and <span class="math notranslate nohighlight">\(x_2 = \dot{x}\)</span>. Then <span class="math notranslate nohighlight">\(\dot{x}_1 = x_2\)</span>, from the definitions, and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+\dot{x}_2 &amp; = \ddot{x} = - \frac{b}{m} \dot{x} - \frac{k}{m} x \\
+ &amp; = - \frac{b}{m} x_2 - \frac{k}{m} x_1 \\
+\end{matrix}\end{split}\]</div>
 <p>from the definitions and the governing equation (1). Hence the equivalent system (2) is</p>
-<blockquote>
-<div><p>x 1 = x2</p>
-</div></blockquote>
-<p>b k  x 2 = − − . x2  x1  m m</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+\dot{x}_1 &amp; = x_2 \\
+\dot{x}_2 &amp; = - \frac{b}{m} x_2 - \frac{k}{m} x_1 \\
+\end{matrix}\end{split}\]</div>
 <p>This system is said to be linear, because all the x i on the right-hand side appear to the first power only. Otherwise the
-system would be nonlinear. Typical nonlinear terms are products, powers, and functions of the x i , such as x 1 x2 , ( x 1
-)3 , or cos x2.</p>
+system would be nonlinear. Typical nonlinear terms are products, powers, and functions of the <span class="math notranslate nohighlight">\(x_i\)</span>, such as
+<span class="math notranslate nohighlight">\(x_1 x_2,(x_1)^3\)</span>, or <span class="math notranslate nohighlight">\(\cos x_2\)</span>.</p>
 <p>For example, the swinging of a pendulum is governed by the equation</p>
-<p>g  x + sin x = 0, L</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + \frac{g}{L} \sin x = 0,\]</div>
 <p>where x is the angle of the pendulum from vertical, g is the acceleration due to gravity, and L is the length of the
 pendulum. The equivalent system is nonlinear:</p>
-<p>x 1 = x2</p>
-<p>g  x 2 = − sin x 1 . L</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+\dot{x}_1 &amp; = x_2  \\
+\dot{x}_2 &amp; - \frac{g}{L} \sin x_1  \\
+\end{matrix}\end{split}\]</div>
 <p>Nonlinearity makes the pendulum equation very difficult to solve analytically. The usual way around this is to fudge, by
-invoking the small angle approximation sin x y x for x  1. This converts the problem to a linear one, which can then be
+invoking the small angle approximation <span class="math notranslate nohighlight">\(\sin x \approx x\)</span> for x&lt;&lt; 1. This converts the problem to a linear one,
+which can then be
 solved easily. But by restricting to small x, we’re throwing out some of the physics, like motions where the pendulum whirls
 over the top. Is it really necessary to make such drastic approximations?</p>
 <p>It turns out that the pendulum equation can be solved analytically, in terms of elliptic functions. But there ought to be an
@@ -176,16 +198,11 @@ problem we’ll learn how to solve, using geometric methods.</p>
 solution would be a pair of functions x1 (t) and x2 (t), representing the position and velocity of the pendulum. If we
 construct an abstract space with coordinates (x1 , x 2 ), then the solution ( x1 (t), x2 (t)) corresponds to a point moving
 along a curve in this space (Figure 1.2.1).</p>
-<p>x2</p>
-<p>(x1 (t), x2 (t))</p>
-<p>x1</p>
-<p>(x1 (0), x2 (0))</p>
-<p>Figure 1.2.1</p>
 <p>This curve is called a trajectory, and the space is called the phase space for the system. The phase space is completely
 filled with trajectories, since each point can serve as an initial condition.</p>
 <p>Our goal is to run this construction in reverse: given the system, we want to draw the trajectories, and thereby extract
-information about the solutions. In</p>
-<p>many cases, geometric reasoning will allow us to draw the trajectories without actually solving the system!</p>
+information about the solutions. In many cases, geometric reasoning will allow us to draw the trajectories without actually
+solving the system!</p>
 <p>Some terminology: the phase space for the general system (2) is the space with coordinates x1 , … , xn . Because this space
 is n-dimensional, we will refer to (2) as an n-dimensional system or an nth-order system. Thus n represents the dimension of
 the phase space.</p>
@@ -290,7 +307,16 @@ of the book we will touch on some of these problems—they will certainly pose c
 
 
 
-<h3>Навигација</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1 OVERVIEW</a></li>
@@ -304,16 +330,6 @@ of the book we will touch on some of these problems—they will certainly pose c
   </ul></li>
 </ul>
 </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Брза претрага</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Тражи" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -330,8 +346,8 @@ of the book we will touch on some of these problems—they will certainly pose c
       &#169;2026, Leopoldo.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
       <a href="_sources/c01.rst.txt"
