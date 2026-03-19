@@ -138,41 +138,54 @@ A very general framework for ordinary differential equations is provided by the 
 
 (2)
 
- Here the overdots denote differentiation with respect to t. Thus :math:`\dot{x}_1 \equiv dx_i /dt`. The variables 
-:math:`x_1, ..., x_n` might represent 
+
+Here the overdots denote differentiation with respect to t. Thus :math:`\dot{x}_1 \equiv dx_i /dt`. The variables :math:`x_1, ..., x_n` might represent 
 concentrations of chemicals in a reactor, populations of different species in an ecosystem, or the positions and velocities 
 of the planets in the solar system. The functions :math:`f_1, ..., f_n` are determined by the problem at hand.
 
 For example, the damped oscillator (1) can be rewritten in the form of (2),  thanks to the following trick: we introduce new 
-variables x 1  x and x 2  x . Then  x 1  x 2 , from the definitions, and
+variables :math:`x_1 = x` and :math:`x_2 = \dot{x}`. Then :math:`\dot{x}_1 = x_2`, from the definitions, and
 
-b k x  2 = x  = −  x x m m
+.. math::
 
-b k =− x2  x1  m m
+   \begin{matrix}
+   \dot{x}_2 & = \ddot{x} = - \frac{b}{m} \dot{x} - \frac{k}{m} x \\
+    & = - \frac{b}{m} x_2 - \frac{k}{m} x_1 \\
+   \end{matrix}
 
 from the definitions and the governing equation (1). Hence the equivalent system (2) is
 
- x 1 = x2 
+.. math::
 
-b k  x 2 = − − . x2  x1  m m
+   \begin{matrix}
+   \dot{x}_1 & = x_2 \\
+   \dot{x}_2 & = - \frac{b}{m} x_2 - \frac{k}{m} x_1 \\
+   \end{matrix}
+
 
 This system is said to be linear, because all the x i on the right-hand side appear to the first power only. Otherwise the 
-system would be nonlinear. Typical nonlinear terms are products, powers, and functions of the x i , such as x 1 x2 , ( x 1 
-)3 , or cos x2. 
-
+system would be nonlinear. Typical nonlinear terms are products, powers, and functions of the :math:`x_i`, such as 
+:math:`x_1 x_2,(x_1)^3`, or :math:`\cos x_2`.
+ 
 For example, the swinging of a pendulum is governed by the equation
 
-g  x + sin x = 0, L
+.. math::
+
+   \ddot{x} + \frac{g}{L} \sin x = 0, 
 
 where x is the angle of the pendulum from vertical, g is the acceleration due to gravity, and L is the length of the 
 pendulum. The equivalent system is nonlinear:
 
-x 1 = x2 
+.. math::
 
-g  x 2 = − sin x 1 . L
+   \begin{matrix}
+   \dot{x}_1 & = x_2  \\
+   \dot{x}_2 & - \frac{g}{L} \sin x_1  \\
+   \end{matrix}
 
 Nonlinearity makes the pendulum equation very difficult to solve analytically. The usual way around this is to fudge, by 
-invoking the small angle approximation sin x y x for x  1. This converts the problem to a linear one, which can then be 
+invoking the small angle approximation :math:`\sin x \approx x` for x<< 1. This converts the problem to a linear one, 
+which can then be 
 solved easily. But by restricting to small x, we’re throwing out some of the physics, like motions where the pendulum whirls 
 over the top. Is it really necessary to make such drastic approximations?
 
@@ -186,23 +199,12 @@ solution would be a pair of functions x1 (t) and x2 (t), representing the positi
 construct an abstract space with coordinates (x1 , x 2 ), then the solution ( x1 (t), x2 (t)) corresponds to a point moving 
 along a curve in this space (Figure 1.2.1).
 
-x2 
-
-(x1 (t), x2 (t))
-
-x1 
-
-(x1 (0), x2 (0))
-
-Figure 1.2.1
-
 This curve is called a trajectory, and the space is called the phase space for the system. The phase space is completely 
 filled with trajectories, since each point can serve as an initial condition.
 
 Our goal is to run this construction in reverse: given the system, we want to draw the trajectories, and thereby extract 
-information about the solutions. In
-
-many cases, geometric reasoning will allow us to draw the trajectories without actually solving the system!
+information about the solutions. In many cases, geometric reasoning will allow us to draw the trajectories without actually 
+solving the system!
 
 Some terminology: the phase space for the general system (2) is the space with coordinates x1 , … , xn . Because this space 
 is n-dimensional, we will refer to (2) as an n-dimensional system or an nth-order system. Thus n represents the dimension of 

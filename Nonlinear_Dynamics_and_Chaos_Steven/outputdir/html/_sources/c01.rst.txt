@@ -16,9 +16,8 @@ problems in science and engineering. If so, this is a textbook for you. The styl
 with an emphasis on concrete examples and geometric thinking, rather than proofs and abstract arguments. It is also an 
 extremely “applied” book—virtually every idea is illustrated by some application to science or engineering. In many cases, 
 the applications are drawn from the recent research literature. Of course, one problem with such an applied approach is that 
-not everyone is an expert in physics and biology
-
-and fluid mechanics . . . so the science as well as the mathematics will need to be explained from scratch. But that should 
+not everyone is an expert in physics and biology and fluid mechanics . . . so the science as well as the mathematics will 
+need to be explained from scratch. But that should 
 be fun, and it can be instructive to see the connections among different fields.
 
 Before we start, we should agree about something: chaos and fractals are part of an even grander subject known as dynamics. 
@@ -32,7 +31,7 @@ Our study of dynamics begins in earnest in Chapter 2. But before digging in, we 
 historical and one logical. Our treatment is intuitive; careful definitions will come later. This chapter concludes with a 
 “dynamical view of the world,” a framework that will guide our studies for the rest of the book.
 
-1.1 Capsule History of Dynamics
+**1.1 Capsule History of Dynamics**
 
 Although dynamics is an interdisciplinary subject today, it was originally a branch of physics. The subject began in the 
 mid-1600s, when Newton invented differential equations, discovered his laws of motion and universal gravitation, and 
@@ -63,6 +62,7 @@ The invention of the high-speed computer in the 1950s was a watershed in the his
 to experiment with equations in a way that was impossible before, and thereby to develop some intuition about nonlinear 
 systems. Such experiments led to Lorenz’s discovery in 1963 of chaotic motion on a strange attractor. He studied a 
 simplified model of convection rolls in the atmosphere to gain insight into the notorious unpredictability of the weather. 
+
 Lorenz found that the solutions to his equations never settled down to equilibrium or to a periodic state—instead they 
 continued to oscillate in an irregular, aperiodic fashion. Moreover, if he started his simulations from two slightly 
 different initial conditions, the resulting behaviors would soon become totally different. The implication was that the 
@@ -92,7 +92,7 @@ biological oscillations, especially circadian (roughly 24-hour) rhythms and hear
 By the 1980s many people were working on dynamics, with contributions too numerous to list. Table 1.1.1 summarizes this 
 history.
 
-1.2 The Importance of Being Nonlinear
+**1.2 The Importance of Being Nonlinear**
 
 Now we turn from history to the logical structure of dynamics. First we need to introduce some terminology and make some 
 distinctions.
@@ -106,33 +106,42 @@ simple examples of chaos, and also as tools for analyzing periodic or chaotic so
 Now confining our attention to differential equations, the main distinction is between ordinary and partial differential 
 equations. For instance, the equation for a damped harmonic oscillator
 
-d 2 x dx m 2 + b + kx = 0 dt dt
+.. math::
+
+   m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0 
+
 
 (1)
 
-is an ordinary differential equation, because it involves only ordinary derivatives dx / dt and d2 x / dt2 . That is, there 
+is an ordinary differential equation, because it involves only ordinary derivatives dx/dt and :math:`d^2 x / dt^2`. That 
+is, there 
 is only one independent variable, the time t. In contrast, the heat equation
 
-∂u ∂ 2 u = ∂t ∂x2 
+.. math::
+
+   \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}
+
 
 is a partial differential equation—it has both time t and space x as independent variables. Our concern in this book is with 
 purely temporal behavior, and so we deal with ordinary differential equations almost exclusively.
 
 A very general framework for ordinary differential equations is provided by the system
 
-x  1  f 1 ( x 1 , … , x n )
+.. math::
+
+   \begin{matrix}
+   \dot{x}_1 & = f_1(x_1, ..., x_n)  \\
+    ... & ... \\
+   \dot{x}_n & = f_n(x_1, ..., x_n)  \\
+   \end{matrix}
+
 
 (2)
 
-
-
-x  n  f n ( x 1 , … , x n ) .
-
- Here the overdots denote differentiation with respect to t. Thus x x dx i /dt . The variables x1 , … , x n might represent 
+ Here the overdots denote differentiation with respect to t. Thus :math:`\dot{x}_1 \equiv dx_i /dt`. The variables 
+:math:`x_1, ..., x_n` might represent 
 concentrations of chemicals in a reactor, populations of different species in an ecosystem, or the positions and velocities 
-of the planets in the solar system. The functions f1 , … , f n are determined by the problem at hand.
-
-i
+of the planets in the solar system. The functions :math:`f_1, ..., f_n` are determined by the problem at hand.
 
 For example, the damped oscillator (1) can be rewritten in the form of (2),  thanks to the following trick: we introduce new 
 variables x 1  x and x 2  x . Then  x 1  x 2 , from the definitions, and

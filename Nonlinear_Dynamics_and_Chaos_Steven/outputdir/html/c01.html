@@ -11,6 +11,7 @@
     <script src="_static/documentation_options.js?v=cb95fe6c"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
     <link rel="prev" title="caos57 documentation" href="index.html" />
@@ -46,8 +47,8 @@ problems in science and engineering. If so, this is a textbook for you. The styl
 with an emphasis on concrete examples and geometric thinking, rather than proofs and abstract arguments. It is also an
 extremely “applied” book—virtually every idea is illustrated by some application to science or engineering. In many cases,
 the applications are drawn from the recent research literature. Of course, one problem with such an applied approach is that
-not everyone is an expert in physics and biology</p>
-<p>and fluid mechanics . . . so the science as well as the mathematics will need to be explained from scratch. But that should
+not everyone is an expert in physics and biology and fluid mechanics . . . so the science as well as the mathematics will
+need to be explained from scratch. But that should
 be fun, and it can be instructive to see the connections among different fields.</p>
 <p>Before we start, we should agree about something: chaos and fractals are part of an even grander subject known as dynamics.
 This is the subject that deals with change, with systems that evolve in time. Whether the system in question settles down to
@@ -58,7 +59,7 @@ subjects can be placed in a common framework, as we discuss at the end of this c
 <p>Our study of dynamics begins in earnest in Chapter 2. But before digging in, we present two overviews of the subject, one
 historical and one logical. Our treatment is intuitive; careful definitions will come later. This chapter concludes with a
 “dynamical view of the world,” a framework that will guide our studies for the rest of the book.</p>
-<p>1.1 Capsule History of Dynamics</p>
+<p><strong>1.1 Capsule History of Dynamics</strong></p>
 <p>Although dynamics is an interdisciplinary subject today, it was originally a branch of physics. The subject began in the
 mid-1600s, when Newton invented differential equations, discovered his laws of motion and universal gravitation, and
 combined them to explain Kepler’s laws of planetary motion. Specifically, Newton solved the two-body problem—the problem of
@@ -84,8 +85,8 @@ Kolmogorov, Arnol’d, and Moser.</p>
 <p>The invention of the high-speed computer in the 1950s was a watershed in the history of dynamics. The computer allowed one
 to experiment with equations in a way that was impossible before, and thereby to develop some intuition about nonlinear
 systems. Such experiments led to Lorenz’s discovery in 1963 of chaotic motion on a strange attractor. He studied a
-simplified model of convection rolls in the atmosphere to gain insight into the notorious unpredictability of the weather.
-Lorenz found that the solutions to his equations never settled down to equilibrium or to a periodic state—instead they
+simplified model of convection rolls in the atmosphere to gain insight into the notorious unpredictability of the weather.</p>
+<p>Lorenz found that the solutions to his equations never settled down to equilibrium or to a periodic state—instead they
 continued to oscillate in an irregular, aperiodic fashion. Moreover, if he started his simulations from two slightly
 different initial conditions, the resulting behaviors would soon become totally different. The implication was that the
 system was inherently unpredictable—tiny errors in measuring the current state of the atmosphere (or any other chaotic
@@ -110,7 +111,7 @@ of subjects. And in the emerging area of mathematical biology, Winfree applied t
 biological oscillations, especially circadian (roughly 24-hour) rhythms and heart rhythms.</p>
 <p>By the 1980s many people were working on dynamics, with contributions too numerous to list. Table 1.1.1 summarizes this
 history.</p>
-<p>1.2 The Importance of Being Nonlinear</p>
+<p><strong>1.2 The Importance of Being Nonlinear</strong></p>
 <p>Now we turn from history to the logical structure of dynamics. First we need to introduce some terminology and make some
 distinctions.</p>
 <p>There are two main types of dynamical systems: differential equations and iterated maps (also known as difference
@@ -120,27 +121,31 @@ therefore concentrate on them. Later in the book we will see that iterated maps 
 simple examples of chaos, and also as tools for analyzing periodic or chaotic solutions of differential equations.</p>
 <p>Now confining our attention to differential equations, the main distinction is between ordinary and partial differential
 equations. For instance, the equation for a damped harmonic oscillator</p>
-<p>d 2 x dx m 2 + b + kx = 0 dt dt</p>
+<div class="math notranslate nohighlight">
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0\]</div>
 <ol class="arabic simple">
 <li></li>
 </ol>
-<p>is an ordinary differential equation, because it involves only ordinary derivatives dx / dt and d2 x / dt2 . That is, there
+<p>is an ordinary differential equation, because it involves only ordinary derivatives dx/dt and <span class="math notranslate nohighlight">\(d^2 x / dt^2\)</span>. That
+is, there
 is only one independent variable, the time t. In contrast, the heat equation</p>
-<p>∂u ∂ 2 u = ∂t ∂x2</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}\]</div>
 <p>is a partial differential equation—it has both time t and space x as independent variables. Our concern in this book is with
 purely temporal behavior, and so we deal with ordinary differential equations almost exclusively.</p>
 <p>A very general framework for ordinary differential equations is provided by the system</p>
-<p>x  1  f 1 ( x 1 , … , x n )</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+\dot{x}_1 &amp; = f_1(x_1, ..., x_n)  \\
+ ... &amp; ... \\
+\dot{x}_n &amp; = f_n(x_1, ..., x_n)  \\
+\end{matrix}\end{split}\]</div>
 <ol class="arabic simple" start="2">
-<li></li>
+<li><p>Here the overdots denote differentiation with respect to t. Thus <span class="math notranslate nohighlight">\(\dot{x}_1 \equiv dx_i /dt\)</span>. The variables</p></li>
 </ol>
-<p>x  n  f n ( x 1 , … , x n ) .</p>
-<blockquote>
-<div><p>Here the overdots denote differentiation with respect to t. Thus x x dx i /dt . The variables x1 , … , x n might represent</p>
-</div></blockquote>
-<p>concentrations of chemicals in a reactor, populations of different species in an ecosystem, or the positions and velocities
-of the planets in the solar system. The functions f1 , … , f n are determined by the problem at hand.</p>
-<p>i</p>
+<p><span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> might represent
+concentrations of chemicals in a reactor, populations of different species in an ecosystem, or the positions and velocities
+of the planets in the solar system. The functions <span class="math notranslate nohighlight">\(f_1, ..., f_n\)</span> are determined by the problem at hand.</p>
 <p>For example, the damped oscillator (1) can be rewritten in the form of (2),  thanks to the following trick: we introduce new
 variables x 1  x and x 2  x . Then  x 1  x 2 , from the definitions, and</p>
 <p>b k x  2 = x  = −  x x m m</p>
