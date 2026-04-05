@@ -1,0 +1,418 @@
+C02
+===
+
+Theory and Experiment
+Second Edition
+Robert L. Devaney
+
+pag28
+
+
+**2 Examples of Dynamical Systems**
+
+Our goal in this book is to describe the beautiful mathematical subject known as dynamical systems theory. We will, for the most part, concentrate on the mathematics itself rather than the applications of the subject. However, for motivation, we will briefly describe in this chapter four different examples of dynamical systems that arise in practice.
+
+—-------------------------------------------------
+
+Nuestro objetivo en este libro es describir el hermoso tema matemático conocido como teoría de sistemas dinámicos. Nos concentraremos, en su mayor parte, en las matemáticas mismas más que en las aplicaciones del tema. Sin embargo, para motivarnos, describiremos brevemente en este capítulo cuatro ejemplos diferentes de sistemas dinámicos que surgen en la práctica.
+
+—--------------------------------------------------
+
+**2.1 An Example from Finance**
+
+Consider the following situation. Suppose we deposit $1000 in a bank at 10 percent interest. (Wow, I wish I could find a bank that offered this interest rate! Oh well....). We ask the question: if we leave this money untouched for n years, how much money will we have in our account at the end of this period? For simplicity, we assume that the 10 percent interest is added to our account once each year at the end of the year.
+
+—--------------------------------------------------
+
+Considere la siguiente situación. Supongamos que depositamos $1000 en un banco al 10 por ciento de interés. (¡Vaya, desearía poder encontrar un banco que ofreciera esta tasa de interés! Oh, bueno...). Hacemos la pregunta: si dejamos intacto este dinero durante n años, ¿cuánto dinero tendremos en nuestra cuenta al final de este período? Para simplificar, supongamos que el 10 por ciento de interés se agrega a nuestra cuenta una vez al año al final del año.
+
+—--------------------------------------------------
+
+
+This is one of the simplest examples of an iterative process or dynamical system. Let’s denote the amount we have in the bank at the end of the nth year by An. Our problem is to determine An for some given number of years n. We know that A0, our initial deposit, is $1000. After 1 year we add 10 percent to this amount to get our new balance. That is,
+
+—--------------------------------------------------
+
+Este es uno de los ejemplos más simples de un proceso iterativo o sistema dinámico. Denotemos la cantidad que tenemos en el banco al final del año n por An. Nuestro problema es determinar An para un número dado de años n. Sabemos que A0, nuestro depósito inicial, es de $1000. Después de 1 año, agregamos un 10 por ciento a esta cantidad para obtener nuestro nuevo saldo. Eso es,
+
+—--------------------------------------------------
+
+.. math::
+
+   A1 = A0 + 0.1A0 = 1.1A0.
+
+In our specific case, A1 = $1100. At the end of the second year, we perform
+the same operation
+
+.. math::
+
+   A2 = A1 + 0.1A1 = 1.1A1,
+
+so that A2 = $1210. Continuing,
+
+.. math::
+
+   A3 = 1.1A2
+   A4 = 1.1A3
+   ...
+   An = 1.1An−1.
+
+Thus we can recursively determine the amount An once we know the previous year’s balance.
+
+—--------------------------------------------------
+
+Así podemos determinar recursivamente la cantidad An una vez que conocemos el saldo del año anterior.
+
+—--------------------------------------------------
+
+The equation An = 1.1An−1 is an example of a (first-order) difference equation. In such an equation, we use information from the previous year (or other fixed time interval) to determine the current information, then we use this information to determine next year’s amount, and so forth. As a remark, in higher-order difference equations (which we will not discuss in this book), we woulld need information from several prior years to determine the current
+value.
+
+—--------------------------------------------------
+
+La ecuación An = 1.1An−1 es un ejemplo de una ecuación en diferencias (de primer orden). En tal ecuación, usamos información del año anterior (u otro intervalo de tiempo fijo) para determinar la información actual, luego usamos esta información para determinar la cantidad del próximo año, y así sucesivamente. Como comentario, en ecuaciones en diferencias de orden superior (que no discutiremos en este libro), necesitaríamos información de varios años anteriores para determinar el valor actual.
+
+—--------------------------------------------------
+
+We solve this difference equation by the process of iteration. The iterative process involved is multiplication by 1.1. That is, if we define the function F(x) = 1.1x, then our savings balances are determined by repeatedly applying this
+
+—--------------------------------------------------
+
+Resolvemos esta ecuación en diferencias mediante el proceso de iteración. El proceso iterativo involucrado es la multiplicación por 1.1. Es decir, si definimos la función F(x) = 1.1x, entonces nuestros saldos de ahorro se determinan aplicando repetidamente este
+
+—--------------------------------------------------
+
+.. math::
+
+   A1 = F(A0)
+   A2 = F(A1)
+   A3 = F(A2)
+
+and so forth. Note that we may also write
+
+.. math::
+
+   A2 = F(F(A0)) = F ◦ F(A0)
+   A3 = F(F(F(A0))) = F ◦ F ◦ F(A0)
+
+to clearly indicate that we compose F with itself repeatedly to obtain the successive balances.
+
+—--------------------------------------------------
+
+para indicar claramente que componemos F consigo mismo repetidamente para obtener los sucesivos equilibrios.
+
+—--------------------------------------------------
+
+
+Since F(x) = 1.1x, we have
+
+.. code::
+
+   F(F(x)) = (1.1)2x
+   F(F(F(x))) = (1.1)3x,
+
+and, in general, the nth iteration of the function yields
+
+.. math:
+
+    F ◦ . . . ◦ F 
+
+n times
+
+(x) = (1.1)nx.
+
+So to find An, we merely compute (1.1)n and multiply by A0. For example,
+using a calculator or computer, you may easily check that A10 = $2593.74 and
+A50 = $117, 390.85.
+
+This example is quite simple: the iterations we will encounter will in general
+yield much more complicated results.
+
+**2.2 An Example from Ecology**
+
+Here is another difference equation which is essentially the same as our savings account example. Suppose we wish to predict the behavior of the population of a certain species which grows or declines as generations pass. Let’s denote the population alive at generation n by Pn. So our question is: can we predict what will happen to Pn as n gets large? Will Pn tend to zero so that the species becomes extinct? Or will Pn grow without bound so that we experience a population explosion?
+
+—-------------------------------------------
+
+Aquí hay otra ecuación en diferencias que es esencialmente la misma que nuestro ejemplo de cuenta de ahorros. Supongamos que deseamos predecir el comportamiento de la población de una determinada especie que crece o decrece a medida que pasan las generaciones. Denotemos la población viva en la generación n por Pn. Entonces nuestra pregunta es: ¿podemos predecir qué sucederá con Pn cuando n se hace grande? ¿Pn tenderá a cero para que la especie se extinga? ¿O crecerá Pn sin límites de modo que experimentemos una explosión demográfica?
+
+—-------------------------------------------
+
+There are many mathematical models to predict the behavior of populations. By far the simplest (and most naive) is the exponential growth model. In this model we assume that the population in the succeeding generation is directly proportional to the population in the current generation. This translates into mathematics as another difference equation
+
+—-------------------------------------------
+
+Hay muchos modelos matemáticos para predecir el comportamiento de las poblaciones. Con mucho, el más simple (y más ingenuo) es el modelo de crecimiento exponencial. En este modelo suponemos que la población de la generación siguiente es directamente proporcional a la población de la generación actual. Esto se traduce en matemáticas como otra ecuación en diferencias.
+
+
+—-------------------------------------------
+
+.. math::
+
+   Pn+1 = rPn
+
+where r is some constant determined by ecological conditions. Thus, given the initial population P0, we can recursively determine the population in the succeeding generations:
+
+—-------------------------------------------
+
+donde r es una constante determinada por las condiciones ecológicas. Así, dada la población inicial P0, podemos determinar recursivamente la población en las generaciones sucesivas:
+
+—-------------------------------------------
+
+.. math::
+
+   P1 = rP0
+   P2 = rP1 = r2P0
+   P3 = rP2 = r3P0
+   ...
+   Pn = rPn−1 = rnP0.
+
+As before, we determine the behavior of the population via iteration. In this case, the function we iterate is F(x) = rx. So
+
+—-------------------------------------------
+
+Como antes, determinamos el comportamiento de la población a través de la iteración. En este caso, la función que iteramos es F(x) = rx. Asi que
+
+—-------------------------------------------
+
+
+Pn =  F ◦ . . . ◦ F 
+n times
+(P0) = rnP0.
+
+Note that the ultimate fate of the population depends on r. If r > 1, then rn tends to infinity with n, so we have unchecked population growth. If r < 1, rn tends to zero, so the species becomes extinct. Finally, if r = 1, Pn = P0, so there is never any change in the population. Thus, we can achieve our goal of determining the fate of the species for any r. Of course, this simplified model is highly unrealistic in that real-life populations behave in a much more complicated fashion. For example, populations can never tend to infinity. To remedy this, we will add one assumption to our model that will take into account the possibility of overcrowding.
+
+—-------------------------------------------
+
+Tenga en cuenta que el destino final de la población depende de r. Si r > 1, entonces rn tiende a infinito con n, por lo que tenemos un crecimiento demográfico descontrolado. Si r < 1, rn tiende a cero, por lo que la especie se extingue. Finalmente, si r = 1, Pn = P0, entonces nunca hay cambio en la población. Por lo tanto, podemos lograr nuestro objetivo de determinar el destino de las especies para cualquier r. Por supuesto, este modelo simplificado es muy poco realista porque las poblaciones de la vida real se comportan de una manera mucho más complicada. Por ejemplo, las poblaciones nunca pueden tender al infinito. Para remediar esto, agregaremos una suposición a nuestro modelo que tendrá en cuenta la posibilidad de hacinamiento.
+
+—-------------------------------------------
+
+Specifically, we will discuss what ecologists call the logistic model of population growth. In this model, we assume at the outset that there is some absolute maximum population that can be supported by the environment. If the population ever reaches this number, then we have disastrous overcrowding— food supply becomes critically short—and the species immediately dies out. To keep the numbers manageable, let’s assume that Pn now represents the fraction of this maximal population alive at generation n, so that 0 ≤ Pn ≤ 1.
+
+—-------------------------------------------
+
+Específicamente, discutiremos lo que los ecologistas llaman el modelo logístico del crecimiento de la población. En este modelo, asumimos desde el principio que existe una población máxima absoluta que el medio ambiente puede soportar. Si la población alguna vez alcanza este número, entonces tendremos un hacinamiento desastroso (el suministro de alimentos se vuelve críticamente escaso) y la especie se extingue de inmediato. Para mantener los números manejables, supongamos que Pn ahora representa la fracción viva de esta población máxima en la generación n, de modo que 0 ≤ Pn ≤ 1.
+
+—-------------------------------------------
+
+The logistic model is then
+
+Pn+1 = λPn(1 − Pn).
+
+As before, λ is a constant that depends on ecological conditions. For reasons that will become apparent later, we will always assume that 0 < λ ≤ 4. Note that, in the absence of the 1−Pn factor, we are left with the previous exponential growth model. If Pn = 0 (no individuals present), then Pn+1 = 0 as well, as we would expect. If Pn = 1, then Pn+1 = 0 as we have assumed.
+
+—-------------------------------------------
+
+Como antes, λ es una constante que depende de las condiciones ecológicas. Por razones que serán evidentes más adelante, siempre supondremos que 0 < λ ≤ 4. Tenga en cuenta que, en ausencia del factor 1−Pn, nos quedamos con el modelo de crecimiento exponencial anterior. Si Pn = 0 (sin individuos presentes), entonces Pn+1 = 0 también, como cabría esperar. Si Pn = 1, entonces Pn+1 = 0 como hemos supuesto.
+
+—-------------------------------------------
+
+Thus, to understand the growth and decline of the population under this model, we must iterate the logistic function Fλ(x) = λx(1 − x). Unlike the previous examples, this function is quadratic rather than linear. We will see that this simple change gives rise to a very rich mathematical theory. Indeed, the behavior of this function under iteration was finally understood in the 1990’s. We will spend most of this book analyzing the dynamical behavior of this and other similar functions.
+
+—-------------------------------------------
+
+Por lo tanto, para entender el crecimiento y declive de la población bajo este modelo, debemos iterar la función logística Fλ(x) = λx(1 − x). A diferencia de los ejemplos anteriores, esta función es cuadrática en lugar de lineal. Veremos que este simple cambio da lugar a una teoría matemática muy rica. De hecho, el comportamiento de esta función bajo iteración finalmente se comprendió en la década de 1990. Pasaremos la mayor parte de este libro analizando el comportamiento dinámico de esta y otras funciones similares.
+
+—-------------------------------------------
+
+
+**2.3 Finding Roots and Solving Equations**
+
+How do you find sqrt(5) exactly? Believe it or not, the simplest method dates back to the time of the Babylonians and involves a simple iteration. We will make an initial guess x0 for sqrt(5). We assume that x0 is positive. Now, chances are that x0  /= sqrt(5), so we will use this guess to produce a new and better guess x1.
+
+—-------------------------------------------
+
+¿Cómo encuentras sqrt (5) exactamente? Lo crea o no, el método más simple se remonta a la época de los babilonios e implica una iteración simple. Haremos una conjetura inicial x0 para sqrt(5). Suponemos que x0 es positivo. Ahora, lo más probable es que x0  /= sqrt(5), por lo que usaremos esta suposición para producir una nueva y mejor suposición x1.
+
+—-------------------------------------------
+
+Here is the procedure. If x0  /= sqrt(5), then we either have x0 < sqrt(5) or x0 > sqrt(5).
+In the former case, we have 
+
+
+
+for x0 /= 0. On the other hand, if x0 > sqtrt(5), then
+
+
+
+Thus we have either
+
+
+
+So sqrt(5) is somewhere between x0 and 5/x0. Thus, if we take the average of x0 and 5/x0, namely
+
+—---------------------------------------------------
+
+Entonces sqrt(5) está en algún lugar entre x0 y 5/x0. Así, si tomamos el promedio de x0 y 5/x0, a saber
+
+—---------------------------------------------------
+
+
+
+
+
+the resulting value will lie midway between x0 and 5/x0 and so will, hopefully, be a better approximation to sqrt(5). So we use this value as our next “guess” for sqrt(5). Continuing, we form the successive averages
+
+—--------------------------------------------
+
+el valor resultante estará a mitad de camino entre x0 y 5/x0 y, con suerte, será una mejor aproximación a sqrt(5). Así que usamos este valor como nuestra próxima "suposición" para sqrt (5). Continuando, formamos los promedios sucesivos
+
+—--------------------------------------------
+
+
+
+ 
+Intuitively, the sequence of numbers x0, x1, x2, . . . should eventually approach
+sqrt(5).
+
+Let’s see how this works in practice. Suppose we make the (somewhat silly) initial guess x0 = 1 for sqrt(5). Then we have
+
+—--------------------------------------------
+
+Veamos cómo funciona esto en la práctica. Supongamos que hacemos la suposición inicial (algo tonta) x0 = 1 para sqrt(5). Entonces tenemos
+
+—--------------------------------------------
+
+
+
+
+and we see that, very quickly, this sequence tends to the correct answer, as
+sqrt(5) = 2.236067 . . . .
+
+Clearly, to find other square roots, we need only replace the 5 in the formula
+for our initial guess. Thus, to “find” sqrt(9), we choose some initial guess, say
+x0 = 2, and then
+
+
+and we see that this sequence quickly converges to sqrt(9) = 3. Wow! Did you
+know that sqrt(9) is equal to 3?
+
+A related question that arises in all branches of science and mathematics is: How do you solve the equation F(x) = 0? For example, finding the square root of 5 is the same as solving the equation x2 − 5 = 0. There are very few functions for which it is possible to write down the solutions to this equation explicitly. Even for polynomials, solving this equation is difficult when the degree is greater than 2, and generally impossible when the degree is 5 or greater. Yet the problem is extremely important, so we seek other possible methods.
+
+—----------------------------------------------------
+
+Una pregunta relacionada que surge en todas las ramas de la ciencia y las matemáticas es: ¿Cómo se resuelve la ecuación F(x) = 0? Por ejemplo, encontrar la raíz cuadrada de 5 es lo mismo que resolver la ecuación x2 − 5 = 0. Hay muy pocas funciones para las que es posible escribir las soluciones de esta ecuación de forma explícita. Incluso para polinomios, resolver esta ecuación es difícil cuando el grado es mayor que 2 y generalmente imposible cuando el grado es 5 o mayor. Sin embargo, el problema es extremadamente importante, por lo que buscamos otros métodos posibles.
+
+—----------------------------------------------------
+
+One method, familiar from calculus, is Newton’s method. This method involves the following procedure. Given a function F whose roots we are trying to find, we construct a new function, the Newton iteration function, given by
+
+—----------------------------------------------------
+
+Un método, familiar del cálculo, es el método de Newton. Este método implica el siguiente procedimiento. Dada una función F cuyas raíces estamos tratando de encontrar, construimos una nueva función, la función de iteración de Newton, dada por
+
+—----------------------------------------------------
+
+
+
+
+Then we make an initial guess x0 for a root. Newton’s method is to iterate the function N, successively computing
+
+—----------------------------------------------------
+
+Luego hacemos una suposición inicial x0 para una raíz. El método de Newton consiste en iterar la función N, calculando sucesivamente
+
+—----------------------------------------------------
+
+.. math::
+
+   x1 = N(x0)
+   x2 = N(x1) = N(N(x0))
+   x3 = N(x2) = N(N(N(x0)))
+
+and so forth. Often, though by no means always, this sequence of iterates converges to a root of F. Note that, in the special case where F(x) = x2 − 5 (whose roots are +/- sqrt(5), the Newton iteration is simply
+
+—----------------------------------------------------
+
+Etcétera. A menudo, aunque no siempre, esta secuencia de iteraciones converge a una raíz de F. Note que, en el caso especial donde F(x) = x2 − 5 (cuyas raíces son +/- sqrt(5), la iteración de Newton es simple
+
+—----------------------------------------------------
+
+
+
+
+as was discussed above.
+
+We will not take the time now to discuss why this happens or even where the Newton iteration function comes from. Rather, we will devote all of Chapter 13 to this subject.
+
+—----------------------------------------------------
+
+No nos tomaremos el tiempo ahora para discutir por qué sucede esto o incluso de dónde proviene la función de iteración de Newton. Más bien, dedicaremos todo el Capítulo 13 a este tema.
+
+—----------------------------------------------------
+
+
+With the advent of accessible high-speed computation, iterative algorithms such as Newton’s method are now an extremely important and widespread area of interest in mathematics. No longer are such algorithms primarily of theoretical interest!
+
+—----------------------------------------------------
+
+Con el advenimiento de la computación de alta velocidad accesible, los algoritmos iterativos como el método de Newton son ahora un área de interés extremadamente importante y extendida en matemáticas. ¡Estos algoritmos ya no son principalmente de interés teórico!
+
+—----------------------------------------------------
+
+
+**2.4 Differential Equations**
+
+Differential equations are also examples of dynamical systems. Unlike iterative processes where time is measured in discrete intervals such as years or generations, differential equations are examples of continuous dynamical systems wherein time is a continuous variable. Ever since the time of Newton, these types of systems have been of paramount importance.
+
+—----------------------------------------------------
+
+Las ecuaciones diferenciales también son ejemplos de sistemas dinámicos. A diferencia de los procesos iterativos en los que el tiempo se mide en intervalos discretos, como años o generaciones, las ecuaciones diferenciales son ejemplos de sistemas dinámicos continuos en los que el tiempo es una variable continua. Desde la época de Newton, este tipo de sistemas han sido de suma importancia.
+
+—----------------------------------------------------
+
+Recently, however, discrete dynamical systems have also received considerable attention. This does not mean that continuous systems have declined in importance. Rather, mathematicians study discrete systems with an eye toward applying their results to the more difficult continuous case.
+
+—----------------------------------------------------
+
+Recientemente, sin embargo, los sistemas dinámicos discretos también han recibido una atención considerable. Esto no significa que los sistemas continuos hayan perdido importancia. Más bien, los matemáticos estudian sistemas discretos con miras a aplicar sus resultados al caso continuo más difícil.
+
+—----------------------------------------------------
+
+
+There are a number of ways that iterative processes enter the arena of differential equations. For example, a solution of a differential equation is a continuous function of time. If we look at this solution at discrete time intervals, say at times t = 0, 1, 2, . . ., then we are really considering an iterative process as described above.
+
+—----------------------------------------------------
+
+Hay varias formas en que los procesos iterativos entran en el campo de las ecuaciones diferenciales. Por ejemplo, la solución de una ecuación diferencial es una función continua del tiempo. Si observamos esta solución en intervalos de tiempo discretos, digamos en tiempos t = 0, 1, 2, . . ., entonces realmente estamos considerando un proceso iterativo como el descrito anteriormente.
+
+—----------------------------------------------------
+
+Most often, differential equations are impossible to solve explicitly. We must turn to the computer to generate numerical solutions. The numerical methods used to solve these equations are often iterative processes such as the Runge-Kutta method.
+
+—----------------------------------------------------
+
+Muy a menudo, las ecuaciones diferenciales son imposibles de resolver explícitamente. Debemos recurrir a la computadora para generar soluciones numéricas. Los métodos numéricos utilizados para resolver estas ecuaciones suelen ser procesos iterativos como el método de Runge-Kutta.
+
+—----------------------------------------------------
+
+
+FIGURE 2.1
+A surface of section.
+
+A final way in which iteration arises in the study of differential equations occurs when a surface of section can be found. Suppose that we have a system of differential equations in three dimensions whose independent variable is time. Then the solutions we seek are curves in space parameterized by time. Often, though not always, these curves intersect a given surface in space over and over again as depicted in Figure 2.1. 
+
+—----------------------------------------------------
+
+Una forma final en la que surge la iteración en el estudio de las ecuaciones diferenciales ocurre cuando se puede encontrar una superficie de sección. Supongamos que tenemos un sistema de ecuaciones diferenciales en tres dimensiones cuya variable independiente es el tiempo. Entonces las soluciones que buscamos son curvas en el espacio parametrizadas por el tiempo. A menudo, aunque no siempre, estas curvas intersecan una superficie determinada en el espacio una y otra vez, como se muestra en la Figura 2.1.
+
+—----------------------------------------------------
+
+When this occurs, the study of solutions of the equation reduces to the study of an iterative process on the surface. Starting with any point on the surface x0, we follow the solution through x0 until it first reintersects the surface. Call this point of first return F(x0). The function F is called a first return map and the surface is a surface of section. Continuing to follow the solution curve, its next point of intersection is F(F(x0)), so we see that determining the successive points of intersection is really a problem of iterating F.
+
+—----------------------------------------------------
+
+Cuando esto ocurre, el estudio de las soluciones de la ecuación se reduce al estudio de un proceso iterativo en la superficie. Comenzando con cualquier punto en la superficie x0, seguimos la solución a través de x0 hasta que primero vuelve a intersecar la superficie. Llame a este punto de primer retorno F(x0). La función F se llama función de primer retorno y la superficie es una superficie de sección. Siguiendo la curva solución, su siguiente punto de intersección es F(F(x0)), por lo que vemos que determinar los sucesivos puntos de intersección es realmente un problema de iteración de F.
+
+—----------------------------------------------------
+
+Iteration of the first return map does not tell us all there is to know about the solutions of the differential equation, but it does give us a lot of qualitative information. In particular, we do not know the exact location of a solution at each moment of time, but we do gain long-term information about the behavior of the solution.
+
+—----------------------------
+
+La iteración del primer mapa de retorno no nos dice todo lo que hay que saber sobre las soluciones de la ecuación diferencial, pero nos da mucha información cualitativa. En particular, no conocemos la ubicación exacta de una solución en cada momento del tiempo, pero sí obtenemos información a largo plazo sobre el comportamiento de la solución.
+
+
+
+

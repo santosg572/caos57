@@ -1,0 +1,346 @@
+c01
+===
+
+A First Course in
+Chaotic Dynamical
+Systems
+Theory and Experiment
+Second Edition
+Robert L. Devaney
+
+pp10
+
+Preface to the Second Edition
+
+In the twenty-five years since the original version of this book was published, much has happened in the area of mathematics known as dynamical systems. For example, the beautiful mathematical objects known as the Mandelbrot and Julia sets were barely ten years old when the first edition appeared, and most of the research involving these objects back then centered around iteration of quadratic functions. 
+En los veinticinco años desde que se publicó la versión original de este libro, mucho ha sucedido en el área de las matemáticas conocida como sistemas dinámicos. Por ejemplo, los hermosos objetos matemáticos conocidos como conjuntos de Mandelbrot y Julia tenían apenas diez años cuando apareció la primera edición, y la mayor parte de la investigación relacionada con estos objetos en ese entonces se centró en la iteración de funciones cuadráticas.
+
+Nowadays, this research has expanded to include all sorts of different types of functions, including higher-degree polynomials, rational maps, exponential and trigonometric functions, and many others. As a consequence, several new sections in this edition are devoted to these topics. One major change in the mathematics community since the previous edition appeared has been the inclusion of undergraduate students in mathematical research projects. 
+Hoy en día, esta investigación se ha expandido para incluir todo tipo de diferentes tipos de funciones, incluidos polinomios de grado superior, mapas racionales, funciones exponenciales y trigonométricas, y muchas otras. Como consecuencia, varias secciones nuevas en esta edición están dedicadas a estos temas. Un cambio importante en la comunidad matemática desde que apareció la edición anterior ha sido la inclusión de estudiantes universitarios en proyectos de investigación matemática.
+
+Over the last fifteen years, I have co-authored seven research papers on dynamical systems with undergraduates who had taken my course using this book. In addition, some of my Ph.D. students have also collaborated with several undergrads on research projects related to their theses.
+Durante los últimos quince años, he sido coautor de siete trabajos de investigación sobre sistemas dinámicos con estudiantes universitarios que tomaron mi curso usando este libro. Además, parte de mi Ph.D. los estudiantes también han colaborado con varios estudiantes universitarios en proyectos de investigación relacionados con sus tesis.
+
+The fact is that the area of dynamical systems covered in this book is quite accessible to students and also offers a wide variety of interesting open questions for students at the undergraduate level to pursue.
+El hecho es que el área de los sistemas dinámicos que se cubre en este libro es bastante accesible para los estudiantes y también ofrece una amplia variedad de preguntas abiertas interesantes para los estudiantes de pregrado.
+
+
+The beauty of this subject is that the only prerequisite for students is a one year calculus course (no differential equations required). For the most part in this book, we concentrate on iteration of real or complex quadratic functions of the form x2 + c. So, with only a calculus background and a familiarity with complex numbers, students can easily be exposed to many interesting areas of current research in this area of mathematics. I also find that this course serves as a natural precursor to advanced courses in topology or real and complex analysis. 
+La belleza de esta materia es que el único requisito previo para los estudiantes es un curso de cálculo de un año (no se requieren ecuaciones diferenciales). En su mayor parte en este libro, nos concentramos en la iteración de funciones cuadráticas reales o complejas de la forma x2 + c. Por lo tanto, con solo una base de cálculo y familiaridad con los números complejos, los estudiantes pueden exponerse fácilmente a muchas áreas interesantes de la investigación actual en esta área de las matemáticas. También encuentro que este curso sirve como un precursor natural de los cursos avanzados de topología o análisis real y complejo.
+
+For example, to understand iteration of the quadratic map, students see why abstract metric spaces (such as the sequence space) and the  δ-definition of continuity (necessary to analyze the shift map on the sequence space) are crucial to analyzing the behavior of the quadratic maps. It would seem that studying the dynamics of a quadratic function on the real line would be much easier than moving to its analog in an abstract metric space, but that is by no means the case, as we show in Chapter 9. 
+Por ejemplo, para comprender la iteración del mapa cuadrático, los estudiantes ven por qué los espacios métricos abstractos (como el espacio de secuencia) y la definición de continuidad  δ (necesaria para analizar el mapa de desplazamiento en el espacio de secuencia) son cruciales para analizar el comportamiento de los mapas cuadráticos. Parecería que estudiar la dinámica de una función cuadrática en la línea real sería mucho más fácil que pasar a su análogo en un espacio métrico abstracto, pero ese no es el caso, como mostramos en el Capítulo 9.
+
+Several students who had already taken a course in real analysis have told me that, now that they have taken the dynamics course, they see why these more theoretical topics are so important. So this course can serve as a bridge between the lowlevel, often non-rigorous calculus courses, and the more demanding higherlevel mathematics courses.
+Varios estudiantes que ya habían tomado un curso de análisis real me han dicho que, ahora que han tomado el curso de dinámica, ven por qué estos temas más teóricos son tan importantes. Por lo tanto, este curso puede servir como un puente entre los cursos de cálculo de bajo nivel, a menudo no rigurosos, y los cursos de matemáticas de nivel superior más exigentes.
+
+Many of the activities students engage in while using this book involve using the computer to investigate various concepts in dynamical systems. There is an abundance of software available (like MATLAB and Mathematica) to assist in these endeavors. In addition, there are plenty of other programs available on the web that deal with specific topics covered in this course.
+Muchas de las actividades en las que participan los estudiantes mientras usan este libro involucran el uso de la computadora para investigar varios conceptos en sistemas dinámicos. Hay una gran cantidad de software disponible (como MATLAB y Mathematica) para ayudar en estos esfuerzos. Además, hay muchos otros programas disponibles en la web que tratan temas específicos cubiertos en este curso.
+
+My website math.bu.edu/DYSYS contains a variety of applets designed by
+Yakov Shapiro that many of my students have used while using this book.
+Also, there are a number of computer animations available at the website
+math.bu.edu/DYSYS/animations.html that show how Julia sets, the Mandelbrot
+set, and fractals evolve as parameters change.
+
+
+
+pag12
+
+1 A Visual and Historical Tour
+
+Rather than jump immediately into the mathematics of dynamical systems, we will begin with a brief tour of some of the amazing computer graphics images that arise in this field. One of our goals in this book is to explain what these images mean, how they are generated on the computer, and why they are important in mathematics. We will do none of the mathematics in this chapter. 
+
+—---------------------------------------------
+
+En lugar de saltar de inmediato a las matemáticasWW de los sistemas dinámicos, comenzaremos con un breve recorrido por algunas de las sorprendentes imágenes de gráficos por computadora que surgen en este campo. Uno de nuestros objetivos en este libro es explicar qué significan estas imágenes, cómo se generan en la computadora y por qué son importantes en matemáticas. No haremos nada de las matemáticas en este capítulo.
+
+—---------------------------------------------
+Ok 
+
+For now, you should simply enjoy the images. We hope to convince you, in the succeeding chapters, that the mathematics behind these images is even prettier than the pictures. In the second part of the chapter, we will present a brief history of some of the developments in dynamical systems over the past century. You will see that many of the ideas in dynamics arose fairly recently. Indeed, none of the computer graphics images from the tour were seen before 1980!
+
+—---------------------------------------------
+
+Por ahora, simplemente debes disfrutar de las imágenes. Esperamos convencerlo, en los siguientes capítulos, de que las matemáticas detrás de estas imágenes son aún más bonitas que las imágenes. En la segunda parte del capítulo, presentaremos una breve historia de algunos de los desarrollos en los sistemas dinámicos durante el último siglo. Verá que muchas de las ideas en dinámica surgieron recientemente. De hecho, ¡ninguna de las imágenes de gráficos por computadora de la gira se vio antes de 1980!
+
+—---------------------------------------------
+
+
+**1.1 Images from Dynamical Systems**
+
+
+This book deals with some very interesting, exciting, and beautiful topics in mathematics—topics which, in many cases, have been discovered only in the last fifty years. The main subject of the book is dynamical systems, the branch of mathematics that attempts to understand processes in motion. Such processes occur in all branches of science. For example, the motion of the planets and the galaxies in the heavens is a dynamical system, one that has been studied for centuries by thousands of mathematicians and scientists. The stock market is another system that changes in time, as does the earth’s weather. The changes chemicals undergo, the rise and fall of populations, and the motion of a simple pendulum are classical examples of dynamical systems in chemistry, biology, and physics. Clearly, dynamical systems abound.
+
+—-------------------------------------------------------
+
+Este libro trata algunos temas matemáticos muy interesantes, emocionantes y hermosos, temas que, en muchos casos, se han descubierto solo en los últimos cincuenta años. El tema principal del libro son los sistemas dinámicos, la rama de las matemáticas que intenta comprender los procesos en movimiento. Tales procesos ocurren en todas las ramas de la ciencia. Por ejemplo, el movimiento de los planetas y las galaxias en los cielos es un sistema dinámico que ha sido estudiado durante siglos por miles de matemáticos y científicos. El mercado de valores es otro sistema que cambia con el tiempo, al igual que el clima de la tierra. Los cambios que experimentan los productos químicos, el aumento y la caída de las poblaciones y el movimiento de un péndulo simple son ejemplos clásicos de sistemas dinámicos en química, biología y física. Claramente, abundan los sistemas dinámicos.
+
+—-------------------------------------------------------
+
+What does a scientist wish to do with a dynamical system? Well, since the system is moving or changing in time, the scientist would like to predict where the system is heading, where it will ultimately go. Will the stock market go up or down? Will it be rainy or sunny tomorrow? Will these two chemicals explode if they are mixed in a test tube?
+
+—-------------------------------------------------------
+
+¿Qué desea hacer un científico con un sistema dinámico? Bueno, dado que el sistema se mueve o cambia en el tiempo, al científico le gustaría predecir hacia dónde se dirige el sistema, hacia dónde irá en última instancia. ¿Subirá o bajará la bolsa de valores? ¿Será lluvioso o soleado mañana? ¿Estallarán estos dos químicos si se mezclan en un tubo de ensayo?
+
+—-------------------------------------------------------
+
+Clearly, some dynamical systems are predictable, whereas others are not. You know that the sun will rise tomorrow and that, when you add cream to a cup of coffee, the resulting “chemical” reaction will not be an explosion. On the other hand, predicting the weather a month from now or the Dow Jones average a week from now seems impossible. You might argue that the reason for this unpredictability is that there are simply too many variables present in meteorological or economic systems. That is indeed true in these cases, but this is by no means the complete answer. 
+
+—-------------------------------------------------------
+
+Claramente, algunos sistemas dinámicos son predecibles, mientras que otros no lo son. Sabes que mañana saldrá el sol y que, cuando le agregas crema a una taza de café, la reacción “química” resultante no será una explosión. Por otro lado, predecir el clima dentro de un mes o el promedio Dow Jones dentro de una semana parece imposible. Podría argumentar que la razón de esta imprevisibilidad es que simplemente hay demasiadas variables presentes en los sistemas meteorológicos o económicos. Eso es cierto en estos casos, pero de ninguna manera es la respuesta completa.
+
+—-------------------------------------------------------
+
+
+One of the remarkable discoveries of twentieth-century mathematics is that very simple systems, even systems depending on only one variable, may behave just as unpredictably as the stock market, just as wildly as a turbulent waterfall, and just as violently as a hurricane. The culprit, the reason for this unpredictable behavior, has been called “chaos” by mathematicians.
+
+—-------------------------------------------------------
+
+Uno de los descubrimientos notables de las matemáticas del siglo XX es que los sistemas muy simples, incluso los sistemas que dependen de una sola variable, pueden comportarse de manera tan impredecible como el mercado de valores, tan salvaje como una cascada turbulenta y tan violenta como un huracán. El culpable, la razón de este comportamiento impredecible, ha sido llamado “caos” por los matemáticos.
+
+—-------------------------------------------------------
+
+Because chaos has been found to occur in the simplest of systems, scientists may now begin to study unpredictability in its most basic form. It is to be hoped that the study of these simpler systems will eventually allow scientists to find the key to understanding the turbulent behavior of systems involving many variables such as weather or economic systems.
+
+—-------------------------------------------------------
+
+Debido a que se ha descubierto que el caos ocurre en los sistemas más simples, los científicos ahora pueden comenzar a estudiar la imprevisibilidad en su forma más básica. Es de esperar que el estudio de estos sistemas más simples finalmente permita a los científicos encontrar la clave para comprender el comportamiento turbulento de los sistemas que involucran muchas variables, como el clima o los sistemas económicos.
+
+—-------------------------------------------------------
+
+In this book we discuss chaos in these simple settings. We will see that chaos occurs in elementary mathematical objects—objects as familiar as quadratic functions—when they are regarded as dynamical systems. You may feel at this point that you know all there is to know about quadratic functions—after all, they are easy to evaluate and to graph. You can differentiate and integrate them. But the key words here are “dynamical systems.” We will treat simple mathematical operations like taking the square root, squaring, or cubing as dynamical systems by repeating the procedure over and over, using the output of the previous operation as the input for the next. 
+
+—-------------------------------------------------------
+
+En este libro discutimos el caos en estos escenarios simples. Veremos que el caos ocurre en los objetos matemáticos elementales —objetos tan familiares como las funciones cuadráticas— cuando se los considera como sistemas dinámicos. Puede sentir en este punto que sabe todo lo que hay que saber sobre las funciones cuadráticas; después de todo, son fáciles de evaluar y graficar. Puedes diferenciarlos e integrarlos. Pero las palabras clave aquí son "sistemas dinámicos". Trataremos operaciones matemáticas simples como sacar la raíz cuadrada, elevar al cuadrado o elevar al cubo como sistemas dinámicos repitiendo el procedimiento una y otra vez, usando el resultado de la operación anterior como entrada para la siguiente.
+
+—-------------------------------------------------------
+
+This process is called iteration. This procedure generates a list of real or complex numbers that are changing as we proceed—this is our dynamical system. Sometimes we will find that, when we input certain numbers into the process, the resulting behavior is completely predictable, while other inputs yield results that are often bizarre and totally unpredictable. For the types of functions we will consider, the set of numbers that yield chaotic or unpredictable behavior in the plane is called the Julia set after the French mathematician Gaston Julia, who first formulated many of the properties of these sets in the 1920’s. These Julia sets are spectacularly complicated, even for quadratic functions. They are examples of fractals. These are sets which, when magnified over and over again, always resemble the original image. 
+
+—-------------------------------------------------------
+
+Este proceso se llama iteración. Este procedimiento genera una lista de números reales o complejos que van cambiando a medida que avanzamos; este es nuestro sistema dinámico. A veces encontraremos que, cuando ingresamos ciertos números en el proceso, el comportamiento resultante es completamente predecible, mientras que otras entradas producen resultados que a menudo son extraños y totalmente impredecibles. Para los tipos de funciones que consideraremos, el conjunto de números que produce un comportamiento caótico o impredecible en el plano se denomina conjunto de Julia en honor al matemático francés Gaston Julia, quien formuló por primera vez muchas de las propiedades de estos conjuntos en la década de 1920. Estos conjuntos de Julia son espectacularmente complicados, incluso para funciones cuadráticas. Son ejemplos de fractales. Son conjuntos que, ampliados una y otra vez, siempre se asemejan a la imagen original.
+
+—-------------------------------------------------------
+
+The closer you look at a fractal, the more you see exactly the same object. Moreover, fractals naturally have a dimension that is not an integer, not 1, not 2, but often somewhere in between, such as dimension 1.4176, whatever that means! We will discuss these concepts in more detail in Chapter 14. Here are some examples of the types of images that we will study. In Plate 1 we show the Julia set of the simple mathematical expression z2 + c, where both z and c are complex numbers. In this particular case, c = −.122+.745i. This image is called Douady’s rabbit, after the French mathematician Adrien Douady whose work we will discuss in Chapter 17. The black region in this image resembles a “fractal rabbit.” Everywhere you look, you see a pair of ears. In the accompanying figures, we have magnified portions of the rabbit, revealing more and more pairs of ears.
+
+—-------------------------------------------------------
+
+Cuanto más de cerca miras un fractal, más ves exactamente el mismo objeto. Además, los fractales naturalmente tienen una dimensión que no es un número entero, ni 1, ni 2, sino a menudo algo intermedio, como la dimensión 1,4176, ¡lo que sea que eso signifique! Discutiremos estos conceptos con más detalle en el Capítulo 14. Aquí hay algunos ejemplos de los tipos de imágenes que estudiaremos. En la Lámina 1 mostramos el conjunto de Julia de la expresión matemática simple z2 + c, donde tanto z como c son números complejos. En este caso particular, c = −.122+.745i. Esta imagen se llama el conejo de Douady, en honor al matemático francés Adrien Douady, cuyo trabajo discutiremos en el Capítulo 17. La región negra en esta imagen se asemeja a un “conejo fractal”. Dondequiera que mires, ves un par de orejas. En las figuras adjuntas, hemos ampliado partes del conejo, revelando más y más pares de orejas.
+
+—-------------------------------------------------------
+
+
+As we will describe later, the black points you see in these pictures are the “non-chaotic” points. They are points representing values of z that, under iteration of this quadratic function, eventually tend to cycle between three different points in the plane. As a consequence, the dynamical behavior in the black regions is quite predictable. All of this is by no means apparent right now, but by the time you have read Chapter 16, you will consider this example a good friend. Points that are colored in this picture also behave predictably: they are points that “escape,” that is, they tend to infinity under iteration. The colors here simply tell us how quickly a point escapes, i.e., go beyond a pre-determined bound. Red points escape fastest, followed in order by orange, yellow, green, blue, and violet points. The boundary between these two types of behavior—the interface between the escaping and the cycling points—is the Julia set. This is where we will encounter all of the chaotic behavior for this dynamical system.
+
+—-------------------------------------------------------
+
+Como describiremos más adelante, los puntos negros que ve en estas imágenes son los puntos "no caóticos". Son puntos que representan valores de z que, bajo la iteración de esta función cuadrática, eventualmente tienden a alternar entre tres puntos diferentes en el plano. Como consecuencia, el comportamiento dinámico en las regiones negras es bastante predecible. Todo esto no es evidente en este momento, pero cuando haya leído el Capítulo 16, considerará este ejemplo como un buen amigo. Los puntos que están coloreados en esta imagen también se comportan de manera predecible: son puntos que “se escapan”, es decir, tienden a infinito bajo iteración. Los colores aquí simplemente nos dicen qué tan rápido se escapa un punto, es decir, va más allá de un límite predeterminado. Los puntos rojos escapan más rápido, seguidos por los puntos naranja, amarillo, verde, azul y violeta. El límite entre estos dos tipos de comportamiento, la interfaz entre los puntos de escape y ciclismo, es el conjunto de Julia. Aquí es donde encontraremos todo el comportamiento caótico de este sistema dinámico.
+
+—-------------------------------------------------------
+
+In Plates 2–5, we have displayed Julia sets for other quadratic functions of the form z2 + c. Each picture corresponds to a different value of c. For example, Plate 5a is a picture of the Julia set for z2 + i. As we see, these Julia sets may assume a remarkable variety of shapes. Sometimes the images contain large black regions as in the case of Douady’s rabbit. Other times the Julia set looks like an isolated scatter of points, as in Plate 5b. Many of these Julia sets are Cantor sets. These are very complicated sets that arise often in the study of dynamics. We will begin our study of Cantor sets in Chapter 7 when we introduce the most basic fractal of all, the Cantor middle-thirds set.
+
+—-------------------------------------------------------
+
+En las láminas 2 a 5, mostramos conjuntos de Julia para otras funciones cuadráticas de la forma z2 + c. Cada imagen corresponde a un valor diferente de c. Por ejemplo, la Lámina 5a es una imagen del conjunto de Julia para z2 + i. Como vemos, estos conjuntos de Julia pueden asumir una notable variedad de formas. A veces las imágenes contienen grandes regiones negras como en el caso del conejo de Douady. Otras veces, el conjunto de Julia parece una dispersión aislada de puntos, como en la Ilustración 5b. Muchos de estos conjuntos de Julia son conjuntos de Cantor. Estos son conjuntos muy complicados que surgen a menudo en el estudio de la dinámica. Comenzaremos nuestro estudio de los conjuntos de Cantor en el Capítulo 7 cuando presentemos el fractal más básico de todos, el conjunto de tercios medios de Cantor.
+
+—-------------------------------------------------------
+
+
+All of the Julia sets in Plates 1–5 correspond to mathematical expressions that are of the form z2 + c. As we see, when c varies, these Julia sets change considerably in shape. How do we understand the totality of all of these shapes, the collection of all possible Julia sets for quadratic functions? The answer is called the Mandelbrot set. The Mandelbrot set, as we will see in Chapter 17, is a dictionary, or picture book, of all possible quadratic Julia sets. It is a picture in the c-plane that provides us with a road map of the quadratic Julia sets.
+
+—-------------------------------------------------------
+
+Todos los conjuntos de Julia de las láminas 1 a 5 corresponden a expresiones matemáticas de la forma z2 + c. Como vemos, cuando c varía, estos conjuntos de Julia cambian considerablemente de forma. ¿Cómo entendemos la totalidad de todas estas formas, la colección de todos los posibles conjuntos de Julia para funciones cuadráticas? La respuesta se llama conjunto de Mandelbrot. El conjunto de Mandelbrot, como veremos en el capítulo 17, es un diccionario, o libro ilustrado, de todos los conjuntos de Julia cuadráticos posibles. Es una imagen en el plano c que nos proporciona un mapa de carreteras de los conjuntos cuadráticos de Julia.
+
+—-------------------------------------------------------
+
+This image, first viewed in 1980 by Benoit Mandelbrot, is quite important in dynamics. It completely characterizes the Julia sets of quadratic functions. It has been called one of the most intricate and beautiful objects in all of mathematics. Amazingly, we still do not completely understand the structure of this set. That is, we still do not fully understand the dynamics of the simple quadratic function z2 + c !
+
+—-------------------------------------------------------
+
+Esta imagen, vista por primera vez en 1980 por Benoit Mandelbrot, es bastante importante en dinámica. Caracteriza completamente los conjuntos de funciones cuadráticas de Julia. Ha sido llamado uno de los objetos más intrincados y hermosos de todas las matemáticas. Sorprendentemente, todavía no comprendemos completamente la estructura de este conjunto. Es decir, ¡todavía no comprendemos completamente la dinámica de la función cuadrática simple z2 + c!
+
+—-------------------------------------------------------
+
+
+Plate 6 shows the full Mandelbrot set. Note that it consists of a basic central cardioid shape, with smaller bulbs or decorations attached. Plates 7– 11 are magnifications of some of these decorations. Note how each decoration differs from the others. Buried deep in various regions of the Mandelbrot set, we also see small black regions which are actually small copies of the entire set. Look at the “tail” of the Mandelbrot set in Plate 7. The Mandelbrot set possesses an amazing amount of complexity, as illustrated in Plate 11 and its magnifications. Nonetheless, each of these small regions has a distinct dynamical meaning, as we will discuss in Chapter 17.
+
+—-------------------------------------------------------
+
+La placa 6 muestra el conjunto completo de Mandelbrot. Tenga en cuenta que consiste en una forma cardioide central básica, con bombillas o decoraciones más pequeñas adjuntas. Las láminas 7 a 11 son ampliaciones de algunas de estas decoraciones. Note cómo cada decoración difiere de las demás. Enterradas profundamente en varias regiones del conjunto de Mandelbrot, también vemos pequeñas regiones negras que en realidad son pequeñas copias de todo el conjunto. Mire la “cola” del conjunto de Mandelbrot en la Ilustración 7. El conjunto de Mandelbrot posee una asombrosa cantidad de complejidad, como se ilustra en la Ilustración 11 y sus ampliaciones. No obstante, cada una de estas pequeñas regiones tiene un significado dinámico distinto, como veremos en el Capítulo 17.
+
+—-------------------------------------------------------
+
+In this book we will also investigate the chaotic behavior of many other functions. For example, in Plates 12 and 13 we have displayed the Julia set for several functions of the form c sin(z) and c cos(z). Plate 15 displays the Julia sets for certain rational functions of the form zn+c/zn. These sets are what are known as “Sierpinski curves,” probably the most interesting planar fractals, as we shall discuss in Chapter 14. If we investigate exponential functions of the form c exp(z), we find Julia sets that look quite different as, for example, in Plate 16. And we can also look at the parameter planes (the c-planes) for these maps, a portion of which is shown in Plate 17.
+
+—-------------------------------------------------------
+
+En este libro también investigaremos el comportamiento caótico de muchas otras funciones. Por ejemplo, en las láminas 12 y 13 mostramos el conjunto de Julia para varias funciones de la forma c sen(z) yc cos(z). La lámina 15 muestra los conjuntos de Julia para ciertas funciones racionales de la forma zn+c/zn. Estos conjuntos son lo que se conoce como "curvas de Sierpinski", probablemente los fractales planos más interesantes, como veremos en el Capítulo 14. Si investigamos las funciones exponenciales de la forma c exp(z), encontramos conjuntos de Julia que se ven bastante diferentes como , por ejemplo, en la Lámina 16. Y también podemos ver los planos de parámetros (los planos c) para estos mapas, una parte de los cuales se muestra en la Lámina 17.
+
+—-------------------------------------------------------
+
+In addition, we have referenced a number of online videos posted on my website that will allow you to see the dramatic changes these systems undergo as parameters vary. All of these videos are available at math.bu.edu/DYSYS/animations.html. The images in this mathematical tour show quite clearly the great beauty of mathematical dynamical systems theory. But what do these pictures mean and why are they important? These are questions that we will address in the remainder of this book.
+
+—-------------------------------------------------------
+
+Además, hemos hecho referencia a una serie de videos en línea publicados en mi sitio web que le permitirán ver los cambios drásticos que experimentan estos sistemas a medida que varían los parámetros. Todos estos videos están disponibles en math.bu.edu/DYSYS/animations.html. Las imágenes de este recorrido matemático muestran con bastante claridad la gran belleza de la teoría matemática de sistemas dinámicos. Pero, ¿qué significan estas imágenes y por qué son importantes? Estas son preguntas que abordaremos en el resto de este libro.
+
+—-------------------------------------------------------
+
+
+
+**1.2 A Brief History of Dynamics**
+
+Dynamical systems has a long and distinguished history as a branch of mathematics. Beginning with the fundamental work of Isaac Newton, differential equations became the principal mathematical technique for describing processes that evolve continuously in time. In the eighteenth and nineteenth centuries, mathematicians devised numerous techniques for solving differential equations explicitly. These methods included Laplace transforms, power series solutions, variation of parameters, linear algebraic methods, and many other techniques familiar from a basic undergraduate course in ordinary differential equations.
+
+—-------------------------------------------------------
+
+Los sistemas dinámicos tienen una larga y distinguida historia como rama de las matemáticas. Comenzando con el trabajo fundamental de Isaac Newton, las ecuaciones diferenciales se convirtieron en la principal técnica matemática para describir procesos que evolucionan continuamente en el tiempo. En los siglos XVIII y XIX, los matemáticos idearon numerosas técnicas para resolver ecuaciones diferenciales de forma explícita. Estos métodos incluían transformadas de Laplace, soluciones en serie de potencias, variación de parámetros, métodos algebraicos lineales y muchas otras técnicas familiares de un curso básico de pregrado en ecuaciones diferenciales ordinarias.
+
+—-------------------------------------------------------
+
+There was one major flaw in this development. Virtually all of the analytic techniques for solving differential equations worked mainly for linear differential equations. Nonlinear differential equations proved much more difficult to solve. Unfortunately, many of the most important processes in nature are inherently nonlinear.
+
+—-------------------------------------------------------
+
+Hubo un defecto importante en este desarrollo. Prácticamente todas las técnicas analíticas para resolver ecuaciones diferenciales funcionaron principalmente para ecuaciones diferenciales lineales. Las ecuaciones diferenciales no lineales resultaron mucho más difíciles de resolver. Desafortunadamente, muchos de los procesos más importantes de la naturaleza son inherentemente no lineales.
+
+—-------------------------------------------------------
+
+
+An example of this is provided by Newton’s original motivation for developing calculus and differential equations. Newton’s laws enable us to write down the equations that describe the motion of the planets in the solar system, among many other important physical phenomena. Known as the n-body problem, these laws give us a system of differential equations whose solutions describe the motion of n “point masses” moving in space subject only to their own mutual gravitational attraction. If we know the initial positions and velocities of these masses, then all we have to do is solve Newton’s differential equation to be able to predict where and how these masses will move in the future.
+
+—-------------------------------------------------------
+
+Un ejemplo de esto lo proporciona la motivación original de Newton para desarrollar el cálculo y las ecuaciones diferenciales. Las leyes de Newton nos permiten escribir las ecuaciones que describen el movimiento de los planetas en el sistema solar, entre muchos otros fenómenos físicos importantes. Conocido como el problema de los n cuerpos, estas leyes nos dan un sistema de ecuaciones diferenciales cuyas soluciones describen el movimiento de n “masas puntuales” que se mueven en el espacio sujetas únicamente a su propia atracción gravitatoria mutua. Si conocemos las posiciones iniciales y las velocidades de estas masas, todo lo que tenemos que hacer es resolver la ecuación diferencial de Newton para poder predecir dónde y cómo se moverán estas masas en el futuro.
+
+—-------------------------------------------------------
+
+
+This turns out to be a formidable task. If there are only one or two point masses, then these equations may be solved explicitly, as is often done in a freshman or sophomore calculus or physics class. For three or more masses, the problem today remains completely unsolved, despite the efforts of countless mathematicians over the past three centuries. It is true that numerical solutions of differential equations by computers have allowed us to approximate
+the behavior of the actual solutions in many cases, but there are still regimes in the n-body problem where the solutions are so complicated or chaotic that they defy even numerical computation.
+
+—-------------------------------------------------------
+
+Esto resulta ser una tarea formidable. Si solo hay una o dos masas puntuales, entonces estas ecuaciones pueden resolverse explícitamente, como se hace a menudo en una clase de cálculo o física de primer o segundo año. Para tres o más masas, el problema de hoy permanece completamente sin resolver, a pesar de los esfuerzos de innumerables matemáticos durante los últimos tres siglos. Es cierto que las soluciones numéricas de ecuaciones diferenciales por computadora nos han permitido aproximarnos al comportamiento de las soluciones reales en muchos casos, pero todavía hay regímenes en el problema de n cuerpos donde las soluciones son tan complicadas o caóticas que desafían incluso las soluciones numéricas. cálculo.
+
+—-------------------------------------------------------
+
+Although the explicit solution of nonlinear ordinary differential equations has proved elusive, there have been four landmark events over the past 130 years that have revolutionized the way we study dynamical systems. Perhaps the most important event occurred in 1890. King Oscar II of Sweden announced a prize for the first mathematician who could solve the n-body problem and thereby prove the stability of the solar system. Needless to say, nobody solved the original problem, but the great French mathematician Henri Poincar. came closest.
+
+—-------------------------------------------------------
+
+Aunque la solución explícita de ecuaciones diferenciales ordinarias no lineales ha resultado difícil de alcanzar, ha habido cuatro hitos en los últimos 130 años que han revolucionado la forma en que estudiamos los sistemas dinámicos. Quizás el evento más importante ocurrió en 1890. El rey Oscar II de Suecia anunció un premio para el primer matemático que pudiera resolver el problema de los n cuerpos y así probar la estabilidad del sistema solar. No hace falta decir que nadie resolvió el problema original, sino el gran matemático francés Henri Poincar. estuvo más cerca.
+
+—-------------------------------------------------------
+
+ In a beautiful and far-reaching paper, Poincar. totally revamped the way we tackle nonlinear ordinary differential equations. Instead of searching for explicit solutions of these equations, Poincar. advocated working qualitatively, using topological and geometric techniques, to uncover the global structure of all solutions. To him, a knowledge of all possible behaviors of the system under investigation was much more important than the rather specialized study of individual solutions.
+
+—-------------------------------------------------------
+
+En un artículo hermoso y de largo alcance, Poincar. renovó totalmente la forma en que abordamos las ecuaciones diferenciales ordinarias no lineales. En lugar de buscar soluciones explícitas de estas ecuaciones, Poincar. abogó por trabajar cualitativamente, utilizando técnicas topológicas y geométricas, para descubrir la estructura global de todas las soluciones. Para él, el conocimiento de todos los comportamientos posibles del sistema bajo investigación era mucho más importante que el estudio bastante especializado de soluciones individuales.
+
+—-------------------------------------------------------
+
+Poincar.’s prize-winning paper contained a major new insight into the behavior of solutions of differential equations. In describing these solutions, mathematicians had previously made the tacit assumption that what we now know as stable and unstable manifolds always match up. Poincar. questioned this assumption. He worked long and hard to show that this was always the case, but he could not produce a proof. He eventually concluded that the stable and unstable manifolds might not match up and could actually cross at an angle. 
+
+—-------------------------------------------------------
+
+El trabajo premiado de Poincar. contenía una nueva visión importante sobre el comportamiento de las soluciones de ecuaciones diferenciales. Al describir estas soluciones, los matemáticos habían hecho previamente la suposición tácita de que lo que ahora conocemos como variedades estables e inestables siempre coinciden. Poincar. cuestionó esta suposición. Trabajó mucho y duro para demostrar que siempre era así, pero no pudo presentar una prueba. Eventualmente concluyó que los múltiples estables e inestables podrían no coincidir y en realidad podrían cruzarse en ángulo.
+
+—-------------------------------------------------------
+
+
+When he finally admitted this possibility, Poincar. saw that this would cause solutions to behave in a much more complicated fashion than anyone had previously imagined. Poincar. had discovered what we now call chaos. Years later, after many attempts to understand the chaotic behavior of differential equations, he threw up his hands in defeat and wondered if anyone would ever understand the complexity he was finding. Thus, “chaos theory,” as it is now called, really dates back over 130 years to the work of Henri Poincar..
+
+—-------------------------------------------------------
+
+Cuando finalmente admitió esta posibilidad, Poincar. vio que esto haría que las soluciones se comportaran de una manera mucho más complicada de lo que nadie había imaginado previamente. Poincar. había descubierto lo que ahora llamamos caos. Años más tarde, después de muchos intentos por comprender el comportamiento caótico de las ecuaciones diferenciales, levantó las manos en señal de derrota y se preguntó si alguien llegaría a comprender la complejidad que estaba encontrando. Por lo tanto, la "teoría del caos", como se la llama ahora, en realidad se remonta a más de 130 años atrás, al trabajo de Henri Poincar.
+
+—-------------------------------------------------------
+
+Poincar.’s achievements in mathematics went well beyond the field of dynamical systems. His advocacy of topological and geometric techniques opened up whole new subjects in mathematics. In fact, building on his ideas, mathematicians turned their attention away from dynamical systems and toward these related fields in the ensuing decades. Areas of mathematics such as algebraic and differential topology were born and flourished in the twentieth century. But nobody could handle the chaotic behavior that Poincar. had observed, so the study of dynamics languished.
+
+—-------------------------------------------------------
+
+Los logros de Poincar. en matemáticas fueron mucho más allá del campo de los sistemas dinámicos. Su defensa de las técnicas topológicas y geométricas abrió temas completamente nuevos en matemáticas. De hecho, basándose en sus ideas, los matemáticos desviaron su atención de los sistemas dinámicos hacia estos campos relacionados en las décadas siguientes. Áreas de las matemáticas como la topología algebraica y diferencial nacieron y florecieron en el siglo XX. Pero nadie pudo manejar el caótico comportamiento de Poincar. había observado, por lo que el estudio de la dinámica languideció.
+
+—-------------------------------------------------------
+
+
+There were two notable exceptions to this. One was the work of the French mathematicians Pierre Fatou and Gaston Julia in the 1920’s on the dynamics of complex analytic maps. They too saw chaotic behavior, this time on what we now call the Julia set. Indeed, they realized how tremendously intricate these Julia sets could be, but they had no computer graphics available to see these sets, and as a consequence, this work also stopped in the 1930’s. A little later, the American mathematician G. D. Birkhoff adopted Poincar.’s qualitative point of view on dynamics. He advocated the study of iterative processes as a simpler way of understanding the dynamical behavior of differential equations, a viewpoint that we will adopt in this book.
+
+—-------------------------------------------------------
+
+Hubo dos excepciones notables a esto. Uno fue el trabajo de los matemáticos franceses Pierre Fatou y Gaston Julia en la década de 1920 sobre la dinámica de mapas analíticos complejos. Ellos también vieron un comportamiento caótico, esta vez en lo que ahora llamamos el set de Julia. De hecho, se dieron cuenta de lo tremendamente intrincados que podían ser estos conjuntos de Julia, pero no tenían gráficos de computadora disponibles para verlos y, como consecuencia, este trabajo también se detuvo en la década de 1930. Un poco más tarde, el matemático estadounidense G. D. Birkhoff adoptó el punto de vista cualitativo de Poincar sobre la dinámica. Abogó por el estudio de los procesos iterativos como una forma más sencilla de comprender el comportamiento dinámico de las ecuaciones diferenciales, un punto de vista que adoptaremos en este libro.
+
+—-------------------------------------------------------
+
+The second major development in dynamical systems occurred in the 1960’s. The American mathematician Stephen Smale reconsidered Poincar.’s crossing stable and unstable manifolds from the point of view of iteration and showed by an example now called the “Smale horseshoe” that the chaotic behavior that baffled his predecessors could indeed be understood and analyzed completely. The technique he used to analyze this is called symbolic dynamics and will be a major tool for us in this book. 
+
+—-------------------------------------------------------
+
+El segundo gran desarrollo en sistemas dinámicos ocurrió en la década de 1960. El matemático estadounidense Stephen Smale reconsideró el cruce de variedades estables e inestables de Poincar. desde el punto de vista de la iteración y mostró con un ejemplo ahora llamado "herradura de Smale" que el comportamiento caótico que desconcertó a sus predecesores podía entenderse y analizarse por completo. La técnica que usó para analizar esto se llama dinámica simbólica y será una herramienta importante para nosotros en este libro.
+
+—-------------------------------------------------------
+
+At the same time, the American meteorologist E. N. Lorenz, using a very crude computer, discovered that very simple differential equations could exhibit the type of chaos that Poincar. observed. Lorenz, who actually had been a Ph.D. student of Birkhoff’s, went on to observe that his simple meteorological model (now called the Lorenz system) exhibited what is called sensitive dependence on initial conditions. For him, this meant that long-range weather forecasting was all but impossible and showed that the mathematical topic of chaos was important in all other areas of science.
+
+—-------------------------------------------------------
+
+Al mismo tiempo, el meteorólogo estadounidense E. N. Lorenz, usando una computadora muy rudimentaria, descubrió que ecuaciones diferenciales muy simples podían exhibir el tipo de caos que Poincar. observado. Lorenz, quien en realidad había sido un Ph.D. estudiante de Birkhoff, pasó a observar que su modelo meteorológico simple (ahora llamado sistema de Lorenz) exhibía lo que se denomina dependencia sensible de las condiciones iniciales. Para él, esto significaba que el pronóstico del tiempo a largo plazo era prácticamente imposible y mostraba que el tema matemático del caos era importante en todas las demás áreas de la ciencia.
+
+
+—-------------------------------------------------------
+
+Then the third major development occurred in 1975 when T. Y. Li and James Yorke published an amazing paper called Period Three Implies Chaos [23]. In this paper, they showed that, if a simple continuous function on the real line has a point which cycles with period 3 under iteration, then this function must also have cycles of all other periods. Moreover, they also showed that this function must behave chaotically on some subset of the line. Perhaps most importantly, this paper was essentially the first time the word “chaos” was used in the scientific literature, and this motivated a huge number of mathematicians, scientists, and engineers to begin investigating this phenomenon.
+
+—-------------------------------------------------------
+
+Luego, el tercer gran desarrollo ocurrió en 1975 cuando T. Y. Li y James Yorke publicaron un artículo asombroso llamado Period Three Implies Chaos [23]. En este artículo, demostraron que, si una función continua simple en la línea real tiene un punto que cicla con el período 3 bajo iteración, entonces esta función también debe tener ciclos de todos los demás períodos. Además, también mostraron que esta función debe comportarse caóticamente en algún subconjunto de la línea. Quizás lo más importante es que este documento fue esencialmente la primera vez que se usó la palabra "caos" en la literatura científica, y esto motivó a una gran cantidad de matemáticos, científicos e ingenieros a comenzar a investigar este fenómeno.
+
+—-------------------------------------------------------
+
+Curiously, the Li-Yorke result was preceded by a research paper that had much more substantial results. In a 1964 paper [30], Oleksandr Sharkovsky determined that, if such a map on the real line had a cycle of period n, then he could list exactly all of the other periods that such a map must have. Unfortunately, this paper was published in Ukranian and hence was not known at all in the west. However, after the Li-Yorke paper appeared, this result became one of the most interesting in modern dynamical systems theory. All of these results are described in Chapter 11.
+
+—-------------------------------------------------------
+
+Curiosamente, el resultado de Li-Yorke fue precedido por un trabajo de investigación que tuvo resultados mucho más sustanciales. En un artículo de 1964 [30], Oleksandr Sharkovsky determinó que, si dicho mapa en la línea real tuviera un ciclo de período n, entonces podría enumerar exactamente todos los demás períodos que debe tener dicho mapa. Desafortunadamente, este artículo se publicó en ucraniano y, por lo tanto, no se conocía en absoluto en Occidente. Sin embargo, después de que apareció el artículo de Li-Yorke, este resultado se convirtió en uno de los más interesantes en la teoría moderna de sistemas dinámicos. Todos estos resultados se describen en el Capítulo 11.
+
+—-------------------------------------------------------
+
+These advances led to a tremendous flurry of activity in nonlinear dynamics in all areas of science and engineering in the ensuing decade. For example, the ecologist Robert May found that very simple iterative processes that arise in mathematical biology could produce incredibly complex and chaotic behavior. The physicist Mitchell Feigenbaum, building on Smale’s earlier work, noticed that, despite the complexity of chaotic behavior, there was some semblance of order in the way systems became chaotic. Physicists Harry Swinney and Jerry Gollub showed that these mathematical developments could actually be observed in physical applications, notably in turbulent fluid flow.
+
+—-------------------------------------------------------
+
+Estos avances condujeron a una tremenda oleada de actividad en dinámica no lineal en todas las áreas de la ciencia y la ingeniería en la década siguiente. Por ejemplo, el ecologista Robert May descubrió que los procesos iterativos muy simples que surgen en la biología matemática pueden producir un comportamiento increíblemente complejo y caótico. El físico Mitchell Feigenbaum, basándose en el trabajo anterior de Smale, notó que, a pesar de la complejidad del comportamiento caótico, había cierta apariencia de orden en la forma en que los sistemas se volvían caóticos. Los físicos Harry Swinney y Jerry Gollub demostraron que estos desarrollos matemáticos podían observarse en aplicaciones físicas, especialmente en el flujo de fluidos turbulentos.
+
+—-------------------------------------------------------
+
+ Later, other systems, such as the motion of the former planet Pluto or the beat of the human heart, have been shown to exhibit similar chaotic patterns. In mathematics, meanwhile, new techniques were developed to help understand chaos. John Guckenheimer and Robert F. Williams employed the theory of strange attractors to explain the phenomenon that Lorenz had observed a decade earlier. And tools such as the Schwarzian derivative, symbolic dynamics, and bifurcation theory—all topics we will discuss in this book—were shown to play an important role in understanding the behavior of dynamical systems.
+
+—-------------------------------------------------------
+
+Más tarde, se ha demostrado que otros sistemas, como el movimiento del antiguo planeta Plutón o el latido del corazón humano, exhiben patrones caóticos similares. En matemáticas, mientras tanto, se desarrollaron nuevas técnicas para ayudar a comprender el caos. John Guckenheimer y Robert F. Williams emplearon la teoría de los atractores extraños para explicar el fenómeno que Lorenz había observado una década antes. Y se demostró que herramientas como la derivada de Schwarzian, la dinámica simbólica y la teoría de la bifurcación (todos los temas que trataremos en este libro) desempeñan un papel importante en la comprensión del comportamiento de los sistemas dinámicos.
+
+—-------------------------------------------------------
+
+The fourth and most recent major development in dynamical systems was the availability of high-speed computing and, in particular, computer graphics. Foremost among the computer-generated results was Mandelbrot’s discovery in 1980 of what is now called the Mandelbrot set. This beautiful image immediately reawakened interest in the old work of Julia and Fatou. Using the computer images as a guide, mathematicians such as Bodil Branner, Adrien Douady, John Hubbard, Dennis Sullivan, as well as Fields Medalists John Milnor, Bill Thurston, Curt McMullen, Artur Avila, and Jean-Christophe Yoccoz jumped into the field and greatly advanced the classical theory. Other computer graphics images such as the orbit diagram and the Lorenz attractor also generated considerable interest among mathematicians and led to further advances.
+
+—-------------------------------------------------------
+
+—-------------------------------------------------------
+
+One of the most interesting side effects of the availability of high speed computing and computer graphics has been the development of an experimental component in the study of dynamical systems. Whereas the old masters in the field had to rely solely on their imagination and their intellect, now mathematicians have an invaluable additional resource to investigate dynamics: the computer. This tool has opened up whole new vistas for dynamicists, some of which we will sample in this book. In a series of sections called “Experiments,” you will have a chance to uncover some of these wonderful facts yourself.
+
+—-------------------------------------------------------
+
+Uno de los efectos secundarios más interesantes de la disponibilidad de computación de alta velocidad y gráficos por computadora ha sido el desarrollo de un componente experimental en el estudio de sistemas dinámicos. Mientras que los antiguos maestros en el campo tenían que confiar únicamente en su imaginación y su intelecto, ahora los matemáticos tienen un recurso adicional invaluable para investigar la dinámica: la computadora. Esta herramienta ha abierto perspectivas completamente nuevas para los dinamistas, algunas de las cuales mostraremos en este libro. En una serie de secciones llamadas "Experimentos", tendrá la oportunidad de descubrir por sí mismo algunos de estos hechos maravillosos.
+
