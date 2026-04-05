@@ -1,0 +1,204 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+
+\begin{document}
+
+Andrew Fowler • Mark McGuinness
+Chaos
+An Introduction for Applied Mathematicians
+
+\hfill
+
+Chapter 1
+Introduction
+
+\hfill
+
+\textbf{1.1 Limit Cycles}
+
+
+\hfill
+
+The behaviour of autonomous (that is, where time is not represented explicitly)
+ordinary differential equations in $\mathbb{R}^2$ is well understood. 
+
+\hfill
+
+The qualitative behaviour
+of the equation
+
+\[
+\dot{x} = f (x), x \in \mathbb{R}^2
+\]
+
+is organised by its \textit{fixed points}, where $\dot{x} = f (x) = 0$. 
+
+\hfill
+
+Elementary texts show how
+these maybe classified into \textit{saddles, spirals and nodes} depending on the eigenvalues
+of the Jacobian Df(x) at the fixed point. 
+
+\hfill
+
+In particular, if these eigenvalues are complex
+conjugates, there is a spiral, or focus; if they are real and of opposite sign, there
+is a saddle; and if they are real and of the same sign, there is a node: see Fig. 1.1.
+
+\hfill
+
+Nodes and spirals may be stable or unstable depending on whether the eigenvalues $\lambda$
+have $Re \lambda < 0$ or $Re \lambda > 0$, respectively; saddles are always unstable. 
+
+\hfill
+
+Other degenerate
+cases (centre, degenerate node) can occur, if $Re \lambda = 0$, or if two eigenvalues
+coalesce.
+
+Knowledge of the behaviour of trajectories near fixed points informs the method
+of phase plane analysis. 
+
+\hfill
+
+An example of its use is to find travelling solitary wave
+solutions of the Korteweg–de Vries equation
+
+\[
+u_t + uu_x + u_{xxx} = 0
+\]
+
+in the form $u = f (x - ct) = f (\xi)$, so that
+
+\[
+- cf' + f f' + f''' = 0
+\]
+
+with first integral
+
+\[
+- cf + \frac{1}{2} f^2 + f'' =0 
+\]
+
+(so that $f(\pm \infty) = 0)$. 
+
+\hfill
+
+This represents a nonlinear oscillator with potential $V( f ) = - \frac{1}{2} cf^2 + \frac{1}{6} 
+f^3$.1 
+
+\hfill
+
+If we take $c > 0$ (without loss of generality), then the phase plane is
+as in Fig. 1.2. 
+
+\hfill
+
+There are two fixed points, f = 0, and f = 2c, which are respectively
+a saddle and a centre. (The latter persists as a centre in the presence of nonlinear
+terms by virtue of the existence of a first integral, which in turn is associated with the
+absence of a damping term.) 
+
+\hfill
+
+Solitary waves exist, by virtue of the homoclinic orbit
+which connects 0 to itself. 
+
+\hfill
+
+We see in addition that there exists a family of periodic
+orbits lying within the homoclinic loop. One can think of the homoclinic orbit as a
+limiting member of this family with infinite period.
+
+More generally, periodic behaviour occurs in two-dimensional systems at isolated
+limit cycles. A limit cycle is a closed curve in a phase space (which, therefore,
+represents a periodic time series) to which nearby trajectories tend either as $t \to + \infty$
+(stable limit cycle) or as $t \to \infty$ (unstable limit cycle). A simple example (see also
+exercise 1.7) is offered by the system
+
+\[
+\dot{x} = x - y - x(x^2 + y^2),
+\]
+\[
+\dot{y} = x + y - y(x^2 + y^2); 
+\]
+
+
+by transforming to polar coordinates $(r, \theta),$ it is straightforward to find the phase
+plane shown in Fig. 1.3. There is a stable limit cycle at r = 1, and an unstable focus
+at r = 0.
+One is often interested in the behaviour of a (physical) system as a parameter
+changes (e.g. the Earth’s climate as the atmospheric CO2 level changes). In this case,
+one might study differential equations of the form
+
+\[
+\dot{x} = f (x, \mu), (1.6)
+\]
+
+where $\mu$ is a parameter. For some ranges of $\mu$, the system may exhibit steady
+behaviour, in others it may behave periodically. One then wishes to chart regions
+in parameter space where such qualitative changes occur. These delineate particular
+values of $\mu$ at which such bifurcations take place, and $\mu$ is then called a bifurcation
+parameter.
+
+1.2 Bifurcation Theory
+
+The Watt governor (see Fig. 1.4) is a device invented by James Watt around 1788 to
+control the flow of steam into the cylinders of an engine. 
+
+It is a simple but efficient
+device, which acts on the basis of bifurcation theory. 
+
+As shown in the figure, the
+device consists in essence of a pair of rigid pendulums attached to a central shaft,
+which rotates about its axis at a rate determined by the pressure of steam in the engine.
+
+
+The object is to have a device such that if this rotation rate becomes too large, then
+the arms of the device rise, thus opening a valve which alleviates the pressure.
+
+
+If we denote the angle of the arms of the governor to the downward vertical as $\theta$,
+and the angular velocity of the shaft as $\Omega$, then the equation governing the dynamics
+is, ignoring friction (see question 5.1),
+
+\[
+\ddot{\theta} - \Omega^2 \sin \theta \cos \theta + \Omega^2_c \sin \theta = 0, (1.7)
+\]
+
+
+where
+
+\[
+\Omega_c = \sqrt{\frac{g}{l}}
+\]
+
+g is the acceleration due to gravity and l is the length of the pendulum arms.
+
+The steady states of the system are $\theta = 0, \pi$, and also $\pm \cos^{-1} (\frac{\Omega^2_c}{\Omega^2})$ if $\Omega > \Omega_c$.
+
+The function of the governor can be seen in the fact that we can have $theta$ as an
+increasing function of $\Omega$ if $\Omega > \Omega_c$, thus opening the valve, and its operation relies
+on the existence of a pitchfork bifurcation at $\Omega = \Omega_c$. More precisely, if we linearise
+(1.7) near the origin, we see that
+
+\[
+\ddot{\theta} \approx (\Omega^2 - \Omega^2_c) \theta
+\]
+
+and thus the vertical state loses stability for $\Omega > \Omega_c$.
+
+Expanding further in $theta$ and also
+supposing that $\Omega - \Omega_c$ is small, we have
+
+\[
+\ddot{\theta} \approx (\Omega^2 - \Omega^2_c) \theta - \frac{1}{2} \Omega^2_c \theta^3...,
+\]
+
+which shows explicitly that there is an exchange of stability between $\theta = 0$ and the
+non-zero fixed points. Bifurcation theory is discussed in more detail in Chap. 3.
+
+
+\end{document}
+

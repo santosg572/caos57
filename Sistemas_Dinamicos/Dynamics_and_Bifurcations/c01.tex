@@ -1,0 +1,438 @@
+\pdfminorversion=4
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,latexsym,amsmath}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\begin{document}
+
+Dynamics_and_Bifurcations_C01
+
+\textbf{Bienvenida}
+
+\hfill
+
+Gracias por abrir nuestro libro. En su interior encontrará ideas y ejemplos sobre la geometría de la dinámica y bifurcaciones de ecuaciones diferenciales y en diferencias ordinarias. Como es un libro inusual tanto en contenido como en estilo, expliquemos cómo evolucionó a partir de nuestros cursos en la División de Matemáticas Aplicadas de la Universidad de Brown durante un período de tres años y cómo llegó a existir.
+
+\hfill
+
+El tema de las ecuaciones diferenciales y en diferencias, alias sistemas dinámicos, es un capítulo antiguo y muy honrado de la ciencia, que germinó en campos aplicados como la mecánica celeste, las oscilaciones no lineales y la dinámica de fluidos. A lo largo de los siglos, como resultado de los esfuerzos de científicos y matemáticos, ha surgido una teoría atractiva y de gran alcance. En los últimos años, debido principalmente a la proliferación de computadoras, los sistemas dinámicos han vuelto a echar raíces en aplicaciones con quizás una perspectiva más madura. Actualmente, el nivel de entusiasmo y actividad, no sólo en el frente matemático sino en casi todos los campos relacionados del aprendizaje, es único. El objetivo de nuestro libro es proporcionar una base modesta para participar en ciertas facetas teóricas y prácticas de estos apasionantes desarrollos.
+
+\hfill
+
+El tema de los sistemas dinámicos es muy amplio y no es fácilmente accesible para los estudiantes universitarios y principiantes en matemáticas o ciencias e ingeniería. Muchos de los libros y narrativas expositivas disponibles requieren una preparación matemática extensa o no están diseñados para ser utilizados como libros de texto. Es con el deseo de llenar este vacío que hemos escrito el presente libro.
+
+\hfill
+
+Es tanto nuestra convicción como nuestra experiencia que muchas de las ideas fundamentales de la dinámica y las bifurcaciones pueden explicarse en un entorno simple, matemáticamente revelador pero desprovisto de un formalismo extenso. En consecuencia, en el presente libro hemos optado por proceder mediante sistemas dinámicos de baja dimensión. Haremos momentáneamente un breve resumen de algunos de los temas centrales de nuestro libro, que necesariamente contiene algunos términos técnicos. Sin embargo, si es un estudiante principiante de dinámica, tenga la seguridad de que a medida que pase las páginas se le revelarán definiciones matemáticas precisas de todos estos términos, así como amplias interpretaciones de los fenómenos dinámicos en ecuaciones específicas.
+
+\hfill
+
+Las ecuaciones en las dimensiones uno, "uno y medio" y dos constituyen la mayor parte del texto. De hecho, se dedican casi cien páginas a ecuaciones escalares donde, a pesar de su simplicidad y aparente trivialidad, muchas de las ideas contemporáneas de nuestro tema ya son visibles. Demostramos, en particular, que las nociones básicas de estabilidad y bifurcaciones de campos vectoriales se explican fácilmente para ecuaciones escalares autónomas de dimensión uno, porque sus flujos se determinan a partir de los puntos de equilibrio. También exploramos cómo las soluciones numéricas de tales ecuaciones conducen a mapas escalares y mostramos algunas de las "anomalías", aunque profundas y emocionantes, que pueden surgir cuando la aproximación numérica es una bifurcación con duplicación de período pobre, caos, etc.
+
+\hfill
+
+Luego pasamos a la dinámica y bifurcaciones de soluciones periódicas de ecuaciones no autónomas con coeficientes periódicos (dimensión uno y medio) donde los mapas escalares reaparecen naturalmente como mapas de Poincaré. En nuestra discusión sobre la estabilidad de las soluciones periódicas de tales ecuaciones, demostramos cómo uno encuentra naturalmente ideas elementales pero esenciales de la teoría de la transformación de las ecuaciones diferenciales (teoría de la forma normal). Estas ideas, presentadas en el contexto de ecuaciones escalares y, lo que es más importante, la perspectiva filosófica del tema que transmiten, se repiten con frecuencia en capítulos posteriores, con algunos adornos técnicos.
+
+\hfill
+
+A continuación procedemos a investigar la dinámica de ecuaciones autónomas planas (dimensión dos) donde, además de los equilibrios, aparecen nuevos comportamientos dinámicos, como las órbitas periódicas y homoclínicas. Al estudiar la estabilidad de un punto de equilibrio, tocamos ciertos aspectos topológicos sutiles de los sistemas lineales, así como la teoría estándar de las funciones de Liapunov. La teoría de la bifurcación de los puntos de equilibrio de ecuaciones planas da lugar a una serie de ideas nuevas. Cuando, por ejemplo, la bifurcación es hacia otros equilibrios, uno se ve llevado naturalmente a introducir variedades centrales y el método de Liapunov-Schmidt para hacer una reducción a una ecuación escalar autónoma. La otra bifurcación importante desde un punto de equilibrio es hacia una órbita periódica (Poincaré-bifurcación de Andronov-Hopf) y su análisis puede reducirse al de una ecuación periódica no autónoma.
+
+\hfill
+
+Por supuesto, existen otras propiedades de las ecuaciones diferenciales planas que son de carácter más global y, por tanto, no pueden investigarse en términos de ecuaciones escalares. Entre estos temas interesantes, hemos elegido incluir la teoría de Poincaré-Bendixson sobre conjuntos de límites planos, geometría y bifurcaciones de sistemas conservadores y de gradientes, y una discusión sobre la estabilidad estructural, con, por supuesto, un énfasis en las ideas más que en Amplios detalles técnicos.
+
+\hfill
+
+Posteriormente incluimos una discusión abreviada de ciertos aspectos de la teoría de mapas planos. Como en el caso de las ecuaciones escalares, exploramos algunas de las dificultades asociadas con las soluciones numéricas de ecuaciones diferenciales a la luz de la dinámica y bifurcaciones de dichos mapas. Para indicar no sólo la riqueza sino también la desconcertante complejidad de este tema, incluimos simulaciones por computadora de algunos de los mapas famosos. La parte final del libro consta de varios ejemplos sustanciales en las dimensiones "dos y medio", tres y cuatro. Esta sección es más discursiva que las anteriores; es más como una vista previa diseñada para proporcionar una entrada suave a ciertas áreas de la investigación actual: oscilaciones forzadas, atractores extraños, caos, sistemas hamiltonianos completamente integrables, etc.
+
+\hfill
+
+Para obtener una lista más detallada de los temas cubiertos en el libro, por supuesto, está invitado a navegar por el índice. Sin embargo, al leer las entradas, tenga en cuenta que en los sistemas dinámicos, como en la mayor parte de las matemáticas, si bien los teoremas generales ciertamente ocupan un lugar central, en última instancia uno debe enfrentar la tarea de analizar la dinámica de ecuaciones específicas, especialmente en aplicaciones. Además, incluso para los más abstractos, abordar ejemplos específicos suele resultar una fuente insustituible de observaciones teóricas generales. Con esta filosofía en mente, tanto el texto como los ejercicios están entrelazados con numerosas ecuaciones diferenciales y en diferencias específicas de interés teórico y práctico. Desafortunadamente, desentrañar la dinámica de ecuaciones específicas a menudo resulta analíticamente insuperable.
+
+\hfill
+
+Sin embargo, la computadora, con toda su versatilidad actual, está comenzando a demostrar su utilidad en esta búsqueda. En este nuevo frente, nuestro programa informático favorito es, por supuesto, PHASER: An Animator/Simulator for Dynamical Systems, que acompaña a uno de nuestros libros anteriores Ecuaciones diferenciales y en diferencias mediante experimentos informáticos. Nuestros estudiantes han encontrado en PHASER un medio ideal para ver la "dinámica" en sistemas dinámicos y realizar algunas de sus tareas; Nosotros también lo utilizamos para producir muchas de las ilustraciones de nuestro libro.
+
+\hfill
+
+Los sistemas dinámicos son un área vasta y vibrante. Esperamos que Dynamics €9 Bifurcations despierte su interés en la teoría de la bifurcación lo suficiente como para que se sienta inclinado a explorar más a fondo este apasionante tema utilizando, por supuesto, nuestro otro libro favorito: Métodos de teoría de la bifurcación. Para finalizar, nos gustaría dejar constancia de nuestro agradecimiento a quienes han contribuido desinteresadamente a la realización de nuestro libro. En particular, la participación entusiasta de nuestros estudiantes -un grupo animado formado por estudiantes universitarios y de posgrado de matemáticas puras y aplicadas, y de ciencias e ingeniería- ayudó considerablemente a fijar nuestras ideas y establecer límites realistas para nuestro propio entusiasmo. Lecturas críticas del texto y sugerencias perspicaces de Nathaniel Chafee, Brian Coomes, Philip Davis, Robert Griffiths, Henry Hamman, Albert Harum-Alvarez, Arnoldo Horta, ~ahin Ko<.;ak, Nancy Lawther, Alan Lazer, Konstantin Mischaikow, Kenneth Palmer, Jack Pipkin, Placido Taboas, Natalia Sternberg, Michael Wolfson, Gaetano Zampieri y Lee Zia han sido de un valor inestimable a la hora de darle forma al manuscrito. Estamos igualmente agradecidos a Halil Buttann por su obra de arte clásico y a Fred Bisshopp, Kim Foster-Cosner, Sam Fulcomer, Stuart Geman, Donald McClure, Andrew Mossberg y Jim Yorke por su ayuda en cuestiones de modus vivendi.
+
+\hfill
+
+Jack Hale and Huseyin K09ak
+August 1991, Druid Hills
+
+\hfill
+
+\textbf{1 Scalar Autonomous Equation}
+
+\hfill
+
+En este capítulo inicial presentamos conceptos básicos seleccionados sobre la geometría de las soluciones de ecuaciones diferenciales ordinarias. Para mantener las ideas libres de complicaciones técnicas, el escenario es unidimensional: las ecuaciones diferenciales escalares autónomas. A pesar de su simplicidad, estos conceptos son centrales para nuestro tema y reaparecen en varias encarnaciones a lo largo del libro. Después de una colección de ejemplos, primero enunciamos un teorema sobre la existencia y unicidad de las soluciones. A continuación explicamos qué es una ecuación diferencial geométricamente. Para facilitar el análisis cualitativo, en esta discusión se incluyen conceptos geométricos como campo vectorial, órbita, punto de equilibrio y conjunto de límites. El siguiente tema es la noción de estabilidad de un punto de equilibrio y el papel de la aproximación lineal en la determinación de la estabilidad. Concluimos el capítulo con un ejemplo de una ecuación diferencial escalar definida en un espacio unidimensional distinto de la línea real: un círculo.
+
+\hfill
+
+\textbf{1.1. Existence and Uniqueness}
+
+\hfill
+
+
+En esta sección introductoria establecemos nuestra notación para ecuaciones diferenciales y sus soluciones. Luego, después de varios ejemplos motivacionales, enunciamos un teorema básico de existencia y unicidad.
+
+Sea I un intervalo abierto de la recta real $\mathbb{R}$ y sea
+
+\[
+x: I \to \mathbb{R}; t \mapsto x(t)
+\]
+
+be a real-valued differentiable function of a real variable t. We will use the notation x to denote the derivative dx/dt, and refer to t as time or the independent variable. Also, let
+
+ser una función diferenciable de valor real de una variable real t. Usaremos la notación x para denotar la derivada dx/dt y nos referiremos a t como tiempo o la variable independiente. Además, deja que
+
+f:lR--->lRj xf-tf(x)
+
+be a given real-valued function. In Chapter 1, we will consider differential equations of the form
+
+ser una función dada de valor real. En el Capítulo 1, consideraremos ecuaciones diferenciales de la forma
+
+x = f(x), (1.1)
+
+where x is an unknown function of t and f is a given function of x. Equa- tion (1.1) is called a scalar autonomous differential equation scalar because x is one dimensional (real-valued) and autonomous because the function f does not depend on t.
+
+donde x es una función desconocida de t y f es una función dada de x. La ecuación (1.1) se llama ecuación diferencial escalar autónoma porque x es unidimensional (de valor real) y autónoma porque la función f no depende de t.
+
+We say that a function x is a solution of Eq. (1.1) on the interval I if x(t) = f(x(t)) for all tEl. We will often be interested in a specific solution of Eq. (1.1) which at some initial time to E I has the value Xo. Thus we will study x satisfying
+
+Decimos que una función x es una solución de la ecuación. (1.1) en el intervalo I si x(t) = f(x(t)) para todo tEl. A menudo estaremos interesados ​​en una solución específica de la ecuación. (1.1) que en algún momento inicial para E I tiene el valor Xo. Así estudiaremos x satisfaciendo
+
+x = f(x), x(to) = Xo· (1.2)
+
+Equation (1.2) is referred to as an initial-value problem and any of its solutions is called a solution through Xo at to. A useful consequence of the autonomous character of the differential equation in Eq. (1.2) is that there is no loss of generality in assuming that the initial value-problem is specified with to = 0, and we will often tacitly do so. To wit, let x(t) be a solution of Eq. (1.2) through Xo at to and define y(t) == x(t + to). Now, observe that y(t) is a solution of Eq. (1.2) through Xo at zero since
+
+La ecuación (1.2) se denomina problema de valor inicial y cualquiera de sus soluciones se denomina solución a través de Xo at to. Una consecuencia útil del carácter autónomo de la ecuación diferencial en la ecuación. (1.2) es que no hay pérdida de generalidad al suponer que el problema de valor inicial se especifica con to = 0, y a menudo lo haremos tácitamente. Es decir, sea x(t) una solución de la ecuación. (1.2) hasta Xo en to y defina y(t) == x(t + to). Ahora observe que y(t) es una solución de la ecuación. (1.2) hasta Xo en cero desde
+
+y(t) = x(t + to) = f(x(t + to)) = f(y(t)) and y(O) = Xo·
+
+As you may recall from your previous studies, a solution of Eq. (1.2) through Xo at to is given implicitly, using the method of "separation of variables," by the formula
+
+Como recordará de sus estudios anteriores, una solución de la ecuación. (1.2) hasta Xo at to se da implícitamente, utilizando el método de "separación de variables", mediante la fórmula
+
+$$
+\int_{x_0}^x \frac{1}{f(s) ds = t - t_0}
+$$
+(1.3)
+
+
+when the integral is defined. One obtains x(t) by finding the inverse of the function on the left-hand side of this equation. Occasionally, we will use this formula to exhibit solutions of special differential equations for the purposes of illustrations. However, in general, it is impossible to perform these integrations and one should not expect to obtain explicit formulas for solutions. It is important to realize this fact from the beginning. In fact, our objective in this book is to understand as much as possible about the behavior of solutions of differential equations without the knowledge of an explicit formula for the solutions.
+
+cuando la integral está definida. Se obtiene x(t) encontrando la inversa de la función en el lado izquierdo de esta ecuación. Ocasionalmente usaremos esta fórmula para mostrar soluciones de ecuaciones diferenciales especiales con fines ilustrativos. Sin embargo, en general, es imposible realizar estas integraciones y no se debe esperar obtener fórmulas explícitas para las soluciones. Es importante darse cuenta de este hecho desde el principio. De hecho, nuestro objetivo en este libro es comprender lo más posible sobre el comportamiento de las soluciones de ecuaciones diferenciales sin el conocimiento de una fórmula explícita para las soluciones.
+
+Let us now give several examples of differential equations and their solutions in order to realize some of the difficulties that arise in laying the foundations for the theory, that is, the existence and the uniqueness of solutions of Eq. (1.2).
+
+Demos ahora varios ejemplos de ecuaciones diferenciales y sus soluciones para darnos cuenta de algunas de las dificultades que surgen al sentar las bases de la teoría, es decir, la existencia y unicidad de las soluciones de la ecuación. (1.2).
+
+Example 1.1. The first example: Consider the differential equation
+
+X= -x. (1.4)
+
+It can be seen by simple differentiation that x(t) e-txo is a solution through Xo at to = 0, and it is defined for all t E JR. Question: is this the only solution of Eq. (1.4) satisfying the initial value x(O) = xo? <:;
+
+Puede verse por simple diferenciación que x(t) e-txo es una solución a través de Xo en to = 0, y está definida para todo t E JR. Pregunta: ¿es esta la única solución de la ecuación? (1.4) que satisface el valor inicial x(O) = xo? <:;
+
+Example 1.2. Finite time: Consider the initial-value problem
+
+x(O) = Xo. (1.5)
+
+It is easy to verify by direct substitution, or using formula (1.3), that the function
+
+x(t) = -1 Xo
+- xot
+
+is a solution. Notice that, although the function f(x) = x 2 is remarkably "nice," the solution x(t) is defined on the interval (-00, l/xo) for Xo > 0, on (-00, +00) for Xo = 0, and (l/xo, +00) for Xo < O. The importance of this example is that the solution is not always defined on all of JR and the interval of definition of the solution varies with the initial condition. Furthermore, the solution becomes unbounded as t approaches l/xo, the boundary of the interval of definition. <:;
+
+es una solución. Observe que, aunque la función f(x) = x 2 es notablemente "agradable", la solución x(t) se define en el intervalo (-00, l/xo) para Xo > 0, en (-00, +00 ) para Xo = 0, y (l/xo, +00) para Xo < O. La importancia de este ejemplo es que la solución no siempre está definida en todos los JR y el intervalo de definición de la solución varía con la condición inicial. . Además, la solución se vuelve ilimitada cuando t se aproxima a l/xo, el límite del intervalo de definición. <:;
+
+Example 1.3. Multiple solutions: Consider the initial-value problem
+
+x= ..;x, x(O) = Xo, with x;:::: o.
+
+A solution is given by x(t) = (t + 2Jxol /4. If Xo = 0, then there is also the solution which is identically zero for all t. Therefore, the initial-value problem above does not have a unique solution through Xo at zero.
+
+Una solución está dada por x(t) = (t + 2Jxol /4. Si Xo = 0, entonces también existe la solución que es idénticamente cero para todo t. Por lo tanto, el problema de valor inicial anterior no tiene una solución única a través de Xo en cero.
+
+In this example, the domain of f(x) = .jX is naturally restricted to a subset of IR. In applications, this situation arises often, for instance, a population of insects cannot grow to be negative. <)
+
+En este ejemplo, el dominio de f(x) = .jX está naturalmente restringido a un subconjunto de IR. En las aplicaciones, esta situación ocurre a menudo, por ejemplo, una población de insectos no puede llegar a ser negativa. <)
+
+The examples above show the necessity of certain conditions on the function f in order to guarantee the existence and the uniqueness of solutions to the initial-value problem Eq. (1.2). We will state such a theorem below, and also present a more general result in the Appendix. First, however, we need to introduce a small piece of notation.
+
+Los ejemplos anteriores muestran la necesidad de ciertas condiciones en la función f para garantizar la existencia y unicidad de las soluciones al problema de valor inicial Ec. (1.2). Enunciaremos dicho teorema a continuación y también presentaremos un resultado más general en el Apéndice. Sin embargo, primero debemos introducir una pequeña parte de notación.
+
+We will denote the set of all continuous functions f : IR --+ IR by eO(IR, IR), and the set of all differentiable functions with continuous first derivatives by e 1(IR, IR). Analogously, we will use en(IR, IR) to indicate the functions with continuous derivatives up through order n. If the domain of functions is a subset U of IR, then we will use the notation eO(U, IR), etc. If there is no ambiguity, we will usually omit the dependence on the domain and simply refer to a member of one of these sets as a Co, e 1 , or en function, etc. In the case of a real-valued continuous function of several variables, f : IRk --+ IR is said to be a e 1 function if all the first partial derivatives are continuous.
+
+Denotaremos el conjunto de todas las funciones continuas f : IR --+ IR por eO(IR, IR), y el conjunto de todas las funciones diferenciables con primeras derivadas continuas por e 1(IR, IR). De manera análoga, usaremos en(IR, IR) para indicar las funciones con derivadas continuas hasta el orden n. Si el dominio de funciones es un subconjunto U de IR, entonces usaremos la notación eO(U, IR), etc. Si no hay ambigüedad, generalmente omitiremos la dependencia del dominio y simplemente nos referiremos a un miembro de uno. de estos conjuntos como una función Co, e 1 o en, etc. En el caso de una función continua de valor real de varias variables, f : IRk --+ IR se dice que es una función e 1 si todas las primeras derivadas parciales son continuos.
+
+To emphasize the dependence of a solution x(t) of Eq. (1.2) through xo at to = 0 on the initial condition, we will often use the notation 'P(t, xo) for this solution. In other words, 'P(t, xo) = x(t) and '1'(0, xo) = xo.
+
+Para enfatizar la dependencia de una solución x(t) de la ecuación. (1.2) hasta xo en to = 0 en la condición inicial, a menudo usaremos la notación 'P(t, xo) para esta solución. En otras palabras, 'P(t, xo) = x(t) y '1'(0, xo) = xo.
+
+Theorem 1.4. (Existence and Uniqueness of Solutions)
+
+(i) If f E eO(IR, IR), then, for any Xo E IR, there is an interval (possibly infinite) Ixo == (axo ' (3xo) containing to = 0 and a solution 'P(t, xo) of the initial-value problem
+
+x = f(x), x(O) = Xo,
+
+defined for all t E Ixo ' satisfying the initial condition '1'(0, xo) = Xo.
+
+Also, if axo is finite, then
+
+lim 1'P(t, xo)1 = +00,
+t--+n;to
+
+or, if (3xo is finite, then
+
+lim 1'P(t, xo)1 = +00.
+t--+(3;;;o
+
+(ii) If, in addition, f E e 1 (IR, IR), then 'P(t, xo) is unique on Ixo and 'P(t, xo) is continuous in (t, xo) together with its first partial derivatives, that is, rp(t, xo) is a e 1 function. <)
+
+The largest possible interval Ixo in part (i) of the theorem above is called the maximal interval of existence of the solution 'P(t, xo). The maximal interval of existence of a solution of Example 1.2 is shown in Figure 1.0.
+
+El mayor intervalo posible Ixo en el inciso (i) del teorema anterior se denomina intervalo máximo de existencia de la solución 'P(t, xo). El intervalo máximo de existencia de una solución del ejemplo 1.2 se muestra en la Figura 1.0.
+
+
+
+
+In applications, the function I may not be defined on all of JR. One common situation is that I E Cn(U, JR), where U is an open and bounded subset of JR. In this case, the conclusions of Theorem 1.4 are the same except that all of the limit points of <pet, xo) as t -+ ato (or t -+ (3;0) must belong to the boundary of U.
+
+En las aplicaciones, es posible que la función I no esté definida en todos los JR. Una situación común es que I E Cn(U, JR), donde U es un subconjunto abierto y acotado de JR. En este caso, las conclusiones del Teorema 1.4 son las mismas excepto que todos los puntos límite de <pet, xo) cuando t -+ ato (o t -+ (3;0) deben pertenecer a la frontera de U.
+
+Let us now return briefly to the notation <pet, xo) for the solution of an initial-value problem and reexamine it in light of our foregoing discussions. For a given C1 function I, Theorem 1.4 implies that the family of all specific solutions of x = I(x) can be represented by <pet, xo) viewed as a function of two variables, where t E 1xo and Xo E JR. As such, <pet, xo) is called the flow of x = I (x). The domain of this function of two variables could be somewhat complicated because the domain of t may depend on Xo, as seen in Example 1.2.
+
+Volvamos ahora brevemente a la notación <pet, xo) para la solución de un problema con valores iniciales y volvamos a examinarla a la luz de nuestras discusiones anteriores. Para una función C1 dada I, el teorema 1.4 implica que la familia de todas las soluciones específicas de x = I(x) puede representarse como <pet, xo) vista como una función de dos variables, donde t E 1xo y Xo E JR. Como tal, <pet, xo) se denomina flujo de x = I (x). El dominio de esta función de dos variables podría ser algo complicado porque el dominio de t puede depender de Xo, como se ve en el ejemplo 1.2.
+
+The fine structures of flows will be one of our main concerns in the following chapters. For the moment, we will be content to introduce a common name for our subject-dynamical systems. If I is a C1 function, then, for each t, the flow <pet, xo) gives rise to a map of JR into itself (with possibly restricted domain) given by Xo 1-+ <pet, xo). Here are some of the important properties of this map:
+
+Las finas estructuras de los flujos serán una de nuestras principales preocupaciones en los siguientes capítulos. Por el momento, nos contentaremos con introducir un nombre común para nuestros sistemas dinámicos de sujetos. Si I es una función C1, entonces, para cada t, el flujo <pet, xo) da lugar a un mapa de JR en sí mismo (con dominio posiblemente restringido) dado por Xo 1-+ <pet, xo). Estas son algunas de las propiedades importantes de este mapa:
+
+(i) <p(O, xo) = Xo,
+(ii) <pet + s, xo) = <pet, <pes, xo)) for each t and s when the map on either side is defined,
+(iii) <pet, xo) is a C1 map for each t and it has a C1 inverse given by <pc -t, xo).
+
+A map of JR into itself satisfying these three properties is called a C1 dynamical system on JR. So, we can say in conclusion that the flow of a scalar autonomous differential equation gives rise to a dynamical system on JR. There are also other ways of obtaining dynamical systems and we will see one such important case in Chapter 3.
+
+Un mapa de JR en sí mismo que satisface estas tres propiedades se denomina sistema dinámico C1 en JR. Entonces, podemos decir en conclusión que el flujo de una ecuación diferencial escalar autónoma da lugar a un sistema dinámico en JR. También hay otras formas de obtener sistemas dinámicos y veremos un caso importante en el Capítulo 3.
+
+Exercises
+
+1.1. Verifying hypotheses: Show that the initial-value problem:i; = 1+x2 , x(O) = o has a unique solution by verifying the hypotheses of Theorem 1.4. Find the solution. What is the maximal interval of existence of the solution?
+
+1.1. Verificación de hipótesis: Demuestre que el problema con valores iniciales:i; = 1+x2 , x(O) = o tiene una solución única al verificar las hipótesis del Teorema 1.4. Encuentra la solución. ¿Cuál es el intervalo máximo de existencia de la solución?
+
+1.2. Multiple solutions and numerics: Reexamine Example 1.3, :i; = ,.;x, with the initial value x(O) = 0 in light of Theorem 1.4. Which hypothesis of the theorem is not met by the example to prevent the uniqueness of solutions? Solve this initial value problem numerically on the computer. If you have not studied numerical solutions of differential equations before, you may want to return to this task after reading Chapter 3 or consult the reference below. 
+
+1.2. Múltiples soluciones y números: reexamine el ejemplo 1.3, :i; = ,.;x, con el valor inicial x(O) = 0 a la luz del Teorema 1.4. ¿Qué hipótesis del teorema no se cumple con el ejemplo para evitar la unicidad de las soluciones? Resuelva este problema de valor inicial numéricamente en la computadora. Si no ha estudiado soluciones numéricas de ecuaciones diferenciales antes, es posible que desee volver a esta tarea después de leer el Capítulo 3 o consultar la referencia a continuación.
+
+Which solution do you obtain? Try several different numerical algorithms. Do you succeed in obtaining the nonzero solution? Help: In the sequel, some of the exercises will include numerical experiments with differential equations. To eliminate the burden of programming, we suggest the computer program PHASER: An Animator/Simulator for Dynamical Systems which accompanies one of our earlier books, Koc;ak [1989].
+
+¿Qué solución obtienes? Pruebe varios algoritmos numéricos diferentes. ¿Logró obtener la solución distinta de cero? Ayuda: En la secuela, algunos de los ejercicios incluirán experimentos numéricos con ecuaciones diferenciales. Para eliminar la carga de la programación, sugerimos el programa informático PHASER: An Animator/Simulator for Dynamical Systems que acompaña a uno de nuestros libros anteriores, Kočak [1989].
+
+1.3. Infinitely many solutions: Show that the differential equation :i; = X 2/ 3 has infinitely many solutions satisfying x(O) = 0 on every interval [0, a].
+
+1.4. No solution: Consider the function
+
+f(x) = {I ~fx ~ 0
+2 If x> o.
+
+Show that the differential equation :i; = f(x) has no solution satisfying x(O) = 0 on any open interval about to = o.
+
+1.2. Geometry of Flows
+
+In preparation for the qualitative study of differential equations we now reconsider the scalar autonomous differential equation (1.1) and its flow cp(t, xo) from a geometric point of view.
+
+Como preparación para el estudio cualitativo de ecuaciones diferenciales, ahora reconsideramos la ecuación diferencial escalar autónoma (1.1) y su flujo cp(t, xo) desde un punto de vista geométrico.
+
+At each point on the (t, x)-plane where f(x) is defined, the righthand side of Eq. (1.1) gives a value of the derivative dx/dt which can be thought of as the slope of a line segment passing through that point. The collection of all such line segments is called the direction field of the differential equation (1.1).
+
+En cada punto del plano (t, x) donde se define f(x), el lado derecho de la ecuación. (1.1) da un valor de la derivada dx/dt que puede considerarse como la pendiente de un segmento de recta que pasa por ese punto. La colección de todos esos segmentos de línea se denomina campo direccional de la ecuación diferencial (1.1).
+
+The graph of a solution of Eq. (1.2) through xo, that is, the subset of the (t, x)-plane defined by {(t, cp(t, xo)) : t E Ixo } is called the trajectory through Xo. A trajectory is tangent to the line segments of the direction field at each point on the plane it passes through. The direction fields and several representative trajectories of Examples 1.1 and 1.2 are shown in Figures 1.1a and 1.2a, respectively.
+
+La gráfica de una solución de la ecuación. (1.2) hasta xo, es decir, el subconjunto del plano (t, x) definido por {(t, cp(t, xo)) : t E Ixo } se denomina trayectoria a través de Xo. Una trayectoria es tangente a los segmentos de línea del campo de dirección en cada punto del plano por el que pasa. Los campos de dirección y varias trayectorias representativas de los Ejemplos 1.1 y 1.2 se muestran en las Figuras 1.1a y 1.2a, respectivamente.
+
+
+
+
+
+Since f(x) is independent of t, on any line parallel to the t-axis the segments of the direction field all have the same slope. Therefore, it is natural to consider the projection onto the x-axis of the direction field and the trajectories of Eq. (1.1).
+
+Como f(x) es independiente de t, en cualquier recta paralela al eje t todos los segmentos del campo direccional tienen la misma pendiente. Por lo tanto, es natural considerar la proyección sobre el eje x del campo de dirección y las trayectorias de la ecuación. (1.1).
+
+To each point x on the x-axis we can associate the directed line segment from x to x+ f(x). We can view this directed line segment as a vector based at x. The collection of all such vectors is called the vector field generated by Eq. (1.1), or simply the vector field f; see Figures 1.1b and 1.2b.
+
+A cada punto x en el eje x podemos asociar el segmento de recta dirigido de x a x+ f(x). Podemos ver este segmento de línea dirigido como un vector basado en x. La colección de todos esos vectores se denomina campo vectorial generado por la ecuación. (1.1), o simplemente el campo vectorial f; consulte las Figuras 1.1b y 1.2b.
+
+Definition 1.5. The positive orbit,+(xo), negative orbit'Y-(xo), and orbit
+
+
+
+")'(xo) of xo are defined, respectively, as the following subsets of the x-axis:
+
+")'+(xo) = U cp(t, xo),
+tE[O, i3xQ 1
+")'- (xo) = U cp(t, xo),
+tE(axQ,O]
+")'(xo) = U cp(t, xo).
+tE(a xQ , i3xQl
+
+The "velocity" of an orbit at a point x is given by the element of the vector field at that point; see, for example, Figures LIb and 1.2b. As shown in Figures 1.3 and 1.4, on the orbit ")'(xo) we insert arrows to indicate the direction cp( t, xo) is changing as t increases. The flow of a differential equation is then drawn as the collection of all its orbits together with the direction arrows and the resulting picture is called the phase portrait of the differential equation; see Figures 1.3b and l.4b.
+
+La "velocidad" de una órbita en un punto x viene dada por el elemento del campo vectorial en ese punto; véanse, por ejemplo, las Figuras LIb y 1.2b. Como se muestra en las Figuras 1.3 y 1.4, en la órbita ")'(xo) insertamos flechas para indicar la dirección que cp( t, xo) cambia a medida que t aumenta. Luego, el flujo de una ecuación diferencial se dibuja como la colección de todos sus órbitas junto con las flechas de dirección y la imagen resultante se denomina retrato de fase de la ecuación diferencial (véanse las figuras 1.3by 1.4b);
+
+It is clear from the definitions above that the orbit ")'(xo) is the projection onto the x-axis of the trajectory through Xo. Consequently, in our investigation of qualitative properties of solutions of differential equations, it will be advantageous to focus our attention on orbits (see Lemma 1.7 below). In the process, however, we will lose the information about the time-parametrization, the speed, of solutions. For instance, while it takes an infinite amount of time to trace the negative orbit ")'- (xo) = [xo, +00), with Xo > 0, of Example 1.1, it takes only finite time to trace the positive orbit ")'+(xo) = [xo, +00), with Xo > 0, of Example 1.2; see Figures 1.3a and 1.4a.
+
+De las definiciones anteriores se desprende claramente que la órbita ")'(xo) es la proyección sobre el eje x de la trayectoria a través de Xo. En consecuencia, en nuestra investigación de las propiedades cualitativas de las soluciones de ecuaciones diferenciales, será ventajoso centrarse Sin embargo, en el proceso perderemos la información sobre la parametrización temporal, la velocidad, de las soluciones, mientras que se necesita una cantidad infinita de tiempo para trazar la órbita negativa. ")'- (xo) = [xo, +00), con Xo > 0, del ejemplo 1.1, sólo se necesita un tiempo finito para trazar la órbita positiva ")'+(xo) = [xo, +00), con Xo > 0, del Ejemplo 1.2; ver Figuras 1.3a y 1.4a.
+
+
+
+There are some orbits which are especially simple, but they play a central role in the qualitative study of differential equations, as well as in applications.
+
+Hay algunas órbitas que son especialmente simples, pero que juegan un papel central en el estudio cualitativo de ecuaciones diferenciales, así como en aplicaciones.
+
+Definition 1.6. A point x E ill. is called an equilibrium point (also critical point, steady state solution, etc.) ofi; = f(x), if f(x) = 0.
+
+When x is an equilibrium point, the constant function x(t) = x for all t is a solution, and thus the orbit ')'(x) is x itself.
+
+It is very easy to draw orbits of Eq. (1.1) from the graph of f(x). In fact, the sign of f determines the direction of the motion along an orbit. If f(xo) < 0, then the solution is decreasing in t, and cp(t, xo) either approaches an equilibrium point or tends to -00 as t --+ (3xo. Similarly, if f(xo) > 0, then the solution is increasing in t, and cp(t, xo) either approaches an equilibrium point or tends to +00 as t --+ (3xo; see Figures 1.5a and 1.6a. Furthermore, if solutions ofthe initial-value problem for Eq. (1.1) are unique, then the solutions through two different initial conditions with Xo < Yo satisfy cp(t, xo) < cp(t, yo). Thus we have the following lemma:
+
+Es muy fácil dibujar órbitas de la ecuación. (1.1) de la gráfica de f(x). De hecho, el signo de f determina la dirección del movimiento a lo largo de una órbita. Si f(xo) < 0, entonces la solución es decreciente en t, y cp(t, xo) se acerca a un punto de equilibrio o tiende a -00 cuando t --+ (3xo. De manera similar, si f(xo) > 0 , entonces la solución es creciente en t, y cp(t, xo) se aproxima a un punto de equilibrio o tiende a +00 cuando t --+ (3xo; véanse las figuras 1.5a y 1.6a. Además, si las soluciones del valor inicial problema para la ecuación (1.1) son únicas, entonces las soluciones a través de dos condiciones iniciales diferentes con Xo < Yo satisfacen cp(t, xo) < cp(t, yo).
+
+Lemma 1.7. Suppose that the solution cp(t, xo) of the initial-value problem is unique for every Xo. Then
+
+(i) cp(t, xo) is a monotone function in t;
+(ii) cp(t, xo) < cp(t, Yo) for all t if Xo < Yo
+(iii) if ')'+(xo) [respectively, ,),-(xo)] is bounded, then (3xo = +00 [respectively, Q xo = -00] and cp(t, xo) --+ x as t --+ +00 [respectively, t --+-00], where x is an equilibrium point. <>
+
+Let us now illustrate the approach to drawing phase portraits discussed above. We note, however, that unlike the following example, it may not
+
+Ilustremos ahora el enfoque para dibujar retratos de fase discutido anteriormente. Sin embargo, observamos que, a diferencia del siguiente ejemplo, es posible que no
+
+
+Figure 1.5. Determining the phase portrait of ± = -x from (a) the function f(x) = -x, and (b) from the corresponding potential function F(x) = x 2 /2. Notice that, unlike in the previous figures, the variable x is assigned to the horizontal axis. In the subsequent figures we will use whichever assignment is more convenient. 
+
+Determinar el retrato de fase de ± = -x a partir de (a) la función f(x) = -x, y (b) de la función potencial correspondiente F(x) = x 2/2. Observe que, a diferencia de las figuras anteriores, la variable x está asignada al eje horizontal. En las siguientes figuras usaremos la asignación que sea más conveniente.
+
+be so easy to locate the equilibria of a given differential equation. We will address this difficulty later.
+
+Será muy fácil localizar los equilibrios de una ecuación diferencial dada. Abordaremos esta dificultad más adelante.
+
+Example 1.8. Consider the differential equation
+
+x = x - x 3 . (1.6)
+
+The equilibrium points of this equation are -1, 0, and 1, and the function f(x) = x - x 3 is positive on the interval (-00, -1), negative on (-1,0),
+
+
+Figure 1.6. Determining the phase portrait of x = x 2 from (a) the function f(x) = x 2 , and (b) from the potential function F(x) = -x3 /3.
+
+Determinar el retrato de fase de x = x 2 a partir de (a) la función f(x) = x 2 y (b) de la función potencial F(x) = -x3 /3.
+
+positive on (0, 1), and negative on (1, +00). Therefore, its phase portrait can easily be drawn as in Figure 1. 7a. The orbits are the open intervals (-00, -1), (-1,0), (0, 1), (1, +00), and the points {-1}, {O}, and {1}. <)
+
+Determining the origins and ultimate destinations of orbits will be one of our primary concerns. Therefore, we introduce the following important concepts:
+
+Determinar los orígenes y destinos finales de las órbitas será una de nuestras principales preocupaciones. Por lo tanto, introducimos los siguientes conceptos importantes:
+
+Definition 1.9. If ,-(xo) is bounded, then the set
+
+f(x) = x - X3
+
+
+Figure 1.7. Determining the phase portrait of ± = x - x 3 from (a) the function f (x) = x - x 3 , and (b) from the corresponding potential function F(x) = -x2 j2+x4 j4.
+
+is called the a-limit set of Xo. Similarly, if ,+ (xo) is bounded, then the set
+
+w(xo) = lim <pet, xo)
+t--+(3;;o
+
+is called the w-limit set of Xo.
+
+The last part of Lemma 1.7 can now be restated as follows: the limit sets a(xo) and w(xo) are equilibrium points, if they exist. In case you are wondering, the reason for this somewhat strange choice of terminology is that a and w are, respectively, the first and the last letters of the Greek alphabet.
+
+La última parte del Lema 1.7 ahora puede reformularse de la siguiente manera: los conjuntos límite a(xo) y w(xo) son puntos de equilibrio, si existen. En caso de que se lo pregunte, la razón de esta elección de terminología un tanto extraña es que a y w son, respectivamente, la primera y la última letra del alfabeto griego.
+
+We now present another method that is particularly useful in determining the flows of certain specific differential equations. Equation (1.1) can be rewritten in the form
+
+Ahora presentamos otro método que es particularmente útil para determinar los flujos de ciertas ecuaciones diferenciales específicas. La ecuación (1.1) se puede reescribir en la forma
+
+± = f(x) = - !F(X), (1.7)
+
+where
+
+F(x) == -fox f(s) ds.
+
+Equation (1.7) in this form is a special case of gmdient systems which we will study later in a more general setting. At this time, it is sufficient to note that, if x(t) is a solution of Eq. (1.7), then
+
+La ecuación (1.7) en esta forma es un caso especial de sistemas gmdientes que estudiaremos más adelante en un contexto más general. En este momento, basta observar que, si x(t) es una solución de la ecuación. (1.7), entonces
+
+dt F (x(t)) = dx F (x(t)) . dt x(t) = - [f (x(t))]2 ::; o.
+
+Thus F is always decreasing along the solution curves, and hence can be thought of as a "potential" function of Eq. (1.1). It is evident that the equilibrium points of the differential equation (1.7) are extreme points of the potential function F.
+
+Por tanto, F siempre disminuye a lo largo de las curvas solución y, por tanto, puede considerarse como una función "potencial" de la ecuación. (1.1). Es evidente que los puntos de equilibrio de la ecuación diferencial (1.7) son puntos extremos de la función potencial F.
+
+Let us now reconsider the previous examples from this new viewpoint.
+
+Reconsideremos ahora los ejemplos anteriores desde este nuevo punto de vista.
+
+Example 1.1 revisited. Equation (1.4) can be written as a gradient system (1.7) with the potential function F(x) = x2/2. The orbits of
+
+± = -x = - d~ (~2)
+
+can be drawn by thinking of the motion of a particle on the graph of the potential function F(x). As shown in Figure 1.5b, a particle at any point Xo goes downhill with (ever decreasing) velocity f (x) towards the equilibrium point O. Therefore, the orbits for this equation are the intervals (-00, 0), (0, +00), and the equilibrium point O. 
+
+se puede dibujar pensando en el movimiento de una partícula en la gráfica de la función potencial F(x). Como se muestra en la Figura 1.5b, una partícula en cualquier punto Xo va cuesta abajo con una velocidad (cada vez decreciente) f (x) hacia el punto de equilibrio O. Por lo tanto, las órbitas para esta ecuación son los intervalos (-00, 0), (0 , +00), y el punto de equilibrio O.
+
+Example 1.2 revisited. The differential equation (1.5) can be written as
+
+
+with the potential function F(x) = -x3 /3. The graph of F(x) and the flow are shown in Figure 1.6b. Here the orbits are again the same intervals as in the previous example, however, the two flows are different. <>
+
+con la función potencial F(x) = -x3 /3. La gráfica de F(x) y el flujo se muestran en la figura 1.6b. Aquí las órbitas vuelven a tener los mismos intervalos que en el ejemplo anterior, sin embargo, los dos flujos son diferentes. <>
+
+Example 1.8 revisited. The differential equation (1.6) can be written as
+
+± = x _ X 3 = _ d~ ( _ x; + ~4)
+
+with the potential function F( x) = -x2/2 + x4 /4. The graph of F( x) and the flow are shown in Figure 1. 7b. Here the orbits are the intervals (-00, -1), (-1,0), (0, 1), and (1, +00), and the equilibrium points -1, 0, and 1. ¢
+
+con la función potencial F( x) = -x2/2 + x4/4. La gráfica de F( x) y el flujo se muestran en la Figura 1.7b. Aquí las órbitas son los intervalos (-00, -1), (-1,0), (0, 1) y (1, +00), y los puntos de equilibrio -1, 0 y 1. ¢
+
+Exercises
+
+1.5. Many examples: Describe all of the orbits and sketch the phase portrait of each of the following scalar differential equations in two ways: first, by determining the intervals on which the vector field is of constant sign; second, by using a potential function:
+
+Muchos ejemplos: Describa todas las órbitas y dibuje el retrato de fase de cada una de las siguientes ecuaciones diferenciales escalares de dos maneras: primero, determinando los intervalos en los cuales el campo vectorial es de signo constante; segundo, usando una función potencial:
+
+(a) x = -2x; (b) x = 1 + x; (c) X = x(l- x);
+(d) x = x - x 3 + 1; (e) x = x - x 3 + 0.2;
+(f) x = -x - x 3 + 1; (g) x = -x - x 3 + A, where A is a constant.
+(h) x = 2sinx; (i) x = 1- 2sinx; (j) x = 1-sinx;
+(k) ' 2' (I) . h ( ). { 0 if x = 0 x = - sm x; x = tan x; m x = x In Ixl if x =1= O.
+
+Suggestion: You may wish to determine the phase portraits of some of these examples numerically using PRASER. In this case, to compute a negative orbit you should use a negative step size and a negative "end time."
+
+Sugerencia: Es posible que desee determinar numéricamente los retratos de fase de algunos de estos ejemplos utilizando PRASER. En este caso, para calcular una órbita negativa, debe utilizar un tamaño de paso negativo y una "hora de finalización" negativa.
+
+1.6. Show that if f E C 1 (lR, lR) and the positive orbit ,+(xo) is bounded, then /3"'0 = +00. State and prove a similar fact for negative orbits.
+Hint: Use uniqueness.
+
+1.7. Show that if f E C 1 (lR, lR) and the positive orbit ,+(xo) is bounded, then w(xo) is an equilibrium point. State and prove a similar fact for negative orbits.
+Hint: Use the Mean Value Theorem to show that t.jJ(t, xo) ---> 0 as t ---> +00.
+
+1.3. Stability of Equilibria
+
+
+\end{document}

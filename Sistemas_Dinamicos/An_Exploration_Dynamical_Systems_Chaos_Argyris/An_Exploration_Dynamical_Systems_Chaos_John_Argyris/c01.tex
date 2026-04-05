@@ -1,0 +1,753 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+An Exploration Dynamical Systems Chaos Argyris C01 Completely Revised and Enlarged
+
+Second Edition
+
+John Argyris, Gunter Faust
+
+Maria Haase.Rudolf Friedrich
+
+\hfill
+
+\textbf{Preface to the Second Edition} 
+
+\hfill
+
+In 1994, when the first edition has been published in English and in German, we did
+not anticipate that this introduction to the field of non-linear dynamics and chaos
+would meet with such lively interest. Although attention to the subject has lessened
+in the media and in popular scientific publications over the last 20 years, the
+fundamental ideas, the theoretical insights and the tools developed for the analysis
+of non-linear dynamical systems have continued to spread into the most diverse
+areas of science and technology as well as into the respective literature and are
+nowadays part of the classical curriculum in many study programmes. Since the
+English edition sold out many years ago, we decided to follow up the expanded and
+revised second German edition with another extended edition in English.
+
+\hfill
+
+After John Argyris passed away in 2004 at the advanced age of 91, we considered it
+our obligation to continue work on this book in the original sense – first in a second
+German edition – attempting to explain the complex topic of non-linear dynamics
+to a wide audience as descriptively and vividly as possible.
+
+\hfill
+
+We took the opportunity to emphasise and further clarify the differences between
+purely temporal and spatio-temporal dynamics, in particular between chaos and
+turbulence. The initial hope – occasionally accompanied by euphoria – that insight
+into the special features of chaotic systems meant that scientists were about to
+solve the centuries-old problem of turbulence was not fulfilled. Without doubt, the
+elucidation of characteristics such as unpredictability and mixing in chaotic systems
+made a substantial contribution to understanding turbulent flows, yet the fundamental
+questions concerning fully developed turbulence are unsolved to this day.
+
+\hfill
+
+By enlarging the circle of authors to include Rudolf Friedrich, we were able to add
+with Chapter 9 a completely new and more ambitious chapter on turbulence, which
+comprises and critically scrutinises the fundamentals of turbulent flows and a series
+of classic turbulence models. While there is a multitude of excellent monographs on
+turbulence from the viewpoint of the engineering sciences, the new chapter mainly
+discusses the fundamental questions from the physical point of view, highlighting
+the common ground with concepts existing in chaos theory. To describe and investigate
+fully developed turbulence, it is indispensable to include probabilistic and
+stochastic methods. So that the reader can understand the chapter on turbulence
+better, we thought it appropriate to include two new sections in the mathematical
+introduction in Chapter 3: basic concepts of probability theory and invariant measure
+and ergodic orbits. Our aim in these sections was to present the basic ideas and
+concepts; we did not, however, strive for a complete description, rather referring
+the reader to the excellent literature on probability and stochastic processes.
+
+\hfill
+
+In section 3.8.5, we added a brief introduction to wavelet transformation and outlined
+its relevance for time-frequency analyses of time series. The use of wavelets
+is especially favourable for analysing multifractal structures as described in section
+8.5.2. In section 3.9.12, we also included a brief description of Markov analysis,
+a recently developed and far-reaching method which allows us to separate the deterministic
+part of the dynamics from the dynamical and even measurement noise. In
+section 9.6.8, this method is applied to velocity increments measured in turbulent
+flows. Section 8.7 contains an updated and extended section on routes out of chaos.
+Shilnikov bifurcations and spiral chaos received much attention in various applications,
+from chemical reactions to the propagation of nerve impulses and epileptic
+seizures. To understand such systems better, we also included a short overview in
+section 10.6. In addition, the paragraph on the kinetics of chemical reactions on
+surfaces has been largely revised in the hope of rendering this widely used field of
+application more comprehensible to a larger audience of students, see section 10.9.
+On the other hand, we dispensed with the section on celestial mechanics; this would
+have gone beyond the scope of this monograph.
+
+\hfill
+
+Suddenly and unexpectedly, on 16th August 2012, Rudolf Friedrich passed away,
+taken from the midst of his life and work. His broad knowledge and interdisciplinary
+expertise made him extraordinarily inventive, not only in theoretical physics, his
+specialist field, but also in many other areas of science, including experimental and
+technical applications. We hope we have been able to complete the work on this
+book as he would have wished.
+
+\hfill
+
+Without the vigorous support of numerous friends and colleagues from many scientific
+disciplines, we would not have been able to finish this extended and updated
+second edition. To implement the original KeTEXversion in LaTeX and to generate
+and reconstruct the figures with the programme system AnT 4.669, we received professional
+help. We acknowledge the valuable hints for additions and improvements
+which we obtained in the course of many discussions and during proof-reading.
+We wish to thank all those who constantly and sedulously helped us and are especially
+indebted to Viktor Avrutin, Inna Avrutina, Rolf Bader, Anton Daitche,
+Martin Dziobek, Markus Eiswirth, Jan Friedrich, Jason Gallas, Svetlana Gurevich,
+Andreas Haase, Marion Hackenberg, Marcus Hauser, Oliver Kamps, David
+Kleinhans, Yuri A. Kuznetsov, Bernd Lehle, Pedro Lind, Johannes L¨ulff, Joachim
+Peinke, Peter Plath, G¨unter Radons, Michael Schanz, Susanne Schmidt, Daniel
+Stellbrink, Robert Stresing, Daniel H. Sugondo, Christian Uhl, Hans van den Berg,
+Judith Vogelsang, Georg Wackenhut and Michael Wilczek. Our special thanks go
+to Prudence Lawday, the translator of the first English edition, for her excellent
+help with this extended manuscript. We are also indebted to Michael Resch, the
+director of the High Performance Computing Center Stuttgart (HLRS) of the University
+of Stuttgart, for his generous assistance and to the Argyris Foundation for its
+financial support.
+
+\hfill
+
+Last but not least, we wish to thank the members of staff at Springer-Verlag for
+their professional co-operation, and in particular Thomas Ditzinger for his patience
+and continuous encouragement and support. Our sincere thanks go to everyone who
+supported us.
+
+\hfill
+
+Stuttgart, October 2014 M. Haase, G. Faust
+
+\hfill
+
+\textbf{1 Descriptive Synopsis of the Text}
+
+But thought’s the slave of life, and life time’s fool;
+
+And time, that takes survey of all the world,
+
+Must have a stop.
+
+William Shakespeare, King Henry IV, Part I, IV, 2, 81
+
+\hfill
+
+This book is conceived as an elementary introduction to the modern theory of nonlinear
+dynamical systems with particular emphasis on the exploration of chaotic
+phenomena. One might ask why yet another book should be published when the
+literature on chaos and non-linear oscillations already fills shelf after shelf following
+the stormy developments in this branch of science since the 1970s. The reasons
+which prompted us have been detailed in the preface.
+
+\hfill
+
+Our aim was to write an elementary, yet detailed text-book, without assuming an
+all-too profound mathematical knowledge on the part of the reader. It is aimed
+not at mathematicians and theoretical physicists, but rather at budding scientists
+such as chemists, biologists and engineers in all fields, particularly in the aeronautical
+and electrical engineering, but also in musical acoustics, as well as economic
+scientists and interested graduate students. Should they be required for a comprehension
+of the subject, mathematical procedures and tools are introduced in small
+sub-sections; in all cases, we have attempted to support the text illustratively by
+graphics, colour plates and additional computer demonstrations. A fairly extensive
+list of references is intended to help the reader in his quest for further reading.
+
+\hfill
+
+Chapters 2 and 3 are an elementary introduction to the intellectual and conceptual
+edifice of non-linear dynamical systems. In Chapter 2, we present an outline
+of the complex of problems investigated in this book. We consider non-linear dynamical
+processes, restricting ourselves to deterministic and, with few exceptions,
+finite-dimensional systems which can be described by systems of ordinary differential
+equations. In contrast to classic treatises on the theory of oscillations which generally
+devote a great deal of space to the solution of linear problems and mainly consider
+special solutions of selected problems, the theory of dynamical systems founded by
+Henri Poincar´e allows qualitative statements on the overall set of the solutions of
+specific as well as broad classes of differential equations by a combination of analytical
+and geometrical, differential topological methods. Central questions concern
+the structure of the phase space, the stability behaviour of the solutions, their longterm
+response and the effects of bifurcations, i.e. the qualitative changes in the flow
+as a result of variations in the parameters. The fact that even the simplest nonlinear
+systems can generate chaotic behaviour leads to the discussion in section 2.1 of
+the concept of causality and the connection between determinism and predictability.
+Subsequently, using the example of single-degree-of- freedom oscillators with and
+without friction, with and without excitation force, we describe possible states of
+motion of dynamical systems – such as stationary, periodic and chaotic behaviour
+– and introduce some elementary basic concepts such as phase space, trajectories,
+manifold, attractors etc.
+
+\hfill
+
+A central theme in the analysis of non-linear systems is the discussion of the stability
+characteristics of states of equilibrium, periodic motions etc. Chapter 3 thus
+begins with a discussion of the singularities of linear differential equations and a
+classification of the fixed points on the basis of eigenvalues and eigenvectors for the
+two-dimensional case as well as the possibilities of an extension of the results to
+non-linear systems. The introduction of a series of stability concepts is followed by
+the definition of the invariant manifolds which enable a structuring of the phase
+space. We then discuss Poincar´e sections and discrete maps, followed by a first
+elementary meeting with the logistic map where we can observe a transition from
+stationary to periodic, multiple periodic behaviour to chaos through variations of
+a control parameter. General periodic motions can be easily described in Fourier
+space. Therefore, we continue with a brief introduction to harmonic analysis, including
+a short survey of the most important properties of the Fourier transform
+and a reference to wavelet analysis, which allows us to perform time-frequency analyses
+of non-stationary processes.
+
+\hfill
+
+The subsequent section 3.9 presents a summary of the basic principles of the theory
+of probability. Although this book is devoted to the analysis of deterministic nonlinear
+systems, one often needs a set of fundamental terms and definitions stemming
+from probability theory to characterise the dynamics of chaotic systems in
+phase space and to describe turbulence. Among these are concepts such as random
+variables, probability density, conditional and joint probability and moments of distribution
+functions. We briefly outline the importance of the central limit theorem
+and present a short description of the most commonly used density distributions.
+Finally, we give a short overview of the recently developed Markov analysis, which
+allows for sequentially measured experimental data to disentangle the underlying
+deterministic dynamics from the often unavoidable superimposed fluctuating forces
+and to extract the basic stochastic equations. On the basis of probability theory, we
+introduce in the final section 3.10 the concepts of invariant measure and ergodicity.
+
+\hfill
+
+Dynamical systems can be assigned to two basic families, namely conservative systems
+not exposed to loss of energy and dissipative systems subject to loss of energy.
+In Chapter 4, we consider the conservative systems and attempt to span the gap
+between integrability and chaos. Within the concept of classical mechanics, the
+Hamilton equations are derived, taking d’Alembert’s principle as a starting point.
+The theorem of Liouville allows us to investigate the volume conservation of the
+phase flow of conservative systems and thus to distinguish between conservative
+and dissipative systems. An analytical solution of non-linear Hamilton differential
+equations is only possible in exceptional cases, namely if the system can be transformed
+to action and angle variables and thus described by quasi-periodic motions
+on a torus in phase space. Such an integration is demonstrated on the example of
+Kepler’s motion of a planet around the sun. In contrast, an analytical solution of
+the three-body problem is no longer possible. Towards the end of the 19th century,
+Poincar´e succeeded in proving that small perturbations of the two-body problem
+throw doubt on the stability of the solutions. He showed that perturbation methods
+do not necessarily lead to correct results since the series used in the course
+of the calculation might diverge, thus possibly leading to false conclusions. It was
+not until 60 years later that, within the framework of the KAM theory, Andrei
+N. Kolmogorov, Vladimir I. Arnold and J¨urgen Moser were able – under certain
+conditions – to answer the question of the stability of perturbed Hamilton systems.
+In section 4.4, the KAM theory is outlined and the disintegration of the tori in phase
+space demonstrated on Poincar´e sections of two-dimensional perturbed Hamilton
+systems. It turns out that the emergence of heteroclinic points generates the irregular,
+chaotic behaviour in the neighbourhood of hyperbolic points. A detailed
+discussion of the conservative H´enon map closes this chapter.
+
+\hfill
+
+Chapter 5 deals with dissipative systems. In the classical mechanics of Galilei and
+Newton, loss of energy due to friction was considered a disturbing factor and was
+thus neglected. However, this idealisation can be applied in a good approximation
+to the orbits of the planets, but only rarely to motions on earth. The theory of
+dynamical systems shows that the introduction of dissipative terms does not make
+the problem more complex, but rather simplifies the long-range solution in many
+cases. The long-term dynamics of high-dimensional dissipative systems is often conditioned
+by some few fundamental modes; a contraction of the phase space volume
+takes place and attractors emerge which cannot be generated in conservative systems.
+Dissipative systems not subject to energy supply come to rest, they approach
+a state of equilibrium or point attractor. If the system is fed with energy, then, in
+the simplest case, periodic or quasi-periodic behaviour can occur or, on the other
+hand, completely irregular behaviour which is described in phase space by a strange
+attractor, an extremely complex structure with zero volume. The typical characteristics
+of such strange attractors are summarised using the example of the Lorenz
+attractor, the structure of which is characterised fundamentally by the sensitive
+dependence of the trajectories on the smallest perturbations of the initial conditions.
+In the subsequent sections of Chapter 5, we review a series of mathematical
+tools – namely the power spectrum, autocorrelation, the Lyapunov exponents and
+the dimensions in phase space – which allow a quantitative characterisation of and
+differentiation between the individual attractor types.
+
+\hfill
+
+We begin with two classic criteria, the power spectrum, which supplies information
+on which basic frequencies dominate, and autocorrelation, which reflects the memory,
+i.e. the temporal interrelations of a signal. Both criteria are based on Fourier
+transformation, the most important characteristics of which are summarised previously
+in section 3.8. While demonstrating a differentiation between regular and
+irregular behaviour, they are not sufficient to characterise chaotic motion. Further
+mathematical tools are necessary, such as the Lyapunov exponents, for example,
+which provide a criterion for the stability behaviour of neighbouring trajectories.
+The classic Floquet theory, which allows a linear stability analysis of periodic motions,
+is extended to irregular courses of motion and leads to the spectrum of the
+Lyapunov exponents. Section 5.4 closes with the description of algorithms which
+allow a numerical calculation of all Lyapunov exponents.
+
+\hfill
+
+
+The concept of dimension represents a further important instrument for the classification
+of the various attractor types. Damping generally ensures that the number
+of independent variables determining the dimension of the phase space are reduced
+considerably during the transient phase. The dimension of an attractor is thus a
+suitable source of information on the number of fundamental modes participating
+in the long-term response: a point attractor of dimension 0 corresponds to a state
+of equilibrium, a limit cycle of dimension 1 to a periodic motion etc. A strange
+attractor, which, for example, is a sort of hybrid between a surface-like and a spatial
+structure in a three-dimensional phase space, corresponds to a chaotic motion.
+Classic dimension concepts are not adequate to describe its intricate, mille-feuillelike
+structure; it has to be ascribed a non-integral dimension between 2 and 3.
+
+The French mathematician Benoˆıt Mandelbrot coined the word “fractals” for such
+sets. What is responsible for the complexity of fractal sets is their self-similarity,
+i.e. their invariance with respect to alterations in scale. There is a whole family of
+suitable dimension concepts – such as the capacity dimension, the information and
+correlation dimension etc. – which we shall discuss in detail in section 5.5.
+
+\hfill
+
+Dimensional concepts are often used to characterise experimental time series. If a
+system is based on deterministic laws, the temporal evolution of a single variable
+contains all the information on the total dynamics of the system. We discuss a
+reconstruction technique which offers the opportunity of reconstructing attractors
+from one-dimensional time series and also applying in this context concepts such
+as dimension (section 5.5.4) and the Lyapunov exponents (see also section 10.9) to
+characterise the associated orbits.We conclude Chapter 5 with the discussion of the
+Kolmogorov-Sinai entropy, based on Shannon’s information theory and quantifying
+the degree of disorder of a system. With the example of a simple map, the Bernoulli
+shift, it is demonstrated that the KS entropy measures the information transport
+from a microscopic to a macroscopic scale. Moreover, it allows for the specification
+of a bound for the time-span within which reliable prognoses on the course of the
+trajectories are still possible.
+
+\hfill
+
+Typically, one or more control parameters appear in the model equations describing
+physical systems. If these differential equations have non-linear character, a variation
+of the parameters can result in a qualitative change of the topological structure
+of the solutions. Such changes are referred to as bifurcations. Chapter 6 contains a
+detailed discussion of the methods of the local bifurcation theory; we concentrate
+on local bifurcations of states of equilibrium and periodic motions arising from the
+variation of one control parameter. As an introduction, we first present some typical
+bifurcations of fixed points and elucidate the qualitative change of the solutions
+with corresponding phase portraits.
+
+\hfill
+
+In the neighbourhood of a hyperbolic fixed point, it suffices to investigate the linearised
+system in order to establish the stability and solution behaviour. At bifurcation
+points, however, a fixed point loses its hyperbolic character. In this case,
+non-linear terms must be included in our considerations in order to clarify the stability
+and the solution behaviour. To this end, the method of the centre manifold is
+applied. This approximation technique, presented in section 6.2, leads to a drastic
+reduction of the number of equations necessary to describe the long-term behaviour
+in the neighbourhood of non-hyperbolic fixed points and hence the clarification of
+the stability.
+
+\hfill
+
+It is the purpose of the local bifurcation theory to classify the local bifurcations of
+fixed points, limit cycles etc. and to set up their normal forms. In section 6.3, we
+describe the method of normal forms, a technique with which non-linear differential
+equations in the neighbourhood of fixed points and limit cycles can be reduced to
+the simplest form by a series of non-linear transformations; the non-linear terms are
+eliminated successively whenever possible. A complete linearisation is only possible
+if no resonances occur. Normal forms of bifurcations, however, necessarily contain
+resonances.
+
+\hfill
+
+In section 6.4, we discuss the bifurcations of one-parametric flows, deduce the corresponding
+normal forms and list the conditions which allow a classification of the
+individual bifurcation patterns. We then consider the question of the robustness
+of the individual bifurcations, i.e. we investigate whether small alterations in the
+model equations generate qualitative changes of the bifurcation patterns. Finally,
+we discuss the normal forms of bifurcations of fixed points of one-parametric maps.
+Since periodic orbits appear as fixed points in the Poincar´e map, the discussion also
+includes the bifurcations of limit cycles.
+
+\hfill
+
+In section 6.7, we demonstrate with the example of the logistic map that a continuous
+increase of the control parameter can generate a series of local bifurcations,
+in this case a cascade of period doublings, ultimately leading to chaotic behaviour;
+this latter is interrupted repeatedly by windows of regular behaviour, however.
+Mitchell Feigenbaum was the first to prove that this route to chaos is not restricted
+to the special form of the logistic map, but rather is a universal scenario which
+can be observed in many systems. In this section, we explore the background to
+the mechanism of continued period doublings and explain how the self-similarity
+characteristics of the bifurcation diagram can be decoded with the aid of renormalisation
+techniques and how the Feigenbaum constants can be determined. We then
+turn to the link with second-order phase transitions, known to us, for example, from
+the transition from a liquid to a gaseous state or from the ferromagnetic transition.
+
+\hfill
+
+We conclude Chapter 6 with an introductory outline of synergetics, a branch of
+science founded at the end of the 1960s by the physicist Hermann Haken which
+investigates the dynamics of pattern formation processes. The central question of
+synergetics is whether and to what extent the formation of structures in the most
+varied realms of physics, biology, sociology, medicine etc. in animate and inanimate
+nature is based on generally valid principles and how this self-organisation can be
+reproduced in a mathematical formalism. On the one hand, we refer to the features
+in common with the centre manifold theory; on the other, we draw attention to
+the more extensive framework of synergetics, a result of the inclusion of spatial
+inhomogeneities and fluctuating forces.
+
+\hfill
+
+Chapter 7 is devoted to the structure formation in convection flows and the deduction
+and discussion of the Lorenz system, which stimulated the development of
+the chaos theory fundamentally. The chapter begins with a qualitative description
+of the physical laws leading to the formation of the characteristic convection rolls
+in the Rayleigh-B´enard experiment. There follows a detailed deduction of the basic
+hydrodynamic equations for convection problems. The continuity equations, the
+Navier-Stokes equations and the heat equation are deduced from the conservation
+theorems of mass, impulse and energy. In many cases, these basic equations can
+be simplified by means of the Boussinesq-Oberbeck approximation, in which the
+variation of the density is only accounted for in the buoyancy term.
+
+\hfill
+
+In the early 1960s, the American meteorologist Edward N. Lorenz applied this system
+of basic equations to study the accuracy of weather forecasts. While his highly
+simplified model for the B´enard problem cannot stand up to an experimental verification
+describing the onset of turbulence, it nevertheless led to a new paradigm in
+the natural sciences: On the one hand, there are basic limits to the predictability of
+a dynamical system in the latent presence of chaotic behaviour; on the other hand,
+however, time series which have been classified as purely stochastic in the past have
+turned out to describe in certain cases chaotic motions, the essential definition of
+which can often be construed with a restricted number of non-linear equations.
+
+\hfill
+
+In section 7.3, we follow the original publications of Saltzman and Lorenz and deduce
+the three ordinary differential equations of the Lorenz system. Subsequently,
+the evolution of the solutions of this system is described for variations of the free
+parameter which controls the temperature difference between the upper and the
+lower plate in the Rayleigh-B´enard problem; the emergence of local and global bifurcations
+is observed. A series of colour plates demonstrates on the one hand the
+spatial and temporal evolution of the convection rolls in the Lorenz model and
+on the other hand the significant changes of the phase space structure due to an
+increase of the control parameter; these are illustrated by consideration of the evolution
+of the stable manifolds.
+
+\hfill
+
+In Chapter 8, we present a series of mathematical models describing the transition
+from regular to chaotic motions. In the early years of chaos research, the hope was
+that these scenarios could describe the transition to turbulent behaviour, thus making
+a substantial contribution to the solution of the turbulence problem.
+
+\hfill
+
+The first model describing the onset of turbulence goes back to Lev D. Landau
+(1944), who assumed that the transition from laminar to turbulent behaviour is
+generated by an endless series of (Hopf) bifurcations. It was not until a quarter of
+a century later that the deficiencies of this model were recognised: Landau’s model
+cannot explain the sensitive dependence of the flow on small perturbations nor generate
+a mixing of the trajectories in the phase space. In 1971, David Ruelle and
+Floris Takens proved that generally quasi-periodic motions on higher-dimensional
+tori are not stable, as Landau had presumed, but rather that the quasi-periodic
+motion becomes chaotic abruptly after the emergence of the third incommensurable
+frequency, i.e. the motion on a T 3-torus collapses into a strange attractor,
+a designation coined by Ruelle and Takens. A great step forward had been taken
+and a window opened towards the description of the characteristics of turbulence
+– such as unpredictability of the motion and mixing – on the basis of deterministic
+equations. With the aid of refined measuring techniques, Gollub and Swinney
+succeeded in achieving an experimental verification for the B´enard problem based
+on the analysis of the power spectra and supported by the determination of the
+dimension of reconstructed attractors.
+
+\hfill
+
+Sections 8.3 to 8.5 contain a discussion of the transition from quasi-periodic to
+chaotic motions using the circle map as a model. Two different scenarios are conceivable.
+Either chaos occurs following a synchronisation of the frequencies and a
+subsequent series of period doublings – this is the Feigenbaum route already discussed
+in section 6.7 for the logistic map – or there is a direct transition from
+quasi-periodicity to chaos. The second route requires the tuning of two control parameters
+and can also be interpreted by means of the circle map. Both transitions
+to chaos are of universal character and the scaling characteristics can be decoded
+in both cases with the aid of the renormalisation theory. A selection of figures aims
+at facilitating access to this complex material. There follows a description of the
+work of Albert Libchaber who succeeded in confirming the theoretical prognoses
+quantitatively by experiments which were highly precise at that time. Section 8.6
+contains a discussion of intermittent transitions which, following Yves Pomeau and
+Paul Manneville (1980), can be classified in three groups.
+
+\hfill
+
+Having presented a series of scenarios describing transitions from regular to chaotic
+behaviour, we present in section 8.7 an overview of various strategies allowing the
+reverse, a conversion of chaotic motions to regular regions. Following the seminal
+paper of Edward Ott, Celso Grebogi and James A. Yorke from 1990, this issue became
+a field of non-linear dynamics which experienced a rapid development. This is
+because it was recognised in many areas like medicine, chemistry, laser technology
+and telecommunication, as well as in other fields of engineering science, that chaotic
+behaviour contains a high potential with regard to a possible control and regulation
+of chaos. To this end, one takes advantage of a characteristic feature of chaos, the
+sensitive dependence of the dynamics on small perturbations, by imposing minimal
+control impulses which stabilise the unstable orbits inherently contained in strange
+attractors. In section 8.7 we give a brief survey of the most effective strategies and
+provide information on a multitude of applications with the potential to lead to
+innovative developments.
+
+\hfill
+
+In the beginning, it was hoped that chaos research would help uncover the basic
+mechanisms leading to fully developed turbulence. These high expectations have
+not yet been fulfilled. The reason is that chaos theory researchers initially confined
+themselves to a purely temporal description of the dynamics, which is not sufficient
+for an understanding of turbulent flow. It is rather the additional spatial dependence
+of all quantities which leads to complex interrelations and to an extremely
+high dimensionality of the corresponding phase space.
+
+\hfill
+
+Chapter 9 presents an overview of the state of turbulence research from the present
+point of view, almost 40 years after the paradigm shift in the understanding of
+non-linear processes. On the one hand, we identify the issues in which chaos theory
+has made substantial contributions to an understanding of turbulent flow. On
+the other hand, it becomes evident that the spatio-temporal complexity and the
+extraordinarily high number of excited modes in fully developed turbulence makes
+the use of statistical methods unavoidable.
+
+\hfill
+
+In the chapter on turbulence, the main focus is on various vortex models and the
+discussion of their influence on the dynamics of fluid flow. A detailed description of
+the characteristic scales, of the energy cascade and of Heisenberg’s turbulence model
+follows. Particular emphasis is put on the derivation of the K´arm´an-Howarth equation
+and an exposition of the underlying assumptions. Subsequently, we describe
+the classical turbulence models of Kolmogorov from 1941 and 1962 as well as more
+recent multifractal models presented by Frisch and She-Leveque and discuss the
+strengths and weaknesses of the respective models. We also report on an application
+of the Markov analysis presented in section 3.9 to the velocity increments of
+a turbulent jet. The fact that the turbulent data can be described by a Markovian
+process in scale allows us to express the full n-point statistics by the 2-point transition
+probability densities and to reproduce the intermittent behaviour accurately.
+Finally, we add an overview of some open questions and possible issues relevant for
+future research.
+
+\hfill
+
+In the final Chapter 10, we present some fields in which the application of the theory
+of dynamical systems is very promising. With the aid of computer experiments
+we discuss a variety of classical models displaying features which are characteristic
+of a multitude of dynamical systems.
+
+\hfill
+
+For non-linear systems, analytical solutions can only be given in exceptional cases;
+in the case of chaotic behaviour, we generally have to rely completely on numerical
+investigations. This is the explanation for the fact that, as a result of efficient computers,
+the theory of dynamical systems – once the domain of the mathematical and
+physical faculties – is now receiving increasing notice in the most varied disciplines
+such as biology, chemistry, meteorology, electrical engineering and hydrodynamics,
+as well as in economic sciences, as demonstrated by the flood of publications from
+these fields.
+
+\hfill
+
+The discovery of universal characteristics, i.e. of fundamental principles common
+to all non-linear systems of a whole class of problems, was without doubt a milestone
+in the more recent history of the theory of dynamical systems and justified
+the intensive study of seemingly over-simplified systems. The investigations were
+accelerated greatly by the swift development of efficient computers – indeed, they
+were only made possible through this explosive growth of computer power.
+
+\hfill
+
+The first section of Chapter 10 offers an insight into bone remodelling processes. In
+order to achieve a durable anchoring of endoprostheses, models are being developed
+with the aim of describing bone retrogression or bone formation on the basis of dynamical
+systems. Should this succeed, computer simulations could speed up the
+development of more reliable types of endoprosthesis. In a first study, two very simple
+dynamical systems for the modelling of bone adaptation processes are discussed.
+Specially constructed recursion rules are particularly suitable for elucidating general
+characteristics of dynamical systems due to the low computational effort. In
+particular, the dissipative H´enon map was conceived as a model for a Poincar´e
+map of a three-dimensional system. With the aid of this map, we demonstrate in
+section 10.2 that a mixing of the trajectories in the phase space results from a continuous
+repetition of stretching and folding processes. This mechanism is the key
+to the understanding of the exponential drifting apart of neighbouring trajectories
+in the phase space; it is illustrated with the example of the Lorenz attractor in a
+series of colour plates.
+
+\hfill
+
+In section 10.3, we return to the Lorenz equations and discuss some further characteristics
+of the system. A number of figures demonstrate the emergence of cascades
+of period doublings within regular regions and the coexistence of attractors. The
+bifurcation diagram of the Poincar´e sections is highly reminiscent of that of the logistic
+map, thus offering evidence of universal laws. Conclusions about the system
+behaviour can be drawn by calculating the Lyapunov exponents. The section ends
+with the determination of the capacity dimension of the Lorenz attractor according
+to Hunt and Sullivan’s procedure.
+
+\hfill
+
+In section 10.4, we turn to the van der Pol equation, originally set up to describe
+electrical circuits. The system possesses a non-linear damping term with the
+characteristic that the system is supplied with energy for small amplitudes, which
+manifests itself in a negative damping term, whereas energy is dissipated for large
+amplitudes. Typically, self-excited oscillations occur in such systems, i.e. although
+no external periodic forces are applied, the system tends towards a limit cycle on
+which energy supply and dissipation are in balance in the temporal mean. We first
+consider the van der Pol equation without external excitation. In the case of a
+small damping parameter, i.e. weak non-linearity, we observe, as expected, almost
+sinusoidal oscillations; in the case of large damping values, on the other hand, we
+observe self-excited relaxation oscillations. Computer investigations suggest that
+exactly one limit cycle exists in the phase space; the strict mathematical proof of
+this observation with the aid of the Poincar´e-Bendixson theorem is laborious. If
+small periodic excitation forces are applied in the case of low damping, the averaging
+method can be used; here, by taking a time average, the initial system is
+replaced by an autonomous system involving the neglect of higher harmonics. Large
+damping parameters respectively strong non-linearities together with periodic external
+excitation are discussed for a modification of the van der Pol equation. On
+the basis of Poincar´e sections and phase portraits, the character of the chaotic solutions
+on the Birkhoff-Shaw attractor is illustrated.
+
+\hfill
+
+The Duffing equation considered in the subsequent section represents one of the
+simplest dynamical systems in which chaotic behaviour can be observed. Differential
+equations of its type are obtained in the formulation of non-linear pendulum
+oscillations or for electrical circuits and other problems, for example. It approximates
+the behaviour of an externally excited non-linear oscillator with one degree of
+freedom. We deduce the Duffing equation for the example of an externally excited
+buckled beam. In this case, the equation of motion is a non-linear partial differential
+equation, the solution of which is approximated with the aid of the Galerkin procedure
+taking the first fundamental mode into account. As a result, we obtain the
+Duffing equation with negative stiffness. According to the selection of the control
+parameters in the Duffing equation, we observe a great variety of system response.
+The Duffing equation is integrated numerically for a series of parameter values and
+the results presented in the form of phase portraits and Poincar´e sections.
+
+\hfill
+
+
+A surprising phenomenon can emerge in dissipative systems when several attractors
+coexist in the phase space. Even for regular behaviour, the boundaries between the
+basins of attraction can assume fractal character so that predictions on the longterm
+behaviour are no longer possible in this domain. With the aid of the Melnikov
+method, bounds for the control parameters for which fractal boundaries emerge can
+be calculated explicitly. For the example of the Duffing equation, the calculation of
+the so-called Holmes-Melnikov boundary is carried out explicitly.
+
+\hfill
+
+In section 10.6, we briefly discuss some bifurcations of flow involving homoclinic
+orbits in three-dimensional vector fields. The most complex case, the so-called
+Shilnikov bifurcation, leads to a highly complex topological structure of the flow
+and can be observed, for example, in the propagation of nerve impulses along axons
+or during epileptical seizures.
+
+\hfill
+
+By now, computer experiments play an important role in non-linear dynamics. In
+general, theorems cannot be proven with the aid of computers; nevertheless, numerical
+investigations in association with modern computer graphics reveal unexpected
+characteristics and links in non-linear systems which had previously not been taken
+into account. Seen in this way, numerical experiments are valuable aids nowadays.
+The two sections 10.7 and 10.8 illustrate the fact that graphic representations can
+be extraordinarily helpful for the comprehension of some phenomena occurring in
+non-linear recursion rules.
+
+\hfill
+
+Shortly after the FirstWorldWar, the two French mathematicians Gaston Julia and
+Pierre Fatou studied the iteration of rational functions. They discovered that, depending
+on the initial value, the iteration sequences converged to different solutions;
+the boundaries between the basins of attraction of these attractors exhibit highly
+peculiar characteristics and are of unsuspected multifariousness. Due to the unavailability
+of computers, what was disclosed to the inner eye of Julia or Fatou remained
+hidden to the average scientist until, around 1980, Mandelbrot again turned to one
+of the simplest non-linear iteration rules in the complex plane, exploiting the opportunities
+offered by high-performance computers. Section 10.7 offers an insight into
+the manifold structures of Julia sets and the fractal boundaries of the Mandelbrot
+set. Calculation of the basin boundary of the point attractor $z= \infty$ for constant values
+of the control parameter of the mapping rule yield, depending on the parameter
+value, completely differing limit sets, the so-called Julia sets.What is fascinating
+about Mandelbrot’s recursion formula is that, in spite of its simplicity, such structural
+diversity emerges. A series of computer graphics shows connected fractal sets,
+dendritic forms as well as burst sets. The Mandelbrot set, on the other hand, encompasses
+all values of the complex control parameter for which the Julia sets are
+connected. A series of colour plates presenting various selective enlargements depicts
+the richness of structures in the fractal boundaries of the Mandelbrot set.
+In section 10.8, we again turn to the circle map of Chapter 8 and, by means of the
+Lyapunov exponents, gain an overview of the inner structure of the Arnold tongues.
+The results agree very well with the theoretical results. On the basis of the Lyapunov
+exponents, the different transitions to chaos can be discussed very simply.
+
+\hfill
+
+Their self-similar structure is reflected in the corresponding bifurcation diagrams.
+In the last section of Chapter 10, section 10.9, we decided to present an overview of
+some interesting dynamic manifestations from the field of physical chemistry which
+display chaotic outbursts.We concentrate on the dynamic phenomena arising in the
+oxidation of CO on the surface of platinum crystals. Significantly enough, detailed
+experiments have been performed under isothermal low-pressure conditions. Extensive
+theoretical and experimental research work of high originality and distinction
+has been performed on this subject at the Fritz Haber Institute of the Max-Planck-
+Gesellschaft in Berlin under the direction of Gerhard Ertl.
+
+\hfill
+
+In these extensive and varied numerical investigations and parallel experiments, a
+broad spectrum of complex temporal behaviour was observed, such as mixed-mode
+oscillations, a transition via period doublings to chaos and even hyperchaos, characterised
+by at least two positive Lyapunov exponents.
+
+\hfill
+
+All these phenomena represent purely temporal evolutions as they would arise, for
+example, in a well-stirred medium; note, however, that in a heterogeneous reaction
+on a surface, stirring is not feasible. As a result, in heterogeneous reactions, more
+complex phenomena involving spatial dependencies will arise and complicate the
+model and the numerical analysis of such reactions considerably.
+
+\hfill
+
+In a survey on CO oxidation on platinum crystals, Georg Ertl also discussed extensive
+experimental studies on spatio-temporal phenomena observed by him and his
+collaborators at the aforementioned Fritz Haber Institute. The formation of stationary,
+propagating as well as soliton waves and even spiral chemical waves was
+recorded. Irregular behaviour, such as that of chemical turbulence, also emerged.
+
+\hfill
+
+All the numerical investigations of the Fritz Haber Institute are based on kinetic
+models evolved for the description of the temporal dynamics on a platinum (110)
+single crystal surface. The rate constants and parameters arising in the equations
+have been studied extensively using a variety of surface science techniques in conjunction
+with complex detection and recording devices. We mention only parenthetically
+the application of low-energy electronic diffraction (LEED) studies of
+oscillations on platinum crystals, based on the motion of slow electrons; here, the
+researchers also observed periodic changes on the surface structure which oscillated
+between the (1Å~1) and the respective reconstructed (1Å~2) phase. Such structural
+surface changes in turn influence the evolution of other elementary processes and
+demand additional refinements of the model.
+
+\hfill
+
+In view of the increasing complexity, the researchers at the Fritz Haber Institute
+refined the analytical model of oxidation stepwise, starting with the simplest simulation
+and then refining it step by step to account for additional effects and variables
+in order to describe the dynamical behaviour of increasing complexity of the CO
+oxidation on platinum (110) crystals. We elaborate on the importance of the individual
+steps since they clarify in an examplary manner the stepwise development of
+models by illustrating the extent of validity and the limits of the respective models.
+We close this section with a short look at recent applications in biochemistry. Biochemical
+reactions involving enzymes which play the role of catalysts are, of course,
+much more multifarious and complex than the previously mentioned catalytical
+procedures. However, since biological systems are open systems exchanging energy
+and mass with their environment and since the occurring processes have a nonlinear
+character, it is once again indispensable to apply methods from non-linear
+dynamics and synergetics in order to take at least a small step towards understanding
+the complex interrelations of the system.
+
+
+\end{document}
+
+

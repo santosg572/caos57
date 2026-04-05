@@ -1,0 +1,370 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\begin{document}
+
+pag 7
+
+\hfill
+
+\textbf{Chapter 1. The Orbits of One-Dimensional Maps.}
+
+\hfill
+
+\textbf{1.1 Iteration of Functions and Examples of Dynamical Systems.}
+
+\hfill
+
+Dynamical systems is the study of how things change over time. Examples include
+the growth of populations, the change in the weather, radioactive decay, mixing of
+liquids and gases such as the ocean currents, motion of the planets, the interest in a
+bank account. Ideally we would like to study these with continuously varying time
+(what are called flows), but in this text we will simplify matters by only considering
+discrete changes in time. For example, we might model a population by measuring
+it daily. Suppose that xn is the number of members of a population on day n, where
+$x_0$ is the initial population. We look for a function $f :\mathbb{R} \to \mathbb{R}$, (where $\mathbb{R}$ = set of all
+real numbers), for which
+
+\[
+x_1 = f(x_0), x_2 = f(x_1) \text{ and generally } x_n = f(x_{n-1}), n= 1, 2, ...
+\]
+
+This leads to the iteration of functions in the following way:
+
+\hfill
+
+\textbf{Definition 1.1.1} Given $x_0 \in \mathbb{R}$, the orbit of $x_0$ under f is the set
+
+\[
+O(x_0) = {x_0, f(x_0), f^2(x_0), ...},
+\]
+
+where $f^2(x_0) = f(f(x_0)), f^3(x_0) = f(f^2(x_0))$, and continuing indefinitely, so that
+
+\[
+f^n(x) = f \circ f \circ f \circ \cdots \circ f(x); (n-times composition).
+\]
+
+Set $x_n = f^n(x_0), x_1 = f(x_0), x_2 = f^2(x_0)$, so that in general
+
+\[
+x_{n+1} = f^{n+1}(x_0) = f(f^n(x_0)) = f(x_n).
+\]
+
+
+More generally, f may be defined on some subinterval I of $\mathbb{R}$, but in order for the
+iterates of $x \in I$ under f to be defined, we need the range of f to be contained in I,
+so $f: I \to I$.
+
+\hfill
+
+This is what we call the iteration of one-dimensional maps (as opposed to higher
+dimensional maps $f: \mathbb{R}^n \to \mathbb{R}^n$, n > 1, which will be studied briefly in a later
+chapter).
+
+\hfill
+
+\textbf{Definition 1.1.2} A (one dimensional) dynamical system is a function $f: I \to I$
+where I is some subinterval of $\mathbb{R}$.
+
+\hfill
+
+Given such a function f, equations of the form $x_{n+1} = f(x_n)$ are examples of
+difference equations. These arise in the types of examples we mentioned above. For example in biology xn may represent the number of bacteria in a culture after n hours.
+There is an obvious correspondence between one-dimensional maps and these difference
+equations. For example, a difference equation commonly used for calculating
+square roots:
+
+\[
+x_{n+1} = \frac{1}{2}(x_n + \frac{2}{x_n}
+\]
+ 
+corresponds to the function $f(x) = \frac{1}{2} (x + \frac{2}{x_n})$. If we start by setting $x_0 = 2$ (or in
+fact any real number), and then find $x_1, x_2$ etc., we get a sequence which rapidly
+approaches $\sqrt{2}$ (see page 9 of Sternberg [63]). One of the issues we examine is what
+exactly is happening here.
+
+\hfill
+
+\textbf{Examples of Dynamical Systems 1.1.3}
+
+\hfill
+
+\begin{enumerate}
+\item \textbf{The Trigonometric Functions} Consider the iterations of the trigonometric
+functions starting with $f: \mathbb{R} \to \mathbb{R}$, f(x) = sin(x). Select $x_0 \in \mathbb{R}$ at random, e.g.,
+$x_0 = 2$ and set $x_{n+1} = sin(x_n)$, n = 0, 1, 2, ... Can you guess what happens to $x_n$ as
+n increases? One way to investigate this type of dynamical system is to enter 2 into
+our calculator, then repeatedly press the 2nd, Answer and Sin keys (you will need
+to do this many times to get a good idea - it may be easier to use Mathematica, or
+some similar computer algebra system). Do the same, but replace the sine function
+with the cosine function. How do we explain what appears to be happening in each
+case? These are questions that we aim to answer quite soon.
+
+\item Linear Maps Probably the simplest dynamical system (and least interesting from
+a chaotic dynamical point of view), for population growth arises from the iteration of
+linear maps: maps of the form $f(x) = a \cdot x$. Suppose that $x_n$ = size of a population
+at time n, with the property
+
+\[
+x_{n+1} = a \cdot x_n
+\]
+
+for some constant a > 0. This is an example of a linear model for the growth of the
+population.
+
+\hfill
+
+If the initial population is $x_0 > 0$, then $x_1 = ax_0, x_2 = ax_1 = a^2x_0$, and in general
+$x_n = a^nx_0$ for n = 0, 1, 2, . . .. This is the exact solution (or closed form solution)
+to the difference equation $x_{n+1} = a \cdot x_n$. Clearly f(x) = ax is the corresponding
+dynamical system. We can use the solution to determine the long term behavior of
+the population:
+
+$x_n$ is very well behaved since:
+
+\begin{enumerate}
+\item  if a > 1, then $x_n \to infty$ as $n \to \infty$,
+
+\item  if 0 < a< 1 then $x_n \to 0$ as $n \to \infty$ (i.e., the population becomes extinct),
+\item if a = 1, then the population remains unchanged.
+\end{enumerate}
+
+\hfill
+
+\textbf{3. Affine maps} These are functions $f: \mathbb{R}
+ \to \mathbb{R}$ of the form f(x) = ax + b ($a \neq 0$),
+for constants a and b. Consider the iterates of such maps:
+
+\[
+f^2(x) = f(ax + b) = a(ax+ b) + b = a^2x + ab + b,
+\]
+\[
+f^3(x) = a^3x + a^2b + ab + b,
+\]
+\[
+f^4(x) = a^4x + a^3b + a^2b + ab + b,
+\]
+
+and generally
+
+\[
+f^n(x) = a^nx + a^{n-1}b + a^{n-2}b + \cdots + ab + b.
+\]
+
+
+Let $x_0 \in  \mathbb{R}$ and set $x_n = f^n(x_0)$, then we have
+
+\[
+\begin{matrix}
+x_n & = & a^n x_0 + (a^{n-1} + a^{n-2} + \cdots + a + 1)b \\ 
+& = & a^n x_0 + b \left ( \frac{a^n - 1}{a-1} \right ), \text{ if } a \neq 0 \\
+\end{matrix}
+\]
+
+or
+
+\[
+x_n = \left ( x_0 + \frac{b}{a-1} \right ) a^n + \frac{b}{1-a}, \text{ if } a \neq 1
+\]
+
+is the closed form solution in this case (here we have used the formula for the sum of
+a finite geometric series:
+
+\[
+\sum_{k=0}^{n-1} r^k = \frac{r^n -1}{r-1}
+\]
+
+when $r \neq 1$). If a = 1, the solution is $x_n = x_0 + nb$ .
+We can use these equations to determine the long term behavior of xn. We see
+that:
+
+\begin{enumerate}
+\item if $|a| < 1$ then $a^n \to 0$ as $n \to \infty$, so that
+
+\[
+lim_{n \to \infty} x_n = \frac{b}{1-a}
+\]
+
+\item  if $a > 1$, then $lim_{n \to \infty} x_n = \infty$ for b, $x_0 > 0$,
+
+\item  if a = 1, then $lim_n \to \infty = \infty$ if $b > 0$.
+The limit won’t exist if a-1.
+\end{enumerate}
+
+\item \textbf{The Logistic Map} $L{\mu}: \mathbb{R} \to \mathbb{R}, L_{\mu}(x) = \mux(1 - x)$ was introduced to model
+a certain type of population growth (see [41]). Here $\mu$ is a real parameter which
+is fixed. Note that if $0 < \mu \leq 4$ then $L_{\mu}$ is a dynamical system of the interval
+[0, 1], i.e. $L{\mu}: [0, 1] \to [0, 1]$). For example, when $\mu = 4, L_4(x) = 4x(1 - x)$, with
+$L_4([0, 1]) = [0, 1]$ with graph given below. If $\mu > 4$, then $L_{\mu}$ is no longer a dynamical
+system of [0, 1] as $L_{\mu}([0, 1])$ is not a subset of [0, 1].
+
+\hfill
+
+\textbf{Recurrence Relations 1.1.4}
+
+\hfill
+
+Many sequences can be defined recursively by specifying the first term (or two),
+and then stating a general rule which specifies how to obtain the nth term from the
+(n − 1)th term (or other additional terms), and using mathematical induction to see
+that the sequence is “well defined” for every $n \in  \mathbb{Z}^{+}$ = {1, 2, 3, ...}. For example,
+n! = n-factorial can be defined in this way by specifying 0! = 1, and n! = n · (n −1)!,
+for $n \in \mathbb{Z}^{+}$. The Fibonacci sequence $F_n$, can be defined by setting
+
+\[
+F_0 = 1, F_1 = 1 and F_{n+1} = F_n + F_{n−1}, for n \in \mathbb{Z}^{+}
+\]
+
+so that $F_2 = 2, F_3 = 5$ etc.
+
+\hfill
+
+The orbit of a point $x_0 \in \mathbb{R}$ under a function f is then defined recursively as follows:
+
+we are given the starting value x0, and we set
+
+\[
+x_n = f(x_{n−1}), for n \in \mathbb{Z}^{+}.
+\]
+
+The principle of mathematical induction then tells that xn is defined for every n =  0,
+since it is defined for n = 0, and assuming it has been defined for k = n − 1 then
+$x_n = f(x_{n−1})$ defines it for k = n.
+
+\hfill
+
+Ideally, given a recursively defined sequence xn, we would like to have a specific
+formula for xn in terms of elementary functions (so called closed form solution), but
+this is often very difficult, or impossible to achieve. In the case of affine maps and
+certain logistic maps, there is a closed form solution. One can use the former to study
+problems of the following type:
+
+\hfill
+
+\textbf{Example 1.1.5} An amount \$ T is deposited in your bank account at the end of each
+month. The interest is r% per period. Find the amount A(n) accumulated at the
+end of n months (Assume A(0) = T).
+
+\hfill
+
+\textbf{Answer}. A(n) satisfies the difference equation
+
+\[
+A(n + 1) = A(n) + A(n)r + T, where A(0) = T,
+\]
+
+or
+
+\[
+A(n + 1) = A(n)(1 + r) + T,
+\]
+
+so we set $x_0 = T, a = 1+r$ and b = T in the formula of Example 1.1.3, then the
+solution is
+
+\[
+A(n) = (1+r)^nT + T(\frac{(1 + r)n − 1}{1+r-1})
+\]
+\[
+= (1+r)^nT + \frac{T}{r}((1+r)^n -1 )
+\]
+
+pag11
+
+\hfill
+
+
+\textbf{Remark 1.1.6} It is conjectured that closed form solutions for the difference equation
+arising from the logistic map are only possible when $\mu = ± 2,4$ (see Exercises 1.1 #
+3 for the cases where $\mu = 2, 4$, and # 7 for the case where $\mu = -2$ and also [67] for a
+discussion of this conjecture).
+
+\hfill
+
+\textbf{Exercises 1.1}
+
+\hfill
+
+\begin{enumerate}
+\item If $L_{\mu}(x) = \mux(1 − x)$ is the logistic map, calculate $L_{\mu}^2$ and $L^3_{\mu}(x)$.
+
+\item Use Example 1.1.3 for affine maps to find the solutions to the difference equations:
+
+\begin{enumerate}
+\item $x_{n+1} - \frac{x_n}{3} = 2, x_0=2
+\] 
+
+\item $x_{n+1} + 3x_n = 4, x_0 = -1.$
+\end{enumerate}
+
+\item A logistic difference equation is one of the form $x_{n+1} = \mu x_n(1-x_n)$ for some fixed
+$\mu \in \mathbb{R}$. Find exact solutions to the logistic equations:
+
+\begin{enumerate}
+\item $x_{n+1} = 2x_n(1 − x_n)$. Hint: use the substitution $x_n = (1 − y_n)/2$ to transform the
+equation into a simpler equation that is easily solved.
+\item $x_{n+1} = 4x_n(1 - x_n)$. Hint: set $x_n = sin^2(\theta_n)$ and simplify to get an equation that
+is easily solved.
+\end{enumerate}
+
+\item You borrow \$ P at r % per annum, and pay off $M at the end of each subsequent
+month. Write down a difference equation for the amount owing A(n) at the end of
+each month (so A(0) = P). Solve the equation to find a closed form for A(n). If
+P = 100, 000, M = 1000 and r = 4, after how long will the loan be paid off?
+
+\item If 
+
+\[
+T_{\mu}(x) =  \left\{\begin{matrix}
+\mu x & \text{if} & 0 \leq x < 1/2  \\
+\mu(1-x) & \text{if} & 1/2 \leq x <1  \\
+\end{matrix}\right.
+\]
+
+show that $T_{\mu}$ is a dynamical system of
+[0, 1] for $\mu 2 (0, 2]$
+
+\item Let $f: \mathbb{R}  \to \mathbb{R} $ be the function defined below. For each of the intervals given,
+determine whether f can be considered as a dynamical system $f : I \to  I$:
+
+\begin{enumerate}
+\item $f(x) = x^3 − 3x$,
+
+\hfill
+
+(i) I = [−1, 1], (ii) I = [−2, 2].
+
+\item $f(x) = 2x^3 − 6x,$
+
+\hfill
+
+(i) I = [−1, 1], (ii) $I = [- \sqrt{\frac{7}{2}}, \sqrt{\frac{7}{2}}],$
+ (iii) I = [−4, 4].
+ 
+\item For the following functions, find $f^2(x), f^3(x)$ and a general formula for $f^n(x)$:
+
+\[
+(i) f(x)=x^2, (ii) f(x) = |x+1|, (iii) f(x) = \left\{\begin{matrix}
+2x & \text{ if }  & 0 \leq x < 1/2 \\
+2x-1 & \text{ if }  & 1/2 \leq x < 1 \\
+\end{matrix}\right.
+\]
+
+\item Use mathematical induction to show that if $f(x) = \frac{2}{x+1}$, then
+
+\[
+f^n(x) = \frac{2^n(x + 2) + (-1)^n(2x − 2)}{2^n(x + 2) - (-1)^n(x - 1)}
+\]
+
+\item Show that a closed form solution to the logistic difference equation when $\mu = -2$
+is given by
+\end{enumerate}
+
+
+
+
+\end{document}
+

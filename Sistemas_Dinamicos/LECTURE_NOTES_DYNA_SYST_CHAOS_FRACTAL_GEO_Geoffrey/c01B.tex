@@ -1,0 +1,1090 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\begin{document}
+
+pag 7
+
+\hfill
+
+\textbf{Chapter 1. The Orbits of One-Dimensional Maps.}
+
+\hfill
+
+\textbf{1.1 Iteration of Functions and Examples of Dynamical Systems.}
+
+\hfill
+
+Dynamical systems is the study of how things change over time. Examples include
+the growth of populations, the change in the weather, radioactive decay, mixing of
+liquids and gases such as the ocean currents, motion of the planets, the interest in a
+bank account. Ideally we would like to study these with continuously varying time
+(what are called flows), but in this text we will simplify matters by only considering
+discrete changes in time. For example, we might model a population by measuring
+it daily. Suppose that xn is the number of members of a population on day n, where
+$x_0$ is the initial population. We look for a function $f :\mathbb{R} \to \mathbb{R}$, (where $\mathbb{R}$ = set of all
+real numbers), for which
+
+\[
+x_1 = f(x_0), x_2 = f(x_1) \text{ and generally } x_n = f(x_{n-1}), n= 1, 2, ...
+\]
+
+This leads to the iteration of functions in the following way:
+
+\hfill
+
+\textbf{Definition 1.1.1} Given $x_0 \in \mathbb{R}$, the orbit of $x_0$ under f is the set
+
+\[
+O(x_0) = {x_0, f(x_0), f^2(x_0), ...},
+\]
+
+where $f^2(x_0) = f(f(x_0)), f^3(x_0) = f(f^2(x_0))$, and continuing indefinitely, so that
+
+\[
+f^n(x) = f \circ f \circ f \circ \cdots \circ f(x); (n-times composition).
+\]
+
+Set $x_n = f^n(x_0), x_1 = f(x_0), x_2 = f^2(x_0)$, so that in general
+
+\[
+x_{n+1} = f^{n+1}(x_0) = f(f^n(x_0)) = f(x_n).
+\]
+
+
+More generally, f may be defined on some subinterval I of $\mathbb{R}$, but in order for the
+iterates of $x \in I$ under f to be defined, we need the range of f to be contained in I,
+so $f: I \to I$.
+
+\hfill
+
+This is what we call the iteration of one-dimensional maps (as opposed to higher
+dimensional maps $f: \mathbb{R}^n \to \mathbb{R}^n$, n > 1, which will be studied briefly in a later
+chapter).
+
+\hfill
+
+\textbf{Definition 1.1.2} A (one dimensional) dynamical system is a function $f: I \to I$
+where I is some subinterval of $\mathbb{R}$.
+
+\hfill
+
+Given such a function f, equations of the form $x_{n+1} = f(x_n)$ are examples of
+difference equations. These arise in the types of examples we mentioned above. For example in biology xn may represent the number of bacteria in a culture after n hours.
+There is an obvious correspondence between one-dimensional maps and these difference
+equations. For example, a difference equation commonly used for calculating
+square roots:
+
+\[
+x_{n+1} = \frac{1}{2}(x_n + \frac{2}{x_n}
+\]
+ 
+corresponds to the function $f(x) = \frac{1}{2} (x + \frac{2}{x_n})$. If we start by setting $x_0 = 2$ (or in
+fact any real number), and then find $x_1, x_2$ etc., we get a sequence which rapidly
+approaches $\sqrt{2}$ (see page 9 of Sternberg [63]). One of the issues we examine is what
+exactly is happening here.
+
+\hfill
+
+\textbf{Examples of Dynamical Systems 1.1.3}
+
+\hfill
+
+\begin{enumerate}
+\item \textbf{The Trigonometric Functions} Consider the iterations of the trigonometric
+functions starting with $f: \mathbb{R} \to \mathbb{R}$, f(x) = sin(x). Select $x_0 \in \mathbb{R}$ at random, e.g.,
+$x_0 = 2$ and set $x_{n+1} = sin(x_n)$, n = 0, 1, 2, ... Can you guess what happens to $x_n$ as
+n increases? One way to investigate this type of dynamical system is to enter 2 into
+our calculator, then repeatedly press the 2nd, Answer and Sin keys (you will need
+to do this many times to get a good idea - it may be easier to use Mathematica, or
+some similar computer algebra system). Do the same, but replace the sine function
+with the cosine function. How do we explain what appears to be happening in each
+case? These are questions that we aim to answer quite soon.
+
+\item Linear Maps Probably the simplest dynamical system (and least interesting from
+a chaotic dynamical point of view), for population growth arises from the iteration of
+linear maps: maps of the form $f(x) = a \cdot x$. Suppose that $x_n$ = size of a population
+at time n, with the property
+
+\[
+x_{n+1} = a \cdot x_n
+\]
+
+for some constant a > 0. This is an example of a linear model for the growth of the
+population.
+
+\hfill
+
+If the initial population is $x_0 > 0$, then $x_1 = ax_0, x_2 = ax_1 = a^2x_0$, and in general
+$x_n = a^nx_0$ for n = 0, 1, 2, . . .. This is the exact solution (or closed form solution)
+to the difference equation $x_{n+1} = a \cdot x_n$. Clearly f(x) = ax is the corresponding
+dynamical system. We can use the solution to determine the long term behavior of
+the population:
+
+$x_n$ is very well behaved since:
+
+\begin{enumerate}
+\item  if a > 1, then $x_n \to infty$ as $n \to \infty$,
+
+\item  if 0 < a< 1 then $x_n \to 0$ as $n \to \infty$ (i.e., the population becomes extinct),
+\item if a = 1, then the population remains unchanged.
+\end{enumerate}
+
+\hfill
+
+\textbf{3. Affine maps} These are functions $f: \mathbb{R}
+ \to \mathbb{R}$ of the form f(x) = ax + b ($a \neq 0$),
+for constants a and b. Consider the iterates of such maps:
+
+\[
+f^2(x) = f(ax + b) = a(ax+ b) + b = a^2x + ab + b,
+\]
+\[
+f^3(x) = a^3x + a^2b + ab + b,
+\]
+\[
+f^4(x) = a^4x + a^3b + a^2b + ab + b,
+\]
+
+and generally
+
+\[
+f^n(x) = a^nx + a^{n-1}b + a^{n-2}b + \cdots + ab + b.
+\]
+
+
+Let $x_0 \in  \mathbb{R}$ and set $x_n = f^n(x_0)$, then we have
+
+\[
+\begin{matrix}
+x_n & = & a^n x_0 + (a^{n-1} + a^{n-2} + \cdots + a + 1)b \\ 
+& = & a^n x_0 + b \left ( \frac{a^n - 1}{a-1} \right ), \text{ if } a \neq 0 \\
+\end{matrix}
+\]
+
+or
+
+\[
+x_n = \left ( x_0 + \frac{b}{a-1} \right ) a^n + \frac{b}{1-a}, \text{ if } a \neq 1
+\]
+
+is the closed form solution in this case (here we have used the formula for the sum of
+a finite geometric series:
+
+\[
+\sum_{k=0}^{n-1} r^k = \frac{r^n -1}{r-1}
+\]
+
+when $r \neq 1$). If a = 1, the solution is $x_n = x_0 + nb$ .
+We can use these equations to determine the long term behavior of xn. We see
+that:
+
+\begin{enumerate}
+\item if $|a| < 1$ then $a^n \to 0$ as $n \to \infti$, so that
+
+\[
+lim_{n \to \infty} x_n = \frac{b}{1-a}
+\]
+
+\item  if $a > 1$, then $lim_{n \to \infty} x_n = \infty$ for b, $x_0 > 0$,
+
+\item  if a = 1, then $lim_{n \to \infty = \infty$} if $b > 0$.
+The limit won’t exist if a  −1.
+\end{enumerate}
+
+\item \textbf{The Logistic Map} $L{\mu}: \mathbb{R} \to \mathbb{R}, L_{\mu}(x) = \mux(1 − x)$ was introduced to model
+a certain type of population growth (see [41]). Here $\mu$ is a real parameter which
+is fixed. Note that if $0 < \mu \leq 4$ then $L_{\mu}$ is a dynamical system of the interval
+[0, 1], i.e. $L{\mu}: [0, 1] \to [0, 1]$). For example, when $\mu = 4, L_4(x) = 4x(1 − x)$, with
+$L_4([0, 1]) = [0, 1]$ with graph given below. If $\mu > 4$, then $L_{\mu}$ is no longer a dynamical
+system of [0, 1] as $L_{\mu}([0, 1])$ is not a subset of [0, 1].
+
+\hfill
+
+\textbf{Recurrence Relations 1.1.4}
+
+\hfill
+
+Many sequences can be defined recursively by specifying the first term (or two),
+and then stating a general rule which specifies how to obtain the nth term from the
+(n − 1)th term (or other additional terms), and using mathematical induction to see
+that the sequence is “well defined” for every $n \in  \mathbb{Z}^{+}$ = {1, 2, 3, ...}. For example,
+n! = n-factorial can be defined in this way by specifying 0! = 1, and n! = n · (n −1)!,
+for $n \in \mathbb{Z}^{+}$. The Fibonacci sequence $F_n$, can be defined by setting
+
+\[
+F_0 = 1, F_1 = 1 and F_{n+1} = F_n + F_{n−1}, for n \in \mathbb{Z}^{+}
+\]
+
+so that $F_2 = 2, F_3 = 5$ etc.
+
+\hfill
+
+The orbit of a point $x_0 \in \mathbb{R}$ under a function f is then defined recursively as follows:
+
+we are given the starting value x0, and we set
+
+\[
+x_n = f(x_{n−1}), for n \in \mathbb{Z}^{+}.
+\]
+
+The principle of mathematical induction then tells that xn is defined for every n =  0,
+since it is defined for n = 0, and assuming it has been defined for k = n − 1 then
+$x_n = f(x_{n−1})$ defines it for k = n.
+
+\hfill
+
+Ideally, given a recursively defined sequence xn, we would like to have a specific
+formula for xn in terms of elementary functions (so called closed form solution), but
+this is often very difficult, or impossible to achieve. In the case of affine maps and
+certain logistic maps, there is a closed form solution. One can use the former to study
+problems of the following type:
+
+\hfill
+
+\textbf{Example 1.1.5} An amount \$ T is deposited in your bank account at the end of each
+month. The interest is r% per period. Find the amount A(n) accumulated at the
+end of n months (Assume A(0) = T).
+
+\hfill
+
+\textbf{Answer}. A(n) satisfies the difference equation
+
+\[
+A(n + 1) = A(n) + A(n)r + T, where A(0) = T,
+\]
+
+or
+
+\[
+A(n + 1) = A(n)(1 + r) + T,
+\]
+
+so we set $x_0 = T, a = 1+r$ and b = T in the formula of Example 1.1.3, then the
+solution is
+
+\[
+A(n) = (1+r)^nT + T(\frac{(1 + r)n − 1}{1+r-1})
+\]
+\[
+= (1+r)^nT + \frac{T}{r}((1+r)^n -1 )
+\]
+
+pag11
+
+\hfill
+
+
+\textbf{Remark 1.1.6} It is conjectured that closed form solutions for the difference equation
+arising from the logistic map are only possible when $\mu = ± 2,4$ (see Exercises 1.1 #
+3 for the cases where $\mu = 2, 4$, and # 7 for the case where $\mu = -2$ and also [67] for a
+discussion of this conjecture).
+
+\hfill
+
+\textbf{Exercises 1.1}
+
+\hfill
+
+\begin{enumerate}
+\item If $L_{\mu}(x) = \mux(1 − x)$ is the logistic map, calculate $L_{\mu}^2$ and $L^3_{\mu}(x)$.
+
+\item Use Example 1.1.3 for affine maps to find the solutions to the difference equations:
+
+\begin{enumerate}
+\item $x_{n+1} - \frac{x_n}{3} = 2, x_0=2
+\] 
+
+\item $x_{n+1} + 3x_n = 4, x_0 = -1.$
+\end{enumerate}
+
+\item A logistic difference equation is one of the form $x_{n+1} = \mu x_n(1-x_n)$ for some fixed
+$\mu \in \mathbb{R}$. Find exact solutions to the logistic equations:
+
+\begin{enumerate}
+\item $x_{n+1} = 2x_n(1 − x_n)$. Hint: use the substitution $x_n = (1 − y_n)/2$ to transform the
+equation into a simpler equation that is easily solved.
+\item $x_{n+1} = 4x_n(1 - x_n)$. Hint: set $x_n = sin^2(\theta_n)$ and simplify to get an equation that
+is easily solved.
+\end{enumerate}
+
+\item You borrow \$ P at r % per annum, and pay off $M at the end of each subsequent
+month. Write down a difference equation for the amount owing A(n) at the end of
+each month (so A(0) = P). Solve the equation to find a closed form for A(n). If
+P = 100, 000, M = 1000 and r = 4, after how long will the loan be paid off?
+
+\item If 
+
+\[
+T_{\mu}(x) =  \left\{\begin{matrix}
+\mu x & \text{if} & 0 \leq x < 1/2  \\
+\mu(1-x) & \text{if} & 1/2 \leq x <1  \\
+\end{matrix}\right.
+\]
+
+show that $T_{\mu}$ is a dynamical system of
+[0, 1] for $\mu 2 (0, 2]$
+
+\item Let $f: \mathbb{R}  \to \mathbb{R} $ be the function defined below. For each of the intervals given,
+determine whether f can be considered as a dynamical system $f : I \to  I$:
+
+\begin{enumerate}
+\item $f(x) = x^3 − 3x$,
+
+\hfill
+
+(i) I = [−1, 1], (ii) I = [−2, 2].
+
+\item $f(x) = 2x^3 − 6x,$
+
+\hfill
+
+(i) I = [−1, 1], (ii) $I = [- \sqrt{\frac{7}{2}}, \sqrt{\frac{7}{2}}],$
+ (iii) I = [−4, 4].
+ 
+\item For the following functions, find $f^2(x), f^3(x)$ and a general formula for $f^n(x)$:
+
+\[
+(i) f(x)=x^2, (ii) f(x) = |x+1|, (iii) f(x) = \left\{\begin{matrix}
+2x & \text{ if }  & 0 \leq x < 1/2 \\
+2x-1 & \text{ if }  & 1/2 \leq x < 1 \\
+\end{matrix}\right.
+\]
+
+\item Use mathematical induction to show that if $f(x) = \frac{2}{x+1}$, then
+
+\[
+f^n(x) = \frac{2^n(x + 2) + (-1)^n(2x − 2)}{2^n(x + 2) - (-1)^n(x - 1)}
+\]
+
+\item Show that a closed form solution to the logistic difference equation when $\mu = -2$
+is given by
+\end{enumerate}
+
+\{
+xn =
+1
+2
+ 
+1 − f
+ 
+rnf−1(1 − 2x0)
+  
+, where r = −2 and f( ) = 2 cos
+ 
+  −
+p
+3 
+3
+!
+.
+(Hint: Set xn =
+1 − f( n)
+2
+and use steps similar to 3(ii)).
+
+1.2 Newton’s Method and Fixed Points
+Given a differentiable function f : R ! R, Newton’s method often allows us to
+find good approximations to zeros of f(x), i.e., approximate solutions to the equation
+f(x) = 0. The idea is to start with a first approximation x0 and look at the tangent
+line to f(x) at the point (x0, f(x0)). Suppose this line intersects the x-axis at x1,
+then we can check that
+x1 = x0 −
+f(x0)
+f0(x0)
+, if f0(x0) 6= 0.
+For reasons that we will make clear, it is often the case that x1 is a better approximation
+to the zero x = c than x0 was. In other words, Newton’s method is an algorithm
+for finding approximations to zeros of a function f(x). The algorithm gives rise to a
+difference equation
+xn+1 = xn −
+f(xn)
+f0(xn)
+,
+where x0 is a first approximation to a zero of f(x). The corresponding real function
+is
+Nf (x) = x −
+f(x)
+f0(x)
+, (the Newton function).
+Note that if f(x) = x2 − a, then f0(x) = 2x and
+Nf (x) = x −
+x2 − a
+2x
+=
+1
+2
+ 
+x +
+a
+x
+ 
+,
+so that
+xn+1 =
+1
+2
+ 
+xn +
+a
+xn
+ 
+,
+the difference equation we mentioned in Section 1.1 that is used for approximating p
+2 when a = 2.
+
+Note that we are looking for where f(x) = 0, and this happens if and only if
+Nf (x) = x.
+Definition 1.2.1 For a function f : R ! R, a point c 2 R for which f(c) = c is called
+a fixed point of f. It is a point where the graph of f(x) intersects the line y = x. We
+denote the set of fixed points of f by Fix(f).
+Fixed points occur where the graph of f(x) intersects the line y = x.
+Example 1.2.2 Suppose that f(x) = x2, then x2 = x gives x(x−1) = 0, so has fixed
+points c = 0 and c = 1, so Fix(f) = {0, 1}. If f(x) = x3 − x, then x3 − x = x gives
+x(x2 − 2) = 0, so the fixed points are c = 0 and c = ±
+p
+2, Fix(f) = {0,±
+p
+2}.
+
+The logistic map f(x) = 4x(1 − x) = 4x − 4x2, 0   x   1 has the properties:
+f(0) = 0, (a fixed point), f(1) = 0, a maximum at x = 1/2 (with f(1/2) = 1).
+Solving f(x) = x gives 4x − 4x2 = x, so 4x2 = 3x, so the fixed points are c = 0 and
+c = 3/4.
+This map has what we call eventual fixed points: f(1) = 0 and f(0) = 0, so we say
+that c = 1 is eventually fixed. Also f(1/4) = 3/4, so c = 1/4 is eventually fixed, as is
+c = (2+
+p
+3)/4.
+Definition 1.2.3 x  2 R is an eventual fixed point of f(x) if there exists a fixed point
+c of f(x) and r 2 Z+ satisfying fr(x ) = c, but fs(x ) 6= c for 0 < s < r.
+Example 1.2.4 The Tent Map
+Define a function T : [0, 1] ! [0, 1] by
+T(x) =
+ 
+2x : 0   x   1/2
+2(1 − x) :1/2 < x   1
+= 1 − 2|x − 1/2|.
+T(x) is called the tent map, it has fixed points: T(0) = 0 and T(2/3) = 2/3. Since
+T(1/4) = 1/2, T(1/2) = 1 and T(1) = 0, 1/4, 1/2 and 1 are eventually fixed. It is not
+difficult to see that there are many other eventually fixed points (infinitely many).
+0.0 0.2 0.4 0.6 0.8 1.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Note that some maps do not have fixed points:
+Example 1.2.5 f(x) = x2 + 1 has no fixed points.
+
+f(x) = x2 + 1 does not intersect the line y = x.
+Question 1.2.6 For what values of a 2 R does Qa(x) = x2 + a have fixed points?
+We see below that certain functions always have fixed points:
+Theorem 1.2.7 Let f : I ! I be a continuous function, where I = [a, b], a < b is a
+bounded interval. Then f(x) has a fixed point c 2 I.
+Proof. Set g(x) = f(x) − x. We may assume that f(a) 6= a and f(b) 6= b, so that
+f(a) > a and f(b) < b.
+The graph of f(x) always intersects the line y = x.
+It follows that
+g(a) = f(a) −a > 0, and g(b) = f(b) −b < 0,
+
+so that g(x) is a continuous function which is positive at a and negative at b, so by
+the Intermediate Value Theorem (IVT), there exists c 2 (a, b) (open interval) with
+g(c) = 0, i.e., f(c) = c, so c is a fixed point of f(x).  
+Remark 1.2.8 The above is an example of an existence theorem, it says nothing
+about how to find the fixed point, where it is or how many there are. It tells us that
+if f(x) is a continuous function on an interval I with f(I)   I, then f(x) has a fixed
+point in I. It is also true that if instead f(I)   I then f(x) has a fixed point in I as
+we see now:
+Theorem 1.2.9 Let f : I ! R (I = [a, b], a < b) be a continuous function with
+f(I)   I, then f(x) has a fixed point in I.
+Proof. As before, set g(x) = f(x) − x, then there exists c1 2 (a, b) with f(c1) < c1
+(in fact f(c1) <a < c1). Also there is c2 2 (a, b) with f(c2) > c2.
+Then g(c1) < 0 and g(c2) > 0 and since g(x) is a continuous function, it follows by
+the Intermediate Value Theorem that there exists c 2 I, (c1 < c < c2 or c2 < c < c1),
+with g(c) = 0; f(c) = c.  
+Remark 1.2.10 It is often difficult to find fixed points explicitly:
+Example 1.2.11 Set f(x) = cos x. If f(c) = c, then cos c = c. It is possible to find
+an approximation to the fixed point c = .739085 . . . using (for example) Newton’s
+method.
+
+Exercises 1.2
+1. Find all fixed points and eventual fixed points of the map f(x) = |x − 1|.
+2. Let f : R ! R be such that for some n 2 Z+, the nth iterate of f has a unique
+fixed point c (i.e., fn(c) = c and c is unique). Then show that c is a fixed point of f.
+3. Use the Mathematica command NestList (see below) to find how the following
+functions behave when the given point is iterated (comment on what appears to be
+happening in each case):
+(i) L1(x) = x(1 − x), with starting point x0 = .75.
+(ii) L2(x) = 2x(1 − x), with starting point x0 = .1.
+(iii) L3(x) = 3x(1 − x), with starting point x0 = .2.
+(iv) L3.2(x) = 3.2x(1 − x), with starting point x0 = .95.
+(v) f(x) = sin(x), with starting point x0 = 9.5.
+(vi) g(x) = cos(x), with starting point x0 = −15.3.
+4. Show that the logistic map Lμ(x) = μx(1 − x), x 2 [0, 1], for 0 < μ < 4, the fixed
+point x = 0 has no eventual fixed points other than x = 1.
+Show that for 1 < μ   2, the fixed point x = 1 − 1/μ only has x = 1/μ as an
+eventual fixed point, but this is not the case for 2 < μ < 3.
+To use Mathematica, first define your function, say f(x) = sin(x) in an input
+cell using the syntax
+f[x_]:= Sin[x].
+Execute the cell by doing Shift and Enter simultaneously. The command
+NestList[f, 9.5, 100]
+when executed in a new input cell will give 100 iterations of sin(x) with starting
+value x0 = 9.5. If you want to graph f(x) on the interval [a, b], use the command:
+Plot[f[x], { x, a, b } ].
+
+5. (a) Let f(x) = (1+x)−1. Find the fixed points of f and show that there are
+no points c with f2(c) = c and f(c) 6= c (period 2-points). Note that f(−1) is not
+defined, but points that get mapped to −1 belong to the interval [−2,−1) and are of
+the form
+ n = −
+Fn+1
+Fn
+, n  1,
+where {Fn}, n   0, is the Fibonacci sequence (see 1.1.4). Note that  n ! −r as
+n!1, where −r is the negative fixed point of f (see [12] for more details).
+(b) If x0 2 (0, 1], set xn =
+Fn−1x0 + Fn
+Fnx0 + Fn+1
+. Use mathematical induction to show that
+xn+1 = f(xn) =
+Fnx0 + Fn+1
+Fn+1x0 + Fn+2
+.
+Deduce that as n!1, xn ! 1/r, the positive fixed point of f.
+1.3 Graphical Iteration
+It is possible to follow the iterates of a function f(x) at a point x0 using graphical
+iteration (sometimes called web diagrams).
+We start at x0 on the x-axis and draw a line vertically to the function. We then
+move horizontally to the line y = x, then vertically to the function and continue in this
+way. Notice that in some examples the iterations converges to a fixed point. In others
+it goes off to 1, whilst in others still, it oscillates between two points indefinitely.
+Example 1.3.1 f(x) = x(1 − x). In this example, an examination of graphical
+iteration seems to suggest that the orbits of any point in [0, 1] approach the fixed
+point x = 0. This is an example of an attracting fixed point.
+
+Example 1.3.2 Let f(x) = x/2 + 1. This is an affine transformation with a = 1/2,
+b = 1. According to what we saw in Example 1.1.3, the iterates should converge to
+b
+1−a = 2 since |a| < 1. What is actually happening is that c = 2 is an attracting fixed
+point of f(x) with the property that it attracts all members of R (said to be globally
+attracting).
+0 1 2 3 4
+0
+1
+2
+3
+4
+Example 1.3.3 We see from the graph of f(x) = sin x that c = 0 seems to be an
+attracting fixed point. We shall show later that it is actually globally attracting.
+
+We see two basic situations arising (together with some variations of these). In
+particular, we notice that if the sequence xn = fn(x0) converges to some point c as
+n!1, then c is a fixed point.
+(i) Stable orbit, where the web diagram approaches a fixed point.
+(ii) Unstable orbit, where the web diagram moves away from a fixed point.
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.5 1.0 1.5 2.0
+0.5
+1.0
+1.5
+2.0
+Proposition 1.3.4 If y = f(x) is a continuous function and limn!1 fn(x0) = c,
+then f(c) = c (i.e., if the orbit converges to a point c, then c is a fixed point of f) .
+Proof. We see that
+lim
+n!1
+fn(x0) = c ) f( lim
+n!1
+fn(x0)) = f(c),
+
+and since f is continuous,
+lim
+n!1
+fn+1(x0) = f(c).
+But clearly c = limn!1 fn+1(x0), so that c = f(c) by the uniqueness of limit.  
+1.4 Attractors and Repellers
+Suppose that f : X ! X is a function (where we assume that X is some subset of
+R such as an interval or possibly R itself). Let c 2 X be a fixed point of f. We define
+the notions on attracting fixed point and repelling fixed that we looked at graphically
+in the last section.
+Definition 1.4.1 Let f : X ! X with f(c) = c.
+(i) c is a stable fixed point if for all   > 0 there exists   > 0 such that if x 2 X and
+|x − c| <  , then |fn(x) − c| <   for all n 2 Z+.
+If this does not hold, c will be called unstable.
+(ii) c is said to be attracting if there is a real number   > 0 such that
+|x − c| <   ) lim
+n!1
+fn(x) = c.
+(iii) c is asymptotically stable if it is both stable and attracting.
+Remark 1.4.2 We will show that a fixed point c of f : X ! X (suitably differentiable)
+with the property |f0(c)| < 1 is an asymptotically stable fixed point. If c
+is an unstable fixed point, we can find   > 0 and x arbitrarily close to c such that
+some iterate of x, say fn(x), will be greater than distance   from c. This is the case
+when |f0(c)| > 1 as the next theorem shows. We call c a repeller (c is a repelling
+fixed point), since the iterates move away from the fixed point (c is unstable). We will
+also see that a fixed point can be stable without being attracting, and that it can be
+attracting without being stable.
+Definition 1.4.3 A fixed point c of f is hyperbolic if |f0(c)| 6= 1. If |f0(c)| = 1 it is
+non-hyperbolic.
+Thus if c is a non-hyperbolic fixed point, then f0(c) = 1 or f0(c) = −1, so the graph
+of f(x) either meets the line y = x tangentially, or at 90 :
+
+f(x) = −2x3 + 2x2 + x has both types of non-hyperbolic fixed points.
+Hyperbolic fixed points have the following properties:
+Theorem 1.4.4 Let f : X ! X be a differentiable function with continuous first
+derivative (we say that f is of class C1).
+(i) If a is a fixed point for f(x) with |f0(a)| < 1, then a is asymptotically stable.
+The iterates of points close to a, converge to a geometrically (i.e., there is a constant
+0 <   < 1 for which |fn(x) − a| <  n|x − a| for all n 2 Z+ and for all x 2 X
+sufficiently close to a).
+(ii) If a is a fixed point for f(x) for which |f0(a)| > 1, then a is a repelling fixed point
+for f.
+Proof. (i) We may assume that X is an open interval with a 2 X. Suppose |f0(a)| <
+  < 1 for some   > 0, then using the continuity of f0(x), there exists an open interval
+I with |f0(x)| <   < 1 for all x 2 I.
+By the Mean Value Theorem, if x 2 I there exists c 2 I, lying between x and a,
+satisfying
+f0(c) =
+f(x) − f(a)
+x − a
+,
+so that
+|f(x) − a| = |f0(c)||x − a| <  |x − a|,
+(i.e., f(x) is closer to a than x was).
+Repeating this argument with f(x) replacing x gives
+|f2(x) − a| <  2|x − a|, . . . , |fn(x) − a| <  n|x − a|.
+
+Since  n ! 0 as n!1, it follows that fn(x) ! a as n!1.
+The proof of (ii) is similar.  
+Example 1.4.5 Denote the Logistic map by Lμ(x) = μx(1 − x) = μx − μx2. We
+are interested in this map for 0   x   1 and 0 < μ   4, since for these parameter
+values μ, Lμ is a function which maps the interval [0, 1] into the interval [0, 1], so it
+necessarily has a fixed point and iterates stay inside [0, 1] (if μ > 4, Lμ(x) > 1 for
+some values of x in [0, 1] and further iterates will go to −1).
+Solving Lμ(x) = x gives x = 0 or x = 1− 1/μ. If 0 < μ   1, then 1 − 1/μ   0, so
+c = 0 is the only fixed point in [0, 1] in this case.
+For 0 < μ   1, L0
+μ(x) = μ − 2μx, so L0
+μ(0) = μ and 0 is an attracting fixed point
+for 0 < μ < 1.
+0.0 0.2 0.4 0.6 0.8 1.0
+0.2
+0.4
+0.6
+0.8
+1.0
+If μ > 1, then 0 and 1 − 1/μ are both fixed points in [0, 1], but now 0 is repelling.
+
+Also,
+L0
+μ(1 − 1/μ) = μ − 2μ(1 − 1/μ) = 2 − μ,
+so that
+|L0
+μ(1 − 1/μ)| = |2 − μ| <1 iff 1< μ < 3.
+In this case c = 1− 1/μ is an attracting fixed point, and repelling for μ > 3. Note
+that L0
+1(0) = 1 and L0
+3(2/3) = 1 so we have non-hyperbolic fixed points.
+We will examine in Chapter 2 what happens in the cases where μ = 1 and μ = 3.
+Example 1.4.6 Let f(x) = 1/x. The two fixed points x = ±1 are hyperbolic since
+f0(x) = −1/x2, so f0(±1) = −1. However, they are stable but not attracting since
+f2(x) = f(1/x) = x, and we see points close to ±1 neither move closer nor further
+apart.
+
+Example 1.4.7 Consider instead the function fa(x) =
+ 
+−2x if x < a
+0 if x   a
+, where
+a is any positive real number. Then c = 0 is an unstable (repelling) fixed point of
+fa which is attracting i.e., limn!1 fn(x) = 0 for all x 2 R. A fixed point having
+this latter property is said to be globally attracting. Note that the function fa is not
+continuous at x = a. It has been shown by Sedaghat [58] that a continuous mapping
+of the real line cannot have an unstable fixed point that is globally attracting.
+-3 -2 -1 0 1 2 3
+-3
+-2
+-1
+0
+1
+2
+3
+The map f1 (in bold) where x = 0 is an attracting but unstable fixed point.
+Example 1.4.8 Newton’s Method Revisited.
+Suppose that f : I ! I is a function whose zero c is to be approximated using
+Newton’s method. The Newton function is Nf (x) = x − f(x)/f0(x), where we are
+assuming f0(c) 6= 0. Notice that since f(c) = 0, Nf (c) = c, i.e., c is a fixed point of
+Nf . Consider N0
+f (c):
+N0
+f (x) = 1 −
+f0(x)f0(x) − f(x)f00(x)
+[f0(x)]2 =
+f(x)f00(x)
+[f0(x)]2 ,
+so that
+N0
+f (c) =
+f(c)f00(c)
+[f0(c)]2 = 0,
+since f(c) = 0.
+
+It follows that |N0
+f (c)| = 0 < 1, so that c is an attracting fixed point for Nf , and
+in particular
+lim
+n!1
+Nn
+f (x0) = c,
+provided x0, the first approximation to c, is sufficiently close to c.
+Definition 1.4.9 A fixed point c for f(x) is called a super-attracting fixed-point if
+f0(c) = 0. This gives a very fast convergence to the fixed-point for points nearby.
+Remark 1.4.10 Suppose that f0(c) = 0, then Nf (x) is not defined at x = c, since the
+quotient f(x)/f0(x) is not defined there. Suppose we can write f(x) = (x − c)kh(x)
+where h(c) 6= 0 and k 2 Z+ (for example if f(x) is a polynomial with a multiple root),
+then we have
+f(x)
+f0(x)
+=
+(x − c)kh(x)
+k(x − c)k−1h(x) + (x − c)kh0(x)
+=
+(x − c)h(x)
+kh(x) + (x − c)h0(x)
+= 0,
+when x = c, so that Nf (x) = c has a removable discontinuity at x = c (removed by
+setting Nf (c) = c). Then we can find N0
+f (x) and show that N0
+f (x) has a removable
+discontinuity at x = c, which can again be removed by setting N0
+f (c) = (k − 1)/k, so
+that |N0
+f (c)| < 1 (see the exercises).
+We summarize the above with a theorem:
+Theorem 1.4.11 For a differentiable function f : I ! I, the zero c of f(x) is a
+super-attracting fixed point of the Newton function Nf , if and only if f0(c) 6= 0.
+Example 1.4.12 Suppose f(x) = x3 − 1, then f(1) = 0 and
+Nf (x) = x − f(x)/f0(x) = x −
+ 
+x3 − 1
+3x2
+ 
+=
+2x
+3
++
+1
+3x2 ,
+so Nf (1) = 1 and N0
+f (x) = 2
+3
+− 2
+3x3 , so that N0
+f (1) = 0. We see from graphical iteration
+(next section), very fast convergence to the fixed point of Nf .
+
+1. Find the fixed points and determine their stability for the function f(x) = 4 − 3
+x .
+2. For the family of quadratic maps Qc(x) = x2 + c, x 2 [0, 1], use the Mathematica
+program webPlot below to give graphical iteration for the values shown (use 20
+iterations):
+(i) c = 1/2, starting point x0 = 1, (ii) c = 1/4, starting point x0 = .1, (iii) c = 1/8,
+starting point x0 = .7.
+Mathematica Program: Use as in:
+webPlot[Cos[x], {x, 0, Pi}, {.1, 20}, AspectRatio->Automatic]
+webPlot[g_, {x_, xmin_, xmax_}, {a1_, n_}, opts_] :=
+Module[{seq, r, pts, web, graph}, r[t_] := N[g /. x -> t];
+seq = NestList[r, a1, n]; pts = Flatten[
+Table[{{seq[[i]],seq[[i + 1]]},{seq[[i + 1]],seq[[i + 1]]}},{i, 1, n}], 1];
+web = Graphics[{Hue[0], Line[PrependTo[pts, {seq[[1]], 0}]]}];
+graph = Plot[{x, r[x]}, {x, xmin, xmax},
+DisplayFunction -> Identity]; Print["last iterate =", Last[seq]];
+Show[web, graph, opts, Frame -> True,
+
+PlotRange -> {{xmin, xmax}, {xmin, xmax}}]]
+3. Let Sμ(x) = μ sin(x), 0   μ   2 , 0   μ     and Cμ(x) = μ cos(x), −    x    
+and 0   μ    .
+(a) Show that Sμ has a super-attracting fixed point at x =  /2, when μ =  /2.
+(b) Find the corresponding values for Cμ having a super-attracting fixed point.
+4. Show that the map f(x) =
+2
+x+ 1
+has no periodic points of period n > 1 (Hint:
+Use the closed formula in Exercise 1.1.6).
+5. Show that if f(x) = x+1/x and x > 0, then Rn(x)!1as n!1. (Hint: R has
+no fixed points in R and it is continuous with 0 < R(x) < R2(x) < · · · , so suppose
+the limit exists and obtain a contradiction).
+6. Let Nf be the Newton function of the map f(x) = x2 + 1. Clearly there are no
+fixed points of the the Newton function as there are no zeros of f. Show that there
+are points c where N2
+f (c) = c (called period 2-points of Nf ).
+7. (a) Suppose that f(c) = f0(c) = 0 and f00(c) 6= 0. If f00(x) is continuous at x = c,
+show that the Newton function Nf (x) has a removable discontinuity at x = c (hint:
+apply L’Hopital’s rule to Nf at x = c).
+(b) If in addition, f000(x) is continuous at x = c with f000(c) 6= 0, show that N0
+f (c) = 1/2,
+so that x = c is not a super-attracting fixed point in this case.
+(c) Check the above for the function f(x) = x3 − x2 with c = 0.
+8. Continue the argument in Remark 1.4.11 (generalizing the last exercise), to show
+that the derivative of the Newton function Nf has a removable discontinuity at x = c,
+which can be removed by setting N0
+f (c) = (k − 1)/k.
+
+9. Let f be a twice differentiable function with f(c) = 0. Show that if we find the
+Newton function of g(x) = f(x)/f0(x), then x = c will be a super-attracting fixed
+point for Ng, even if f0(c) = 0 (this is called Halley’s method).
+1.5 Non-hyperbolic Fixed Points.
+Example 1.5.1We have seen that it f : X ! X (where usually X is some subinterval
+of R) and a 2 X with f(a) = a, |f0(a)| < 1, with suitable differentiability conditions,
+then a is a stable fixed point for f. This term is used because points close to a will
+approach a under iteration. If we look at a function like f(x) = sin x, we see that
+c = 0 is a fixed point but in this case |f0(0)| = 1, so it is a non-hyperbolic fixed point.
+However, graphical iteration suggests that the basin of attraction of f is all of R, so
+c = 0 is a stable fixed point. Before considering non-hyperbolic fixed points in more
+detail, let us prove the last statement analytically:
+Proposition 1.5.2 The fixed point c = 0 of f(x) = sin x is globally attracting .
+Proof. First notice that c = 0 is the only fixed point of sin x. This is clear for if
+sin x = x then we cannot have |x| > 1 since | sin x|   1 for all x. If 0 < x   1, the
+Mean Value Theorem implies there exists c 2 (0, x) with
+f0(c) =
+f(x) − f(0)
+x − 0
+=
+sin x
+x
+,
+so that
+sin x = x cosc < x,
+since | cos c| < 1 for c 2 (0, 1). Similarly if −1   x < 0.
+To show that f(x) is globally attracting, let x 2 R. We may assume that −1  
+x   1, since this will be the case after the first iteration.
+Suppose that 0 < x   1, then we note that 0 < f0(x) < 1 on this interval. By the
+Mean Value Theorem, there exists c 2 (0, x) with
+f0(c) =
+f(x) − f(0)
+x − 0
+, or 0 < f(x) = f0(c)x < x.
+Continuing in this way, we see that
+0 < fn(x) < fn−1(x) < .. . < f(x) < x,
+so we have a decreasing sequence xn = fn(x) bounded below by 0. It follows that this
+sequence converges. But Proposition 1.4.5 implies that if this sequence converges, it
+
+must converge to a fixed point. c = 0 being the only fixed point gives fn(x) ! 0 as
+n!1. A similar argument can be used for −1   x < 0.  
+Example 1.5.3 It is possible for the fixed point to be unstable, but to have a onesided
+stability (to be semi-stable). For example, consider f(x) = x2 + 1/4 which has
+the single (non-hyperbolic) fixed point c = 1/2. This fixed point is stable from the
+left, but unstable on the right.
+0.0 0.5 1.0 1.5 2.0
+0.0
+0.5
+1.0
+1.5
+2.0
+In the following we give some criteria for non-hyperbolic fixed points to be asymptotically
+stable/unstable etc. It also gives a criteria for semi-stability.
+Theorem 1.5.4 Let c be a non-hyperbolic fixed point of f(x) with f0(c) = 1. If f0(x),
+f00(x) and f000(x) are continuous at x = c, then:
+(i) if f00(c) 6= 0, the c is semi-stable,
+(ii) if f00(c) = 0 and f000(c) > 0, then c is unstable,
+(iii) If f00(c) = 0 and f000(c) < 0, then c is asymptotically stable.
+Proof. (i) If f0(c) = 1 then f(x) is tangential to y = x at x = c. Suppose that
+f00(c) > 0, then f(x) is concave up at x = c and the picture must look like the
+following:
+
+We see this gives stability on the left and instability on the right.
+More formally, since the derivatives are continuous, and f00(c) > 0, this will be
+true in some small interval (c −  , c +  ) surrounding c. In particular, the derivative
+function f0(x) must be increasing on that interval, so that since f0(c) = 1 then
+f0(x) < 1 for all x 2 (c −  , c), and f0(x) > 1 for all x 2 (c, c +  ),
+for some   > 0. Also, from the continuity of f0(x), we can assume that f0(x) > 0 in
+this interval.
+Now by the Mean Value Theorem applied to the interval [x, c]   (c −  , c], there
+exists q 2 (x, c) with
+f0(q) =
+f(x) − f(c)
+x − c
+,
+Now since 0 < f0(q) < 1 and c > x, we have
+0 <
+f(x) − f(c)
+x − c
+< 1,
+or
+x < f(x) < c.
+Repeating this argument, we see that the sequence fn(x) is increasing and bounded
+above by c, so must converge to a fixed point. There can be no other fixed point (say
+d 6= c), in this interval as the Mean Value Theorem would give f0(q1) = 1 for some
+q1 2 (x, c), a contradiction. Consequently we see that c is stable on the left.
+On the other hand, if [c, x]   (c, c+ ), then applying the Mean Value Theorem as
+above gives
+f0(q) =
+f(x) − f(c)
+x − c
+> 1, so f(x) >x > c,
+
+since x − c > 0. This tells us that the point moves away from c under iteration, so
+the fixed point is unstable on the right. Similar considerations can be used when
+f00(c) < 0 and the graph is concave down at x = c.
+(ii) is similar to (iii), so is omitted.
+(iii) In this case f000(c) < 0, f00(c) = 0 and f0(c) = 1. We will show that we have a
+point of inflection at x = c as in the following picture:
+0.5 1.0 1.5 2.0
+0.5
+1.0
+1.5
+2.0
+By the second derivative test, f0(x) has a local maximum at x = c (the continuous
+function f0(x) is concave down). It follows that
+f0(x) < 1 for all x 2 (c −  , c +  ), x 6= c,
+for some   > 0 (f00(x) > 0 for x 2 (c− , c), so f0(x) is increasing there, and f00(x) < 0
+for x 2 (c, c +  ), so f0(x) is decreasing there). In particular f0(x) 6= 1 if x 6= c.
+Now use an argument similar to that of (i) above to deduce the result.  
+Example 1.5.5 Returning to the function f(x) = sinx, we see that f0(0) = 1,
+f00(0) = 0 and f000(0) = −1, so the conditions of Theorem 1.5.4 (iii) are satisfied and
+we conclude that x = 0 is an asymptotically stable fixed point.
+If f(x) = tan x, then f0(0) = 1 and we can check that Theorem 1.5.4 (ii) holds
+so that the fixed point x = 0 is unstable. For f(x) = x2 + 1/4, with f(1/2) = 1/2,
+f0(1/2) = 1, we can apply Theorem 1.5.4 (i).
+
+How do we treat the case where f0(c) = −1 at the fixed point? We use:
+Definition 1.5.6 The Schwarzian derivative Sf(x) of f(x) is the function
+Sf(x) =
+f000(x)
+f0(x)
+−
+3
+2
+ 
+f00(x)
+f0(x)
+ 2
+,
+so that
+Sf(x) = −f000(x) −
+3
+2
+[f00(x)]2, when f0(x) = −1.
+Theorem 1.5.7 Suppose that c is a fixed point for f(x) and f0(c) = −1. If f0(x),
+f00(x) and f000(x) are continuous at x = c then:
+(i) if Sf(c) < 0, then x = c is an asymptotically stable fixed point,
+(ii) if Sf(c) > 0, then x = c is an unstable fixed point.
+Proof. (i) Set g(x) = f2(x), then g(c) = c and we see that if c is asymptotically
+stable with respect to g, then it is asymptotically stable with respect to f. Now
+g0(x) =
+d
+dx
+(f(f(x))) = f0(f(x)) · f0(x),
+so that g0(c) = f0(c) · f0(c) = (−1)(−1) = 1.
+The idea is to apply Theorem 1.5.4 (iii) to the function g(x). Now
+g00(x) = f0(f(x)) · f00(x) + f00(f(x)) · [f0(x)]2,
+thus
+g00(c) = f0(c)f00(c) + f00(c)[f0(c)]2 = 0, since f0(c) = −1.
+Also
+g000(x) = f00(f(x))·f0(x)·f00(x)+f0(f(x))·f000(x)+f000(f(x))[f0(x)]3+f00(f(x))·2f0(x)f00(x).
+Therefore
+g000(c) = [f00(c)]2(−1) − f000(c) − f000(c) + 2f00(c)(−1)f00(c)
+= −2f000(c) − 3[f00(c)]2
+= 2Sf(c) < 0,
+and the result follows from Theorem 1.5.4 (iii).
+(ii) This now follows from Theorem 1.5.4 (ii)
+
+
+Remark 1.5.8 The above proof shows how the Schwarzian derivative arises from
+differentiating g = f   f = f2. In the case where f0(c) = −1, it follows that
+g00(c) = 0 and Sf(c) =
+1
+2
+g000(c).
+Example 1.5.9 For the logistic map Lμ(x) = μx(1 − x) we have
+L0
+μ(x) = μ − 2μx, L00
+μ(x) = −2μ and L000
+μ (x) = 0.
+When μ = 1, x = 0 is the only fixed point and Theorem 1.5.4 (i) shows that x = 0 is
+semi-stable (attracting on the right). However, we regard this as a stable fixed point
+for Lμ defined on the interval [0, 1], since points to the left of 0 are not in the domain
+of Lμ.
+When μ = 3, c = 2/3 is fixed and L0
+μ(2/3) = −1 giving a non-hyperbolic fixed
+point. However, Sf(2/3) = 0 − 3
+2 [6]2 < 0 (negative Schwarzian derivative), so by
+Theorem 1.5.7 (i), x = 2/3 is asymptotically stable.
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Exercises 1.5
+1. Show that f(x) = −2x3+2x2+x has two non-hyperbolic fixed points and determine
+their stability.
+
+2. For the family of quadratic maps Qc(x) = x2 + c, x 2 R, use the Theorems of
+Section 1.5 to determine the stability of the fixed points for all possible values of c.
+Find any values of c so that Qc has a non-hyperbolic fixed point, and determine their
+stability.
+3. Find the fixed points of the following maps and use the appropriate theorems to
+determine whether they are asymptotically stable, semi-stable or unstable:
+(i) f(x) =
+x3
+2
++
+x
+2
+, (ii) f(x) = arctan x, (iii) f(x) = x3 + x2 + x,
+(iv) f(x) = x3 − x2 + x, (v) f(x) =
+ 
+0.8x ; if x   1/2
+0.8(1 − x) ;if x > 1/2
+4. Let f(x) = ax2 + bx + c, a 6= 0, and p a fixed point of f. Prove the following:
+(i) If f0(p) = 1, then p is semistable.
+(ii) If f0(p) = −1, then p is asymptotically stable.
+5. If f(x) =
+ax + b
+cx + d
+, a, b, c, d 2 R is the linear fractional transformation, show that
+its Schwarzian derivative is Sf(x) = 0 for all x in its domain.
+6. If Sf(x) is the Schwarzian derivative of f(x), a C3 function and F(x) =
+f00(x)
+f0(x)
+,
+show that Sf(x) = F0(x) − (F(x))2/2.
+7. If f : R ! R is defined by f(x) =
+ 
+x sin(1/x) if x 6= 0
+0 ifx = 0
+, find the fixed points
+of f and show that for x 6= 0 they are non-hyperbolic. Show that x = 0 is not an
+isolated fixed point (i.e., there are other fixed points arbitrarily close to 0). Is x = 0
+a stable, attracting or repelling fixed point?
+
+8. ([50]) Let Nf be the Newton function of a four times continuously differentiable
+function f. If f( ) = 0, show that N000
+f ( ) = 2Sf( ), where Sf is the Schwarzian
+derivative of f.
+9. (a) Use the Intermediate Value Theorem to show that f(x) = cos(x) has a fixed
+point c in the interval [0,  /2]. We can show experimentally that this fixed point is
+approximately c = .739085 . . ., for example by iterating any x0 2 R.
+(b) Show that the basin of attraction of c is all of R (Hint: You may assume that
+x 2 [−1, 1] - why? Now use the Mean Value Theorem to show that |f(x)−c| <  |x−c|
+for some 0 <   < 1).
+(c) Does f(x) have any eventual fixed points?
+(d) Can f(x) have any points p with f2(p) = p other than c?
+
+
+
+
+\end{document}
+

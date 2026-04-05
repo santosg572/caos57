@@ -1,0 +1,426 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\textbf{CHAPTER 2
+BASIC CONCEPTS IN 2D}
+
+\hfill 
+
+In the preceding chapter we introduced a brief list of basic concepts
+of discrete dynamics. Here, we expand on these concepts in
+the one-dimensional context, in which, uniquely, we have the
+advantage of a simple graphical representation. The official,
+abstract definitions of all these concepts may be found in the
+Appendices.
+
+\hfill
+
+\textbf{1.1 MAPS}
+
+\hfill
+
+By a map we mean a continuous function from a space, called
+the domain, to itself. 1 In the one-dimensional context, the domain
+might be an interval (with or without endpoints) of the real number
+line, or even the entire line.
+
+\hfill
+
+If f is a map on a real interval, I, we indicate this in symbols
+$f:I \to I$. For example, if the map is defined by the rule $f(x) = x^2$,
+and I is the closed interval [-2, 2], we may visualize the map graphically,
+as shown in Figure 2-1. The action of the map is to move
+points from the horizontal axis to the vertical axis in two strokes:
+
+\begin{itemize}
+\item vertically from the horizontal axis to the graph,
+\item horizontally from the graph to the vertical axis,
+\end{itemize}
+
+as shown in Figure 2-2.
+
+\hfill
+
+
+The image (or range) of the map is the set of all points obtained
+asf(x) while x takes on all values in the domain, I, and is written in
+symbols as f[I]. For a point y in I, a pre image of rank 1 is a point x 
+in I that is mapped to y; that is, x is a preimage of rank 1 of y if y =
+f(x). A preimage of rank 2 of y is a preimage of rank 1 of a preimage
+of rank 1, and so on. Every point y in I has a set of preimages of
+every rank, which may be empty. Determining all preimages of a
+point creates a genealogical tree, called the arborescent sequence of
+preimages.
+
+\hfill
+
+The map f is one-to-one, if, for every point y in I, the set of preimages
+of y has either no points or just one point. For example, the
+map f defined by the same rule, $f(x) = x^2$ , but with the smaller
+domain [0,1], is one-to-one. A one-to-one map has a unique inverse
+map, $f^{-1}: F[I] \to I$ which undoes what f does. This can be visualized
+on the graph off as a motion in two strokes:
+
+\begin{itemize}
+\item horizontally from the vertical axis to the graph off,
+\item vertically from the graph to the horizontal axis,
+\end{itemize}
+
+as shown in Figure 2-3.
+
+Note that if we try to invert the map of Figure 2-2 by this twostroke
+process, we discover all of the preimages of a given point y
+in I (represented as the vertical axis) in one step. This is shown in
+Figure 2-4, where we find two preimages.
+
+\hfill
+
+In this text we will be concerned exclusively with the lowest
+step of the staircase to chaos, the ID case. We will be interested
+especially with maps which are not one-to-one. These are called
+many-to-one, or noninvertible, maps. For such maps, points generally
+have more than one preimage of rank 1, and the number of
+preimages of a given rank determines a zone of multiplicity, discussed
+below.
+
+\hfill
+
+\textbf{2.2 MULTIPLICITIES}
+
+\hfill
+
+Given any map of an interval I, we may choose a point y in I on
+the vertical axis, locate all preimages by the graphical method, and
+count them up. Thus, we may decompose the vertical axis into sets
+of points all sharing the same number of preimages. We denote
+these zones by:
+
+\begin{itemize}
+\item Zo (all points having no preimages)
+\item ZI (all points having exactly one preimage)
+\item Z2 (all points having two distinct preimages)
+\end{itemize}
+
+and so on.
+
+\hfill
+
+These are called the layer sets of the map; those sets that are
+nonempty and open (that is, have no boundary points) are called
+multiplicity zones. The zones $Z_o$ and $Z_2$ are shown in Figure 2-5.
+They exhaust the whole interval I = [-2, 2] except for the point 0,
+which separates the two zones. We also say this map is of type $Z_o$ -
+$Z_2$, meaning there are two zones, one of multiplicity zero, the other
+of multiplicity two. The suffix indicates the multiplicity. The interval
+Z2 , may be considered a folded image, that is, two halves of the
+domain I are folded onto this image. For each half of the domain,
+our map does have an inverse. These are called partial inverses.
+
+\hfill
+
+The point 0 is the only point of $Z_1$ in this example; that is, it has
+multiplicity one (its unique preimage is 0). It is called a critical
+point because it lies on the boundary of two zones. In fact, we can
+describe this map as a nonlinear folding. That is, the map folds the
+horizontal axis at the critical point, then stretches them in a nonlinear
+fashion onto the range interval. This is why the critical point is
+sometimes called afold point.
+
+\hfill
+
+Generally, we will be interested in relatively simple maps, such
+as polynomials, in which only finite multiplicities, with generic
+(that is, typical) fold points, are encountered. We call these finitely
+folded maps. For example, a typical cubic map has multiplicities 1
+and 3, and we say it is of type $Z_1 - Z_3 - Z_1$. These basic concepts of
+iteration theory should be approached through a careful study of
+simple (for example, polynomial) examples.
+
+\hfill
+
+\textbf{2.3 TRAJECTORIES AND ORBITS}
+
+\hfill
+
+A map generates a discrete dynamical system by iteration. That
+is, the map is applied again and again, and points move along a dotted
+path called a trajectory. For example, choosing an initial point
+$x_0$, let $x_1$ denote its image under the map f, likewise $X_2$ the image of $x_1$ and so on. The infinite sequence $(x_0, x_1, x_2, ...)$ is the trajectory
+of $x_0$. This sequence may jump around a finite set of points. The
+minimum set of points which holds a trajectory its called its orbit.
+When finite, an orbit is called cyclic, or periodic, and the number of
+its points is its order. A fixed point, defined by f(x) = x, is a special
+kind of periodic point, the orbit of which is a single point. It has
+order 1. If an orbit contains only two points, it is called a 2-cycle,
+and so on.
+
+\hfill
+
+We now describe a graphical method for plotting trajectories,
+called the Koenigs-Lemeray method. Note that in our graphs, both
+axes represent the same set, since the domain and range of our map
+consist of the same interval.
+
+\hfill
+
+Given $x_0$, envisioned on the horizontal axis, we may find Xl on
+the vertical axis by the two-stroke method described in 2.1. Next,
+we must repeat this process, starting from the point $X_1$ on the horizontal
+axis. Our immediate problem, then, is to transfer the distance
+Xl from the vertical axis to the corresponding distance on the horizontal
+axis.
+
+\hfill
+
+One way to carry out this transfer is shown in Figure 2-6. Here
+we use a compass to measure the vertical distance, Xl' and rotate it
+to the horizontal distance, $x_1$. Another method is to use a protractor
+to construct a line descending at slope -1, or 45 degrees, as shown
+in Figure 2-7.
+
+\hfill
+
+Yet another method - and this is the one we prefer - is shown
+in Figure 2-8. We draw a line from the lower left comer, ascending
+at slope 1. This line is called the diagonal (in symbols, $\Delta$). Now,
+using only a square, we draw a horizontal line from $x_1$ on the vertical
+axis until it meets Il., then draw a vertical line until it meets the
+horizontal axis. This determines the horizontal distance, $x_1$ as
+shown in Figure 2-8.
+
+\hfill
+
+The entire construction from horizontal $x_0$ to vertical $x_1$ to horizontal $x_1$ may now be summarized as follows:
+
+\begin{itemize}
+\item vertical from horizontal axis to graph,
+\item horizontal from graph to vertical axis,
+\item horizontal from vertical axis to diagonal,
+\item vertical from diagonal to horizontal axis.
+\end{itemize}
+
+This construction may be abbreviated somewhat since the third
+stroke retraces (undoes) part of the second, as shown in the four
+strokes of Figure 2-9. The abbreviated construction (Figure 2-10) is:
+
+\begin{itemize}
+\item vertical from horizontal axis to graph,
+\item horizontal from graph to diagonal,
+\item vertical from diagonal to horizontal axis.
+\end{itemize}
+
+This is the three-stroke graphical method for plotting one step
+of a trajectory within the horizontal axis. When we proceed to plot
+the point $x_2$ by this method, however, we find a further opportunity
+for abbreviation. The last stroke above, which locates $x_1$ on the horizontal
+axis, i.e.,
+
+\begin{itemize}
+\item vertical from diagonal to horizontal axis,
+\end{itemize}
+
+is followed by the first stroke of the second step,
+
+\begin{itemize}
+\item vertical from horizontal axis to graph,
+\end{itemize}
+
+which may be combined into a single stroke,
+
+\begin{itemize}
+\item vertical from diagonal to graph.
+\end{itemize}
+
+Thus the iterated sequence, beginning with Xo on the horizontal
+axis, is:
+
+\begin{itemize}
+\item vertical from horizontal axis to graph,
+\item horizontal from graph to diagonal,
+\item vertical from diagonal to graph,
+\end{itemize}
+
+and continue. After the first step, we may pretend that we are jumping
+about on the diagonal, which after all is just another copy of the
+domain interval I. Each step has two strokes,
+
+\begin{itemize}
+\item vertical to the graph; horizontal to the diagonal
+\end{itemize}
+
+(which we may remember by the mnemonic, vertigo-horrid), as
+shown in Figure 2-11. That is the graphical method of KoenigsLemeray,
+also known as the staircase method, or cobweb construction.
+Using it, we may quickly follow trajectories for several jumps
+on the diagonal. See Figure 2-12.
+
+\hfill
+
+Using this method, one may graphically verify this useful fact:
+if a point returns to its starting point after two iterations of the map,
+the starting point is either a fixed point or a 2-periodic point of the
+map.
+
+\hfill
+
+\textbf{2.4 ATTRACTORS, BASINS,AND BOUNDARIES}
+
+\hfill
+
+Try out the staircase method using the Myrberg map, 1
+$f(x) = x^2 -c$ ,with the entire real line as the domain, and various
+values for the control parameter, c. You may quickly find that some
+trajectories converge to afixed point, while others run off to positive
+infinity (upper right) on the diagonal. The fixed points are seen
+immediately as the crossing points of the graph and the diagonal,
+and are defined by the property: f(x) = x.
+
+\hfill
+
+An interval is called trapping if it is mapped into itself, and
+invariant if it is mapped exactly onto itself. If a bounded interval is
+trapping, then all of its trajectories are trapped inside, and must
+converge to a closed, invariant, and bounded limit set. These limit
+sets are the attractors of the map. Attractors may be classified in
+three categories:
+
+\begin{itemize}
+\item a point attractor is a single point,
+\item a cyclic attractor is a finite set of points, and
+\item a chaotic attractor is any other type of attractor.2
+\end{itemize}
+
+The basin of an attractor is the set of all points tending to that
+attractor. The domain is decomposed into the basins of different
+attractors, including the basin of infinity, which consists of all
+points whose trajectories run away from any bounded set.
+
+\hfill
+
+The boundaries of the basins, also called frontiers or separatrices,
+are of primary importance in dynamical systems theory. A
+detailed study of a map results in a portrait, in which the domain is
+decomposed into basins, one attractor shown in each.
+
+\begin{enumerate}
+\item Myrberg was one of the first to study the bifurcation sequence of this map. See the Bibliography
+for references to his work.
+\item This reflects the fact that different definitions of chaos abound in the literature.
+\end{enumerate}
+
+\hfill
+
+\textbf{2.5 BIFURCATIONS}
+
+\hfill
+
+As in the Myrberg map, $f(x) = x^2 - c$, we frequently encounter
+maps which depend on a parameter. As the parameter is changed,
+the portrait of the attractive set of the map may change gradually
+and insignificantly; however, as certain special values of the parameter
+are crossed, there may be a sudden and significant change in
+the portrait of the map. These special values are called bifurcation
+points, and the sudden changes in the portrait are called bifurcations.
+At the present time, dynamical systems theory does not have
+a satisfactory and rigorous definition of bifurcation, but the subject
+is now evolving through the study of examples. In fact, the goal of
+this book is to describe some of these examples, in a two-dimensional
+context.
+
+\hfill
+
+In the current one-dimensional context, we again have the benefit
+of an excellent visualization device, the response diagram. In the
+case of a single control parameter, this is a two-dimensional graphic
+in which the vertical axis represents the domain of the map and the
+horizontal axis represents the control parameter. Above each point
+on the horizontal axis, the portrait of the corresponding map is indicated,
+with its attractors, basins, and basin boundaries. For a oneparameter
+family of maps of a two-dimensional domain, the
+response diagram is three-dimensional, as we will soon see.
+
+\hfill
+
+\textbf{2.6 EXEMPLARY BIFURCATION}
+
+\hfill
+
+The simplest bifurcations are the fold and the flip. These may
+involve changes to any kind of attractor. To introduce the basic concepts
+of bifurcation theory, however, we will describe the fold
+bifurcation in the simplest case, which involves point attractors.
+
+\hfill
+
+The fold bifurcation is a catastrophic bifurcation. This means
+that, as the control parameter varies, an attractor appears or disappears
+suddenly. In this event, as shown in Figure 2-13 with the
+control parameter moving to the right on the horizontal axis, a fixed
+point appears, and immediately separates into a pair of distinct
+fixed points. One is an attractor, the other, a repellor. The repellor is
+shown below the attractor. Points between the two fixed points are
+attracted to the upper fixed point, and repelled by the lower fixed
+point. These tendencies are indicated by the arrows in Figures 2-15
+to 2-17.
+
+\hfill
+
+To understand the mechanism of this bifurcation, we now turn
+to a specific example, the Myrberg family of maps, f(x) = x2 -c.
+The graph of a map of this family is an upward-opening parabola,
+with the vertex on the vertical axis at distance c below the horizontal
+axis. As c increases, the parabola moves downward. Three cases
+of this graph are shown in Figs. 2-14, 2-15, and 2-16.
+
+\hfill
+
+In the first case, Figure 2-14, with c = - 0.5, the parabola does
+not meet the diagonal because for this value of c, there are no fixed
+points. All trajectories tend upward without bound, to infinity.
+
+\hfill
+
+In the next case, Figure 2-15, with c = - 0.25, the parabola
+meets the diagonal in a single point, which is the fixed point x = 0.5,
+corresponding to this value of c, the bifurcation value. Trajectories
+approach from below, but depart from above.
+
+\hfill
+
+In the last case, Figure 2-16, with c = 0, the parabola cuts the
+diagonal in two points, the fixed points x = 0 and x = I, which are,
+respectively, an attractor and a repellor.
+
+\hfill
+
+The flip is a subtle bifurcation. This means that, in contrast to
+catastrophic and explosive bifurcations, its effect is too subtle to
+observe at the moment of bifurcation when the control parameter
+passes its critical value, but becomes apparent later, as the parameter
+continues to increase. In the flip, a point attractor loses its
+attractiveness. From it is emitted a cyclic attractor of period 2.
+
+\hfill
+
+A response diagram of this event is shown in Figure 2-17. To
+the left of the bifurcation value of the control parameter (horizontal
+axis) there is a single fixed point, and it is an attractor, FP+. The
+attraction in the vertical state space is shown by the heavy arrows.
+To the right, there is still only one fixed point, but it is a repellor,
+FP-. But there is also a 2-cycle, which is attractive, 2P+. Looking
+only at the attractors in the picture, we see that the attractive point
+has been replaced by an attractive 2-cycle, as the control parameter
+moves to the right. At first, the two points of this 2-cycle are very
+close together, then they gradually separate.
+
+We now move on to two dimensions.
+
+\begin{thebibliography}{9}
+\bibitem{texbook}
+RALPH H. ABRAHAM, LAURA GARDIINI, CHRISTIAN MIIRA, (2016) \emph{Chaos Discrete Dynamical Systems}, Springer.
+
+\end{thebibliography}
+
+\end{document}
+

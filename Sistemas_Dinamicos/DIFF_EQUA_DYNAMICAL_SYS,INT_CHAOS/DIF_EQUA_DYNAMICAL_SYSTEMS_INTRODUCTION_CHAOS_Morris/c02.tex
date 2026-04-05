@@ -1,0 +1,224 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+
+\begin{document}
+
+pag36
+
+\hfill
+
+\textbf{C02. Planar Linear Systems}
+
+\hfill
+
+In this chapter we begin the study of systems of differential equations. A system
+of differential equations is a collection of n interrelated differential equations
+of the form
+
+\[
+\begin{matrix}
+ x'_1= f_1(t, x_1, x_2, ...,x_n) \\
+x'_2= f_2(t, x_1, x_2, ...,x_n) \\
+\vdots  \\
+x'_n= f_n(t, x_1, x_2, ...,x_n)
+\end{matrix}
+\]
+
+Here the functions $f_j$ are real-valued functions of the n+1 variables $x_1, x_2, ..., x_n$, and t . Unless otherwise specified, we will always assume that the $f_j$ are $C^{\infty}$
+functions. This means that the partial derivatives of all orders of the fj exist
+and are continuous.
+
+To simplify notation, we will use vector notation:
+
+
+\[
+X = \begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{pmatrix} 
+\]
+
+We often write the vector X as $(x_1, ..., x_n)$ to save space.
+
+Our system may then be written more concisely as
+
+\[
+X' = F(t, X)
+\]
+
+where
+
+\[
+F(t,X) = \begin{pmatrix}
+f_1(t, x_1, ..., x_n) \\
+\vdots \\
+f_n(t, x_1, ..., x_n)
+\end{pmatrix} 
+\]
+
+A solution of this system is then a function of the form $X(t) =
+(x_1(t ), ..., x_n(t))$ that satisfies the equation, so that
+
+\[
+X'(t) = F(t, X(t))
+\]
+
+where $X'(t) = (x'_1(t), ..., x_n(t))$. Of course, at this stage, we have no guarantee
+that there is such a solution, but we will begin to discuss this complicated
+question in Section 2.7.
+
+The system of equations is called autonomous if none of the $f_j$ depends on
+t , so the system becomes X'= F(X). For most of the rest of this book we will
+be concerned with autonomous systems.
+
+In analogy with first-order differential equations, a vector X0 for which
+$F(X_0) = 0$ is called an equilibrium point for the system. An equilibrium point
+corresponds to a constant solution $X(t) \equiv X_0$ of the system as before.
+
+Just to set some notation once and for all, we will always denote real variables
+by lowercase letters such as $x, y, x_1, x_2, t$, and so forth. Real-valued functions
+will also be written in lowercase such as f(x, y) or $f_1(x_1, ..., x_n, t)$. We will
+reserve capital letters for vectors such as $X = (x_1, ..., x_n)$, or for vector-valued
+functions such as
+
+\[
+F(x,y) = (f(x,y), g(x,y))
+\]
+
+or
+
+\[
+H(x_1, ..., x_n) = \begin{pmatrix}
+h_1(x_1, ..., x_n) \\
+\vdots \\
+h_n(x_1, ..., x_n)
+\end{pmatrix} 
+\]
+
+We will denote n-dimensional Euclidean space by $\mathbb{R}^n$, so that $\mathbb{R}^n$ consists of
+all vectors of the form $X = (x_1, ..., x_n)$.
+
+\hfill
+
+\textbf{2.1 Second-Order Differential Equations}
+
+\hfill
+
+Many of the most important differential equations encountered in science
+and engineering are second-order differential equations. These are differential
+equations of the form
+
+\[
+x'' = f(t, x, x').
+\]
+
+Important examples of second-order equations include Newton’s equation
+
+\[
+mx''= f (x),
+\]
+
+the equation for an RLC circuit in electrical engineering
+
+\[
+LC x'' + RC x' + x = v(t),
+\]
+
+and the mainstay of most elementary differential equations courses, the forced
+harmonic oscillator
+
+\[
+m x'' + b x' + kx = f (t).
+\]
+
+We will discuss these and more complicated relatives of these equations at length as we go along. First, however, we note that these equations are a special subclass of two-dimensional systems of differential equations that are defined by simply introducing a second variable y = x'.
+
+For example, consider a second-order constant coefficient equation of the form
+
+\[
+x''+ax'+bx=0.
+\]
+
+If we let $y = x'$, then we may rewrite this equation as a system of first-order
+equations
+
+\[
+\begin{matrix}
+x' = y \\
+y' = -bx - ay.
+\end{matrix}
+\]
+
+Any second-order equation can be handled in a similar manner. Thus, for the
+remainder of this book, we will deal primarily with systems of equations.
+
+\hfill
+
+\textbf{2.2 Planar Systems}
+
+\hfill
+
+For the remainder of this chapter we will deal with autonomous systems in
+$\mathbb{R}^2$, which we will write in the form
+
+\[
+\begin{matrix}
+x' = f(x,y) \\
+y' = g(x,y).
+\end{matrix}
+\]
+
+thus eliminating the annoying subscripts on the functions and variables. As
+above, we often use the abbreviated notation X' = F(X) where X = (x, y)
+and F(X) = F(x, y) = (f (x, y), g (x, y)).
+
+In analogy with the slope fields of Chapter 1, we regard the right-hand side
+of this equation as defining a vector field on $\mathbb{R}^2$. That is, we think of F(x, y)
+as representing a vector whose x- and y-components are f (x, y) and g (x, y),
+respectively. We visualize this vector as being based at the point (x, y). For
+example, the vector field associated to the system
+
+\[
+\begin{matrix}
+x' = y \\
+y' = x.
+\end{matrix}
+\]
+
+is displayed in Figure 2.1. Note that, in this case, many of the vectors overlap,
+making the pattern difficult to visualize. For this reason, we always draw a
+direction field instead, which consists of scaled versions of the vectors.
+A solution of this system should now be thought of as a parameterized curve
+in the plane of the form (x(t ), y(t )) such that, for each t , the tangent vector at
+the point (x(t ), y(t )) is F(x(t ), y(t )). That is, the solution curve (x(t ), y(t ))
+winds its way through the plane always tangent to the given vector F(x(t ), y(t ))
+based at (x(t ), y(t )).
+
+\hfill
+
+\textbf{Example.} The curve
+
+\[
+\begin{pmatrix}
+x(t) \\
+y(t)
+\end{pmatrix} = \begin{pmatrix}
+a \sin t \\
+a \cos t
+\end{pmatrix}
+\]
+
+for any $a \in \mathbb{R}$ is a solution of the system
+
+\[
+\begin{pmatrix}
+x' = y \\
+y' = -x
+\end{pmatrix}
+\]
+
+since
+
+\end{document}

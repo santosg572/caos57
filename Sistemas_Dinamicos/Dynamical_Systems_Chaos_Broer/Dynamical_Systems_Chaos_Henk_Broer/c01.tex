@@ -1,0 +1,290 @@
+\documentclass[12pt]{article}
+\title{A Sample \LaTeX\ Document}
+\author{Math 300}
+\usepackage{graphicx}
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{xcolor}
+
+\begin{document}
+%\maketitle
+
+pag18
+
+\hfill
+
+\textbf{Chapter 1
+Examples and definitions of dynamical
+phenomena
+}
+
+\hfill
+
+A dynamical system can be any mechanism that evolves deterministically in time.
+Simple examples can be found in mechanics, one may think of the pendulum or the
+solar system. Similar systems occur in chemistry and meteorology.We should note
+that in biological and economic systems it is less clear when we are dealing with
+determinism.1 We are interested in evolutions, that is, functions that describe the
+state of a system as a function of time and that satisfy the equations of motion of the
+system. Mathematical definitions of these concepts follow later.
+
+\hfill
+
+The simplest type of evolution is stationary, where the state is constant in time.
+Next we also know periodic evolutions. Here, after a fixed period, the system always
+returns to the same state and we get a precise repetition of what happened in the
+previous period. Stationary and periodic evolutions are very regular and predictable.
+Here prediction simply is based on matching with past observations. Apart from
+these types of evolutions, in quite simple systems one meets evolutions that are not
+so regular and predictable. In cases where the unpredictability can be established in
+a definite way, we speak of chaotic behaviour.
+
+\hfill
+
+In the first part of this chapter, using systems such as the pendulum with or without
+damping or external forcing, we give an impression of the types of evolution
+that may occur. We show that usually a given system has various types of evolution.
+Which types are typical or prevalent strongly depends on the kind of system
+at hand; for example, in mechanical systems it is important whether we consider
+dissipation of energy, for instance by friction or damping. During this exposition
+the mathematical framework in which to describe the various phenomena becomes
+clearer. This determines the language and the way of thinking of the discipline of
+Dynamical Systems.
+
+\hfill
+
+In the second part of this chapter we are more explicit, giving a formal definition
+of dynamical system. Then concepts such as state, time, and the like are also
+discussed. After this, returning to the previous examples, we illustrate these concepts.
+In the final part of the chapter we treat a number of miscellaneous examples
+that regularly return in later parts of the book. Here we particularly pay attention to
+examples that, historically speaking, have given direction to the development of the
+discipline. These examples therefore act as running gags throughout the book.
+
+\hfill
+
+\textbf{1.1 The pendulum as a dynamical system}
+
+\hfill
+
+As a preparation to the formal definitions we go into later in this chapter, we first
+treat the pendulum in a number of variations: with or without damping and external
+forcing.We present graphs of numerically computed evolutions. From these graphs
+it is clear that qualitative differences exist between the various evolutions and that
+the type of evolution that is typical or prevalent strongly depends on the context
+at hand. This already holds for the restricted class of mechanical systems considered
+here.
+
+\hfill
+
+\textbf{1.1.1 The free pendulum}
+
+\hfill
+
+The planar mathematical pendulum consists of a rod, suspended at a fixed point in
+a vertical plane in which the pendulum can move. All mass is thought of as being
+concentrated in a point mass at the end of the rod (see Figure 1.1), and the rod itself
+is massless. Also the rod is assumed stiff. The pendulum has mass m and length `.
+We moreover assume the suspension to be such that the pendulum not only can
+oscillate, but also can go ‘over the top’. In the case without external forcing, we
+speak of the free pendulum.
+
+\hfill
+
+\textbf{1.1.1.1 The free undamped pendulum}
+
+\hfill
+
+
+In the case without damping and forcing the pendulum is only subject to gravity,
+with acceleration g: The gravitational force is pointing vertically downward with
+strength mg and has a component $-mg \sin \varphi$ along the circle described by the
+point mass; see Figure 1.1. Here $\varphi$ is the angle between the rod and the downward
+vertical, often called ‘deflection’, expressed in radians. The distance of the point
+mass from the ‘rest position’ ($\varphi = 0$), measured along the circle of all its possible
+positions, then is $l \varphi$. The relationship between force and motion is determined by
+Newton’s2 famous law F D ma; where F denotes the force, m the mass, and a the
+acceleration.
+
+\hfill
+
+By the stiffness of the rod, no motion takes place in the radial direction and we
+therefore just apply Newton’s law in the $\varphi$-direction. The component of the force in
+the $\varphi$-direction is given by $-mg \sin \varphi$, where the minus sign accounts for the fact
+that the force is driving the pendulum back to $\varphi$. For the acceleration $a$ we have
+
+\[
+a = \frac{d^2 (l \varphi)}{dt^2} = l \frac{d^2 \varphi}{dt^2}
+\]
+
+where $(d^2 \varphi / dt^2)(t) = \varphi''(t)$ is the second derivative of the function $t \to \varphi(t)$. Substituted into Newton’s law this gives
+
+\[
+ml \varphi '' = -mg \sin \phi
+\]
+
+or, equivalently,
+
+\[
+\varphi '' = -\frac{g}{l} \sin \varphi
+\]
+
+
+where obviously $m, l > 0$. So we derived the equation of motion of the pendulum,
+which in this case is an ordinary differential equation. Thismeans that the evolutions
+are given by the functions $t \mapsto \varphi(t)$ that satisfy the equation of motion (1.1). In the
+sequel we abbreviate $w = \sqrt{g/l}$.
+
+\hfill
+
+Observe that in the equation of motion (1.1) the mass m no longer occurs. This
+means that the mass has no influence on the possible evolutions of this system.
+According to tradition, as an experimental fact this was already known to Galileo,3
+a predecessor of Newton concerning the development of classical mechanics.
+
+\hfill
+
+Remark (Digression on Ordinary Differential Equations I). In the above example,
+the equation of motion is an ordinary differential equation. Concerning the solutions
+of such equations we make the following digression.
+
+
+\begin{enumerate}
+\item From the theory of ordinary differential equations (e.g., see [16, 69, 118, 144])
+it is known that such an ordinary differential equation, given initial conditions
+or an initial state, has a uniquely determined solution.4 Because the differential
+equation has order two, the initial state at $t=0$ is determined by the two
+data $\varphi(0)$ and $\varphi'(0)$, thus both the position and the velocity at the time $t=0$.
+The theory says that, given such an initial state, there exists exactly one solution
+$t \mapsto \varphi(t)$, mathematically speaking a function, also called ‘motion’. This
+means that position and velocity at the instant t= 0 determine the motion for
+all future time.5 In the discussion later in this chapter, on the state space of a
+dynamical system, we show that in the present pendulum case the states are
+given by pairs $(\varphi, \varphi')$. This implies that the evolution, strictly speaking, is a map
+$t \mapsto (\varphi(t), \varphi'(t))$, where $t \mapsto \varphi(t)$ satisfies the equation of motion (1.1). The
+plane with coordinates $(\varphi, \varphi')$ often is called the phase plane. The fact that the
+initial state of the pendulum is determined for all future time, means that the
+pendulum system is deterministic.6
+
+\item Between existence and explicit construction of solutions of a differential equation
+there is a wide gap. Indeed, only for quite simple systems,7 such as the harmonic
+oscillator with equation of motion
+
+\[
+\varphi'' = -w^2 \varphi,
+\]
+
+can we explicitly compute the solutions. In this example all solutions are of the
+form $\varphi(t) =  A \cos(w t + B)$, where A and B can be expressed in terms of the
+initial state $(\varphi(0), \varphi'(0))$. So the solution is periodic with period $2\pi/w$ and with
+amplitude A; whereas the number B; which is only determined up to an integer
+multiple of $2\pi$, is the phase at the time t = 0: Because near $\varphi = 0$ we have the
+linear approximation
+
+\[
+\sin \varphi \approx \varphi
+\]
+
+in the sense that $\sin \varphi = \varphi+ o(|\varpi|)$, we may consider the harmonic oscillator
+as a linear approximation of the pendulum. Indeed, the pendulum itself also has
+oscillating motions of the form $varphi(t) = F(t)$, where F(t) = F(t+P) for
+a real number P; the period of the motion. The period P varies for different
+solutions, increasing with the amplitude. It should be noted that the function F
+occurring here, is not explicitly expressible in elementary functions. For more
+information see [153].
+
+\item General methods exist for obtaining numerical approximations of solutions of
+ordinary differential equations given initial conditions. Such solutions can only
+be computed for a restricted time interval. Moreover, due to accumulation of
+errors, such numerical approximations generally will not meet with reasonable
+criteria of reliability when the time interval is growing (too) long.
+
+\hfill
+
+We now return to the description of motions of the pendulum without forcing or
+damping, that is, the free undamped pendulum. In Figure 1.2 we present a number
+of characteristic motions, or evolutions, as these occur for the pendulum.
+
+\hfill
+
+In diagrams (a) and (b) we plotted $\varphi$ as a function of t: Diagram (a) shows an
+oscillatory motion, that is, where there is no going ‘over the top’ (i.e., over the
+point of suspension). Diagram (b) shows a motion where this does occur. In the
+latter case the graph does not directly look periodic, but when realising that $\varphi$ is
+an angle variable, which means that only its values modulo integer multiples of $2\phi$ 
+are of interest for the position, we conclude that this motion is also periodic. In
+diagram (c) we represent motions in a totally different way. Indeed, for a number of
+possible motions we depict the integral curve in the $(\varphi, \varphi')$-plane, that is, the phase
+plane. The curves are of the parametrised form $t \mapsto (\varphi(t), \varphi'(t)),$ where t varies
+over $\mathbb{R}$: We show six periodic motions, just as in diagram (a), noting that in this
+representation each motion corresponds to a closed curve. Also periodicmotions are
+shown as in diagram (b), for the case where $varphi$ continuously increases or decreases.
+Here the periodic character of the motion does not show so clearly. This becomes
+more clear if we identify points on the $\varphi$-axis which differ by an integer multiple
+of $2\phi$.
+
+\hfill
+
+Apart from these periodic motions, a few other motions have also been represented.
+The points $(2\pik,0)$, with integer k; correspond to the stationary motion
+(which rather amounts to rest and not to motion) where the pendulum hangs in
+its downward equilibrium. The points .2 .k C 1
+2 /; 0/ k 2 Z correspond to the
+stationary motion where the pendulum stands upside down. We see that a stationary
+motion is depicted as a point; such a point should be interpreted as a ‘constant’
+curve. Finally motions are represented that connect successive points of the form
+.2 .k C 1
+2 /; 0/ k 2 Z: In these motions for t ! 1 the pendulum tends to
+its upside-down position, and for t !  1 the pendulum also came from this
+upside-down position. The latter two motions at first sight may seem somewhat
+exceptional, which they are in the sense that the set of initial states leading to such
+evolutions have area zero in the plane. However, when considering diagram (c) we
+see that this kind of motion should occur at the boundary which separates the two
+kinds of more common periodicmotion. Therefore the corresponding curve is called
+a separatrix. This is something that will happenmore often: the exceptionalmotions
+are important for understanding the ‘picture of all possible motions.’
+Remark. The natural state space of the pendulum really is a cylinder. In order to see
+that the latter curves are periodic, we have to make the identification '   ' C 2 ;
+which turns the .'; '0/-plane into a cylinder. This also has its consequences for
+the representation of the periodic motions according to Figure 1.2(a); indeed in the
+diagram corresponding to (c) we then would only witness two of such motions. Also
+we see two periodic motions where the pendulum goes ‘over the top’.
+For the mathematical understanding of these motions, in particular of the representations
+of Figure 1.2(c), it is important to realise that our system is undamped.
+Mechanics then teaches us that conservation of energy holds. The energy in this case
+is given by
+H.'; '0/ D m`2  1
+2
+.'0/2   !2 cos ' : (1.2)
+Notice that H has the format ‘kinetic plus potential energy.’ Conservation of energy
+means that for any solution '.t/ of the equation of motion (1.1), the function
+H.'.t/; '0.t // is constant in t: This fact also follows from more direct considerations;
+compare Exercise 1.3. This means that the solutions as indicated in diagram
+(c) are completely determined by level curves of the function H: Indeed, the level
+curves with H-values between  m`2!2 and Cm`2!2 are closed curves corresponding
+to oscillations of the pendulum. And each level curve withH > m`2 !2
+consists of two components where the pendulum goes ‘over the top’: in one component
+the rotation is clockwise and in the other one counterclockwise. The level
+H D m`2!2 is a curve with double points corresponding to the exceptionalmotions
+just described: the upside-down position and the motions that for t !˙1tend to
+this position.
+We briefly return to a remark made in the above digression, saying that the
+explicit expression of solutions of the equation of motion is not possible in terms of
+elementary functions. Indeed, considering the level curve with equation H.'; '0/ D E; we solve to
+'0 D ˙
+s
+2   E
+m`2 C !2cos' :
+\end{enumerate}
+
+
+
+\begin{thebibliography}{X}
+
+\bibitem{Broer} Henk Broer, Floris Takens, {\bf Dynamical Systems
+and Chaos,} Springer, 2009.
+
+
+\end{thebibliography}
+\end{document}
+

@@ -1,0 +1,220 @@
+\documentclass{article}
+
+\begin{document}
+
+\textbf{CHAPTER 3
+BASIC CONCEPTS IN 2D}
+
+\hfill
+
+The basic concepts named in the Introduction, and described in
+the preceding chapter in a ID context, apply with little modification
+in the 2D context which is our main concern in this book. We no
+longer have the convenience of a visible graph of the map, however,
+because the graph of a 2D map is a 2D surface in a 4D space.
+Therefore, we must be satisfied with a frontal view of the 2D
+domain of the map, in which we try to visualize as much as
+possible.
+
+\hfill
+
+\textbf{3.1 MAPS}
+
+\hfill
+
+
+As before, by map we mean a continuous function from the
+domain to itself, $d:D \to D$. . From now on, the domain will be a twodimensional
+subset, usually an open subspace, of the plane. For
+example, D might be an open rectangle (that is, not containing its
+boundary) or the whole plane. The images and pre images of a
+point, the one-to-one property, and noninvertibility are defined as in
+2.1. We now consider noninvertible maps, in 2D.
+
+\hfill
+
+Note: The complex number maps familiar from the fractal theories
+of Fatou, Julia, Mandelbrot, and others may be regarded as real
+2D maps. Thus, they fit in the context of this book.
+
+\hfill
+
+\textbf{3.2 MULTIPLICITIES AND CRITICAL CURVES}
+
+\hfill
+
+In the context of a given map, we define the layer set, zn' as the
+set of points having exactly n preimages of rank 1, where n is a natural
+number: 0, 1, 2, ... , and so on. Those layer sets that are
+nonempty open sets are the multiplicity zones. Points on the boundaries
+of the zones, generally, are critical points of the map. In
+
+general, these sets will not exhaust the domain, as there may be
+points that have infinitely many preimages of rank 1, and thus do
+not belong to zn for any n. Even polynomial maps may have this
+problem, but generic (that is, almost all) polynomial maps have the
+following nice properties:
+
+\begin{itemize}
+\item there are only a finite number of layer sets;
+they exhaust the domain;
+\item the zones of multiplicity fill almost all of the domain;
+\item all layer sets that are not multiplicity zones consist of critical
+points, arranged in a set of piecewise smooth curves.
+\end{itemize}
+
+A map having these nice properties is called a finitely folded
+map, and a curve consisting of critical points is called a critical
+curve of rank 1, and is denoted by L.1 The image of a critical curve
+of rank 1 is a critical curve of rank 2, denoted Ll , and so on.
+
+Note: For a given map T, $L = T[L_{-1}]$, where $L_{-1}$ is the critical
+curve of rank 0, and may be thought of as the set of "coincident preimages"
+of points of L.
+
+\hfill
+
+\textbf{3.3 AN EXAMPLE}
+
+\hfill
+
+For example, let D be the entire plane. The polynomial map
+$f:D \to D$ defined by f(x, y) = (u, v), where,
+
+\[
+u = ax + y
+\]
+\[
+v = b + x^2
+\]
+
+is finitely folded. We will set a = - 0.7, and b = 1.0.
+
+Figure 3-1 shows part of the domain of the map, the (x, y) space
+D, containing the critical curve of rank 0, $L_{-1}$ which coincides with
+the y axis. It divides the domain into two regions, denoted $R_l$ and
+$R_2$. Figure 3-2 shows part of the image of the map f, in the (u, v)
+space, with the zones of multiplicities zero and two, Zo and Z2' separated
+by the critical curve, L. Figure 3-3 shows the two spaces,
+superimposed.
+
+There is a folding of the (x, y) space, on the critical curve of rank 0, $L_{-1}$, followed by a nonlinear deformation, a rotation, and a movement to the right, into the space of (u, v). The entire (x, y) space ends up on the zone $Z_2$, with the critical curve $L_{-1}$ moving onto the critical curve, L. 
+We may visualize the two regions of the (x, y) space, R 1
+and $R_2$ folded onto one another, then distorted and pressed down
+onto Z2. Actually, the two regions are mapped onto one.
+The motion, visualized in this way, may be reversed. This provides
+a method to visualize the action of the inverse mapping as
+well. A small area in the (u, v) space on the right, if contained
+entirely within Z2' will unfold into two small regions in the (x, y)
+space on the left, one in the region R 1 , the other in $R_2$.
+
+As we wish to iterate the map, and to visualize the trajectories,
+attractors, and basins, of our discrete dynamical system, it will be
+useful (although initially confusing) to superimpose the (u, v) space
+on top of the (x, y) space. Then, as a weak substitute for the graphical
+method of Koenigs-Lemaray in the ID case, we apply the
+motion from Figure 3-1 to Figure 3-2 again and again. The domain,
+D, is mapped into itself repeatedly. The curve $L_{-1}$ moves onto the
+curve L, which in tum moves onto the curve $L_1$, and so on. This
+superimposition is shown in Figure 3-3. This portrait is the basis of
+the method of critical curves, which is the main method of this
+book.
+
+\hfill
+
+\textbf{3.4 TRAJECTORIES AND ORBITS}
+
+\hfill
+
+In the 2D context, trajectories and orbits are defined exactly as
+in 2.3 but here they must be plotted in the two-dimensional domain.
+This is particularly appropriate for computer-generated plots. And
+in this computational method, the attractors and their basins may
+be discovered by experiment. We usually find the critical curve of
+rank 0, $L_{-2}$ manually by the standard method of vector calculus
+(involving the vanishing of the Jacobian determinant, see Appendix
+3), then enter its symbolic description into the computer program,
+which can then plot the higher-order iterates. The method of critical
+curves is based on experiments such as this.
+
+As in the ID case, there are special kinds of orbits which are
+important qualitative features of the dynamics of an iterated map.
+First among these are the fixed points, which are unmoved by the
+map. The different types of fixed points are defined by the motions
+of nearby points. The classification is based on the differential calculus
+and linear algebra of two-dimensional spaces, but we will
+give here only the results. Excepting certain unusual cases, there are
+five kinds of so-called generic fixed points in this classification. The
+five types are illustrated in Figures 3-4 to 3-8.
+
+Another special type of orbit of great importance in the qualitative
+theory is the periodic orbit, or cyclic orbit, or cycle, which
+consists of a finite set of points. The map permutes the points of the
+orbit cyclically: If there are n points in the orbit, each of the points
+returns to its original position after exactly n iterations of the map.
+The number n is called the period of the orbit, which is also called
+an n-cycle. A point of an n-cycle is said to have prime period n, and
+is also a fixed point of the map iterated n times. Periodic points are
+classified according to their type as a fixed point of the iterated
+map.
+
+\hfill
+
+\textbf{3.S ATTRACTORS}
+
+\hfill
+
+As in the ID case, there are three types of attractors:
+
+\begin{itemize}
+\item static attractors, also called attractive fixed points;
+\item periodic attractors, also called cyclic attractors; and
+\item chaotic attractors .
+\end{itemize}
+
+The static attractors are fixed points which are attractive, that is, the
+trajectories of all nearby points are attracted to them. Of the five types of
+fixed points illustrated in Figures 3-4 to 3-8, two are attractive, and three
+repelling. Periodic attractors are periodic orbits (orbits of trajectories
+that cycle around a finite point set) which are attractive.
+
+Chaotic attractors are more complicated sets which are attractive. For
+the mathematically inclined, technical definitions are given in Appendix 2.
+For others, these concepts will gain meaning through examples later in the
+book.
+
+\hfill
+
+\textbf{3.6 BIFURCATIONS}
+
+\hfill
+
+The informal definition of bifurcation, in 20, is the same as in
+10. Again, there are subtle and catastrophic bifurcations, and other
+distinctions such as local versus global bifurcations. These are best
+understood in the examples dissected in detail in the following
+chapters.
+In the 20 context, a one-parameter family of maps may be displayed
+in a response diagram, in which the bifurcations may be
+seen and analyzed. This is a 30 plot in which the domain of the
+maps, a 20 set, is arrayed vertically, and moved along a horizontal
+axis representing the control parameter. In each of these vertical
+planes, the portrait of attractors, basins, and boundaries must be
+visualized. In practice, this is a challenging task of computer graphics,
+and we usually seek a simpler display. The technique we adopt
+for this book, which is well accommodated by computer graphic
+animation technology and CO-ROM media, is the animated movie.
+Thus, we translate the control parameter into the time dimension
+and view the domain of the map head on, watching the attractorbasin
+portrait adjust itself to a time-changing control parameter.
+The method of characteristic curves becomes a strategy for the
+analysis of these bifurcation movies. So, on to the exemplary bifurcation
+sequences.
+BASIC
+
+
+
+
+\end{document}
+
+

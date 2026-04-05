@@ -1,0 +1,649 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+
+\begin{document}
+
+\textbf{1.2 The Logistic Population Model}
+
+\hfill
+
+The differential equation $x'= ax$ above can be considered a simplistic model
+of population growth when a > 0. The quantity x(t ) measures the population
+of some species at time t . The assumption that leads to the differential equation
+is that the rate of growth of the population (namely, dx/dt ) is directly
+proportional to the size of the population. Of course, this naive assumption
+omits many circumstances that govern actual population growth, including,
+for example, the fact that actual populations cannot increase with bound.
+
+To take this restriction into account, we can make the following further
+assumptions about the population model:
+
+\begin{enumerate}
+\item If the population is small, the growth rate is nearly directly proportional
+to the size of the population;
+\item but if the population grows too large, the growth rate becomes negative.
+\end{enumerate}
+
+One differential equation that satisfies these assumptions is the logistic
+population growth model. This differential equation is
+
+\[
+x' = ax (1 - \frac{x}{N}
+\]
+
+Here a and N are positive parameters: a gives the rate of population growth
+when x is small, while N represents a sort of “ideal” population or “carrying
+capacity.” Note that if x is small, the differential equation is essentially $x' = ax$
+[since the term $1-(x/N) \approx 1$], but if $x > N$, then $x'< 0$. Thus this simple
+equation satisfies the above assumptions. We should add here that there are
+many other differential equations that correspond to these assumptions; our
+choice is perhaps the simplest.
+
+Without loss of generality we will assume that N = 1. That is, we will
+choose units so that the carrying capacity is exactly 1 unit of population, and
+x(t) therefore represents the fraction of the ideal population present at time t .
+
+Therefore the logistic equation reduces to
+
+\[
+x' = f_a(x) = ax(1 - x).
+\]
+
+This is an example of a first-order, autonomous, nonlinear differential equation.
+It is first order since only the first derivative of x appears in the equation.
+It is autonomous since the right-hand side of the equation depends on x alone,
+not on time t . And it is nonlinear since $f_a(x)$ is a nonlinear function of x. The
+previous example, $x'= ax$, is a first-order, autonomous, linear differential
+equation.
+
+The solution of the logistic differential equation is easily found by the triedand-true calculus method of separation and integration:
+
+\[
+\int \frac{dx}{x(1-x)} = \int a dt
+\]
+
+The method of partial fractions allows us to rewrite the left integral as
+
+\[
+\int (\frac{1}{x} + \frac{1}{1-x}) dx
+\]
+
+Integrating both sides and then solving for x yields
+
+\[
+x(t) = \frac{K e^{at}}{1+ Ke^{at}}
+\]
+
+where K is the arbitrary constant that arises from integration. Evaluating this
+expression at t = 0 and solving for K gives
+
+\[
+K = \frac{x(0)}{1 - x(0)}
+\]
+
+Using this, we may rewrite this solution as
+
+\[
+\frac{x(0)e^{at}}{1 - x(0) + x(0)e^{at}} .
+\]
+
+
+So this solution is valid for any initial population x(0). When x(0) = 1,
+we have an equilibrium solution, since x(t) reduces to $x(t) \equiv 1$. Similarly,
+$x(t) \equiv 0$ is also an equilibrium solution.
+
+Thus we have “existence” of solutions for the logistic differential equation.
+We have no guarantee that these are all of the solutions to this equation at this
+stage; we will return to this issue when we discuss the existence and uniqueness
+problem for differential equations in Chapter 7.
+
+To get a qualitative feeling for the behavior of solutions, we sketch the
+slope field for this equation. The right-hand side of the differential equation
+determines the slope of the graph of any solution at each time t . Hence we
+may plot little slope lines in the tx–plane as in Figure 1.3, with the slope of the
+line at (t,x) given by the quantity $ax(1 - x)$. Our solutions must therefore
+have graphs that are everywhere tangent to this slope field. From these graphs,
+we see immediately that, in agreement with our assumptions, all solutions
+for which $x(0) > 0$ tend to the ideal population $x(t) \equiv 1$. For $x(0) < 0$,
+solutions tend to $- \infty$, although these solutions are irrelevant in the context
+of a population model.
+
+Note that we can also read this behavior from the graph of the function
+$f_a(x) = ax(1 - x)$. This graph, displayed in Figure 1.4, crosses the x-axis at
+the two points x = 0 and x = 1, so these represent our equilibrium points.
+When 0 < x < 1, we have f (x) > 0. Hence slopes are positive at any (t , x)
+with 0 < x < 1, and so solutions must increase in this region. When x < 0 or
+x > 1, we have f (x) < 0 and so solutions must decrease, as we see in both the
+solution graphs and the phase lines in Figure 1.3.
+We may read off the fact that x = 0 is a source and x = 1 is a sink from
+the graph of f in similar fashion. Near 0, we have f (x) > 0 if x > 0, so slopes
+are positive and solutions increase, but if x < 0, then f (x) < 0, so slopes are
+negative and solutions decrease. Thus nearby solutions move away from 0 and
+so 0 is a source. Similarly, 1 is a sink.
+
+We may also determine this information analytically. We have $f'_a(x)=a-2ax$ so that $f'_a(0) = a > 0$ and $f'_a(1) = -a < 0$. Since $f'_a(0) > 0$, slopes must increase through the value 0 as x passes through 0. That is, slopes are
+negative below x = 0 and positive above x = 0. Hence solutions must tend
+away from x = 0. In similar fashion, $f'_a(1) < 0$ forces solutions to tend toward
+x = 1, making this equilibrium point a sink. We will encounter many such
+“derivative tests” like this that predict the qualitative behavior near equilibria
+in subsequent chapters.
+
+\textbf{Example.} As a further illustration of these qualitative ideas, consider the
+differential equation
+
+\[
+x' = g (x) = x - x^3.
+\]
+
+
+There are three equilibrium points, at $x = 0, \pm 1$. Since $g'(x) = 1 - 3x^2$, we have $g'(0) = 1$, so the equilibrium point 0 is a source. Also, $g'(\pm 1) = -2$, so the equilibrium points at $\pm 1$ are both sinks. Between these equilibria, the sign of the slope field of this equation is nonzero. From this information we can immediately display the phase line, which is shown in Figure 1.5.  
+
+\hfill
+
+\textbf{1.3 Constant Harvesting and
+Bifurcations}
+
+\hfill
+
+Now let’s modify the logistic model to take into account harvesting of the population.
+Suppose that the population obeys the logistic assumptions with the
+
+parameter a = 1, but is also harvested at the constant rate h. The differential
+equation becomes
+
+\[
+x  = x(1 - x) - h
+\]
+
+where $h \geq 0$ is a new parameter.
+
+Rather than solving this equation explicitly (which can be done — see
+Exercise 6 at the end of this chapter), we use the graphs of the functions
+
+\[
+f_h(x) = x(1 - x) - h
+\]
+
+to “read off ” the qualitative behavior of solutions. In Figure 1.6 we display
+the graph of $f_h$ in three different cases: 0 < h < 1/4, h = 1/4, and h > 1/4.
+It is straightforward to check that fh has two roots when $0 \leq h < 1/4$, one
+root when h = 1/4, and no roots if $h > 1/4$, as illustrated in the graphs. As a
+consequence, the differential equation has two equilibrium points $x_l$  and $x_r$
+with $0 \leq x  < x_r$ when $0 < h < 1/4$. It is also easy to check that $f'_h (x) > 0$, so
+that $x_l$  is a source, and $f'_h (x_r) < 0$ so that $x_r$ is a sink.
+
+
+As h passes through h = 1/4, we encounter another example of a bifurcation.
+The two equilibria $x_l$  and $x_r$ coalesce as h increases through 1/4 and then
+disappear when h > 1/4. Moreover, when h > 1/4, we have $f_h(x) < 0$ for all
+x. Mathematically, this means that all solutions of the differential equation
+decrease to $-\infty$ as time goes on.
+
+
+We record this visually in the bifurcation diagram. In this diagram we plot
+the parameter h horizontally. Over each h-value we plot the corresponding
+phase line. The curve in this picture represents the equilibrium points for each
+value of h. This gives another view of the sink and source merging into a
+single equilibrium point and then disappearing as h passes through 1/4 (see
+Figure 1.7).
+
+
+Ecologically, this bifurcation corresponds to a disaster for the species under
+study. For rates of harvesting 1/4 or lower, the population persists, provided
+
+the initial population is sufficiently large ($x(0) \geq x$ ). But a very small change
+in the rate of harvesting when h = 1/4 leads to a major change in the fate of
+the population: At any rate of harvesting h > 1/4, the species becomes extinct.
+This phenomenon highlights the importance of detecting bifurcations in
+families of differential equations, a procedure that we will encounter many
+times in later chapters. We should also mention that, despite the simplicity of
+this population model, the prediction that small changes in harvesting rates
+can lead to disastrous changes in population has been observed many times in
+real situations on earth.
+Example. As another example of a bifurcation, consider the family of
+differential equations
+x  = ga(x) = x2 − ax = x(x − a)
+which depends on a parameter a. The equilibrium points are given by x = 0
+and x = a. We compute g  
+a(0) = -a, so 0 is a sink if a > 0 and a source if
+a < 0. Similarly, g  
+a(a) = a, so x = a is a sink if a < 0 and a source if a > 0.
+We have a bifurcation at a = 0 since there is only one equilibrium point when
+a = 0. Moreover, the equilibrium point at 0 changes from a source to a sink
+as a increases through 0. Similarly, the equilibrium at x = a changes from a
+sink to a source as a passes through 0. The bifurcation diagram for this family
+is depicted in Figure 1.8.  
+
+\hfill
+
+\textbf{1.4 Periodic Harvesting and
+Periodic Solutions}
+
+\hfill
+
+Now let’s change our assumptions about the logistic model to reflect the
+fact that harvesting does not always occur at a constant rate. For example,
+
+populations of many species of fish are harvested at a higher rate in warmer
+seasons than in colder months. So we assume that the population is harvested
+at a periodic rate. One such model is then
+
+\[
+x'  = f (t , x) = ax(1 - x) - h(1 + \sin(2 \pi t ))
+\]
+
+
+where again a and h are positive parameters. Thus the harvesting reaches a
+maximum rate -2h at time t = 14
++ n where n is an integer (representing the
+year), and the harvesting reaches its minimum value 0 when t = 34
++n, exactly
+one-half year later. Note that this differential equation now depends explicitly
+on time; this is an example of a nonautonomous differential equation. As in
+the autonomous case, a solution x(t ) of this equation must satisfy x (t ) =
+f (t , x(t )) for all t . Also, this differential equation is no longer separable, so we
+cannot generate an analytic formula for its solution using the usual methods
+from calculus. Thus we are forced to take a more qualitative approach.
+To describe the fate of the population in this case, we first note that the righthand
+side of the differential equation is periodic with period 1 in the time
+variable. That is, f (t + 1, x) = f (t , x). This fact simplifies somewhat the
+problem of finding solutions. Suppose that we know the solution of all initial
+value problems, not for all times, but only for 0 ≤ t ≤ 1. Then in fact we
+know the solutions for all time. For example, suppose x1(t ) is the solution that
+is defined for 0 ≤ t ≤ 1 and satisfies x1(0) = x0. Suppose that x2(t) is the
+solution that satisfies x2(0) = x1(1). Then we may extend the solution x1 by
+defining x1(t + 1) = x2(t ) for $0 \leq t \leq 1$. The extended function is a solution
+since we have
+x 
+1(t + 1) = x 
+2(t ) = f (t , x2(t ))
+= f (t + 1, x1(t + 1)).
+
+Thus if we know the behavior of all solutions in the interval 0 ≤ t ≤ 1, then
+we can extrapolate in similar fashion to all time intervals and thereby know
+the behavior of solutions for all time.
+Secondly, suppose that we know the value at time t = 1 of the solution
+satisfying any initial condition x(0) = x0. Then, to each such initial condition
+x0, we can associate the value x(1) of the solution x(t ) that satisfies x(0) = x0.
+This gives us a function p(x0) = x(1). If we compose this function with itself,
+we derive the value of the solution through x0 at time 2; that is, p(p(x0)) =
+x(2). If we compose this function with itself n times, then we can compute
+the value of the solution curve at time n and hence we know the fate of the
+solution curve.
+The function p is called a Poincaré map for this differential equation. Having
+such a function allows us to move from the realm of continuous dynamical
+systems (differential equations) to the often easier-to-understand realm of
+discrete dynamical systems (iterated functions). For example, suppose that
+we know that p(x0) = x0 for some initial condition x0. That is, x0 is a fixed
+point for the function p. Then from our previous observations, we know that
+x(n) = x0 for each integer n. Moreover, for each time t with 0 < t < 1, we
+also have x(t ) = x(t + 1) and hence x(t + n) = x(t ) for each integer n.
+That is, the solution satisfying the initial condition x(0) = x0 is a periodic
+function of t with period 1. Such solutions are called periodic solutions of the
+differential equation. In Figure 1.10, we have displayed several solutions of the
+logistic equation with periodic harvesting. Note that the solution satisfying
+the initial condition x(0) = x0 is a periodic solution, and we have x0 =
+p(x0) = p(p(x0)) . . .. Similarly, the solution satisfying the initial condition
+x(0) = ˆx0 also appears to be a periodic solution, so we should have p(ˆx0) = ˆx0.
+Unfortunately, it is usually the case that computing a Poincaré map for a
+differential equation is impossible, but for the logistic equation with periodic
+harvesting we get lucky.
+
+\hfill
+
+\textbf{1.5 Computing the Poincaré Map}
+
+\hfill
+
+Before computing the Poincaré map for this equation, we introduce some
+important terminology. To emphasize the dependence of a solution on the
+initial value $x_0$, we will denote the corresponding solution by $\phi(t,x_0)$. This
+function $\phi: \mathbb{R} \times \mathbb{R} \to  \mathbb{R}$ is called the flow associated to the differential
+equation. If we hold the variable x0 fixed, then the function
+
+\[
+t \to \phi(t, x_0)
+\]
+
+is just an alternative expression for the solution of the differential equation
+satisfying the initial condition x0. Sometimes we write this function as $\phi_t(x_0)$.
+
+\hfill
+
+\textbf{Example.} For our first example, x' = ax, the flow is given by
+
+\[
+\phi(t , x_0) = x_0e^{at}.
+\]
+
+For the logistic equation (without harvesting), the flow is
+
+\[
+\phi(t, x_0) = \frac{x(0)e^{at}}{1 - x(0) + x(0)e^{at}
+\]
+
+Now we return to the logistic differential equation with periodic harvesting
+
+\[
+x'  = f (t , x) = ax(1 - x) - h(1 + \sin(2 \pi t )).
+\]
+
+
+The solution satisfying the initial condition $x(0) = x_0$ is given by $t \to \phi(t, x_0)$.
+While we do not have a formula for this expression, we do know that, by the
+fundamental theorem of calculus, this solution satisfies
+
+\[
+\phi(t, x_0) = x_0 + \int_0^t f(s, \phi(s, x_0)) ds
+\]
+
+and $\phi(0, x_0) = x_0$.
+
+If we differentiate this solution with respect to x0, we obtain, using the chain
+rule:
+
+\[
+\frac{\partial \phi}{\partial x_0}(t, x_0) = 1 + \int_0^t \frac{\partial f}{\partial x_0} (s, \phi(s, x_0)) \dot \frac{\partial \phi}{\partial x_0} (s, x_0) ds
+\]
+
+Now let
+
+\[
+z(t) =  \frac{\partial \phi}{\partial x_0}(t, x_0)
+\]
+
+Differentiating z with respect to t, we find
+
+\[
+z'(t ) = \frac{\partial f}{\partial x_0}(t, \phi(t, x_0)) \dot \frac{\partial \phi}{\partial x_0}(t, x_0)
+\]
+\[
+= \frac{\partial f}{\partial x_0} (t, \phi/t, x_0)) \dot z(t)
+\]
+
+Again, we do not know φ(t , x0) explicitly, but this equation does tell us that
+z(t ) solves the differential equation
+z (t ) = ∂f
+∂x0
+(t , φ(t , x0)) z(t )
+with z(0) = 1. Consequently, via separation of variables, we may compute
+that the solution of this equation is
+z(t ) = exp
+  t
+0
+∂f
+∂x0
+(s, φ(s, x0)) ds
+
+and so we find
+∂φ
+∂x0
+(1, x0) = exp
+  1
+0
+∂f
+∂x0
+(s, φ(s, x0)) ds.
+Since p(x0) = φ(1, x0), we have determined the derivative p (x0) of the
+Poincaré map. Note that p (x0) > 0. Therefore p is an increasing function.
+Differentiating once more, we find
+p  (x0) = p (x0)
+   1
+0
+∂2f
+∂x0∂x0
+(s, φ(s, x0)) · exp
+   s
+0
+∂f
+∂x0
+(u, φ(u, x0)) du
+ 
+ds
+ 
+,
+which looks pretty intimidating. However, since
+f (t , x0) = ax0(1 − x0) − h(1 + sin(2πt )),
+we have
+∂2f
+∂x0∂x0
+≡ −2a.
+Thus we know in addition that p  (x0) < 0. Consequently, the graph of the
+Poincaré map is concave down. This implies that the graph of p can cross the
+diagonal line y = x at most two times. That is, there can be at most two values
+of x for which p(x) = x. Therefore the Poincaré map has at most two fixed
+points. These fixed points yield periodic solutions of the original differential
+equation. These are solutions that satisfy x(t +1) = x(t ) for all t . Another way
+to say this is that the flow φ(t , x0) is a periodic function in t with period 1 when
+the initial condition x0 is one of the fixed points. We saw these two solutions
+in the particular case when h = 0. 8 in Figure 1.10. In Figure 1.11, we again
+see two solutions that appear to be periodic. Note that one of these solutions
+appears to attract all nearby solutions, while the other appears to repel them.
+We will return to these concepts often and make them more precise later in
+the book.
+Recall that the differential equation also depends on the harvesting parameter
+h. For small values of h there will be two fixed points such as shown in
+Figure 1.11. Differentiating f with respect to h, we find
+∂f
+∂h
+(t , x0) = −(1 + sin 2πt )
+Hence ∂f /∂h < 0 (except when t = 3/4). This implies that the slopes of the
+slope field lines at each point (t , x0) decrease as h increases. As a consequence,
+the values of the Poincaré map also decrease as h increases. Hence there is a
+unique value h∗ for which the Poincaré map has exactly one fixed point. For
+h > h∗, there are no fixed points for p and so p(x0) < x0 for all initial values.
+It then follows that the population again dies out.
+
+\hfill
+
+\textbf{1.6 Exploration: A Two-Parameter
+Family}
+
+\hfill
+
+Consider the family of differential equations
+
+\[
+x' = f_{a,b}(x) = ax − x^3 − b
+\]
+
+which depends on two parameters, a and b. The goal of this exploration is
+to combine all of the ideas in this chapter to put together a complete picture
+of the two-dimensional parameter plane (the ab–plane) for this differential
+equation. Feel free to use a computer to experiment with this differential
+equation at first, but then try to verify your observations rigorously.
+
+\begin{enumerate}
+\item First fix a = 1. Use the graph of f1,b to construct the bifurcation diagram
+for this family of differential equations depending on b.
+\item Repeat the previous step for a = 0 and then for a = −1.
+\item What does the bifurcation diagram look like for other values of a?
+\item Now fix b and use the graph to construct the bifurcation diagram for this
+family, which this time depends on a.
+\item In the ab–plane, sketch the regions where the corresponding differential
+equation has different numbers of equilibrium points, including a sketch
+of the boundary between these regions.
+\item Describe, using phase lines and the graph of fa,b(x), the bifurcations that
+occur as the parameters pass through this boundary.
+\item Describe in detail the bifurcations that occur at a = b = 0 as a and/or b
+vary.
+
+\item Consider the differential equation x  = x − x3 − b sin(2πt ) where |b| is
+small. What can you say about solutions of this equation? Are there any
+periodic solutions?
+\item Experimentally, what happens as |b| increases? Do you observe any
+bifurcations? Explain what you observe.
+\end{enumerate}
+
+\hfill
+
+\textbf{EXERCISES}
+
+\hfill
+
+\begin{enumerate}
+\item Find the general solution of the differential equation x  = ax + 3 where
+a is a parameter. What are the equilibrium points for this equation? For
+which values of a are the equilibria sinks? For which are they sources?
+
+\item For each of the following differential equations, find all equilibrium
+solutions and determine if they are sinks, sources, or neither. Also, sketch
+the phase line.
+
+\begin{enumerate}
+\item  x  = x3 − 3x
+\item  x  = x4 − x2
+\item  x  = cos x
+\item  x  = sin2 x
+\item  x  = |1 − x2|
+\end{enumerate}
+
+\item Each of the following families of differential equations depends on a
+parameter a. Sketch the corresponding bifurcation diagrams.
+
+\begin{enumerate}
+\item  x  = x2 − ax
+\item x  = x3 − ax
+\item  x  = x3 − x + a
+\end{enumerate}
+
+\item Consider the function f (x) whose graph is displayed in Figure 1.12.
+
+\begin{enumerate}
+\item Sketch the phase line corresponding to the differential equation x  =
+f (x).
+\item Let ga(x) = f (x)+a. Sketch the bifurcation diagram corresponding
+to the family of differential equations x  = ga(x).
+\item Describe the different bifurcations that occur in this family.
+\end{enumerate}
+
+\item Consider the family of differential equations
+
+\[
+x'  = ax + \sin x
+\]
+
+where a is a parameter.
+
+\begin{enumerate}
+\item Sketch the phase line when a = 0.
+\item Use the graphs of ax and sin x to determine the qualitative behavior
+of all of the bifurcations that occur as a increases from −1 to 1.
+\item Sketch the bifurcation diagram for this family of differential
+equations.
+\end{enumerate}
+
+\item Find the general solution of the logistic differential equation with
+constant harvesting
+
+\[
+x'  = x(1 - x) - h
+\]
+
+for all values of the parameter h > 0.
+
+\item Consider the nonautonomous differential equation
+
+\[
+ x'=\left\{\begin{matrix}
+x-4 \text{ if } t<5 \\
+2-x \text{ if } t \geq 5
+\end{matrix}\right.
+\]
+
+\begin{enumerate}
+\item Find a solution of this equation satisfying x(0) = 4. Describe the
+qualitative behavior of this solution.
+\item Find a solution of this equation satisfying x(0) = 3. Describe the
+qualitative behavior of this solution.
+\item Describe the qualitative behavior of any solution of this system as
+$t \to \infty$.
+\end{enumerate}
+
+\item Consider a first-order linear equation of the form x  = ax + f (t ) where
+$a \in R$. Let y(t ) be any solution of this equation. Prove that the general
+solution is y(t ) + c exp(at ) where c ∈ R is arbitrary.
+
+\item Consider a first-order, linear, nonautonomous equation of the form
+x (t ) = a(t )x.
+
+\begin{enumerate}
+\item Find a formula involving integrals for the solution of this system.
+\item Prove that your formula gives the general solution of this system.
+\end{enumerate}
+
+\item Consider the differential equation x  = x + cos t .
+
+\begin{enumerate}
+\item Find the general solution of this equation.
+\item Prove that there is a unique periodic solution for this equation.
+\item Compute the Poincaré map p: {t = 0} → {t = 2π} for this equation
+and use this to verify again that there is a unique periodic
+solution.
+\end{enumerate}
+
+\item First-order differential equations need not have solutions that are defined
+for all times.
+
+\begin{enumerate}
+\item Find the general solution of the equation x  = x2.
+\item Discuss the domains over which each solution is defined.
+\item Give an example of a differential equation for which the solution
+satisfying x(0) = 0 is defined only for −1 < t < 1.
+\end{enumerate}
+
+\item First-order differential equations need not have unique solutions satisfying
+a given initial condition.
+
+\begin{enumerate}
+\item Prove that there are infinitely many different solutions of the
+differential equations x  = x1/3 satisfying x(0) = 0.
+\item Discuss the corresponding situation that occurs for x  = x/t ,
+x(0) = x0.
+\item Discuss the situation that occurs for x  = x/t 2, x(0) = 0.
+\end{enumerate}
+
+\item Let x  = f (x) be an autonomous first-order differential equation with
+an equilibrium point at x0.
+
+\begin{enumerate}
+\item Suppose f  (x0) = 0. What can you say about the behavior of
+solutions near x0? Give examples.
+\item Suppose f  (x0) = 0 and f   (x0)  = 0. What can you now say?
+\item Suppose f  (x0) = f   (x0) = 0 but f    (x0)  = 0. What can you now
+say?
+\end{enumerate}
+
+\item Consider the first-order nonautonomous equation x' = p(t)x where
+p(t ) is differentiable and periodic with period T. Prove that all solutions
+of this equation are periodic with period T if and only if
+
+\[
+\int_0^T p(s) ds = 0
+\]
+
+\item Consider the differential equation x  = f (t , x) where f (t , x) is continuously
+differentiable in t and x. Suppose that
+
+\[
+f (t + T, x) = f (t , x)
+\]
+
+for all t . Suppose there are constants p, q such that
+
+\[
+f (t , p) > 0, f (t , q) < 0
+\]
+
+for all t . Prove that there is a periodic solution x(t ) for this equation with
+p < x(0) < q.
+16. Consider the differential equation x  = x2 − 1 − cos(t ). What can be
+said about the existence of periodic solutions for this equation?
+
+
+
+\end{document}
+
+
+

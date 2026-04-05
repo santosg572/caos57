@@ -1,0 +1,182 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\title{First document}
+\author{Hubert Farnsworth \thanks{funded by the Overleaf team}}
+\date{February 2014}
+
+\hfill
+
+\textbf{Selected Exercises}
+
+\hfill
+
+\begin{enumerate}
+
+\item Find the fixed points of the logistic map, the standard map and the Hénon-
+Heiles system from Sect. 1.1.1 and discuss their stability.
+
+\item Find period-2 orbits of the standard map. Hint: solve $x_{n+2} = x_n$.
+
+\item For which parameter values is the Hénon map, $x_{n+1} = 1 - ax^2_n + by_n$, $y_{n+1} =x_n$, a conservative system?
+
+
+\item Prove that the Hénon-Heiles system (1.6) is conservative. Derive a condition
+for the parameters of the Lorenz-63 model (1.5) which has to be fulfilled such
+that this system is dissipative.
+
+\item In a computer define and evolve the following dynamical system
+
+\[
+˙ \dot{x} = \mu x − yz, ˙\dot{y} = -\ni y + xz, ˙\dot{z} = \gamma - z + xy
+\]
+
+(by default $\mu$ = 0.119, $\ni$ = 0.1, $\gamma$ = 0.9 and initial condition (3, 3, 3)) called
+Gissinger system [10], which models chaotic reversals of Earth’s magnetic
+field. Animate the evolution of the three dimensional trajectory for various
+values of μ. Hint: writing your own ODE solver is probably too much; instead
+pick an existing one from your programming language of choice. You may compare
+with the solution you’d get by using DynamicalSystems.jl and Code 1.1.
+
+\item Evolve a grid of initial conditions of the standard map, (1.4), each for 1000
+steps. Scatter-plot all trajectories of all initial conditions with different colors.
+
+Repeat for various k values in different plots. These plots will highlight that
+the standard map is a system with mixed state space, which we will discuss
+more in Sect. 8.2.2.
+
+\item Show that for Hamiltonian systems the Hamiltonian is a conserved quantity,
+$\dot{H}$ = 0. Apply this knowledge to the single pendulum:
+
+\[
+˙ \dot{\tetha} = \ni, ˙\dot{\ni} = -p \sin (\theta).
+\]
+
+Find its conserved quantity. Simulate trajectories and confirm that they conserve
+this quantity.
+
+\item  Write your own code that can calculate a Poincaré section at a predefined
+(hardcoded) hyperplane corresponding the first variable of a trajectory crossing
+some constant number (e.g., zero). Use linear interpolation between the
+trajectory points that “sandwich” the hyperplane to generate the section. Apply
+your code to, e.g., the Lorenz-63 or Gissinger models. Compare with using
+the function poincaresos from DynamicalSystems.jl and confirm your
+code works as expected.
+
+\item Extend the above code to be able toworkwith arbitrary hyperplanes of arbitrary
+orientation. Provide sections for, e.g., the Lorenz-63 system for the planes:
+x - y, y - z, z - x. Hint: what is the mathematical equation that defines a
+hyperplane in a D-dimensional Euclidean space?
+
+\item Create an animation of a Poincaré section that scans a trajectory. Choose a
+hyperplane of constant orientation, and animate how the section looks as the
+value that defines the hyperplane changes. For example, if the hyperplane is
+defined as “when the x coordinate crosses value v”, then animate the Poincaré
+section for changing v. Apply this animation to the Henon-Héiles system for
+different trajectories.
+
+\item Show that the Fermi-Ulam map
+
+\[
+u_{n+1} = |u_n + \epsilon \sin \theta_n|, \theta_{n+1} = (\theta_n +  \frac{2 \pi}{|u_n + \epsilon \sin \theta_n|) \mod 2 \pi
+\]
+
+is conservative. Evolve a grid of initial conditions and scatter-plot them with
+different color to get a picture similar to the state space of the standard map,
+Fig. 1.1.Repeat this for various $\epsilon$ values.Then, analytically find the fixed points
+of this system and discuss their stability (Hint: consider $theta = 0$ or $\theta = \pi$). Does
+what you find make sense with respect to the figures you produced?
+
+\item Determine the fixed points of the Lorenz-63 system (1.5). Perform a linear
+stability analysis of the fixed point (0, 0, 0) of the Lorenz-63 system
+(1.5) for $\sigma , \rho , \beta > 0$ using the Routh-Hurwitz criterion which states: All
+roots (i.e., Jacobian eigenvalues) of the characteristic polynomial   
+
+$\pi(\mu) = \det(J_f - \mu I) = a_0 + a_1 \m + a_2 \mu^2 + ...+a_D \mu^D$ with $a_i \in \mathbb{R}$  (with I the
+identity matrix) have negative real parts if and only if all determinants
+
+\[
+C_1 = a_1; C_2 = \begin{vmatrix}
+a_1 & a_0 \\ 
+a_3 & a_2
+\end{vmatrix}; ... ; C_D = \begin{vmatrix}
+a_1 & a_0 & 0  & 0 & ... & 0 \\ 
+a_3 & a_2 & a_1 & 0 & ... & 0 \\ 
+\vdots  & \vdots   & \vdots  &  &  & \\ 
+a_{2D-1} & a_{2D-2} & a_{2D-3} & a_{2D-4} & ... & A_D 
+\end{vmatrix}
+\]
+
+         
+(with $a_m = 0$ for $m > D$) have the same sign as $a_d = (-1)^D$. How does the
+stability of this fixed point depend on the system parameters $\sigma, \rho$, and $\beta$?
+
+\item Show that a conserved quantity of the system ˙ x = xy, ˙y = −x2 is V = x2 +
+y2, first by substitution and secondly by separation of variables.
+1.14 How can you evolve a continuous system ˙x = f (x) backward in time, i.e.,
+compute the inverse of the flow 
+−t (x)?. Can you do this if f is not invertible?
+Also solve the same exercise for discrete systems.
+1.15 Rewrite the second-order differential equation ¨x + d ˙ x − x + x3 = 0 of the
+Duffing oscillator as set of first order differential equations (i.e., for σ.ρ, β > 0
+in the standard form of dynamical systems (1.2)). (Hint: introduce a new state
+variable v = ˙x). Compute the fixed points of this system and determine their
+stability. Compute and plot the basins of attraction of the stable fixed points for
+d = 0.2 (Hint: consider a grid of initial values and find out to which attractors
+the corresponding trajectories will converge).
+1.16 Continuing from above, compute for d = 0.2 the stable and unstable manifold
+of the unstable fixed point and compare the result with the basins. Hint: evolve
+a set of initial values located close to the fixed point on the unstable/stable
+subspace given by the eigenvector corresponding to the unstable/stable eigenvalue.
+The unstable/stable scenario should be evolved forward/backward in
+time.
+1.17 The SIR model [11] (also known as Kermack-McKendrick model [12])
+describes the evolution of an epidemic
+˙S
+= −β
+SI
+S + I + R
+, ˙ I = β
+SI
+S + I + R
+− γ I, ˙R = γ I
+where S, I , and R are the numbers of susceptible, infected and recovered individuals,
+respectively. β is the infection rate, and γ is the rate at which individuals
+recover. Showthat the total number N = S + I + R is a conserved quantity.
+Implement the model and investigate its dynamics for β = 0.5 and γ = 0.05
+for initial conditions (S, I, R) = (999, 1, 0) and (S, I, R) = (990, 10, 0) and
+compare the solutions. Then, simulate a lockdown by reducing the infection
+rate from β = 0.5 to β = 0.1 during a time interval [10, 30].
+1.18 Consider the system
+˙v
+= −sin θ, ˙ θ =  −cos θ + v2  /v.
+
+Show that it has a conserved quantity and identify it. Evolve and plot a couple
+of initial conditions and confirm that they followcontour lines of the conserved
+quantity you found.
+1.19 We’ve mentioned that dissipative systems can have co-existing attractors, just
+like shown in Fig. 1.3, and just like the exercise with the Duffing oscillator. A
+very interesting case is the Lorenz-84 system:
+˙ x = −y2 − z2 − ax + aF, ˙y = xy − y − bxz + G, ˙z = bxy + xz − z
+(1.12)
+with a = 0.25, b = 4.0, F = 6.886, G = 1.337. For these parameters the state
+space has an attracting fixed point, an attracting periodic orbit (limit cycle) and
+a chaotic attractor, all existing at the same time! Find all three of them! Hint:
+since you do not have the tools yet to distinguish the different kinds of motion
+via numerical process, simply plot random initial conditions until you find
+three where each converges to each of the three attractors.
+
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+In this document some extra packages and parameters
+were added. There is an encoding package
+and pagesize and fontsize parameters.
+
+\end{enumerate}
+
+\end{document}

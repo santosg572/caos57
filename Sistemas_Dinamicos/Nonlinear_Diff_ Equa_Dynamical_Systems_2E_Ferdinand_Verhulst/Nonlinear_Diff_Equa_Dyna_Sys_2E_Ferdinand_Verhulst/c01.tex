@@ -1,0 +1,252 @@
+\documentclass{beamer}
+
+
+\usepackage{ragged2e}
+
+\begin{document}
+
+\begin{frame}
+
+\textbf{Definiciones y notación}
+
+\justify
+
+\hfill
+
+Esta sección contiene material que es básico para el desarrollo de la teoría en los capítulos siguientes. Consideraremos ecuaciones diferenciales de la forma
+
+\begin{equation} \label{uno:uno}
+\dot{x} = f(t,x)
+\end{equation}
+
+usando la notación fiuxie de Newton $\dot{x} = dxldt$. La variable t es un escalar, $t \in \mathbb{R}$, a menudo identificada con el tiempo. La función vectorial $f: G \rightarrow \mathbb{R}^n$ es continua en t y x; G es un subconjunto abierto de $\mathbb{R}^{n+1}$, entonces $ x\in \mathbb{R}^n$.
+
+\end{frame}
+
+
+\begin{frame}
+
+La función vectorial x(t) es una solución de la ecuación (\ref{uno:uno}) en un intervalo $I \subset \mathbb{R}$ si $x: I \rightarrow \mathbb{R}^n$ es continuamente diferenciable y si x(t) satisface la ecuación (\ref{uno:uno}).
+
+Todas las variables serán reales y las funciones vectoriales tendrán valores reales a menos que se indique explícitamente lo contrario. Además de las ecuaciones de la forma (\ref{uno:uno}), también consideraremos ecuaciones escalares como
+
+\begin{equation} \label{uno:dos}
+\ddot{y} + y = y^2 + \sin t 
+\end{equation}
+
+en el cual $\ddot{y} = d^2y I dt^2$.
+
+La ecuación (\ref{uno:dos}) se puede poner en la forma de la ecuación (\ref{uno:uno}) introduciendo $y = y_1, \dot{y} = y_2$ que produce el sistema
+
+
+\end{frame}
+
+\begin{frame}
+
+\begin{equation} \label{uno:tres}
+\begin{array}{rcl}
+\dot{y}_1 & = & y_2 \\
+\dot{y}_2 & = & -y_1 + y^2_1 + \sin t
+\end{array}
+\end{equation}
+
+La ecuación (\ref{uno:tres}) tiene claramente la forma de la ecuación (\ref{uno:uno}); el vector x en (\ref{uno:uno}) tiene en el caso de (\ref{uno:tres}) las componentes $y_1$ y $y_2$, la función vectorial f tiene las componentes $y_2$ y $-y_1 + y^2_1 + \sin t$. Es fácil ver que la ecuación escalar general de n-ésimo orden
+
+\[
+d^n x / dt^n = g(t, x, dx/dt, …, d^{n-1} x / dt^{n-1})
+\]
+
+con $g: \mathbb{R}^{n+1} \rightarrow \mathbb{R}$, también se puede poner en forma de ecuación (\ref{uno:uno}).
+
+Dependiendo de la formulación del problema, será útil tener a nuestra disposición tanto ecuaciones escalares como su forma vectorial.
+
+
+\end{frame}
+
+\begin{frame}
+En algunas partes de la teoría haremos uso de la expansión de Taylor de una función vectorial f(t,x). La notación $\partial f / \partial x$ indica la derivada con respecto a la variable (espacial) x; esto significa que $\partial f / \partial x$ es la matriz $n \times n$
+
+\[
+\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} & ... & \frac{\partial f_1}{\partial x_n}\\ 
+ \vdots & \ddots & \vdots \\ 
+\frac{\partial f_n}{\partial x_1} & ... & \frac{\partial f_n}{\partial x_n}
+\end{pmatrix}
+\]
+
+with $x_1, ... ,x_n$ the components of x and $f_1, … , f_n$ the components of f(t, x).
+
+\end{frame}
+
+\begin{frame}
+Si no enunciamos un supuesto explícito sobre la diferenciabilidad de la función vectorial f(t, x), asumimos que tiene una expansión de Taylor convergente en el dominio considerado. La mayoría de las veces, esta suposición puede debilitarse si es necesario. En varios casos diremos que la función vectorial es suave, lo que significa que la función tiene primeras derivadas continuas.
+
+In studying vector functions in $\mathbb{R^n}$ we shall employ the norm
+
+\[
+||f|| = \sum_{i=1}^n |f_i|
+\]
+
+\end{frame}
+
+\begin{frame}
+For the $n \times n$ matrix A with elements $a_{ij}$ we shall use the norm
+
+\[
+||A|| = \sum_{i,j=1}^n |a_{i,j}|
+\]
+
+Por supuesto, estas son normas solo si I es un vector constante y A es una matriz constante. Abusando un poco del lenguaje, seguiremos llamando a $|| \cdot ||$ una norma si f es una función vectorial y A una función matricial. A continuación se definirá una norma adecuada.
+
+En la teoría de ecuaciones diferenciales las funciones vectoriales dependen de variables como t y x. Usaremos algunas generalizaciones directas de conceptos en el análisis básico. Por ejemplo la expresión
+
+
+\end{frame}
+
+\begin{frame}
+\[
+\int x dt
+\]
+
+es la abreviatura de campo vectorial con componentes
+
+\[
+\int x_i(t) dt, i=1,...,n
+\]
+
+In the same way $\int A(t) dt$ represents a $n \times n$ matrix with elements $\int a_{ij}(t) dt, i,j=1,...,n$.
+
+Finalmente, al estimar la magnitud de las funciones vectoriales, usaremos la norma uniforme o supnorma. Supongamos que estamos considerando la función vectorial I(t,x) para $t_0 \leq t \leq t_0+T$ y $x \in D$ con D un dominio acotado en $\mathbb{R}$; después
+
+\end{frame}
+
+\begin{frame}
+\[
+||f||_{sup} = sup_{\begin{matrix}
+t_0 \leq t \leq t_0+T\\ 
+x \in D
+
+\end{matrix}} ||f||
+\]
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Existencia y unicidad.}
+
+\hfill
+
+La función vectorial f(t, x) en la ecuación diferencial (\cite{uno:uno}) tiene que satisfacer ciertas condiciones, de las cuales la condición de Lipschitz es la más importante.
+
+\hfill
+
+\textbf{Definition}
+
+\hfill
+
+Considere la función f(t, x) con $f: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^{n}, |t-t_0| \leq a, x \in D \subset \mathbb{R}^{n}$; f(t, x) satisface la condición de Lipschitz con respecto a x si en $|t_0-a, t_0+a| \times D$ tenemos
+
+\[
+||f(t, x_1) - f(t,x_2)|| \leq L ||x_1 - x_2||
+\]
+
+with $x_1, x_2 \in D$  and L a constant. L is called the Lipschitz constant.
+
+\end{frame}
+
+\begin{frame}
+En lugar de decir que f(t,x) satisface la condición de Lipschitz, a menudo se usa la expresión: f(t,x) es una continua de Lipschitz en x. Tenga en cuenta que la continuidad de Lipschitz en x implica continuidad en x.
+
+Es fácil ver que la diferenciabilidad continua implica la continuidad de Lipschitz; esto nos proporciona en muchas aplicaciones un criterio simple para establecer si una función vectorial satisface esta condición.
+
+The Lipschitz condition plays an essential part in the following theorem.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Theorem 1.1}
+
+Consider the initial value problem
+
+\[
+\dot{x} = f(t, x), x(t_0) = X_0
+\]
+
+with $x \in D \subset \mathbb{R}^n, |t-t_0| \leq a; D = \{ x | ||x-x_0|| \leq d \}$, a and d are positive constants. The vector function f (t, x) satisfies the following conditions:
+
+\begin{enumerate}[a.]
+\item f(t, x) is continuous in $G = [t_0 - a, t_0 + a] \times D$;
+\item  f (t, x) is Lipschitz continuous in x
+\end{enumerate}
+
+Then the initial value problem has one and only one solution for $|t - t_0| \leq min(a, \frac{d}{M})$ with
+
+\[
+M = sup_G llfll.
+\]
+
+\end{frame}
+
+\begin{frame}
+La solución del problema de valor inicial se indicará en la continuación por x(t), a veces por x(t; xo) o x(t; to, xo). Nótese que el teorema 1.1 garantiza la existencia de la solución en una vecindad de $t = t_0$, cuyo tamaño depende de la supnorma M de la función vectorial f(t,x). A menudo, uno puede continuar la solución fuera de este vecindario; en muchos problemas no daremos a y d a priori sino que, analizando el problema, determinaremos el intervalo de tiempo de existencia y el dominio D.
+
+\hfill
+
+\textbf{Example 1.1}
+
+\[
+\dot{x} = x, x(0) = 1, t \geq 0.
+\]
+
+La solución existe para $0 \leq t \leq a$ con una constante positiva arbitraria. La solución, $x(t) = e^t$ , puede continuar para todo t positivo y se vuelve ilimitada para $t \rightarrow \infty $.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example 1.2}
+
+\[
+\dot{x} = x^2 , x(0) = 1, 0 \leq t < \infty
+\]
+
+Encontramos $x(t) = (1 - t)^{-1}$ por lo que la solución existe para $0 \leq t < 1$. En este caso conocemos la solución explícitamente; al estimar el intervalo de tiempo de existencia podríamos tomar $a = \infty$, d alguna constante positiva. Entonces $M = (1 + d)^2$ y el teorema 1.1 garantiza la existencia y unicidad de $0 \leq t \leq inf(\infty, d(d+1)^{-2}) = d(d+1) ^{-2}$0. Si, por ejemplo, estamos interesados en valores de x con límite superior 3, entonces $d = |3 - x_0 | = 2$.
+
+El teorema 1.1 garantiza la existencia de la solución para $0 \leq t \leq 2/9$. La solución real alcanza el valor 3 para t = 2/3.
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+
+
+\end{document}
+
+
+
+

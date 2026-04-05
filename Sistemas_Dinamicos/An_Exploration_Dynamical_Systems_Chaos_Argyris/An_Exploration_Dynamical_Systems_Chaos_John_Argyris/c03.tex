@@ -1,0 +1,391 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{bm}
+
+\begin{document}
+
+pag55
+
+
+\hfill
+
+\textbf{3 Mathematical Introduction to Dynamical
+Systems}
+
+\hfill
+
+No roote, no fruite
+
+\hfill
+
+Jeremiah Dyke, A worthy communicant,
+
+\hfill
+
+(1640)
+
+\hfill
+
+In this chapter, we present in the simplest possible manner a survey of some of the
+fundamental mathematical concepts and tools which are required for the qualitative
+analysis of the long-term behaviour of dynamical systems. A knowledge of the
+theory of linear differential equations is a pre-requisite for the comprehension of
+non-linear dynamics. The reader can find more detailed discussions in Chapters 5
+and 6 of this book.
+
+\hfill
+
+\textbf{3.1 Linear Autonomous Systems}
+
+\hfill
+
+As we already mentioned in Chapter 2, we consider dynamical processes of a finite
+dimension n which are differentiable and deterministic.
+
+\hfill
+
+In the simplest case, the system of differential equations (2.3.3) is linear with constant
+coefficients
+
+\[
+\mathbf{\dot{x} = Lx }
+\]
+
+where \textbf{L} denotes the constant, non-singular ($n \times n$)-matrix of the coefficients. Using
+this example, we now demonstrate which solutions can occur and which patterns
+the relevant trajectories form in the corresponding phase space.
+
+\hfill
+
+We introduce the ansatz
+
+\[
+\mathbf{x} = e^{\lambda t} \mathbf{y}, \hspace{3mm} \mathbf{y} = \{y_1 y_2, ... y_n \}
+\]
+
+into eq. (3.1.1), thus obtaining a homogeneous linear system of equations
+
+\[
+[ \mathbf{L} - \lambda \mathbf{I}] \mathbf{y} = 0
+\]
+
+which only possesses non-trivial solutions if the system determinant vanishes
+
+\[
+P(\lambda) = \det[\mathbf{L} - \lambda \mathbf{I}] = 0
+\]
+
+or
+
+\[
+P(\lambda) = A_n \lambda^n + A_{n-1} \lambda^{n-1} + ... + a_0 = 0
+\]
+
+$P(\lambda)$ is a polynomial of the nth degree in $\lambda$ and is called characteristic or secular
+equation. The zeroes of $P(\lambda)$ are the eigenvalues of \textbf{L}. A non-vanishing vector \textbf{y} 
+
+
+which satisfies eq. (3.1.3) is called the eigenvector of L appertaining to the eigenvalue
+$\lambda$. If $\lambda$ and y satisfy eq. (3.1.3), eq. (3.1.2) is a solution of eq. (3.1.1). For each
+pair $\lambda_i,y_i$, we obtain in accordance with eq. (3.1.2) a solution of the form
+
+\[
+x_i = e^{\lambda_i t}y_i 
+\]
+
+If all n eigenvalues $\lambda_i$ are different, n linearly independent eigenvectors $y_i$ exist and
+the general solution of eq. (3.1.1) can be expressed by the linear combination
+
+\[
+x(t) = \sum_{i=1}^n C_i e^{\lambda_i t} y_i
+\]
+
+with n integration constants Ci which are determined by the initial conditions $x(t_0)$
+(Arnold, 1980; Braun, 1979).
+
+\hfill
+
+From a physical point of view, finding all the states of equilibrium $x_s$ is of interest.
+These are stationary states of the system in which the dynamical process does
+not undergo any change; they are thus characterised by $\dot{x}_s = 0$. If we observe the
+corresponding point in the phase space, the vector $F(x_s)$ which defines the change of 
+
+
+the trajectory vanishes here. For this reason, xs is thus also denoted singular point.
+The decisive factor in characterising the stationary state is the behaviour of the
+trajectories in the neighbourhood of the singularity. We speak of stable, unstable
+or neutral equilibrium. If all the trajectories within certain neighbourhoods of xs are
+captured, the singular point is asymptotically stable (sink); if, one the other hand,
+all the trajectories that come close enough to xs are repelled, xs is asymptotically
+unstable (source). On the basis of a system of two differential equations, we now
+demonstrate the classification of singularities
+
+\[
+\mathbf{\dot{x} = Lx}, \hspace{5mm} \mathbf{L} = \begin{bmatrix}
+L_{11} &  L_{12} \\
+L_{21} & L_{22} \\
+\end{bmatrix}, \hspace{5mm} \mathbf{x} \{x_1, x_2 \}
+\]
+
+with the origin $\mathbf{x}_s = 0$ as the singular point. The eigenvalues of the corresponding
+eq. (3.1.3) serve as a basis to make the following six distinctions, illustrated in the
+diagram fig. 3.1.1; here, we ignore the degenerate case of a zero eigenvalue.
+
+\[
+(A) \hspace{10mm}  \lambda_1 \neq \lambda_2
+\]
+
+Initially, we assume that \textbf{L} possesses different eigenvalues $\lambda_1 \neq \lambda_2$ and denote the
+corresponding eigenvectors as $\mathbf{y}_1, \mathbf{y}_2$ which we can presume to be normalised without
+loss of generality.
+
+\hfill
+
+We now introduce a new system of coordinates
+
+\[
+\mathbf{\bar{x}} = \{ \bar{x}_1 \bar{x}_2 \} 
+\]
+
+which is defined by the transformation
+
+\[
+\mathbf{x} = \mathbf{T \bar{x}} \text{ with } \mathbf{T} = [ \mathbf{y}_1 \mathbf{y}_2 ] 
+\]
+
+Thus, the eigenvectors $\mathbf{y}_1$, $\mathbf{y}_2$ are the basis vectors of the new coordinate system.
+Substitution of the transformation eq.(3.1.10) into the given system eq.(3.1.8)
+yields
+
+\[
+\mathbf{\dot{\bar{x}}} = \mathbf{D \bar{x}} \hspace{3mm} with \hspace{3mm} \mathbf{D = T^{-1}LT} 
+\]
+
+Due to
+
+\[
+\lambda_i y_i = \mathbf{L y_i}
+\]a
+
+\textbf{D} can be simplified as follows
+
+\[
+D = [ y_1 \ \ y_2 ]^{-1} L [y_1 \ \ y_2] = [y_1 \ \ y_2]^{-1} [y_1 \ \ y_2 ] [\lambda_1 \ \ \lambda_2]
+\]
+\[
+= [\lambda_1 \lambda_2] 
+\]
+
+and is thus reduced to diagonal form. The transformed system equivalent to
+eq. (3.1.8) now becomes
+
+\[
+\begin{matrix}
+\dot{\bar{x}}_1 = \lambda_1 \bar{x}_1 \\
+\dot{\bar{x}}_2 = \lambda_1 \bar{x}_2
+\end{matrix}
+\]
+
+Here, we can distinguish for $\lambda_1 \neq \lambda_2$ a total of four possibilities (see fig. 3.1.1). If
+the eigenvalues are real, the solution of eq. (3.1.13) according to eq. (3.1.7) is
+
+\[
+\bar{x}_1 = C_1 e^{\lambda_1 t}, \hspace{3mm} \bar{x}_2 = C_2 e^{\lambda_2 t}
+\]
+
+or, after eliminating the time parameter t,
+
+\[
+\bar{x}_2 = C x_1^{\lambda_2 / \lambda_1}
+\]
+
+We next differentiate between two cases having different signs (see fig. 3.1.1);
+
+\[
+(\textbf{A1}) \hspace{10mm} sign \lambda_1 = sign \lambda_2
+\]
+ 
+If the eigenvalues have the same sign, eq. (3.1.15) describes a family of parabolae
+of the order $\lambda_2/ \lambda_1$ which have a common tangent at their origin (see fig. 3.1.2).
+We then speak of a node. If the eigenvalues are negative, the node is stable, as can
+be seen in the parameter representation of eq. (3.1.14) since all trajectories tend
+towards the singular point for $t \to \infty$.
+
+\[
+(\textbf{A1}) \hspace{10mm} sign \lambda_1 = sign \lambda_2
+\]
+
+If $\lambda_1$ and $\lambda_2$ possess different signs, the solution is
+
+\[
+\bar{x}_2 \bar{x}_1^{|-\lambda_2 / \lambda_1|} = C
+\]
+
+i.e. the trajectories are hyperbolae. The corresponding singular point is then called
+a saddle point or hyperbolic point (see fig. 3.1.3).
+
+\hfill
+
+If $\lambda_1, \lambda_2$ are complex conjugate, \textbf{L} can always be reduced by applying a (real)
+linear coordinate transformation $\hat{T}$ to the simple form
+
+\[
+\dot{\hat{\mathbf{x}}} = \hat{L}x \text{ with } \hat{L} = \begin{bmatrix}
+\alpha & -w \\
+w & \alpha \\
+\end{bmatrix}
+\]
+
+The eigenvectors $\mathbf{y}_1$ und $\mathbf{y}_2$ appertaining to the eigenvalues $\lambda_{1,2} = \alpha \pm  i w$ are also
+complex conjugate
+
+\[
+\mathbf{y}_1 = \{ 1 - i \} \text{ and } \mathbf{y}_2 = \{ 1 i \} = \mathbf{y}_1^{*}
+\]
+
+and reduce in accordance with eq. (3.1.10) the transformation of $\hat{L}$ to a diagonal form; in accordance with standard usage, $\mathbf{y}_1^*$ denotes the complex conjugate vector
+of $\mathbf{y}_1$. Thus, points $\hat{x}$ of the real phase space are transformed into points $\bar{x}$ of a two-dimensional
+complex phase space $ \mathbf{C}^2$. The solution of eq. (3.1.13) can be expressed
+immediately as
+
+\[
+\bar{x}_{1,2}= C_{1,2} e^{(\alpha \pm i w)t)} = C_{1,2}e^{\alpha t} (\cos wt \pm i \sin wt)
+\]
+
+where the complex constants $C_1$ and $C_2$ coincide with the initial values $\bar{x}_1(0)$ and
+$\bar{x}_2$. It is now easy to see that $C_1$ and $C_2$ are complex conjugate. From the inverse
+transformation of eq. (3.1.10) for an initial vector $\hat{\mathbf{s}}(0)$
+
+\[
+\bar{\mathbf{x}}(0) = \mathbf{T}^{-1} \hat{x}(0) = [\mathbf{y}_1 \ \ \mathbf{y}_1^*]^{-1} \hat{\mathbf{x}}(0) = \frac{1}{2} \begin{bmatrix}
+\mathbf{y_1^{*t}} \\
+\mathbf{y}_1^t
+\end{bmatrix} \hat{x}(0)
+\]
+
+we obtain the relation $\bar{x}_2(0) = \bar{x}_1^*(0)$, i.e. $C_2 = C_1^*$. Thus, the solutions according
+to eq. (3.1.17) are also complex conjugate, i.e. $\bar{x}_2(t) = \bar{x}^*_1(t)$ applies. The inverse
+transformation of the initial system hence yields a real solution
+
+\[
+\hat{x}(t) = e^{\alpha t}\begin{bmatrix}
+\cos wt & -\sin wt \\
+\sin wt & \cos wt \\
+\end{bmatrix} \hat{x}(0)
+\]
+
+We observe that the initial vector $\hat{x}(0)$ is rotated about an angle wt and stretched with the factor $e^{\alpha t}$.
+
+\hfill
+
+We once again distinguish between two cases (see fig. 3.1.1):
+
+\[
+(\textbf{A3}) \alpha = Re(\alpha_i) \neq 0
+\]
+
+Equation (3.1.18) suggests a representation in polar coordinates for which we set
+
+\[
+r = r_0 e^{\alpha t}, \varphi= wt + \varphi_0
+\]
+
+with $r_0 = | \hat{x}(0)|$ and $\varphi_0 = \tan^{-1}( \hat{x}_2(0)/ \hat{x}_1(0))$. This formulation describes a family
+of logarithmic spirals. In accordance with an Anglo-Saxon convention, we use the
+inverse function sign for arcus. If the real part of $\lambda_i$ is negative, i.e. $Re(\lambda_i) = \alpha < 0$,
+we have a stable focus or spiral point; on the other hand, for $\alpha > 0$, the singular
+point is unstable. Figure 3.1.4 shows the spirals in the original $x_1, x_2$ coordinate
+system. They are affinely distorted by the inverse transformation.
+
+\[
+(\textbf{A4}) \alpha = Re(\lambda_i) = 0
+\]
+
+In the special case of $\alpha = 0$, the phase curves in the $\hat{x}_1, \hat{x}_2$ coordinate system
+become concentric circles in accordance with eq. (3.1.18), the centre of which is the
+singular point. We then speak of a centre. Figure 3.1.5 shows the trajectories in
+the original $x_1, x_2$ coordinate system in which \textbf{L} possesses a general form. Here, we
+observe concentric ellipses.
+
+\[
+(\textbf{B}) \lambda_1 = \lambda_2 = \lambda
+\]
+
+We now move on to a discussion of the case of identical eigenvalues, $\lambda_1 = \lambda_2 = \lambda$.
+Here, we distinguish between two cases (fig. 3.1.1):
+
+\hfill
+
+(\textbf{B1}) Therearetwo linearly independent eigenvectors $matbf{y}_1, \mathbf{y}_2$ for $\lambda$.
+
+In analogy to eqs. (3.1.11), (3.1.12), the system x˙ = Lx can be transformed into a
+diagonal form, $\dot{\bar{x}} = \lambda \bar{x}_i$ (i = 1, 2), with the solutions
+
+\[
+\bar{x}_i = C_i e^{\lambda t} (i = 1, 2) 
+\]
+
+or
+
+\[
+\bar{x}_2 = C \bar{x}_1 
+\]
+
+
+We thus obtain a bundle of straight lines and speak of a dicritical node (see
+fig. 3.1.6).
+
+\hfill
+
+In this case, a sufficient number of eigenvectors does not exist to span the whole
+phase space; thus, \textbf{L} can no longer be transformed to diagonal form. However, in
+matrix theory, it is shown that any non-diagonalisable (n × n) matrix can always
+be transformed uniquely to the so-called Jordan normal form where each Jordan
+block is associated with an eigenvector (Zurm¨uhl, 1964).
+
+\hfill
+
+For n = 2, there is thus a specific $\bar{x}_1, \bar{x}_2$ coordinate system in which the system of
+differential equations (3.1.8) can be transformed to the Jordan normal form
+
+
+\[
+\dot{\bar{\mathbf{x}}} = \mathbf{\bar{L} \bar{x}} \text{ with } \bar{\mathbf{L}} = \begin{bmatrix}
+\lambda & 1 \\
+0 & \lambda  \\
+\end{bmatrix}
+\]
+
+The corresponding coordinate transformation is
+
+\hfill
+
+(B2) There is only one linearly independent eigenvector \textbf{y} for $\lambda$.
+
+\hfill
+
+x = T ¯x with T = [y z] (3.1.23)
+where a second vector z linearly independent of y must be established. This vector
+z is denoted generalised eigenvector. Pre-multiplying
+¯L
+L = T
+−1LT LT
+with T yields
+T¯LL = LT
+Evaluating the matrix products, we find
+T¯LL = [y z]
+ 
+λ 1
+0 λ
+ 
+= [λy (y + λz)]
+and
+LT = L[y z] = [λy Lz]
+Comparing the second columns and resolving for y yields
+[L − λI]z = y
+
+
+
+
+\end{document}

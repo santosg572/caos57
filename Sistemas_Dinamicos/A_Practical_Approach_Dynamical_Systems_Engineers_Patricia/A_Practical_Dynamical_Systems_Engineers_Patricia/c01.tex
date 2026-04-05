@@ -1,0 +1,613 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+
+\begin{document}
+
+\textbf{CHAPTER 1
+Introduction: What Is a
+Dynamical System?}
+
+\hfill
+
+\textbf{1.1 OVERVIEW}
+
+\hfill
+
+Dynamical systems are all around us: from a car traveling down the road to
+the ripples caused by throwing a pebble into a pond to a clock pendulum
+swinging back and forth. But what is a dynamical system? First, let us
+explore the words that make up the phrase “dynamical system.” The
+Merriam-Webster Dictionary gives these definitions:
+
+\hfill
+
+\textbf{Dynamic} (adjective): always active or changing; having or showing a lot of
+energy; of or relating to energy, motion, or physical force
+
+\hfill
+
+\textbf{System} (noun): a group of related parts that move or work together
+
+\hfill
+
+The term “dynamic” gives us the idea of change or motion and can deal
+more specifically with physical phenomena. Mathematically, when one
+thinks of change, derivatives should spring to mind; indeed, these are a key
+component of how we model dynamical systems.
+
+The definition of “system” involves groups of related parts working
+together. Although this definition works in general, a diagram such as the
+one shown in Figure 1.1 best illustrates the concept that we use throughout
+the book. Simply stated, a \textbf{system} is an entity that has an input and an
+output. A system receives an input and produces an output based on the
+input and its state.
+
+When the two words are put together to form “dynamical system,”
+things get interesting. A \textbf{dynamical system} is one in which inputs, outputs,
+and even the system characteristics themselves can change with time.
+The relationship between input and output can be modeled mathematically
+using various techniques, such as differential and difference equations, transfer functions, and state space equations. Throughout this book, we
+focus on two objectives: (1) investigate various techniques and analysis
+methods for dynamical systems and (2) apply these methods to examples of
+real-world systems and show how they can be used in practice. As we will
+see, the study of dynamical systems can reveal some very interesting
+behaviors, some desirable and some not.
+
+What about a car driving down a road makes it a dynamical system?
+One example is its suspension system, represented in Figure 1.2. The input
+to this system is the road, which has a varying height as the car drives down
+it. The output might be the ride height of the car itself. The system consists
+of the various components linking the road to the passenger’s body: the
+tires, control arm, shock absorber, chassis, and so on. When you hit a bump
+in the road, you experience a dynamical response: perhaps your body is
+jarred by the sudden change in wheel height, or perhaps you barely notice
+it. The response depends on the characteristics of the car’s suspension,
+which can be modeled as a mass-spring-damper system.
+
+\hfill
+
+\textbf{1.1.1 Why Do We Study Dynamic Systems?}
+
+\hfill
+
+The main reasons are (1) to \textbf{predict} system behavior and (2) to \textbf{control}
+system behavior.
+
+An example of a system we study for prediction is the weather. Scientists,
+meteorologists in particular, have spent many years and many
+computing hours creating models used to predict the weather. We rely on
+these predictions to plan our daily activities, from scheduling an event to
+deciding what to wear. As computing power advanced and more atmospheric
+data became available, the models used to predict the weather
+increased in sophistication and accuracy.
+
+The above example of the car suspension is another case of a systemic
+behavior we wish to predict. Knowing the effects of variables such as spring
+stiffness, fluid viscosity in shock absorbers, tire pressure, and the many other
+parameters that go into the system allow the designers to predict and
+therefore design a system to have the desired characteristics. Certainly,
+someone buying a sports car would be disappointed if the vehicle handled
+like a school bus!
+
+There are many examples of systems whose behavior we wish to
+control. The previous example of the car suspension is also one of them.
+Many modern cars now have adaptive suspension systems in which the
+vehicle performance through turns and over bumps in the road is monitored.
+Based on this performance, the system is designed to adjust itself by
+changing the damping coefficient of the shock absorbers.
+
+Another example of controlling a system from everyday life is a thermostat
+like the one shown in Figure 1.3. A thermostat allows us to set a
+comfortable temperature for the room we are in, and this temperature is
+maintained automatically. The temperature of the room depends on many
+parameters, including heat sources within the room (e.g., heaters, lights,
+people); the amount of insulation in the walls, doors, and windows; and the
+temperature outside the room. Designers wishing to optimize thermostat
+performance need to have an understanding of the temperature dynamics in
+the room. With this knowledge, the designer can choose the controller
+parameters to get the best performance from the system.
+
+The analysis strategy for a system depends on the objective. If one is
+trying to predict system behavior, then often the strategy is to model as
+much of the characteristics as possible. In the case of weather, an
+extraordinary amount of data is gathered for use in computer models. This
+data is taken from many different sensors to measure a number of conditions
+(e.g., temperature, humidity, barometric pressure) in many different
+locations. Despite sophisticated modeling techniques, one aspect of weather
+systems that makes prediction so difficult is its inherently chaotic behavior.
+This is exemplified by the thought experiment known as the butterfly
+effect: a butterfly flapping its wings in one part of the world can cause a
+hurricane somewhere else weeks later. We will discuss chaos later in
+Chapter 4.
+
+If a designer is trying to analyze a system to develop a control algorithm,
+the technique may not be to model as much as possible about the system. In
+many cases, it is not practical and simply not necessary to obtain so much
+information. For the example of a thermostat, a comprehensive model of
+the room would need the temperature distribution in the space. In other
+words, we would need to measure the temperature at every point in the
+room. However, this kind of measurement is not practical because we
+cannot possibly fit that many sensors in the room. It is more likely that we
+can get away with one, two, or four sensors by making assumptions about
+the temperature distribution in the room. Furthermore, the control
+designer often relies on a relatively simple model and focuses on a sophisticated
+control algorithm to compensate for modeling errors and
+uncertainty.
+
+\hfill
+
+\textbf{1.2 TYPES OF SYSTEMS}
+
+\hfill
+
+Dynamical systems can be categorized by their characteristics. In this section,
+we discuss several of these categories and give examples of each type.
+Understanding the type of system you are dealing with is important because
+it will drive which techniques are available for you to use. Serious problems
+can occur if analysis and design methods are used on the wrong type of
+system!
+
+\hfill
+
+\textbf{1.2.1 Continuous versus Discrete}
+
+\hfill
+
+
+Consider the above example of a car suspension system. A plot of the car’s
+ride height versus time after going over a bump may look something like
+the curve shown in Figure 1.4. At every instant of time, we can get a value
+for the car’s height. A fraction of an instant later, we can get another value.
+In fact, we can get a different value at every instant in time. This is an
+example of a \textbf{continuous-time system}.
+
+In contrast, consider money in a bank account. Assume an account is
+earning 5 \% interest and there is an initial deposit of \$10,000. Figure 1.5
+shows how the money would grow if no deposits or withdrawals are made
+and the bank applied interest monthly. Now similar to the car suspension
+example, we can check the account balance at any time and get a value.
+However in this case, changes only occur once every month. Because the
+in-between values are known to be held constant, we can represent the
+balance as shown in Figure 1.6.
+
+The formula for the amount of money in the account is
+
+\[
+A_n = A_0 \left (1 + \frac{r}{12} \right )^n
+\]
+
+where r is the annual interest rate, n is the number of months, A0 is the
+initial deposit, and An is the amount of money in the account in month
+n. This variable n represents a discrete interval of time.
+
+The bank account is an example of a \textbf{discrete-time system}. In a
+discrete-time system, the values are only recorded at particular time instants.
+The in-between values do not matter or do not change (as in the bank
+account), or we do not have access to them. Sampling is the process by
+which a continuous-time system is converted to discrete time. In this situation,
+the sampling rate is very important because if the samples are not
+taken often enough, important information in the signal can be lost.1 On
+the other hand, there is always an upper limit on the sampling rate caused
+by hardware processing limitations, and faster sampling is not always the
+key to improving system performance.
+
+Real physical systems, such as the car suspension system, are mostly
+analog in nature and therefore continuous-time systems. So why study
+discrete-time systems? The major reason is that many of these systems are
+computer controlled, and computers are discrete-time machines that run on
+a clock. Figure 1.7 shows a typical physical system controlled by a computer.
+Typically, when a computer sends signals to actuators and receives
+signals from sensors, some form of analog-to-digital and digital-to-analog
+conversion must take place.
+
+\hfill
+
+\textbf{1.2.2 Linear versus Nonlinear}
+
+\hfill
+
+A \textbf{linear} system can be characterized in several different, but related, ways.
+
+\begin{itemize}
+\item Its dynamics can be represented by a system of linear differential equations
+(for continuous-time systems) or linear difference equations (for
+discrete-time systems).
+\item It has a transfer function.
+\item It obeys the law of superposition.
+\item A sinusoidal input produces a sinusoidal output of the same frequency
+\end{itemize}
+
+One of the most common ways to test for a system’s linearity is by
+verifying if it follows the law of superposition. Superposition is usually
+introduced to engineers in a circuit analysis course, but the concept applies
+to linear systems in general. (Resistive circuits are linear systems after all.)
+Superposition is composed of two parts, scaling and additivity.
+
+Scaling: If a system’s input $x(t)$ results in an output $y(t)$, then an input of
+$\alpha x(t)$ will result in the output $\alpha y(t)$ for any value $\alpha$. This characteristic is
+shown in Figure 1.8.
+
+In other words, if you multiply the system’s input by some value, you
+end up multiplying the output by the same value. Note that this also means
+zero input should result in zero output.
+
+Additivity: If a system’s input $x_1(t)$ results in $y_1(t)$ and $x_2(t)$ results in $y_2(t)$,
+then if the input is $x_1(t) + x_2(t)$, the output is $y_1(t) + y_2(t)$. A block diagram
+depicting this characteristic is shown in Figure 1.9.
+
+In other words, in a linear system, it does not matter if you sum the
+signals before or after the system. The output is the same.
+
+A \textbf{nonlinear} system is simply one that is not linear. However, there are
+several reasons why a system might be nonlinear, and different classes of
+nonlinearities come about because of different physical reasons.
+
+Let’s consider an example of a simple nonlinear system. Suppose a
+system has input $x$ and output $y$ and they are related by
+
+\[
+y = m x + b 
+\]
+
+where m and b are nonzero constants. This is a linear equation! So how can
+it be nonlinear? Although it may be a linear equation, the system it represents
+is nonlinear. We can see this if we look at the scaling property.
+
+According to the scaling property, let $x_0(t)$ be the input and $y_0(t)$ be the
+corresponding output, as in
+
+\[
+y_0 = m x_0 + b
+\]
+
+Now let’s see what happens when we multiply the input by $\alpha$ and call
+the output $\gamma_1$.
+
+\[
+\gamma_1 = m (a x_0) + b
+\]
+
+And when we multiply the output by $\alpha$, we get
+
+\[
+a \gamma_0 = a (m x_0 + b)
+\]
+
+\[
+=m (a x_0) + ab
+\]
+
+Because $\gamma_1$ does not equal $\alpha \gamma_0$, the system is nonlinear! We can also see
+this if we put zero into the system, the output is b (not zero).
+
+Let’s also take a look at how the system does not obey the additivity
+property. (This is just an exercise. We have already shown the system is
+nonlinear because it violates the scaling property.)
+
+Suppose the inputs $x_1(t)$ and $x_2(t)$ result in outputs $\gamma_1(t)$ and $\gamma_2(t)$,
+respectively. Then
+
+\[
+\gamma_1 = mx_1 + b 
+\]
+\[
+\gamma_2 = mx_2 + b 
+\]
+
+Putting the sum of $x_1$ and $x_2$ into the system, the output is
+
+\[
+y_s = m(x_1 + x_2) + b 
+\]
+
+But
+
+\[
+\gamma_1 + \gamma_2 = mx_1 + b + mx_2 + b
+\]
+\[
+= m(x_1 + x_2) + 2b
+\]
+
+Again we see that the system is nonlinear because $\gamma_s \neq \gamma_1 + \gamma_2$, and the
+additivity property is not followed.
+
+Here is another example that’s practical and not purely mathematical.
+Consider the amplifier circuit shown in Figure 1.10.
+
+A circuit like this is usually discussed in an introductory circuits or
+electronics course. It is an inverting amplifier, and the inputeoutput
+relationship is given by
+
+\[
+V_{out} = - \frac{R_2}{R_1} V_{in}
+\]
+
+
+If you double the input voltage, the output voltage is doubled, and the
+scaling property holds. Also, if you add two inputs, the result is
+
+\[
+-\frac{R_2}{R_1} (V_1 + V_2) = \left ( - \frac{R_2}{R_1} V_1  \right ) + \left ( - \frac{R_2}{R_1} V_2  \right ) 
+\]
+
+and the additivity property holds. Clearly, this must be a linear system.
+
+Mathematically, yes, the system is linear. However, suppose your two
+input voltages are 10 and 15 V. Will the output be -25 V? No, of course
+not! The circuit is only being supplied with $\pm 12 V$, and the output cannot
+exceed this limit.
+
+This op-amp circuit is an example of a system that is modeled linearly
+and behaves linearly within certain limits (for input voltages less than
+$\frac{R_1}{R_2} 12 V$ in magnitude). However, when you exceed those limits, the output
+saturates, and the nonlinearity is seen as a distortion, as shown in
+Figure 1.11. This limitation is one reason microphones clip and speakers
+distort sound.
+There are many types of nonlinearities, and they can come about from
+different types of physical limitations such as thresholds, sticking, hysteresis,
+or other imperfections. Nonlinear systems, and how to deal with them, are
+discussed in more detail in Chapter 4.
+
+\hfill
+
+\textbf{1.2.3 Time-Invariant versus Time-Varying}
+
+\hfill
+
+A \textbf{time-invariant} (or \textbf{autonomous}) system is one whose behavior does
+not depend explicitly on time. In other words, given an input, if you run
+the system now, an hour from now, or next Tuesday, the output will be the
+same. Mathematically, time invariance means that the “constants” in the
+system are truly constant and do not vary with time.
+As an example, consider a simple first-order model of a car:
+
+\[
+m \ddot{x} = F(t) - b \dot{x} (t)
+\]
+
+where m is the mass of the car, x is the position, F is the force applied to the
+wheels by the engine and drivetrain, and b is the coefficient of friction. We
+model this system as one that is time-invariant because we assume the mass
+and friction to be constant.
+
+In reality, the car is a \textbf{time-varying} (or \textbf{nonautonomous}) system. As
+you drive, the car consumes fuel, and the mass decreases. However, this
+change is small and occurs slowly, so mass is assumed constant. Many systems
+we take to be time invariant are not because of aging. In our equations,
+we use parameters such as mass, friction, length, area, resistance, and
+many others as constants. But they do change as components age. The
+time-invariance assumption is valid as long as the timeframe over which the
+parameters change is much longer than the run time for our system. If it
+takes many years for a resistor value to change, but if we run the circuit for
+minutes or days, then the time-invariance assumption works. In the bank
+account example, the interest rate may change, but the system can be
+considered time-invariant if the interest rate is constant during the window
+of time we are investigating.
+
+To check to see if a system is time-invariant, one only needs to delay the
+input and observe the output. Assuming that an input of x(t) produces an
+output y(t), then the system is time invariant if the input x(t-s) gives an
+output of y(t-s) for any value of s. This relationship is shown in Figure 1.12.
+
+\hfill
+
+\textbf{1.2.4 Memory versus Memoryless}
+
+\hfill
+
+A system has \textbf{memory} if its output depends at all on past inputs. A system is
+\textbf{memoryless} if its output depends only on the current input. This concept
+can be seen by the following example.
+
+Consider a spring, with the relationship between position and force
+given by
+
+\[
+F = k x
+\]
+
+where k is the spring constant. If you want to know the position of the
+spring given its force, you simply divide by k. On the other hand, suppose
+you have a system with friction where
+
+\[
+F = b \dot{x} 
+\]
+
+where b is the coefficient of friction, then given the force, you need to integrate
+to get position
+
+\[
+x(t) = \frac{1}{b} \int_{- \infty}^{t} F(\tau) d \tau
+\]
+
+In this case, the force needs to be known for all time up the current time
+to determine the position.
+
+\hfill
+
+\textbf{1.2.5 Causal versus Noncausal}
+
+\hfill
+
+A \textbf{causal} system is one whose output depends only on the present and the
+past inputs. A \textbf{noncausal} system’s output depends on the future inputs. In a
+sense, a noncausal system is just the opposite of one that has memory.
+
+How can a real-world system be noncausal? It cannot because real
+systems cannot react to the future. But noncausal systems have important
+real-world applications. Consider a song stored in a sound file. Because the
+entire song is stored, we could process the sound by filtering in a way that
+has the current notes depend on notes later in the song. This is an example
+of postprocessing in which noncausal systems may be implemented.
+Another example of a noncausal system application is image processing.
+The pixels to the left of the current location can be considered as the “past”
+and pixels to the right as the “future.”
+
+\hfill
+
+\textbf{1.2.6 Deterministic versus Stochastic}
+
+\hfill
+
+A \textbf{deterministic} system is one in which parameters and inputs are known.
+Consider the earlier example of the simple first-order model of a car:
+
+\[
+m \ddot{x} = F(t) - b \dot{x} (t)
+\]
+
+This system is deterministic if we know exactly values for the mass m,
+friction coefficient b, input force F, and initial conditions of x and $\dot{x}$ and
+know that there are no other inputs, or disturbances, acting on the system.
+In this ideal case, we can figure out the system’s trajectory (the signals x(t)
+and $\dot{x}$) simply by solving the differential equation (either analytically or
+numerically).
+
+Unfortunately, real-world systems usually have some uncertainty in
+them, and figuring out the system’s trajectory is not so simple. If any one of
+the parameters or inputs in the equations describing the system is not or
+cannot be known exactly, then the system is stochastic. Also if a system is
+affected by noise in any part of it, then the system is stochastic.
+
+\textbf{Stochastic} systems are an active field of study involving what are known
+as stochastic differential equations. In these sorts of systems, the parameters or
+inputs to the system are not known exactly, but it is assumed that their
+probabilistic properties are known. For example, it could be assumed that
+Gaussian white noise is entering the system through the sensor data.
+
+
+A more thorough discussion and exploration of stochastic systems are
+beyond the scope of this book. However for interested readers, good
+starting points are books by Astrom (1970) and Pugachev and Sinitsyn
+(2001).
+
+\hfill
+
+\textbf{1.3 EXAMPLES OF DYNAMICAL SYSTEMS}
+
+\hfill
+
+So far, several examples were introduced in the context of the different
+system types, such as the car suspension system, bank account, and op-amp
+circuit. One focus of this book is to provide real-world examples for each of
+the concepts discussed. The hope is to show how the theory can be applied
+to real systems. As a result, many more examples will be covered
+throughout the book to illustrate the concepts being discussed and then to
+apply them to real-world systems. Some of these examples will carry
+through multiple chapters, and many analytical methods will be applied to
+them. Examples of real-world systems presented include:
+
+\begin{itemize}
+\item Driving a car, both lateral (steering) and longitudinal (speed) dynamics
+\item Populations of humans and other living organisms
+\item The human body, in particular the balance system
+\item Aircraft engines
+\item Electromechanical systems such as motor-driven devices
+\item Translational and rotational mechanical systems such as the masse
+springedamper and pendulum
+\end{itemize}
+
+\hfill
+
+\textbf{1.4 A NOTE ON MATLAB AND SIMULINK}
+
+\hfill
+
+A second focus of this book is to illustrate analysis methods using the
+common software tools of MATLAB and Simulink created by Mathworks,
+Inc. As with the examples, many concepts will involve MATLAB or
+Simulink (or both) to apply the methods. These programs were chosen
+because of their popularity in industry and academia.
+
+MATLAB (which stands for MATrix LABoratory) is a powerful program
+that allows engineers to perform computations based on matrices
+using a high-level programming language. With this program, one can
+perform simulations, apply analytical tools, and display plots of results.
+MATLAB has many toolboxes, which are available to expand the capabilities
+into many different areas. Some examples of toolboxes relevant to
+dynamical systems are the Control Systems Toolbox and System Identification
+Toolbox.
+
+
+Simulink is an add-on program to MATLAB that has a drag-and-drop
+interface that allows users to create and simulate systems visually using block
+diagrams. It has much of the same capabilities as MATLAB but with a
+graphical interface, and information can be passed back and forth between
+the two programs.
+
+For this book, there is the expectation that readers have some familiarity
+withMATLAB and Simulink. However, expertise is not necessary. Someone
+who has used these programs should be able to follow the examples and
+reproduce the results, along the way learning newelements of the software and
+newstrategies for using themas analytical tools. Expertise comeswith studying
+examples and practice with creating code. Readers who have not used
+MATLAB or Simulink should also be able to follow the examples and
+understand the results being obtained. If further help is needed, several good
+books are available as MATLAB and Simulink references, including those by
+Beucher andWeeks (2008), Moore (2014), and Tyagi (2012).
+
+The MATLAB and Simulink examples show one way to address the
+problem. As with any programming task, there are multiple ways to
+accomplish the desired result. The provided code may or may not be the
+“best” program in terms of execution time, memory use, or efficiency.
+These characteristics were secondary to clarity and ease of understanding
+because the main goal is conveying the ideas behind how MATLAB and
+Simulink are used as a tool to solve problems.
+
+\hfill
+
+\textbf{REFERENCES}
+
+\hfill
+
+Astrom, K. (1970). Introduction to Stochastic Control Theory. Mineola, NY: Dover Publications.
+
+Beucher, O., \& Weeks, M. (2008). Introduction to MATLAB and Simulink: A Project Approach
+(3rd ed.). Hingham, MA: Infinity Science Press.
+
+Moore, H. (2014). MATLAB for Engineers (4th ed.). Boston: Prentice Hall.
+
+Pugachev, V., \& Sinitsyn, I. N. (2001). Stochastic Systems: Theory and Applications. River
+Edge, NJ: World Scientific Publishing.
+
+Tyagi, A. (2012).MATLAB and SIMULINKfor Engineers.NewDelhi: OxfordUniversity Press.
+
+\hfill
+
+\textbf{FURTHER READING}
+
+\hfill
+
+Coiffier, J. (2012). Fundamentals of Numerical Weather Prediction. Cambridge, UK: Cambridge
+University Press.
+
+Fayyad, S. (2012). Constructing control system for active suspension system. Contemporary
+Engineering Sciences, 5(4), 189e200.
+
+Guglielmino, E., Sireteanu, T., Stammers, C. W., Gheorghe, G., \& Giuclea, M. (2008).
+Semi-active Suspension Control: Improved Vehicle Ride and Road Friendliness. London:
+Springer-Verlag London.
+
+Jackson, L. (1990). Signals, Systems, and Transforms. Reading, MA: Addison-Wesley.
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{texbook}
+PATRICIA MELLODGE (2016) \emph{A Practical
+Approach to
+Dynamical Systems
+for Engineers}, Woodhead Publishing Series.
+
+\bibitem{lamport94}
+Leslie Lamport (1994) \emph{\LaTeX: a document preparation system}, Addison
+Wesley, Massachusetts, 2nd ed.
+\end{thebibliography}
+
+\end{document}
+

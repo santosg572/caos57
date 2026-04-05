@@ -1,0 +1,293 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+
+\begin{document}
+
+\textbf{Chapter 2
+Qualitative properties and predictability
+of evolutions}
+
+\hfill
+
+In the previous chapter we already met various types of evolutions, including
+stationary and periodic ones. In the present chapter we investigate these evolutions
+more in detail and we also consider more general types. Here qualitative properties
+are our main interest. The precise meaning of ‘qualitative’ in general is hard to give;
+to some extent it is the contrary or opposite of ‘quantitative’. Roughly one could say
+that qualitative properties can be described in words (or integers), whereas quantitative
+properties usually are described in terms of (real) numbers.
+
+\hfill
+
+It turns out that for the various types of evolutions, it is not always equally easy to
+predict the future course of the evolution. At first sight this may look strange: once
+we know the initial state and the evolution operator, we can just predict the future
+of the evolution in a unique way. However, in general, we only know the initial
+state approximately. Moreover, often the evolution operator is not known at all or
+only approximately. We ask the question of predictability mainly in the following
+form. Suppose the evolution operator is unknown, but that we do know a (long)
+piece of the evolution; is it then possible to predict the future course of the evolution
+at least partially? It turns out that for the various kinds of evolution, the answer to
+this question strongly differs. For periodic, in particular for stationary, evolutions,
+the predictability is not a problem. Indeed, based on the observed regularity we
+predict that this will also continue in the future. As we show, the determination of
+the exact period still can be a problem. This situation occurs, to an even stronger
+degree, with quasi-periodic solutions. However, it turns out that for the so-called
+chaotic evolutions an essentially worse predictability holds. In Chapter 6 we return
+to predictability problems in a somewhat different context.
+
+\hfill
+
+\textbf{2.1 Stationary and periodic evolutions}
+
+\hfill
+
+Stationary and periodic evolutions have been already widely discussed in the previous
+chapter.
+
+\hfill
+
+\textbf{Definition 2.1 (Stationary and periodic evolutions).} Let $(M, T, \Phi)$; be a dynamical
+system with state space M, time set T, and evolution operator $\Phi: M \times T \to M$.
+
+\hfill
+
+We say that $x \in M$ is periodic (or stationary) if there exists a positive t 2 T such
+that $\Phi(x,t) = x$.
+
+\begin{enumerate}
+\item Moreover, x is stationary whenever for all $t \in T$ one has $\Phi(x,t)=x$
+\item If $\Phi(x, \tau)=x$, we call $\tau$ a period of x:
+\end{enumerate}
+
+The periodic or stationary evolution of x as a set is given by
+
+\[
+\{ \Phi(x,s) | s \in T|\} \subset M
+\]
+
+We already noted in the example of the doubling map (see 1.3.8) that each
+periodic point has many periods: if $\tau$ is a period, then so are all integer multiples
+of $\tau$. As before we introduce the notion of prime period for periodic, nonstationary,
+evolutions. This is the smallest positive period. This definition appears to be without
+problems, but this is not entirely true. In the case where $T = \mathbb{R}$, such a prime period
+does not necessarily exist. First of all, this is the case for stationary evolutions,
+which can be excluded by just considering proper, that is, nonstationary, periodic
+evolutions. However, even then there are pathological examples; see Exercise 2.4.
+In the sequel we assume that prime periods of nonstationary periodic evolutions
+will always be well defined. It can be shown that this assumption is valid in all
+cases where M is a metric (or metrisable) space and where the evolution operator,
+considered as a map $\Phi \times T \to M$, is continuous. If such a prime period equals $\tau$, it is easy to show that the set of periods is given by $\tau\mathbb{Z} \bigcap T$ 
+
+\hfill
+
+\textbf{2.1.1 Predictability of periodic and stationary motions}
+
+\hfill
+
+The prediction of future behaviour in the presence of a stationary evolution is
+completely trivial: the state does not change and the only reasonable prediction is
+that this will remain so. In the case of periodic evolution, the prediction problem
+does not appear much more exciting. In the case where $T = \mathbb{Z}$ or $T = \mathbb{Z}_{+}$; this is
+indeed so. Once the period has been determined and the motion has been precisely
+observed over one period, we are done. We show, however, that in the case where 
+$T = \mathbb{R}$ or $T = \mathbb{R}_{+}$, when the period is a real number, the situation is less clear.We
+illustrate this when dealing with the prediction of the yearly motion of the seasons,
+or equivalently, the yearly motion of the Sun with respect to the vernal equinox (the
+beginning of Spring). The precise prediction of this cycle over a longer period is
+done with a ‘calendar’. In order to make such a calendar, it is necessary to know the
+length of the year very accurately and it is exactly here where the problem occurs.
+Indeed, this period, measured in days, or months, is not an integer and we cannot
+expect to do better than find an approximation for this. By the ‘calendar’ here we
+should understand the set of rules according to which this calendar is made, where
+one should think of the leap year arrangements. Instead of ‘calendar’ one also speaks
+of time tabulation.
+
+\hfill
+
+Remark (Historical digression).We give some history. In the year 45 BC the Roman
+dictator Julius Cæsar 2 installed the calendar named after him, the Julian Calendar.
+The year was thought to consist of 365.25 days. On the calendar this was implemented
+by adding a leap day every four years. However, the real year is a bit shorter
+and slowly the seasons went out of phase with the calendar. Finally Pope Gregorius
+XIII 3 decided to intervene. First, to ‘reset’ the calendar with nature, he decided that
+in the year 1582 (just at this one occasion) immediately after October 4, October
+15 would follow. This means that the predictions based on the Julian system in this
+period of more than 1600 years already show an error of 10 days. Apart from this
+unique intervention and in order to prevent such shifts in the future, the leap year
+conventionwas changed as follows. In the future, year numbers divisible by 100, but
+not by 400, no longer will be leap years. This led to the present, Gregorian, calendar.
+Compare [158].
+
+\hfill
+
+Of course we also understand that this intervention is still based on an approximation:
+real infallibility cannot be expected here! In fact, a correction of 3 days per
+400 years amounts to 12 days per 1600 years, whereas only 10 days were necessary.
+
+\hfill
+
+Our conclusion from this example is that when predicting the course of a periodic
+motion, we expect an error that in the beginning is proportional to the interval of
+prediction, that is, the time difference between the present moment of prediction
+and the future instant of state we predict. When the prediction errors increase, a
+certain saturation occurs: when predicting seasons the error cannot exceed one half
+year. Moreover, when the period is known to a greater precision (by longer and/or
+more precise observations), the growth of the errors can be made smaller.
+
+\hfill
+
+As said earlier, the problem of determination of the exact period only occurs in
+the case of time sets $\mathbb{R}$ or $\mathbb{R}_{+}$. In the cases where the time sets are $\mathbb{Z}$ or $\mathbb{Z}_{+}$ the
+periods are integers, which by sufficiently accurate observation can be determined
+with absolute precision. These periods then can be described by a counting word;
+they can be viewed as qualitative properties. In cases where the time set is $\mathbb{R}$ or $\mathbb{R}_{+}$,
+however, the period is a quantitative property of the evolution.
+
+\hfill
+
+On the other hand the difference is not that sharp. If the period is an integer,
+but very large, then it can be practically impossible to determine this by observation.
+As we show when discussing so-called multiperiodic evolutions, it may even
+be impossible to determine by observation whether we are dealing with a periodic
+evolution.
+
+\hfill
+
+
+Also, regarding the more complicated evolutions dealt with below, we ask ourselves
+how predictable these are and which errors we can expect as a function of the
+prediction interval. We then merely consider predictions based on a (sufficiently)
+long observation of the evolution.
+
+\hfill
+
+\textbf{2.1.2 Asymptotically and eventually periodic evolutions}
+
+\hfill
+
+Returning to the general context of dynamical systems we now give the following
+definition.
+
+\hfill
+
+\textbf{Definition 2.2 (Asymptotic periodicity and stationarity).} Let $(M, T, \Phi)$ be a
+dynamical system, where M is a metric space and $\Phi: M \times T \to M$ is continuous.
+We call the evolution $x(t) = \Phi(x,t)$ asymptotically periodic (or stationary) if for $t \to \infty$ the point x(t) tends to a periodic (or stationary) evolution $\tilde{x}(t)$, in the sense
+that the distance between x(t) and the set $\{ \tilde{x}(s) | s \in T \}$ tends to zero as $t \to \infty$.
+
+\hfill
+
+Remarks.
+
+\begin{itemize}
+\item This definition can be extended to the case where M only has a topology. In that
+case one may proceed as follows.We say that the evolution x(t) is asymptotically
+periodic if there exists a periodic orbit $\gamma = \{ \tilde{x}(s) | s \in T \}$ such that for any
+neighbourhood U of $\gamma$ there exists $T_U \in \mathbb{R}$ such that for $t > T_U$ one has that
+$x(t) \in U$.
+
+\hfill
+
+We speak of asymptotic periodicity in the strict sense if there exists a periodic
+orbit $\gamma = \{ \tilde{x}(s) | s \in T \}$ of period $\tau$ and a constant c, such that
+
+\[
+lim_{\mathbb{N} \ni \to \infty} x(t + n \tau)) = \tilde{x}(t+c)
+\]
+
+In that case either the number $c = \tau$ modulo $\mathbb{Z}$ or the point $\tilde{x}(c)$ can be interpreted
+as the phase associated with x(t).
+
+\hfill
+
+Note that in the case without topology, the concept of ‘asymptotic’ no longer
+makes sense, because the concept of limit fails to exist. The eventually periodic
+or stationary evolutions, discussed later in this section, are an exception to this.
+
+\item Assuming continuity of $\Phi$, it follows that the set $\{ \tilde{x}(s) | s \in T \}$ corresponding
+to the periodic evolution $\tilde{x}(s)$ is compact. Indeed, in the case where $T = \mathbb{Z}$ or $v_{+}$ the set is even finite, whereas in the cases where $T = \mathbb{R}$ or $\mathbb{R}_{+}$ the set $\{ \tilde{x}(s) | s \in T \}$ is the continuous image of the circle. The reader can check this
+easily.
+
+\end{itemize}
+
+We have seen examples of asymptotically periodic or asymptotically stationary
+evolutions several times in the previous chapter: for the free pendulum with damping
+(see $\S$1.1.2), every nonstationary evolution is asymptotically stationary. For the
+damped pendulum with forcing (see $\S$1.1.2), and in the Van der Pol system (see $\S$1.3.1)we saw asymptotically periodic evolutions.When discussing the H´enon family
+(in $\S$1.3.2) we saw another type of stationary evolution, given by a saddle point.
+For such a saddle point p we defined stable and unstable separatrices (see (1.16)).
+From this it may be clear that the stable separatrix $W^s(p)$ exactly consists of points
+that are asymptotically stationary and of which the limit point is the saddle point p:
+
+\hfill
+
+The definition of asymptotically periodic or asymptotically stationary applies for
+any of the time sets we are using. In the case of time set $\mathbb{Z}_{+}$ another special type
+occurs.
+
+\hfill
+
+\textbf{Definition 2.3 (Eventual periodicity and stationarity).} Let $(M, \mathbb{Z}_{+}, \Phi)$ be a
+dynamical system with an evolution $x(n) = \Phi(x,n)$. We say that x(n) is eventually
+periodic (or eventually stationary) if for certain N >0 and k > 0,
+
+\[
+x(n) = x(n+k) for all n > N.
+\]
+
+So this is an evolution that after some time is exactly periodic (and not only in a
+small neighbourhood of a periodic evolution). Note that in this case neither distance
+function nor topology plays any role.
+
+\hfill
+
+This type of evolution is abundantly present in the system generated by the doubling
+map $x \mapsto 2x \mod \mathbb{Z}$, defined on [0, 1); see $\S$1.3.8. Here 0 is the only stationary
+point. However, any rational point p/q with q a power of 2 is eventually stationary.
+Compare Exercise 2.3. Similarly, any rational point is eventually periodic. Also for
+the logistic system (see $\S$1.3.3), such eventually periodic evolutions occur often.
+
+\hfill
+
+As said before, such evolutions do not occur in the case of the time sets $\mathbb{R}$ and \mathbb{Z}.
+Indeed, in these cases, the past can be uniquely reconstructed from the present state,
+which clearly contradicts the existence of an evolution that ‘only later’ becomes
+periodic. (Once the evolution has become periodic, we cannot detect how long ago
+this has happened.)
+
+\hfill
+
+Regarding the predictability of these evolutions the same remarks hold as in
+the case of periodic and stationary evolutions. As said earlier, when discussing
+predictability, we always assume that the evolution to be predicted has been observed
+for quite some time. This means that it is no further restriction to assume
+that we already are in the stage that no observable differences exist between the
+asymptotically periodic (or stationary) evolutions and the corresponding periodic
+(or stationary) limit evolution.
+
+\hfill
+
+\textbf{2.2 Multi- and quasi-periodic evolutions}
+
+\hfill
+
+In the previous chapter we already met with evolutions where more than one period
+(or frequency) plays a role. In particular this was the case for the free pendulum
+with forcing; see $\S$1.1.2. Also in daily life we observe such motions. For instance,
+the motion of the Sun as seen from the Earth knows two periodicities: the daily
+period, of sunrise and sunset, and the yearly one that determines the change of the
+seasons.
+
+\hfill
+
+We describe these types of evolution as a generalised type of periodic motions,
+starting out from our dynamical system $(M, T, \Phi)$. We assume that M is a differentiable
+manifold and that $\Phi: M \times T \to M$ is a differentiable map. For periodic
+evolutions, the whole evolution $\{ x(t) \ t \in T \}$ as a subset of the state spaceM consists
+either of a finite set of points (in cases where $T = \mathbb{Z}_{+}$ or $\mathbb{Z}$ or of a closed curve
+(in the case where $T = \mathbb{R}$ or $\mathbb{R}_{+}$. Such a finite set of points we can view as $\mathbb{Z}/s\mathbb{Z}$,
+where s is the (prime-) period: the closed curve can be viewed as the differentiable
+
+\end{document}

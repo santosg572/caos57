@@ -1,0 +1,175 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{xcolor}
+
+
+\begin{document}
+
+\begin{frame}
+    \frametitle{Ejemplos y definiciones de fen\'omenos din\'amicos}
+    
+    Un sistema dinámico puede ser cualquier mecanismo que evolucione de forma determinista en el tiempo.
+Se pueden encontrar ejemplos simples en mecánica, uno puede pensar en el péndulo o el
+sistema solar. Sistemas similares ocurren en química y meteorología. Debemos notar
+que en los sistemas biológicos y económicos es menos claro cuando se trata de
+determinismo.1 Nos interesan las \emph{evoluciones}, es decir, las funciones que describen el
+\emph{estado} de un sistema en función del \emph{tiempo} y que satisfacen las \emph{ecuaciones de movimiento} del
+sistema. Las definiciones matemáticas de estos conceptos siguen más adelante.
+
+\end{frame}
+
+\begin{frame}
+
+The simplest type of evolution is \emph{stationary}, where the state is constant in time.
+Next we also know \emph{periodic evolutions}. Here, after a fixed period, the system always
+returns to the same state and we get a precise repetition of what happened in the
+previous period. Stationary and periodic evolutions are very regular and predictable.
+Here prediction simply is based on matching with past observations. Apart from
+these types of evolutions, in quite simple systems one meets evolutions that are not
+so regular and predictable. In cases where the unpredictability can be established in
+a definite way, we speak of \emph{chaotic} behaviour.
+
+\end{frame}
+
+\begin{frame}
+
+En la primera parte de este capítulo, utilizando sistemas como el péndulo con o sin
+amortiguamiento o forzamiento externo, damos una impresión de los tipos de evolución
+que puede ocurrir. Mostramos que por lo general un sistema dado tiene varios tipos de evolución.
+Qué tipos son típicos o predominantes depende en gran medida del tipo de sistema
+a mano; por ejemplo, en sistemas mecánicos es importante si consideramos
+disipación de energía, por ejemplo, por fricción o amortiguamiento. Durante esta exposición
+el marco matemático en el que describir los diversos fenómenos se convierte en
+más claro Esto determina el lenguaje y la forma de pensar de la disciplina de
+Sistemas Dinámicos.
+
+\end{frame}
+
+\begin{frame}
+
+En la segunda parte de este capítulo somos más explícitos, dando una definición formal
+del sistema dinámico. Entonces conceptos tales como estado, tiempo y similares también son
+discutido Después de esto, volviendo a los ejemplos anteriores, ilustramos estos conceptos.
+En la parte final del capítulo tratamos una serie de ejemplos misceláneos que regresan regularmente en partes posteriores del libro. Aquí prestamos especial atención a
+ejemplos que, históricamente hablando, han orientado el desarrollo de la
+disciplina. Por lo tanto, estos ejemplos actúan como chistes a lo largo del libro.
+
+
+\end{frame}
+
+\begin{frame}\frametitle{1.1 The pendulum as a dynamical system}
+
+Como preparación para las definiciones formales que veremos más adelante en este capítulo, primero trataremos el péndulo en varias variaciones: con o sin amortiguamiento y forzamiento externo. Presentamos gráficos de evoluciones calculadas numéricamente. De estos gráficos queda claro que existen diferencias cualitativas entre las diversas evoluciones y que el tipo de evolución que es típica o predominante depende en gran medida del contexto en cuestión. Esto ya es válido para la clase restringida de sistemas mecánicos considerados
+aquí.
+
+
+\end{frame}
+
+\begin{frame}\frametitle{1.1.1 El péndulo libre}
+
+El péndulo matemático plano consta de una varilla, suspendida en un punto fijo en
+un plano vertical en el que el péndulo puede moverse. Se piensa que toda masa es
+concentrada en una masa puntual al final de la varilla (ver Figura 1.1), y la varilla misma
+es sin masa. También se supone que la varilla está rígida. El péndulo tiene masa m y longitud `.
+Suponemos además que la suspensión es tal que el péndulo no sólo puede
+oscilar, pero también puede ir 'sobre la parte superior'. En el caso sin forzamiento externo,
+hablar del péndulo libre.
+
+\end{frame}\frametitle{1.1.1.1 El péndulo libre no amortiguado}
+
+\begin{frame}
+
+En el caso sin amortiguamiento y forzado el péndulo solo está sujeto a la gravedad,
+con aceleración $g$: La fuerza gravitacional apunta verticalmente hacia abajo con
+fuerza $mg$ y tiene un componente $-mg \sin \varphi$ a lo largo del círculo descrito por el
+masa puntual; consulte la figura 1.1. Aquí $\varphi$ es el ángulo entre la barra y el hacia abajo
+vertical, a menudo llamada "desviación", expresada en radianes. La distancia del punto
+masa desde la 'posición de reposo' ($\varphi = 0$), medida a lo largo del círculo de todos sus posibles
+posiciones, entonces es $l \varphi$. La relación entre fuerza y movimiento está determinada por
+la famosa ley de Newton2 $F=ma$,  donde F denota la fuerza, m la masa y $a$ la
+aceleración.
+
+
+
+\end{frame}
+
+
+\begin{frame}
+
+Por la rigidez de la varilla, no se produce movimiento en la dirección radial y
+por lo tanto, simplemente aplique la ley de Newton en la $\varphi$-dirección. La componente de la fuerza en
+la $\varphi$-dirección viene dada por $-mg \sin \varphi$, donde el signo menos representa el hecho
+que la fuerza hace retroceder el péndulo a $\varphi = 0$. Para la aceleración $a$ tenemos
+
+\[
+a = \frac{d^2 (l \varphi)}{d t^2} = l \frac{d^2 \varphi}{dt^2}
+\]
+
+
+donde ($d^2 \varphi / dt^2)(t) = \varphi''(t)$ es la segunda derivada de la función $ t \to \varphi(t)$.
+
+\end{frame}
+
+
+\begin{frame}
+
+Sustituida en la ley de Newton esto da
+
+\[
+ml \varphi'' = -mg \sin \varphi
+\]
+
+o equivalente,
+
+\[
+\varphi'' = - \frac{g}{l} \sin \varphi,
+\]
+
+donde obviamente $m, l >0$. Así derivamos la ecuación de movimiento del péndulo,
+que en este caso es una ecuación diferencial ordinaria. Esto significa que las evoluciones
+están dadas por las funciones $t \to \varphi(t)$ que satisfacen la ecuación de movimiento (1.1). En el
+continuación abreviamos $\omega = \sqrt{g/l}$.
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\end{frame}
+
+
+
+
+
+
+
+\end{document}

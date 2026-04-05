@@ -1,0 +1,194 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+\textbf{C02. Topics in Nonlinear Dynamics}
+
+\hfill
+
+\textbf{2.1 The Cardiovascular System}
+
+\hfill
+
+
+Applications of nonlinear dynamics to the cardiovascular system are typically
+related to the electrophysiology of the heart such that the phenomenon of interest is usually events that are of the time intervals less than 1 min. Of particular interest is
+the heart rate variation and arrhythmias. Nonlinear methods provide a different perspective
+into electrophysiology and are typically not taught in the classical medical
+physiology textbook. In particular, physiology can explain and identify the origin of
+some arrhythmias, but the most common, the sinus arrhythmia, remains to be
+explained. The cardiac rhythm was generally introduced in Chap. 1 as the concept
+of the bio-oscillator. A nonlinear oscillator may be used to analyze many known
+cardiac rhythms normal and pathological. Moreover, since the cardiac pacemaker is
+a repetitive process, the concept of the Fractal can be employed. Cardiac electrophysiology
+has enjoyed a long history of research, so that information is available
+at the heart level, the cellular level, and the molecular level. Nonlinear dynamics
+will be employed in this book to revisit each structural level with a new vantage
+point. A focal point of debate is the origin of cardiac fibrillation. Briefly, fibrillation
+is known as an uncoordinated electrical and mechanical activation of the cardiac
+muscle that leads to death due to net zero pumping of blood. Some dynamicists have
+theorized that fibrillation is Chaos. These discussions will be covered in more detail
+in later chapters after the reader becomes more familiar with nonlinear dynamics.
+Continuing along with our survey of nonlinear dynamics in physiology, move next
+to the pulmonary system.
+
+\hfill
+
+\textbf{2.2 Respiratory Physiology}
+
+\hfill
+
+Recall from Chap. 1 that the Fractal concept applies well to the modeling of the geometry
+of the respiratory system. Also, the control of breathing lends itself well to the
+application of nonlinear dynamic methods. Of course, everyone is familiar with
+breathing being a periodic process. It would be simple to suggest that breathing is
+stimulated via pacemaker cells just as in the heart. Surprisingly, the respiratory system
+possesses no such respiratory oscillator. Instead, the use of a nonlinear feedback control
+system explains the source of oscillations (Glass \& Mackey, 1988). Physiologists
+are familiar with the homeostatic reflex regulation of breathing. Reflex regulation is a
+negative feedback control system that is employed extensively in human physiology.
+By adding nonlinear affecters and feedback delay, it is possible to cause the respiratory
+regulation system to become unstable and oscillate. This kind of treatment of the
+respiratory system explains the source of oscillatory breathing. This approach further
+explains some pathology of breathing such as respiratory arrest and Cheyne’s stokes
+phenomenon and other abnormal breathing patterns.
+
+\hfill
+
+\textbf{2.3 Population Dynamics}
+
+\hfill
+
+
+Probably one of the first applications of nonlinear dynamics to biology is that of the
+study of population dynamics, that is, to analyze how various animal populations
+vary in time. Of recent interest is the study of how diseases may spread through a
+population. The analysis of disease spread is a subject of epidemiology population
+dynamics analysis applied well in the case of a confined population. For example, a
+human population that is constrained within the borders of a country. Many readers
+are familiar with epidemiologist presentations of the spread of COVID infections
+during 2020 (Giordano et al., 2020). The theory behind the infection–time curves
+rests on the analysis of population dynamics. Additionally, population dynamics
+may also be applied to populations of cells. For example, the dynamics of the human
+blood cell population. Human cell dynamics is useful to help analyze various types
+of anemia in white and red cell concentration. The analytical knowledge of these
+cell populations can be used for more effective treatment of disease that causes
+extreme low-cell concentrations.
+
+\hfill
+
+In summary, nonlinear dynamics analysis applies well to much of human physiology.
+We will explore more of these applications as we move through this book. At
+this time, it is useful to examine some of the analytical methods that are valuable in
+our study such as basic population models.
+
+\hfill
+
+2.4 Population Model Solution
+
+\hfill
+
+To illustrate some of the fundamental methods by which the nonlinear biological
+system may be analyzed, a simple population model is now introduced and solved.
+A characteristic feature of unrestrained population growth is that the rate of growth
+is proportionate to the magnitude of the population itself. Mathematically, this can
+be written as
+
+\[
+P'(t) = aP(t)
+\]
+
+where P(t) is the population versus time, and P' is its time derivative; “a” is a constant
+of proportionality that must be calibrated to the population. The solution of
+this differential equation is easily determined to be
+
+\[
+P = PP_0 e^{at}
+\]
+
+The constant $P_0$ is the initial population. Following this model, it is found that the
+population is unstable, that is, as t increases, the population increases exponentially
+to infinity for $a > 0$. Reexamining the model for the case where $a < 0$, it is found that
+the model would predict that population decreases exponentially to zero as t
+increases. Hence, for either sign of the model, results are unreasonable. A sample
+population growth curve is shown in Fig. 2.1 for a positive value of a, where infinite
+population growth occurs.
+
+\hfill
+
+This model is flawed in the final value prediction of the model. There are only
+two final values: infinite population or a zero population. The model is flawed in
+these outcomes, but the model predictions are not unreasonable over short time
+intervals. So, rather than abandoning the model completely, look at a modification.
+Returning to Eq. 2.1 of the model, it is a linear model that permits the population to
+grow in direct proportion to its size. This problem can be repaired by adding a term
+that prevents growth when the population becomes too large. So, modify the population
+model now to limit growth according to a new differential equation,
+
+\[
+\frac{dP}{dt} = a P (L-P)
+\]
+
+where L is the population limit. Here, we will use a normal value of L = 1. For
+Eq. 2.3, it can be seen that as the population grows larger than L, the derivative of
+population growth will turn negative and prevent further growth. Or, when L = P. dP/dt = 0, so that the steady state P of this new model is for population to converge to
+L. Let’s confirm this by solving Eq. 2.3 for P(t). At this point, we run into a new
+problem. That is, after expanding the right side of Eq. 2.3 we see that a term $aP^2$ emerges to result in a nonlinear differential equation. Hence, the reader now sees
+our first example of a nonlinear dynamic system in this book. There is much to learn
+from this very simple nonlinear model. To solve this equation, Euler method is now
+introduced. This will be a computational solution of the differential equation.
+
+\hfill
+
+Start by defining two adjacent population points in time: population at the current time is $P(t_i)$, then, after a small change in time $\Delta t. P_{i+1} = P(t_i + \Delta t)$. Assuming
+that the time change can be made infinitely small, the derivative of population then
+can be written as
+
+\[
+\frac{dP}{dt} = \frac{P_{i+1} - P_i}{\Delta t}
+\]
+
+
+Using the definitions and substituting them into Eq. 2.3, the new model is converted
+to Euler computational form to be Eq. 2.4:
+
+\[
+P_{i+1} = \Delta t a P_i(1-P_i) + P_i
+\]
+
+This form of our new population model is known to those who study nonlinear
+dynamics or population modeling as the logistic equation [REF]. Equation 2.4 is
+now in the form such that we enter the current population value Pi and simply compute
+the next value of population Pi+1 Hence, we now have an iterative solution for
+the original differential equation model Eq. 2.4 A sample iteration of Eq. 2.4 is
+provided in Fig. 2.2. The properties of this equation are very illustrative of nonlinear
+dynamic systems. These features will be examined in more detail in a later chapter,
+but for now notice that the new population model is functioning as required. In
+Fig. 2.2, the vertical axis represents population, and the horizontal axis is time,
+where each value n indicates a time step of $\Delta t$. Observe that population now converges
+to a specific level of about 0.5. As you ‘ll find later, no matter what the initial
+population starts at, this model will converge to the .5 level. This was determined by
+the choice of parameter a = 2.
+
+\hfill
+
+As you study this simple nonlinear model, it is worth noting that the computational
+form of the model is very simple when it is presented as an iteration as above.
+Consider that the model constants may be combined, and that the resulting solution
+is P(t+Δt) = αP (t) with all constants combined to be α or as Pi + 1 = αPi. It is clear
+that the nonlinear system solution has been reduced to a very elementary form. This
+approach is what biology has been optimized to perform very well where one very
+simple process is then performed repeatedly to yield a much more complex function.
+This simplification procedure will be highlighted throughout this book. Thus,
+the student of nonlinear dynamics need not learn a diverse set of procedures to study
+the nonlinear dynamic biological systems. The analytical tools that you will learn
+here will have general application. We have seen that an important biodynamic process
+is the oscillator. Or, otherwise known as the pacemaker. Hence, it is useful to
+introduce bio-oscillations into this chapter as a special nonlinear process.
+2.5 Bio-oscillation
+
+\hfill
+
+The vertical axes represent population value and the horizontal axes represent
+time. In this graph, a value of a = 2 and initial population of 0.6 were used.
+
+\end{document}

@@ -1,0 +1,246 @@
+\documentclass{article}
+
+\begin{document}
+
+\textbf{Introduction}
+
+\hfill
+
+\textbf{BACKGROUND}
+
+\hfill
+
+Sir Isaac Newton brought to the world the idea of modeling the motion of
+physical systems with equations. It was necessary to invent calculus along the
+way, since fundamental equations of motion involve velocities and accelerations,
+which are derivatives of position. His greatest single success was his discovery that
+the motion of the planets and moons of the solar system resulted from a single
+fundamental source: the gravitational attraction of the bodies. He demonstrated
+that the observed motion of the planets could be explained by assuming that there
+is a gravitational attraction between any two objects, a force that is proportional
+to the product of masses and inversely proportional to the square of the distance
+between them. The circular, elliptical, and parabolic orbits of astronomy were
+no longer fundamental determinants of motion, but were approximations of laws
+specified with differential equations. His methods are now used in modeling
+motion and change in all areas of science.
+
+Subsequent generations of scientists extended the method of using differential
+equations to describe how physical systems evolve. But the method had
+a limitation. While the differential equations were sufficient to determine the
+behavior—in the sense that solutions of the equations did exist—it was frequently
+difficult to figure out what that behavior would be. It was often impossible to write
+down solutions in relatively simple algebraic expressions using a finite number of
+terms. Series solutions involving infinite sums often would not converge beyond
+some finite time.
+
+When solutions could be found, they described very regular motion. Generations
+of young scientists learned the sciences from textbooks filled with examples
+of differential equations with regular solutions. If the solutions remained in
+a bounded region of space, they settled down to either (A) a steady state, often
+due to energy loss by friction, or (B) an oscillation that was either periodic or
+quasiperiodic, akin to the clocklike motion of the moon and planets. (In the solar
+system, there were obviously many different periods. The moon traveled around
+the earth in a month, the earth around the sun in about a year, and Jupiter around
+the sun in about 11.867 years. Such systems with multiple incommensurable
+periods came to be called quasiperiodic.)
+
+Scientists knew of systems which had more complicated behavior, such as
+a pot of boiling water, or the molecules of air colliding in a room. However, since
+these systems were composed of an immense number of interacting particles, the
+complexity of their motions was not held to be surprising.
+
+Around 1975, after three centuries of study, scientists in large numbers
+around the world suddenly became aware that there is a third kind of motion, a
+type (C) motion, that we now call “chaos”. The new motion is erratic, but not
+simply quasiperiodic with a large number of periods, and not necessarily due to
+a large number of interacting particles. It is a type of behavior that is possible in
+very simple systems.
+
+A small number of mathematicians and physicists were familiar with the
+existence of a third type of motion prior to this time. James Clerk Maxwell, who
+studied the motion of gas molecules in about 1860, was probably aware that even
+a system composed of two colliding gas particles in a box would have neither
+motion type A nor B, and that the long term behavior of the motions would for
+all practical purposes be unpredictable. He was aware that very small changes
+in the initial motion of the particles would result in immense changes in the
+trajectories of the molecules, even if they were thought of as hard spheres.
+
+Maxwell began his famous study of gas laws by investigating individual
+collisions. Consider two atoms of equal mass, modeled as hard spheres. Give the
+atoms equal but opposite velocities, and assume that their positions are selected
+at random in a large three-dimensional region of space. Maxwell showed that if
+they collide, all directions of travel will be equally likely after the collision. He
+recognized that small changes in initial positions can result in large changes in
+outcomes. In a discussion of free will, he suggested that it would be impossible
+to test whether a leopard has free will, because one could never compute from a
+study of its atoms what the leopard would do. But the chaos of its atoms is limited,
+for, as he observed, “No leopard can change its spots!”
+
+Henri Poincar´e in 1890 studied highly simplified solar systems of three
+bodies and concluded that the motions were sometimes incredibly complicated.
+(See Chapter 2). His techniques were applicable to a wide variety of physical
+systems. Important further contributions were made by Birkhoff, Cartwright and
+Littlewood, Levinson, Kolmogorov and his students, among others. By the 1960s,
+there were groups of mathematicians, particularly in Berkeley and in Moscow,
+striving to understand this third kind of motion that we now call chaos. But
+only with the advent of personal computers, with screens capable of displaying
+graphics, have scientists and engineers been able to see that important equations
+in their own specialties had such solutions, at least for some ranges of parameters
+that appear in the equations.
+
+In the present day, scientists realize that chaotic behavior can be observed
+in experiments and in computer models of behavior from all fields of science. The
+key requirement is that the system involve a nonlinearity. It is now common for
+experiments whose previous anomalous behavior was attributed to experiment
+error or noise to be reevaluated for an explanation in these new terms. Taken
+together, these new terms form a set of unifying principles, often called dynamical
+systems theory, that cross many disciplinary boundaries.
+
+The theory of dynamical systems describes phenomena that are common
+to physical and biological systems throughout science. It has benefited greatly
+from the collision of ideas from mathematics and these sciences. The goal of
+scientists and applied mathematicians is to find nature’s unifying ideas or laws
+and to fashion a language to describe these ideas. It is critical to the advancement
+of science that exacting standards are applied to what is meant by knowledge.
+Beautiful theories can be appreciated for their own sake, but science is a severe
+taskmaster. Intriguing ideas are often rejected or ignored because they do not
+meet the standards of what is knowledge.
+
+The standards of mathematicians and scientists are rather different. Mathematicians
+prove theorems. Scientists look at realisticmodels. Their approaches are
+somewhat incompatible. The first papers showing chaotic behavior in computer
+studies of very simple models were distasteful to both groups. The mathematicians
+feared that nothing was proved so nothing was learned. Scientists said that models
+without physical quantities like charge, mass, energy, or acceleration could not be
+relevant to physical studies. But further reflection led to a change in viewpoints.
+Mathematicians found that these computer studies could lead to new ideas that
+slowly yielded new theorems. Scientists found that computer studies of much more
+complicated models yielded behaviors similar to those of the simplistic models,
+and that perhaps the simpler models captured the key phenomena.
+
+Finally, laboratory experiments began to be carried out that showed unequivocal
+evidence of unusual nonlinear effects and chaotic behavior in very
+familiar settings. The new dynamical systems concepts showed up in macroscopic
+systems such as fluids, common electronic circuits and low-energy lasers that were
+previously thought to be fairly well understood using the classical paradigms. In
+this sense, the chaotic revolution is quite different than that of relativity, which
+shows its effects at high energies and velocities, and quantum theory, whose effects
+are submicroscopic. Many demonstrations of chaotic behavior in experiments are
+not far from the reader’s experience.
+
+In this book we study this field that is the uncomfortable interface between
+mathematics and science. We will look at many pictures produced by computers
+and we try to make mathematical sense of them. For example, a computer study of
+the driven pendulum in Chapter 2 reveals irregular, persistent, complex behavior
+for ten million oscillations. Does this behavior persist for one billion oscillations?
+The only way we can find out is to continue the computer study longer. However,
+even if it continues its complex behavior throughout our computer study, we
+cannot guarantee it would persist forever. Perhaps it stops abruptly after one
+trillion oscillations; we do not know for certain. We can prove that there exist
+initial positions and velocities of the pendulum that yield complex behavior
+forever, but these choices are conceivably quite atypical. There are even simpler
+models where we know that such chaotic behavior does persist forever. In this
+world, pictures with uncertain messages remain the medium of inspiration.
+
+There is a philosophy of modeling in which we study idealized systems
+that have properties that can be closely approximated by physical systems. The
+experimentalist takes the view that only quantities that can be measured have
+meaning. Yet we can prove that there are beautiful structures that are so infinitely
+intricate that they can never be seen experimentally. For example, we will see
+immediately in Chapters 1 and 2 the way chaos develops as a physical parameter
+like friction is varied. We see infinitely many periodic attractors appearing with
+infinitely many periods. This topic is revisited in Chapter 12, where we show
+how this rich bifurcation structure, called a cascade, exists with mathematical
+certainty in many systems. This is a mathematical reality that underlies what
+the experimentalist can see. We know that as the scientist finds ways to make
+the study of a physical system increasingly tractable, more of this mathematical
+structure will be revealed. It is there, but often hidden from view by the noise of
+the universe. All science is of course dependent on simplistic models. If we study
+a vibrating beam, we will generally not model the atoms of which it is made.
+If we model the atoms, we will probably not reflect in our model the fact that
+the universe has a finite age and that the beam did not exist for all time. And
+we do not include in our model (usually) the tidal effects of the stars and the
+planets on our vibrating beam. We ignore all these effects so that we can isolate
+the implications of a very limited list of concepts.
+
+It is our goal to give an introduction to some of the most intriguing ideas in
+dynamics, the ideas we love most. Just as chemistry has its elements and physics
+has its elementary particles, dynamics has its fundamental elements: with names
+like attractors, basins, saddles, homoclinic points, cascades, and horseshoes. The
+ideas in this field are not transparent. As a reader, your ability to work with these
+ideas will come from your own effort.We will consider our job to be accomplished
+if we can help you learn what to look for in your own studies of dynamical systems
+of the world and universe.
+
+\hfill
+
+\textbf{ABOUT T H E BOOK}
+
+\hfill
+
+As we developed the drafts of this book, we taught six one semester classes at
+George Mason University and the University of Maryland. The level is aimed at
+undergraduates and beginning graduate students. Typically, we have used parts
+of Chapters 1–9 as the core of such a course, spending roughly equal amounts of
+time on iterated maps (Chapters 1–6) and differential equations (Chapters 7–9).
+Some of the maps we use as examples in the early chapters come from differential
+equations, so that their importance in the subject is stressed. The topics of stable
+manifolds, bifurcations, and cascades are introduced in the first two chapters and
+then developed more fully in the Chapters 10, 11, and 12, respectively. Chapter
+13 on time series may be profitably read immediately after Chapter 4 on fractals,
+although the concepts of periodic orbit (of a differential equation) and chaotic
+attractor will not yet have been formally defined.
+
+The impetus for advances in dynamical systems has come from many
+sources: mathematics, theoretical science, computer simulation, and experimenix
+tal science. We have tried to put this book together in a way that would reflect
+its wide range of influences.
+
+We present elaborate dissections of the proofs of three deep and important
+theorems: The Poincar´e-Bendixson Theorem, the Stable Manifold Theorem, and
+the Cascade Theorem. Our hope is that including them in this form tempts you
+to work through the nitty-gritty details, toward mastery of the building blocks as
+well as an appreciation of the completed edifice.
+Additionally, each chapter contains a special feature called a Challenge,
+in which other famous ideas from dynamics have been divided into a number
+of steps with helpful hints. The Challenges tackle subjects from period-three
+implies chaos, the cat map, and Sharkovskii’s ordering through synchronization
+and renormalization.We apologize in advance for the hints we have given, when
+they are of no help or even mislead you; for one person’s hint can be another’s
+distraction.
+
+The Computer Experiments are designed to present you with opportunities
+to explore dynamics through computer simulation, the venue through which
+many of these concepts were first discovered. In each, you are asked to design
+and carry out a calculation relevant to an aspect of the dynamics. Virtually all
+can be successfully approached with a minimal knowledge of some scientific
+programming language. Appendix B provides an introduction to the solution of
+differential equations by approximate means, which is necessary for some of the
+later Computer Experiments.
+
+If you prefer not to work the Computer Experiments from scratch, your
+task can be greatly simplified by using existing software. Several packages
+are available. Dynamics: Numerical Explorations by H.E. Nusse and J.A. Yorke
+(Springer-Verlag 1994) is the result of programs developed at the University of
+Maryland. Dynamics, which includes software for Unix and PC environments,
+was used to make many of the pictures in this book. The web site for Dynamics
+is www.ipst.umd.edu/dynamics. We can also recommend Differential and
+Difference Equations through Computer Experiments by H. Kocak (Springer-Verlag,
+1989) for personal computers. A sophisticated package designed for Unix platforms
+is dstool, developed by J. Guckenheimer and his group at Cornell University.
+In the absence of special purpose software, general purpose scientific computing
+environments such as Matlab, Maple, and Mathematica will do nicely.
+
+The Lab Visits are short reports on carefully selected laboratory experiments
+that show how the mathematical concepts of dynamical systems manifest
+themselves in real phenomena.We try to impart some flavor of the setting of the
+experiment and the considerable expertise and care necessary to tease a new secret
+from nature. In virtually every case, the experimenters’ findings far surpassed
+what we survey in the Lab Visit.We urge you to pursue more accurate and detailed
+discussions of these experiments by going straight to the original sources.
+
+
+
+\end{document}
+
+
