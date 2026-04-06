@@ -1,14 +1,16 @@
 c01
 ===
 
-1. Continuous Population Models for Single Species
+**1. Continuous Population Models for Single Species**
 
 The increasing study of realistic and practically useful mathematical models in population biology, whether 
 we are dealing with a human population with or without its age distribution, population of an endangered 
 species, bacterial or viral growth and so on, is a reﬂection of their use in helping to understand the 
 dynamic processes involved and in making practical predictions. The study of population change has a very 
 long history: in 1202 an exercise in an arithmetic book written by Leonardo of Pisa involved building a 
-mathematical model for a growing rabbit population; we discuss it later in Chapter 2. Ecology, basically the 
+mathematical model for a growing rabbit population; we discuss it later in Chapter 2. 
+
+Ecology, basically the 
 study of the interrelationship between species and their environment, in such areas as predator–prey and 
 competition interactions, renewable resource management, evolution of pesticide resistant strains, ecological 
 and genetically engineered control of pests, multi-species societies, plant–herbivore systems and so on is 
@@ -20,15 +22,15 @@ in the following three chapters, we consider some deterministic models by way of
 Elementary introductions are also given in the textbooks by Edelstein-Keshet (1988) and Hoppensteadt and 
 Peskin (1992).
 
-1.1 Continuous Growth Models
+**1.1 Continuous Growth Models**
 
 Single-species models are of relevance to laboratory studies in particular but, in the real world, can 
 reﬂect a telescoping of effects which inﬂuence the population dynamics. Let N(t) be the population of the 
 species at time t, then the rate of change
 
-dN
+.. math::
 
-= births − deaths + migration, dt
+   \frac{dN}{dt} = births − deaths + migration
 
 (1.1)
 
@@ -36,9 +38,12 @@ is a conservation equation for the population. The form of the various terms on 
 necessitates modelling the situation with which we are concerned. The simplest model has no migration and the 
 birth and death terms are proportional to N. That is,
 
-dN = bN dN ⇒ N(t) = N 0 e (b−d)t , dt
+.. math::
 
-where b, d are positive constants and the initial population N(0) = N 0 . Thus if b > d the population grows 
+   \frac{dN}{dt} = bN -  dN ⇒ N(t) = _ 0 ^{ (b−d})dt
+
+where b, d are positive constants and the initial population :math:`N(0) = N_0`. Thus if b > d the 
+population grows 
 exponentially while if b < d it dies out. This approach, due to Malthus 2 in 1798, is fairly unrealistic. 
 However, if we consider the past and predicted growth estimates for the total world population from the 17th 
 to 21st centuries it is perhaps less unrealistic, as seen in Table 1.1 (United Nations median projections for 
@@ -50,7 +55,9 @@ below replacement level (approximately 2.1 children per woman) while in 1997 it 
 (United Nations) by 2015. Later in Chapter 4 we discuss in detail how to calculate a survival reproductive 
 level. In 1970 there were 10 countries below replacement fertility levels while by 1995 there were 51 and by 
 2015 it is estimated that 88 of the approximately 180 countries in the world will join the group with less 
-than replacement fertility. To mark the 20th anniversary of the World Health Organisation their report (1992) 
+than replacement fertility. 
+
+To mark the 20th anniversary of the World Health Organisation their report (1992) 
 on human reproduction gave some interesting estimates for the world, such as 100 million acts of sexual 
 intercourse every day which resulted in 910,000 conceptions and 356,000 cases of sexually transmitted 
 diseases. They estimate that 300 million couples do not want any more children but lack family planning 
@@ -60,26 +67,28 @@ day, a third in unsafe conditions resulting in 500 deaths.
 One of the reasons for this digression is to highlight the problems of modelling such population problems. It 
 is difﬁcult to make long term, or even relatively short term, predictions unless we know sufﬁcient facts to 
 incorporate in the model to make it a reliable predictor although general trends can in themselves be useful 
-even if ultimately
+even if ultimately quantitatively wrong. There is no doubt, however, that, in spite of widespread available 
+contraception,
+sterilisation being the most commonly used method (female sterilisation accounting for 26% of the total with
+male sterilisation accounting for 10%), enforced size of families, local famines, new diseases, increasing  
+nonreplacement fertility rates and so on, the world population continues to increase alarmingly.
 
-2
 
-Malthus’ essay, ﬁrst published anonymously, was immensely inﬂuential (on Charles Darwin, for example, who 
+2. Malthus’ essay, ﬁrst published anonymously, was immensely inﬂuential (on Charles Darwin, for example, 
+who 
 ﬁrst read it in 1838), but also roused much wrath in various quarters for much of the following century. He 
 said in effect that unbounded population growth would be controlled by war, pestilence or famine. After the 
 carnage of the First World War his predictions were again brought to the fore and widely discussed. Malthus, 
 who married at 38, spent much of his life as an English country parson who, by all accounts, was a happy 
 family man who thoroughly enjoyed life.
 
-quantitatively wrong. There is no doubt, however, that, in spite of widespread available contraception, 
-sterilisation being the most commonly used method (female sterilisation accounting for 26% of the total with 
-male sterilisation accounting for 10%), enforced size of families, local famines, new diseases, increasing 
-nonreplacement fertility rates and so on, the world population continues to increase alarmingly.
 
 In the long run of course there must be some adjustment to such exponential growth. Verhulst (1838, 1845) 
 proposed that a self-limiting process should operate when a population becomes too large. He suggested
 
-dN = r N(1 N/K), dt
+.. math::
+
+   \frac{dN}{dt} = r N(1 -  N/K)
 
 (1.2)
 
@@ -98,7 +107,9 @@ of the response of the model to any change in the population.
 
 If N(0) = N 0 the solution of (1.2) is
 
-N 0 Kert  N(t) = → K as t → ∞, [ K + N 0 (e rt − 1) ]
+.. math::
+
+   N(t) = \frac{N_0 K e^{rt}}{[K + N_0 (e^{rt}-1)]} ] \to K as t \to \infinity
 
 (1.3)
 
@@ -114,14 +125,8 @@ regulatory mechanisms—a kind of compensating effect of overcrowding—and must
 the equation governing the population dynamics. In spite of its limitations, from time to time, it has been 
 rediscovered and widely hyped as some universal law of population growth. 3 One example is in the 1925 book 
 by the biologist Pearl (1925). Kingsland (1995) describes the episode in fascinating detail: Pearl toured the 
-country pushing his
-
-3
-
-As late as 1985 I heard it put forward, with missionary zeal, as a universal law by Dr. Jonas Salk (of polio 
-vaccine renown) in a major lecture he gave at the University of Utah.
-
-theory. He certainly conﬁrmed Charles Darwin’s maxim: ‘Great is the power of steady misinterpretation.’ The 
+country pushing his theory. He certainly conﬁrmed Charles Darwin’s maxim: ‘Great is the power of steady 
+misinterpretation.’ The 
 main point about the logistic form is that it is a particularly convenient form to take when seeking 
 qualitative dynamic behaviour in populations in which N = 0 is an unstable steady state and N(t) tends to a 
 ﬁnite positive stable steady state. The logistic form will occur in a variety of different contexts 
@@ -147,27 +152,37 @@ predictions.
 
 In general if we consider a population to be governed by
 
-dN = f (N), dt
+.. math::
+
+   \frac{dN}{ft} = f (N)
+
 
 (1.4)
 
 where typically f (N) is a nonlinear function of N then the equilibrium solutions N ∗ are solutions of f (N) 
 = 0 and are linearly stable to small perturbations if f ′ (N ∗ ) < 0, and unstable if f ′ (N ∗ ) > 0. This 
-is clear from linearising about N ∗ by writing
+is clear from linearising about :math:`N^*` by writing
 
-n(t) ≈ N(t) − N ∗ , | n(t) | ≪ 1
+.. math::
+
+   n(t) \approx  N(t) − ^ ∗ , | n(t) \ll ≪ 1
 
 and (1.4) becomes
 
-dN ∗ = f (N + n) ≈ f (N ∗ ) + nf ′ (N ∗ ) + · · · , dt
+.. math::
+
+   \frac{dN}{dt}  = f (N^* + n) \approx f (N^∗ ) + n'′ (^ ∗ ) + · · · dt
 
 which to ﬁrst order in n(t) gives
 
-dN ≈ nf ′ (N ∗ ) ⇒ n(t) ∝ exp [ f ′ ( N ∗ ) t ] . dt
+.. math::
+
+   \frac{dN}{ft} \approx  nf'(N^*) \Rightarrow  n(t) ∝ exp [ f ′ ( N ∗ ) t ] . dt
 
 (1.5)
 
-So n grows or decays accordingly as f ′ (N ∗ ) > 0 or f ′ (N ∗ ) < 0. The timescale of the response of the 
+So n grows or decays accordingly as :math:`f'(N^ ) > 0` or `:math:`f' (N^∗ ) < `0. The timescale of the 
+response of the 
 population to a disturbance is of the order of 1/ | f ′ (N ∗ ) | ; it is the time to change the initial 
 disturbance by a factor e.
 
@@ -184,13 +199,15 @@ there is a threshold perturbation below which the steady states are always stabl
 on the full nonlinear form of f (N). For N 1 , for example, the necessary threshold perturbation is N 2 − N 
 1 .
 
-1.2 Insect Outbreak Model: Spruce Budworm
+**1.2 Insect Outbreak Model: Spruce Budworm**
 
 A practical model which exhibits two positive linearly stable steady state populations is that for the spruce 
 budworm which can, with ferocious efﬁciency, defoliate the balsam ﬁr; it is a major problem in Canada. 
 Ludwig et al. (1978) considered the budworm population dynamics to be modelled by the equation
 
-N dN = rB  N 1 − − p(N). dt ( K B )
+.. math::
+
+   \frac{dN}{dt} = r_B  N(1 −\frac{N}{K_B}) -  p(N)
 
 Here r B is the linear birth rate of the budworm and K B is the carrying capacity which is related to the 
 density of foliage (food) available on the trees. The p(N)-term represents predation, generally by birds: its 
@@ -202,6 +219,8 @@ predation term p(N) drops more rapidly, as N → 0, than a linear rate proportio
 take the form for p(N) suggested by Ludwig et al. (1978), namely, BN 2 /(A 2 + N 2 ) where A and B are 
 positive constants, and the dynamics of N(t) is then governed by
 
+
+..
 dN BN2  N = rB  N 1− − . dt ( K B ) A 2 + N2 
 
 (1.6)
