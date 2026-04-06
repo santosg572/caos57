@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>c01 &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="c01">
+<h1>c01<a class="headerlink" href="#c01" title="Link to this heading">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Continuous Population Models for Single Species</p></li>
+</ol>
+<p>The increasing study of realistic and practically useful mathematical models in population biology, whether
+we are dealing with a human population with or without its age distribution, population of an endangered
+species, bacterial or viral growth and so on, is a reﬂection of their use in helping to understand the
+dynamic processes involved and in making practical predictions. The study of population change has a very
+long history: in 1202 an exercise in an arithmetic book written by Leonardo of Pisa involved building a
+mathematical model for a growing rabbit population; we discuss it later in Chapter 2. Ecology, basically the
+study of the interrelationship between species and their environment, in such areas as predator–prey and
+competition interactions, renewable resource management, evolution of pesticide resistant strains, ecological
+and genetically engineered control of pests, multi-species societies, plant–herbivore systems and so on is
+now an enormous ﬁeld. The continually expanding list of applications is extensive as are the number of books
+on various aspects 1 of the ﬁeld. There are also highly practical applications of single-species models in
+the biomedical sciences; in Section 1.5 we discuss two examples of these which arise in physiology. Here, and
+in the following three chapters, we consider some deterministic models by way of an introduction to the
+ﬁeld. The excellent books by Hastings (1997) and Kot (2001) are speciﬁcally on ecological modelling.
+Elementary introductions are also given in the textbooks by Edelstein-Keshet (1988) and Hoppensteadt and
+Peskin (1992).</p>
+<p>1.1 Continuous Growth Models</p>
+<p>Single-species models are of relevance to laboratory studies in particular but, in the real world, can
+reﬂect a telescoping of effects which inﬂuence the population dynamics. Let N(t) be the population of the
+species at time t, then the rate of change</p>
+<p>dN</p>
+<p>= births − deaths + migration, dt</p>
+<p>(1.1)</p>
+<p>is a conservation equation for the population. The form of the various terms on the righthand side of (1.1)
+necessitates modelling the situation with which we are concerned. The simplest model has no migration and the
+birth and death terms are proportional to N. That is,</p>
+<p>dN = bN dN ⇒ N(t) = N 0 e (b−d)t , dt</p>
+<p>where b, d are positive constants and the initial population N(0) = N 0 . Thus if b &gt; d the population grows
+exponentially while if b &lt; d it dies out. This approach, due to Malthus 2 in 1798, is fairly unrealistic.
+However, if we consider the past and predicted growth estimates for the total world population from the 17th
+to 21st centuries it is perhaps less unrealistic, as seen in Table 1.1 (United Nations median projections for
+the 21st century). Since 1900 it has grown exponentially.</p>
+<p>Notwithstanding such growth, many demographers now fret about whether or not there will be enough people in
+the future! In 1975 about 18% of the world population lived in countries where the fertility rate was at or
+below replacement level (approximately 2.1 children per woman) while in 1997 it was 44% with 67% predicted
+(United Nations) by 2015. Later in Chapter 4 we discuss in detail how to calculate a survival reproductive
+level. In 1970 there were 10 countries below replacement fertility levels while by 1995 there were 51 and by
+2015 it is estimated that 88 of the approximately 180 countries in the world will join the group with less
+than replacement fertility. To mark the 20th anniversary of the World Health Organisation their report (1992)
+on human reproduction gave some interesting estimates for the world, such as 100 million acts of sexual
+intercourse every day which resulted in 910,000 conceptions and 356,000 cases of sexually transmitted
+diseases. They estimate that 300 million couples do not want any more children but lack family planning
+services. Of the 910,000 conceptions every day about half are unplanned. There are 150,000 abortions every
+day, a third in unsafe conditions resulting in 500 deaths.</p>
+<p>One of the reasons for this digression is to highlight the problems of modelling such population problems. It
+is difﬁcult to make long term, or even relatively short term, predictions unless we know sufﬁcient facts to
+incorporate in the model to make it a reliable predictor although general trends can in themselves be useful
+even if ultimately</p>
+<p>2</p>
+<p>Malthus’ essay, ﬁrst published anonymously, was immensely inﬂuential (on Charles Darwin, for example, who
+ﬁrst read it in 1838), but also roused much wrath in various quarters for much of the following century. He
+said in effect that unbounded population growth would be controlled by war, pestilence or famine. After the
+carnage of the First World War his predictions were again brought to the fore and widely discussed. Malthus,
+who married at 38, spent much of his life as an English country parson who, by all accounts, was a happy
+family man who thoroughly enjoyed life.</p>
+<p>quantitatively wrong. There is no doubt, however, that, in spite of widespread available contraception,
+sterilisation being the most commonly used method (female sterilisation accounting for 26% of the total with
+male sterilisation accounting for 10%), enforced size of families, local famines, new diseases, increasing
+nonreplacement fertility rates and so on, the world population continues to increase alarmingly.</p>
+<p>In the long run of course there must be some adjustment to such exponential growth. Verhulst (1838, 1845)
+proposed that a self-limiting process should operate when a population becomes too large. He suggested</p>
+<p>dN = r N(1 N/K), dt</p>
+<p>(1.2)</p>
+<p>where r and K are positive constants. This he called logistic growth in a population. In this model the per
+capita birth rate is r(1 − N/K); that is, it is dependent on N. The constant K is the carrying capacity of
+the environment, which is usually determined by the available sustaining resources.</p>
+<p>There are two steady states or equilibrium states for (1.2), namely, N = 0 and N = K, that is, where dN/dt =
+0. N = 0 is unstable since linearization about it (that is, N 2 is neglected compared with N) gives dN/dt ≈
+r N, and so N grows exponentially from any small initial value. The other equilibrium N = K is stable:
+linearization about it (that is, (N − K) 2 is neglected compared with | N − K | ) gives d(N − K)/dt ≈
+−r(N − K) and so N → K as t → ∞. The carrying capacity K determines the size of the stable steady state
+population while r is a measure of the rate at which it is reached; that is, it is a measure of the dynamics:
+we could incorporate it in the time by a transformation from t to rt. Thus 1/r is a representative timescale
+of the response of the model to any change in the population.</p>
+<p>If N(0) = N 0 the solution of (1.2) is</p>
+<p>N 0 Kert  N(t) = → K as t → ∞, [ K + N 0 (e rt − 1) ]</p>
+<p>(1.3)</p>
+<p>and is illustrated in Figure 1.1. From (1.2), if N 0 &lt; K, N(t) simply increases monotonically to K while if N
+0 &gt; K it decreases monotonically to K. In the former case there is a qualitative difference depending on
+whether N 0 &gt; K/2 or N 0 &lt; K/2; with N 0 &lt; K/2 the form has a typical sigmoid character, which is commonly
+observed.</p>
+<p>In the case where N 0 &gt; K this would imply that the per capita birth rate is negative! Of course all it is
+really saying is that in (1.1) the births plus immigration are less than the deaths plus emigration. The
+point about (1.2) is that it is more like a metaphor for a class of population models with density-dependent
+regulatory mechanisms—a kind of compensating effect of overcrowding—and must not be taken too literally as
+the equation governing the population dynamics. In spite of its limitations, from time to time, it has been
+rediscovered and widely hyped as some universal law of population growth. 3 One example is in the 1925 book
+by the biologist Pearl (1925). Kingsland (1995) describes the episode in fascinating detail: Pearl toured the
+country pushing his</p>
+<p>3</p>
+<p>As late as 1985 I heard it put forward, with missionary zeal, as a universal law by Dr. Jonas Salk (of polio
+vaccine renown) in a major lecture he gave at the University of Utah.</p>
+<p>theory. He certainly conﬁrmed Charles Darwin’s maxim: ‘Great is the power of steady misinterpretation.’ The
+main point about the logistic form is that it is a particularly convenient form to take when seeking
+qualitative dynamic behaviour in populations in which N = 0 is an unstable steady state and N(t) tends to a
+ﬁnite positive stable steady state. The logistic form will occur in a variety of different contexts
+throughout the book primarily because of its algebraic simplicity and because it provides a preliminary
+qualitative idea of what can occur with more realistic forms.</p>
+<p>It is instructive to try to understand why the logistic form was accepted since it highlights an important
+point in modelling in the biomedical sciences. The logistic growth form in (1.3) has three parameters, N 0 ,
+K and r with which to assign to compare with actual data. These were used by Pearl (1925) to ﬁt the census
+population data for various countries including the United States, Sweden and France for various periods.
+Figure 1.2 shows the results for France and the U.S. If we look at the U.S. data there is a good ﬁt for the
+population roughly from 1790 until about 1910; here the lower part of the curve is ﬁtted. However, the rest
+of the curve is nowhere near the actual population data. The same holds for France but the data were ﬁtted
+to the upper part of the curve but even there the subsequent population growth prediction is wrong. The main
+point is not that the predictions are so inaccurate but rather that curve ﬁtting only part of the data, and
+particularly the part which does not cover the major part of the growth curve makes comparison with data and
+future predictions extremely unreliable. Of course, we could produce an algebraic expression with a few more
+parameters (and derive some differential equation for which it is the solution) and do a better job but then
+all we would be doing would be curve ﬁtting without increasing our understanding of the actual mechanism
+governing the phenomenon. The motivation for modelling such as we discuss in this book is to further our
+understanding of the underlying processes since it is only in this way that we can make justiﬁable
+predictions.</p>
+<p>In general if we consider a population to be governed by</p>
+<p>dN = f (N), dt</p>
+<p>(1.4)</p>
+<p>where typically f (N) is a nonlinear function of N then the equilibrium solutions N ∗ are solutions of f (N)
+= 0 and are linearly stable to small perturbations if f ′ (N ∗ ) &lt; 0, and unstable if f ′ (N ∗ ) &gt; 0. This
+is clear from linearising about N ∗ by writing</p>
+<p>n(t) ≈ N(t) − N ∗ , | n(t) | ≪ 1</p>
+<p>and (1.4) becomes</p>
+<p>dN ∗ = f (N + n) ≈ f (N ∗ ) + nf ′ (N ∗ ) + · · · , dt</p>
+<p>which to ﬁrst order in n(t) gives</p>
+<p>dN ≈ nf ′ (N ∗ ) ⇒ n(t) ∝ exp [ f ′ ( N ∗ ) t ] . dt</p>
+<p>(1.5)</p>
+<p>So n grows or decays accordingly as f ′ (N ∗ ) &gt; 0 or f ′ (N ∗ ) &lt; 0. The timescale of the response of the
+population to a disturbance is of the order of 1/ | f ′ (N ∗ ) | ; it is the time to change the initial
+disturbance by a factor e.</p>
+<p>There may be several equilibrium, or steady state, populations N ∗ which are solutions of f (N) = 0: it
+depends on the system f (N) models. Graphically plotting f (N) against N immediately gives the equilibria as
+the points where it crosses the N-axis. The gradient f ′ (N ∗ ) at each steady state then determines its
+linear stability. Such steady states may, however, be unstable to ﬁnite disturbances. Suppose, for example,
+that f (N) is as illustrated in Figure 1.3. The gradients f ′ (N ∗ ) at N = 0, N2  are positive so these
+equilibria are unstable while those at N = N 1 , N 3 are stable to small perturbations: the arrows
+symbolically indicate stability or instability. If, for example, we now perturb the population from its
+equilibrium N 1 so that N is in the range N 2 &lt; N &lt; N 3 then N → N 3 rather than returning to N 1 . A
+similar perturbation from N 3 to a value in the range 0 &lt; N &lt; N 2 would result in N(t) → N 1 . Qualitatively
+there is a threshold perturbation below which the steady states are always stable, and this threshold depends
+on the full nonlinear form of f (N). For N 1 , for example, the necessary threshold perturbation is N 2 − N
+1 .</p>
+<p>1.2 Insect Outbreak Model: Spruce Budworm</p>
+<p>A practical model which exhibits two positive linearly stable steady state populations is that for the spruce
+budworm which can, with ferocious efﬁciency, defoliate the balsam ﬁr; it is a major problem in Canada.
+Ludwig et al. (1978) considered the budworm population dynamics to be modelled by the equation</p>
+<p>N dN = rB  N 1 − − p(N). dt ( K B )</p>
+<p>Here r B is the linear birth rate of the budworm and K B is the carrying capacity which is related to the
+density of foliage (food) available on the trees. The p(N)-term represents predation, generally by birds: its
+qualitative form is important and is illustrated in Figure 1.4. Predation usually saturates for large enough
+N. There is an approximate threshold value N c , below which the predation is small, while above it the
+predation is close to its saturation value: such a functional form is like a switch with N c being the
+critical switch value. For small population densities N, the birds tend to seek food elsewhere and so the
+predation term p(N) drops more rapidly, as N → 0, than a linear rate proportional to N. To be speciﬁc we
+take the form for p(N) suggested by Ludwig et al. (1978), namely, BN 2 /(A 2 + N 2 ) where A and B are
+positive constants, and the dynamics of N(t) is then governed by</p>
+<p>dN BN2  N = rB  N 1− − . dt ( K B ) A 2 + N2</p>
+<p>(1.6)</p>
+<p>This equation has four parameters, r B , K B , B and A, with A and K B having the same dimensions as N,r B
+has dimension (time) −1 and B has the dimensions of N(time) −1 . A is a measure of the threshold where the
+predation is ‘switched on,’ that is, N c in Figure 1.4. If A is small the ‘threshold’ is small, but the
+effect is just as dramatic.</p>
+<p>Before analysing the model it is essential, or rather obligatory, to express it in nondimensional terms. This
+has several advantages. For example, the units used in the analysis are then unimportant and the adjectives
+small and large have a deﬁnite relative meaning. It also always reduces the number of relevant parameters to
+dimensionless groupings which determine the dynamics. A pedagogical article with several practical examples
+by Segel (1972) discusses the necessity and advantages for nondimensionali-</p>
+<p>sation and scaling in general. Here we introduce nondimensional quantities by writing</p>
+<p>N Ar B K B Bt u= r= q= τ= , , , A B A A</p>
+<p>(1.7)</p>
+<p>which on substituting into (1.6) becomes</p>
+<p>du u u2  = ru 1 = f (u ; r, q), dτ ( q ) 1 + u2</p>
+<p>(1.8)</p>
+<p>where f is deﬁned by this equation. Note that it has only two parameters r and q, which are pure numbers, as
+also are u and τ of course. Now, for example, if u ≪ 1 it means simply that N ≪ A. In real terms it means
+that predation is negligible in this population range. In any model there are usually several different
+nondimensionalisations possible and this model is no different. For example, we could write u = N/K B , τ =
+t/r B and so on to get a different form to (1.8) for the dimensionless equation. The dimensionless groupings
+to choose depend on the aspects you want to investigate. The reasons for the particular form (1.7) become
+clear below.</p>
+<p>The steady states are solutions of</p>
+<p>u u2  f (u ; r, q) = 0 ⇒ ru 1 − = 0. ( q ) 1 + u2</p>
+<p>(1.9)</p>
+<p>Clearly u = 0 is one solution with other solutions, if they exist, satisfying</p>
+<p>u u r 1− . = ( q ) 1 + u2</p>
+<p>(1.10)</p>
+<p>Although we know the analytical solutions of a cubic (Appendix B), they are often clumsy to use because of
+their algebraic complexity; this is one of these cases. It is convenient here to determine the existence of
+solutions of (1.10) graphically as shown in Figure 1.5(a). We have plotted the straight line, the left of
+(1.10), and the function on the right of (1.10); the intersections give the solutions. The actual expressions
+are not important here. What is important, however, is the existence of one, three, or again, one solution as
+r increases for a ﬁxed q, as in Figure 1.5(a), or as also happens for a ﬁxed r and a varying q. When r is
+in the appropriate range, which depends on q, there are three equilibria with a typical corresponding f (u ;
+r, q) as shown in Figure 1.5(b). The nondimensional groupings which leave the two parameters appearing only
+in the straight line part of Figure 1.5 are particularly helpful and was the motivation for the
+nondimensionalisation introduced in (1.7). By inspection u = 0, u = u 2 are linearly unstable, since ∂ f/∂u
+&gt; 0 at u = 0, u 2 , while u 1 and u 3 are stable steady states, since at these ∂ f/∂u &lt; 0. There is a
+domain in the r, q parameter space where three roots of (1.10) exist. This is shown in Figure 1.6; the
+analytical derivation of the boundary curves is left as an exercise (Exercise 1).</p>
+<p>This model exhibits a hysteresis effect. Suppose we have a ﬁxed q, say, and r increases from zero along the
+path ABC D in Figure 1.6. Then, referring also to Figure 1.5(a), we see that if u 1 = 0 at r = 0 the u 1
+-equilibrium simply increases monoton-</p>
+<p>ically with r until C in Figure 1.6 is reached. For a larger r this steady state disappears and the
+equilibrium value jumps to u 3 . If we now reduce r again the equilibrium state is the u 3 one and it remains
+so until r reaches the lower critical value, where there is again only one steady state, at which point there
+is a jump from the u 3 to the u 1 state. In other words as r increases along ABC D there is a discontinuous
+jump up at C while as r decreases from D to A there is a discontinuous jump down at B. This is an example of
+a cusp catastrophe which is illustrated schematically in Figure 1.7 where the letters A, B, C and D
+correspond to those in Figure 1.6. Note that Figure 1.6 is the projection of the surface onto the r, q plane
+with the shaded region corresponding to the fold.</p>
+<p>The parameters from ﬁeld observation are such that there are three possible steady states for the
+population. The smaller steady state u 1 is the refuge equilibrium while u3  is the outbreak equilibrium.
+From a pest control point of view, what should be done to try to keep the population at a refuge state rather
+than allow it to reach an outbreak situation? Here we must relate the real parameters to the dimensionless
+ones, using (1.7). For example, if the foliage were sprayed to discourage the budworm this would reduce q
+since K B , the carrying capacity in the absence of predators, would be reduced. If the reduction were large
+enough this could force the dynamics to have only one equilibrium: that is, the effective r and q do not lie
+in the shaded domain of Figure 1.6. Alternatively we could try to reduce the reproduction rate r B or
+increase the threshold number of predators, since both reduce r which would be effective if it is below the
+critical value for u 3 to exist. Although these give preliminary qualitative ideas for control, it is not
+easy to determine the optimal strategy, particularly since spatial effects such as</p>
+<p>budworm dispersal must be taken into effect; we shall discuss this aspect in detail in Chapter 2, Volume II.</p>
+<p>It is appropriate here to mention brieﬂy the timescale with which this model is concerned. An outbreak of
+budworm during which balsam ﬁr trees are denuded of foliage is about four years. The trees then die and
+birch trees take over. Eventually, in the competition for nutrient, the ﬁr trees will drive out the birch
+trees again. The timescale for ﬁr reforestation is of the order of 50 to 100 years. A full model would
+incorporate the tree dynamics as well; see Ludwig et al. (1978). So, the model we have analysed here is only
+for the short timescale, namely, that related to a budworm outbreak.</p>
+<p>Hassell et al. (1999) have considered the original highly complex (more than 80 variables and parameters)
+multi-species interaction model involving large and small larvae, fecundity, foliage mortality with and
+without the budworm, and other players in the interaction. They show, using gross, but reasonably justiﬁable
+assumptions, that the model can be simpliﬁed without losing the basic budworm–forest interaction. They
+obtain several simpliﬁcations using asymptotic limits, eventually reducing the system to three difference
+(as opposed to differential) equations for larvae, foliage and area fraction of old trees. Analysis showed
+that the mechanism for oscillations could be captured with only two equations. A more in depth analysis than
+we have done here, but very much less than that by Hassell et al. (1999), is given in the very practical book
+on modelling by Fowler (1997).</p>
+<p>Catastrophes in Perception</p>
+<p>Although the following does not strictly belong in a chapter on population dynamics, it seemed appropriate to
+include it in the section where we discuss hysteresis and catastrophic change.</p>
+<p>There is a series of now classic ﬁgures developed by Fisher (1967) which demonstrate sudden changes in
+visual perception. Here we describe one of these picture series and show that it is another example of a cusp
+catastrophe; it also exhibits an initial perceptual hysteresis. We also present the results of an experiment
+carried out by the author which conﬁrms the hypothesis. The speciﬁc example we describe has been studied in
+more depth by Zeeman (1982) and more generally by Stewart and Peregoy (1983).</p>
+<p>The mind can be triggered, or moved in a major new thought or behavioural direction, by a vast variety of
+cues in ways we cannot yet hope to describe in any biological detail. A step in this direction, however, is
+to be able to describe the phenomenon and demonstrate its existence via example. Such sudden changes in
+perception and behaviour are quite common in psychology and therapy.4</p>
+<p>The series of pictures, numbered 1 to 8 are shown in Figure 1.8.</p>
+<p>4</p>
+<p>An interesting example of a major change in a patient undergoing psychoanalysis treated by the French
+psychoanalyst Marie Claire Boons is described by Zeeman (1982). The case involved a frigid woman whom she had
+been treating for two years without much success. ‘One day the patient reported dreaming of a frozen rabbit
+in her arms, which woke and said hello. The patient’s words were “un lapin congel´e,” meaning a frozen
+rabbit, to which the psychoanalyst slowly replied “la pin con gel´e?” This is a somewhat elaborate pun. The
+word “pin” is the French slang for penis, the female “la” makes it into the clitoris, “con” is the French
+slang for the female genitals, and “gel´e” means both frozen and rigid. The surprising result was that the
+patient did not respond for 20 minutes and the next day came back cured. Apparently that evening she had
+experienced her ﬁrst orgasm ever with her husband.’</p>
+<p>The picture numbered 1 in the ﬁgure is clearly a man’s face while picture 8 is clearly a sitting woman. An
+experiment which demonstrates the sudden jump from seeing the face of a man to the picture of the woman is
+described by Zeeman (1982). The author carried out a similar experiment with a group of 57 students, none of
+whom had seen the series before nor knew of such an example of sudden change in visual perception. The
+experiment consisted of showing the series three times starting with the man’s face, picture 1, going up to
+the woman, picture 8, then reversing the sequence down to 1 and again in ascending order; that is, the
+ﬁgures were shown in the order 1234567876543212345678. The students were told to write down the numbers
+where they noticed a major change in their perception; the results are presented in Table 1.2.</p>
+<p>The predictions were that during the ﬁrst run through the series, that is, from 1 to 8, the perception of
+most of the audience would be locked into the ﬁgure of the face until it became obvious that the picture was
+in fact a woman at which stage there would be sudden jump in perception. As the pictures were shown in the
+reverse order the audience was now aware of the two possibilities and so could make a more balanced judgement
+as to what a speciﬁc picture represented. The perception change would therefore more likely occur nearer the
+middle, around 5 and 4. During the ﬁnal run through the series the change would again occur near the middle.</p>
+<p>The results of Table 1.2 are shown schematically in Figure 1.9 where the vertical axis is perception, p, and
+the horizontal axis, the stimulus, the picture number. The</p>
+<p>graph of perception versus stimulus is multi-valued in a traditional cusp catastrophe way. Here, over part of
+the range there are two possible perceptions, a face or a woman. The relation with the example of the budworm
+population problem is clear. On the ﬁrst run through the switch was delayed until around picture 7 while on
+the run through the down sequence it occurred mainly at 5 and again around 5 on the ﬁnal run through the
+pictures. There is, however, a fundamental difference between the phenomenon here and the budworm. In the
+latter there is a deﬁnite and reproducible hysteresis while in the former this hysteresis effect occurs only
+once after which the dynamics is single valued for each stimulus.</p>
+<p>If we had started with picture 8 and again run the series three times the results would be similar except
+that the jump would have occurred ﬁrst around 2, as in the ﬁgure, with the second and third switch again
+around 5. The phenomenon of catastrophic change in behavior and perception is widespread and an understanding
+of the underlying dynamics would clearly be of great help. Several other qualitative examples in psychology
+are described by Zeeman (1977).</p>
+<p>1.3 Delay Models</p>
+<p>One of the deﬁciencies of single population models like (1.4) is that the birth rate is considered to act
+instantaneously whereas there may be a time delay to take account of the time to reach maturity, the ﬁnite
+gestation period and so on. We can incorporate such delays by considering delay differential equation models
+of the form</p>
+<p>dN(t) = f (N(t), N(t − T)) , dt</p>
+<p>(1.11)</p>
+<p>where T &gt; 0, the delay, is a parameter. One such model, which has been used, is an extension of the logistic
+growth model (1.2), namely, the differential delay equation</p>
+<p>dN N(t − T) = r N(t) 1 , dt [ K ]</p>
+<p>(1.12)</p>
+<p>where r, K and T are positive constants. This says that the regulatory effect depends on the population at an
+earlier time, t − T, rather than that at t. This equation is itself a model for a delay effect which should
+really be an average over past populations and which results in an integrodifferential equation. Thus a more
+accurate model than (1.12) is, for example, the convolution type</p>
+<p>dN 1 t = r N(t) 1 w(t − s)N(s) ds , dt [ K ∫ −∞ ]</p>
+<p>(1.13)</p>
+<p>where w(t) is a weighting factor which says how much emphasis should be given to the size of the population
+at earlier times to determine the present effect on resource availability. Practically w(t) will tend to zero
+for large negative and positive t and will probably have a maximum at some representative time T. Typically
+w(t) is as illustrated in Figure 1.10. If w(t) is sharper, in the sense that the region around T is narrower
+or larger, then in the limit we can think of w(t) as approximating the Dirac function δ(t − T ), where</p>
+<p>∞ δ(t − T) f (t) dt = f (T). ∫ −∞</p>
+<p>Equation (1.13) in this case then reduces to (1.12)</p>
+<p>t δ(t − T − s)N(s) ds = N(t − T). ∫ −∞</p>
+<p>The character of the solutions of (1.12), and the type of boundary conditions required are quite different
+from those of (1.2). Even with the seemingly innocuous equation (1.12) the solutions in general have to be
+found numerically. Note that to compute the solution for t &gt; 0 we require N(t) for all −T ≤ t ≤ 0 . We can
+however get some qualitative impression of the kind of solutions of (1.12) which are possible, by the
+following heuristic reasoning.</p>
+<p>Refer now to Figure 1.11 and suppose that for some t = t 1 , N(t 1 ) = K and that for some time t &lt; t 1 , N(t
+− T) &lt; K. Then from the governing equation (1.12), since 1 − N(t − T)/K &gt; 0, dN(t)/dt &gt; 0 and so N(t) at t
+1 is still increasing. When t = t 1 + T, N(t − T) = N(t 1 ) = K and so dN/dt = 0. For t 1 + T &lt; t &lt; t 2 ,
+N(t − T) &gt; K and so dN/dt &lt; 0 and N(t) decreases until t = t 2 + T since then dN/dt = 0 again because N(t 2
++ T − T) = N(t 2 ) = K. There is therefore the possibility of oscillatory behaviour. For example, with the
+simple linear delay equation</p>
+<p>dN π πt = N(t T ) ⇒ N(t) = A cos , dt 2T 2T</p>
+<p>where A is a constant. This solution, which can be easily veriﬁed, is periodic in time.</p>
+<p>In fact the solutions of (1.12) can exhibit stable limit cycle periodic solutions for a large range of values
+of the product rT of the birth rate r and the delay T. If t p is the period then N(t + t p ) = N(t) for all
+t. The point about stable limit cycle solutions is that if a perturbation is imposed the solution returns to
+the original periodic solution as t → ∞, although possibly with a phase shift. The periodic behaviour is
+also independent of any initial data.</p>
+<p>From Figure 1.11 and the heuristic argument above, the period of the limit cycle periodic solutions might be
+expected to be of the order of 4T. From numerical calculations this is the case for a large range of rT,
+which, incidentally, is a dimensionless grouping. The reason we take this grouping is because (1.12) in
+dimensionless form becomes</p>
+<p>N dN ∗ ∗ = N ∗ (t ∗ ) [ 1 − N ∗ t ∗ − T ∗ , where N ∗ = = rt, T ∗ = rT. , t dt ∗ ( )] K</p>
+<p>What does vary with rT , however, is the amplitude of the oscillation. For example, for rT = 1.6, the period
+t p ≈ 4.03T and N max /N min ≈ 2.56; rT = 2.1, t p ≈ 4.54, N max /N min ≈ 42.3; rT = 2.5, t p ≈ 5.36T, N
+max /N min ≈ 2930. For large values of rT , however, the period changes considerably.</p>
+<p>This simple delay model has been used for several different practical situations. For example, it has been
+applied by May (1975) to Nicholson’s (1957) careful experimental data for the Australian sheep-blowﬂy
+(Lucila cuprina), a pest of considerable importance in Australian sheep farming. Over a period of nearly two
+years Nicholson</p>
+<p>observed the population of ﬂies which were maintained under carefully regulated temperature and food
+control. He observed a regular basic periodic oscillation of about 35 to 40 days. Applying (1.12) to the
+experimental arrangement, K is set by the food level available. T, the delay, is approximately the time for a
+larva to mature into an adult. Then the only unknown parameter is r, the intrinsic rate of population
+increase. Figure 1.12 illustrates the comparison with the data for rT = 2.1 for which the period is about
+4.54T. If we take the observed period as 40 days this gives a delay of about 9 days; the actual delay is
+closer to 11 days. The model implies that if K is doubled nothing changes from a time periodic point of view
+since it can be scaled out by writing N/K for N; this lack of change with K is what was observed.</p>
+<p>It is encouraging that such a simple model as (1.12) should give such reasonable results. This is some
+justiﬁcation for using delay models to study the dynamics of single populations which exhibit periodic
+behaviour. It is important, however, not to be too easily convinced as to the validity or reasonableness of a
+model simply because some solutions agree even quantitatively well with the data; this is a phenomenon, or
+rather a pitfall, we encounter repeatedly later in the book particularly when we discuss models for
+generating biological pattern and form in Chapter 2 to Chapter 6, Volume II. From the experimental data
+reproduced in Figure 1.12 we see a persistent ‘second burst’ feature that the solutions of (1.12) do not
+mimic. Also the difference between the calculated delay of 9 days and the actual 11 days is really too large.
+Gurney et al. (1980) investigated this problem with a more elaborate delay model which agrees even better
+with the data, including the two bursts of reproductive activity observed; see also the book by Nisbet and
+Gurney (1982) where this problem is discussed fully as a case study.</p>
+<p>Another example of the application of this model (1.12) to extant data is given by May (1981) who considers
+the lemming population in the Churchill area of Canada. There is approximately a 4-year period where, in this
+case the gestation time is T = 0.72 year. The vole population in the Scottish Highlands, investigated by
+Stirzaker (1975) using a delay equation model, also undergoes a cycle of just under 4 years, which is again
+approximately 4T where here the gestation time is T = 0.75 year. In this model the effect of predation is
+incorporated into the single equation for the vole population.</p>
+<p>The article by Myers and Krebs (1974) discusses population cycles in rodents in general: they usually have 3
+to 4 year cycles.</p>
+<p>Not all periodic population behaviour can be treated quite so easily. One such example which is particularly
+dramatic is the 13- and 17-year cycle exhibited by a species of locusts; that is, their emergences are
+synchronized to 13 or 17 years.</p>
+<p>It should perhaps be mentioned here that single (nondelay) differential equation models for population growth
+without delay, that is, like dN/dt = f (N), cannot exhibit limit cycle behaviour. We can see this immediately
+as follows. Suppose this equation has a periodic solution with period T; that is, N(t + T ) = N(t). Multiply
+the equation by dN/dt and integrate from t to t + T to get</p>
+<p>t + T dN 2 t + T dN dt = f (N) dt ∫ t ( dt ) ∫ t dt</p>
+<p>N(t + T ) = f (N) dN ∫ N(t)</p>
+<p>=0</p>
+<p>since N(t + T) = N(t). But the left-hand integral is positive since (dN/dt) 2 cannot be identically zero, so
+we have a contradiction. So, the single scalar equation dN/dt = f (N) cannot have periodic solutions.</p>
+<p>1.4 Linear Analysis of Delay Population Models: Periodic Solutions</p>
+<p>We saw in the last section how the delay differential equation model (1.12) was capable of generating limit
+cycle periodic solutions. One indication of their existence is if the steady state is unstable by growing
+oscillations, although this is certainly not conclusive. We consider here the linearisation of (1.12) about
+the equilibrium states N = 0 and N = K. Small perturbations from N = 0 satisfy dN/dt ≈ r N, which shows that
+N = 0 is unstable with exponential growth. We thus need only consider perturbations about the steady state N
+= K.</p>
+<p>It is again expedient to nondimensionalise the model equation (1.12) by writing</p>
+<p>N(t) N ∗ (t) = t ∗ = rt, T ∗ = rT, , K</p>
+<p>(1.14)</p>
+<p>where the asterisk denotes dimensionless quantities. Then (1.12) becomes, on dropping the asterisks for
+notational simplicity, but keeping in mind that we are now dealing with nondimensional quantities,</p>
+<p>dN(t) = N(t) [1 − N(t − T )] . dt</p>
+<p>(1.15)</p>
+<p>Linearising about the steady state, N = 1, by writing</p>
+<p>N(t) = 1 + n(t) ⇒ ≈ −n(t − T). dt</p>
+<p>(1.16)</p>
+<p>We look for solutions for n(t) in the form</p>
+<p>n(t) = ce λt ⇒ λ = −e −λT ,</p>
+<p>(1.17)</p>
+<p>from (1.16), where c is a constant and the eigenvalues λ are solutions of the second of (1.17), a
+transcendental equation in which T &gt; 0.</p>
+<p>It is not easy to ﬁnd the analytical solutions of (1.17). However, all we really want to know from a
+stability point of view is whether there are any solutions with Re λ &gt; 0 which from the ﬁrst of (1.17)
+implies instability since in this case n(t) grows exponentially with time.</p>
+<p>Set λ = µ + iω. There is a real number µ 0 such that all solutions λ of the second of (1.17) satisfy Re λ &lt; µ
+0 . To see this take the modulus to get | λ | = e −µT and so, if | λ | → ∞ then e −µT → ∞ which
+requires µ → −∞. Thus there must be a number µ 0 that bounds Re λ from above. If we introduce z = 1/λ and
+w(z) = 1 + ze −T/z then w(z) has an essential singularity at z = 0. So by Picard’s theorem, in the
+neighbourhood of z = 0, w(z) = 0 has inﬁnitely many complex roots. Thus there are inﬁnitely many roots λ.</p>
+<p>We now take the real and imaginary parts of the transcendental equation in (1.17), namely,</p>
+<p>µ = −e −µT cos ωT, ω = e −µT sin ωT,</p>
+<p>(1.18)</p>
+<p>and determine the range of T such that µ &lt; 0. That is, we want to ﬁnd the conditions such that the upper
+limit µ 0 on µ is negative. Let us ﬁrst dispense with the simple case where λ is real; that is, ω = 0. From
+(1.18), ω = 0 satisﬁes the second equation and the ﬁrst becomes µ = −e −µT . This has no positive roots µ
+&gt; 0 since e −µT &gt; 0 for all µT or as can be seen on sketching each side of the equation as a function of µ
+and noting that they can only intersect with T &gt; 0 if µ &lt; 0.</p>
+<p>Consider now ω = ̸ 0. From (1.18) if ω is a solution then so is −ω, so we can consider ω &gt; 0 without any loss
+of generality. From the ﬁrst of (1.18), µ &lt; 0 requires ωT &lt; π/2 since −e −µT &lt; 0 for all µT. In principle
+(1.18) deﬁnes µ(T), ω(T). We are interested in the value of T when µ(T) ﬁrst crosses from µ &lt; 0 to µ &gt; 0.
+As T increases from zero µ = 0 ﬁrst when ωT = π/2. From (1.18) we see that if µ = 0 the second equation
+gives as the only relevant solution ω = 1 occurring at T = π/2. Since this is the ﬁrst zero of µ as T
+increases, this gives the bifurcating value T = T c = π/2. Another way of deriving this is to show, from
+(1.18), that the gradient of µ(T)at µ = 0, namely, (∂µ/∂T) T=π/2 &gt; 0. Anticipating the result of the
+following analysis that ω &lt; 1 for T &gt; π/2, note in passing that (∂ω/∂T) T=π/2 &lt; 0. So we have</p>
+<p>π 0&lt;T &lt; 2</p>
+<p>(1.19)</p>
+<p>as the condition on T for stability.</p>
+<p>Returning now to dimensional quantities we thus have that the steady state N(t) = K is stable if 0 &lt; rT &lt; π/2
+and unstable for rT &gt; π/2. In the latter case we expect the solution to exhibit stable limit cycle behaviour.
+The critical value rT = π/2 is the bifurcation value, that is, the value of the parameter, rT here, where the
+character of the solutions of (1.12) changes abruptly, or bifurcates, from a stable steady state to a
+timevarying solution. The effect of delay in models is usually to increase the potential for instability.
+Here as T is increased beyond the bifurcation value T c = π/2r, the steady state becomes unstable.</p>
+<p>Near the bifurcation value we can get a ﬁrst estimate of the period of the bifurcating oscillatory solution
+as follows. Consider the dimensionless form (1.15) and let</p>
+<p>π T = T c + ε = 0 &lt; ε ≪ 1. ε, + 2</p>
+<p>(1.20)</p>
+<p>The solution λ = µ + iω, of (1.18), with the largest Re λ when T = π/2 is µ = 0, ω = 1. For ε small we expect
+µ and ω to differ from µ = 0 and ω = 1 also by small quantities so let</p>
+<p>µ = δ, ω = 1 + σ, 0 &lt; δ ≪ 1, | σ | ≪ 1,</p>
+<p>(1.21)</p>
+<p>where δ and σ are to be determined. Substituting these into the second of (1.18) and expanding for small δ, σ
+and ε gives</p>
+<p>π π πδ 1 + σ = exp −δ σ ≈ ε ε + sin (1 + σ) ⇒ + [ ( 2 )] [ ( 2 )] 2</p>
+<p>to ﬁrst order, while the ﬁrst of (1.18) gives</p>
+<p>π π πσ δ = − exp −δ ⇒ δ ≈ ε + ε cos σ) ε . (1 + + + [ ( 2 )] [ ( 2 )] 2</p>
+<p>Thus on solving these simultaneously</p>
+<p>ε επ δ ≈ 2 , σ ≈ − 2 , π π 1 + 4 2 1 + 4 ( )</p>
+<p>(1.22)</p>
+<p>and hence, near the bifurcation, the ﬁrst of (1.17) with (1.16) gives</p>
+<p>N(t) = 1 + Re { c exp [ δt + i(1 + σ)t ]}</p>
+<p>(1.23)</p>
+<p>εt επ ≈ 1 + Re c exp 2 exp it 1 − 2 . π π { [ 1 + 4 ] [ { 2(1 + 4 }]}</p>
+<p>2π ≈ 2π επ 12 2(1 + π 4 )</p>
+<p>This shows that the instability is by growing oscillations with period</p>
+<p>to O(1) for small ε. In dimensional terms this is 2π/r and, since to O(1), rT = π/2, the period of
+oscillation is then 4T as we expected from the intuitive arguments above. From the numerical results for
+limit cycles quoted above the solution with rT = 1.6 had period 4.03T. With rT = π/2 + ε = 1.6, this gives ε
+≈ 0.029 so the dimensional period to O(ε) is obtained from the last equation as</p>
+<p>2T 2π ≈ 4.05T, επ π 1 − π 2 2 4 1 + ( )</p>
+<p>which compares well with the numerical computed value of 4.03T. When rT = 2.1 this gives ε ≈ 0.53 and
+corresponding period 5.26T which is to be compared with the computed period of 4.54T. This ε is too large for
+the above ﬁrst order analysis to hold (ε 2 is not negligible compared with ε); a more accurate result would
+be obtained if the analysis were carried out to second order.</p>
+<p>The natural appearance of a ‘slow time’ εt in N(t) in (1.23) suggests that a full nonlinear solution near the
+bifurcation value rT = π/2 is amenable to a two-time asymptotic procedure to obtain the (uniformly valid in
+time) solution. This can in fact be done; see, for example, Murray’s (1984) book on asymptotic methods for a
+pedagogical description of such techniques and how to use them.</p>
+<p>The subject of delay or functional differential equations is now rather large. An introductory mathematical
+book on the subject is Driver’s (1977). The book by MacDonald (1979) is solely concerned with time lags in
+biological models. Although the qualitative properties of such delay equation models for population growth
+dynamics and nonlinear analytical solutions near bifurcation can often be determined, in general numerical
+methods have to be used to get useful quantitative results.</p>
+<p>A very useful technique for determining the necessary conditions for stability of the solutions of linear
+delay equations is given by van den Driessche and Zou (1998) and which we now give: it is a Liapunov function
+technique (for example, Jordan and Smith 1999) which gives an estimate for the stability parameter space.
+Equation (1.16) above is a special case of the general equation</p>
+<p>dy = ay(t) by(t τ), t &gt; 0, + dt</p>
+<p>(1.24)</p>
+<p>where τ is the delay and a and b are constant parameters. We could, of course, carry out an equivalent
+analysis as we did on (1.16) and get the necessary and sufﬁcient conditions for stability and thereby
+determine the parameter space where the steady state is stable. If y s is a steady state L [ y(t) ] is a
+Liapunov function if L [ y(t) ] &gt; 0 for all y(t) = ̸ y s , L [ y(t) ] = 0 for y(t) = y s (that is, L positive
+deﬁnite) and dL [ y(t) ] /dt &lt; 0 for all y(t) = ̸ y s . If such a function can be found then y s is globally
+asymptotically stable and no closed solution orbits are possible. Such a Liapunov function can be found for
+(1.24); it is given by</p>
+<p>t L [ y(t) ] = y 2 (t) + | b | y 2 (s) ds, ∫ t−τ</p>
+<p>(1.25)</p>
+<p>where y(t) is a solution of (1.24).</p>
+<p>We have to show that it is indeed a Liapunov function. Certainly L &gt; 0 for all y = ̸ 0 and L = 0 when y(t) = y
+s = 0. Furthermore</p>
+<p>dL dy = 2y(t) (t) − y 2 (t − τ) ] + | b <a href="#id1"><span class="problematic" id="id2">|</span></a>[ y2  dt dt</p>
+<p>= 2ay 2 (t) + 2 | b | y(t)y(t − τ) + | b <a href="#id3"><span class="problematic" id="id4">|</span></a>[ y 2 (t) − y 2 (t − τ) ]</p>
+<p>(1.26)</p>
+<p>≤ 2ay 2 (t) + | b <a href="#id5"><span class="problematic" id="id6">|</span></a>[ y 2 (t) + y 2 (t − τ) ] + | b <a href="#id7"><span class="problematic" id="id8">|</span></a>[ y 2 (t) − y 2 (t − τ) ]</p>
+<p>= 2(a + | b | )y 2 (t)</p>
+<p>≤ 0, for a &lt; − | b | .</p>
+<p>So, L [ y(t) ] satisﬁes all the conditions of a Liapunov function and so the steady state y s = 0 is
+globally stable for all a &lt; − | b | which gives the parameter space where y = 0 is stable—and not just
+linearly stable. If a full stability analysis is carried out as we did for (1.16) the stability domain is
+actually larger but not markedly so; they are both, however, of the same broad general shape.</p>
+<p>1.5 Delay Models in Physiology: Periodic Dynamic Diseases</p>
+<p>There are many acute physiological diseases where the initial symptoms are manifested by an alteration or
+irregularity in a control system which is normally periodic, or by the onset of an oscillation in a hitherto
+nonoscillatory process. Such physiological periodic diseases have been termed dynamical diseases by Glass and
+Mackey (1979) who have made a particular study of several important physiological examples. The symposium
+proceedings of a meeting speciﬁcally devoted to temporal disorders in human oscillatory systems edited by
+Rensing et al. (1987) is particularly apposite to the material and modelling in this section, as is the
+nontechnical intuitive book by Glass and Mackey (1988) (which has many applications) and that edited by
+Othmer et al. (1993). Other examples are discussed by Mackey and Milton (1990) and Milton and Mackey (1989).
+Here we discuss two speciﬁc examples which have been modelled, analysed and related to experimental
+observations by Mackey and Glass (1977). The review article on dynamic diseases by Mackey and Milton (1988)
+is of direct relevance to the material discussed here; it also describes some examples drawn from
+neurophysiology. The book by Keener and Sneyd (1998) has other examples. Although the second model we
+consider is concerned with populations of cells, the ﬁrst does not relate to any population species but
+rather to the concentration of a gas. It does, however, ﬁt naturally here since it is a scalar delay
+differential equation model the analysis for which is directly applicable to the second problem. It is also
+interesting in its own right.</p>
+<p>Cheyne–Stokes Respiration</p>
+<p>The ﬁrst example, Cheyne–Stokes respiration, is a human respiratory ailment manifested by an alteration in
+the regular breathing pattern. Here the amplitude of the breathing pattern, directly related to the breath
+volume—the ventilation V —regularly waxes and wanes with each period separated by periods of apnea, that is
+where the volume per</p>
+<p>breath is exceedingly low. Figure 1.13 is typical of spirograms of those suffering from Cheyne–Stokes
+respiration.</p>
+<p>We ﬁrst need a few physiological facts for our model. The level of arterial carbon dioxide (CO 2 ), c(t)
+say, is monitored by receptors which in turn determine the level of ventilation. It is believed that these CO
+2 -sensitive receptors are situated in the brainstem so there is an inherent time lag, T say, in the overall
+control system for breathing levels. It is known that the ventilation response curve to CO 2 is sigmoidal in
+form. We assume the dependence of the ventilation V on c to be adequately described by what is called a Hill
+function, of the form</p>
+<p>c m (t − T) V =Vmax  , a m + c m (t − T)</p>
+<p>(1.27)</p>
+<p>where V max is the maximum ventilation possible and the parameter a and the Hill coefﬁcient m are positive
+constants which are determined from experimental data. (We discuss the biological relevance of Hill functions
+and how they arise later in Chapter 6.) We assume the removal of CO 2 from the blood is proportional to the
+product of the ventilation and the level of CO 2 in the blood.</p>
+<p>Let p be the constant production rate of CO 2 in the body. The dynamics of the CO2  level is then modelled by</p>
+<p>dc(t) c m (t − T) = p − bVc(t) = p − bV max c(t) , dt a m + c m (t − T)</p>
+<p>(1.28)</p>
+<p>where b is a positive parameter which is also determined from experimental data. The delay time T is the time
+between the oxygenation of the blood in the lungs and monitoring by the chemoreceptors in the brainstem. This
+ﬁrst order differential-delay model exhibits, as we shall see, the qualitative features of both normal and
+abnormal breathing. As a ﬁrst step in analysing (1.28) we introduce the nondimensional quantities</p>
+<p>pt pT abVmax  V c , , , x = t ∗ = T ∗ = α = , V ∗ = a a a p Vmax</p>
+<p>(1.29)</p>
+<p>and the model equation becomes</p>
+<p>x m (t − T ) x ′ (t) = 1 − αx(t) m = 1 αxV T)) , (x(t 1 + x (t − T)</p>
+<p>(1.30)</p>
+<p>where for notational simplicity we have omitted the asterisks on t and T.</p>
+<p>As before we get an indication of the dynamic behaviour of solutions by investigating the linear stability of
+the steady state x 0 given from (1.30) by</p>
+<p>m + 1 x 1 = α 0 = αx 0 V (x 0 ) = αx 0 V 0 , m 1 + x 0</p>
+<p>(1.31)</p>
+<p>where V 0 , deﬁned by the last equation, is the dimensionless steady state ventilation. A simple plot of
+1/αx 0 and V (x 0 ) as functions of x 0 shows there is a unique positive steady state. If we now consider
+small perturbations about the steady state x 0 we write u = x − x 0 and consider | u | small. Substituting
+into (1.30) and retaining only linear terms we get, using (1.31),</p>
+<p>u ′ = −αV 0 u − αx 0 V 0 ′ u(t − T ),</p>
+<p>(1.32)</p>
+<p>where V 0 ′ = dV (x 0 )/dx 0 is positive. As in the last section we look for solutions in the form</p>
+<p>u(t) ∝ e λt ⇒ λ = −αV 0 − αx 0 V 0 ′ e −λT .</p>
+<p>(1.33)</p>
+<p>If the solution λ with the largest real part is negative, then the steady state is stable. Since here we are
+concerned with the oscillatory nature of the disease we are interested in parameter ranges where the steady
+state is unstable and, in particular, unstable by growing oscillations in anticipation of limit cycle
+behaviour. So, as before, we must determine the bifurcation values of the parameters such that Re λ = 0.</p>
+<p>Set λ = µ + iω. In the same way as in the last section it is easy to show that a real number µ 0 exists such
+that for all solutions λ of (1.33), Re λ &lt; µ 0 and also that no real positive solution exists. For notational
+simplicity let us write the transcendental equation (1.33) as</p>
+<p>λ = −A − Be −λT , A = αV 0 &gt; 0, B = αx 0 V 0 ′ &gt; 0.</p>
+<p>(1.34)</p>
+<p>Equating real and imaginary parts gives</p>
+<p>µ = −A − Be −µT cos ωT, ω = Be −µT sin ωT.</p>
+<p>(1.35)</p>
+<p>Simultaneous solutions of these give µ and ω in terms of A, B and T : we cannot determine them explicitly of
+course as we saw in Section 1.4. The bifurcation we are interested in is when µ = 0 so we consider the
+parameter ranges which admit such a solution. With µ = 0 the last equations give, with s = ωT,</p>
+<p>cot s = − ⇒ &lt; π , &lt; s1  s 2</p>
+<p>(1.36)</p>
+<p>for all ﬁnite AT &gt; 0 where s 1 is a solution. We can see that such a solution s 1 exists on sketching cot s
+and −AT/s as functions of s. There are of course other solutions s m of this equation in the ranges [ (2m +
+1)π/2, (m + 1)π ] for m = 1, 2, . . . but we need only consider the smallest positive solution s 1 since that
+gives the bifurcation for the smallest critical T &gt; 0. We now have to determine the parameter ranges so that
+with µ = 0 and s 1 substituted back into (1.35) a solution exists. That is, what are the restrictions on A, B
+and T so that</p>
+<p>0 = −A − B cos s 1 , s 1 = BT sin s1</p>
+<p>are consistent? These imply</p>
+<p>BT = + s 1 2 . (AT)2  [ ]1/2</p>
+<p>(1.37)</p>
+<p>If B, A and T, which determine s 1 , are such that the last equality cannot hold then no solution with µ = 0
+exists.</p>
+<p>Since A and B are positive, the solution is stable in the limiting case T = 0 since then Re λ = µ = −A − B
+&lt; 0. Now consider (1.35) and increase T from T = 0. From the last equation and (1.36) a solution with µ = 0
+cannot exist if</p>
+<p>BT &lt; + s1 2  (AT)2  [ ]1/2</p>
+<p>(1.38)</p>
+<p>π s 1 cot s 1 = −AT, &lt; π &lt; s1  2</p>
+<p>and, from continuity arguments from T = 0 we must have µ &lt; 0. So the bifurcation condition which just gives µ
+= 0 is (1.37). Or, put in another way, if (1.38) holds, the steady state solution of (1.30) is linearly, and
+in fact globally, stable. In terms of the original dimensionless variables from (1.34) the conditions are
+thus</p>
+<p>αx 0 V 0 ′ T &lt; [ (αV 0 T) 2 + s 1 2 ] 1/2 ,</p>
+<p>(1.39)</p>
+<p>s 1 cot s 1 = −αV 0 T.</p>
+<p>If we now have A and B ﬁxed, a bifurcation value T c is given by the ﬁrst of (1.38) with an equality sign
+in the inequality.</p>
+<p>Actual parameter values for normal humans have been obtained by Mackey and Glass (1977). The concentration of
+gas in blood is measured in terms of the partial pressure it sustains and so it is measured in mmHg (that is,
+in torr). Relevant to the dimensional system (1.28), they estimated</p>
+<p>V 0 ′ = 4 litre/min mmHg, T = 0.25 min.</p>
+<p>(1.40)</p>
+<p>c 0 = 40 mmHg</p>
+<p>p = 6 mmHg/min,</p>
+<p>V 0 = 7 litre/min,</p>
+<p>From (1.31), which deﬁnes the dimensionless steady state, we have αV 0 = 1/x 0 . So, with (1.39) in mind, we
+have, using (1.40) and the nondimensionalisation (1.29),</p>
+<p>T pTdimensional  αV 0 T = = = 0.0375. x 0 c0</p>
+<p>The solution of the second of (1.39) with such a small right-hand side is s 1 ≈ π/2 and so s 1 ≫ αV 0 T
+which means that the inequality for stability from the ﬁrst of (1.39) is approximately, but quite
+accurately,</p>
+<p>π V 0 ′ &lt; . 2αx 0 T</p>
+<p>(1.41)</p>
+<p>So, if the gradient of the ventilation at the steady state becomes too large the steady state becomes
+unstable and limit cycle periodic behaviour ensues. With the values in (1.40) the critical dimensional V 0 ′
+= 7.44 litre/min mmHg. The gradient increases with the Hill coefﬁcient m in (1.27). Other parameters can of
+course also initiate periodic behaviour; all we require is that (1.41) is violated.</p>
+<p>In dimensional terms we can determine values for m and a in the expression (1.27) for the ventilation, which
+result in instability by using (1.41) with (1.29) and V 0 from (1.31). Figures 1.14(a) and (b) show the
+dimensional results of numerical simulations of (1.28) with two values for V 0 ′ .</p>
+<p>Note that the period of oscillation in both solutions in Figure 1.14 is about 1 minute, which is 4T where T =
+0.25 min is the estimate for delay given in (1.40). This is as we would now expect from the analysis in the
+last section. A perturbation analysis in the vicinity of the bifurcation state in a similar way to that given
+in the last section shows</p>
+<p>that the period of the growing unstable solution is approximately 4T . This is left as an exercise (Exercise
+6).</p>
+<p>In fact, the experimentally observed period is of the order of two to three times the estimated delay time.
+The model here for carbon dioxide in the blood is a simple one and to make detailed quantitative comparison
+with the actual process that takes place is not really justiﬁed. It does, however, clearly show how a delay
+model can arise in a genuine physiological context and produce oscillatory behaviour such as is observed in
+Cheyne–Stokes respiration.</p>
+<p>The problem of periodic breathing that we have just discussed has also been studied in some detail by Fowler
+and Kalamangalam (2000; see other references there). They put forward a very different explanation for the
+disease. They suggest that the dynamics of the system are determined by the interaction between the carbon
+dioxide in the different compartments of the body and that, in fact, the production is more or less
+irrelevant. They show that the respiratory system is subject to an oscillatory instability when, as with
+patients with heart failure, the cardiac output is severely reduced. They further show that the cycle time is
+approximately twice the brain arterial delay and show that this is consistent with recent observational
+studies on patients with cardiac problems. They go further and include variable cardiac response to blood gas
+levels, which in turn introduces variable delays, and show that this has a stabilising effect. An important
+aspect of their work is the extensive discussion they give of the physiological implications of parameter
+variation in their model.</p>
+<p>There are many fascinating and challenging modelling problems associated with breathing; see, for example,
+the book of articles edited by Benchetrit et al. (1987). Also, periodic breathing is not restricted to
+pathologies of the heart and brain. See also the book by Hoppensteadt and Peskin (1992) for other
+physiological examples.</p>
+<p>Regulation of Haematopoiesis</p>
+<p>The second example we consider brieﬂy has certain similarities to the last and so we do not go through the
+analysis in as much detail. It is concerned with the regulation of haematopoiesis, the formation of blood
+cell elements in the body. For example, white and red blood cells, platelets and so on are produced in the
+bone marrow from where they enter the blood stream. When the level of oxygen in the blood decreases this
+leads to a release of a substance which in turn causes an increase in the release of the blood elements from
+the marrow. There is thus a feedback from the blood to the bone marrow. Abnormalities in the feedback system
+are considered major suspects in causing periodic haematological diseases in general and this one is no
+exception. Further details of the process and the model we discuss are given in Mackey and Glass (1977) and
+Glass and Mackey (1979).</p>
+<p>Let c(t) be the concentration of cells (the population species) in the circulating blood; the units of c are,
+say, cells/mm 3 . We assume that the cells are lost at a rate proportional to their concentration, that is,
+like gc, where the parameter g has dimensions (day) −1 . After the reduction in cells in the blood stream
+there is about a 6-day delay before the marrow releases further cells to replenish the deﬁciency. We thus
+assume that the ﬂux λ of cells into the blood stream depends on the cell concentration at an earlier time,
+namely, c(t − T), where T is the delay. Such assumptions suggest a model</p>
+<p>equation of the form</p>
+<p>dc(t) = λ(c(t − T)) − gc(t). dt</p>
+<p>(1.42)</p>
+<p>Mackey and Glass (1977) proposed two possible forms for the function λ(c(t − T)). The one we consider gives</p>
+<p>dc λa m c(t − T) = gc, dt a m + c m (t − T)</p>
+<p>(1.43)</p>
+<p>where λ, a, m, g and T are positive constants. This equation can be analysed in the same way as (1.28) above
+(Exercise 5). The procedure is to nondimensionalise it, look for the steady state, investigate the linear
+stability and determine the conditions for instability.</p>
+<p>Near the bifurcation values of the parameters which initiate an oscillatory growing solution a perturbation
+analysis provides an estimate for the period of the ensuing limit cycle behaviour. Figures 1.15(a) and (b)
+show the numerical simulation of (1.43) for two values of the delay time T and parameters in the range for
+which the steady state is unstable.</p>
+<p>One manifestation of leukaemia is the periodic oscillations observed in, for example, the white cell count.
+Figure 1.15(c) is an example from a 12-year-old patient with chronic myelogenous leukaemia. Although the
+overall character is quasi-periodic, it is in fact aperiodic. Note the comparison between Figures 1.15(b) and
+(c).</p>
+<p>The qualitative change in the solution behaviour as the delay is increased is indicative of what is now
+referred to as chaos. We discuss this concept in more detail in the following chapter. Basically chaos is
+when the solution pattern is not repetitive in any regular way. A working deﬁnition of chaos is aperiodic
+behaviour in a deterministic system which depends intimately on the initial conditions: very small changes in
+the initial conditions can give rise to major differences in the solution at later times. An indication of
+periodic behaviour and of the onset of chaos can be obtained from the plot of c(t − T) against c(t) for
+various values of the parameters. Figure 1.16 shows a series of bifurcating periodic solutions of (1.43) as
+the parameter m increases.</p>
+<p>The behaviour in Figure 1.16(a), where the phase plane trajectory is a simple closed curve, implies the
+solution is a simple periodic solution. For example, if we start at P say, the solution trajectory moves
+round the curve and eventually returns to P after a ﬁnite time. In other words if c(t) = c 1 at time t 1 ,
+c(t) is again equal to c 1 when time t increases by the period: Figure 1.15(a) is a typical solution c(t) as
+a function of time in this situation. If we now look at Figure 1.16(b) it looks a bit like a double loop
+trajectory of the kind in (a); you have to go round twice to return to where you started. A typical solution
+here is like that shown in Figure 1.17(a).</p>
+<p>The solutions c(t) implied by Figure 1.16 illustrate a common and important feature of many model systems,
+namely, different periodic solution behaviour as a parameter passes through speciﬁc bifurcation values; here
+it is the Hill coefﬁcient m in (1.43).</p>
+<p>Referring now to Figure 1.17(b), if you start at P the solution ﬁrst decreases with time and then increases
+as you move along the trajectory of the ﬁrst, inner, loop. Now when c(t) reaches Q, instead of going round
+the same loop past P again it moves onto the outer loop through R. It eventually goes through P again after
+the second circuit. As before the solution is still periodic of course, but its appearance is like a mixture
+of two solutions of the type in Figure 1.15(a) but with different periods and amplitudes. As m increases, the
+phase plane trajectories become progressively more complex suggesting quite complex solution behaviour for
+c(t). For the case in Figure 1.16(e) the solution undergoes very many loops before it possibly returns to its
+starting point. In fact it never does! The solutions in such cases are not periodic although they have a
+quasi-periodic appearance. This is an example of chaotic behaviour.</p>
+<p>Figure 1.15(b) is a solution of (1.43) which exhibits this chaotic behaviour while Figure 1.15(c) shows the
+dynamic behaviour of the white cell count in the circulating blood of a leukaemia patient. Although Figures
+1.15(b) and (c) exhibit similar aperiodic behaviour, it is dangerous to presume that this model is therefore
+the one governing white cell behaviour in leukaemia patients. However, what this modelling exercise has
+demonstrated, among other things, is that delay can play a signiﬁcant role in physiologi-</p>
+<p>cal pattern disruption. In turn this suggests that a deﬁciency in bone marrow cell production could account
+for the erratic behaviour in the white cell count. So although such a model can highlight important questions
+for a medical physiologist to ask, for it to be of practical use it is essential that close interdisciplinary
+collaboration is maintained so that realism is retained in making suggestions and drawing conclusions,
+however plausible they may be.</p>
+<p>The numerical simulations of this differential delay model (1.43), which is clearly illustrative of a whole
+class, indicates a cascading sequence of bifurcating periodic solutions which become chaotic. The sequence
+then passes through a coherent periodic stage and again becomes chaotic and so on as a parameter in the model
+itself passes through successive bifurcating values. As we said, this behaviour arises in a different context
+in the following chapter on discrete models where it is discussed in some detail: periodic doubling can be
+shown analytically. This phenomenon of cascading period doubling leading to chaos with chaotic regimes
+separated by coherent period doubling is often a fractal structure. We discuss such a fractal in the next
+chapter and fractals in other contexts later in Chapter 14. The existence of this kind of sequential
+bifurcating behaviour in such model equations is of considerable potential importance in its biomedical
+implications: see, for example, the book edited by Othmer et al. (1993), most chapters of which deal with
+real medical and physiological examples of oscillatory phenomena.</p>
+<p>1.6 Harvesting a Single Natural Population</p>
+<p>It is clearly necessary to develop an ecologically acceptable strategy for harvesting any renewable resource
+be it animals, ﬁsh, plants, or whatever. We also usually want the maximum sustainable yield with the minimum
+effort. The inclusion of economic factors in population models of renewable resources is increasing and these
+introduce important constraints: see, for example, the seminal books by Clark (1976b, 1985, 1990). The book
+by Kot (2001) has a chapter on harvest models and optimal control theory. The review article by Plant and
+Mangel (1987) is concerned with insect pest management. The model we describe here is a simple logistic one
+with the inclusion of a harvesting contribution: it was discussed by Beddington and May (1977). Although it
+is a particularly simple one it brings out several interesting and important points which more sophisticated
+models must also take into account. Rotenberg (1987) also considered the logistic model with harvesting, with
+a view to making the model more quantitative. He also examined the effects of certain stochastic parameters
+on possible population extinction.</p>
+<p>Most species have a growth rate, depending on the population, which more or less maintains a constant
+population equal to the environment’s carrying capacity K. That</p>
+<p>is, the growth and death rates are about equal. Harvesting the species affects the mortality rate and, if it
+is not excessive, the population adjusts and settles down to a new equilibrium state N h &lt; K. The modelling
+problem is how to maximise the sustained yield by determining the population growth dynamics so as to ﬁx the
+harvesting rate which keeps the population at its maximum growth rate.</p>
+<p>We discuss here a basic model which consists of the logistic population model (1.2) in which the mortality
+rate is enhanced, as a result of harvesting, by a term linearly proportional to N; namely,</p>
+<p>dN N = r N 1 E N = f (N). dt ( K )</p>
+<p>(1.44)</p>
+<p>Here r, K and E are positive constants and E N is the harvesting yield per unit time with E a measure of the
+effort expended. K and r are the natural carrying capacity and the linear per capita growth rate
+respectively. The new nonzero steady state from (1.44) is</p>
+<p>E &gt; 0 if N h (E) = K 1 − E &lt; r ( r )</p>
+<p>(1.45)</p>
+<p>which gives a yield</p>
+<p>E Y(E) = E N h (E) = E K 1 . ( r )</p>
+<p>(1.46)</p>
+<p>Clearly if the harvesting effort is sufﬁciently large so that it is greater than the linear growth rate when
+the population is low, the species will die out. That is, if E &gt; r the only realistic steady state is N = 0.
+If E &lt; r (which was possibly not the case, for example, with whaling in the early 1970’s) the maximum
+sustained yield and the new harvesting steady state are, from (1.46) and (1.45),</p>
+<p>rK K , . Y M = Y(E) | E=r/2 = N h | Y M = 4 2</p>
+<p>(1.47)</p>
+<p>Does an analysis of the dynamic behavior tell us anything different from the naive, and often used, steady
+state analysis just given here?</p>
+<p>Figure 1.18 illustrates the growth rate f (N) in (1.44) as a function of N for various efforts E. Linearising
+(1.44) about N h (E) gives</p>
+<p>d (N − N h ) ≈ f ′ (N h (E)) (N − N h ) = (E − r) (N − N h ) , dt</p>
+<p>(1.48)</p>
+<p>which shows linear stability if E &lt; r: arrows indicate stability or instability in Figure 1.18.</p>
+<p>We can consider the dynamic aspects of the process by determining the time scale of the recovery after
+harvesting. If E = 0 then, from (1.44), the recovery time T =</p>
+<p>O(1/r), namely, the timescale of the reproductive growth. This is the order of magnitude of the recovery time
+of N to its carrying capacity K after a small perturbation from K since, for N(t) − K small and N h (0) = K,
+(1.48) shows</p>
+<p>d(N − K) ≈ −r(N − K) ⇒ N(t) − K ∝ e −rt . dt</p>
+<p>If E = ̸ 0, with 0 &lt; E &lt; r, then the recovery time in a harvesting situation, from (1.48), is</p>
+<p>1 T R (E) = O ( r − E )</p>
+<p>and so</p>
+<p>T R (E) 1 = O . T R (0) 1 − E r ( )</p>
+<p>(1.49)</p>
+<p>Thus for a ﬁxed r, a larger E increases the recovery time since T R (E)/T R (0) increases with E. When E =
+r/2, the value giving the maximum sustained yield Y M , T R (E) = O(2T R (0)).</p>
+<p>The usual deﬁnition of a recovery time is the time to decrease a perturbation from equilibrium by a factor
+e. Then, on a linear basis,</p>
+<p>1 1 r T R (0) = T R (E) = ⇒ T R (0). , E = = 2TR  r r − E ( 2 )</p>
+<p>(1.50)</p>
+<p>Since it is the yield Y that is recorded, if we solve (1.46) for E in terms of Y we have</p>
+<p>T R (Y) 2 = T R (0) Y 1 ± Y M 1 [ ]1/2</p>
+<p>(1.51)</p>
+<p>which is sketched in Figure 1.19(a) where L + and L − denote the positive and negative roots of (1.51). It
+is clearly advantageous to stay on the L + branch and potentially disastrous to get onto the L − one. Let us
+now see what determines the branch.</p>
+<p>Suppose we start harvesting with a small effort E; then, as is clear from Figure 1.19(b), the equilibrium
+population N h (E) is close to K and N h (E) &gt; K/2, the equilibrium population for the maximum yield Y M .
+The recovery time ratio T R (E)/ T R (0) from (1.50) is then approximately 1. So increasing E, and hence the
+yield, we are on branch L + . As E increases further, N h (E) decreases towards K/2, the value for the
+maximum sustained yield Y M and we reach the point A in Figure 1.19(a) when N h (E) = K/2. As E is increased
+further, N h (E) &lt; K/2 and the recovery time is further increased but with a decreasing yield; we are now on
+the L − branch.</p>
+<p>We can now see what an optimal harvesting strategy could be, at least from this deterministic point of view.
+An effort E should be made which keeps the equilibrium population density N h (E) &gt; K/2, but as close as
+possible to K/2, the value for the maximum sustained yield. The closer to K/2, however, the more delicate the
+situation becomes since we might inadvertently move onto branch L − in Figure 1.19(a). At this stage, when N
+h (E) is close to K/2, a stochastic analysis should be carried out; this was done by Beddington and May
+(1977). Stochastic elements of course reduce the predictability of the catch. In fact, with this model, they
+decrease the average yield for a given effort.</p>
+<p>Before leaving this model, we can see how it is difﬁcult to use models such as these for determining a
+maximum yield in practice. Often a maximum yield is only found in practice when attempts have been made to
+obtain an even greater yield. If the model here were valid such a scenario could be catastrophic, since if
+one moves onto the upper branch the reduction in effort might not be sufﬁcient to move onto the bottom
+curve. So even without a stochastic analysis we can see how random variations could play havoc with the
+concept of a maximum sustainable yield.</p>
+<p>As an alternative harvesting resource strategy suppose we harvest with a constant yield Y 0 as our goal, a
+model studied by Brauer and Sanchez (1975). The model equation</p>
+<p>is then</p>
+<p>dN N = r N 1 Y0  = f (N ; r, K, Y 0 ). dt ( K )</p>
+<p>(1.52)</p>
+<p>Figure 1.20(a) shows the graphical way of determining the steady states as Y 0 varies. It is trivial to ﬁnd
+the equilibria analytically of course, but often the behavioural traits as a parameter varies are more
+obvious from a ﬁgure, such as here. If 0 &lt; Y 0 &lt; r K/4 = Y M , the maximum sustainable yield here, there are
+two positive steady states N 1 (Y 0 ), N 2 (Y 0 ) &gt; N 1 (Y 0 ) which from Figure 1.20(b) are respectively
+unstable and stable. As Y 0 → r K/4, the maximum sustainable yield of the previous model is even more
+sensitive to ﬂuctuations since if a perturbation from N 2 takes N to a value N &lt; N 1 the mechanism then
+drives N to zero; see Figure 1.20(b). Not only that, N → 0 in a ﬁnite time since for small enough N, (1.52)
+becomes dN/dt ≈ −Y 0 and so for any starting N 0 at t 0 , N(t) ≈ N 0 − Y 0 (t − t 0 ) and N(t) = 0 when
+t = t 0 + N 0 /Y 0 .</p>
+<p>For easy comparison with the constant effort model we evaluate the equivalent recovery time ratio T R (Y 0
+)/T R (0). The recovery time T R (Y 0 ) is only relevant to the stable equilibrium N 2 (Y 0 ) which from
+(1.52) is</p>
+<p>1/2 K 4Y0  N 2 (Y 0 ) = 1 + 1 − , Y 0 &lt; r K/4. 2 [ Kr ] { }</p>
+<p>The linearised form of (1.52) is then</p>
+<p>d(N − N 2 (Y 0 )) ∂ f 1/2 4Y0  ≈ (N − N 2 ) = −(N − N 2 )r 1 − . dt [ ∂N ] N 2 (Y 0 ) [ Kr ]</p>
+<p>Thus</p>
+<p>T R (Y 0 ) 1 r K = , YM = T R (0) Y 0 4 1 ( Y M )1/2</p>
+<p>(1.53)</p>
+<p>which shows that T R (Y 0 )/T R (0) → ∞ as Y 0 → Y M . This model is thus a much more sensitive one and,
+as a harvesting strategy, is not really adequate.</p>
+<p>One conclusion from this modelling exercise is that a constant effort rather than a constant yield harvesting
+strategy is less potentially catastrophic. It also calls into question, even with this simple model, the
+ﬁshing laws, for example, which regulate catches. A more realistic model, on the lines described here,
+should take into account the economic costs of harvesting and other factors. This implies a feedback
+mechanism which can be a stabilising factor; see Clark (1976b, 1985, 1990). With the unpredictability of the
+real world it is probably essential to include feedback. Nevertheless such simple models can pose highly
+relevant ecological and long term ﬁnancial questions which have to be considered in any more realistic and
+more sophisticated model.</p>
+<p>The problems of sustainable harvesting of renewable resources are crucially important, whether it is in
+ﬁsheries, forestry management or any other renewable resource which depends on the maintenance of a
+reproductive surplus in a population. In the above very simple example we saw how it is possible to move onto
+a catastrophic path if we do not have sufﬁcient information such as knowing, a priori, what the maximum
+sustainable yield can be. The basic concept of a sustainable resource depends on a reproductive surplus being
+maintained under a variety of circumstances many of which are difﬁcult to quantify. With the difﬁculty of
+obtaining accurate data it makes it even more difﬁcult to produce a workable model system on which to base
+decisions. Ludwig and his colleagues (Ludwig 1993, 1994, 1995, 1996a, 1996b, Ludwig et al. 1993, 1997 and
+other references given in these) persuasively argue the case for a more sophisticated and realistic modelling
+in which stochastic elements play a crucial role. Numerous real case studies are discussed which highlight
+potentially serious problems with overly simple models. They demonstrate the importance of assessing the
+possibility of population extinction because of, among other things, uncertainty about crucial parameters,
+small stochastic elements and the effect of rare catastrophes. For anyone seriously considering working in
+the ecological ﬁeld of harvesting of renewable resources these papers should be required reading. The book
+by Getz and Haight (1989) gives a good survey of the ﬁeld of population harvesting and resource management
+in diverse areas. It discusses numerous mathematical models and applications to speciﬁc case studies for
+which ﬁeld data are available. The book edited by Levin (1994, Parts V and VI)) contains articles which are
+also particularly relevant. The book by Hilborn and Mangel (1997) is also relevant: it confronts models with
+data and discusses numerous practical case studies which require a probabilistic approach. They provide the
+necessary statistics and probability background necessary for the study of the various models. The 1990’s
+have witnessed several population collapses of what were hitherto thought of as sustainable resources, such
+as cod in the north Atlantic and what looks like being another with salmon in the north east Paciﬁc coast to
+mention but two. Sadly even when the scientiﬁc knowledge is available as to a future catastrophe, politics
+and short term economics prevent its implementation.</p>
+<p>1.7 Population Model with Age Distribution</p>
+<p>For some populations, one of the deﬁciencies of the above ordinary differential equation models is that they
+do not take into account any age structure which, in many situations, can inﬂuence population size and
+growth in a major way. Although most natural populations have some structure, such as age, stage or whatever,
+it is not always of primary importance but, when it is, we must know how to incorporate it in a model. So, we
+consider here a ﬁrst extension to include age dependence in the birth and death rates.</p>
+<p>One way of incorporating structure in a population is by Leslie matrices after Leslie 5 (1945). For example,
+these can incorporate different age classes, such as juvenile and adult, and quantify movement from one to
+the other. The Leslie matrix model then relates the adult and juvenile population at a later time in terms of
+those at the earlier time: the terms in the matrix incorporate, for example, the data on births and survival.
+The books by Charlesworth (1980), Metz and Diekmann (1986) and Kot (2001) give a good survey as well as the
+wide spectrum of applicability of age-structured models.</p>
+<p>Let n(t, a) be the population density at time t in the age range a to a + da. Let b(a) and µ(a) be the birth
+and death rates which are functions of age a: for man, for example, they qualitatively look like the curves
+in Figure 1.21. For example, in a small increment of time dt the number of the population of age a that dies
+is µ(a)n(t, a) dt. The birth rate only contributes to n(t, 0); there can be no births of age a &gt; 0. The
+conservation law for the population now says that</p>
+<p>∂n ∂n dt da = −µ(a)n(t, a) dt. dn(t, a) = + ∂t ∂a</p>
+<p>The (∂n/∂a) da term is the contribution to the change in n(t, a) from individuals getting older. Dividing
+this equation by dt and noting that da/dt = 1 since a is chronological</p>
+<ol class="loweralpha simple">
+<li></li>
+<li></li>
+</ol>
+<p>b(a)</p>
+<p>0</p>
+<p>µ(a)</p>
+<p>10</p>
+<p>50</p>
+<p>0</p>
+<p>a (years)</p>
+<p>10</p>
+<p>70</p>
+<p>a (years)</p>
+<p>Figure 1.21.</p>
+<p>Qualitative birth (a) and death (b) rates for man as functions of age in years.</p>
+<p>5</p>
+<p>Patrick Leslie was a mathematician who worked with the founding father of animal ecology, Charles Elton, in
+his Bureau of Animal Population in Oxford in the mid-1930’s. In spite of the increasing use of mathematical
+modelling, Elton never really embraced such interdisciplinary research and was on occasion outspokenly
+critical. I met Elton once at a Fellows’ garden party in Corpus Christi College, Oxford, in the 1970’s. When
+I expressed an interest in animal ecology and mentioned his seminal work on the data from the Hudson Bay
+Company (see Chapter 2) he started to talk enthusiastically about oscillatory behaviour in populations. When
+I said I was a mathematician working in biology there was a notable cooling of his enthusiasm and he said,
+‘Oh, you’re one of them’ and added, ‘I thought you were somebody else.’</p>
+<p>age, n(t, a) satisﬁes the linear partial differential equation</p>
+<p>∂n ∂n = −µ(a)n, + ∂t ∂a</p>
+<p>(1.54)</p>
+<p>which holds for t &gt; 0 and a &gt; 0. For example, if µ = 0, it reduces to a conservation equation which says that
+the time rate of change of the population at time t and age a, ∂n/∂t, simply changes by the rate at which
+the population gets older, namely, ∂n/∂a.</p>
+<p>Equation (1.54) is a ﬁrst order partial differential equation which requires a condition on n(t, a) in t and
+in a. The initial condition</p>
+<p>n(0, a) = f (a),</p>
+<p>(1.55)</p>
+<p>says that the population at time t = 0 has a given age distribution f (a). The other boundary condition on a
+comes from the birth rate and is</p>
+<p>∞ n(t, 0) = b(a)n(t, a) da, ∫ 0</p>
+<p>(1.56)</p>
+<p>where, for mathematical simplicity, we have taken the upper limit of ∞ for the age; b(a) of course will tend
+to zero for large a, as in Figure 1.21(a), for example, and so we could replace ∞ by a m say, where b(a) = 0
+for a &gt; a m . Note that the birth rate b(a) only appears in the integral equation expression (1.56) and not
+in the differential equation. Equation (1.54) is often referred to in the ecological literature as the Von
+Foerster equation; the equation arises in a variety of different disciplines and theoretical biology areas,
+such as cell proliferation models, for example, where cell age is important. The main question we wish to
+answer with the model here is how the birth and death rates b(a) and µ(a) affect the growth of the population
+after a long time.</p>
+<p>One way to solve (1.54) is by characteristics (see, for example, the book by Kevorkian, 2000) which are given
+by</p>
+<p>da dn = 1 on which = −µn. dt dt</p>
+<p>(1.57)</p>
+<p>These are the straight lines</p>
+<p>t + a0 , a &gt;t a= { t − t 0 , a &lt; t</p>
+<p>(1.58)</p>
+<p>as shown in Figure 1.22. Here a 0 , t 0 are respectively the initial age of an individual at time t = 0 in
+the original population and the time of birth of an individual. The second of (1.57), which holds along each
+characteristic, has a different solution accordingly as a &gt; t and a &lt; t, that is, one form for the population
+that was present at t = 0, namely, a &gt; t, and the other for those born after t = 0, that is, a &lt; t. On
+integrating the second of (1.57), using da/dt = 1 and (1.58), the solutions are</p>
+<p>n(t, a) = n(0, a 0 ) exp − µ(s) ds , a &gt; t, [ ∫ a 0 ]</p>
+<p>where n(0, a 0 ) = n(0, a − t) = f (a − t) from (1.55), and so</p>
+<p>a n(t, a) = f (a − t) exp − µ(s) ds , a &gt; t. [ ∫ a−t ]</p>
+<p>(1.59)</p>
+<p>For a &lt; t,</p>
+<p>a n(t, a) = n(t 0 , 0) exp − µ(s) ds , [ ∫ 0 ]</p>
+<p>and so, since n(t 0 , 0) = n(t − a, 0)</p>
+<p>a n(t, a) = n(t − a, 0) exp − µ(s) ds , a &lt; t. [ ∫ 0 ]</p>
+<p>(1.60)</p>
+<p>In the last equation n(t − a, 0) is determined by solving the integral equation (1.56), using (1.59) and
+(1.60) to get</p>
+<p>t a n(t, 0) = b(a)n(t − a, 0) exp − µ(s) ds da ∫ 0 [ ∫ 0 ]</p>
+<p>(1.61)</p>
+<p>∞ a + b(a) f (a − t) exp − µ(s) ds da. ∫ t [ ∫ a−t ]</p>
+<p>Although this is a linear equation it is not easy to solve; it can be done by iteration however.</p>
+<p>We are mainly interested in the long time behaviour of the population and in particular whether it will
+increase or decline. If t is large so that for practical purposes t &gt; a for all a then f (a − t) = 0 and all
+we require in (1.61) is the ﬁrst integral term on the right-hand side. The solution is then approximated by
+n(t, a) in (1.60), although it does not satisfy the boundary condition on a in (1.56). It is still not
+trivial to solve so let us</p>
+<p>return to the original partial differential equation (1.54) and see if other solution forms are possible.</p>
+<p>We can look for a similarity solution (see, for example, Kevorkian 2000) of (1.54) in the form</p>
+<p>n(t, a) = e γ t r(a).</p>
+<p>(1.62)</p>
+<p>That is, the age distribution is simply changed by a factor which either grows or decays with time according
+to whether γ &gt; 0 or γ &lt; 0. Substitution of (1.62) into (1.54) gives</p>
+<p>dr = λ]r [µ(a) + da</p>
+<p>and so</p>
+<p>a r(a) = r(0) exp −γ a − µ(s) ds . [ ∫ 0 ]</p>
+<p>(1.63)</p>
+<p>With this r(a) in (1.62) the resulting n(t, a) when inserted into the boundary condition (1.56), gives</p>
+<p>∞ a e γ t r(0) = b(a)e γ t r(0) exp −γ a − µ(s) ds da ∫ 0 [ ∫ 0 ]</p>
+<p>and hence, on cancelling e γ t r(0),</p>
+<p>∞ a 1 = b(a) exp −γ a − µ(s) ds da = φ(γ ), ∫ 0 [ ∫ 0 ]</p>
+<p>(1.64)</p>
+<p>which deﬁnes φ(γ ). This equation determines a unique γ, γ 0 say, since φ(γ ) is a monotonic decreasing
+function of γ . The sign of γ is determined by the size of φ(0); see Figure 1.23. That is, γ 0 is determined
+solely by the birth, b(a), and death, µ(a), rates. The critical threshold S for population growth is thus</p>
+<p>∞ a S = φ(0) = b(a) exp − µ(s) ds da, ∫ 0 [ ∫ 0 ]</p>
+<p>(1.65)</p>
+<p>where S &gt; 1 implies growth and S &lt; 1 implies decay. In (1.65) we can think of a exp [ − ∫ 0 µ(s) ds ]
+almost like the probability that an individual survives to age a, only the integral over all a is not 1.</p>
+<p>The solution (1.62) with (1.63) cannot satisfy the initial condition (1.55). The question arises as to
+whether it approximates the solution of (1.54)–(1.56), the original problem, after a long time. If t is large
+so that for all practical purposes n(t, 0) in (1.61) requires only the ﬁrst integral on the right-hand side,
+then</p>
+<p>t a n(t, 0) ≈ b(a)n(t − a, 0) exp − µ(s) ds da, t → ∞. ∫ 0 [ ∫ 0 ]</p>
+<p>(1.66)</p>
+<p>If we now look for a solution of this equation in the similarity form (1.62), substitution of it into (1.66)
+then gives (1.64) again as the equation for γ . We thus conjecture that the solution (1.62) with r(a) from
+(1.63) and γ from (1.64) is the solution for large time t of equation (1.54), with initial and boundary
+conditions (1.55) and (1.56). It is of course undetermined to the extent of a constant r(0) but, since our
+main question is one of growth or decay, it is not important to know r(0) since it does not affect either.
+The important parameter is the threshold parameter S in (1.65) from which long time effects of alterations in
+the birth and death rates can be assessed.</p>
+<p>Exercises</p>
+<p>1</p>
+<p>A model for the spruce budworm population u(t) is governed by</p>
+<p>du u u2  = ru 1 , dt ( q ) 1 + u2</p>
+<p>where r and q are positive dimensionless parameters. The nonzero steady states are thus given by the
+intersection of the two curves</p>
+<p>u u U(u) = r 1 − V (u) = . , ( q ) 1 + u2</p>
+<p>Show, using the conditions for a double root, that the curve in r, q space which divides it into regions
+where there are 1 or 3 positive steady states is given parametrically by</p>
+<p>2a 3 2a3  r= , q= . (1 + a 2 ) 2 a 2 − 1</p>
+<p>Show that the two curves meet at a cusp, that is, where dr/da = dq/da = 0, at a = √ 3. Sketch the curves in
+r, q space noting the limiting behaviour of r(a) and</p>
+<p>q(a) as a → ∞ and a → 1.</p>
+<p>2</p>
+<p>In Section 1.3 we showed that it was not possible to have a limit cycle (periodic) solution for a simple
+ﬁrst order (nondelay) equation</p>
+<p>dN = f (N). dt</p>
+<p>A seeming counterexample is N(t) = 2 + sin t (and any number of similar forms). Determine the f (N) for which
+this is a solution of the differential equation and explain why it is not a counterexample.</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>If the per capita birth rate of a population is given by [ r − a(N − b) 2 ] where r, a and b are positive
+parameters, write down a population model equation of the form dN/dt = f (N). Nondimensionalise the equation
+so that the dynamics depend on a single dimensionless parameter k = b(a/r) 1/2 . If u is your nondimensional
+population, sketch f (u) for k &gt; 1 and k &lt; 1 and discuss how the qualitative behaviour of the solution
+changes with k and the initial condition.</p>
+<p>The predation P(N) on a population N(t) is very fast and a model for the prey N(t) satisﬁes</p>
+<p>dN N N2 2  = RN 1 P 1 − exp − , 0 &lt; ε ≪ 1, dt ( K ) εA { [ ]}</p>
+<p>where R, K, P and A are positive constants. By an appropriate nondimensionalisation show that the equation is
+equivalent to</p>
+<p>du u 2 u = ru 1 1 − exp − , dτ ( q ) ε ( [ ])</p>
+<p>where r and q are positive parameters. Demonstrate that there are three possible nonzero steady states if r
+and q lie in a domain in r, q space given approximately by rq &gt; 4. Could this model exhibit hysteresis?</p>
+<p>A continuous time model for the baleen whale (a slightly more complicated model of which the International
+Whaling Commission used) is the delay equation</p>
+<p>dN = }] −µN(t) µN(t T) 1 q 1 N(t T)/K . + + [ [ ]z  { dt</p>
+<p>Here µ(&gt; 0) is a measure of the mortality, q(&gt; 0) is the maximum increase in fecundity the population is
+capable of, K is the unharvested carrying capacity, T is the time to sexual maturity and z &gt; 0 is a measure
+of the intensity of the densitydependent response as the population drops.</p>
+<p>Determine the steady state populations. Show that the equation governing small perturbations n(t) about the
+positive equilibrium is</p>
+<p>dn(t) ≈ −µn(t) − µ(qz − 1)n(t − T), dt</p>
+<p>and hence that the stability of the equilibrium is determined by Re λ where</p>
+<p>λ = −µ − µ(qz − 1)e −λT .</p>
+<p>Deduce that the steady state is stable (by considering the limiting case Re λ = 0) if</p>
+<p>−1 1 π cos b µT &lt; µT c = 2 1/2 , b = qz − 1 &gt; 1 (b − 1)</p>
+<p>and stable for all T if b &lt; 1.</p>
+<p>For T = T c + ε, 0 &lt; ε ≪ 1 show that to O(1) the period of the growing oscillation is 2π/ [ µ(b 2 − 1) 1/2
+] , b &gt; 1.</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>The concentration of carbon dioxide in the blood is believed to control breathing levels through a delay
+feedback mechanism. A simple delay model for the concentration in dimensionless form is</p>
+<p>dx(t) xm  = 1 − axV (x(t − T)), V (x) = , dt 1 + xm</p>
+<p>where a and m are positive constants and T is the delay. For given a and m a critical delay T c exists such
+that for T &gt; T c the steady state solution becomes linearly unstable. For T = T c + ε, where 0 &lt; ε ≪ 1,
+carry out a perturbation analysis and show that the period of the exponentially growing solution is
+approximately 4T c .</p>
+<p>A model for the concentration c(t) of arterial carbon dioxide, which controls the production of certain blood
+elements, is given by</p>
+<p>dc(t) c(t)c m (t − T) bVmax  = p − V (c(t − T))c(t) = p , dt a m + c m (t − T)</p>
+<p>where p, b, a, T and V max are positive constants. (This model is brieﬂy discussed in Section 1.5.)
+Nondimensionalise the equation and examine the linear stability of the steady state. Obtain a relation
+between the parameters such that the steady state is stable and hence establish the existence of a
+bifurcation value T c for the delay. Obtain an estimate for the period of the periodic solution which
+bifurcates off the steady state when T = T c + ε for small ε.</p>
+<p>A similarity solution of the form n(t, a) = e γ t r(a) of the age distribution model equation</p>
+<p>∂n ∂n = −µ(a)n + ∂t ∂a</p>
+<p>∞ n(t, 0) = b(a)n(t, a) da ∫ 0</p>
+<p>satisﬁes the age boundary equation</p>
+<p>if</p>
+<p>∞ a b(a) exp −γ a − µ(s) ds da = 1. ∫ 0 [ ∫ 0 ]</p>
+<p>Show that if the birth rate b(a) is essentially zero except over a very narrow range about a 0 &gt; 0 the
+population will die out whatever the mortality rate µ(a). If there is a high, linear in age, mortality rate,
+say what you can about the birth rate if the population is not to die out.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигација</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Брза претрага</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../_sources/Mathematical_Biology_I_An_Introduction_3E/c01.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

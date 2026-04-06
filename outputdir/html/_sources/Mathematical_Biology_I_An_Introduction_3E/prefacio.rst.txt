@@ -1,0 +1,241 @@
+Preface to the Third Edition
+============================
+
+In the thirteen years since the ﬁrst edition of this book appeared the growth of mathematical biology and 
+the diversity of applications has been astonishing. Its establishment as a distinct discipline is no longer 
+in question. One pragmatic indication is the increasing number of advertised positions in academia, medicine 
+and industry around the world; another is the burgeoning membership of societies. People working in the ﬁeld 
+now number in the thousands. Mathematical modelling is being applied in every major discipline in the 
+biomedical sciences. A very different application, and surprisingly successful, is in psychology such as 
+modelling various human interactions, escalation to date rape and predicting divorce.
+
+En los trece años transcurridos desde que apareció la primera edición de este libro, el crecimiento de la 
+biología matemática y la diversidad de aplicaciones han sido asombrosos. Su establecimiento como disciplina 
+distinta ya no está en duda. Una indicación pragmática es el creciente número de puestos anunciados en el 
+mundo académico, la medicina y la industria en todo el mundo; otro es el creciente número de miembros de las 
+sociedades. Las personas que trabajan en el campo ahora se cuentan por miles. Los modelos matemáticos se 
+están aplicando en todas las disciplinas importantes de las ciencias biomédicas. Una aplicación muy 
+diferente, y sorprendentemente exitosa, es la psicología, como el modelado de diversas interacciones humanas, 
+la escalada hasta la violación en una cita y la predicción del divorcio.
+
+The ﬁeld has become so large that, inevitably, specialised areas have developed which are, in effect, 
+separate disciplines such as bioﬂuid mechanics, theoretical ecology and so on. It is relevant therefore to 
+ask why I felt there was a case for a new edition of a book called simply Mathematical Biology. It is 
+unrealistic to think that a single book could cover even a signiﬁcant part of each subdiscipline and this 
+new edition certainly does not even try to do this. I feel, however, that there is still justiﬁcation for a 
+book which can demonstrate to the uninitiated some of the exciting problems that arise in biology and give 
+some indication of the wide spectrum of topics that modelling can address.
+
+El campo se ha vuelto tan grande que, inevitablemente, se han desarrollado áreas especializadas que son, de 
+hecho, disciplinas separadas, como la mecánica de biofluidos, la ecología teórica, etc. Por lo tanto, es 
+relevante preguntar por qué sentí que había motivos para una nueva edición de un libro llamado simplemente 
+Biología Matemática. No es realista pensar que un solo libro pueda cubrir siquiera una parte significativa de 
+cada subdisciplina y esta nueva edición ciertamente ni siquiera intenta hacerlo. Sin embargo, creo que 
+todavía hay justificación para un libro que pueda demostrar a los no iniciados algunos de los apasionantes 
+problemas que surgen en biología y dar alguna indicación del amplio espectro de temas que la modelización 
+puede abordar.
+
+In many areas the basics are more or less unchanged but the developments during the past thirteen years have 
+made it impossible to give as comprehensive a picture of the current approaches in and the state of the ﬁeld 
+as was possible in the late 1980s. Even then important areas were not included such as stochastic modelling, 
+bioﬂuid mechanics and others. Accordingly in this new edition only some of the basic modelling concepts are 
+discussed—such as in ecology and to a lesser extent epidemiology—but references are provided for further 
+reading. In other areas recent advances are discussed together with some new applications of modelling such 
+as in marital interaction (Volume I), growth of cancer tumours (Volume II), temperature-dependent sex 
+determination (Volume I) and wolf territoriality (Volume II). There have been many new and fascinating 
+developments that I would have liked to include but practical space limitations made it impossible and 
+necessitated difﬁcult choices. I have tried to give some idea of the diversity of new developments but the 
+choice is inevitably prejudiced.
+
+
+En muchas áreas, los conceptos básicos permanecen más o menos sin cambios, pero los avances ocurridos durante 
+los últimos trece años han hecho imposible dar una imagen tan completa de los enfoques actuales y del estado 
+del campo como era posible a fines de los años ochenta. Incluso entonces no se incluyeron áreas importantes 
+como la modelización estocástica, la mecánica de biofluidos y otras. En consecuencia, en esta nueva edición 
+sólo se analizan algunos de los conceptos básicos de modelización (como en ecología y, en menor medida, 
+epidemiología), pero se proporcionan referencias para lecturas adicionales. En otras áreas, se discuten los 
+avances recientes junto con algunas nuevas aplicaciones de la modelización, como en la interacción marital 
+(Volumen I), el crecimiento de tumores cancerosos (Volumen II), la determinación del sexo dependiente de la 
+temperatura (Volumen I) y la territorialidad del lobo (Volumen II). Ha habido muchos avances nuevos y 
+fascinantes que me hubiera gustado incluir, pero las limitaciones prácticas de espacio lo hicieron imposible 
+y requirieron decisiones difíciles. He tratado de dar una idea de la diversidad de nuevos desarrollos, pero 
+la elección está inevitablemente sesgada.
+
+As to general approach, if anything it is even more practical in that more emphasis is given to the close 
+connection many of the models have with experiment, clinical data and in estimating real parameter values. In 
+several of the chapters it is not yet possible to relate the mathematical models to speciﬁc experiments or 
+even biological entities. Nevertheless 
+such an approach has spawned numerous experiments based as much on the modelling approach as on the actual 
+mechanism studied. Some of the more mathematical parts in which the biological connection was less immediate 
+have been excised while others that have been kept have a mathematical and technical pedagogical aim but all 
+within the context of their application to biomedical problems. I feel even more strongly about the 
+philosophy of mathematical modelling espoused in the original preface as regards what constitutes good 
+mathematical biology. One of the most exciting aspects regarding the new chapters has been their genuine 
+interdisciplinary collaborative character. Mathematical or theoretical biology is unquestionably an 
+interdisciplinary science par excellence.
+
+En cuanto al enfoque general, es incluso más práctico porque se da más énfasis a la estrecha conexión que 
+muchos de los modelos tienen con los experimentos, los datos clínicos y la estimación de valores reales de 
+los parámetros. En varios de los capítulos todavía no es posible relacionar los modelos matemáticos con 
+experimentos específicos o incluso con entidades biológicas. Sin embargo, este enfoque ha dado lugar a 
+numerosos experimentos basados ​​tanto en el enfoque de modelización como en el mecanismo real estudiado. 
+Algunas de las partes más matemáticas en las que la conexión biológica era menos inmediata han sido 
+eliminadas mientras que otras que se han mantenido tienen un objetivo pedagógico matemático y técnico pero 
+todas ellas dentro del contexto de su aplicación a problemas biomédicos. Tengo una opinión aún más firme 
+sobre la filosofía del modelado matemático expuesta en el prefacio original en lo que respecta a lo que 
+constituye una buena biología matemática. Uno de los aspectos más interesantes de los nuevos capítulos ha 
+sido su genuino carácter colaborativo interdisciplinario. La biología matemática o teórica es sin duda una 
+ciencia interdisciplinar por excelencia.
+
+The unifying aim of theoretical modelling and experimental investigation in the biomedical sciences is the 
+elucidation of the underlying biological processes that result in a particular observed phenomenon, whether 
+it is pattern formation in development, the dynamics of interacting populations in epidemiology, neuronal 
+connectivity and information processing, the growth of tumours, marital interaction and so on. I must stress, 
+however, that mathematical descriptions of biological phenomena are not biological explanations. The 
+principal use of any theory is in its predictions and, even though different models might be able to create 
+similar spatiotemporal behaviours, they are mainly distinguished by the different experiments they suggest 
+and, of course, how closely they relate to the real biology. There are numerous examples in the book.
+
+
+El objetivo unificador de los modelos teóricos y la investigación experimental en las ciencias biomédicas es 
+el esclarecimiento de los procesos biológicos subyacentes que resultan en un fenómeno particular observado, 
+ya sea la formación de patrones en el desarrollo, la dinámica de poblaciones que interactúan en 
+epidemiología, la conectividad neuronal y el procesamiento de información, el crecimiento de tumores, la 
+interacción marital, etc. Debo subrayar, sin embargo, que las descripciones matemáticas de los fenómenos 
+biológicos no son explicaciones biológicas. El uso principal de cualquier teoría es sus predicciones y, 
+aunque diferentes modelos podrían crear comportamientos espaciotemporales similares, se distinguen 
+principalmente por los diferentes experimentos que sugieren y, por supuesto, por su estrecha relación con la 
+biología real. Hay numerosos ejemplos en el libro.
+
+Why use mathematics to study something as intrinsically complicated and ill understood as development, 
+angiogenesis, wound healing, interacting population dynamics, regulatory networks, marital interaction and so 
+on? We suggest that mathematics, rather theoretical modelling, must be used if we ever hope to genuinely and 
+realistically convert an understanding of the underlying mechanisms into a predictive science. Mathematics is 
+required to bridge the gap between the level on which most of our knowledge is accumulating (in developmental 
+biology it is cellular and below) and the macroscopic level of the patterns we see. In wound healing and scar 
+formation, for example, a mathematical approach lets us explore the logic of the repair process. Even if the 
+mechanisms were well understood (and they certainly are far from it at this stage) mathematics would be 
+required to explore the consequences of manipulating the various parameters associated with any particular 
+scenario. In the case of such things as wound healing and cancer growth—and now in angiogensesis with its 
+relation to possible cancer therapythe number of options that are fast becoming available to wound and cancer 
+managers will become overwhelming unless we can ﬁnd a way to simulate particular treatment protocols before 
+applying them in practice. The latter has been already of use in understanding the efﬁcacy of various 
+treatment scenarios with brain tumours (glioblastomas) and new two step regimes for skin cancer.
+
+¿Por qué utilizar las matemáticas para estudiar algo tan intrínsecamente complicado y mal comprendido como el 
+desarrollo, la angiogénesis, la curación de heridas, la interacción de la dinámica poblacional, las redes 
+reguladoras, la interacción marital, etc.? Sugerimos que se deben utilizar las matemáticas, en lugar de 
+modelos teóricos, si alguna vez esperamos convertir de manera genuina y realista la comprensión de los 
+mecanismos subyacentes en una ciencia predictiva. Se requieren matemáticas para cerrar la brecha entre el 
+nivel en el que se acumula la mayor parte de nuestro conocimiento (en biología del desarrollo es celular e 
+inferior) y el nivel macroscópico de los patrones que vemos. En la cicatrización de heridas y la formación de 
+cicatrices, por ejemplo, un enfoque matemático nos permite explorar la lógica del proceso de reparación. 
+Incluso si se comprendieran bien los mecanismos (y ciertamente están lejos de serlo en esta etapa), se 
+necesitarían matemáticas para explorar las consecuencias de la manipulación de los diversos parámetros 
+asociados con cualquier escenario particular. En el caso de cosas como la curación de heridas y el 
+crecimiento del cáncer (y ahora en la angiogénesis con su relación con una posible terapia contra el cáncer), 
+el número de opciones que rápidamente están disponibles para los gestores de heridas y cáncer será abrumador 
+a menos que podamos encontrar una manera de simular protocolos de tratamiento particulares antes de 
+aplicarlos en la práctica. Este último ya ha sido útil para comprender la eficacia de diversos escenarios de 
+tratamiento con tumores cerebrales (glioblastomas) y nuevos regímenes de dos pasos para el cáncer de piel.
+
+
+The aim in all these applications is not to derive a mathematical model that takes into account every single 
+process because, even if this were possible, the resulting model would yield little or no insight on the 
+crucial interactions within the system. Rather the goal is to develop models which capture the essence of 
+various interactions allowing their outcome to be more fully understood. As more data emerge from the 
+biological system, the models become more sophisticated and the mathematics increasingly challenging.
+
+El objetivo en todas estas aplicaciones no es derivar un modelo matemático que tenga en cuenta cada uno de 
+los procesos porque, incluso si esto fuera posible, el modelo resultante arrojaría poca o ninguna información 
+sobre las interacciones cruciales dentro del sistema. Más bien, el objetivo es desarrollar modelos que 
+capturen la esencia de diversas interacciones permitiendo que sus resultados se comprendan mejor. A medida 
+que surgen más datos del sistema biológico, los modelos se vuelven más sofisticados y las matemáticas cada 
+vez más desafiantes.
+
+In development (by way of example) it is true that we are a long way from being able to reliably simulate 
+actual biological development, in spite of the plethora of models and theory that abound. Key processes are 
+generally still poorly understood. Despite these limitations, I feel that exploring the logic of pattern 
+formation is worthwhile, or rather essential, even in our present state of knowledge. It allows us to take a 
+hypothetical mechanism and examine its consequences in the form of a mathematical model, make predictions and 
+suggest experiments that would verify or invalidate the model; even the latter casts light on the biology. 
+The very process of constructing a mathematical model can be useful in its own right. Not only must we commit 
+to a particular mechanism, but we are also forced to consider what is truly essential to the process, the 
+central players (variables) and mechanisms by which they evolve. We are thus involved in constructing 
+frameworks on which we can hang our understanding. The model equations, the mathematical analysis and the 
+numerical simulations that follow serve to reveal quantitatively as well as qualitatively the consequences of 
+that logical structure.
+
+En desarrollo (a modo de ejemplo) es cierto que estamos muy lejos de poder simular de forma fiable el 
+desarrollo biológico real, a pesar de la plétora de modelos y teorías que abundan. En general, los procesos 
+clave todavía no se comprenden bien. A pesar de estas limitaciones, creo que vale la pena, o más bien es 
+esencial, explorar la lógica de la formación de patrones, incluso en nuestro estado actual de conocimiento. 
+Nos permite tomar un mecanismo hipotético y examinar sus consecuencias en forma de modelo matemático, hacer 
+predicciones y sugerir experimentos que verificarían o invalidarían el modelo; Incluso este último arroja luz 
+sobre la biología. El propio proceso de construcción de un modelo matemático puede resultar útil por derecho 
+propio. No sólo debemos comprometernos con un mecanismo particular, sino que también nos vemos obligados a 
+considerar qué es verdaderamente esencial para el proceso, los actores centrales (variables) y los mecanismos 
+mediante los cuales evolucionan. Por lo tanto, estamos involucrados en la construcción de marcos sobre los 
+cuales podemos sustentar nuestra comprensión. Las ecuaciones del modelo, el análisis matemático y las 
+simulaciones numéricas que siguen sirven para revelar tanto cuantitativa como cualitativamente las 
+consecuencias de esa estructura lógica.
+
+This new edition is published in two volumes. Volume I is an introduction to the ﬁeld; the mathematics 
+mainly involves ordinary differential equations but with some basic partial differential equation models and 
+is suitable for undergraduate and graduate courses at different levels. Volume II requires more knowledge of 
+partial differential equations and is more suitable for graduate courses and reference.
+
+Esta nueva edición se publica en dos volúmenes. El volumen I es una introducción al campo; Las matemáticas 
+involucran principalmente ecuaciones diferenciales ordinarias pero con algunos modelos básicos de ecuaciones 
+diferenciales parciales y son adecuadas para cursos de pregrado y posgrado en diferentes niveles. El volumen 
+II requiere más conocimiento de ecuaciones diferenciales parciales y es más adecuado para cursos de posgrado 
+y de referencia.
+
+
+I would like to acknowledge the encouragement and generosity of the many people who have written to me 
+(including a prison inmate in New England) since the appearance of the ﬁrst edition of this book, many of 
+whom took the trouble to send me details of errors, misprints, suggestions for extending some of the models, 
+suggesting collaborations and so on. Their input has resulted in many successful interdisciplinary research 
+projects several of which are discussed in this new edition. I would like to thank my colleagues Mark Kot and 
+Hong Qian, many of my former students, in particular Patricia Burgess, Julian Cook, Trac´e Jackson, Mark 
+Lewis, Philip Maini, Patrick Nelson, Jonathan Sherratt, Kristin Swanson and Rebecca Tyson for their advice or 
+careful reading of parts of the manuscript. I would also like to thank my former secretary Erik Hinkle for 
+the care, thoughtfulness and dedication with which he put much of the A manuscript into L T E X and his 
+general help in tracking down numerous obscure references and material.
+
+Me gustaría agradecer el aliento y la generosidad de muchas personas que me han escrito (incluido un recluso 
+de Nueva Inglaterra) desde la aparición de la primera edición de este libro, muchas de las cuales se tomaron 
+la molestia de enviarme detalles sobre errores, erratas, sugerencias para ampliar algunos de los modelos, 
+sugerir colaboraciones, etc. Sus aportaciones han dado lugar a muchos proyectos de investigación 
+interdisciplinarios exitosos, varios de los cuales se analizan en esta nueva edición. Me gustaría agradecer a 
+mis colegas Mark Kot y Hong Qian, a muchos de mis antiguos alumnos, en particular a Patricia Burgess, Julian 
+Cook, Trac'e Jackson, Mark Lewis, Philip Maini, Patrick Nelson, Jonathan Sherratt, Kristin Swanson y Rebecca 
+Tyson por sus consejos y su lectura cuidadosa de partes del manuscrito. También me gustaría agradecer a mi ex 
+secretario Erik Hinkle por el cuidado, la consideración y la dedicación con que puso gran parte del 
+manuscrito A en L T E X y su ayuda general para localizar numerosas referencias y material oscuro.
+
+
+
+I am very grateful to Professor John Gottman of the Psychology Department at the University of Washington, a 
+world leader in the clinical study of marital and family interactions, with whom I have had the good fortune 
+to collaborate for nearly ten years. Without his infectious enthusiasm, strong belief in the use of 
+mathematical modelling, perseverance in the face of my initial scepticism and his practical insight into 
+human interactions I would never have become involved in developing with him a general theory of marital 
+interaction. I would also like to acknowledge my debt to Professor Ellworth C. Alvord, Jr., Head of 
+Neuropathology in the University of Washington with whom I have collaborated for the past seven years on the 
+modelling of the growth and control of brain tumours. As to my general, and I hope practical, approach to 
+modelling I am most indebted to Professor George F. Carrier who had the major inﬂuence on me when I went to 
+Harvard on ﬁrst coming to the U.S.A. in 1956. His astonishing insight and ability to extract the key 
+elements from a complex problem and incorporate them into a realistic
+and informative model is a talent I have tried to acquire throughout my career. Finally, although it is not 
+possible to thank by name all of my past students, postdoctorals, numerous collaborators and colleagues 
+around the world who have encouraged me in this ﬁeld, I am certainly very much in their debt.
+
+
+
+Looking back on my involvement with mathematics and the biomedical sciences over the past nearly thirty years 
+my major regret is that I did not start working in the ﬁeld years earlier.
+
+Bainbridge Island, Washington January 2002
+
+
