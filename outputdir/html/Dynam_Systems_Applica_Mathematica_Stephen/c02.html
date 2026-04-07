@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>c02 &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+    <link rel="prev" title="c01" href="../Mathematical_Biology_I_An_Introduction_3E/c01.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="c02">
+<h1>c02<a class="headerlink" href="#c02" title="Link to this heading">¶</a></h1>
+<p>Dynam_Sys_Applic_Mathematica_Stephen_C02</p>
+<p>Stephen Lynch
+Dynamical Systems
+with Applications using
+MathematicaR
+Second Edition</p>
+<p>p33</p>
+<p>Chapter 2
+Differential Equations</p>
+<p>Aims and Objectives
+&gt;&gt;Metas y Objetivos</p>
+<ul class="simple">
+<li><p>To review basic methods for solving some differential equations.</p></li>
+<li><p>To apply the theory to simple mathematical models.</p></li>
+<li><p>To introduce an existence and uniqueness theorem.</p></li>
+</ul>
+<p>On completion of this chapter, the reader should be able to
+&gt;&gt; Al finalizar este capítulo, el lector debe ser capaz de</p>
+<ul class="simple">
+<li><p>solve certain first- and second-order differential equations;</p></li>
+<li><p>apply the theory to chemical kinetics and electric circuits;</p></li>
+<li><p>interpret the solutions in physical terms;</p></li>
+<li><p>understand the existence and uniqueness theorem and its implications.</p></li>
+</ul>
+<p>The basic theory of ordinary differential equations (ODEs) and analytical methods
+for solving some types of ODEs are reviewed. This chapter is not intended
+to be a comprehensive study on differential equations, but more an introduction
+to the theory that will be used in later chapters. Most of the material
+will be covered in first- and second-year undergraduate mathematics courses.
+The differential equations are applied to all kinds of models, but this chapter
+concentrates on chemical kinetics and electric circuits in particular.
+This chapter ends with the existence and uniqueness theorem and some
+analysis.</p>
+<p>2.1 Simple Differential Equations and Applications</p>
+<p>Definition 1. A differential equation that involves only one independent variable
+is called an ordinary differential equation (ODE). Those involving two or
+more independent variables are called partial differential equations (PDEs). This
+chapter will be concerned with ODEs only.</p>
+<p>The subject of ODEs encompasses analytical, computational, and applicable
+fields of interest. There are many textbooks written from the elementary to the
+most advanced, with some focusing on applications and others concentrating on
+existence theorems and rigorous methods of solution. This chapter is intended to
+introduce the reader to all three branches of the subject. For more information,
+the reader should consult the ODE textbooks in the bibliography [2, 7, 10, 15].
+To solve ODEs using Mathematica, the reader is directed to [1, 6].</p>
+<p>Separable Differential Equations</p>
+<p>Consider the differential equation</p>
+<p>dx
+dt
+= f(t, x) (2.1)</p>
+<p>and suppose that the function f(t, x) can be factored into a product f(t, x) =
+g(t)h(x), where g(t) is a function of t and h(x) is a function of x. If f can
+be factored in this way, then equation (2.1) can be solved by the method of
+separation of variables.</p>
+<p>To solve the equation, divide both sides by h(x) to obtain
+1
+h(x)
+dx
+dt
+= g(t);</p>
+<p>and integration with respect to t gives</p>
+<p>1
+h(x)
+dx
+dt
+dt =</p>
+<p>g(t) dt.</p>
+<p>Changing the variables in the integral gives</p>
+<p>dx
+h(x)
+=</p>
+<p>g(t) dt.</p>
+<p>An analytic solution to (2.1) can be found only if both integrals can be evaluated.</p>
+<p>The method can be illustrated with some simple examples.</p>
+<p>Example 1. Solve the differential equation dx
+dt = − t
+x .</p>
+<p>Solution. The differential equation is separable. Separate the variables and
+integrate both sides with respect to t. Therefore,</p>
+<p>p19</p>
+<p>x
+dx
+dt
+dt = −</p>
+<p>t dt,</p>
+<p>and so</p>
+<p>xdx = −</p>
+<p>t dt.</p>
+<p>Integration of both sides yields</p>
+<p>t2 + x2 = r2,</p>
+<p>where r2 is a constant. There are an infinite number of solutions. The solution
+curves are concentric circles of radius r centered at the origin. There are an
+infinite number of solution curves that would fill the plane if they were all
+plotted. Three such solution curves are plotted in Fig. 2.1.</p>
+<p>Figure 2.1: Three of an infinite number of solution curves for Example 1.</p>
+<p>Example 2. Solve the differential equation dx</p>
+<p>dt = t
+x2 .</p>
+<p>Solution. The differential equation is separable. Separate the variables and
+integrate both sides with respect to t to give</p>
+<p>x2 dx =</p>
+<p>t dt.</p>
+<p>Integration of both sides yields</p>
+<p>x3
+3
+= t2
+2
++ C,</p>
+<p>p20</p>
+<p>where C is a constant. Six of an infinite number of solution curves are plotted
+in Fig. 2.2.</p>
+<p>Figure 2.2: Five solution curves for Example 2.</p>
+<p>Example 3. The population of a certain species of fish living in a large lake
+at time t can be modeled using Verhulst’s equation, otherwise known as the
+logistic equation,</p>
+<p>dP
+dt
+= P(β − δP),</p>
+<p>where P(t) is the population of fish measured in tens of thousands, and β and
+δ are constants representing the birth and death rates of the fish living in the
+lake, respectively. Suppose that β = 0.1, δ = 10−3, and the initial population is
+50 Å~ 104. Solve this initial value problem and interpret the results in physical
+terms.</p>
+<p>Solution. Using the methods of separation of variables gives</p>
+<p>dP
+P(β − δP)
+=</p>
+<p>dt.</p>
+<p>The solution to the integral on the left may be determined using partial fractions.
+The general solution is</p>
+<p>ln</p>
+<p>P
+β − δP</p>
+<p>= βt + C1,
+or
+P(t) = β
+δ + C2βe−βt ,</p>
+<p>computed using Mathematica, where C1 and C2 are constants. Substituting the
+initial conditions, the solution is</p>
+<p>P(t) =
+100
+1 + e−0.1t .</p>
+<p>Thus as time increases, the population of fish tends to a value of 100Å~104. The
+solution curve is plotted in Fig. 2.3.</p>
+<p>50
+60
+70
+80
+90
+100
+P
+0 20 40 60 80 100
+t</p>
+<p>Figure 2.3: Solution curve for the initial value problem in Example 3. Note
+that the axes would be scaled by 104 in applications.</p>
+<p>Note the following:
+• The quantity β
+δ is the ratio of births to deaths and is called the carrying
+capacity of the environment.
+• Take care when interpreting the solutions. This and similar continuous
+models only work for large species populations. The solutions give approximate
+numbers. Even though time is continuous, the population size is not.
+For example, you cannot have a fractional living fish, so population sizes
+have to be rounded out to whole numbers in applications.
+• Discrete models can also be applied to population dynamics (see Chap. 13).</p>
+<p>Exact Differential Equations</p>
+<p>A differential equation of the form</p>
+<p>M(t, x) + N(t, x)dx
+dt
+= 0 (2.2)</p>
+<p>p38</p>
+<p>is said to be exact if there exists a function, say, F(t, x), with continuous second
+partial derivatives such that</p>
+<p>∂F
+∂t
+= M(t, x), and ∂F
+∂x
+= N(t, x).</p>
+<p>Such a function exists as long as
+∂M
+∂x
+= ∂N
+∂t
+,</p>
+<p>and then the solution to (2.2) satisfies the equation</p>
+<p>F(t, x) = C,</p>
+<p>where C is a constant. Differentiate this equation with respect to t to obtain
+(2.2).</p>
+<p>Example 4. Solve the differential equation</p>
+<p>dx
+dt
+=
+9 − 12t − 5x
+5t + 2x − 4 .</p>
+<p>Solution In this case, M(t, x) = −9+12t+5x and N(t, x) = 5t+2x−4. Now</p>
+<p>∂M
+∂x
+= ∂N
+∂t
+= 5</p>
+<p>and integration gives the solution F(t, x) = x2 +6t2 +5tx−9t−4x = C. There
+are an infinite number of solution curves, some of which are shown in Fig. 2.4.</p>
+<p>Homogeneous Differential Equations</p>
+<p>Consider differential equations of the form</p>
+<p>dx
+dt
+= f</p>
+<p>x
+t</p>
+<p>. (2.3)</p>
+<p>Substitute v = x
+t into (2.3) to obtain
+d
+dt
+(vt) = f(v).</p>
+<p>Therefore,</p>
+<p>v + t
+dv
+dt
+= f(v),</p>
+<p>and so</p>
+<p>dv
+dt
+= f(v) − v
+t
+,</p>
+<p>p39</p>
+<p>which is separable. A complete solution can be found as long as the equations
+are integrable, and then, v may be replaced with x
+t .</p>
+<p>Example 5. Solve the differential equation</p>
+<p>dx
+dt
+= t − x
+t + x
+.
+Solution. The equation may be rewritten as
+dx
+dt
+=
+1 − x
+t
+1 + x
+t
+. (2.4)</p>
+<p>Let v = x
+t . Then, (2.4) becomes</p>
+<p>dv
+dt
+=
+1 − 2v − v2
+t(1 + v) .</p>
+<p>This is a separable differential equation. The general solution is given by</p>
+<p>x2 + 2tx − t2 = C,</p>
+<p>where C is a constant. Some solution curves are plotted in Fig. 2.5.</p>
+<p>p40</p>
+<p>Linear Differential Equations</p>
+<p>Consider differential equations of the form</p>
+<p>dx
+dt
++ P(t)x = Q(t). (2.5)</p>
+<p>Multiplying through by an integrating factor, say, J(t), (2.5) becomes</p>
+<p>J
+dx
+dt
++ JPx = JQ. (2.6)</p>
+<p>Find J such that (2.6) can be written as</p>
+<p>d
+dt
+(Jx) = J
+dx
+dt
++ x
+dJ
+dt
+= JQ.</p>
+<p>In order to achieve this, set</p>
+<p>dJ
+dt
+= JP</p>
+<p>and integrate to get</p>
+<p>J(t) = exp</p>
+<p>P(t) dt</p>
+<p>.</p>
+<p>p41</p>
+<p>Thus, the solution to system (2.5) may be found by solving the differential
+equation</p>
+<p>d
+dt
+(Jx) = JQ,</p>
+<p>as long as the right-hand side is integrable.</p>
+<p>Example 6. A chemical company pumps v liters of solution containing mass
+m grams of solute into a large lake of volume V per day.
+&gt;&gt; Una empresa química bombea v litros de solución que contiene masa
+m gramos de soluto en un gran lago de volumen V por día.</p>
+<p>The inflow and outflow of the water is constant.
+&gt;&gt; La entrada y salida del agua es constante.</p>
+<p>The concentration of solute in the lake, say, σ, satisfies the differential equation</p>
+<p>dσ
+dt
++ v
+V
+σ = m
+V
+. (2.7)</p>
+<p>Determine the concentration of solute in the lake at time t assuming that σ = 0
+when t = 0. What happens to the concentration in the long term?
+&gt;&gt; ¿Qué sucede con la concentración a largo plazo?</p>
+<p>Solution. This is a linear differential equation, and the integrating factor is
+given by</p>
+<p>J = exp</p>
+<p>v
+V
+dt</p>
+<p>= e
+vt
+V .</p>
+<p>Multiply (2.7) by the integrating factor to obtain</p>
+<p>d
+dt</p>
+<p>e
+vt
+V σ</p>
+<p>= e
+vt
+V
+m
+V
+.</p>
+<p>Integration gives</p>
+<p>σ(t) = m
+v
+− ke
+−vt
+V ,</p>
+<p>where k is a constant. Substituting the initial conditions, the final solution is</p>
+<p>σ(t) = m
+v</p>
+<p>1 − e
+−vt
+V</p>
+<p>.
+As t→∞, the concentration settles to m
+v gl−1.
+&gt;&gt; la concentración se asienta</p>
+<p>Series Solutions</p>
+<p>Another very useful method for determining the solutions to some ODEs is the
+series solution method. The basic idea is to seek a series solution (assuming that
+the series converge) of the form</p>
+<p>x(t) =
+∞
+n=0
+an(t − t0)n,</p>
+<p>p42</p>
+<p>about the point t0. The method holds for infinitely differentiable functions (that
+is, functions that can be differentiated as often as desired), and is outlined using
+two simple examples.</p>
+<p>Example 7. Determine a series solution to the initial value problem</p>
+<p>dx
+dt
++ tx = t3, (2.8)
+given that x(0) = 1.</p>
+<p>Solution. Given that t0 = 0, set x(t) =
+ ∞
+n=0 antn. Substituting into (2.8)
+gives
+∞
+n=1
+nantn−1 + t</p>
+<p>∞
+n=0
+antn</p>
+<p>= t3.</p>
+<p>Combining the terms into a single series</p>
+<p>a1 +
+∞
+n=1
+((n + 1)an+1 + an−1) tn = t3.
+Equating coefficients gives
+a1 = 0, 2a2 + a0 = 0, 3a3 + a1 = 0, 4a4 + a2 = 1, 5a5 + a3 = 0, . . .
+and solving these equations gives a2n+1 = 0, for n = 0, 1, 2, . . .,
+a2 = −a0
+2 , a4 =
+1 − a2
+4 ,
+and
+a2n = −a2n−2
+2n
+,
+where n = 3, 4, 5, . . .. Based on the assumption that x(t) =
+ ∞
+n=0 antn, substituting
+x(0) = 1 gives a0 = 1. Hence, the series solution to the ODE (2.8)
+is
+x(t) = 1 − 1
+2t2 +
+3
+8t4 +
+∞
+n=3
+(−1)n</p>
+<p>1
+(2n)
+1
+(2n − 2) . . .
+1
+6
+3
+8</p>
+<p>t2n.
+Note that the analytic solution can be found in this case and is equal to
+x(t) = −2 + t2 + 3e
+−t2
+2 ,
+which is equivalent to the series solution above.</p>
+<p>p43</p>
+<p>Example 8. Consider the van der Pol equation given by</p>
+<p>d2x
+dt2 + 2</p>
+<dl class="simple">
+<dt>x2 − 1</dt><dd><p>dx</p>
+</dd>
+</dl>
+<p>dt
++ x = 0, (2.9)</p>
+<p>where x(0) = 5 and x˙ (0) = 0. Use Mathematica to plot a numerical solution
+against a series solution up to order 6 near to the point x(0) = 5.
+Solution. Using Mathematica, the series solution is computed to be</p>
+<p>x(t) = 5 − 5
+2t2 + 40t3 − 11515
+24 t4 +
+9183
+2 t5 + O(t6).</p>
+<p>Figure 2.6 shows the truncated series and numerical solutions for the ODE (2.9)
+near to x(0) = 5. The upper curve is the truncated series approximation that
+diverges quite quickly away from the numerical solution. Of course, one must
+also take care that the numerical solution is correct.</p>
+<p>Figure 2.6: [Mathematica] Numerical and truncated series solutions for the van
+der Pol equation (2.9) near x(0) = 5.</p>
+<p>2.2 Applications to Chemical Kinetics</p>
+<p>Even the simplest chemical reactions can be highly complex and difficult to model.
+&gt;&gt; Incluso las reacciones químicas más simples pueden ser muy complejas y difíciles de modelar.</p>
+<p>Physical parameters such as temperature, pressure, and mixing are
+ignored in this text, and differential equations are constructed that are dependent
+only on the concentrations of the chemicals involved in the reaction.</p>
+<p>This is potentially a very difficult subject, and some assumptions have to be made to make progress.</p>
+<p>&gt;&gt; Este es un tema potencialmente muy difícil, y se deben hacer algunas suposiciones para avanzar.</p>
+<p>p44</p>
+<p>The Chemical Law of Mass Action. The rates at which the concentrations
+of the various chemical species change with time are proportional to their
+concentrations.
+&gt;&gt; Las tasas a las que las concentraciones de las diversas especies químicas cambian con el tiempo son proporcionales a sus concentraciones.</p>
+<p>Consider the simple chemical reaction</p>
+<p>A + βB   γC,</p>
+<p>where β and γ are the stoichiometric coefficients, A and B are the reactants, C
+is the product, and k1 is the rate constant of the equation. The rate of reaction,
+say, r, is given by</p>
+<p>r =
+change in concentration
+change in time .</p>
+<p>For this simple example,</p>
+<p>r = k1[A][B] = −d[A]
+dt
+= −1
+β
+d[B]
+dt
+=
+1
+γ
+d[C]
+dt
+,
+where [A], [B], and [C] represents the concentrations of A, B, and C, respectively.</p>
+<p>By adding a second chemical equation, a slightly more complex system is produced,
+αA   δD,
+where k2 is the rate constant of the second equation and α and δ are the
+stoichiometric coefficients. Two of the possible reaction rate equations for this
+system now become
+d[A]
+dt
+= −k1β[A][B]β − k2α[A]α,
+d[D]
+dt
+= k2δ[A]α.
+Consider the following example, where one molecule of hydrogen reacts with
+one molecule of oxygen to produce two molecules of hydroxyl (OH):
+H2 +O2 → 2OH.
+Suppose that the concentration of hydrogen is [H2] and the concentration of
+oxygen is [O2]. Then from the chemical law of mass action, the rate equation is
+given by
+Rate = k[H2][O2],
+where k is called the rate constant, and the reaction rate equation is
+d[OH]
+dt
+= 2k[H2][O2].</p>
+<p>p45</p>
+<p>Table 2.1: One of the possible reaction rate equations for each chemical reaction.
+Chemical reaction The reaction rate equation for one species may
+be expressed as follows:
+A+B → C dc
+dt = kf ab = kf (a0 − c)(b0 − c)
+2A   B db
+dt = kf (a0 − 2b)2 − krb
+A   2B db
+dt = kf</p>
+<p>a0 − b
+2</p>
+<p>− krb2
+A   B+C dc
+dt = kf (a0 − c) − kr(b0 + c)(c0 + c)
+A+B   C dc
+dt = kf (a0 − c)(b0 − c) − krc
+A+B   C+D dc
+dt = kf (a0 − c)(b0 − c) − kr(c0 + c)(d0 + c)
+Unfortunately, it is not possible to write down the reaction rate equations based
+on the stoichiometric (balanced) chemical equations alone. There may be many
+mechanisms involved in producing OH from hydrogen and oxygen in the above
+example. Even simple chemical equations can involve a large number of steps
+and different rate constants. Suppose in this text that the chemical equations
+give the rate-determining steps.
+Suppose that species A, B, C, and D have concentrations a(t), b(t), c(t), and
+d(t) at time t and initial concentrations a0, b0, c0, and d0, respectively. Table 2.1
+lists some reversible chemical reactions and one of the corresponding reaction
+rate equations, where kf and kr are the forward and reverse rate constants,
+respectively.
+Example 9. A reaction equation for sulfate and hydrogen ions to form bisulfite
+ions is given by
+SO2−
+3 +H+   HSO−
+3 ,
+where kf and kr are the forward and reverse rate constants, respectively. Denote
+the concentrations by a = [SO2−
+3 ], b = [H+], and c = [HSO−
+3 ], and let the initial
+concentrations be a0, b0, and c0. Assume that there is much more of species
+H+ than the other two species, so that its concentration b can be regarded as
+constant. The reaction rate equation for c(t) is given by
+dc
+dt
+= kf (a0 − c)b − kr(c0 + c).
+Find a general solution for c(t).</p>
+<p>p46</p>
+<p>Solution. The differential equation is separable and</p>
+<p>dc
+kf (a0 − c)b − kr(c0 + c)
+=</p>
+<p>dt.
+Integration yields
+c(t) = kfa0b − krc0
+kf b + kr
+− krc0
+kf b + kr
++ Ae(−kf a0−kr)t,
+where A is a constant.
+Example 10. The chemical equation for the reaction between nitrous oxide
+and oxygen to form nitrogen dioxide at 25oC,
+2NO+O2 → 2NO2
+obeys the law of mass action. The rate equation is given by
+dc
+dt
+= k(a0 − c)2</p>
+<p>b0 − c
+2</p>
+<p>,
+where c = [NO2] is the concentration of nitrogen dioxide, k is the rate constant,
+a0 is the initial concentration of NO, and b0 is the initial concentration of
+O2. Find the concentration of nitrogen dioxide after time t given that k =
+0.00713l2M−2s−1, a0 = 4Ml−1, b0 = 1Ml−1, and c(0) = 0Ml−1.
+Solution. The differential equation is separable and</p>
+<p>dc
+(4 − c)2(1 − c/2)
+=</p>
+<p>k dt.
+Integrating using partial fractions gives
+kt =
+1
+c − 4
++
+1
+2
+ln <a href="#id3"><span class="problematic" id="id4">|c − 4|</span></a> − 1
+2
+ln <a href="#id5"><span class="problematic" id="id6">|c − 2|</span></a> +
+1
+4
+− 1
+2
+ln 2.
+It is not possible to obtain c(t) explicitly, so numerical methods are employed
+using Mathematica. The concentration of nitrogen dioxide levels off at two moles
+per liter as time increases, as depicted in Fig. 2.7.
+Chemical reactions displaying periodic behavior will be dealt with in
+Chapter 8. There may be a wide range of timescales involved in chemical reactions,
+and this can lead to stiff systems. Loosely speaking, a stiff system of
+differential equations is one in which the velocity or magnitude of the vector
+field changes rapidly in phase space.</p>
+<p>p47</p>
+<p>2.3 Applications to Electric Circuits
+For many years, differential equations have been applied to model simple electrical
+and electronic circuits. If an oscilloscope is connected to the circuit, then
+the results from the analysis can be seen to match very well with what happens
+physically. As a simple introduction to electric circuits, linear systems
+will be considered and the basic definitions and theory will be introduced. The
+section ends with an introduction to the nonlinear circuit element known as the
+memristor.
+Current and Voltage
+The current I flowing through a conductor is proportional to the number of
+positive charge carriers that pass a given point per second. The unit of current
+is the ampere A. A coulomb is defined to be the amount of charge that flows
+through a cross section of wire in 1 second when a current of 1A is flowing, so 1
+amp is 1 coulomb per second. As the current passes through a circuit element,
+the charge carriers exchange energy with the circuit elements, and there is a
+voltage drop or potential difference measured in joules per coulomb, or volts V .
+Consider simple electric circuits consisting of voltage sources, resistors, inductors,
+and capacitors, or RLC circuits. A series RLC circuit is shown schematically
+in Fig. 2.8. The voltage drop across a resistor and the current flowing
+through it are related by Ohm’s Law.
+Ohm’s Law. The voltage drop V across a resistor is proportional to the current
+I flowing through it:
+V = IR,</p>
+<p>p48</p>
+<p>where R is the resistance of the resistor measured in ohms (Ω).
+A changing electric current can create a changing magnetic field that induces
+a voltage drop across a circuit element, such as a coil.
+Faraday’s Law. The voltage drop across an inductor is proportional to the
+rate of change of the current:
+V = L
+dI
+dt
+,
+where L is the inductance of the inductor measured in henries (H).
+A capacitor consists of two plates insulated by some medium. When connected
+to a voltage source, charges of opposite sign build up on the two plates,
+and the total charge on the capacitor is given by
+q(t) = q0 +</p>
+<p>t
+t0
+I(s) ds,
+where q0 is the initial charge.
+Coulomb’s Law. The voltage drop across a capacitor is proportional to the
+charge on the capacitor:
+V (t) =
+1
+C
+q(t) =
+1
+C</p>
+<p>q0 +</p>
+<p>t
+t0
+I(s) ds</p>
+<p>,
+where C is the capacitance of the capacitor measured in farads (F).
+The physical laws governing electric circuits were derived by G.R. Kirchhoff
+in 1859.
+Kirchhoff’s Current Law. The algebraic sum of the currents flowing into any
+junction of an electric circuit must be zero.
+Kirchhoff’s Voltage Law. The algebraic sum of the voltage drops around any
+closed loop in an electric circuit must be zero.</p>
+<p>p49</p>
+<p>Applying Kirchhoff’s voltage law to the RLC circuit gives
+VL + VR + VC = E(t),
+where VR, VL, and VC are the voltage drops across R,L, and C, respectively, and
+E(t) is the voltage source, or applied electromotive force (EMF). Substituting
+for the voltages across the circuit components gives
+L
+dI
+dt
++ RI +
+1
+C
+q = E(t).
+Since the current is the instantaneous rate of change in charge, I = dq
+dt , this
+equation becomes
+L
+d2q
+dt2 + R
+dq
+dt
++
+1
+C
+q = E(t). (2.10)
+This differential equation is called a linear second-order differential equation.
+It is linear because there are no powers of the derivatives, and second order
+since the order of the highest occurring derivative is two. This equation can
+be solved by the method of Laplace transforms [12]; there are other methods
+available, and readers should use whichever method they feel most comfortable
+with. The method of Laplace transforms can be broken down into four distinct
+steps when finding the solution of a differential equation:
+• rewrite equation (2.10) in terms of Laplace transforms;
+• insert any given initial conditions;
+• rearrange the equation to give the transform of the solution;
+• find the inverse transform.
+The method is illustrated in the following examples.
+Example 11. Consider a series resistor-inductor electrical circuit. Kirchhoff’s
+voltage law gives
+L
+dI
+dt
++ RI = E.
+Given that L = 10H; R = 2Ω, and E = 50sin(t)V , find an expression for the
+current in the circuit if I(0) = 0.
+Solution. Take Laplace transforms of both sides. Then,
+10(s¯I − I(0)) + 2¯I =
+50
+s2 + 1.
+Inserting the initial condition and rearranging,</p>
+<p>p50</p>
+<p>¯I(5s + 1) =
+25
+s2 + 1,
+and splitting into partial fractions,
+¯I =
+25
+26
+1
+s2 + 1
+− 125
+26
+s
+s2 + 1
+− 125
+126
+1
+(s − 1/5) .
+Take inverse Laplace transforms to give
+I(t) =
+25
+26
+sin(t) − 125
+26
+cos(t) − 125
+126e
+−t5
+.
+The periodic expression 25
+26 sin(t) − 125
+26 cos(t) is called the steady state, and the
+term 125
+126 e−t5
+is called the transient. Note that the transient decays to zero as
+t→∞.
+Example 12. Differentiate equation (2.10) with respect to time and substitute
+for dq
+dt to obtain
+L
+d2I
+dt2 + R
+dI
+dt
++
+1
+C
+I = dE
+dt
+.
+The second-order differential equation for a certain RLC circuit is given by
+d2I
+dt2 + 5dI
+dt
++ 6I = 10sin(t).
+Solve this differential equation given that I(0) = I˙(0) = 0 (a passive circuit).
+Solution. Take Laplace transforms of both sides:
+(s2I¯− sI(0) − I˙(0)) + 5(sI¯− I(0)) + 6I¯=
+10
+s2 + 1.
+Substitute the initial conditions to obtain
+¯I(s2 + 5s + 6) =
+10
+s2 + 1.
+Splitting into partial fractions gives
+¯I =
+2
+s + 2
+− 1
+s + 3
++
+1
+s2 + 1
+− s
+s2 + 1.
+Take inverse transforms to get
+I(t) = 2e
+−2t − e
+−3t + sin(t) − cos(t).</p>
+<p>p51</p>
+<p>The Memristor. The examples discussed thus far have concerned electric circuits
+with linear elements; however, nonlinear electric circuits are now coming
+to the fore. It is now widely acknowledged that Professor Leon Chua is the
+father of nonlinear circuit theory. Chua’s famous nonlinear electric circuit is
+discussed in Chapter 8, and the circuit is easy to construct even in school physics
+laboratories. It has long been believed that there are only three fundamental
+passive circuit elements such as the capacitor, the inductor, and the resistor. In
+1971, Chua [3] used mathematics to prove the existence of a fourth fundamental
+nonlinear element which acts like a resistor with memory, and he called the new
+device the memristor. The three well-known circuit elements are described by
+the equations
+1
+C
+= dv
+dq
+, L = dφ
+di
+, R = dv
+di
+,
+where 1
+C is the inverse capacitance, L is inductance, R is incremental resistance,
+v is voltage, i is current, q is charge, and φ is flux. In addition, the current and
+voltage are described by the following physical laws
+i = dq
+dt
+, v = dφ
+dt
+.
+This gives five relationships on three elements and leaves a gap in the harmonic
+symmetry of Chua’s aesthetics. Chua discovered the missing functional
+relationship between charge and flux which is given by
+M = dφ
+dq
+,
+where M is the memristance. Fig. 2.9 displays the relationships between the
+four fundamental elements.
+In 1976, Chua and Kang [4] discovered that a memristor displays a pinched
+hysteresis and suggested that this effect could be used as a test to determine
+if a device could be truly categorized as a memristor. A pinched hysteresis loop
+is demonstrated in Chapter 21, and the Mathematica program for plotting the
+loop is listed within the Mathematica commands section of that chapter.
+In 2008, a team at HP Laboratories [13] announced that they had evidence
+that many nanoscale electronic devices which involve the motion of charged
+atomic or molecular species act as memristors. Their analysis was based on
+results from a thin film of titanium dioxide, and they are currently building
+devices for computer logic, nanoelectronic memories, and neuromorphic computer
+architectures. A long-term project of HP Labs Research has been the
+development of The Machine, which was supposed to reinvent the fundamental
+architecture of computing. Among the principal components to be used were the
+memristor and silicon photonics using optical communications; unfortunately, in
+June 2015, HP Labs announced that memristors were to be removed from The</p>
+<p>p52</p>
+<p>Machine’s road map. Some researchers believe that Strukov’s memristor modeling
+equations [13] do not simulate the devices physics very well but believe
+that Chang’s and Yakopcic’s models [8] provide a good compromise.
+It is now understood that man-made memristive devices have been around
+for over two hundred years. In 2012, Prodromakis et al. [9] published a paper
+entitled “Two centuries of memristors”. Indeed, it is now known that the first
+demonstration of a memristor device took place at the Royal Institution in
+1808. Sir Humphrey Davy produced a 1000 V carbon arc discharge, and modern
+technology has demonstrated a pinched hysteresis effect in this system.
+Incredibly, natural memristors have been around for hundreds of millions of
+years, and there are memristors in plants and early life forms. Chua [5] shows
+that sodium and potassium ion channel memristors are the key to generating
+action potentials in the Hodgkin-Huxley equations (see Chapter 21), and he
+explains some unresolved anomalies with the original equations. In terms of neurobiology,
+the tutorial shows that synapses are locally passive memristors and
+that neurons act as locally active memristors. Chua also shows that the circuits
+used to model the Josephson junction effect should include memristor elements
+to explain the workings of these devices accurately. The author and Borresen
+believe it is possible to make superfast low-power computers using Josephson
+junctions acting as neurons connected together with memristors acting as axons
+and synapses. More detail is provided in Chapter 21.</p>
+<p>p53</p>
+<p>2.4 Existence and Uniqueness Theorem
+Definition 2. A function f(x) with f :  n →  n is said to satisfy a Lipschitz
+condition in a domain D ⊂  n if there exists a constant, say, L, such that
+  f (x1) − f (x2)  ≤ L   x1 − x2  ,
+where x1, x2 ∈ D.
+If the function f satisfies the Lipschitz condition, then it is said to be Lipschitz
+continuous. Note that Lipschitz continuity in x implies continuity in x, but the
+converse is not always true.
+Existence and Uniqueness Theorem. Suppose that f is continuously Lipschitz;
+then for an initial point x0 ∈ D, the autonomous differential equation
+dx
+dt
+= ˙x = f (x) (2.11)
+has a unique solution, say, φt(x0), that is defined on the maximal interval of
+existence.
+Note that (2.11) is called autonomous as long as f is independent of t. The
+proof of this theorem can be found in most textbooks that specialize in the
+theory of ODEs. As far as the reader is concerned, this theorem implies that
+as long as f is continuously differentiable, i.e., f ∈ C1(D), then two distinct
+solutions cannot intersect in finite time.
+The following simple examples involving first-order ODEs illustrate the theorem
+quite well.
+Example 13. Solve the following linear differential equations, and state the
+maximal interval of existence for each solution:
+(a) x˙ = x, x(0) = 1;
+(b) x˙ = x2, x(0) = 1;
+(c) x˙ = 3x
+23
+, x(0) = 0.
+Solutions.
+(a) The solution to this elementary differential equation is x(t) = et, which
+is unique and defined for all t. The maximal interval of existence in this
+case is −∞ &lt; t &lt; ∞. Note that f(x) = x is continuously differentiable.
+(b) The solution is given by
+x(t) =
+1
+1 − t
+,
+which is not defined for t = 1. Therefore, there is a unique solution on the
+maximal interval of existence given by −∞ &lt; t &lt; 1.</p>
+<p>p54</p>
+<p>(c) The function f(x) = 3x
+23
+is not continuously differentiable and does not
+satisfy the Lipschitz condition at x = 0; ∂f
+∂x = 2x−13
+is not continuous at
+x = 0. Integration gives</p>
+<p>1
+3x
+−23
+dx =</p>
+<p>dt,
+with general solution x(t) = t3 + C. The solution to the initial value
+problem is therefore x(t) = t3. The point x = 0 is zero when x˙ = 0. This
+means that a solution starting at this point should stay there for all t.
+Thus, there are two solutions starting at x0 = 0, namely φ1(t) = t3 and
+φ2(t) = 0. In fact, there are infinitely many solutions starting at x0 = 0.
+In this case, there exist solutions but they are not unique.
+Note that the solution would be unique on the maximal interval of existence
+0 &lt; t &lt; ∞ if the initial condition were x(1) = 1.
+Consider autonomous differential equations of the form
+x˙ = f (x), (2.12)
+where x ∈  n.
+Definition 3. A critical point (equilibrium point, fixed point, stationary point)
+is a point that satisfies the equation x˙ = f (x) = 0. If a solution starts at this
+point, it remains there forever.
+Definition 4. A critical point, say, x0, of the differential equation (2.12) is
+called stable if given   &gt; 0, there is a δ &gt; 0, such that for all t ≥ t0,   x(t) −
+x0(t)  &lt;  , whenever   x(t0) − x0(t0)  &lt; δ, where x(t) is a solution of (2.12).
+A critical point that is not stable is called an unstable critical point.
+Example 14. Find and classify the critical points for the following onedimensional
+differential equations.
+(a) x˙ = x;
+(b) x˙ = −x;
+(c) x˙ = x2 − 1.
+Solutions.
+(a) There is one critical point at x0 = 0. If x &lt; 0, then x˙ &lt; 0, and if x &gt; 0,
+then x˙ &gt; 0. Therefore, x0 is an unstable critical point. Solutions starting
+either side of x0 are repelled away from it.
+(b) There is one critical point at x0 = 0. If x &lt; 0, then x˙ &gt; 0, and if x &gt; 0,
+then x˙ &lt; 0. Solutions starting either side of x0 are attracted toward it.
+The critical point is stable.</p>
+<p>p55</p>
+<p>(c) There are two critical points, one at x1 = −1 and the other at x2 = 1. If
+x &gt; 1, then x˙ &gt; 0; if −1 &lt; x &lt; 1, then x˙ &lt; 0; and if x &lt; −1, then x˙ &gt; 0.
+Therefore, solutions starting near to x1 but not on it are attracted toward
+this point, and x1 is a stable critical point. Solutions starting near x2 but
+not on it move away from this point, and x2 is an unstable critical point.
+By linearizing near a critical point, one can obtain a quantitative measure of
+stability as demonstrated below. Consider one-dimensional systems here; higherdimensional
+systems will be investigated in other chapters.
+Linear Stability Analysis
+Let x∗ be a critical point of x˙ = f(x), x ∈  . Consider a small perturbation,
+say, ξ(t), away from the critical point at x∗ to give x(t) = x∗ + ξ(t). A simple
+analysis is now applied to determine whether the perturbation grows or decays
+as time evolves. Now
+ξ˙ = x˙ = f(x) = f(x
+∗ + ξ),
+and after a Taylor series expansion,
+ξ˙ = f(x
+∗) + ξf
+ (x
+∗) + ξ2
+2 f
+  (x
+∗) + . . . .
+In order to apply a linear stability analysis, the nonlinear terms are ignored.
+Hence,
+ξ˙ = ξf
+ (x
+∗),
+since f(x∗) = 0. Therefore, the perturbation ξ(t) grows exponentially if
+f (x∗) &gt; 0 and decays exponentially if f (x∗) &lt; 0. If f (x∗) = 0, then higherorder
+derivatives must be considered to determine the stability of the critical
+point.
+A linear stability analysis is used extensively throughout the realms of nonlinear
+dynamics and will appear in other chapters of this book.
+Example 15. Use a linear stability analysis to determine the stability of the
+critical points for the following differential equations:
+(a) x˙ = sin(x);
+(b) x˙ = x2;
+(c) x˙ = e−x − 1.
+Solutions.
+(a) There are critical points at xn = nπ, where n is an integer. When n is
+even, f (xn) = 1 &gt; 0, and these critical points are unstable. When n is
+odd, f (xn) = −1 &lt; 0, and these critical points are stable.
+(b) There is one critical point at x0 = 0 and f (x) = 2x in this case. Now
+f (0) = 0 and f  (0) = 2 &gt; 0. Therefore, x0 is attracting when x &lt; 0 and
+repelling when x &gt; 0. The critical point is called semistable.</p>
+<p>p56</p>
+<p>(c) There is one critical point at x0 = 0. Now f (0) = −1 &lt; 0, and therefore,
+the critical point at the origin is stable.
+The theory of autonomous systems of ODEs in two dimensions will be discussed
+in the next chapter.
+2.5 Mathematica Commands in Text Format
+For more information on solving differential equations using Mathematica, the
+reader should look for DSolve and NDSolve under the Help tab.
+(* See Example 1: Solving simple ODEs. <em>)
+In[1]:=DSolve[x’[t]==-t/x[t],x[t],t]
+(</em> See Example 8 and Fig. 2.6: Series solutions for van der Pol. <em>)
+In[2]:=DEqn=x’’[t]+2*(x[t]^2-1)*x’[t]+x[t];
+In[3]:=Ser=Series[DEqn,{t,0,6}];
+In[4]:=Serone=Ser/.{x[0]-&gt;5,x’[0]-&gt;0};
+In[5]:=Eqns=LogicalExpand[Serone==0];
+In[6]:=Coeffs=Solve[Eqns];
+In[7]:=Serx=Series[x[t],{t,0,5}];
+In[8]:=ApproxSol=Normal[Serx]/.{x[0]-&gt;5,x’[0]-&gt;0}/.Coeffs[[1]]
+In[9]:=Plot[ApproxSol,{t,0,0.08}]
+(</em> See Example 10 and Fig. 2.7: Chemical kinetics. <em>)
+In[10]:=k=.00713;a0=4;b0=1;sol=NDSolve[{c’[t]==k (a0-c[t]^2)(b0-c[t]/2),
+c[0]==0},c,{t,0,700}]
+In[11]:=Plot[Evaluate[c[t]/.sol],{t,0,700}]
+(</em> See Example 12: A second-order ODE. <em>)
+In[12]:=DSolve[{i’’[t]+5i’[t]+6i[t]==10Sin[t],i[0]==0,i’[0]==0},i[t],t]
+(</em> Solving an IVP. <em>)
+In[13]:=DSolve[{x’[t]==2 Sqrt[x[t]],x[t0]==x0},x[t],t]
+In[14]:=Simplify[%]
+(</em> See Exercise 7: Solving a system of 3 ODEs <a href="#id1"><span class="problematic" id="id2">*</span></a>)
+In[15]:=DSolve[{x’[t]==-a x[t],y’[t]==a x[t]-b y[t],z’[t]==b y[t],x[0]==M,
+y[0]==0,z[0]==0},{x[t],y[t],z[t]},t];
+In[16]:=Simplify[%]</p>
+<p>p57</p>
+<p>2.6 Exercises
+1. Sketch some solution curves for the following differential equations
+(a) dy
+dx = −y
+x ;
+(b) dy
+dx = 2y
+x ;
+(c) dy
+dx = y
+2x ;
+(d) dy
+dx = y2
+x ;
+(e) dy
+dx = − xy
+x2+y2 ;
+(f) dy
+dx = y
+x2 .
+2. Fossils are often dated using the differential equation
+dA
+dt
+= −αA,
+where A is the amount of radioactive substance remaining, α is a constant,
+and t is measured in years. Assuming that α = 1.5Å~10−7, determine the age
+of a fossil containing radioactive substance A if only 30% of the substance
+remains.
+3. Write down the chemical reaction rate equations for the reversible reaction
+equations
+(a) A + B + C   D,
+(b) A + A + A   A3,
+given that the forward rate constant is kf and the reverse rate constant is kr,
+in each case. Assume that the chemical equations are the rate-determining
+steps.
+4. (a) Consider a series resistor-inductor circuit with L = 2H, R = 10Ω
+and an applied EMF of E = 100 sin(t). Use an integrating factor
+to solve the differential equation, and find the current in the circuit
+after 0.2 seconds given that I(0) = 0.
+(b) The differential equation used to model a series resistor-capacitor
+circuit is given by
+R
+dQ
+dt
++ Q
+C
+= E,
+where Q is the charge across the capacitor. If a variable resistance
+R = 1/(5+t)Ω and a capacitance C = 0.5 F are connected in series</p>
+<p>p58</p>
+<p>with an applied EMF, E = 100 V , find the charge on the capacitor
+given that Q(0) = 0.
+5. (a) A forensic scientist is called to the scene of a murder. The temperature
+of the corpse is found to be 75oF, and one hour later,
+the temperature has dropped to 70oF. If the temperature of the
+room in which the body was discovered is a constant 68oF, how
+long before the first temperature reading was taken did the murder
+occur? Assume that the body obeys Newton’s Law of Cooling,
+dT
+dt
+= β(T − TR),
+where T is the temperature of the corpse, β is a constant, and TR is
+room temperature.
+(b) The differential equation used to model the concentration of glucose
+in the blood, say, g(t), when it is being fed intravenously into the
+body, is given by
+dg
+dt
++ kg = G
+100V
+,
+where k is a constant, G is the rate at which glucose is admitted, and
+V is the volume of blood in the body. Solve the differential equation
+and discuss the results.
+(c) Single fiber muscle can be modeled using simple differential equations
+[11]. Download our preprint paper on “Hysteresis in muscle”
+from ResearchGate, and use Mathematica to reproduce the results
+of the Hill model given in that paper.
+6. Show that the series solution of the Airy equation
+d2x
+dt2
+− tx = 0,
+where x(0) = a0 and x˙ (0) = a1, used in physics to model the diffraction of
+light, is given by
+x(t) = a0</p>
+<p>1 +
+∞
+1</p>
+<p>t3k
+(2.3)(5.6) . . . ((3k − 1)(3k))</p>
+<p>+a1</p>
+<p>t +
+∞
+1</p>
+<p>t3k+1
+(3.4)(6.7) . . . ((3k)(3k + 1))</p>
+<p>.</p>
+<p>p59</p>
+<p>7. A chemical substance A changes into substance B at a rate α times the
+amount of A present. Substance B changes into C at a rate β times the
+amount of B present. If initially only substance A is present and its amount
+is M, show that the amount of C present at time t is
+M +M</p>
+<p>βe−αt − αe−βt
+α − β</p>
+<p>.
+8. Two tanks A and B, each of volume V , are filled with water at time t = 0.
+For t &gt; 0, volume v of solution containing mass m of solute flows into tank
+A per second; mixture flows from tank A to tank B at the same rate; and
+mixture flows away from tank B at the same rate. The differential equations
+used to model this system are given by
+dσA
+dt
++ v
+V
+σA = m
+V
+,
+dσB
+dt
++ v
+V
+σB = v
+V
+σA,
+where σA,B are the concentrations of solute in tanks A and B, respectively.
+Show that the mass of solute in tank B is given by
+mV
+v</p>
+<p>1 − e
+−vt/V</p>
+<p>− mte
+−vt/V .
+9. In an epidemic the rate at which healthy people become infected is a times
+their number, the rates of recovery and death are, respectively, b and c times
+the number of infected people. If initially there are N healthy people and
+no sick people, find the number of deaths up to time t. Is this a realistic
+model? What other factors should be taken into account?
+10. (a) Determine the maximal interval of existence for each of the following
+initial value problems:
+(i) x˙ = x4, x(0) = 1;
+(ii) x˙ = x2−1
+2 , x(0) = 2;
+(iii) x˙ = x(x − 2), x(0) = 3.
+(b) For what values of t0 and x0 does the initial value problem
+x˙ = 2
+√
+x, x(t0) = x0,
+have a unique solution?</p>
+<p>p60</p>
+<p>Bibliography
+[1] M.L. Abell and J.P. Braselton, Differential Equations with Mathematica,
+4th ed., Academic Press, Cambridge MA, 2016.
+[2] R. Bronson and G. Costa, Schaum’s Outline of Differential Equations, 3rd
+ed., McGraw-Hill, New York, 2006.
+[3] L.O. Chua, Memristor-missing circuit element, IEEE Transactions on Circuit
+Theory CT18, (1971), 507–519.
+[4] L.O. Chua and S.M. Kang, Memristive devices and systems, Proceedings
+of the IEEE 64, (1976), 209–223.
+[5] L.O. Chua, Memristor, Hodgkin-Huxley and the edge of chaos, Nanotechnology
+24, (2013).
+[6] P. Dechaumphai, Calculus and Differential Equations with Mathematica,
+Alpha Science International Limited, Oxford, UK, 2016.
+[7] S.G. Krantz, Differential Equations Demystified, McGraw-Hill, New York,
+2004.
+[8] Linn E, Siemon A, Waser R, Menzel S. Applicability of well-established
+memristive models for simulations of resistive switching devices. Circuits
+and Systems I: Regular Papers. IEEE Transactions on 2014; 61: 2402–2410.
+[9] T. Prodromakis, C. Toumazou, and L.O. Chua, Two centuries of memristors,
+Nature Materials 11, (2012), 478–481.
+[10] B. Rai and D.P. Choudhury, Elementary Ordinary Differential Equations,
+Alpha Science Intl. Ltd., Oxford, UK, 2005.
+[11] J. Ramos, S. Lynch, D.A. Jones and H. Degens, Hysteresis in muscle, Int.
+J. of Bifurcation and Chaos 27, (2017), 1730003.
+[12] M.R. Spiegel, Schaum’s Outline of Laplace Transforms, McGraw-Hill, New
+York, 1965.
+[13] D.B. Strukov, G.S. Snider, D.R. Stewart, et al., The missing memristor
+found, Nature 453, (2008), 80–83.
+[14] G. Turrell, Mathematics for Chemistry and Physics, Academic Press, New
+York, 2001.
+[15] G. Zill, A First Course in Differential Equations with Modeling Applications,
+10th ed., Cengage Learning, Belmont, CA, 2012.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/prefacio.html">Preface to the Third Edition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/c01.html">c01</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">c02</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../Mathematical_Biology_I_An_Introduction_3E/c01.html" title="претходна глава">c01</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/Dynam_Systems_Applica_Mathematica_Stephen/c02.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

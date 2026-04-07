@@ -1,0 +1,302 @@
+c01
+====
+
+
+An_Introduction_to_Complex_Systems_2E_c01
+
+
+
+Paul Fieguth
+An Introduction to Complex
+Systems
+Society, Ecology, and Nonlinear Dynamics
+Second Edition
+
+
+Preface to the Second Edition (2020)
+In the years since the first edition of this textbook appeared, I have had the good
+fortune to teach complex systems to a new set of undergraduate students every
+winter. It is such students who have motivated my passion for the topic, and who
+have challenged me to continually refine the clarity of my teaching. In addition, the
+practical aspects of teaching a course year after year has led to corrected errors,
+additional examples, illustrations, and end of chapter questions to improve the
+depth and breadth of student learning.
+The topics in this text are as relevant as ever. Probably the biggest impetus for a
+new edition was the Covid-19 pandemic, which burst onto the international scene in
+2020, and which has complex systems written all over it. In media discussions of
+Covid-19, I routinely encountered misunderstandings of exponentials (Example 5.1),
+rare events/power-laws (Chapter 9), and nonlinear dynamics (Chapter 7), so the
+pandemic felt like an opportune time (and indeed presented a compelling need) to
+re-examine these concepts. Certainly the pre-Covid motivations for this text remain in
+place: the atmospheric concentration of 412 ppm (as of August 2020) is deplorably
+(but unsurprisingly) increased from that reported in Figure 2.1, as is the parallel
+change to ocean acidity (Section 12.1).
+This edition introduces three completely new chapters to the text:
+1. Chapter 13 stems directly from the Covid-19 pandemic of 2020, a whole chapter
+focusing on pandemic modelling and on the challenges that complex systems
+present to policy-makers and healthcare.
+2. Appendix C is a twenty-page extension to the spring-mass mechanical system of
+Case Study 5. The previous edition had repeatedly made claims about the role of
+eigendecompositions in decoupling systems, however, had offered only a single
+example of Case Study 5. Appendix C now gives six different examples, followed
+by a much more explicit discussion of precisely why it is that the
+eigendecomposition does not decouple nonlinear systems.
+3. Appendix E offers a whole chapter providing solutions or summaries to a great
+many end of chapter problems, for students to be able to have feedback on their
+own attempts to solve problems.
+A significant part of my teaching pedagogy is to connect the dots in students’
+minds, to reach a deeper and more nuanced understanding of complex systems. The
+eight new examples in this edition can be grouped into four contexts which mirror
+my own motivations in teaching:
+• Examples 3.8 and 7.10 emphasize a breadth of understanding, connecting
+complex systems to large-scale questions, such as the systems-level questions in
+how to undertake a worldwide energy transition from fossil-based to fossil-free.
+• Examples 4.4 and 10.3 develop a depth of understanding in some of the
+technical/mathematical aspects of complex systems, these two examples based
+on topics which students found confusing, specifically statistical stationarity
+(Example 4.4), and a better visualization of the critical phenomena in random
+graphs (Example 10.3).
+• Given my own background in Electrical Engineering, I found it a bit frustrating
+how few circuit-related examples had ended up in the text. In particular, it is
+“widely known” that linear RLC1 circuits can be decoupled via eigendecompositions,
+however, there are precious few examples of this idea to be found
+(really anywhere), so Example 7.4 (together with Problem 7.15 and Section C.4),
+emphasizes the decoupling of linear circuits, whereas Example 7.8, looks at a
+simple2 nonlinear oscillator.
+• The one thing that makes studying complex systems fun is the ubiquity of the
+topic, so Examples 7.6 and 10.1 (and also Problems 6.10, 6.11), explore a more
+whimsical side, how the topics of this text routinely appear in the world around
+us (Example 7.6), sometimes in the most unexpected places, such as chocolate
+(Example 10.1).
+I would like to express my thanks to those students and colleagues who provided
+feedback on parts of this revised text. In particular, I would like to recognize the
+helpful comments from Nicholas Pellegrino and Tyron Jung.
+Finally, as always, my appreciation for the ongoing love, support, and enthusiasm
+from my wife and children!
+Waterloo, Canada Paul Fieguth
+
+
+Contents
+1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.1 How to Read This Text . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2 Global Warming and Climate Change . . . . . . . . . . . . . . . . . . . . . . 5
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3 Systems Theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.1 Systems and Boundaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3.2 Systems and Thermodynamics . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.3 Systems of Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+Case Study 3: Nutrient Flows, Irrigation, and Desertification . . . . . . . . 32
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 37
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+4 Dynamic Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+4.1 System State . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+4.2 Randomness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+4.3 Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+4.3.1 Correlation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+4.3.2 Stationarity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+4.3.3 Transformations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+Case Study 4: Water Levels of the Oceans and Great Lakes . . . . . . . . 60
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 63
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 66
+
+5 Linear Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+5.1 Linearity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+5.2 Modes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+5.3 System Coupling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
+5.4 Dynamics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75
+5.5 Control of Dynamic Systems . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+5.6 Non-Normal Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 84
+Case Study 5: System Decoupling . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 92
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 98
+6 Nonlinear Dynamic Systems—Uncoupled . . . . . . . . . . . . . . . . . . . . 99
+6.1 Simple Dynamics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100
+6.2 Bifurcations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105
+6.3 Hysteresis and Catastrophes . . . . . . . . . . . . . . . . . . . . . . . . . . . 111
+6.4 System Behaviour Near Folds . . . . . . . . . . . . . . . . . . . . . . . . . 120
+6.5 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 122
+Case Study 6: Climate and Hysteresis . . . . . . . . . . . . . . . . . . . . . . . . 124
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 128
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 132
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 141
+7 Nonlinear Dynamic Systems—Coupled . . . . . . . . . . . . . . . . . . . . . . 143
+7.1 Linearization. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 144
+7.2 2D Nonlinear Systems. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 147
+7.3 Limit Cycles and Bifurcations . . . . . . . . . . . . . . . . . . . . . . . . . 151
+7.4 Control and Stabilization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 162
+Case Study 7: Geysers, Earthquakes, and Limit Cycles . . . . . . . . . . . . 164
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 174
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 175
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 185
+8 Spatial Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 187
+8.1 PDEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 189
+8.2 PDEs & Earth Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 192
+8.3 Discretization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 195
+8.4 Spatial Continuous-State Models . . . . . . . . . . . . . . . . . . . . . . . 200
+8.5 Spatial Discrete-State Models . . . . . . . . . . . . . . . . . . . . . . . . . 208
+8.6 Agent Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 214
+Case Study 8: Global Circulation Models . . . . . . . . . . . . . . . . . . . . . . 218
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 221
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 222
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 231
+
+9 Power Laws and Non-Gaussian Systems . . . . . . . . . . . . . . . . . . . . . 233
+9.1 The Gaussian Distribution . . . . . . . . . . . . . . . . . . . . . . . . . . . . 234
+9.2 The Exponential Distribution . . . . . . . . . . . . . . . . . . . . . . . . . . 235
+9.3 Heavy Tailed Distributions . . . . . . . . . . . . . . . . . . . . . . . . . . . 238
+9.4 Sources of Power Laws . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 247
+9.5 Synthesis and Analysis of Power Laws . . . . . . . . . . . . . . . . . . 250
+Case Study 9: Power Laws in Social Systems . . . . . . . . . . . . . . . . . . 257
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 261
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 261
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 267
+10 Complex Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 269
+10.1 Spatial Nonlinear Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . 270
+10.2 Self-Organized Criticality . . . . . . . . . . . . . . . . . . . . . . . . . . . . 278
+10.3 Emergence . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 285
+10.4 Systems of Complex Systems . . . . . . . . . . . . . . . . . . . . . . . . . 288
+Case Study 10: Complex Systems in Nature . . . . . . . . . . . . . . . . . . . . 289
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 291
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 292
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 298
+11 Observation and Inference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 299
+11.1 Forward Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 300
+11.2 Remote Measurement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 303
+11.3 Resolution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 307
+11.4 Inverse Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 316
+Case Study 11A: Sensing—Synthetic Aperture Radar . . . . . . . . . . . . . 329
+Case Study 11B: Inversion—Atmospheric Temperature . . . . . . . . . . . 333
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 334
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 335
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 341
+12 Water . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 343
+12.1 Ocean Acidification. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 345
+12.2 Ocean Garbage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 346
+12.3 Groundwater . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 347
+Case Study 12: Satellite Remote Sensing of the Ocean . . . . . . . . . . . . 350
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 352
+Sample Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 352
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 353
+13 Pandemics and Complex Systems . . . . . . . . . . . . . . . . . . . . . . . . . . 355
+13.1 Models of Virus Spread . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 356
+13.2 Changing Pandemic Dynamics. . . . . . . . . . . . . . . . . . . . . . . . . 360
+13.3 Complex Systems and Healthcare Responses . . . . . . . . . . . . . . 366
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 371
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 371
+14 Concluding Thoughts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 375
+Further Reading . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 376
+Sample Problems (Partial Solutions in Appendix E) . . . . . . . . . . . . . . 377
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 378
+Appendix A: Matrix Algebra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 379
+Appendix B: Random Variables and Statistics . . . . . . . . . . . . . . . . . . . . . 389
+Appendix C: System Decoupling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 397
+Appendix D: Notation Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 419
+Appendix E: End of Chapter Solutions . . . . . . . . . . . . . . . . . . . . . . . . . . . 423
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 459
+
+
+Chapter 1
+Introduction
+
+For every complex problem there is an answer that is
+clear, simple, and wrong
+Paraphrased from H. L. Mencken
+
+The world is a complex place, and simple strategies based on simple assumptions
+are just not sufficient.
+For very good reasons of pedagogy, the vast majority of systems concepts towhich
+undergraduate students are exposed are
+Linear: Since there exist elegant analytical and algorithmic solutions to allowlinear
+problems to be easily solved;
+Gaussian: Since Gaussian statistics emerge from the Central Limit Theorem, are
+well behaved, and lead to linear estimation problems;
+Small: Since high-dimensional problems are impractical to illustrate or solve on
+the blackboard, and large matrices too complex to invert.
+Unfortunately, nearly allmajor environmental, ecological, and social problems facing
+humankind are non-linear, non-Gaussian, and large.
+To be sure, significant research has been undertaken in the fields of large-scale,
+nonlinear and non-Gaussian problems, so a great deal is in fact known, however the
+analysis of such systems is really very challenging, so textbooks discussing these
+concepts are mostly at the level of graduate texts and research monographs.
+However there is a huge difference between analyzing a nonlinear system or
+deriving its behaviour, as opposed to understanding the consequences of a system
+being nonlinear, which is much simpler. It is the latter consequences which are the
+scope and aim of this book.
+That is, although a detailed analysis of a complex system is, in most cases, too
+difficult to consider teaching, the consequences of such systems are quite easily
+understood:
+
+
+A nonlinear system is subject to irreversibility, such that given some change
+in the inputs to the system, undoing the change does not necessarily return the
+system to its start, whereas all linear systems are reversible. Furthermore nonlinear
+systems can be subject to discontinuous or catastrophic state changes, which is not
+possible in linear systems.
+Non- Gaussian/power- law systems may be characterized by extreme
+behaviours which would appear to be unpredictable or unprecedented based on
+historical data. In contrast, Gaussian statistics converge reliably and effectively
+assign a probability of zero to extreme events, giving a false sense of security in
+those circumstances where the underlying behaviour is, in fact, power-law.
+Large coupled nonlinear spatial systems, also knownas complex systems,
+can give rise to highly surprising macroscopic behaviour that would scarcely be
+recognizable from the microscopic model, a phenomenon known as emergence.
+Managing such systems, particularly in response to some sort of failure, is very
+difficult. In contrast, the nature of linear systems is unaffected by scale.
+The sorts of systems that we are talking about are not arcane or abstract, rather there
+are well-known systems, such as geysers and toy blocks, or indeed everyday systems
+such as stock markets or weather. It is precisely because such systems are so common
+and everyday that engineers or other technical professionals are likely to encounter
+them and need to be informed of the possible consequences of interacting with and
+influencing such systems.
+The context of this text is sketched, necessarily oversimplified, at a high level
+in Figure 1.1. Essentially we have two interacting classes of systems, the human/
+societal/economic and natural/ecological/environmental systems, both of which will
+exhibit one or more elements of nonlinearity and spatial interaction which lead to
+complex-systems and power-lawbehaviours. Since amodel alone is of limited utility,
+we are interested in performing inference by combining models with measurements,
+particularly global-scale remotely-sensed measurements from satellites.
+1.1 How to Read This Text
+This text is aimed at a target audience of undergraduate engineering students, but is
+intended to be more broadly of interest and accessible.
+Those readers unfamiliar with this text, or with complex systems in general, may
+wish to begin with the overview in Chapter 2, followed by a survey of the case studies
+which are presented at the end of every chapter, and which are listed on page XIII.
+An explicit goal of this text is not to focus attention on the mathematics behind
+complex systems, but to develop an understanding of the interaction between complex
+systems theory and the real world, how complex systems properties actually
+manifest themselves. For this reason there are, in addition to the end-of-chapter case
+studies, a large number of examples, listed on page XIII, and those readers more
+
+
+interested in a high level or qualitative understanding of the book may want to start
+by focusing on these.
+For those readers interested in the mathematics and technical details, the chapters
+of the book are designed to be read in sequence, from beginning to end, although
+the spatial and power law chapters can be read somewhat independently from the
+preceding material, Chapter 4 through Chapter 7, on dynamics and nonlinear systems.
+Complex systems can be studied and understood from a variety of angles and levels
+of technical depth, and the suggested problems at the end of every chapter are intended
+to reflect this variety, in that there are problems which are mathematical/analytical,
+computational/numeric, reading/essay, and policy related.
+The intent is that most of this text, and nearly all of the examples and case studies,
+can be understood and appreciated without following the details of the mathematics.
+The technical details do assume some familiarity with linear algebra and probability
+theory, and for those readers who need a bit of a reminder, an overview of both topics
+is presented in Appendices A and B.
+This book is, to be sure, only an introduction, and there is a great deal more to
+explore. Directions for further reading are proposed at the end of every chapter, and
+the bibliography is organized, topically, by chapter.
+
+References
+1. C. Martenson, The Crash Course: The Unsustainable Future of our Economy, Energy, and
+Environment (Wiley, New York, 2011)
+2. M. Scheffer, Critical Transitions in Nature and Society (Princeton University Press, Princeton,
+2009)
+3. A. Weisman, The World Without Us (Picador, 2007)
+4. R. Wright, A Short History of Progress (House of Anansi Press, 2004)
+

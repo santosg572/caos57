@@ -1,0 +1,333 @@
+c02
+===
+
+An_Introduction_to_Complex_Systems_2E_c02
+
+pag-19
+
+Chapter 2
+GlobalWarming and Climate Change
+
+There are few global challenges
+as widespread, as complex,
+as significant to our
+future, and politically as controversial
+as that of global
+warming.
+The goal of this chapter is,
+in essence, to motivate this
+textbook; to convince you, the
+reader, that very nearly all of
+the topics in this text need to
+be understood in order to grasp the subtleties of a subject such as global warming.
+—------------------------------------
+as widespread - tan generalizado
+to motivate this textbook - para motivar este libro de texto
+that very nearly all  - que casi todo
+to grasp the subtleties of a subject - captar las sutilezas de un tema
+
+
+However the specific problem of global warming is not at all unique, in this regard.
+That is, after all, the premise of this book: that there is a wide variety of ecological and
+social challenges, all of which are highly interdisciplinary, and for which a person
+unfamiliar with one or more of systems theory, nonlinear dynamics, non-Gaussian
+statistics, and inverse problems is simply ill-equipped to understand.
+—----------------------------------------
+is not at all unique - No es en absoluto único
+in this regard - a este respecto
+is simply ill-equipped to understand - Simplemente está mal equipado para entender
+
+Other similarly broad problems would include
+• Ecological pressures and extinction,
+• Human Poverty,
+• Energy, and
+• Water, to which we shall return in Chapter 12.
+—-----------------------------------------------------
+Ecological pressures and extinction - Presiones ecológicas y extinción.
+
+Human Poverty - pobreza humana
+
+
+Allow me now to take you on a tour of the entire book, through the lens of global
+warming.
+
+Global warming is the warming of the earth’s climate caused by an increase in
+the concentrations of carbon-dioxide and methane gases in the atmosphere, due to
+human industry, fossil fuel consumption, and land use.
+—--------------------------------------
+is the warming - es el calentamiento
+and land use - y uso de la tierra
+
+
+Suppose we begin with a rather naïve model of carbon flows:
+
+
+Human society, as a system, interacts with the rest of the world through the
+boundaries of the system. The naïve model has simplistically assumed fixed boundary
+conditions, that the sources (energy) and sinks (carbon pollution) are infinite,
+implying that humans do not influence the global climate.
+—--------------------------------------
+has simplistically - tiene de manera simplista
+sinks - sumideros
+
+A slightly more realistic model, but also more complicated, understands energy
+sources and carbon-dioxide sinks to be finite, and therefore subject to influence by
+human activity:
+—---------------------------------------------
+A slightly more realistic model - Un modelo un poco más realista.
+
+
+At least two relatively significant problems remain present in this model:
+
+1. The carbon does not just disappear into some abstract sink: the sink itself is
+subject to important dynamics. Carbon dioxide may be emitted into the atmosphere,
+however a great deal of it is absorbed into the ocean. Furthermore the
+ocean, itself, is far from being homogeneous and well-mixed, and the absorbed
+carbon will concentrate near the surface, whereas most of the potential for storage/
+sequestration is at the ocean bottom.
+—--------------------------------------------------
+The carbon does not just disappear into some abstract sink - El carbono no desaparece simplemente en un sumidero abstracto
+
+
+
+2. The size of the source or sink is not the only thing which matters: the flow rates
+are crucial to understand as well, in particular the flow rate relative to the size
+of a source or sink, or inconsistencies in flow rates from one system to another.
+—--------------------------------------------
+sink - 
+
+The latter effect is very much present here, in that the flowrate of carbon from society
+into the atmosphere is controlled by humans, whereas the flow rate of carbon from
+the atmosphere is controlled by physical/natural processes. So although the ocean
+bottom provides an infinite carbon sink, in principle, inconsistencies in flow rates
+are causing carbon dioxide to continue to build up:
+
+
+So we cannot understand a system, such as a human society, in the absence of the
+interactions that the system has with others around it.
+Chapter 4: Dynamic Systems
+An additional subtlety is that the latter model is implicitly time-dynamic: there
+are rates of carbon transfer, and a continual transfer of carbon into a finite system
+implies a system which changes over time.
+Two time-dynamic changes associated with carbon are indisputable:
+1. CO2 concentrations in the atmosphere are increasing over time, from 315ppm
+in 1960 to over 400ppm today (Figure 2.1);
+2. Since 1800 the world’s upper oceans have increased in acidity by 0.1 pH point,
+corresponding to a 30% increase in acidity, due to the uptake of CO2 into the
+ocean and the formation of carbonic acid [2], discussed further in Section 12.1.
+
+
+On the other hand, when we try to articulate questions of globalwarming, or any other
+sort of climate change over time, the problem becomes much more slippery:
+What is our Baseline? We know that the climate has always been changing,
+switching between epochs with and without ice ages, for example. Indeed, the
+earth’s climate changes over time periods of all scales:
+Tens of millions of years … Tropical Jurassic (dinosaur) era
+Tens of thousands of years … Ice ages
+Hundreds of years … Medieval warming period (950–1250 AD),
+So-called little ice age (1550–1850 AD)
+Years … 1930’s dust bowl, El-Niña / El-Niño
+So at what point in time do we actually start measuring, in order to know whether
+the earth is warming or not?
+What is Actually Warming? The atmosphere is well-mixed and relatively
+easy to measure, whereas the heat uptake patterns in the oceans and the ground are
+far more variable, depending on the presence of subsident currents in the ocean,
+or geothermal activity underground.
+On the other hand, although land and ocean have a far greater mass than the
+atmosphere, it is primarily the upper surfaces of land and ocean which would be
+warming, only a small fraction of the total:
+Atmosphere 6 · 1014 kg per metre at sea level, 5 · 1018 kg in total
+Ocean 3 · 1017 kg per metre of depth, 1 · 1021 kg in total
+Land 4 · 1017 kg per metre of depth, Ill-defined total mass
+Furthermore it is primarily the upper surfaces of land and ocean which are biologically
+active, and thus a warming of only this top sliver may produce a disproportionate
+ecological impact. So is global warming …
+1. a physical concept, a warming of the land-oceans-atmosphere in total, which
+can be measured as increases in global average temperature?, or
+2. an environmental concept, a disturbance to ecological balance caused by the
+warming of some part of the land-oceans-atmosphere, where the localized
+warming may produce almost no impact on the global average temperature,
+and so must be assessed indirectly via some other measurement?
+What is Causing the Warming? The increase, over time, in human fossil fuel
+consumption is well documented. Similarly the increase, over a similar period of
+time, in atmospheric CO2 concentration has been accurately measured. However
+a correlation, a statistical relationship, between two events is not the same as causation,
+where one event can be said to cause another.
+Measuring a correlation is an exceptionally simple statistical test, whereas causation
+requires a much deeper understanding. In the case of global warming we need
+
+
+to understand the carbon cycle: the industrial and natural global sources and sinks
+of carbon.
+Chapter 7: Coupled Nonlinear Dynamic Systems
+On top of this, in trying to model the presence or flow of heat and energy present
+in the ocean-atmosphere system, over half of all kinetic energy is not in atmospheric
+storms or in ocean currents, rather in ocean eddies.
+However an eddy, like other similar forms of oceanic and atmospheric turbulence,
+is one of the hallmarks of coupled nonlinear systems, a nonlinear relationship between
+multiple elements. No linear system, regardless how complex or large, will exhibit
+turbulent behaviour, so we cannot fully model the ocean-atmosphere system without
+studying nonlinear systems.
+Chapter 8: Spatial Systems
+The atmosphere and oceans are not just nonlinear, or coupled, but indeed very large
+spatially. The governing equation for both air and water flow is the Navier–Stokes
+nonlinear partial differential equation:
+Water/Ocean Navier–Stokes Small spatial details
+Incompressible Slow changes over time
+Air/Atmosphere Navier-Stokes Large spatial scales
+Compressible Fast changes over time
+⎫⎪⎪⎪⎪⎬
+⎪⎪⎪⎪⎭
+Challenging
+Misfit
+with interesting challenges due to the different time/space scales of water and air.
+Really the modelling challenge is much worse, since the range of temporal and
+spatial scales is actually quite tremendous, as shown in Table 2.1, particularly when
+the near-fractal1 behaviour of ocean ice is included.
+1 Meaning that there is a self-similar behaviour on a wide range of length scales, such as cracks in
+ice on all scales from nanometre to kilometres.
+
+
+Executing such a model has been and continues to be a huge numerical challenge:
+dense spatial grids, with layers in depth (ocean) or height (atmosphere) or thickness
+(ice) and over time.
+Chapter 11: System Inversion
+Now what would we do with such a model? Ideally we would initialize the model
+to the earth’s current state, and then run it forward to get an idea of future climatic
+behaviour:
+Model Spin Up
+(Up to 1000s of years)
+Drive with long term average
+Model to Present
+(Up to 10s of years)
+Drive with observations
+Prediction
+(100s of years?)
+No observations
+Now
+Simulation Time
+Such a process of coupling a model with real data is known as data assimilation
+or as an inverse problem. There is the true earth state z, which is unknown, but which
+can be observed or measured via a forward model C():
+True state z(t) Observations m(t) = C z(t)  + noise
+In principle what we want to solve is the inverse problem, estimating the unknown
+state of the earth from the measurements:
+Inverse Problem: find ˆz, an estimate of z, by inverting C():
+ˆz = C−1(m) (2.1)
+However almost certainly we cannot possibly obtain enough observations, especially
+of the deep oceans, to actually allow the inverse problem to be solved, analogous to
+an underconstrained linear system of equations.
+Instead, we perform data assimilation, incorporating the observations m into a
+simulation of a climate model having state ˜z(t):
+We want to push the simulated state towards truth: ˜z(t) z(t)
+The idea is to iteratively nudge ˜z in some direction to reduce
+  
+m(t) − C ˜z(t)   
+(2.2)
+where  ·  measures inconsistency. Thus we are trying to push or nudge the simulation
+to be consistent with real-world measurements, and therefore hopefully towards the
+true real-world state.
+
+
+So measurement is key to successfully modelling and predicting climate. What
+are the things we can actually measure:
+Atmospheric Temperature:
+Weather stations on the earth’s surface
+Weather balloons
+Commercial aircraft
+Satellite radiometers
+Oceanic Temperature:
+Satellite infrared measurements of ocean surface temperature
+Ocean surface height measurements (thermal expansion)
+Ocean sound speed measurements
+Buoys, drifters, gliders directly taking measurements in the ocean
+Temperature Proxies (indirect effects indicative of temperature)
+Arctic ice extent and number of ice-free days
+Arctic permafrost extent
+Date of tree budding / leaf-out / insect appearance / bird migrations
+If we consider global remote sensing via satellite, really the only possible measurement
+is of electromagnetic signals. Therefore a satellite is limited to measuring
+signal strength (brightness) and signal time (range or distance).
+The key idea, however, is that there are a great many phenomena z which affect
+an electromagnetic signal via a forward model C(), meaning that from the measured
+electromagnetic signals we can infer all manners of things, from soil moisture to tree
+species types to urban sprawl to ocean salinity, temperature, and currents.
+Chapter 9: Non-Gaussian Systems
+Given adequate observations to allow a model to be simulated and run, what do
+we do with the results?
+Understanding climatemodels and validating the simulated results are huge topics
+which could certainly fill another textbook. But even something much simpler, such
+as a time series of historical temperature data, can lead to challenges.
+All students are familiar with the Gaussian distribution,2 a distribution that very
+accurately describes the number of heads you might expect in tossing a handful of 100
+coins. Phenomena which follow a Gaussian distribution, such as human height, are
+convenient to work with because you can take the average and obtain a meaningful
+number. This seems obvious.
+However most climate phenomena, and also a great many social systems, do not
+follow a Gaussian distribution, and are instead characterized by what is called a
+power law. Examples of power laws include meteor impacts, earthquake sizes, and
+book popularity.Given power lawdata (say ofmeteor impacts over the last ten years),
+the average is not representative of the possible extremes (think dinosaur extinction
+2 Or bell curve or normal distribution; all refer to the same thing.
+
+
+…). In fact, taking an average over longer and longer periods of time still fails to
+converge. That seems strange.
+We humans only barely learn from history at the best of times; learning from
+historical power law data is even worse, because it is difficult to know how much
+data we need to reach a conclusion.
+Chapter 5: Linear and Nonlinear Systems
+Lastly, it is important to understand the macro-behaviour of climate as a nonlinear
+system:
+Linear systems are subject to superposition and have no hysteresis.
+Nonlinear systems are subject to catastrophes and hysteresis.
+These concepts are most effectively explained in the context of a plot of stable
+climate states, shown in Figure 2.2.
+The principle of superposition says that if increasing CO2 by some amount leads
+to a reduction in ice, then twice the CO2 leads to twice the reduction.
+Superposition is highly intuitive, very simple, and usually wrong.We are presently
+on the lower curve in Figure 2.2, a planet with a mixture of ice and water. As CO2 is
+increased, the amount of ice indeed slowly decreases, until point “A”, at which point
+an infinitesimal increase in CO2 leads to the complete disappearance of all ice. We
+have here a bi-stable nonlinear system with a bifurcation at point “A”, leading to a
+discontinuous state transition known as a “catastrophe.”
+In a linear system, to undo the climate damage we would need to reduce the CO2
+level back to below “A”. A nonlinear system, in contrast, has memory, what is called
+hysteresis. Reducing CO2 to just below “A” has no effect, as we are stuck on the
+ice-free stable state; to return to the mixed water-ice stable state we need to reduce
+CO2 much, much further, to “B”.
+
+
+Climate, ecology, human wealth and poverty, energy, water are all complex systems:
+nonlinear, non-Gaussian, coupled, poorly-measured, spatial dynamic problems.
+Viewing any of these as systems with isolated or fixed boundaries, subject to
+superposition and Gaussian statistics, is to misrepresent the problem to such a degree
+as to render useless any proposed engineering, social, economic, or political solution.
+This book cannot pretend to solve global warming or any of many other complex
+problems, but perhaps we can take one or two steps towards understanding the
+subtleties of complex systems, as a first step in identifying meaningful solutions.
+Further Reading
+The references may be found at the end of each chapter. Also note that the
+textbook further reading page maintains updated references and links.
+Wikipedia Links: Global Warming, Climate Change
+Achallenge, particularly with globalwarming, is that there is an enormous number
+of books, most polarized to the extremes of either denial or despair. Books such as
+What We Know About Climate Change [1], Global Warming Reader [5], or the
+personable Walden Warming [6] offer a broad spectrum on the subject.
+Good starting points for global warming science would be the respective chapters
+in earth systems books, such as [3, 4].
+Regarding the role of nonlinear systems in climate, the reader is referred to Case
+Study 6.5, the book by Scheffer [7], or the recent paper by Steffen et al. [8].
+References
+1. K. Emanual, What We Know About Climate Change (MIT Press, 2012)
+2. A. Johnson, N. White, Ocean acidification: The other climate change issue. Am. Sci. 102(1)
+(2014)
+3. L. Kump et al., The Earth System (Prentice Hall, 2010)
+4. F. Mackenzie, Our Changing Planet (Prentice Hall, 2011)
+5. B. McKibben, The Global Warming Reader (OR Books, 2011)
+6. R. Primack, Walden Warming (University of Chicago Press, Chicago, 2014)
+7. M. Scheffer, Critical Transitions in Nature and Society (Princeton University Press, Princeton,
+2009)
+8. W. Steffen et al., Trajectories of the earth system in the anthropocene. Proc. Natl. Acad.
+Sci.33(115), (2018)
+

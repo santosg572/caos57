@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>c01 &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+    <link rel="next" title="Sistemas_Dinamicos" href="../Sistemas_Dinamicos.html" />
+    <link rel="prev" title="prefacio" href="prefacio.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="c01">
+<h1>c01<a class="headerlink" href="#c01" title="Link to this heading">¶</a></h1>
+<p>An_Introd_Dyn_Systems_Chaos_Layek_C01</p>
+<p>G.C. Layek
+An Introduction
+to Dynamical Systems
+and Chaos</p>
+<p>Chapter 1
+Continuous Dynamical Systems
+p17</p>
+<p>Dynamics is a time-evolutionary process. It may be deterministic or stochastic. Long-term predictions of some systems often become impossible. Even their trajectories cannot be represented by usual geometry. In many natural and social phenomena there is unpredictability. Unpredictability is an intrinsic property which is present in the phenomenon itself. It has great impact on human civilization as well as scientific thoughts.
+—--------------------------------------------------------
+La dinámica es un proceso evolutivo en el tiempo. Puede ser determinista o estocástico. Las predicciones a largo plazo de algunos sistemas a menudo se vuelven imposibles. Incluso sus trayectorias no pueden ser representadas por la geometría habitual. En muchos fenómenos naturales y sociales hay imprevisibilidad. La imprevisibilidad es una propiedad intrínseca que está presente en el propio fenómeno. Tiene un gran impacto en la civilización humana, así como en los pensamientos científicos.
+—--------------------------------------------------------</p>
+<p>There are numerous questions in human mind e.g., how can a deterministic trajectory be unpredictable? What are the causes in formation of symmetric crystals and snowflakes in Nature? How can one find chaotic trajectories? Can a deterministic trajectory be random? How can one define and explain turbulence in fluid motion? Is there any local symmetry in chaos? How can one relate chaotic dynamics with fractal object? For answering these questions we have no way but to study nonlinear dynamics.
+—--------------------------------------------------------
+Existen numerosas preguntas en la mente humana, por ejemplo, ¿cómo puede ser impredecible una trayectoria determinista? ¿Cuáles son las causas de la formación de cristales simétricos y copos de nieve en la naturaleza? ¿Cómo se pueden encontrar trayectorias caóticas? ¿Puede una trayectoria determinista ser aleatoria? ¿Cómo se puede definir y explicar la turbulencia en el movimiento de un fluido? ¿Hay alguna simetría local en el caos? ¿Cómo se puede relacionar la dinámica caótica con el objeto fractal? Para responder a estas preguntas no tenemos más remedio que estudiar la dinámica no lineal.</p>
+<p>—--------------------------------------------------------</p>
+<p>Dynamical systems are generally described by differential or difference equations. Studies of differential equations in mathematics were devoted mainly of finding analytical solutions of equations for more than two centuries. But the dynamical behaviors of a system may not always be determined by analytical or closed-form solutions. Moreover, analytical solution of nonlinear equations is difficult to obtain except in a few special cases. The subject dynamical systems had evolved at the end of nineteenth century and made significant contributions to
+understanding some nonlinear phenomena.
+—--------------------------------------------------------
+Los sistemas dinámicos generalmente se describen mediante ecuaciones diferenciales o en diferencias. Los estudios de ecuaciones diferenciales en matemáticas se dedicaron principalmente a encontrar soluciones analíticas de ecuaciones durante más de dos siglos. Pero los comportamientos dinámicos de un sistema no siempre pueden estar determinados por soluciones analíticas o de forma cerrada. Además, la solución analítica de ecuaciones no lineales es difícil de obtener excepto en algunos casos especiales. El tema de los sistemas dinámicos había evolucionado a fines del siglo XIX e hizo contribuciones significativas a la comprensión de algunos fenómenos no lineales.
+—--------------------------------------------------------</p>
+<p>The dynamics of a system may be expressed either as a continuous-time or as a discrete-time-evolutionary process. The simplest mathematical models of continuous systems are those consisting of first-order differential equations. In first-order autonomous system (explicit in time), the dynamics is a very restrictive class of system since its motion is in the real line. In simple nonautonomous cases, on the other hand, the dynamics is very rich.
+—--------------------------------------------------------</p>
+<p>La dinámica de un sistema puede expresarse como un proceso evolutivo de tiempo continuo o discreto. Los modelos matemáticos más simples de sistemas continuos son los que consisten en ecuaciones diferenciales de primer orden. En un sistema autónomo de primer orden (explícito en el tiempo), la dinámica es una clase de sistema muy restrictiva ya que su movimiento es en la línea real. En casos simples no autónomos, por otro lado, la dinámica es muy rica.
+—--------------------------------------------------------</p>
+<p>Nonlinear science and its dynamics have been a matter of great importance in the field of natural and social sciences. Examples include physical science (e.g., earth’s atmosphere, laser, electronic circuit, superconductivity, fluid turbulence, etc.), chemistry (Belousov–Zhabotinsky reaction, Brusselator model, etc.), biology (neural and cardiac systems, biochemical processes), ecology and social sciences (spreading of fading, spreading diseases, price fluctuations of markets and stock markets, etc.), to mention a few.
+—--------------------------------------------------------</p>
+<p>La ciencia no lineal y su dinámica han sido un tema de gran importancia en el campo de las ciencias naturales y sociales. Los ejemplos incluyen ciencia física (p. ej., la atmósfera terrestre, láser, circuito electrónico, superconductividad, turbulencia de fluidos, etc.), química (reacción de Belousov-Zhabotinsky, modelo de Brusselator, etc.), biología (sistemas nervioso y cardíaco, procesos bioquímicos), ecología y ciencias sociales (propagación de decoloraciones, propagación de enfermedades, fluctuaciones de precios de mercados y bolsas, etc.), por mencionar algunas.
+—--------------------------------------------------------</p>
+<p>Nonlinear systems are harder (if not sometime impossible) to solve than linear systems, because the latter follow the superposition principle and can be divided into parts. Each part can be solved individually and adding them all provides the final result. However, solutions of linear systems are helpful for the analysis of nonlinear systems.
+—--------------------------------------------------------
+Los sistemas no lineales son más difíciles (si no a veces imposibles) de resolver que los sistemas lineales, porque estos últimos siguen el principio de superposición y se pueden dividir en partes. Cada parte se puede resolver individualmente y sumarlas todas proporciona el resultado final. Sin embargo, las soluciones de sistemas lineales son útiles para el análisis de sistemas no lineales.</p>
+<p>—--------------------------------------------------------</p>
+<p>In this chapter we discuss some important definitions, concept of flows, their properties, examples, and analysis of one-dimensional flows for an easy way to understand the nonlinear dynamical systems.
+—--------------------------------------------------------
+En este capítulo discutimos algunas definiciones importantes, el concepto de flujos, sus propiedades, ejemplos y análisis de flujos unidimensionales para comprender fácilmente los sistemas dinámicos no lineales.
+—--------------------------------------------------------</p>
+<p>1.1 Dynamics: A Brief History</p>
+<p>The explicit time behaviors of a system and its dependency on initial conditions of solutions began after the 1880s. It is well known that analytical or closed-form solutions of nonlinear equations cannot be obtained except for very few special forms. Moreover, the solution behaviors at different initial conditions or their asymptotic characters are sometimes cumbersome to determine from closed-form solutions. In this situation scientists felt the necessity for developing a method that determines the qualitative features of a system rather than the quantitative analysis.
+—--------------------------------------------------------</p>
+<p>Los comportamientos temporales explícitos de un sistema y su dependencia de las condiciones iniciales de las soluciones comenzaron después de la década de 1880. Es bien sabido que las soluciones analíticas o de forma cerrada de las ecuaciones no lineales no se pueden obtener excepto en muy pocas formas especiales. Además, los comportamientos de solución en diferentes condiciones iniciales o sus caracteres asintóticos a veces son engorrosos de determinar a partir de soluciones de forma cerrada. En esta situación, los científicos sintieron la necesidad de desarrollar un método que determine las características cualitativas de un sistema en lugar del análisis cuantitativo.
+—--------------------------------------------------------</p>
+<p>The French mathematician Henri Poincaré (1854–1912) pioneered the qualitative approach, a combination of analysis and geometry which was proved to be a powerful approach for analyzing behaviors of a system and brought Poincaré recognition as the “father of nonlinear dynamics.” The time-evolutionary process governed either by linear or nonlinear equations gives the dynamical system. Dynamics and its representations are inextricably tied with mathematics. The subject initiated informally from the different views of mathematicians and physicists.
+—--------------------------------------------------------
+El matemático francés Henri Poincaré (1854–1912) fue pionero en el enfoque cualitativo, una combinación de análisis y geometría que demostró ser un enfoque poderoso para analizar el comportamiento de un sistema y le dio a Poincaré el reconocimiento como el &quot;padre de la dinámica no lineal&quot;. El proceso evolutivo en el tiempo gobernado por ecuaciones lineales o no lineales da el sistema dinámico. La dinámica y sus representaciones están indisolublemente ligadas a las matemáticas. El tema se inició informalmente desde las diferentes visiones de matemáticos y físicos.</p>
+<p>—--------------------------------------------------------</p>
+<p>Studies began in the mid-1600s when Newton (1643–1727) invented calculus, differential equations, the laws of motion, and universal gravitation. With the help of Newton’s discoveries the laws of planetary motions, already postulated by Jonaesh Kepler, a German astrologist (1609, 1619) were established mathematically and the study of dynamical systems commenced. In the qualitative approach, the local and asymptotic behaviors of an equation could be explained. Unfortunately, the qualitative study was restricted to mathematicians only.
+—--------------------------------------------------------
+Los estudios comenzaron a mediados del siglo XVII cuando Newton (1643–1727) inventó el cálculo, las ecuaciones diferenciales, las leyes del movimiento y la gravitación universal. Con la ayuda de los descubrimientos de Newton se establecieron matemáticamente las leyes de los movimientos planetarios, ya postuladas por el astrólogo alemán Jonaesh Kepler (1609, 1619), y se inició el estudio de los sistemas dinámicos. En el enfoque cualitativo se podrían explicar los comportamientos locales y asintóticos de una ecuación. Desafortunadamente, el estudio cualitativo se restringió solo a matemáticos.
+—--------------------------------------------------------</p>
+<p>However, the power and necessity of the qualitative approach for analyzing the dynamical evolution of a system were subsequently enriched by A.M. Lyapunov (1857–1918), G.D. Birkhoff (1908–1944) and a group of mathematicians from the Russian schools, viz. A.A. Andronov, V.I. Arnold, and co-workers (1937, 1966, 1971, 1973).
+—--------------------------------------------------------
+Sin embargo, el poder y la necesidad del enfoque cualitativo para analizar la evolución dinámica de un sistema fueron posteriormente enriquecidos por A.M. Lyapunov (1857–1918), G.D. Birkhoff (1908–1944) y un grupo de matemáticos de las escuelas rusas, a saber. AUTOMÓVIL CLUB BRITÁNICO. Andronov, V. I. Arnold y colaboradores (1937, 1966, 1971, 1973).
+—--------------------------------------------------------</p>
+<p>In fact, Poincaré studied continuous systems in connection with an international competition held in honor of the 60th birthday of King Oscar II of Sweden and Norway. Of the four questions announced in the competition, he opted for the stability of the solar system. He won the prize. But the published memoir differed significantly from the original due to an error. In the study of dynamics he found it convenient to replace a continuous flow of time with a discrete analog. In celestial mechanics, Newton solved two-body problems: the motion of the Earth around the Sun.
+—--------------------------------------------------------
+De hecho, Poincaré estudió sistemas continuos en relación con un concurso internacional realizado en honor al 60 cumpleaños del rey Oscar II de Suecia y Noruega. De las cuatro preguntas anunciadas en el concurso, se decantó por la estabilidad del sistema solar. Ganó el premio. Pero las memorias publicadas diferían significativamente del original debido a un error. En el estudio de la dinámica encontró conveniente reemplazar un flujo de tiempo continuo con un análogo discreto. En mecánica celeste, Newton resolvió problemas de dos cuerpos: el movimiento de la Tierra alrededor del Sol.</p>
+<p>—--------------------------------------------------------</p>
+<p>This is the famous inverse-square law: F›gravitational force) / ›distance between two bodiesﬁ 2: Many great mathematicians and physicists tried to extend Newton’s analytical method to the three-body problem (Sun, Earth, and Moon), but three or more than three-body problems were found to be remarkably difficult. At this juncture the situation seemed completely hopeless. This means that instead of asking about the exact positions of the planets always, one may ask “Is the solar system stable forever?” Answering this question Poincaré devised a new way of analysis which emphasized the qualitative approach. This eventually gave birth to the subject of ‘Dynamical Systems.’ The Russian Schools, viz. Nonlinear Mechanics and the Gorki (Andronov or Mandelstham Andronov) contributed
+immensely to the mathematical theories for dynamical systems.
+—--------------------------------------------------------
+Esta es la famosa ley del cuadrado inverso: F›fuerza gravitatoria) / ›distancia entre dos cuerpos2: Muchos grandes matemáticos y físicos intentaron extender el método analítico de Newton al problema de los tres cuerpos (Sol, Tierra y Luna), pero tres o se encontró que los problemas de más de tres cuerpos eran notablemente difíciles. En este momento, la situación parecía completamente desesperada. Esto significa que en lugar de preguntar siempre sobre las posiciones exactas de los planetas, uno puede preguntar &quot;¿Es el sistema solar estable para siempre?&quot; Respondiendo a esta pregunta, Poincaré ideó una nueva forma de análisis que enfatizaba el enfoque cualitativo. Esto finalmente dio origen al tema de los &quot;Sistemas dinámicos&quot;. Las escuelas rusas, a saber. La mecánica no lineal y Gorki (Andronov o Mandelstham Andronov) contribuyeron enormemente a las teorías matemáticas de los sistemas dinámicos.
+—--------------------------------------------------------</p>
+<p>In the dynamic evolution stability of a system is an important property. The Russian academician A.M. Lyapunov made a significant contribution to the stability/instability of a system. The mathematical definition of stability, construction of Lyapunov function, and Lyapunov theorem are extensively used for analyzing the stability of a particular class of systems. Also, Lyapunov exponent, assuming the exponential growth/decay with time of nearby orbits are applied for quantifying in chaotic motions.
+—--------------------------------------------------------
+En la evolución dinámica la estabilidad de un sistema es una propiedad importante. El académico ruso A.M. Lyapunov hizo una contribución significativa a la estabilidad/inestabilidad de un sistema. La definición matemática de estabilidad, la construcción de la función de Lyapunov y el teorema de Lyapunov se utilizan ampliamente para analizar la estabilidad de una clase particular de sistemas. Además, el exponente de Lyapunov, asumiendo el crecimiento/decaimiento exponencial con el tiempo de las órbitas cercanas, se aplica para la cuantificación en movimientos caóticos.</p>
+<p>—--------------------------------------------------------</p>
+<p>One of the most remarkable breakthroughs in the early nineteenth century was the discovery of solitary waves in shallow water. Solitary waves are disturbances occurring on the surface of a fluid. They are dispersive in nature and form a single hump above the surface by displacing an equal amount of fluid, creating a bore at the place. Furthermore, these waves spread while propagating without changing their shape and velocity. The speed of these waves is proportional to the fluid depth, which causes large amplitude of the wave. Consequently, the speed of the wave increases with increase in the height of the wave.
+—--------------------------------------------------------
+Uno de los avances más notables de principios del siglo XIX fue el descubrimiento de olas solitarias en aguas poco profundas. Las ondas solitarias son perturbaciones que ocurren en la superficie de un fluido. Son de naturaleza dispersiva y forman una sola joroba sobre la superficie al desplazar una cantidad igual de fluido, creando una perforación en el lugar. Además, estas ondas se propagan mientras se propagan sin cambiar su forma y velocidad. La velocidad de estas ondas es proporcional a la profundidad del fluido, lo que provoca una gran amplitud de la onda. En consecuencia, la velocidad de la ola aumenta con el aumento de la altura de la ola.</p>
+<p>—--------------------------------------------------------</p>
+<p>When a high amplitude solitary wave is formed behind a low amplitude wave, the former overtakes the latter keeping its shape unchanged with only a shift in position. This preservation of shape and velocity after collision suggests a particle like character of these waves and therefore called as solitary wave or solition, coined by Zabusky and Kruskal relevant with photon, proton, etc. John Scott Russel, the Scottish naval engineer first observed solitary wave on the Edinburgh-Glasgow canal in 1834 and he called it the ‘great wave of translation.’ Russel reported his observations to the British Association in 1844 as ‘Report on waves.’ The mathematical form of these waves was given by Boussinesque in 1871 and subsequently by Lord Rayleigh in 1876. The equation for solitary wave was later derived by Korteweg and de Vries in 1895 and was popularly known as the KdV equation. This is a nonlinear equation with a balance between the nonlinear advection term and dispersion resulting in the propagation of solitary waves in an inviscid fluid.
+—--------------------------------------------------------</p>
+<p>Cuando una onda solitaria de gran amplitud se forma detrás de una onda de baja amplitud, la primera supera a la segunda manteniendo su forma sin cambios con solo un cambio de posición. Esta preservación de la forma y la velocidad después de la colisión sugiere un carácter similar a una partícula de estas ondas y, por lo tanto, llamado onda solitaria o solitud, acuñado por Zabusky y Kruskal relacionado con fotones, protones, etc. John Scott Russel, el ingeniero naval escocés, observó por primera vez una onda solitaria. en el canal Edimburgo-Glasgow en 1834 y lo llamó la &quot;gran ola de traslación&quot;. Russel informó de sus observaciones a la Asociación Británica en 1844 como &quot;Informe sobre las olas&quot;. La forma matemática de estas ondas fue dada por Boussinesque en 1871 y posteriormente por Lord Rayleigh en 1876. La ecuación para la onda solitaria fue derivada más tarde por Korteweg y de Vries en 1895 y se conoció popularmente como la ecuación KdV. Esta es una ecuación no lineal con un equilibrio entre el término de advección no lineal y la dispersión que resulta en la propagación de ondas solitarias en un fluido no viscoso.
+—--------------------------------------------------------</p>
+<p>In the first half of the twentieth century nonlinear dynamics was mainly concerned with nonlinear oscillations and their applications in physics, electrical circuits, mechanical engineering, and biological science. Oscillations occur widely in nature and are exploited in many manmade devices. Many great scientists, viz. van der Pol (1889–1959), Alfred-Marie Liénard (1869–1958), Georg Duffing (1861–1944), John Edensor Littlewood (1885–1977), A.A. Andronov (1901-1952), M.L. Cartwright (1900–1998), N. Levinson (1912–1975), and others made mathematical formulations and analyzed different aspects of nonlinear oscillations. Balthasar van der Pol had made significant contributions to areas such as limit cycles (isolated closed trajectory but neighboring trajectories are not closed either as they spiral toward the closed trajectory or away from it), relaxation oscillations (limiting cycles exhibit an extremely slow buildup followed by a sudden discharge, and then followed by another slow buildup and sudden discharge, and so on) of nonlinear electrical circuits, forced oscillators hysteresis and bifurcation phenomena.
+—--------------------------------------------------------</p>
+<p>En la primera mitad del siglo XX, la dinámica no lineal se ocupaba principalmente de las oscilaciones no lineales y sus aplicaciones en física, circuitos eléctricos, ingeniería mecánica y ciencias biológicas. Las oscilaciones ocurren ampliamente en la naturaleza y se aprovechan en muchos dispositivos hechos por el hombre. Muchos grandes científicos, a saber. van der Pol (1889–1959), Alfred-Marie Liénard (1869–1958), Georg Duffing (1861–1944), John Edensor Littlewood (1885–1977), A.A. Andronov (1901-1952), M.L. Cartwright (1900–1998), N. Levinson (1912–1975) y otros hicieron formulaciones matemáticas y analizaron diferentes aspectos de las oscilaciones no lineales. Balthasar van der Pol había hecho contribuciones significativas a áreas como los ciclos límite (trayectoria cerrada aislada pero las trayectorias vecinas no están cerradas cuando giran en espiral hacia la trayectoria cerrada o alejándose de ella), oscilaciones de relajación (los ciclos límite exhiben una acumulación extremadamente lenta seguida de una descarga súbita, seguida de otra acumulación lenta y descarga súbita, y así sucesivamente) de circuitos eléctricos no lineales, histéresis de osciladores forzados y fenómenos de bifurcación.
+—--------------------------------------------------------</p>
+<p>The well-known van der Pol equation first appeared in his paper entitled “On relaxation oscillations” published in the Philosophical Magazine in the year 1926. The van der Pol oscillator in a triode circuit is a simple example of a system with a limit cycle. He and var der Mark used van der Pol nonlinear equation to describe the heartbeat and an electrical model of the heart. Limit cycles were found later in mechanical and biological systems.
+—--------------------------------------------------------
+La conocida ecuación de van der Pol apareció por primera vez en su artículo titulado “Sobre las oscilaciones de relajación” publicado en la Revista Filosófica en el año 1926. El oscilador de van der Pol en un circuito de triodo es un ejemplo simple de un sistema con un ciclo límite. Él y var der Mark utilizaron la ecuación no lineal de van der Pol para describir el latido del corazón y un modelo eléctrico del corazón. Los ciclos límite se encontraron más tarde en sistemas mecánicos y biológicos.
+—--------------------------------------------------------</p>
+<p>The existence of limit cycle of a system is important scientifically and stable limit cycle exhibits self-sustained oscillations. Species live in harmony in Nature. The existence of one species depends on the other, otherwise, one of the species would become extinct. Coexistence and sometimes mutual exclusion occur in reality in which one of the species becomes extinct. Alfred James Lotka (1880–1949), Vito Volterra (1860–1940), Ronald Fisher (1890–1962) and Nicols Rashevsky (1899–1972), and many others had explored the area of mathematical biology.
+—--------------------------------------------------------
+La existencia del ciclo límite de un sistema es científicamente importante y el ciclo límite estable exhibe oscilaciones autosostenidas. Las especies viven en armonía en la Naturaleza. La existencia de una especie depende de la otra, de lo contrario, una de las especies se extinguiría. La coexistencia y, a veces, la exclusión mutua se dan en la realidad en la que una de las especies se extingue. Alfred James Lotka (1880–1949), Vito Volterra (1860–1940), Ronald Fisher (1890–1962) y Nicols Rashevsky (1899–1972), entre muchos otros, habían explorado el área de la biología matemática.
+—--------------------------------------------------------</p>
+<p>The interaction dynamics of species, its mathematical model, and their asymptotic behaviors are useful tools in population dynamics of interacting species. Interaction dynamics among species have a great impact on the ecology and environment. The two-species predator–prey model in which one species preys on another was formulated by Lotka in 1910 and later by Volterra in 1926. This is known as the Lotka–Volterra model. In reality, the predator–prey populations rise and fall periodically and the maximum and minimum values (amplitudes) are relatively constant.
+—--------------------------------------------------------
+La dinámica de interacción de las especies, su modelo matemático y sus comportamientos asintóticos son herramientas útiles en la dinámica de poblaciones de especies que interactúan. Las dinámicas de interacción entre las especies tienen un gran impacto en la ecología y el medio ambiente. El modelo depredador-presa de dos especies en el que una especie se alimenta de otra fue formulado por Lotka en 1910 y luego por Volterra en 1926. Esto se conoce como el modelo Lotka-Volterra. En realidad, las poblaciones depredador-presa aumentan y disminuyen periódicamente y los valores máximos y mínimos (amplitudes) son relativamente constantes.</p>
+<p>—--------------------------------------------------------</p>
+<p>However, this is not true for the Lotka–Volterra model. Different initial conditions can have solutions with different amplitudes. Holling and Tanner (1975) constructed a mathematical model for predator–prey populations whose solutions have the same amplitudes in the long time irrespective of the initial populations. The mathematical ecologist Robert May (1972) and many other scientists formulated several realistic population models that are useful in analyzing the population dynamics.
+—--------------------------------------------------------
+Sin embargo, esto no es cierto para el modelo de Lotka-Volterra. Diferentes condiciones iniciales pueden tener soluciones con diferentes amplitudes. Holling y Tanner (1975) construyeron un modelo matemático para poblaciones depredador-presa cuyas soluciones tienen las mismas amplitudes en el tiempo largo independientemente de las poblaciones iniciales. El ecólogo matemático Robert May (1972) y muchos otros científicos formularon varios modelos de población realistas que son útiles para analizar la dinámica de la población.
+—--------------------------------------------------------
+The perception of unpredictability in natural and social phenomena has a great impact on human thoughts and also in scientific evolutions. The conflict between determinism and free-will has been a long-standing continuing debate in philosophy. Nature is our great teacher. In the nineteenth century, the French engineer Joseph Fourier (1770–1830) wrote “The study of Nature is the most productive source of mathematical discoveries. By offering a specific objective, it provides the advantage of excluding vague problems and unwieldy calculations. It is also a means to formulate mathematical analysis, and to isolate the most important aspects to know and to conserve. These fundamental elements are those which
+appear in all natural effects.”</p>
+<p>—--------------------------------------------------------</p>
+<p>La percepción de imprevisibilidad en los fenómenos naturales y sociales tiene un gran impacto en el pensamiento humano y también en la evolución científica. El conflicto entre el determinismo y el libre albedrío ha sido un debate continuo de larga data en la filosofía. La naturaleza es nuestra gran maestra. En el siglo XIX, el ingeniero francés Joseph Fourier (1770–1830) escribió: “El estudio de la Naturaleza es la fuente más productiva de descubrimientos matemáticos. Al ofrecer un objetivo específico, ofrece la ventaja de excluir problemas vagos y cálculos difíciles de manejar. También es un medio para formular análisis matemáticos y aislar los aspectos más importantes para conocer y conservar. Estos elementos fundamentales son los que
+aparecen en todos los efectos naturales.”</p>
+<p>—--------------------------------------------------------</p>
+<p>Newtonian mechanics gives us a deterministic view of an object in which the future is determined from the laws of force and the initial conditions. There is no question of unpredictability or free-will in the Newtonian setup. In the beginning of the twentieth century experimental evidence, logical description, and also philosophical perception of physical phenomena, both in microscopic and macroscopic, made a breakthrough in science as a whole. The perception of infinity, how we approach the stage of infinitum, was a matter of great concern in the scientific community of the twentieth century. In the macroscopic world, studies particularly in oscillations in electrical, mechanical, and biological systems and the emergence of statistical mechanics either in fluid system or material body established the role
+and consequence of nonlinearity on their dynamics.</p>
+<p>—--------------------------------------------------------</p>
+<p>La mecánica newtoniana nos da una visión determinista de un objeto en el que el futuro está determinado por las leyes de la fuerza y las condiciones iniciales. No hay cuestión de imprevisibilidad o libre albedrío en la configuración newtoniana. A principios del siglo XX, la evidencia experimental, la descripción lógica y también la percepción filosófica de los fenómenos físicos, tanto microscópicos como macroscópicos, supusieron un gran avance en la ciencia en su conjunto. La percepción del infinito, cómo nos acercamos a la etapa de infinitum, fue un tema de gran preocupación en la comunidad científica del siglo XX. En el mundo macroscópico, los estudios en particular sobre las oscilaciones en los sistemas eléctricos, mecánicos y biológicos y la aparición de la mecánica estadística, ya sea en el sistema de fluidos o en el cuerpo material, establecieron el papel
+y consecuencia de la no linealidad en su dinámica.</p>
+<p>—--------------------------------------------------------</p>
+<p>The existence of a chaotic orbit for a forced van der Pol equation (nonlinear equation) was proved mathematically by M.L. Cartwright, J.E. Littlewood about the 1950s. During this period mathematician N. Levinson showed that a physical model had a family of solutions that is unpredictable in nature. On the other hand, the turbulence in fluid flows is an unsolved and challenging problem in classical mechanics. The Soviet academician A.N. Kolmogorov (1903–1987), the greatest probabilist of the twentieth century and his co-workers made significant contributions to isotropic turbulence in fluids, the famous Kolmogorov-5/3 law (K41 theory) in the statistical equilibrium range. Kolmogorov’s idea was based on the assumption of statistical equilibrium in an isotropic fluid turbulence.
+—--------------------------------------------------------
+La existencia de una órbita caótica para una ecuación forzada de van der Pol (ecuación no lineal) fue demostrada matemáticamente por M.L. Cartwright, JE Littlewood sobre la década de 1950. Durante este período, el matemático N. Levinson demostró que un modelo físico tenía una familia de soluciones de naturaleza impredecible. Por otro lado, la turbulencia en los flujos de fluidos es un problema desafiante y sin resolver en la mecánica clásica. El académico soviético A.N. Kolmogorov (1903–1987), el mayor probabilista del siglo XX y sus colaboradores hicieron contribuciones significativas a la turbulencia isotrópica en fluidos, la famosa ley de Kolmogorov-5/3 (teoría K41) en el rango de equilibrio estadístico. La idea de Kolmogorov se basó en la suposición de equilibrio estadístico en una turbulencia de fluido isotrópico.
+—--------------------------------------------------------</p>
+<p>In turbulent motion large unstable eddies form and decay spontaneously into smaller unstable eddies, so that the energy-eddy cascade continues until the eddies reach a size so small that the cascade is damped effectively by fluid viscosity. Geoffrey Ingram Taylor (1886–1975), von Karman (1881–1963), and co-workers made significant contributions to the statistical description of turbulent motion. Yet, till today the nature of turbulent flow and universal law remain elusive. In nonlinear dynamics the well-known Kolmogorov–Arnold–Moser (KAM) theorem proves the existence of a positive measure set of quasi-periodic motions lying on invariant tori for Hamiltonian flows that are sufficiently close to completely integrable systems. This is the condition of weak chaotic motion in conservative systems. In chemistry, oscillation in chemical reaction such as the Belousov–Zhabotinsky reaction provided a wonderful example of relaxation oscillation.
+—--------------------------------------------------------</p>
+<p>En el movimiento turbulento, se forman grandes remolinos inestables y se descomponen espontáneamente en pequeños remolinos inestables, de modo que la cascada de remolinos de energía continúa hasta que los remolinos alcanzan un tamaño tan pequeño que la cascada es amortiguada de manera efectiva por la viscosidad del fluido. Geoffrey Ingram Taylor (1886–1975), von Karman (1881–1963) y sus colaboradores hicieron contribuciones significativas a la descripción estadística del movimiento turbulento. Sin embargo, hasta el día de hoy, la naturaleza del flujo turbulento y la ley universal siguen siendo esquivas. En dinámica no lineal, el conocido teorema de Kolmogorov-Arnold-Moser (KAM) demuestra la existencia de un conjunto de medidas positivas de movimientos cuasi-periódicos que se encuentran en toros invariantes para flujos hamiltonianos que están lo suficientemente cerca de sistemas completamente integrables. Esta es la condición de movimiento caótico débil en sistemas conservativos. En química, la oscilación en una reacción química, como la reacción de Belousov-Zhabotinsky, proporcionó un maravilloso ejemplo de oscilación de relajación.
+—--------------------------------------------------------</p>
+<p>The experiment was conducted by the Russian biochemist Boris Belousov around the 1950s. However, he could not publish his discovery as in those days it was believed that chemical reagents must go monotonically to equilibrium solution, no oscillatory motion. Later, Zhabotinsky confirmed Belousov’s results and brought this discovery to the notice of the scientific community at an international conference in Prague in the year 1968. For the progress of nonlinear science in the twentieth century both in theory and experiments such as hydrodynamic (water, helium, liquid mercury), electronic, biological (heart muscles), chemical, etc., scientists believed that simple looking systems can display highly complex seemingly random behavior. It was Henri Poincaré who first reported the notion of sensitivity to initial conditions in his work.
+—--------------------------------------------------------
+El experimento fue realizado por el bioquímico ruso Boris Belousov alrededor de la década de 1950. Sin embargo, no pudo publicar su descubrimiento ya que en esos días se creía que los reactivos químicos deben ir monótonamente a la solución de equilibrio, sin movimiento oscilatorio. Más tarde, Zhabotinsky confirmó los resultados de Belousov y dio a conocer este descubrimiento a la comunidad científica en una conferencia internacional en Praga en el año 1968. Para el progreso de la ciencia no lineal en el siglo XX, tanto en teoría como en experimentos como hidrodinámica (agua, helio , mercurio líquido), electrónica, biológica (músculos del corazón), química, etc., los científicos creían que los sistemas de aspecto simple pueden mostrar un comportamiento aparentemente aleatorio muy complejo. Fue Henri Poincaré quien primero reportó la noción de sensibilidad a las condiciones iniciales en su trabajo.
+—--------------------------------------------------------</p>
+<p>The quotation from his essay on Science and Method is relevant here: “It may happen that small differences in the initial produce very great ones in the final phenomena. A small error in the former will produce an enormous error in the later prediction becomes impossible.” Perhaps the most intriguing characteristic of a chaotic system is the extreme sensitivity to initial conditions. Naturally, there is a need to develop the science of the unpredictable. The real breakthrough came from the computational result of a simple nonlinear system. In the year 1963, Edward Lorenz (1917–2008) published a paper entitled “Deterministic Non-periodic Flow.”
+—--------------------------------------------------------</p>
+<p>Aquí es relevante la cita de su ensayo sobre Ciencia y Método: “Puede ocurrir que pequeñas diferencias en los fenómenos iniciales produzcan muy grandes en los fenómenos finales. Un pequeño error en el primero producirá un error enorme en el posterior la predicción se vuelve imposible.” Quizás la característica más intrigante de un sistema caótico es la extrema sensibilidad a las condiciones iniciales. Naturalmente, existe la necesidad de desarrollar la ciencia de lo impredecible. El verdadero avance provino del resultado computacional de un sistema no lineal simple. En el año 1963, Edward Lorenz (1917–2008) publicó un artículo titulado “Flujo no periódico determinista”.
+—--------------------------------------------------------</p>
+<p>In this paper he derived equations for thermal convection in a simplified model of atmospheric flow and noticed a very strange thing that the solutions of the equations could be unpredictable and irregular despite being deterministic. The sensitive dependence of the evolution of a system for an infinitesimal change of initial conditions is called the butterfly effect. Deterministic systems may exhibit a regular behavior for some values of their control parameters and irregular behavior for other values. Deterministic systems can give rise to motions that are essentially random and the long-term prediction is impossible. Another paper from the discrete system “Differential Dynamical Systems” published by Stephen Smale proved mathematically the existence of chaotic solutions and gave a geometric description of the chaotic set, the Smale horseshoe map.
+—--------------------------------------------------------
+En este artículo, derivó ecuaciones para la convección térmica en un modelo simplificado de flujo atmosférico y notó algo muy extraño: las soluciones de las ecuaciones podían ser impredecibles e irregulares a pesar de ser deterministas. La dependencia sensible de la evolución de un sistema ante un cambio infinitesimal de las condiciones iniciales se denomina efecto mariposa. Los sistemas deterministas pueden exhibir un comportamiento regular para algunos valores de sus parámetros de control y un comportamiento irregular para otros valores. Los sistemas deterministas pueden dar lugar a movimientos que son esencialmente aleatorios y la predicción a largo plazo es imposible. Otro artículo del sistema discreto “Differential Dynamical Systems” publicado por Stephen Smale probó matemáticamente la existencia de soluciones caóticas y dio una descripción geométrica del conjunto caótico, el mapa de herradura de Smale.</p>
+<p>—--------------------------------------------------------</p>
+<p>Mathematicians/physicists such as Lev. D. Laudau (fluid dynamics and stability), James Yorke (“Period three implies chaos”), Robert May (mathematical biology), Enrico Fermi (ergodicity), Stanislaw Ulam (the growth of patterns in cellular automata, lattice dynamics), J.G. Senai (ergodic theory), Sarkovskii (ordering of infinitely many periodic points of a map), Ruelle and Takens (fluid turbulence and ‘strange attractor’), A. Libchaber, and J. Maurer (intermittency as a route to fluid turbulence) and many others are the great contributors to the development of nonlinear science and chaos theory. In the mid-1970s a remarkable discovery was made by Mitchell Feigenbaum: the universality in chaotic regime for unimodal maps undergoing period doubling bifurcation.
+—--------------------------------------------------------
+Matemáticos/físicos como Lev. D. Laudau (dinámica de fluidos y estabilidad), James Yorke (&quot;El período tres implica caos&quot;), Robert May (biología matemática), Enrico Fermi (ergodicidad), Stanislaw Ulam (crecimiento de patrones en autómatas celulares, dinámica reticular), J.G. Senai (teoría ergódica), Sarkovskii (ordenación de infinitos puntos periódicos de un mapa), Ruelle y Takens (turbulencia de fluidos y 'atractor extraño'), A. Libchaber y J. Maurer (intermitencia como ruta hacia la turbulencia de fluidos) y muchos otros son los grandes contribuyentes al desarrollo de la ciencia no lineal y la teoría del caos. A mediados de la década de 1970, Mitchell Feigenbaum hizo un descubrimiento notable: la universalidad en el régimen caótico de los mapas unimodales que experimentan una bifurcación de duplicación del período.
+—--------------------------------------------------------</p>
+<p>The concept of fractal geometry or fractal objects is about 50 years old and was first introduced by the Polish–French–American mathematician Benoit Mandelbrot (1924–2010) in 1975. Fractals are structures that are irregular, erratic and self-similarity is intrinsic in most of these objects. Fractal objects consist of selfsimilarity between scales, that is, the patterns observed in larger scales repeat in ever decreasing smaller and smaller scales. In short, a fractal object is made up of parts similar to the whole in some way but lacks a characteristic smallest scale to measure. Fractal geometry is different from Euclidean geometry, and finds order in chaotic shapes and processes. Chaotic orbit can be expressed in terms of fractal object. Scaling and self-similarity are important features in most natural and manmade fractal objects. There exist numerous examples of fractals in natural and physical sciences.
+—--------------------------------------------------------
+El concepto de geometría fractal u objetos fractales tiene unos 50 años y fue introducido por primera vez por el matemático polaco-francés-estadounidense Benoit Mandelbrot (1924-2010) en 1975. Los fractales son estructuras que son irregulares, erráticas y la autosimilitud es intrínseca en la mayoría de estos objetos. Los objetos fractales consisten en autosimilitud entre escalas, es decir, los patrones observados en escalas más grandes se repiten en escalas cada vez más pequeñas y decrecientes. En resumen, un objeto fractal se compone de partes similares al todo de alguna manera, pero carece de una escala característica más pequeña para medir. La geometría fractal es diferente de la geometría euclidiana y encuentra orden en formas y procesos caóticos. La órbita caótica se puede expresar en términos de objeto fractal. El escalado y la autosimilitud son características importantes en la mayoría de los objetos fractales naturales y artificiales. Existen numerosos ejemplos de fractales en las ciencias naturales y físicas.
+—--------------------------------------------------------</p>
+<p>One can also find a number of examples of fractals in the human anatomy. For instance, lungs, heart, and many other anatomical structures are either fractal or fractal-like. Moreover, in recent years the idea of fractals is being exploited to find applications in medical science to curb fatal diseases. Mandelbrot and other researchers have shown how fractals could be explored in different areas and chaos in particular. The phenomenon of chaos is a realistic phenomenon and therefore one has to understand and realize chaos in usual incidents happening in our everyday life. The study of chaotic phenomena has begun in full length nowadays and is widely applied in different areas. The theory of chaos is now applied in computer security, digital watermarking, secure data aggregation and video surveillance successfully.
+—--------------------------------------------------------
+También se pueden encontrar varios ejemplos de fractales en la anatomía humana. Por ejemplo, los pulmones, el corazón y muchas otras estructuras anatómicas son fractales o similares a fractales. Además, en los últimos años se está explotando la idea de los fractales para encontrar aplicaciones en la ciencia médica para frenar enfermedades mortales. Mandelbrot y otros investigadores han demostrado cómo se pueden explorar los fractales en diferentes áreas y el caos en particular. El fenómeno del caos es un fenómeno realista y, por lo tanto, uno tiene que comprender y darse cuenta del caos en los incidentes habituales que suceden en nuestra vida cotidiana. El estudio de los fenómenos caóticos se ha iniciado con amplitud en la actualidad y se aplica ampliamente en diferentes áreas. La teoría del caos ahora se aplica con éxito en la seguridad informática, las marcas de agua digitales, la agregación segura de datos y la videovigilancia.</p>
+<p>—--------------------------------------------------------</p>
+<p>Thus, chaotic phenomena are not only destructive as in tsunami, tornado, etc., but can also be effectively utilized for the welfare of human beings. Chaos has been considered as the third greatest discovery, after relativity and quantum mechanics in the twentieth century science and philosophy. In the past 20 years scientists and technologists have been realizing the potential use of chaos in natural and technological sciences.
+—--------------------------------------------------------</p>
+<p>Por lo tanto, los fenómenos caóticos no solo son destructivos como tsunamis, tornados, etc., sino que también pueden utilizarse de manera efectiva para el bienestar de los seres humanos. El caos ha sido considerado como el tercer mayor descubrimiento, después de la relatividad y la mecánica cuántica, en la ciencia y la filosofía del siglo XX. En los últimos 20 años, los científicos y tecnólogos se han dado cuenta del uso potencial del caos en las ciencias naturales y tecnológicas.
+—--------------------------------------------------------</p>
+<p>1.2 Dynamical Systems</p>
+<p>Dynamics is primarily the study of the time-evolutionary process and the corresponding system of equations is known as dynamical system. Generally, a system of n first-order differential equations in the space Rn is called a dynamical system of dimension n which determines the time behavior of evolutionary process. Evolutionary processes may possess the properties of determinacy/non-determinacy, finite/infinite dimensionality, and differentiability. A process is called deterministic if its entire future course and its entire past are uniquely determined by its state at the present time. Otherwise, the process is called nondeterministic. However, the process may be semi-deterministic (determined, but not uniquely).
+—------------------------------------------------------------------
+La dinámica es principalmente el estudio del proceso evolutivo en el tiempo y el sistema de ecuaciones correspondiente se conoce como sistema dinámico. Generalmente, un sistema de n ecuaciones diferenciales de primer orden en el espacio Rn se denomina sistema dinámico de dimensión n que determina el comportamiento temporal del proceso evolutivo. Los procesos evolutivos pueden poseer las propiedades de determinación/no determinación, dimensionalidad finita/infinita y diferenciabilidad. Un proceso se llama determinista si todo su curso futuro y todo su pasado están determinados únicamente por su estado en el momento presente. De lo contrario, el proceso se llama no determinista. Sin embargo, el proceso puede ser semideterminista (determinado, pero no unívocamente).
+—-------------------------------------------------------------------
+In classical mechanics the motion of a system whose future and past are uniquely determined by the initial positions and the initial velocities is an example of a deterministic dynamical system. The evolutionary process may describe, viz. (i) a continuous-time process and (ii) a discrete-time process. The continuous-time process is represented by differential equations, whereas the discrete-time process is by difference equations (or maps). The continuous-time dynamical systems may be described mathematically as follows:
+—-------------------------------------------------------------------</p>
+<p>En la mecánica clásica, el movimiento de un sistema cuyo futuro y pasado están determinados únicamente por las posiciones iniciales y las velocidades iniciales es un ejemplo de un sistema dinámico determinista. El proceso evolutivo puede describir, a saber. (i) un proceso de tiempo continuo y (ii) un proceso de tiempo discreto. El proceso de tiempo continuo se representa mediante ecuaciones diferenciales, mientras que el proceso de tiempo discreto se representa mediante ecuaciones en diferencias (o mapas). Los sistemas dinámicos de tiempo continuo se pueden describir matemáticamente de la siguiente manera:
+—-------------------------------------------------------------------</p>
+<p>Let x  . x  ›tﬁ 2 Rn ; t 2 I R be the vector representing the dynamics of a
+continuous system (continuous-time system). The mathematical representation of
+the system may be written as</p>
+<p>dx
+dt . _x
+  . f</p>
+<p>›x
+; tﬁ ›1:1ﬁ
+where f</p>
+<p>›x
+; tﬁ is a sufficiently smooth function defined on some subset U   Rn   R: Schematically, this can be shown as
+Rn
+›state spaceﬁ  R
+›timeﬁ . Rnﬂ1
+›space of motionsﬁ</p>
+<p>The variable t is usually interpreted as time and the function f ›x
+; tﬁ is generally
+nonlinear. The time interval may be finite, semi-finite or infinite. On the other hand,
+the discrete system is related to a discrete map (given only at equally spaced points
+of time) such that from a point x0, one can obtain a point x1 which in turn maps into</p>
+<p>x2, and so on. In other words, xnﬂ1 . g›xnﬁ . g›g›xn 1ﬁﬁ; etc. This is also written
+in the form xnﬂ1 . g›xnﬁ . g2›xn 1ﬁ .      . The discrete system will be discussed
+in the later chapters.</p>
+<p>If the right-hand side of Eq. (1.1) is explicitly time independent then the system is called autonomous. The trajectories of such a system do not change in time. On the other hand, if the right-hand side of Eq. (1.1) has explicit dependence on time then the system is called nonautonomous. An n-dimensional nonautonomous system can be converted into autonomous form by introducing a new dependent variable xnﬂ1 such that xnﬂ1 . t: In general, the solution of Eq. (1.1) is difficult or sometimes impossible to obtain when the function f ›x ; tﬁ is nonlinear, except in some special cases. Examples of autonomous and nonautonomous systems are given below.
+—------------------------------------------------------
+Si el lado derecho de la Ec. (1.1) es explícitamente independiente del tiempo, entonces el sistema se llama autónomo. Las trayectorias de tal sistema no cambian en el tiempo. Por otro lado, si el lado derecho de la Ec. (1.1) tiene una dependencia explícita en el tiempo, entonces el sistema se llama no autónomo. Un sistema no autónomo de n dimensiones se puede convertir en autónomo introduciendo una nueva variable dependiente xnﬂ1 tal que xnﬂ1. t: En general, la solución de la Ec. (1.1) es difícil o a veces imposible de obtener cuando la función f ›x ; tﬁ es no lineal, excepto en algunos casos especiales. A continuación se dan ejemplos de sistemas autónomos y no autónomos.
+—------------------------------------------------------</p>
+<ol class="lowerroman simple">
+<li><p>Autonomous systems</p></li>
+</ol>
+<p>(a) €xﬂa_xﬂbx . 0; a; b[0. This is a damped linear harmonic oscillator. The
+parameters a and b are, respectively, the strength of damping and the
+strength of linear restoring force.
+(b) €xﬂx2 sin x . 0; x .
+ffiffiffiffiffiffiffiffi
+g=L
+p
+. g is the gravitational acceleration, L the
+string length. This is a simple undamped nonlinear oscillator (pendulum).
+(c)
+_x . ax   bxy
+_y .  cyﬂdxy
+)
+: This is the well-known Lotka–Volterra predator–prey
+model, where a; b; c; d are all positive constants.
+(d) €x   l›1   x2ﬁ_xﬂbx . 0; l[0: This is the well-known van der Pol
+oscillator.
+(ii) Nonautonomous systems
+(a) €xﬂa_xﬂbx . f cosxt; a; b[0: This is an example of linear oscillator
+with external time-dependent force. f and x are the amplitude and frequency
+of driving force, respectively.
+(b) €xﬂa_xﬂx20
+xﬂbx3 . f sinxt. This is a Duffing nonlinear oscillator with
+cubic restoring force. a is the strength of damping, x0 is the natural frequency
+and b is the strength of the nonlinear restoring force.
+(c) €x   l›1   x2ﬁ_xﬂbx . f cosxt; l[0. This is a van der Pol nonlinear
+forced oscillator.
+(d) €x   l›1   x2ﬁ_xﬂx20
+xﬂbx3 . f cosxt: This is a Duffing-van der Pol
+nonlinear forced oscillator.
+Some examples of dynamical systems
+(a) The most common example of a dynamical system is Newtonian systems
+governed by Newton’s law of motion. This law states that the acceleration of a
+particle is determined by the force per unit mass. The force can be a function
+of the velocity ›_xﬁ and the position ›xﬁ and so the Newtonian systems take the
+form</p>
+<p>m€x . F›x; _xﬁ; ›m . mass; F . force): ›1:2ﬁ
+Equation (1.2) may be written as a system of two first-order differential
+equations as
+_x . y; and _y . F›x; yﬁ ›1:3ﬁ
+System (1.3) may be viewed as a dynamical system of dimension two in the
+xy-plane and the dynamics is a set of trajectories giving time evolution of
+motion.
+(b) The simple exponential growth model for a single population is expressed
+mathematically as
+dx
+dt . rx with x . x0 at t . 0; ›1:4ﬁ
+where r[0 is the population growth parameter. The solution of (1.4) is
+x›tﬁ . x0ert. This solution expresses the simplest model for population growth
+with time in unrestricted resources and the population x›tﬁ !1 as t!1.
+Obviously, this model does not obey realistic population growth of any
+species.
+The simple population growth model, considering effects like intraspecies
+competitions, depletion of resources with population growth is given as
+dx
+dt . ›r   bxﬁx ›1:5ﬁ
+with the condition x . x0 at t . 0: The solution of (1.5) is given as
+x›tﬁ .
+rb</p>
+<p>x0
+x0 ﬂ rb   x0</p>
+<p>e rt ›1:6ﬁ
+Clearly x ! rb
+as t!1 for both the cases x0[ rb
+and x0rb
+:
+This growth model is known as the Logistic growth model of population. The
+graphical representation of the above solution is shown in Fig. 1.1.
+This simple model shows that population x›tﬁ is of constant growth rate after
+some time t.
+(c) Populations of two competing species (predator and prey populations) could
+be modeled mathematically. The predator–prey population model was first
+formulated by Alfred J. Lotka (1880–1949) in the year 1910 and later by Vito
+Volterra (1860–1940) in the year 1926. This is known as Lotka–Volterra
+predator–prey model. In this model the fox population preys on the rabbit
+population. The population density of rabbit affects the population density of
+fox, since the latter relies on the former for food. If the density of rabbit is
+high, the fox population decreases, while when the fox population increases,</p>
+<p>the rabbit population decreases. When the rabbit population falls, the fox
+population also falls. When the fox population drops, the rabbits can multiply
+again and so on. The growth or decrease of two populations could be analyzed
+using dynamical system principles. The dynamical equations for predator–
+prey model are given as
+_x . ax   bxy
+_y .  cyﬂdxy
+)
+›1:7ﬁ
+where x denotes the population density of the prey and y, the population
+density of the predator. The parameter a represents the growth rate of the prey
+in the absence of intersection with the predators whereas the parameter c
+represents the death rate of the predators in the absence of interaction with the
+prey and b, d are the interaction parameters and are all constants (for simple
+model). Using the dynamical principle one can obtain a necessary condition
+for coexistence of the two species. In this model the survival of the predators
+depends entirely on the population of the prey. If initially x . 0; then _y .
+ cy; that is, y›tﬁ . y›0ﬁe ct and y›tﬁ !0 as t!1 (see the book
+Arrowsmith and Place [1]).
+(d) Suppose we have an LCR circuit consisting of a resistor of resistance R, a
+capacitor of capacitance C, and an inductor of inductance L. In a simple
+electrical circuit the values of R, C, and L are always nonnegative and are
+independent of time t. Kirchhoff’s current law (the sum of the currents flowing
+into a node is equal to the sum of the currents flowing out of it) is satisfied if
+we pass a current I to the closed loop as shown in Fig. 1.2.
+According to Kirchhoff’s voltage law of the circuit (the sum of the potential
+differences around any closed loop in a circuit is zero), we have the equation</p>
+<p>V12 ﬂV23 ﬂV31 . 0 ›1:8ﬁ
+Here Vi j denotes the voltage difference between node i and node j.
+From Ohm’s law, we get the relation
+V31 . IR ›1:9ﬁ
+Also, from the definition of capacitance C; we have
+C
+dV12
+dt . I ›1:10ﬁ
+Again, Faraday’s law of inductance gives
+L
+dI
+dt . V23 ›1:11ﬁ
+Substituting (1.8) and (1.10) into (1.11) and writing V12 . V; we get
+V ﬂL
+dI
+dt ﬂIR . 0
+or,
+dI
+dt .
+R
+L
+I
+V
+L ›1:12ﬁ
+Again, from (1.10)
+dV
+dt .
+I
+C
+: ›1:13ﬁ</p>
+<p>Thus finally we obtain the following equations
+dV
+dt .
+I
+C
+and
+dI
+dt .
+R
+L
+I
+V
+L
+: ›1:14ﬁ
+These equations represent a dynamical system of dimension two in the VI plane.
+This is a simple linear model in LCR circuit. The linear models have undoubtedly
+had good success, but they also have limitations. Linear models can only produce
+persistent oscillations of a harmonic (trigonometric) type.
+A circuit is called nonlinear when it contains at least one nonlinear circuit
+element like a nonlinear resistor, a nonlinear capacitor or a nonlinear inductor.
+Chua’s diode model equation is a simple example of nonlinear electric circuit (see
+Lakshmanan and Rajasekar [2] for nonlinear electrical circuit).</p>
+<p>1.3 Flows</p>
+<p>The time-evolutionary process may be described as a flow of a vector field.
+Generally, flow is frequently used for discussing the dynamics as a whole rather
+than the evolution of a system at a particular point. The solution x
+  ›tﬁ of a system
+_x
+  . f</p>
+<p>›x  ﬁ which satisfies x
+  ›t0ﬁ . x
+ 0 gives the past ›tt0ﬁ and future ›t[t0ﬁ
+evolutions of the system. Mathematically, the flow is defined by /t›x  ﬁ : U ! Rn
+where /t›x  ﬁ . /›t;x
+  ﬁ is a smooth vector function of x
+  2 U  Rn and t 2 I  R
+satisfying the equation
+d
+dt
+/t›x  ﬁ . f
+  ›/t›x  ﬁﬁ
+for all t such that the solution through x</p>
+<p>exists and /›0;x
+  ﬁ . x</p>
+<p>. The flow /t›x  ﬁ satisfies the following properties:
+(a) /o . Id, (b) /tﬂs . /t   /s.
+Some flows may also satisfy the property
+/›tﬂs; x
+  ﬁ . /›t;/›s; x
+  ﬁﬁ . /›s; /›t; x
+  ﬁﬁ . /›sﬂt;x
+  ﬁ:
+Flows in R: Consider a one-dimensional autonomous system represented by
+_x . f ›xﬁ; x 2 R: We can imagine that a fluid is flowing along the real line with local
+velocity f ›xﬁ: This imaginary fluid is called the phase fluid and the real line is
+called the phase line. For solution of the system _x . f ›xﬁ starting from an arbitrary
+initial position x0, we place an imaginary particle, called a phase point, at x0 and
+watch how it moves along with the flow in phase line in varying time t. As time
+goes on, the phase point ›x; tﬁ in the one-dimensional system _x . f ›xﬁ with x›0ﬁ . x0 moves along the x-axis according to some function /›t; x0ﬁ: The function /›t; x0ﬁ is called the trajectory for a given initial state x0; and the set /›t; x0ﬁj t 2 I  R f g</p>
+<p>is the orbit of x0 2 R: The set of all qualitative trajectories of the system is called
+phase portrait.
+Flows in R
+2 : Consider a two-dimensional system represented by the following
+equations _x . f ›x; yﬁ; _y . g›x; yﬁ; ›x; yﬁ 2 R2. An imaginary fluid particle flows in
+the plane R
+2 , known as phase plane of the system. The succession of states given
+parametrically by x . x›tﬁ; y . y›tﬁ trace out a curve through some initial point
+P x›t0ﬁ; y›t0ﬁ › ﬁ is called a phase path. The set f/›t;x
+ 0ﬁjt 2 I  Rg is the orbit of
+x
+0
+in R2. There are an infinite number of trajectories that would fill the phase plane
+when they are plotted. But the qualitative behavior can be determined by plotting a
+few trajectories with different initial conditions. The phase portrait displays how the
+qualitative behavior of a system is changing as x and y varies with time t. An orbit is
+called periodic if x›tﬂpﬁ . x›tﬁ for some p[0; for all t. The smallest integer p for
+which the relation is satisfied is called the prime period of the orbit. Flows in R
+cannot have oscillatory or closed path.
+Flows in Rn: Let us now define an autonomous system representing n ordinary
+differential equations as
+x_1 . f1›x1; x2; . . .; xnﬁ x_2 . f2›x1; x2; . . .; xnﬁ
+.. .
+x_n . fn›x1; x2; . . .; xnﬁ
+9&gt;&gt;&gt;=
+&gt;&gt;&gt;;
+which can also be written in symbolic notation as _x
+  . f</p>
+<p>›x  ﬁ; where x
+  .
+›x1; x2; . . .; xnﬁ and f
+  . ›f1; f2; . . .; fnﬁ: The solution of this system with the initial
+condition x
+  ›0ﬁ . x
+  0 can be thought as a continuous curve in the phase space Rn
+parameterized by time t 2 I  R: So the set of all states of the evolutionary process
+is represented by an n-valued vector field in Rn. The solutions of the system with
+different initial conditions describe a family of phase curves in the phase space,
+called the phase portrait of the system. The vector field f</p>
+<p>›x  ﬁ is everywhere tangent
+to these curves and their orientation is directed by the direction of the tangent vector
+of f</p>
+<p>›x  ﬁ:</p>
+<p>1.4 Evolution</p>
+<p>Consider a system _x
+  . f</p>
+<p>›x  ﬁ;x
+  2 Rn with initial conditions x
+  ›t0ﬁ . x
+ 0. Let E   Rn be an open set and f
+  2 C1
+›Eﬁ: For x
+  0 2 E; let /›t; x
+ 0ﬁ be a solution of the
+above system on the maximum interval of existence I›x  0ﬁ   R: The mapping
+/t : Rn ! Rn defined by /t›x  0ﬁ . /›t;x
+  0ﬁ is known as evolution operator of the
+system. The linear flow for the system _x
+  . Ax</p>
+<p>with x</p>
+<p>t0 › ﬁ . x
+ 0, is defined by
+/t : Rn ! Rn and /t . eAt, the exponential matrix. The mappings /t for both
+linear and nonlinear systems satisfy the following properties:</p>
+<p>p30</p>
+<ol class="lowerroman simple">
+<li><p>/0›x  ﬁ . x</p></li>
+</ol>
+<p>  (ii) /s›/t›x  ﬁﬁ . /sﬂt›x  ﬁ; 8s; t 2 R
+(iii) /t›/ t›x  ﬁﬁ . / t›/t›x  ﬁﬁ . x</p>
+<p>; 8t 2 R</p>
+<p>In general a dynamical system may be viewed as group of nonlinear / linear
+operators evolving as f/t›x  ﬁ; t 2 R;x
+  2 Rng: The following dynamical group
+properties hold good:</p>
+<ol class="lowerroman simple">
+<li><p>/t/s 2 f/t›x  ﬁ; t 2 R;x</p></li>
+</ol>
+<p>  2 Rng (Closure property)
+(ii) /t›/s/rﬁ . ›/t/sﬁ/r (Associative property)
+(iii) /0›x  ﬁ . x</p>
+<p>, /0 being the Identity operator.
+(iv) /t/ t . / t/t . /0, where / t is the Inverse of /t .</p>
+<p>For some cases the flow satisfies the commutative property /t/s . /s/t .</p>
+<p>1.5 Fixed Points of a System</p>
+<p>The notion of fixed point is important in analyzing the local behavior of a system.
+The fixed point is nothing but a constant or equilibrium or invariant solution of a
+system. A point is a fixed point of the flow generated by an autonomous system
+_x
+  . f</p>
+<p>›x  ﬁ; x
+  2 Rn if and only if /›t;x
+  ﬁ . x</p>
+<p>for all t 2 R: Consequently in
+continuous system, this gives _x
+  . 0
+  ) f</p>
+<p>›x  ﬁ . 0</p>
+<p>: For nonautonomous systems
+fixed point can be defined for a fixed time interval. A fixed point is also known as a
+critical point or an equilibrium point or a stationary point. This point is also
+called stagnation point with respect to the flow /t in Rn. Flows on line may have
+no fixed points, only one fixed point, finite number of fixed points, and infinite
+number of fixed points. For example, the flow _x . 5 (no fixed points), _x . x (only
+one fixed point), _x . x2   1 (two fixed points), and _x . sin x (infinite number of
+fixed points).</p>
+<p>1.6 Linear Stability Analysis</p>
+<p>A fixed point, say x
+ 0 is said to be stable if for a given e[0; there exists a d[0
+depending upon e such that for all t t0, k x
+  ›tﬁ   x
+ 0›tﬁ k e, whenever
+k x
+  ›t0ﬁ   x
+ 0›t0ﬁ k d, where k:k : Rn ! R denotes the norm of a vector in Rn.
+Otherwise, the fixed point is called unstable. In linear stability analysis the quadratic
+and higher order terms in the Taylor series expansion about a fixed point x of a
+system _x . f ›xﬁ; x 2 R are neglected due to the smallness of the terms. Consider a
+small perturbation quantity n›tﬁ; away from the fixed point x; such that x›tﬁ . x ﬂn›tﬁ: We see whether the perturbation grows or decays as time goes on. So we
+get the perturbation equation as</p>
+<p>n
+. _x . f ›xﬁ . f ›x ﬂnﬁ:
+Taylor series expansion of f ›x ﬂnﬁ gives
+_n
+. f ›xﬁﬂnf 0›xﬁﬂ
+n2
+2
+f 00›xﬁﬂ
+According to linear stability analysis, we get
+_n
+. nf 0›xﬁó*f ›xﬁ . 0
+Assuming f 0›xﬁ 6. 0; the perturbation n›tﬁ grows exponentially if f 0›xﬁ[0
+and decays exponentially if f 0›xﬁ0: Linear theory fails if f 0›xﬁ . 0 and then
+higher order derivatives must be considered in the neighborhood of fixed point for
+stability analysis of the system.</p>
+<p>p31</p>
+<p>Example 1.1 Find the evolution operator /t for the one-dimensional flow _x .  x2.
+Show that /t forms a dynamical group. Is it a commutative group?</p>
+<p>Solution The solutions of the given system are obtained as below:
+_x .
+dx
+dt .  x2 )
+1
+x . tﬂA ) x›tﬁ .
+1
+tﬂA
+in any interval of R that does not contain the point x . 0; where A is a constant.</p>
+<p>If we take starting point x›0ﬁ . x0, then A . 1=x0 and so we get
+x›tﬁ .
+x0
+1ﬂx0t
+; t 6.  1=x0:</p>
+<p>The point x . 0 is not included in this solution. But it is the fixed point of the
+given system, because _x . 0 , x . 0: Therefore, /t›0ﬁ . 0 for all t 2 R: So the
+evolution operator of the system is given as /t›xﬁ . x
+1ﬂxt for all x 2 R:</p>
+<p>The evolution operator /t is not defined for all t 2 R: For example, if t .
+ 1=x; x 6. 0; then /t is undefined. Thus we see that the interval in which /t is
+defined is completely dependent on x.</p>
+<p>We shall now examine the group properties of the evolution operator /t below:</p>
+<p>(i) /r/s 2 /t›xﬁ; t 2 R; x 2 R f g8r; s 2 R (Closure property)
+Now,
+/r›yﬁ .
+y
+1ﬂyr
+: Take y .
+x
+1ﬂxs
+.
+x=1ﬂsx
+1ﬂ xr
+1ﬂxs .
+x
+1ﬂxsﬂxr .
+x
+1ﬂx›sﬂrﬁ
+. /sﬂr 2 /t›xﬁ; t 2 R; x 2 R f g</p>
+<p>(ii) /t›/s/rﬁ . ›/t/sﬁ/r (Associative property)
+L:H:S: . /t››/s/rﬁ›xﬁﬁ . /t›yﬁ .
+y
+1ﬂyt .
+z
+1ﬂzs .
+x
+1ﬂx›r ﬂsﬁ
+; y . /s›/r›xﬁﬁ
+›where y . /s›zﬁ; z . /r›xﬁ .
+x
+1ﬂrx</p>
+<p>) L:H:S .
+x
+1ﬂx›t ﬂr ﬂsﬁ . /tﬂr ﬂs›xﬁ
+R:H:S: . ››/t/sﬁ/r›xﬁﬁ
+Now,
+/t›yﬁ .
+y
+1ﬂyt
+; y . /s›xﬁ .
+x
+1ﬂsx
+.
+x
+1ﬂx›tﬂsﬁ . /tﬂs›xﬁ
+/tﬂs›/rﬁ›xﬁ . /t ﬂs›zﬁ .
+z
+1ﬂz›tﬂsﬁ
+; z . /r›xﬁ .
+x
+1ﬂrx
+/tﬂs›/rﬁ›xﬁ .
+x
+1ﬂx›tﬂsﬂrﬁ . /tﬂsﬂr›xﬁ
+Hence, /t›/s/rﬁ›xﬁ . ›/s/rﬁ/t›xﬁ; 8x 2 R.
+(iii) /0›xﬁ . x
+1ﬂx 0 . x; /0 is the identity operator.
+(iv)
+/t/ t›xﬁ . /t›yﬁ .
+y
+1ﬂty
+; y . / t›xﬁ .
+x
+1   tx
+.
+x
+1   txﬂtx . x . /0›xﬁ ›/ t is the inverse of /tﬁ
+Hence the flow evolution operator forms a dynamical group.
+(v) /t/s . /s/t
+Now,
+›/t/sﬁ›xﬁ . /t›yﬁ .
+y
+1ﬂty
+; y . /s›xﬁ .
+x
+1ﬂxs
+.
+x
+1ﬂx›tﬂsﬁ . /tﬂs›xﬁ
+/s/t›xﬁ . /s›zﬁ .
+z
+1ﬂsz
+; z . /t›xﬁ .
+x
+1ﬂtx
+.
+x
+1ﬂtxﬂsx .
+x
+1ﬂ›sﬂtﬁx . /sﬂt›xﬁ
+So, /t/s . /s/t (Commutative property).</p>
+<p>Thus, the evolution operator /t forms a commutative group.</p>
+<p>p33</p>
+<p>Example 1.2 Find the evolution operator /t for the system _x . x2   1 and also
+verify that /t›/s›xﬁﬁ . /tﬂs›xﬁ for all s; t 2 R: Show that the evolution operator
+forms a dynamical group. Examine whether it is commutative dynamical group.</p>
+<p>Solution The solutions of the system satisfy the equation
+dx
+dt . x2   1 )
+1
+2
+log
+x   1
+xﬂ1</p>
+<p>. tﬂA; x 6. 1; 1
+)
+x   1
+xﬂ1 . Be2t; B .  e2A
+) x›tﬁ .
+Be2t ﬂ1
+1   Be2t
+If we take x›0ﬁ . x0, then from the above relation we get B . ›x0   1ﬁ=›x0 ﬂ1ﬁ and so the solution can be written as
+x›tﬁ . ›x0   1ﬁe2t ﬂx0 ﬂ1
+x0 ﬂ1   ›x0   1ﬁe2t :
+This solution is defined for all t 2 R and for x0 6.  1; 1: But the points x .
+ 1; 1 are the fixed points of the system. Therefore, the evolution operator of the
+given one-dimensional system is
+/t›xﬁ . ›x   1ﬁe2t ﬂxﬂ1
+xﬂ1   ›x   1ﬁe2t for all x; t 2 R:
+Now for all x; t; s 2 R; we have
+/t›/s›xﬁﬁ . /t›yﬁ . ›y   1ﬁe2t ﬂyﬂ1
+yﬂ1   ›y   1ﬁe2t
+where y . /s›xﬁ . ›x 1ﬁe2s ﬂxﬂ1
+xﬂ1 ›x 1ﬁe2s
+Substituting this value of y into the above expression we get
+/t›/s›xﬁﬁ . ›x   1ﬁe2›tﬂsﬁ ﬂxﬂ1
+xﬂ1   ›x   1ﬁe2›t ﬂsﬁ . /tﬂs›xﬁ:
+(ii) /0›xﬁ . x 1ﬂxﬂ1
+x ﬂ 1 xﬂ1 . x; the identity operator</p>
+<p>1.7 Analysis of One-Dimensional Flows</p>
+<p>As we know qualitative approach is the combination of analysis and geometry and
+is a powerful tool for analyzing solution behaviors of a system qualitatively. By
+drawing trajectories in phase line/plane/space, the behaviors of phase points may be
+found easily. In qualitative analysis we mainly look for the following solution
+behaviors:
+(i) Local stabilities of fixed points for a system;
+(ii) Analyzing the existence of periodic/quasi-periodic solutions, limit cycle, relaxation
+oscillation, hysteresis, etc.;
+(iii) Local and asymptotic solution behaviors of a system;
+(iv) Topological features of flows such as bifurcations, catastrophe, topological
+equivalence, transitiveness, etc.
+We shall now analyze a simple one-dimensional system as follows.
+Consider a one-dimensional system represented as _x›tﬁ . sin x with the initial
+condition x›t . 0ﬁ . x›0ﬁ . x0. The characteristic features of the system are (i) it is
+a one-dimensional system, (ii) nonlinear system (iii) autonomous system, and
+(iv) its closed-form solution (analytical solution) exists. This is a one-dimensional
+flow and we analyze the system on the basis of flow. The analytical solution of the
+system is obtained easily
+dx
+dt . sin x ) dt . cosec ›xﬁdx
+Integrating, we get
+t .
+Z
+cosec(xﬁdx
+.  logjcosec(xﬁﬂ cot›xﬁjﬂc;
+where c is an integrating constant. Using the initial condition x›0ﬁ . x0, we get the
+integrating constant c as
+c . logjcosec(x0ﬁﬂ cot›x0ﬁj:
+Thus the solution of the system is given as
+t . log
+cosec ›x0ﬁﬂ cot›x0ﬁ
+cosec ›xﬁﬂ cot›xﬁ</p>
+<p>:
+From this closed-form solution, the behaviors of solutions for any initial conditions
+are difficult to analyse. Moreover, the asymptotic values of the system are</p>
+<p>also difficult to obtain. The qualitative approach can give better dynamical behavior
+about this simple system.
+We consider t as time, x as the position of an imaginary particle moving along
+the flow in real line and _x as the velocity of that particle. The differential equation
+_x . sin x represents a vector field on the line. It gives the velocity vector _x at each
+position x: The arrows point to the right when _x[0 and to the left when _x0: We
+shall draw the graph of sin x versus x in x_x- plane which gives the flow in the x-axis
+(see Fig. 1.3).
+We may imagine that fluid is flowing steadily along the x-axis with a velocity _x
+which varies from place to place, according to equation _x . sin x: At points _x . 0;
+there is no flow and such points are called equilibrium points (fixed points).
+According to the definition of fixed point, the equilibrium points of this system are
+obtained as sin x . 0 ) x . np›n . 0; 1; 2; . . .ﬁ: This simple looking autonomous
+system has infinite numbers of equilibrium points in R: We can see that there
+are two kinds of equilibrium points. The equilibrium point where the flow is toward
+the point is called sink or attractor (neighboring trajectories approach asymptotically
+to the point as t!1). On the other hand, when the flow is away from the
+point, the point is called source or repellor (neighboring trajectories move away
+from the point as t!1 ). From the above figure the solid circles represent the
+sinks that are stable equilibrium points and the open circles are the sources, which
+are unstable equilibrium points. The names are given because the sinks and sources
+are common in fluid flow problems. From the geometric approach one can get local
+stability behavior of the equilibrium points of the system easily and is valid for all
+time. We shall now re-look the analytical solution of the system. The analytical
+solution can be expressed as
+t . logjtan›x=2ﬁjﬂc ) x›tﬁ . 2 tan 1
+›Aetﬁ
+where A is an integrating constant.</p>
+<p>Let the initial condition be x0 . x›0ﬁ . p=4: Then from the above solution we
+obtain
+A . tan›p=8ﬁ .  1ﬂ
+ffiffiffi2 p
+. 1= 1ﬂ
+ffiffiffi
+p2
+:
+So the solution is expressed as
+x›tﬁ . 2 tan 1 et
+1ﬂ
+ffiffiffi
+p2</p>
+<p>:
+We see that the solution x›tﬁ ! p and t!1.
+Without using analytical solution for this particular initial condition the same
+result can be found by drawing the graph of x versus t. So the solution’s behavior at
+any initial condition can be obtained easily by geometric approach. This simple
+one-dimensional system also has an interesting application. For a slow motion of a
+spring immersed in a highly viscous fluid such as grease or viscoelastic fluid (the
+combined effects of fluid viscosity and elasticity for example, synovial fluid in the
+joints of human bones), the viscous damping force is very strong compared to the
+inertia of motion. So one can neglect acceleration term (that is, inertia) and the
+spring-mass system may be governed by the equation a_x . sin x; where a[0
+(string constant) is a real number and the dynamics can be obtained using this
+approach for different values of a (see the book Strogatz [5] for more physical
+examples and explanations).
+We shall discuss a few worked out examples presented below.
+Example 1.5 With the help of flow concept discuss the local stability of the fixed
+points of _x . f ›xﬁ . ›x2   1ﬁ:
+Solution The fixed points of the given autonomous system are given by setting
+f ›xﬁ . 0: This gives x .  1: So the fixed points of the system are 1 and  1: For
+the local stability of the system about these fixed points we plot the graph of the
+function f ›xﬁ and then sketch the vector field. The flow is to the right direction,
+indicated by the symbol ‘→’, where the velocity _x[0; that is, where ›x2   1ﬁ[0
+and to the left direction, indicated by the symbol ‘←’, where _x0; that is,
+›x2   1ﬁ0: We also use solid circles to represent stable fixed points and open
+circles for unstable fixed points.
+In Fig. 1.4 the arrows indicate the flow of the system. From the figure, we see
+that the fixed point x . 1 is unstable, since it acts as a source point and the fixed
+point x .  1 is stable, since it acts as a sink point.
+Example 1.6 Discuss the stability character of the fixed points for the system
+_x . x›1   xﬁ using the concept of flow.</p>
+<p>Solution Here f ›xﬁ . x›1   xﬁ: Then for the fixed points, we have
+f ›xﬁ . 0 ) x›1   xﬁ . 0 ) x . 0; 1:
+Thus the fixed points are 0 and 1. To discuss the stability of these fixed points we
+plot the system (x versus _xﬁ and then sketch the vector field. The flow is to the right
+direction, indicated by the symbol ‘→’, when the velocity _x[0; and to the left
+direction, indicated by the symbol ‘←’, when _x0. We also use solid circle to
+represent stable fixed point and open circle to represent unstable fixed point.
+From Fig. 1.5 we see that the fixed point x . 1 is stable whereas the fixed point
+x . 0 is unstable.
+Example 1.7 Find the fixed points and analyze the local stability of the following
+systems (i) _x . xﬂx3 (ii) _x . x   x3(iii) _x .  x   x3
+Solution (i) Here f ›xﬁ . xﬂx3. Then for fixed points f ›xﬁ . 0 ) xﬂx3 . 0 ) x . 0; as x 2 R: So, 0 is the only fixed point of the system. We now see that when
+x[0; _x[0 and when x0; _x0. Hence the fixed point x . 0 is unstable. The
+graphical representation of the flow generated by the system is displayed in Fig. 1.6.
+(ii) Here f ›xﬁ . x   x3. Then f ›xﬁ . 0 ) x   x3 . 0 ) x . 0; 1; 1:
+Therefore, the fixed points of the system are 0; 1; 1: We now see that
+(a) when x  1; then _x[0
+(b) when  1x0; _x0
+(c) when 0x1; _x[0
+(d) when x[1; then _x0:
+This shows that the fixed points 1 and −1 are stable whereas the fixed point 0 is
+unstable (Fig. 1.7).</p>
+<p>(iii) Here f ›xﬁ .  x   x3. Then f ›xﬁ . 0 )  x   x3 . 0 ) x . 0; as x 2 R:
+So x . 0 is the only fixed point of the system. We now see that _x[0 when x0
+and _x0 when x[0: This shows that the fixed point x . 0 is stable. The graphical
+representation of the flow generated by the system is displayed in Fig. 1.8.
+Example 1.8 Determine the equilibrium points and sketch the phase diagram in the
+neighborhood of the equilibriumpoints for the system represented as _xﬂx sgn›xﬁ . 0:
+Solution Given system is _xﬂx sgn ›xﬁ . 0; that is, _x .  x sgn ›xﬁ; where the
+function sgn›xﬁ is defined as
+sgn ›xﬁ .
+1; x[0
+0; x . 0
+ 1; x0
+8&gt;&lt;
+&gt;:
+For equilibrium points, we have
+_x . 0 ) x sgn x . 0 ) x . 0:</p>
+<p>This shows that the system has only one equilibrium point at x . 0: In flow
+analysis we see that the velocity _x0 for all x 6. 0: The flow is to the right
+direction, when _x[0; in the negative x-axis and to the left direction, when _x0; in
+the positive x-axis. This is shown in the phase diagram depicted in Fig. 1.9, which
+shows that the fixed point origin is semi-stable.
+1.8 Conservative and Dissipative Dynamical Systems
+The dichotomy of dynamical systems in conservative versus dissipative is very
+important. They have some fundamental properties. Particularly, conservative
+systems are the integral part of Hamiltonian mechanics. We give here only the
+formal definitions of conservative and dissipative systems. Consider an autonomous
+system represented as
+_x
+  . f</p>
+<p>›x  ﬁ;x
+  2 Rn: ›1:15ﬁ</p>
+<p>The conservative and dissipative systems are defined with respect to the divergence
+of the corresponding vector field, which in turn refers to the conservation of
+volume or area in their state space or phase plane, respectively as follows:
+A system is said to be conservative if the divergence of its vector field is zero.
+On the other hand, it is said to be dissipative if its vector field has negative
+divergence. The phase volume in a conservative system is constant under the flow
+while for a dissipative system the phase volume occupied by the system is gradually
+decreased as the time t increases and shrinks to zero as t!1. When divergence of
+vector field is positive, the phase volume is gradually expanding. We shall discuss it
+in a later chapter. We state a lemma below which gives the change of volume in a
+phase space for an autonomous system.
+Sometimes, it is useful to find the evolution of volume in the phase space of a
+system _x
+  . f ›x  ﬁ;x
+  2 Rn. The system generates a flow /›t;x
+  ﬁ: We give
+Liouville’s theorem which describes the time evolution of volume under the flow
+/›t;x
+  ﬁ: Before this we now give the following lemma.
+Lemma 1.1 Consider an autonomous vector field _x
+  . f ›x  ﬁ;x
+  2 Rn and generates
+a flow /t›x  ﬁ: Let D0 be a domain in Rn and /t›D0ﬁ be its evolution under the
+flow. If V›tﬁ is the volume of Dt, then the time rate of change of volume is given as
+dV
+dt</p>
+<p>t.0.
+R
+D0 r   f dx</p>
+<p>.
+Proof The volume V(t) can be expressed in the following form using the definition
+of the Jacobian of a transformation as
+V›tﬁ .
+Z
+D0
+&#64;/›t;x
+  ﬁ
+&#64;x</p>
+<p>dx</p>
+<p>Expanding Taylor series of /›t;x
+  ﬁ in the neighborhood of t = 0, we get
+/›t;x
+  ﬁ . x
+  ﬂf ›x  ﬁtﬂO›t2ﬁ
+)
+&#64;/
+&#64;x</p>
+<p>. I ﬂ
+&#64;f
+&#64;x</p>
+<p>tﬂO›t2ﬁ
+Here I is the n Å~ n identity matrix and
+&#64;/
+&#64;x</p>
+<p>. I ﬂ
+&#64;f
+&#64;x</p>
+<p>t</p>
+<p>ﬂO›t2ﬁ
+. 1ﬂtrace
+&#64;f
+&#64;x</p>
+<section id="id1">
+<h2>0<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>1
+AtﬂO›t2ﬁ óUsing expansion of the determinant
+Now, trace &#64;f
+&#64;x</p>
+<p>. r  f ; so we have
+V›tﬁ . V›0ﬁﬂ
+Z
+D0
+tr   f dx
+  ﬂO›t2ﬁ:
+This gives dV
+dt</p>
+<p>t.0.
+R
+D0 r   f dx</p>
+<p>:
+Theorem 1.1 (Liouville’s Theorem) Suppose r   f . 0 for a vector field f. Then
+for any region D0  Rn, the volume V(t) generated by the flow /›t;x
+  ﬁ is V›tﬁ . V›0ﬁ; V›0ﬁ being the volume of D0.
+Proof Suppose the divergence of the vector field f is everywhere constant, that is,
+r   f . c: For arbitrary time t0 the evolution equation for the volume is given as
+<a href="#id2"><span class="problematic" id="id3">V_</span></a> . cV: This gives V›tﬁ . V›0ﬁect . When the vector field is divergence free, that
+is, c . 0; we get the result <a href="#id4"><span class="problematic" id="id5">V_</span></a> . 0 ) V›tﬁ . V›0ﬁ . constant. Thus we can say that
+the flow generated by a time independent system is volume preserving.
+Examples of conservative and dissipative systems are presented below.
+(a) Consider a linear and undamped pendulum represented as €xﬂx . 0: This is
+an example of a conservative system. Setting _x . y; we can write it as a
+system of equations
+_x . y
+_y .  x
+)</p>
+<p>The system may also be written in the compact form _x
+  . f</p>
+<p>›x  ﬁ; where
+f
+›x  ﬁ .
+y
+ x</p>
+<p>: The divergence of the vector field f</p>
+<p>is given by ~ r   f
+  .
+&#64;
+&#64;x ›yﬁﬂ &#64;
+&#64;y › xﬁ . 0: According to the definition, the system is conservative
+and the area occupied in the xy-phase plane is constant.
+(b) The damped pendulum governed by €xﬂa_xﬂbx . 0; a; b[0 is an example
+of a dissipative system. Setting _x . y; we can write the system as
+_x . y
+_y .  ay   bx
+)
+The vector field is then expressed as f</p>
+<p>›x  ﬁ .
+y
+ ay   bx</p>
+<p>:
+Now, ~ r   f
+  . &#64;
+&#64;x ›yﬁﬂ &#64;
+&#64;y › ay   bxﬁ .  a0; since a[0:
+This shows that the divergence of the vector field is negative. So the system is
+dissipative in nature and the area in the phase plane is decreasing as time goes
+on. This is the simplest linear oscillator with linear damping. It describes a
+spring-mass system with a damper in parallel. The spring force is proportional
+to the extension x of the spring and the damping or frictional force is proportional
+to the velocity _x: The two constants a and b are related to the
+stiffness of the spring and the degrees of friction in the damper, respectively.
+According to the above lemma, the change in phase area is given by
+A›tﬁ . cA›0ﬁe at; a[0 as t!1; c being a constant.
+Example 1.9 Find the phase volume element for the systems (i) _x .  x;
+(ii) _x . ax   bxy; _y . bxy   cy where x; y 0 and a; b; c are positive constants.
+Solution (i) The flow of the system _x .  x is attracted toward the point x . 0: The
+time rate of change of volume element V›tﬁ under the flow is given as
+dV
+dt</p>
+<p>t.0.
+Z
+D›0ﬁ
+dx .  V›0ﬁ
+or; V›tﬁ . V›0ﬁe t ! 0 as t!1:
+Hence the phase volume element V›tﬁ shrinks exponentially.
+(ii) The given system is a Lotka-Volterra predator-prey population model. The
+rate of change in phase area A(t) is given as</p>
+<p>This shows that a phase area periodically shrinks and expands.
+1.9 Some Definitions
+In this section we give some important preliminary definitions relating to flow of a
+system. The definitions given here are elaborately discussed in the later chapters for
+higher dimensional systems.
+Invariant set A set D   Rn is said to be an invariant set under the flow /t if for
+any point p 2 D; /t›pﬁ 2 D for all t 2 R: The set D is said to be positively invariant
+if /t›pﬁ 2 D for t 0: Trajectories starting in an invariant set remain in the set for
+all times. An interval is called trapping if it is mapped into itself and is said to be
+invariant if it is mapped exactly onto itself. Moreover, if a bounded interval is
+trapping, then all of its trajectories are trapped inside and must converge to a closed,
+invariant, and bounded limit set. Basically these limit sets are the attractors of a
+system. So the periodic orbits are examples of invariant sets. We now define two
+limiting topological concepts which are relevant to the orbits of dynamical systems.
+Limit points ( x- and a-limit points)
+The asymptotic behavior of a trajectory may be related with limit points/sets or
+cycles and are termed as x- and a-limit points/sets or cycles. We now give the
+definitions.
+A point p 2 Rn is called an x-(resp. a a-) limit point if there exists a sequence
+ftig with ti ! 1 (resp. ti !  1 ) such that /›ti; xﬁ ! p as i ! 1. The x-limit
+set(cycle) is denoted by K›x  ﬁ and is defined as
+K›x  ﬁ . x
+  2 Rnj9ftig with ti !1 and /›ti;x
+  ﬁ ! p as i!1</p>
+<p>:
+Similarly, the a-limit set (cycle), l›x  ﬁ; is defined as
+l›x  ﬁ . x
+  2 Rnj9ftigwith ti ! 1 and/›ti;x
+  ﬁ ! p as i!1</p>
+<p>:
+For example, consider a flow /›t; xﬁ on R2 generated by the system _r .
+cr›1   rﬁ; _h . 1; c being a positive constant. For x 6. 0; let p be any point of the
+closed orbit C and take ftig1i
+.1 to be the sequence of t[0: The trajectory through
+x crosses the radial line through p: So, ti !1 as i!1 and</p>
+<p>/›ti; xﬁ ! p as i!1. If x</p>
+<p>lies in the closed orbit C; then /›ti; xﬁ . p for each i:
+Hence every point of C is a x-limit point of x</p>
+<p>and so K›xﬁ . C for every x 6. 0:
+When x j j
+1; the sequence ftig1i
+.1 with t0 gives the a-limit set
+l›xﬁ . f0g for jxj1
+closed orbit for jxj . 1</p>
+<p>.
+When jxj[1; there is no sequence ti f g1i
+.1, with ti !1 as i!1, such that
+/›ti; xﬁ exists as i!1. So, l›xﬁ is empty when jxj[1: The closed orbit C is
+called a limit cycle of the system.
+The trajectory of a system through a point x</p>
+<p>is the set c›x  ﬁ .
+S
+t2R
+/›t;x
+  ﬁ and
+the corresponding positive semi-trajectory cﬂ ›x  ﬁ and negative semi-trajectory
+c ›x  ﬁ are defined as follows:
+cﬂ ›x  ﬁ .
+[
+t  0
+/›t;x
+  ﬁ and c ›x  ﬁ .
+[
+t
+0
+/›t;x
+  ﬁ:
+We now state two lemmas below. Interested readers can try for proofs (see the
+book Glendinning [6]).
+Lemma 1.2
+(a) The set D is invariant if and only if c›x  ﬁ   D for all x
+  2 D:
+(b) D is invariant if and only if RnnD is invariant.
+(c) Let ›Diﬁ be a countable collection of invariant subsets of Rn. Then
+S
+i
+T Di and
+i
+Di are also invariant subsets of Rn.
+Lemma 1.3 The set K›x  ﬁ .
+T
+x
+2c›x  ﬁ
+cl cﬂ ›x  ﬁ</p>
+<p>, where cl denotes the closure of
+the set, is the x-limit set.
+Non-wandering point A point p is called a non-wandering point if for any
+neighborhood U of p and for any T [0; there exists some jtj[T such that
+/›t;UﬁU 6. u. The nonwandering set, denoted by X, contains all such points
+p 2 U and it is closed. Non-wandring points give asymptotic behavior of the orbit.
+In the above definition, if /›t;UﬁU . u, then the point p is called a wandering
+point.
+The examples of non-wandering points are fixed points and periodic orbits of a
+system. For the undamped oscillator ›€xﬂx . 0ﬁ; all points are non-wandering in x_x
+phase plane while for the damped oscillator ›€xﬂa_xﬂx . 0ﬁ; origin is the only
+non-wandering point.
+Attracting set A closed invariant set D   Rn for a flow /t is said to be an
+attracting set if there exists some neighborhood U in D such that 8t 0; /›t;Uﬁ   U and
+T
+t[0 /›t;Uﬁ . D.
+Absorbing set A positive invariant compact subset B Rn is said to be an
+absorbing set if there exists a bounded subset C of Rn with C   B such that
+tC[0 ) /›t; Cﬁ   B 8t tC (see the book by Wiggins [7] for details).</p>
+<p>Trapping zone An open set U in an invariant set D   Rn in an attracting set for
+a flow generated by a system is called a trapping zone. Let a set A be closed and
+invariant. The set A is said to be stable if and only if every neighborhood of
+A contains a neighborhood U of A which is trapping.
+Basin of attraction The domain (called as basin of attraction) of an attracting set
+D is defined as
+S
+t
+0
+/›t;Uﬁ where U is any open set in D   Rn.
+We now give an example from Ruelle [8]. This example is also discussed in the
+book by Guckenheimer and Holmes [9]. Consider the one-dimensional system
+_x .  x4 sin›p=xﬁ: It has countably infinite set of fixed points at
+x . 0;  1n
+; n . 1; 2; 3; . . .. Now,
+f ›xﬁ .  x4 sin›p=xﬁ ) f 0›xﬁ .  4x3 sin›p=xﬁﬂpx2 cos›p=xﬁ
+) f 0›xﬁjx. 1n
+.
+p
+n2 cos›npﬁ .
+p
+n2 › 1ﬁn:
+The fixed point x . 0 is neither attracting nor repelling. The interval ó 1; 1  is
+an attracting set of the given system. The fixed points x .   1
+2n ; n . 1; 2; . . . are
+repelling while the fixed points x .   1
+›2n 1ﬁ
+; n . 1; 2; . . . are attracting.
+1.10 Exercises
+1.(a) What is a dynamical system? Write its importance.
+(b) Discuss continuous and discrete dynamical systems with examples.
+(c) Explain deterministic, semi-deterministic and nondeterministic dynamical
+processes with examples.
+(d) What do you mean by ‘qualitative study’ of a nonlinear system? Write it
+importance in nonlinear dynamics.
+2.(a) Give the mathematical definition of flow. Discuss the concept related to ‘a
+flow and its orbit’. Also indicate its implication on uniqueness theorem of
+differential equation.
+(b) Show that the initial value problem _x . x13
+; x›0ﬁ . 0 has an infinite number
+of solutions. How would you explain it in the context of flow?
+(c) Consider a system <a href="#id6"><span class="problematic" id="id7">x_</span></a> . jxjp=q with x›0ﬁ . 0 where p and q are prime to each
+other. Show that the system has an infinite number of solutions if pq; and
+it has a unique solution if p[q:
+3. Find the maximum interval of existence for the solutions of the following
+equations
+(a) <a href="#id8"><span class="problematic" id="id9">x_</span></a> . x2; x›0ﬁ . x0, (b) <a href="#id10"><span class="problematic" id="id11">x_</span></a> . tx2; x›0ﬁ . x0, (c) <a href="#id12"><span class="problematic" id="id13">x_</span></a> . x2 ﬂt2; x›0ﬁ . x0,
+(d) <a href="#id14"><span class="problematic" id="id15">x_</span></a> . x›x   2ﬁ; x›0ﬁ . 3</p>
+<p>4. For what values of t0 and x0 does the initial value problem _x .
+ffiffiffi
+px; x›t0ﬁ . x0
+have a unique solution?
+5. Show that the initial value problem <a href="#id16"><span class="problematic" id="id17">x_</span></a> . 3x2=3 with x›0ﬁ . 0 has two solutions
+passing through the point (0, 0). How do you explain the context of flow in
+this?
+6. Show that the initial value problem <a href="#id18"><span class="problematic" id="id19">x_</span></a> . jxj1=2; x›0ﬁ . 0 has four different
+solutions through the point ›0; 0ﬁ: Sketch these solutions in the t x plane.
+Explain this from Picard’s theorem.
+7. Prove that the system <a href="#id20"><span class="problematic" id="id21">x_</span></a> . x3 with the initial condition x›0ﬁ . 2 has a solution
+on an interval › 1; cﬁ; c 2 R: Sketch the solution x(t) in the t – x plane and
+find the limiting behavior of solution x(t) as t ! c-.
+8. Prove that the solutions of the initial value problem _x .
+0 when x
+0
+x1=n when x[0</p>
+<p>with x›0ﬁ . 0 are not unique for n . 2; 3; 4; . . .:
+9. What do you mean by fixed point of a system? Determine the fixed points of the
+system _x . x2   x; x 2 R: Show that solutions exist for all time and become
+unbounded in finite time.
+10. Give mathematical definitions of ‘flow evolution operator’ of a system. Write
+the basic properties of an evolution operator of a flow.
+11. Show that the dynamical system (or evolution) forms a dynamical group. What
+can you say about commutative/non-commutative group of a system? Give
+reasons in support of your answer.
+12. Find the evolution operators for the following systems: (i) _x . x   x2,
+(ii) _x . x2, (iii) _x . x ln x; x[0, (iv) _x . tanh›xﬁ, (v) _x . x   x3,
+(vi) _x . f cosxt, (vii) _x . f sinxt:
+Verify that /t›/s›xﬁﬁ . /t ﬂs›xﬁ 8x; t; s 2 R for all cases. Also, show that the
+evolution operator /t for the system _x . x2 forms a dynamical group.
+13. Define fixed point of a system in the context of flow. Give its geometrical
+interpretation. How do you relate this concept with the usual notion of fixed
+point in a continuous dynamical system?
+14.(a) Define source and sink for a one-dimensional flow. Illustrate them with
+examples.
+(b) Locate the source and sink for the system _x . ›x2   1ﬁ; x 2 R:
+15. Consider the one-dimensional system represented as _x . axﬂb; where b is a
+constant and a is a nonzero parameter. Find all fixed points of the system and
+discuss their stability for different values of a.
+16.(a) Sketch the region of the flow generated by the one-dimensional system
+_x . 1=x; x[0 with the starting condition x›0ﬁ . x0.
+(b) What do you mean by oscillating solution of a system? Explain with
+examples. Show that one-dimensional flow cannot oscillate.
+17.(a) Find the critical points of the following systems: (i) _x . ex   1;
+(ii) _x . x2   x   1; (iii) _x . sin›pxﬁ; (iv) _x . cos x; (v) _x . sinh x,
+(vi) _x . rx   x2 for r0; r . 0; r[0; (vii) _x . x   ln›1ﬂxﬁﬂr; r[0;
+(viii) _x . x   x3=6:</p>
+<p>(b) Using linear stability analysis determine the stabilities/instabilities of the
+following systems about their critical points:
+(i) <a href="#id22"><span class="problematic" id="id23">x_</span></a> . x›x   1ﬁ›x   2ﬁ, (ii) <a href="#id24"><span class="problematic" id="id25">x_</span></a> . ›x   2ﬁ›x   3ﬁ, (iii) <a href="#id26"><span class="problematic" id="id27">x_</span></a> . log x,
+(iv) _x . cos x, (v) _x . tan x, (vi) _x . 2ﬂ sin x, (vii) _x . x   x3=6, (viii)
+_x . 1   x2=2ﬂx4=24:
+18. Sketch the family of solutions of the differential equation _x . ax   bx2, x[0
+and a; b[0: How does the velocity vector _x behave when ›a=bﬁx1?
+19. Find the critical points and analyze the local stability about the critical points of
+each of the following systems: (i)_x . x4   x3   2x2, (ii) _x . sinh›x2ﬁ (iii) _x . cos x   1; (iv) _x . ›x   aﬁ2, (v) _x . ›xﬂ1ﬁ›xﬂ2ﬁ; (vi) _x . tan x;
+(vii) _x . log x;(viii) _x . ex   x   1:
+20. Classify all possible flows in R of the system _x . a0 ﬂa1xﬂa2x2 ﬂx3, where
+a0; a1; a2 2 R:
+21. Consider the one-dimensional system _x . lxﬂx3; l 0: Using geometric
+approach find the solution behavior for any initial condition x0›6. 0ﬁ:
+22. When is a flow called conservative? Give an example of conservative flow.
+23. Prove that the phase volume of a conservative system is constant. Is the converse
+true? Give reasons in support of your answer.
+24. What can you say about time rate of change of phase volume element in a
+dissipative dynamical system? Explain it geometrically. Give an example of a
+dissipative system.
+25. Prove that the a- and x-limit sets of a flow /t›xﬁ are contained in the
+non-wandering set of the flow /t›xﬁ:
+26. Define absorbing set of a flow. Write down the relation between trapping zones
+and absorbing sets. Prove that for an absorbing set A;
+T
+t 0 /›t; Aﬁ forms an
+attracting set.
+27. Give the definition of invariant set of a flow. Write its importance in dynamical
+evolution of a system. Prove that the x-limit set, K›x  ﬁ; is invariant and it is
+nonempty and compact if the positive orbit cﬂ ›x  ﬁ of x</p>
+<p>is bounded.
+28. If two orbits c›xﬁ and c›yﬁ of autonomous systems satisfy c›xﬁc›yﬁ 6. u,
+prove that both the orbits are coinciding.
+References
+1. Arrowsmith, D.K., Place, L.M.: Dynamical Systems: Differential equations, Maps, and Chaotic
+Behaviour. Chapman and Hall/CRC (1992)
+2. Lakshmanan, M., Rajasekar, S.: Nonlinear Dynamics: Integrability, Chaos and Patterns.
+Springer, 2003.
+3. Coddington, E.A., Levinson, N.: Theory of Ordinary Differential Equations. McGraw Hill, New
+York (1955)
+4. Arnold, V.I.: Ordinary Differential Equations. MIT Press, Cambridge, MA (1973)
+5. Strogatz, S.H.: Nonlinear Dynamics and Chaos with application to physics, biology, chemistry
+and engineering. Perseus books, L.L.C, Massachusetts (1994)</p>
+<p>6. Glendinning, P.: Stability, Instability and Chaos: An Introduction to the Theory of Nonlinear
+Differential Equations. Cambridge University Press. 1994
+7. Wiggins, S.: Introduction to Applied Nonlinear Dynamical Systems and Chaos, 2nd edn.
+Springer (2003)
+8. Ruelle, D.: Elements of Differentiable dynamics and Bifurcation Theory. Academic Press, New
+York (1989)
+9. Gluckenheimer, J., Holmes, P.: Nonlinear Oscillations, Dynamical Systems, and Bifurcations of
+Vector Fields. Springer (1983)</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/index2.html">Mathematical_Biology_I_An_Introduction_3E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynam_Systems_Applica_Mathematica_Stephen/index2.html">Dynam_Systems_Applica_Mathematica_Stephen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Exploration_Dynamical_Systems_Chaos_Argyris/index2.html">An_Exploration_Dynamical_Systems_Chaos_Argyris$</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney/index2.html">An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney$</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index2.html">An_Introduction_Dynamical_Systems_and_Chaos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="prefacio.html">prefacio</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">c01</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Sistemas_Dinamicos.html">Sistemas_Dinamicos</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index2.html">An_Introduction_Dynamical_Systems_and_Chaos</a><ul>
+      <li>Previous: <a href="prefacio.html" title="претходна глава">prefacio</a></li>
+      <li>Next: <a href="../Sistemas_Dinamicos.html" title="наредна глава">Sistemas_Dinamicos</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/An_Introduction_Dynamical_Systems_and_Chaos/c01.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

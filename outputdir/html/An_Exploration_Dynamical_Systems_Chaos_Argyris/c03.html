@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>c03 &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="c03">
+<h1>c03<a class="headerlink" href="#c03" title="Link to this heading">¶</a></h1>
+<p>An_Exploration_Dynamical_Systems_Chaos_Argyris_C03</p>
+<p>p55</p>
+<p>3 Mathematical Introduction to Dynamical Systems</p>
+<p>No roote, no fruite</p>
+<p>Jeremiah Dyke, A worthy communicant, (1640)</p>
+<p>In this chapter, we present in the simplest possible manner a survey of some of the fundamental mathematical concepts and tools which are required for the qualitative analysis of the long-term behaviour of dynamical systems. A knowledge of the theory of linear differential equations is a pre-requisite for the comprehension of non-linear dynamics. The reader can find more detailed discussions in Chapters 5 and 6 of this book.
+—-------------------------------------
+En este capítulo, presentamos de la manera más simple posible un estudio de algunos de los conceptos y herramientas matemáticos fundamentales que se requieren para el análisis cualitativo del comportamiento a largo plazo de los sistemas dinámicos. El conocimiento de la teoría de las ecuaciones diferenciales lineales es un requisito previo para la comprensión de la dinámica no lineal. El lector puede encontrar discusiones más detalladas en los Capítulos 5 y 6 de este libro.
+—---------------------------------------</p>
+<p>3.1 Linear Autonomous Systems</p>
+<p>As we already mentioned in Chapter 2, we consider dynamical processes of a finite dimension n which are differentiable and deterministic.
+—---------------------------------------
+Como ya mencionamos en el Capítulo 2, consideramos procesos dinámicos de dimensión finita n que son diferenciables y deterministas.
+—---------------------------------------</p>
+<p>In the simplest case, the system of differential equations (2.3.3) is linear with constant coefficients</p>
+<p>[
+dot{x} = Lx                            (3.1.1)
+]</p>
+<p>where L denotes the constant, non-singular (n×n)-matrix of the coefficients. Using this example, we now demonstrate which solutions can occur and which patterns the relevant trajectories form in the corresponding phase space.
+—---------------------------------------</p>
+<p>donde L denota la matriz constante, no singular (n × n) de los coeficientes. Usando este ejemplo, ahora demostramos qué soluciones pueden ocurrir y qué patrones forman las trayectorias relevantes en el espacio de fase correspondiente.
+—---------------------------------------</p>
+<p>We introduce the ansatz</p>
+<p>[
+x = e^{lambdat}y,              y = {y1 y2 ...... yn}   (3.1.2)
+]</p>
+<p>into eq. (3.1.1), thus obtaining a homogeneous linear system of equations</p>
+<p>[
+[L - lambdaI ]y = o                     (3.1.3)
+]</p>
+<p>which only possesses non-trivial solutions if the system determinant vanishes</p>
+<p>[
+P(lambda) = det[L - lambda I ] = 0                   (3.1.4)
+]</p>
+<p>or</p>
+<p>[
+P(lambda) = A_n λn + An−1λn−1 + ... + A0 = 0 (3.1.5)</p>
+<p>P(λ) is a polynomial of the nth degree in λ and is called characteristic or secular equation. The zeroes of P(λ) are the eigenvalues of L. A non-vanishing vector y which satisfies eq. (3.1.3) is called the eigenvector of L appertaining to the eigenvalue λ. If λ and y satisfy eq. (3.1.3), eq. (3.1.2) is a solution of eq. (3.1.1). For each pair λi,yi, we obtain in accordance with eq. (3.1.2) a solution of the form
+—---------------------------------------</p>
+<p>P(λ) es un polinomio de grado n en λ y se denomina ecuación característica o secular. Los ceros de P(λ) son los valores propios de L. Un vector y que no desaparece y que satisface la ec. (3.1.3) se denomina vector propio de L perteneciente al valor propio λ. Si λ y y satisfacen la ec. (3.1.3), ec. (3.1.2) es una solución de la ec. (3.1.1). Para cada par λi,yi, obtenemos de acuerdo con la ec. (3.1.2) una solución de la forma
+—---------------------------------------</p>
+<p>xi = eλit yi (3.1.6)</p>
+<p>If all n eigenvalues λi are different, n linearly independent eigenvectors yi exist and the general solution of eq. (3.1.1) can be expressed by the linear combination</p>
+<p>x(t) = n i=1 Cieλit yi (3.1.7)</p>
+<p>with n integration constants Ci which are determined by the initial conditions x(t0) (Arnold, 1980; Braun, 1979).</p>
+<p>From a physical point of view, finding all the states of equilibrium xs is of interest. These are stationary states of the system in which the dynamical process does not undergo any change; they are thus characterised by x˙ s = o. If we observe the corresponding point in the phase space, the vector F (xs) which defines the change of the trajectory vanishes here. For this reason, xs is thus also denoted singular point. The decisive factor in characterising the stationary state is the behaviour of the trajectories in the neighbourhood of the singularity. We speak of stable, unstable or neutral equilibrium. If all the trajectories within certain neighbourhoods of xs are captured, the singular point is asymptotically stable (sink); if, one the other hand, all the trajectories that come close enough to xs are repelled, xs is asymptotically unstable (source). On the basis of a system of two differential equations, we now demonstrate the classification of singularities
+—---------------------------------------
+Desde un punto de vista físico, es interesante encontrar todos los estados de equilibrio xs. Estos son estados estacionarios del sistema en los que el proceso dinámico no sufre ningún cambio; por lo tanto, se caracterizan por x˙ s = o. Si observamos el punto correspondiente en el espacio fase, el vector F (xs) que define el cambio de trayectoria desaparece aquí. Por esta razón, xs también se denota como punto singular. El factor decisivo para caracterizar el estado estacionario es el comportamiento de las trayectorias en la vecindad de la singularidad. Hablamos de equilibrio estable, inestable o neutral. Si se capturan todas las trayectorias dentro de ciertas vecindades de xs, el punto singular es asintóticamente estable (sumidero); si, por otro lado, todas las trayectorias que se acercan lo suficiente a xs se repelen, xs es asintóticamente inestable (fuente). Sobre la base de un sistema de dos ecuaciones diferenciales, demostramos ahora la clasificación de las singularidades
+—----------------------------------------</p>
+<p>x˙ = Lx , L = L11 L12 L21 L22 , x = {x1 x2} (3.1.8)</p>
+<p>p 57</p>
+<blockquote>
+<div><p>with the origin xs = o as the singular point. The eigenvalues of the corresponding eq. (3.1.3) serve as a basis to make the following six distinctions, illustrated in the diagram fig. 3.1.1; here, we ignore the degenerate case of a zero eigenvalue.</p>
+</div></blockquote>
+<p>—----------------------------------------</p>
+<p>con el origen xs = o como punto singular. Los valores propios de la ecuación correspondiente. (3.1.3) sirven como base para hacer las siguientes seis distinciones, ilustradas en el diagrama de la fig. 3.1.1; aquí, ignoramos el caso degenerado de un valor propio cero.
+—----------------------------------------</p>
+<ol class="upperalpha simple">
+<li><p>λ1 = λ2</p></li>
+</ol>
+<p>Initially, we assume that L possesses different eigenvalues λ1 = λ2 and denote the corresponding eigenvectors as y1, y2 which we can presume to be normalised without loss of generality.</p>
+<p>We now introduce a new system of coordinates</p>
+<p>x = {x¯1 x¯2} (3.1.9)</p>
+<p>which is defined by the transformation</p>
+<p>x = T x¯ with T = [y1 y2] (3.1.10)</p>
+<p>Thus, the eigenvectors y1, y2 are the basis vectors of the new coordinate system. Substitution of the transformation eq. (3.1.10) into the given system eq. (3.1.8) yields</p>
+<p>x¯˙ = Dx¯ with D = T −1 LT (3.1.11)</p>
+<p>Due to</p>
+<p>λiyi = Lyi</p>
+<p>D can be simplified as follows</p>
+<p>D = [ y1 y2] −1L[y1 y2]=[y1 y2] −1[y1 y2]λ1 λ2 = λ1 λ2 (3.1.12)</p>
+<p>and is thus reduced to diagonal form. The transformed system equivalent to eq. (3.1.8) now becomes</p>
+<p>x¯˙ 1 = λ1x¯1 x¯˙ 2 = λ2x¯2 (3.1.13)</p>
+<p>Here, we can distinguish for λ1 = λ2 a total of four possibilities (see fig. 3.1.1). If the eigenvalues are real, the solution of eq. (3.1.13) according to eq. (3.1.7) is</p>
+<p>x¯1 = C1eλ1t , x¯2 = C2eλ2t (3.1.14)</p>
+<p>(λ1, λ2 real; λ2 &lt; λ1 &lt; 0)</p>
+<p>or, after eliminating the time parameter t,</p>
+<p>x¯2 = Cx¯ λ2/λ1 1 (3.1.15)</p>
+<p>We next differentiate between two cases having different signs (see fig. 3.1.1);</p>
+<p>(A1) signλ1 = signλ2</p>
+<p>If the eigenvalues have the same sign, eq. (3.1.15) describes a family of parabolae of the order λ2/λ1 which have a common tangent at their origin (see fig. 3.1.2). We then speak of a node. If the eigenvalues are negative, the node is stable, as can be seen in the parameter representation of eq. (3.1.14) since all trajectories tend towards the singular point for t → ∞.</p>
+<p>Si los valores propios tienen el mismo signo, la ecuación (3.1.15) describe una familia de parábolas del orden λ2/λ1 que tienen una tangente común en su origen (véase la figura 3.1.2). Hablamos entonces de un nodo. Si los valores propios son negativos, el nodo es estable, como se puede ver en la representación de parámetros de la ecuación (3.1.14), ya que todas las trayectorias tienden hacia el punto singular para t → ∞.</p>
+<p>(A2) signλ1 = signλ2</p>
+<p>If λ1 and λ2 possess different signs, the solution is</p>
+<p>x¯2x¯ <a href="#id1"><span class="problematic" id="id2">|λ2/λ1|</span></a> 1 = C (3.1.16)</p>
+<blockquote>
+<div><p>i.e. the trajectories are hyperbolae. The corresponding singular point is then called a saddle point or hyperbolic point (see fig. 3.1.3).</p>
+</div></blockquote>
+<p>If λ1, λ2 are complex conjugate, L can always be reduced by applying a (real) linear coordinate transformation Tˆ to the simple form</p>
+<p>˙ xˆ</p>
+<blockquote>
+<div><blockquote>
+<div><p>x1 x2 x¯2 x¯1</p>
+</div></blockquote>
+<p>ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ</p>
+</div></blockquote>
+<p>The eigenvectors y1 und y2 appertaining to the eigenvalues λ1,2 = α Å} iω are also
+complex conjugate</p>
+<p>y1 = {1 − i} and y2 = {1 i} = y
+∗
+1</p>
+<p>and reduce in accordance with eq. (3.1.10) the transformation of ˆLL to a diagonal
+form; in accordance with standard usage, y∗
+1 denotes the complex conjugate vector
+of y1. Thus, points ˆx of the real phase space are transformed into points ¯x of a twodimensional
+complex phase space C2. The solution of eq. (3.1.13) can be expressed
+immediately as</p>
+<p>¯x1,2 = C1,2e(αÅ}iω)t = C1,2eαt(cos ωt Å} i sin ωt) (3.1.17)</p>
+<p>where the complex constants C1 and C2 coincide with the initial values ¯x1(0) and
+¯x2(0). It is now easy to see that C1 and C2 are complex conjugate. From the inverse
+transformation of eq. (3.1.10) for an initial vector ˆx(0)</p>
+<p>¯x(0) = T
+−1ˆx(0) = [y1 y
+∗
+1]
+−1ˆx(0) =
+1
+2</p>
+<p>y∗t
+1
+yt
+1</p>
+<p>ˆx(0)</p>
+<p>we obtain the relation ¯x2(0) = ¯x∗
+1(0), i.e. C2 = C∗
+1 . Thus, the solutions according
+to eq. (3.1.17) are also complex conjugate, i.e. ¯x2(t) = ¯x∗
+1(t) applies. The inverse
+transformation of the initial system hence yields a real solution</p>
+<p>ˆx(t) = eαt</p>
+<p>cos ωt −sin ωt
+sin ωt cos ωt</p>
+<p>ˆx(0) (3.1.18)</p>
+<p>We observe that the initial vector ˆx(0) is rotated about an angle ωt and stretched
+with the factor eαt.</p>
+<ol class="arabic simple" start="0">
+<li><p>We once again distinguish between two cases (see fig. 3.1.1): (A3) α = Re(λi) = 0 Equation (3.1.18) suggests a representation in polar coordinates for which we set r = r0eαt, ϕ = ωt + ϕ0 (3.1.19) with r0 = <a href="#id3"><span class="problematic" id="id4">|xˆ(0)|</span></a> and ϕ0 = tan−1(ˆx2(0)/xˆ1(0)). This formulation describes a family of logarithmic spirals. In accordance with an Anglo-Saxon convention, we use the inverse function sign for arcus. If the real part of λi is negative, i.e. Re(λi) = α &lt; 0, we have a stable focus or spiral point; on the other hand, for α &gt; 0, the singular point is unstable. Figure 3.1.4 shows the spirals in the original x1, x2 coordinate system. They are affinely distorted by the inverse transformation. (A4) α = Re(λi)=0 In the special case of α = 0, the phase curves in the ˆx1, xˆ2 coordinate system become concentric circles in accordance with eq. (3.1.18), the centre of which is the singular point. We then speak of a centre. Figure 3.1.5 shows the trajectories in the original x1, x2 coordinate system in which L possesses a general form. Here, we observe concentric ellipses. (B) λ1 = λ2 = λ We now move on to a discussion of the case of identical eigenvalues, λ1 = λ2 = λ. Here, we distinguish between two cases (fig. 3.1.1): (B1) There are two linearly independent eigenvectors y1,y2 fo</p></li>
+</ol>
+<p>) In analogy to eqs. (3.1.11), (3.1.12), the system x˙ = Lx can be transformed into a diagonal form, x¯˙i = λx¯i (i = 1, 2), with the solutions x¯i = Cieλt (i = 1, 2) (3.1.20) or x¯2 = Cx¯1 (3.1.21) We thus obtain a bundle of straight lines and speak of a dicritical node (see fig. 3.1.6). In this case, a sufficient number of eigenvectors does not exist to span the whole phase space; thus, L can no longer be transformed to diagonal form. However, in matrix theory, it is shown that any non-diagonalisable (n × n) matrix can always be transformed uniquely to the so-called Jordan normal form where each Jordan block is associated with an eigenvector (Zurm¨uhl, 1964). For n = 2, there is thus a specific ¯x1, x¯2 coordinate system in which the system of differential equations (3.1.8) can be transformed to the Jordan normal form x¯˙ = L¯x¯ with L¯ = λ 1 0 λ (3.1.</p>
+<p>ÆÆÆ ÆÆ Æ ÆÆÆÆ ÆÆ Æ ÆÆÆ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆÆÆ 1 2 s Fig. 3.1.6: Case B1: stable dicritical node (λ1 = λ2 = λ &lt; 0) The corresponding coordinate transformation is (B2) There is only one linearly independent eigenvector y for λ. x = T x¯ with T = [y z] (3.1.23) where a second vector z linearly independent of y must be established. This vector z is denoted generalised eigenvector. Pre-multiplying L¯ = T −1 LT with T yields TL¯ = LT Evaluating the matrix products, we find TL¯ = [y</p>
+<p>ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆ Æ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆ Æ ÆÆ ÆÆ ÆÆ Æ ÆÆ ÆÆ ÆÆÆ ÆÆ ÆÆ ÆÆ ÆÆ Æ ÆÆÆÆ ÆÆ Æ ÆÆÆÆ ÆÆÆ ÆÆÆÆ ÆÆ Æ ÆÆÆÆ ÆÆÆ ÆÆÆÆ ÆÆ Æ ÆÆÆÆ ÆÆÆ ÆÆÆÆ ÆÆ Æ ÆÆÆÆ ÆÆÆ ÆÆÆÆ s Fig. 3.1.7: Case B2: stable improper node (λ1 = λ2 = λ &lt; 0). Construction of the generalised eigenvector z which determines the unknown vector z. The solution of the system eq. (3.1.22) can be written in the form (Braun, 1979) x¯1 = eλt(C1 + C2t) x¯2 = C2eλt (3.1.25) or, after eliminating t, x¯1 = 1 λx¯2(ln <a href="#id5"><span class="problematic" id="id6">|x¯2|</span></a> + C) (3.1.26) The trajectories in fig. 3.1.7 coalesce in the singular point xs, which is called a stable improper node. In the point xs, the trajectories possess a common tangent which coincides with the direction of the eigenvector y. Equation (3.1.25) demonstrates that the general solution of a linear system of differential equations cannot always be expressed as in eq. (3.1.7). In fact, this formulation only applies when all the linearly independent eigenvectors do indeed span the whole phase space; this is always the case when all n eigenvalues are different. If, however, λk is a r-fold r</p>
+<p>stable, unstable or neutral. The phase portrait alters fundamentally if the eigenvalues change their sign or become purely imaginary. Let us now return to the general n-dimensional case. If the real part of a single eigenvalue is positive, we can always find one trajectory which diverges from the singular point so that it is unstable. The phase portraits are then either a saddle point or a source. On the basis of the characteristic polynomial of eq. (3.1.5), it is now easy to decide whether Re(λi) &lt; 0 for all i = 1, 2,..., n. We can deduce this information from the theorem of Hurwitz (Bronstein et al., 1995) which is often used in the classical study of oscillations and reads as follows: Let the polynomial P(λ) = A0 + A1λ + ... + Anλn have real coefficients, and A0 &gt; 0. All roots λi of the equation P(λ) = 0 contain negative real parts if and only if all determinants Hi (i = 1, 2,..., n) specified by the coefficients Aj are positive H1 = A1 H2 =                           A1 A0 A3 A2                             H3 =                                            A1 A0 0 A3 A2 A1 A5 A4 A3                                               . . . Hn =                                                                                      A1 A0 0 ... 0 0 A3 A2 A1 ... 0 0 . . . . . . . . . . . . . . . A2n−3 A2n−4 A2n−5 ... An−1 An−2 A2n−1 A2n−2 A2n−3 ... An+1 An                                                                                    (3.1.27) Here, all coefficients Ak which do not appear in P(λ) vanish Ak = 0 (for k &gt; n) We now determine the character of the singular point using a linearised pendulum with friction as an example. Unforced Pendulum with Viscous Damping We write the linearised equation of motion in the form x¨ + 2ζω0x˙ + ω2 0x = 0 (3.1.28) and transform it by the substitution x1 = x, x2 = ˙x into the linear system x˙ 1 x˙ 2 = L x1 x2 with L = 0 1 −ω2 0 −2ζω0 (3.1.29)</p>
+<p>or For the sub-critically damped case 0 &lt;ζ&lt; 1, we obtain two complex conjugate eigenvalues λ1,2 = ω0(−ζ ± i 1 − ζ2). We again write the solution in the transformed system in polar coordinates (case A3) to gain a simple interpretation of the trajectories r = r0e−ζω0t ϕ = ω0 1 − ζ2 t + ϕ0 (3.1.30) i.e. the trajectories are logarithmic spirals which converge towards the singular point which, in the case of ζ &lt; 1, is called focus or point attractor (fig. 3.1.9). Since energy is continuously lost due to damping, the amplitude of the pendulum decreases continuously until it comes to rest in the state of equilibrium xs. In the case of vanishing damping, the spirals degenerate into closed circular orbits about xs. It is sometimes advantageous to write the solution of the system of linear differential equations (3.1.1) for an initial condition x(t0) = x0 in the compact form (Arnold, 1980; Braun, 1979) x(t)=eLtx0 (3.1.31) where the exponential function of the (n × n)-matrix Lt is defined by the series expansion e Lt = I + Lt + (Lt)2 2! + ... = ∞ k=0 1 k!(Lt) k (3.1.32) Due to the uniform convergence of this series expansion, the sequential order of differentiation and summation can be interchanged and it can be shown immediately that eq. (3.1.31) is the solution of the original eq. (3.1.1). Indeed, the following relation applies x˙(t) = Le Ltx0 = Lx(t) (3.1</p>
+<p>3.2 Non-linear Systems and Stability For non-linear systems of ordinary differential equations of the type of eq. (2.3.3), no general methods of establishing explicit solutions exist except in special cases. Interest is often directed less at quantitative statements, such as specific trajectories, than at qualitative ones, e.g. the classification of singular points. This becomes particularly clear if we consider, for example, the infinite-dimensional problem of liquid flowing about a body. Answering the question as to where vortices occur or when the flow becomes turbulent is of greater significance than statements regarding the position and velocity of individual liquid particles. A further example is the Duffing equation, discussed in detail in section 10.5. Here, our interest is aimed for example at the question at which amplitudes of the driving force period doubling occurs and when the motion finally becomes chaotic. Geometrical and topological aspects of the trajectories play an important role here, i.e. global characteristics of the phase portrait, like, for example, the structural stability of a trajectory. As we shall see later in Chapter 6 – well beyond our preceding discussion on the elementary linear case – the behaviour of a dynamical process can change fundamentally if the real part of an eigenvalue undergoes a zero passage due to a modification of a control parameter. Many authors have dealt in detail with the theory of systems of ordinary differential equations; we refer the interested reader to Arnold (1980), Haken (1983a), Guckenheimer and Holmes (1983) and Wiggins (1990). In many physical applications, the first aim is directed towards qualitative statements, i.e. for example, finding states of equilibrium characterised by x˙ = o. Moreover, we are interested in whether the behaviour for t → ∞ – which, for example, can be a state of equilibrium, a periodic solution or an irregular motion – is stable. As we saw in the introduction, the question regarding stability, especially that of our solar system, in the case of t → ∞ has posed a challenge to many mathematicians and physicists. We first draw some conclusions from the form and characteristic properties of the set of differential equations. Concerning the existence and uniqueness of solutions, the following statement applies to the initial value problem x˙ = F (x), x(t0) = x0 (3.2.1) where F is a non-linear vector function. Thus, eq. (3.2.1) has exactly one solution if the partial derivatives of the functions Fj with respect to the variables x1, x2,...,xn exist and are continuous. Consequently, exactly one trajectory runs through each (non-singular) point x of the phase space which belongs to an autonomous system of differential equations, i.e. the trajectories cannot intersect. Since time does not appear explicitly in the autonomous formulation of a system, the system is invariant with respect to a time shift, i.e. with respect to a transformation τ = t+c. For this reason, one can always set t = 0 in an initial value problem. Singular points or stationary solutions xs, characterised by x˙ s = o, and the trajectories in the neighbourhood of such states of equilibrium provide a first overview of the solution behaviour of a non-linear system eq. (3.2.1). For this reason, we</p>
+<p>consider in the phase space a point x adjacent to the singular point xs following the superimposition of a small perturbation x˜ on the state of equilibrium xs x = xs + x˜ with <a href="#id7"><span class="problematic" id="id8">|x˜|</span></a>  1 (3.2.2) Substituting eq. (3.2.2) into eq. (3.2.1) and expanding F into a Taylor series in the neighbourhood of xs, we obtain x˙ = x˙ s + x˜˙ = F (xs) + ∂F ∂x                           xs x˜ + O(x˜2 ) (3.2.3) where ∂F ∂x                             xs = D(xs) is the Jacobian matrix which contains the partial derivatives of the functions Fj with respect to the variables xk. In the literature, the symbol J is occasionally also used for the Jacobian matrix, in particular the determinant detJ is used when applying coordinate transformations; see eq. (4.2.37). In O(x˜2 ), all higher-order terms in x˜ are included. In a first approximation, we may consider the linearised system x˜˙ = D(xs)x˜ (3.2.4) For singular points xs, D is a constant matrix. We saw in section 3.1 that the sign of the real parts of the eigenvalues of D determines the stability of the solution. According to a theorem of Hartman and Grobman (Guckenheimer and Holmes, 1983), the classification of the singular points of the non-linear system eq. (3.2.1) can be based on the linearised system eq. (3.2.4) as long as no eigenvalue of D(xs) vanishes or no eigenvalue is purely imaginary. We refer the reader to section 5.4.1 for a more detailed discussion. A singular point xs, for which the eigenvalues of the corresponding Jacobian matrix D(xs) do not possess vanishing real parts, is called a hyperbolic or non-degenerate fixed point. If, on the other hand, an index j exists for which Re(λj) = 0, we speak of a non-hyperbolic or degenerate fixed point. In this case, the non-linear terms determine the stability behaviour (see section 6.2 for particulars). Figure 3.2.1 shows the phase portraits of the non-degenerate fixed points of non-linear systems for n = 2 which can be classified according to the Hartman-Grobman theorem in accordance with the eigenvalues of the linearised system. Up to now, we have applied the concept of stability in a local sense in order to characterise the behaviour of the solutions in the neighbourhood of a point of equilibrium. This concept can, however, be understood much more generally. To this end, we consider a reference solution xr = xr(t) of the initial value problem eq. (3.2.1) with the initial condition xr(0) = xr0. Due to imprecision of measurement, the initial conditions cannot be prescribed in physical problems with any desired precision. In the same way, the accuracy of the initial conditions in a numerical calculation performed on a computer is limited in that xr0 can only be</p>
+<blockquote>
+<div><p>n = 2 specified by a finite number of digits. Thus, it is of primary importance to ascertain to what extent the reference solution reacts sensitively to small deviations in the initial conditions. One intuitively denotes a trajectory through an initial point xr0 as stable if all the curves which start out near xr0 stay in the immediate neighbourhood of the initial trajectory forever. More precisely: the solution xr(t) is stable in the Lyapunov sense if, for an arbitrarily small ε &gt; 0, a δ &gt; 0 (δ = δ(ε) exists, i.e. δ is only a fun</p>
+</div></blockquote>
+<p>ε and not of the time t), so that for each solution x(t) of eq. (3.2.1) with an initial condition satisfying <a href="#id9"><span class="problematic" id="id10">|x(t0) − xr(t0)|</span></a> &lt; δ(ε) the solution xr(t) satisfies <a href="#id11"><span class="problematic" id="id12">|x(t) − xr(t)|</span></a> &lt; ε for all t&gt;t0 (3.2.5) (see fig. 3.2.2). If one cannot find such a δ-neighbourhood for a prescribed εneighbourhood, xr(t) is called unstable.</p>
+<p>lity This definition contains no information as to whether adjacent trajectories come arbitrarily close to the reference trajectory for t → ∞. If so, this special case is designated as one of asymptotic stability (see fig. 3.2.3). A stable orbit is called asymptotically stable if, in addition to the Lyapunov stability criterion, limt→∞ <a href="#id13"><span class="problematic" id="id14">|x(t) − xr(t)|</span></a> = 0 (3.2.6) applies. An example with asymptotic stability for a single-degree-of-freedom oscillator is the fixed point (fig. 2.2.2) or the limit cycle (fig. 2</p>
+<blockquote>
+<div><p>Fig. 3.2.4 Example of orbital stability It is also possible that adjacent trajectories as a whole remain adjacent, but the orbital periods of the points deviate greatly from one another. We then speak of orbital stability, fig. 3.2.4 (Haken, 1990). We now illustrate the concept of the asymptotic stability of a solution on an example. To this end, we consider a linear oscillator with viscous damping subject to a periodic excitation force; the equation of motion for this is, see eq. (2.2.3), x¨ + 2ζω0x˙ + ω2 0x = C sin ωEt (0 &lt;ζ&lt; 1, ω0 = 0, ωE = ω0) (3.2.7) The solution of this second-order differential equation is obtained by superposition of the general solution of the unforced (homogeneous) system and a particular integral of the inhomogeneous differential equation. We first determine the general solution of the homogeneous differential equation. Using as before the substitution x1 = x, x2 = ˙x, the corresponding first-order system can be written in the form x˙ = Lx with L = 0 1 −ω2 0 −2ζω0 (3.2.8) see eq. (3.1.33). For 0 &lt;ζ&lt; 1, L possesses two complex conjugate eigenvalues λ1 = ω0(−ζ + i 1 − ζ2 ), λ2 = λ∗ 1 (3.2.9) The corresponding eigenvectors y derive from the relation [L − λiI ]yi = o (i = 1, 2) (3.2.10) Disregarding a proport</p>
+</div></blockquote>
+<dl class="simple">
+<dt>x(t) = 2 Re</dt><dd><p>C1eλ1t y1  = Be−ζω0t Re ei(ωDt−β) 1 −ζω0 + iωD  or, using Euler’s formula, x(t) = Be−ζω0t cos(ωDt − β) −ζω0 cos(ωDt − β) − ωD sin(ωDt − β) (3.2.14) where the integration constants B and β derive from the initial condition x0 and ωD is the damped eigenfrequency. In order to determine the general solution of eq. (3.2.7), we still require a particular integral of the inhomogeneous differential equation. This can either be established by variation of the constants B and β, see (Braun, 1979), or by application of an ansatz for x x = A sin(ωEt − α) (3.2.15) where A and α are deduced by substitution of eq. (3.2.15) into eq. (3.2.7). In this way, we obtain the relation A(ω2 0 − ω2 E) sin(ωEt − α)+2Aζω0ωE cos(ωEt − α) = C sin ωEt From this, the constants A and α are found to be α = tan−1 2ζω0ωE ω2 0 − ω2 E A = C 2ζω0ωE sin α (3.2.16) Thus, expressed in x1, x2 coordinates, the complete solution becomes x(t) =  Be−ζω0t cos(ωDt − β) + A sin(ωEt − α) −Be−ζω0t
+ζω0 cos(ωDt − β) + ωD sin(ωDt − β)  + AωE cos(ωEt − α)  (3.2.17) Figure 3.2.5 displays the trajectories in the extended phase space as well as their projection onto the x1, x2 phase plane. In the extended phase space, the particular solution is a helix; its projection onto the x1, x2 plane is an ellipse. From eq. (3.2.17),</p>
+</dd>
+</dl>
+<p>we deduce that, for 0 &lt;ζ&lt; 1 and t → ∞, all trajectories converge towards this ellipse which thus represents a limit cycle, an asymptotically stable orbit. Here again, it is confirmed that the sign of the real part of the eigenvalues of eq. (3.2.9) determines the stability behaviour. For the analysis of the asymptotic stability, we exclusively used properties of the linearised system eq. (3.2.4). This means that we could only allow for small perturbations of the initial system. However, in practice, the question often arises whether stability can still be guaranteed for large perturbations where the non-linear terms have to be taken into account. For the investigation of this global stability problem, Alexander Michailowitsch Lyapunov (1857-1918), a Russian mathematician and physicist to whom we owe major contributions to the understanding of the stability of dynamical systems, proposed a direct geometrical method which allows us to analyse the variation of a function V (x) along a trajectory x(t). On the assumption that the fixed point coincides with the origin, the Lyapunov function V (x) must have the following characteristics: an open neighbourhood U of the fixed point x = 0 exists, where V (x) is continuous together with its first partial derivatives. In addition, V (0) = 0 and V (x) &gt; 0 hold for all xU. Following eq. (2.4.2), the derivative with respect to time of the Lyapunov function along a trajectory of the system x˙ = F (x) is calculated as the Lie derivative V˙ (x(t)) = grad V · x˙ = gradV · F (x) (3.2.18) According to Lyapunov’s stability theorem the sign of V˙ (x) decides the stability of the fixed point: if for all xU with the exception of x = 0 V˙ (x(t)) 0 , then x is stable V˙ (x(t)) &lt; 0 , then x is aymptotically stable V˙ (x(t)) &gt; 0 , then x is unstable see (Haken, 1990; Hale and Ko¸cak, 1991). We emphasise that, as long as such a Lyapunov function is known, it is not necessary to calculate the trajectory explicitly in order to decide about its stability. In special cases, a Lyapunov function can be determined explicitly: for example, if the dynamical system has a potential U, i.e. if F (x) = −grad U. In this case, the potential represents a natural Lyapunov function for conservative systems. 3.3 Invariant Manifolds Invariant manifolds play a special role in the analysis of systems of linear and nonlinear differential equations. In geometrical terms, they are objects in the phase space which, taken as a whole, remain invariant with respect to the dynamics of the system. Trajectories offer a trivial example for such objects; fixed point, limit cycle and torus are also invariant manifolds. In order to describe invariant manifolds, we call upon some definitions with which we wish to illustrate our argument in a two- and three-dimensional space using two</p>
+<p>examples. Let us first consider the linear approximation of the system of differential equations in the neighbourhood of a saddle point (see fig. 3.1.3). If we choose as an inital condition an arbitrary point on one of the axes ¯x1, x¯2 which are given by the eigenvectors y1,y2, then the solutions remain per definition on these straight lines for all time. We denote the linear subspace appertaining to the eigenvector y1 (λ1 &lt; 0) as the stable and that appertaining to y2 (λ2 &gt; 0) as the unstable invariant manifold. We can define corresponding subspaces for the saddle point of a non-linear system (fig. 3.3.1). A stable invariant manifold Ws of a singular point xs is defined as the set of all points x which determine initial values of trajectories converging towards xs for t → ∞. The eigenvalues appertaining to the corresponding eigenvectors possess negative real parts. An unstable invariant manifold Wu of a singular point xs is defined as the set of all points x which form the initial values of trajectories converging towards xs for t → −∞. The eigenvectors corresponding to an unstable manifold appertain to eigenvalues with positive real parts. All initial points of the trajectories which are neither attracted nor repelled by xs lie on a so-called invariant centre manifold Wc (see section 6.2 for a detailed discussion). In the example in fig. 3.3.1, the centre manifold is degenerate and is identical with the saddle point xs. Let us now consider two closely adjacent initial points P(0) and Q(0) which lie on different sides of the invariant manifold Ws (see fig. 3.3.1). For t → ∞, the associated trajectories will proceed to completely different parts of the phase space. The stable invariant manifolds of a saddle point are hence occasionally also referred to as separatrices. In analogy, we can define invariant manifolds associated with limit cycles in a three-dimensional phase space (see fig. 3.3.2) and with three-dimensional tori in a four-dimensional phase space.</p>
+<p>Up to now, our discussion has shown that one can achieve a satisfactory global overview of the structure of the phase space if one determines the attractors and the corresponding invariant stable and unstable manifolds for a system of differential equations eq. (2.3.3). Finally, we note that, due to the uniqueness of the solutions of a system eq. (2.3.3), a stable manifold Ws cannot cross itself, nor can two different Ws intersect. However, intersections of stable Ws and unstable Wu are possible. Intersections of Ws and Wu that belong to the same fixed point are denoted homoclinic points. If they belong to different fixed points, they are denoted heteroclinic points. In the neighbourhood of such intersections, these points can cause a highly complex behaviour of the trajectories. We shall return to this issue in sections 4.5 and 10.5.</p>
+<p>e 3.4 Discretisation in Time Up to now, we have described dynamical processes as continuous evolutions in time. An alternative approach is to observe the position vectors of the trajectories only at discrete time intervals τ. This technique is applied in the process of filming a sequence, for example, where a continuous motion is simulated approximately by means of snapshots at constant time intervals. In this way, a continuous function x(t) which contains an “infinite” amount of information is replaced by a discrete sequence of points x(t0), x(t1),...x(tk),... where tk = t0 + kτ (k = 1, 2,...) (3.4.1) In order to ensure that no essential information on the evolution of the trajectory is lost, it is important to choose a suitable discretisation parameter τ. Let us first consider a periodically excited oscillator. Selecting the period TE of the excitation force as the time interval τ and plotting the sequence of points of eq. (3.4.1) in the x, x˙-plane, we initially obtain a sequence of scattered points in the transient phase. If a stationary solution has been attained, successive recordi</p>
+<dl>
+<dt>ion) above a certain index k will coincide. In the case of a subharmonic oscillation of order m with the period mTE, m fixed points emerge. This method of representation is often called the stroboscopic method. Its advantage is obvious: the stationary solutions are represented by fixed points. In fig. 3.4.1, the stroboscopic method is demonstrated using the Duffing equation as an example. After the transient phase, the stationary solution is represented in the present case by a second-order subharmonic oscillation. Another interpretation may be construed by considering the sequence of points of eq. (3.4.1) as an array of entries in which each x(tk+1) is an image of its pre-image x(tk). In this way, a generally non-linear recursive mapping rule is defined x(tk+1) = f</dt><dd><p>x(tk)  , k=1, 2,... (3.4.2) which, due to the determinacy of the original differential equation, is one-to-one. Equation (3.4.2) can also be written x(t + τ) = f
+x(t)  (3.4.3) This relation describes a non-linear feedback so that a repeated application leads to x(t + 2τ) = f  f
+x(t)  = f 2
+x(t)  (3.4.4) It should be noted, however, that it will only be possible to specify the mapping function explicitly in special cases. In general, it is necessary to construct the image point by means of numerical integration. On the right-hand side of fig. 3.4.2, we display the amplitude of a periodically excited damped oscillator as a function of time (see also fig. 2.2.2). The left-hand side shows the sequence of points resulting from the mapping rule (3.4.3) for a fixed interval τ. It can be clearly seen that the solution spirals towards a stable limit cycle after an initial transient</p>
+<blockquote>
+<div><p>tk tk1 Fig. 3.4.2: Illustration of the discrete map using the example of a periodically excited damped oscillator 3.5 Poincar´e Map In the preceding section 3.4, we approximated a continuous trajectory x = x(t) as a sequence of discrete points sampled at constant time intervals. With this technique, the system of differential equations is reduced to a system of difference equations of the same order. The significance of the following discretisation method, based on an idea of Henri Poincar´e, lies in the fact that the dimension of the resulting system is reduced by one. We consider a recurrent trajectory c in the n-dimensional phase space. We now choose a hypersurface Σ of the dimension n − 1 g(x1, x2,...,xn) = 0 (3.5.1) so that it is sequentially intersected transversally by the trajectory. For a system of differential equations (2.3.3), the right-hand side F (x) defines the direction of the tangent to the trajectory c at point x. The surface normal n of Σ is given by n = <a href="#id15"><span class="problematic" id="id16">|grad g|</span></a> −1grad g with grad g =  ∂g ∂x1 ∂g ∂x2 ······ ∂g ∂xn  (3.5.2) If we require that Σ intersects the trajectory c t</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>for a three-dimensional phase space. Thus, in this method, the discretisation is not implemented over a fixed time interval but contains only those points of the trajectory which lie on a given hypersurface Σ. If we interpret each point P(i+1) as an image of its pre-image P(i) P(i+1) = f(P(i)) (3.5.4) we obtain a generally non-linear iterative mapping of the hypersurface onto itself which, in honour of its originator, is called a Poincar´e map or, alternatively, first return map. Since the map is one-to-one, P(i) = f −1(P(i+1)) (3.5.5) applies. If we introduce a coordinate system ξk (k = 1, 2,..., n−1) on the hypersurface and assign the position vector ξ (i) = {ξ (i) 1 ξ (i) 2 ...... ξ(i) n−1} (3.5.6) to the point P(i), the n-dimensional system of differential equations (2.3.3) can be reduced to an (n − 1)-dimensional system of difference equations ξ (i+1) = f (ξ (i))</p>
+<p>´e section It should be noted, however, that the mapping function f cannot usually be established explicitly. We thus have to continue to rely on numerical integration and cannot expect a significant saving in computing time. The advantage of the Poincar´e map derives mainly from the fact that the dimension of the system is reduced by one without, as experience has shown, any significant loss of information concerning the long-term behaviour of the trajectories. However, there is a loss of topological information on how often the trajectory has rotated about its own tangent during one revolution. This local torsion rate per cycle is a topological invariant of the dynamics and can be analysed by</p>
+<p>knot theory. A second topological invariant is the degree of braid-like interlacings of neighboring orbits (Tufillaro et al., 1992; Arnold and Khesin, 1998). This topological characterisation will be illustrated in section 10.5 using the example of the Duffing equation, see Colour Plate XXIV. The theory of dynamical systems received a further decisive impetus by another abstraction step. If we are not interested in the detailed response of a particular dynamic problem, but rather in general qualitative characteristics of whole classes of dynamical systems, we can put aside the study of the differential equations or their Poincar´e maps and investigate the general characteristics of explicit recursion formulæ directly. Since the mapping function is known explicitly, numerical integrations are no longer necessary; hence, the computing time between two Poincar´e sections is reduced to the insignificant time required for one iteration step. In this way, it is possible to obtain an overview of the long-term behaviour of a system very quickly whilst also gaining increased numerical accuracy since errors due to numerical integration do not occur. Particularly if one chooses a one-to-one mapping, the procedure can be interpreted as a Poincar´e map of a dynamical system. In section 4.6, we shall deal with such a recursion rule in more detail, using the example of a conservative system with two degrees of freedom, the so-called H´enon map. 3.6 Fixed Points and Cycles of Discrete Systems The fixed points Ps of a Poincar´e map, eq. (3.5.4), result from the relationship Ps = f(Ps) (3.6.1) The corresponding trajectory c in the phase space returns periodically to its initial position with a period T and thus forms a closed curve (see fig. 3.6.1a). If we apply the Poincar´e map to a point P(1) m times and only the result P(m+1) coalesces again with the initial point P(1), i.e. P(2) = f(P(1)), P(3) = f(P(2)), ...,P(m+1) = f(P(m)) = P(1) (3.6.2) we speak of a cycle of the period m or an m-cycle. The corresponding trajectory in the phase space is a subharmonic solution of the period mT which returns to the original point after m orbits and continues on the same path as before (see fig. 3.6.1b). If we denote the mapping function iterated m times as f m, then, for an m-cycle, P(1) = f m(P(1)) (3.6.3) applies, i.e. P(1) is a fixed point of the map f m. Consequently, no fundamental difference arises between fixed points and cycles and we can restrict ourselves to fixed points when investigating the stability. We emphasise once more that it is very easy to recognise periodic respectively subharmonic solutions with the help of Poincar´e maps. It is only necessary to locate the fixed points of the mapping function f or of the iterated function f m (m = 2, 3,...).</p>
+<blockquote>
+<div><p>x2 x1 Σ Ps = f(Ps) c x3    a) Fixed point x3  x1 x2 Σ P P (1) (2) P(3) c b) Cycle of period 3 Fig. 3.6.1: Definition of fixed point and cycle of a Poincar´e map We next consider the behaviour of the trajectories in the neighbourhood of a fixed point Ps in order to determine the stability characteristics of Ps. To this end, we observe a point P adjacent to Ps. Let P have the coordinate vector ξ = ξs + η, <a href="#id17"><span class="problematic" id="id18">|η|</span></a>  1 (3.6.4) where ξs is the vector appertaining to Ps. The image of the i-th iteration is ξ (i+1) = f (ξ (i)) (3.6.5) Expanding the mapping function f into a Taylor series in the neighbourhood of ξs yields ξs + η(i+1) = f (ξ s + η(i)) = f (ξ s) + ∂f ∂ξ                                 ξs η(i) + O(η(i)2 ) (3.6.6) Since Ps is a fixed point, we obtain, ignoring higher-order terms, the linear mapping rule in η(i) η(i+1) = D(ξs)η(i) (3.6.7) where D(ξs) = ∂f ∂ξ                           ξs (3.6.8) is a constant (n − 1) × (n − 1)-matrix, the Jacobian matrix of the</p>
+</div></blockquote>
+<p>l eigenvalue λ) If λ is a real eigenvalue appertaining to the eigenvector ζ of D, we observe the point P(0) with the position vector ξ (0) = ξs + ζ (3.6.9) Equations (3.6.6) and (3.6.8) yield for the image P(1) ξ (1) ≈ ξs + D(ξ s)ζ = ξs + λζ Following the next i</p>
+<p>ξ (2) ≈ ξs + λD(ξs)ζ = ξs + λ2 ζ or, after i iterations (see fig. 3.6.2), ξ (i) ≈ ξs + λi ζ (3.6.10) The points Ps as well as P(0), P(1), P(2) all lie on a straight line and λ determines whether the sequence of points is attracted by Ps or repelled by it. Figure 3.6.2 summarises the possibilities for a real eigenvalue. In the case of negative eigenvalues, the vector λi ζ in eq. (3.6.10) changes its sign with each iteration, i.e. for negative λ, alternating sequences of points result. If <a href="#id19"><span class="problematic" id="id20">|λ|</span></a> &gt; 1, the points P(i) with increasing i tend away from Ps, i.e. Ps is unstable; for <a href="#id21"><span class="problematic" id="id22">|λ|</span></a> &lt; 1, Ps is stable. In the marginal case λ = 1, each point of the straight line is mapped onto itself, while for λ = −1, each point has the period 2 and is reflected at the point Ps at each iteration step. We next consider the case of two complex conjugate eigenvalues λ = <a href="#id23"><span class="problematic" id="id24">|λ|eiϕ and λ∗ = |λ|e−iϕ (3.6.11) The corresponding eigenvectors are then also complex conjugate ζ = ζ 1 + iζ 2 and ζ ∗ = ζ 1 − iζ 2 (3.6.12) The two real vectors ζ 1 = 1 2 [ζ ∗ + ζ ] and ζ 2 = i 2 [ζ ∗ − ζ ] (3.6.13) span a plane Φ. The image of all points P on the plane Φ also lies on Φ. In order to simplify the notation, we move the origin of the coordinate system to the fixed point Ps. Denoting the position vector of an arbitrary point P(0) on Φ by ξ (0) = αζ 1 + βζ 2 (3.6.14) and applying the mapping function f k times, we obtain the relationships ξ (0) = 1 2α[ζ ∗ + ζ ] + 1 2 iβ[ζ ∗ − ζ ] f k(ξ (0)) ≈ 1 2α  (λ∗)kζ ∗ + λkζ  + 1 2 iβ  (λ∗)kζ ∗ − λkζ  = 1 2 |λ|</span></a> k e−ikϕ(α + iβ)ζ ∗ + eikϕ(α − iβ)ζ  Using Euler’s formula eikϕ = cos(kϕ) + isin(kϕ) (3.6.15) we finally find f k(ξ (0)) ≈ <a href="#id25"><span class="problematic" id="id26">|λ|</span></a> k [(αζ 1 + βζ 2) cos(kϕ)+(βζ 1 − αζ 2) sin(kϕ)] (3.6.16) In the case of <a href="#id27"><span class="problematic" id="id28">|λ|</span></a> = 1, P(0) and its image points P(k) move on an ellipse about the fixed point Ps; in the case of <a href="#id29"><span class="problematic" id="id30">|λ|</span></a> = 1, the points P(k) are located on a spiral and, in the case of <a href="#id31"><span class="problematic" id="id32">|λ|</span></a> &lt; 1, move towards the fixed point while, in the case of <a href="#id33"><span class="problematic" id="id34">|λ|</span></a> &gt; 1, tending away from Ps (see fig. 3.6.3).</p>
+<blockquote>
+<div><blockquote>
+<div><p>P(1) P(2) P(3) P(4) P(0) Fig. 3.6.3: Stability behaviour of a fixed point (two complex conjugate eigenvalues) Hartman and Grobman extended their theorem on the stability behaviour of trajectories in the phase space to incorporate general discrete maps (Guckenheimer and Holmes, 1983). The extended theorem includes the case of multiple eigenvalues and enables us to apply the stability characteristics of the linearised system to the original non-linear system if <a href="#id35"><span class="problematic" id="id36">|λi|</span></a> = 1 is true for all eigenvalues. Ps is then called a hyperbolic fixed point. If eigenvalues exist for which <a href="#id37"><span class="problematic" id="id38">|λi|</span></a> = 1 holds, further investigations are necessary in order to ascertain the stability of the fixed points; see also section 6.6 as well as (Guckenheimer and Holmes, 1983). A more detailed discussion of iterated mapping rules can be found in sections 6.7 and 8.3 to 8.6. 3.7 An Example of Discrete Dynamics – The Logistic Map In this section, we first propose to investigate empirically a special discrete nonlinear map which, in spite of its simple form, exhibits a multitude of phenomena typical for non-linear behaviour. At the beginning of the seventies of the last century, the biologist Robert M. May researched into the dynamics of animal populations. In order to describe the simplest case of non-overlapping generations, he applied a first-order difference equation xn+1 = f(xn) (3.7.1) which determines the population xn+1 in the year n+1 from the population of the previous year (May, 1976). Evidently one has to introduce a non-linear ansatz for the function f(x), since linear difference equations can only reproduce the extinction or the unrestricted growth of a population. In order to simulate a saturation effect, May thus introduced a quadratic term and investigated the dynamical behaviour of the simplest non-trivial recursion rule, the so-called logistic map, xn+1 = αxn(1 − xn) (3.7.2) Surprisingly, a whole range of dynamical behaviour patterns can be simulated w</p>
+</div></blockquote>
+<p>= 0 In the following, we wish to investigate – with the help of a pocket calculator, as it were – the phenomena which arise for the logistic map x −→ f(x) = αx(1 − x) (3.7.3) in the interval 0 x 1. The function f(x) is a parabola with its vertex at x = 1/2 and open at the bottom; it crosses the x-axis at x = 0 and x = 1. The constant α is the system parameter which lies between 0 and 4 in order to retain the value of x within the interval [0,1] (fig. 3.7.1a). Using this parabola, we now propose to study the topological changes that are generated by bifurcations or period doublings when varying the system parameter α. To this end, we first determine possible fixed points or point attractors. If the motion tends towards a fixed point xs, the following condition must apply xs = f(xs) (</p>
+</div></blockquote>
+<p>2857 For the parabola, two fixed points are obtained xs = 0 and xs = 1 − 1/α In order to determine the basin of attraction of both fixed points, we start from a point xn which deviates from the fixed point xs by ε, i.e. from xn = xs + ε. Substituting this starting point into eq. (3.7.1), we obtain for its subsequent image point xn+1 = f(xn) = f(xs + ε) ≈ f(xs) + εf (xs) = xs + εf (xs) (3.7.5) This means that the perturbation fades away if <a href="#id39"><span class="problematic" id="id40">|f (xs)|</span></a> &lt; 1. In this case, the fixed point is stable and we then speak of a point attractor. For <a href="#id41"><span class="problematic" id="id42">|f (xs)|</span></a> &gt; 1, however, the fixed point is uns</p>
+<p>6666 We can thus summarise the conditions for a point attractor as follows xs = f(xs) , <a href="#id43"><span class="problematic" id="id44">|f (xs)|</span></a> &lt; 1 (3.7.6) For our parabola, we obtain for example f (xn) = α(1 − 2xn) and for the two fixed points of the logistic map f (0) = α and f (1 − 1/α)=2 − α (3.7.7) This means that, for 0 &lt;α&lt; 1, each motion ends in xs = 0 (fig. 3.7.1) and, for 1 &lt;α&lt; 3, the point attractor xs = 1 − 1/α takes over (figs. 3.7.2 and 3.7.3). For α &gt; 3, neither of the two fixed points acts as an attractor and a new type of behaviour can be discerned. In this case, the series of points oscillates betwe</p>
+<dl class="simple">
+<dt>ycle two values xs1 = f(xs2) and xs2 = f(xs1) in which process each point in itself does not act as an attractor, but the two as a whole form a 2-cycle (fig. 3.7.4). Following each iteration course for xs1 und xs2, we obtain xs1 = f</dt><dd><p>f(xs1)  , xs2 = f
+f(xs2)  Accordingly, neither point is a fixed point of the function f(xn) but they are fixed points of the function f 2 = f(f(xn)). The mapping function f 2 describes a motion if two steps are carried out subsequently. For our parabola, for example, f 2(xn) becomes f 2(xn) = αf(xn)[1 − f(xn)] = α2xn(1 − xn)[1 − αxn(1 − xn)] (</p>
+</dd>
+</dl>
+<p>ling For the f 2-function, the attractor condition xs = f 2(xs), <a href="#id45"><span class="problematic" id="id46">|f 2 (xs)|</span></a> &lt; 1 naturally also applies. Figure 3.7.2 presents the curves of f(xn) and f 2(xn) for α &lt; 3. Both curves intersect the bisector of the first quadrant in the point attractor xs = 1 − 1/α. With increasing α, the curve at the point of intersection with f 2 becomes steeper and steeper so that for α = 3, the point of intersection becomes the inflection point. Following a further increase in α, three points of intersection emerge, namely the two new point attractors xs1 and xs2 and the unstable fixed point xs (fig. 3.7.4). If α increases up to the value α = 1+ √ 6 ≈ 3.449, then the same happens for the outer points of intersection of f 2(xn) as for the point of intersection of</p>
+<p>ap at α = 3. We observe a period doubling, i.e. a cycle of the period 4; the points of intersection of f 2(xn) are now fixed points of the function (fig. 3.7.5) f 4(xn) = f 2(f 2(xn)) (3.7.9) For increasing values of the system parameter α, further instabilities occur one after the other, leading to 8-cycles, 16-cycles and generally to 2n-cycles. The intervals between successive αk-values at which period doublings occur decrease rapidly and the series {αk} tends towards an accumulation point α∞ (fig. 3.7.6). For α&gt;α∞, we observe irregular, chaotic behaviour; this is, however, repeatedly interrupted by ranges of regular behaviour, so-called periodic windows. The value α∞ which characterises the transition to chaos via a cascade of period doublings was first calculated for the logistic map by Großmann and Thomae (1977) α∞ = 3.5699456 ... (3.7.10) Considering the sequence of critical αk-values, we confirm that the distances αk+1− αk decrease like a geometric progression where lim k→∞ αk+1 − αk αk+2 − αk+1 = δ (3.7.11) It was Mitchell Feigenbaum (1978) who, applying renormalisation techniques used for second-order phase transitions, succeeded in proving that these laws</p>
+<p>of universal character and are thus valid for a whole class of discrete mapping functions with a single quadratic maximum; only shortly afterwards, Coullet and Tresser (1978) were able to confirm this. For this reason, δ is often designated as the Feigenbaum constant. In section 6.7, we shall discuss in detail the mechanism which leads to a cascade of period doublings and elucidate the background to the universality of this transition. Moreover, in section 8.4.1, we shall again deal with Feigenbaum’s route to chaos and show how the scaling laws on which it is based are reflected in the power spectra. 3.8 Fourier Series and Fourier Transform 3.8.1 Fourier Series Until now, we have studied dynamical systems primarily on the basis of their temporal evolution, i.e. we were interested in the long-time behaviour of displacements, velocities and accelerations as well as in their transient phases. Often, however, another form of information is needed. If one is interested in the oscillation components of a periodical motion, for example, or asks whether there are dominant components, the system has to be split up into its sine and cosine components. This decomposition is denoted harmonic analysis or Fourier analysis. The theoretical basis of the Fourier analysis and the Fourier transform to be discussed in the next section was developed by the French mathematician Joseph de Fourier (1768 - 1830), who described the problem of heat transfer by means of trigonometric series and presented his work in 1822 in the monograph “Th´eorie analytique de la chaleur”. Since that time, Fourier techniques play an exceptionally important role in many areas of science. Applications range from mathematics (approximation theory, probability theory) and physics (classical mechanics, acoustics, electromagnetism) to electrical engineering and signal processing. Many technical inventions are hardly conceivable without Fourier techniques. The reason is the particular properties of trigonometric functions such as orthogonality and their role as eigenfunctions of linear differential operators. Fourier analysis allows us to expand a periodic function to a trigonometric series of the form f(τ) = a0 2 +∞ k=1 (ak cos kτ + bk sin kτ) (3.8.1) Expansions of f(τ) into infinite series of sine and cosine oscillations are known as Fourier series. In 1807, Fourier stated that each 2π-periodic function f(τ), whether continuous or not, could be represented as an infinite sum of trigonometric functions, i.e. as a superposition of fundamental frequencies and harmonics (see fig. 3.8.1). Although this statement is mathematically not quite correct, his conclusions were of far-reaching importance at a time when there were not even clear definitions of concepts such as function or integral.</p>
+<p>Fourier analysis If we denote the n-th partial sum sn(τ) = a0 2 +n k=1 (ak cos kτ + bk sin kτ) (3.8.2) then f(τ) = limn→∞ sn(τ) (3.8.3) If f(τ) is given, it is the task of the Fourier analysis to determine the so-called Fourier coefficients a0, ak, bk (k = 1, 2, ..., n) in eq. (3.8.2). These are obtained from the condition that, for each fixed n, the mean squared error E2 =  +π −π [f(τ) − sn(τ)]2 dτ (3.8.4) is reduced to a minimum. Since the trigonometric functions form an orthogonal s</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/index2.html">Mathematical_Biology_I_An_Introduction_3E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynam_Systems_Applica_Mathematica_Stephen/index2.html">Dynam_Systems_Applica_Mathematica_Stephen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sistemas_Dinamicos.html">Sistemas_Dinamicos</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/An_Exploration_Dynamical_Systems_Chaos_Argyris/c03.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

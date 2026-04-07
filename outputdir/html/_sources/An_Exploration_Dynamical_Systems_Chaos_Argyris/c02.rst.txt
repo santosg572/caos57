@@ -1,0 +1,575 @@
+c02
+===
+
+An_Exploration_Dynamical_Systems_Chaos_Argyris_C02
+
+Completely Revised and Enlarged
+Second Edition
+
+John Argyris   Gunter Faust
+Maria Haase   Rudolf Friedrich
+
+2 Preliminaries 
+
+If therefore, those cultivators of the physical science from whom the intelligent public deduce their conception of the physicist ... are led in pursuit of the arcanas of science to the study of the singularities and instabilities, rather than the continuities and stabilities of things, the promotion of natural knowledge may tend to remove that prejudice in favour of determinism which seems to arise from assuming that the physical science of the future is a mere magnified image of that of the past. 
+
+James Clerk Maxwell, 1873 
+
+p33 
+
+This book is an attempt to convey concepts of methods evolved in the field of nonlinear dynamics to budding physicists and engineers and to illustrate them using simple examples. The basis for these new ideas on dynamics is the topological or geometrical view of temporal processes which leads to a representation in phase space.
+—--------------------------------------
+Este libro es un intento de transmitir conceptos de métodos desarrollados en el campo de la dinámica no lineal a físicos e ingenieros en ciernes y de ilustrarlos mediante ejemplos sencillos. La base de estas nuevas ideas sobre la dinámica es la visión topológica o geométrica de los procesos temporales que conduce a una representación en el espacio de fase.
+—--------------------------------------
+
+In the following, we shall restrict ourselves mainly to those non-linear processes of evolution, the dynamics of which can be described by ordinary differential equations or difference equations. We consider systems with the following characteristics:
+
+En lo sucesivo, nos limitaremos principalmente a aquellos procesos evolutivos no lineales cuya dinámica puede describirse mediante ecuaciones diferenciales ordinarias o ecuaciones en diferencias. Consideraremos sistemas con las siguientes características:
+
+
+ i. they are finite-dimensional, i.e. each state is determined by a point in a finite dimensional phase space; 
+
+son de dimensión finita, es decir, cada estado está determinado por un punto en un espacio de fases de dimensión finita;
+
+
+ii. they are differentiable, i.e. the temporal change of state is modelled by differentiable functions; 
+
+son diferenciables, es decir, el cambio temporal de estado está modelado por funciones diferenciables;
+
+
+iii. they are deterministic, i.e. the equations contain no stochastic terms. Moreover, the initial state determines the solution uniquely at least locally. This means in particular that two trajectories can never intersect. 
+—--------------------------------------
+A continuación, nos limitaremos principalmente a aquellos procesos de evolución no lineales, cuya dinámica puede describirse mediante ecuaciones diferenciales ordinarias o ecuaciones en diferencias. Consideramos sistemas con las siguientes características:
+
+  i. son de dimensión finita, es decir, cada estado está determinado por un punto en un espacio de fase de dimensión finita;
+
+ii. son diferenciables, es decir, el cambio de estado temporal está modelado por funciones diferenciables;
+
+iii. son deterministas, es decir, las ecuaciones no contienen términos estocásticos. Además, el estado inicial determina la solución de forma única al menos localmente. Esto significa en particular que dos trayectorias nunca pueden cruzarse.
+
+
+—--------------------------------------
+
+
+The differential-topological method offers the opportunity of using the structure of these differential equations to investigate them geometrically in phase space. What is novel in our present-day understanding is that we do not concentrate on a single trajectory but consider the solutions as a whole and analyse their stability globally. 
+—--------------------------------------
+
+El método diferencial-topológico ofrece la oportunidad de utilizar la estructura de estas ecuaciones diferenciales para investigarlas geométricamente en el espacio de fase. Lo que es novedoso en nuestra comprensión actual es que no nos concentramos en una sola trayectoria sino que consideramos las soluciones como un todo y analizamos su estabilidad globalmente.
+—--------------------------------------
+
+
+p33
+
+In the case of dissipative systems, we observe the ensemble of all the trajectories and classify the long-term behaviour via the stability behaviour of individual groups. This type of analysis is called qualitative dynamics or, in mathematical terminology, the modern theory of dynamical systems. The logical consequence is the investigation of the stability of states of equilibrium or periodic solutions, for example, and, moreover, the study of bifurcations which occur for critical control parameters where the dynamics abruptly undergoes structural changes. 
+—--------------------------------------
+
+En el caso de los sistemas disipativos, observamos el conjunto de todas las trayectorias y clasificamos el comportamiento a largo plazo a través del comportamiento de estabilidad de los grupos individuales. Este tipo de análisis se denomina dinámica cualitativa o, en terminología matemática, la teoría moderna de los sistemas dinámicos. La consecuencia lógica es la investigación de la estabilidad de estados de equilibrio o soluciones periódicas, por ejemplo, y, además, el estudio de las bifurcaciones que se producen para parámetros críticos de control donde la dinámica sufre bruscamente cambios estructurales.
+—--------------------------------------
+
+
+The decisive factor here is the phenomenon of instability. This plays the central role in the theory of dynamical systems. Instabilities are responsible for the creation of new temporal patterns as a result of bifurcations and furthermore for the occurrence of irregular motions. The consequence is that slight changes in the initial conditions or the system parameters can lead to unpredictable magnification effects. This revolutionary and at the same time startling discovery is fundamental and undermines some supposedly irrefutable principles of science (Cvitanovi´c et al., 2008); this is the subject of the following section. 
+—------------------------------------------------------
+El factor decisivo aquí es el fenómeno de la inestabilidad. Esto juega el papel central en la teoría de los sistemas dinámicos. Las inestabilidades son responsables de la creación de nuevos patrones temporales como resultado de las bifurcaciones y, además, de la ocurrencia de movimientos irregulares. La consecuencia es que ligeros cambios en las condiciones iniciales o en los parámetros del sistema pueden conducir a efectos de magnificación impredecibles. Este revolucionario y al mismo tiempo sorprendente descubrimiento es fundamental y socava algunos principios de la ciencia supuestamente irrefutables (Cvitanovi´c et al., 2008); este es el tema de la siguiente sección.
+—--------------------------------------------------------
+
+Prior to this, we would like to point out explicitly which systems are excluded in the following considerations as a consequence of the above-mentioned three properties. These are, in particular, partial differential equations, systems with time delay as well as differential equations with an additional stochastic term which occur for example in synergetics, which we address briefly in section 6.8. In addition, it would go far beyond the scope of this book to discuss dynamical systems which are only piece-wise continuous or piece-wise smooth, i.e. systems which contain jump discontinuities in the function or in the derivative. This includes, for example, mechanical systems with dry friction or systems where shocks or pulses occur, systems with electronic switches, biological systems with thresholds or economic systems. In practice, such systems occur often and can cause complex dynamical behaviour as well as intricate bifurcation scenarios. Recently, these systems have become the subject of intensive research, see (Zhusubaliyev and Mosekilde, 2003; di Bernardo et al., 2008). 
+—--------------------------------------------------------
+
+Previamente, nos gustaría señalar explícitamente qué sistemas quedan excluidos en las siguientes consideraciones como consecuencia de las tres propiedades mencionadas anteriormente. Estas son, en particular, ecuaciones diferenciales parciales, sistemas con retardo de tiempo, así como ecuaciones diferenciales con un término estocástico adicional que ocurren, por ejemplo, en sinergética, que tratamos brevemente en la sección 6.8. Además, iría mucho más allá del alcance de este libro discutir sistemas dinámicos que son solo continuos por partes o uniformes por partes, es decir, sistemas que contienen discontinuidades de salto en la función o en la derivada. Esto incluye, por ejemplo, sistemas mecánicos con fricción seca o sistemas donde se producen choques o pulsos, sistemas con interruptores electrónicos, sistemas biológicos con umbrales o sistemas económicos. En la práctica, tales sistemas ocurren con frecuencia y pueden causar un comportamiento dinámico complejo, así como escenarios de bifurcación intrincados. Recientemente, estos sistemas se han convertido en objeto de una intensa investigación, véase (Zhusubaliyev y Mosekilde, 2003; di Bernardo et al., 2008).
+—--------------------------------------------------------
+
+2.1 Causality – Determinism 
+
+Classical physics was based on the assumption that the future is determined by the present and that, in this way, an accurate knowledge of the present can reveal the future. This belief in a fundamental limitless predictability was expressed in perhaps the most elegant and comprehensible way by Laplace in 1814 through his fictional demon: 
+—--------------------------------------------------------
+La física clásica se basaba en el supuesto de que el futuro está determinado por el presente y que, de esta forma, un conocimiento exacto del presente puede revelar el futuro. Esta creencia en una previsibilidad fundamental ilimitada fue expresada quizás de la manera más elegante y comprensible por Laplace en 1814 a través de su demonio ficticio:
+—--------------------------------------------------------
+
+
+“Une intelligence qui pour un instant donn´e, connaˆıtrait toutes les forces dont la nature est anim´ee, et la situation respective des ˆetres qui la composent, si d’ailleurs elle ´etait assez vaste pour soumettre ces donn´ees `a l’analyse, embrasserait dans la mˆeme formule, les mouvements des plus grands corps de l’univers et ceux du plus l´eger atome: rien ne serait incertain pour elle, et l’avenir comme le pass´e, serait pr´esent `a ses yeux.” (Laplace, 1812) 
+
+Anyone expressing the certitude of natural laws so pointedly, who, indeed, interprets causality so narrowly as to mean determinism, is asking to be contradicted, particularly at a time when the consequences of the quantum theory and the development of atomic physics affect not only philosophy but our thought processes. 
+—-------------------------------------------------
+Cualquiera que exprese la certeza de las leyes naturales de manera tan acentuada, que, de hecho, interprete la causalidad tan estrictamente como para significar determinismo, está pidiendo ser contradicho, particularmente en un momento en que las consecuencias de la teoría cuántica y el desarrollo de la física atómica afectan no solo a la filosofía. sino nuestros procesos de pensamiento.
+—--------------------------------------------------
+
+This confrontation makes it clear how generation-dependent the principle of causality or the law of cause and effect is and how it changes in the course of developments in thinking and language. We must conclude that the concept of causality and our understanding of it is linked with the concepts and the meanings associated with them at anyone time! Formulations such as causality, causal law, causal explanation or causal principle are always confusing as long as their explanations are not transparent. In this connection, it appears helpful to begin with the historical development of these concepts. 
+—--------------------------------------------------
+Esta confrontación deja en claro cuán dependiente de la generación es el principio de causalidad o la ley de causa y efecto y cómo cambia en el curso de los desarrollos en el pensamiento y el lenguaje. ¡Debemos concluir que el concepto de causalidad y nuestra comprensión del mismo están vinculados con los conceptos y los significados asociados con ellos en cualquier momento! Formulaciones como causalidad, ley causal, explicación causal o principio causal siempre son confusas mientras sus explicaciones no sean transparentes. A este respecto, parece útil comenzar con el desarrollo histórico de estos conceptos.
+—--------------------------------------------------
+
+
+p35
+
+The fact that causality sets up a link between cause and effect is, historically speaking, relatively recent. For Aristotle, the originator of many scientific disciplines, the word causa had a much more general meaning than nowadays. He expressed his thoughts in the two pithy concepts “    ”. With direct reference to Aristotle, scholasticism, the philosophy of the Middle Ages, taught that there are are four types of cause: 1. causa materialis (= material cause); 2. causa formalis (= formal cause); 3. causa finalis (= final cause); 4. causa efficiens (= efficient cause). In addition, Aristotle differentiated between internal and external causes, the first two mentioned above being internal, the second two external. The one we roughly associate with the word “cause” nowadays is causa efficiens, the initiating or efficient cause. 
+—--------------------------------------------------
+
+El hecho de que la causalidad establezca un vínculo entre causa y efecto es, históricamente hablando, relativamente reciente. Para Aristóteles, el creador de muchas disciplinas científicas, la palabra causa tenía un significado mucho más general que en la actualidad. Expresó sus pensamientos en los dos conceptos concisos “ ”. Con referencia directa a Aristóteles, la escolástica, la filosofía de la Edad Media, enseñó que hay cuatro tipos de causa: 1. causa materialis (= causa material); 2. causa formalis (= causa formal); 3. causa finalis (= causa final); 4. causa efficiens (= causa eficiente). Además, Aristóteles diferenció entre causas internas y externas, siendo las dos primeras mencionadas anteriormente internas, las segundas dos externas. La que más o menos asociamos con la palabra “causa” hoy en día es causa efficiens, la causa iniciadora o eficiente.
+—--------------------------------------------------
+
+
+With the emergence of the Renaissance and the birth of modern scientific thinking – usually associated with names such as Nicolaus Copernicus, Galileo Galilei and Johannes Kepler – a change in the concept of causa also came about. As man turned away from metaphysics and towards physics, i.e. towards quantification and metrology, the word causa was linked with the material incident which preceded and somehow caused the phenomenon to be explained. At first, it was held that if the cause had been discovered, the natural phenomenon could be explained. In this connection, cause was synonymous with explanation. 
+—--------------------------------------------------
+
+Con la irrupción del Renacimiento y el nacimiento del pensamiento científico moderno –generalmente asociado a nombres como Nicolaus Copernicus, Galileo Galilei y Johannes Kepler– también se produjo un cambio en el concepto de causa. Al alejarse el hombre de la metafísica y dirigirse hacia la física, es decir, hacia la cuantificación y la metrología, la palabra causa se vinculó con el incidente material que precedía y de alguna manera provocaba la explicación del fenómeno. En un principio, se sostuvo que si se había descubierto la causa, se podría explicar el fenómeno natural. En este sentido, causa era sinónimo de explicación.
+—--------------------------------------------------
+
+Gradually, however, the understanding took hold that it was the natural laws, the interconnection of cause and effect, which clearly determine and thus explain natural processes. The culmination of this development was the epoch-making work of Isaac Newton. Immanuel Kant, who, in his “Critique of Pure Reason”, equated science as such with the science of Newton, found a formulation for causality which was still valid in the 19th century: “Wenn wir erfahren, daß etwas geschieht, so setzen wir dabei jederzeit voraus, daß etwas vorhergehe, woraus es nach einer Regel folgt.” 
+
+—--------------------------------------------------
+Gradualmente, sin embargo, se afianzó la comprensión de que eran las leyes naturales, la interconexión de causa y efecto, las que claramente determinan y, por lo tanto, explican los procesos naturales. La culminación de este desarrollo fue el trabajo trascendental de Isaac Newton. Immanuel Kant, quien en su “Crítica de la razón pura” equiparó la ciencia como tal con la ciencia de Newton, encontró una formulación para la causalidad que todavía era válida en el siglo XIX: “Wenn wir erfahren, daß etwas geschieht, so setzen wir dabei jederzeit voraus, daß etwas vorhergehe, woraus es nach einer Regel folgt.”
+
+—--------------------------------------------------
+
+Einstein praised Newton’s outstanding intellectual achievement as “perhaps the greatest progress in thinking that a single individual ever had the privilege to accomplish”. His most eminent achievement was his comprehensive mathematical theory of mechanics which remained the basis of scientific thinking until well into the 20th century. It is hardly surprising that his general laws of motion – obeyed by all objects in the solar system from the apple falling from the tree to the planets – or their universal applicability fed the expectation that processes in nature were in principle clearly determined, assuming they are known as a whole or in part after careful study. Newton’s universe was a grand mechanical system which functioned in accordance with exact deterministic laws so that the motion of a system in the future could be calculated in advance from the state of this system at any given time. If one is convinced that nature fundamentally behaves in this way, the next logical step is the one Laplace formulated for his fictional supernatural intelligence mentioned above: all the future as well as the past of our universe is calculable from the precise knowledge of the position and velocity of all atoms at any one instant.
+
+—--------------------------------------------------
+Einstein elogió el destacado logro intelectual de Newton como "quizás el mayor progreso en el pensamiento que un solo individuo haya tenido el privilegio de lograr". Su logro más eminente fue su teoría matemática integral de la mecánica, que siguió siendo la base del pensamiento científico hasta bien entrado el siglo XX. No es de extrañar que sus leyes generales de movimiento -obedecidas por todos los objetos del sistema solar desde la manzana que cae del árbol hasta los planetas- o su aplicabilidad universal alimentaran la expectativa de que los procesos en la naturaleza estaban en principio claramente determinados, suponiendo que fueran conocido en su totalidad o en parte después de un estudio cuidadoso. El universo de Newton era un gran sistema mecánico que funcionaba de acuerdo con leyes deterministas exactas, de modo que el movimiento de un sistema en el futuro podía calcularse por adelantado a partir del estado de este sistema en un momento dado. Si uno está convencido de que la naturaleza se comporta fundamentalmente de esta manera, el siguiente paso lógico es el que Laplace formuló para su inteligencia sobrenatural ficcional mencionada anteriormente: todo el futuro, así como el pasado de nuestro universo es calculable a partir del conocimiento preciso de la posición y velocidad de todos los átomos en cualquier instante.
+
+—--------------------------------------------------
+
+This concept of pre-calculability in all eternity is not consistent with 20th century physics and particularly not with quantum mechanics. It is not that physics is in fundamental opposition to man’s longing for predictablity but that the two, quantum mechanics and determinism, are incompatible with one another in their philosophical approaches. The atomistic ideas of Democritus and Leucippus handed down from classical antiquity assume that regular, ordered processes on a global level derive their morphology from the irregular, random behaviour on a local level. Such considerations are indeed plausible, as is substantiated by numerous examples from everyday life. A fisherman, for example, fighting against the wind and the waves, only has to ascertain the rhythm of the waves in order to be able to react to them; he does not have to know the motion of each individual drop of water. If we explain the processes we can perceive with our senses by the interaction of many individual processes on the local level, is it not an inevitable consequence to regard the overall regularities of nature as statistical? Statistical laws may provide reliable statements on the whole set of possible events such as, for example, on mean values and possible deviations, yet there will never be a totally reliable prediction for a particular event; this will always remain indeterminate.
+—--------------------------------------------------
+
+Este concepto de precalculabilidad en toda la eternidad no es consistente con la física del siglo XX y particularmente con la mecánica cuántica. No es que la física esté en oposición fundamental al anhelo del hombre por la previsibilidad, sino que las dos, la mecánica cuántica y el determinismo, son incompatibles entre sí en sus enfoques filosóficos. Las ideas atomistas de Demócrito y Leucipo, transmitidas desde la antigüedad clásica, suponen que los procesos regulares y ordenados a nivel global derivan su morfología del comportamiento irregular y aleatorio a nivel local. Tales consideraciones son ciertamente plausibles, como lo corroboran numerosos ejemplos de la vida cotidiana. Un pescador, por ejemplo, luchando contra el viento y las olas, sólo tiene que conocer el ritmo de las olas para poder reaccionar ante ellas; no tiene que conocer el movimiento de cada gota de agua individual. Si explicamos los procesos que podemos percibir con nuestros sentidos por la interacción de muchos procesos individuales a nivel local, ¿no es una consecuencia inevitable considerar las regularidades generales de la naturaleza como estadísticas? Las leyes estadísticas pueden proporcionar declaraciones confiables sobre el conjunto completo de eventos posibles como, por ejemplo, sobre los valores medios y las posibles desviaciones, pero nunca habrá una predicción totalmente confiable para un evento en particular; esto siempre permanecerá indeterminado.
+—--------------------------------------------------
+
+ In spite of such conceptual difficulties, we are continually setting up statistical laws in day-to-day life as a basis for our practical actions. Engineers, for example – whether they are acting in the design of aircraft, buildings or machines – cannot base their work on precise loads or material data. They have to rely as a matter of course on mean, that is to say statistical characteristic values. Yet nevertheless, when our attention is drawn to such “semi-exact” regularities, we feel uneasy and consider them less trustworthy. We would prefer either precisely definable processes in nature or, on the other hand, chaotic, totally irregular ones. Is there an explanation for such an attitude? One generally uses statistical laws when the physical system in question is only partially known. The simplest example of this is the game of heads or tails. Since no one side of the coin has an advantage over the other, we have to come to terms with the fact that – when playing a large number of games – we can only predict one of the two results with 50% certainty. Games of dice are similar, except that the number of possible results has increased to six. The likelihood of predicting a chosen number is thus reduced to 1/6.
+—--------------------------------------------------
+
+A pesar de tales dificultades conceptuales, estamos continuamente estableciendo leyes estadísticas en la vida cotidiana como base para nuestras acciones prácticas. Los ingenieros, por ejemplo, ya sea que actúen en el diseño de aeronaves, edificios o máquinas, no pueden basar su trabajo en cargas precisas o datos materiales. Por supuesto, tienen que confiar en la media, es decir, valores característicos estadísticos. Sin embargo, cuando nuestra atención se dirige a tales regularidades “semiexactas”, nos sentimos incómodos y las consideramos menos confiables. Preferiríamos procesos definibles con precisión en la naturaleza o, por otro lado, caóticos, totalmente irregulares. ¿Hay una explicación para tal actitud? Generalmente se usan leyes estadísticas cuando el sistema físico en cuestión es sólo parcialmente conocido. El ejemplo más simple de esto es el juego de cara o cruz. Dado que ningún lado de la moneda tiene ventaja sobre el otro, debemos aceptar el hecho de que, cuando se juega una gran cantidad de juegos, solo podemos predecir uno de los dos resultados con un 50% de certeza. Los juegos de dados son similares, excepto que el número de resultados posibles ha aumentado a seis. La probabilidad de predecir un número elegido se reduce así a 1/6.
+—--------------------------------------------------
+
+ If the die is thrown often enough, then the number of throws resulting in a 1 is approximately one-sixth of all the throws. This is, of course, only true if we assume a perfect die and an identical throwing technique; only then can all six possible results be considered equally probable. What we assume is that these conditions are satisfied approximately. In modern times, it was Robert Boyle who took up the idea from classical antiquity by not only describing the material behaviour on the macroscopic level of observation qualitatively as the result of the statistical behaviour of the molecules in a gas but by also quantifying the well-known relationship between pressure and volume. His idea was that the pressure, a quantity measurable on the macroscopic level, was built up by the numerous impacts of molecules on the wall of the vessel; this interpretation was an miraculous brainwave at the time. In a similar way, the laws of thermodynamics could be conceived when it proved possible to state in a mathematically precise form the fact that atoms move more violently in hot bodies than in cold ones.
+—--------------------------------------------------
+Si el dado se lanza con la suficiente frecuencia, entonces el número de lanzamientos que dan como resultado un 1 es aproximadamente una sexta parte de todos los lanzamientos. Esto, por supuesto, sólo es cierto si asumimos un dado perfecto y una técnica de lanzamiento idéntica; sólo entonces pueden considerarse igualmente probables los seis resultados posibles. Lo que suponemos es que estas condiciones se cumplen aproximadamente. En tiempos modernos, fue Robert Boyle quien retomó la idea de la antigüedad clásica no solo describiendo cualitativamente el comportamiento material en el nivel macroscópico de observación como resultado del comportamiento estadístico de las moléculas en un gas, sino también cuantificando el bien- relación conocida entre presión y volumen. Su idea era que la presión, una cantidad medible a nivel macroscópico, se formaba por los numerosos impactos de las moléculas en la pared del recipiente; esta interpretación fue una onda cerebral milagrosa en ese momento. De manera similar, las leyes de la termodinámica pudieron ser concebidas cuando se demostró que era posible enunciar en forma matemáticamente precisa el hecho de que los átomos se mueven más violentamente en los cuerpos calientes que en los fríos.
+
+—--------------------------------------------------
+
+
+While Laplace raised the hopes that one day, the whole world could, in principle, be calculable, in the second half of the last century, the idea spread that Newton’s mechanics might be unrestrictedly valid, but that systems within the kinetic gas theory could never be completely determinable due to the immense number of gas molecules. It was mainly Josiah Willard Gibbs and Ludwig Boltzmann who put the incomplete knowledge of these systems into mathematical language by using statistical laws. Gibbs went one step further by introducing temperature as a physical concept for the first time; this only makes sense when the knowledge of the system is incomplete. If indeed the velocity and the position of all the molecules in a gas were known, it would be completely superfluous or meaningless to talk of the temperature of the gas. 
+—--------------------------------------------------
+Mientras Laplace suscitaba la esperanza de que algún día todo el mundo pudiera, en principio, ser calculable, en la segunda mitad del siglo pasado se difundió la idea de que la mecánica de Newton podría ser válida sin restricciones, pero que los sistemas dentro de la teoría cinética de los gases nunca podrían ser completamente determinable debido a la inmensa cantidad de moléculas de gas. Fueron principalmente Josiah Willard Gibbs y Ludwig Boltzmann quienes plasmaron el conocimiento incompleto de estos sistemas en lenguaje matemático mediante el uso de leyes estadísticas. Gibbs fue un paso más allá al introducir la temperatura como concepto físico por primera vez; esto solo tiene sentido cuando el conocimiento del sistema es incompleto. Si en verdad se conocieran la velocidad y la posición de todas las moléculas en un gas, sería completamente superfluo o sin sentido hablar de la temperatura del gas.
+—--------------------------------------------------
+
+Hence, the concept of temperature can only be used meaningfully when the system on the microscopic level of observation is incompletely known and one nevertheless does not want to forgo a “qualitative” statement on the macroscopic level. Using such a concept, one does not describe the behaviour of a system by taking an increasing number of degrees of freedom into account – in the ideal case, infinitely many – but by proceeding to new, essential and thus considerably fewer degrees of freedom on a more general level of observation. The motto is not “more precise, more detailed and infinitely many” but “more global, fewer and nevertheless informative”. In this highly simplified statement, we share the view of Max Born (1959) who says that absolute accuracy is not a physically meaningful concept and can only be found in the conceptual world of mathematicians. 
+—--------------------------------------------------
+
+Por lo tanto, el concepto de temperatura solo puede usarse con sentido cuando el sistema en el nivel microscópico de observación no se conoce por completo y, sin embargo, no se quiere renunciar a una declaración "cualitativa" en el nivel macroscópico. Usando tal concepto, uno no describe el comportamiento de un sistema tomando en cuenta un número creciente de grados de libertad – en el caso ideal, infinitos – sino procediendo a nuevos, esenciales y por lo tanto considerablemente menos grados de libertad en un nivel de observación más general. El lema no es "más preciso, más detallado e infinitamente muchos" sino "más global, menos y, sin embargo, informativo". En esta declaración altamente simplificada, compartimos la opinión de Max Born (1959) quien dice que la precisión absoluta no es un concepto físicamente significativo y solo se puede encontrar en el mundo conceptual de los matemáticos.
+—--------------------------------------------------
+
+
+Felix Klein called for the application of “approximation mathematics” side by side with the usual “precision mathematics”. Since his suggestion remained without response at the time, the physicists at the turn of the preceding century solved their problems in their own conceptual framework, using methods of probability and statistical laws. What Max Born’s statement basically implied was that non-linear laws and deterministic equations may supply unpredictable answers. At the same time, he in effect pointed out that non-linear equations often react with unexpected sensitivity to the slightest changes in the initial conditions and thus suddenly supply unexpectedly differing answers. This was a revolutionary perception, first expressed by Poincar´e at the turn of the preceding century but unnoted for a long time: 
+—--------------------------------------------------
+
+Felix Klein pidió la aplicación de las "matemáticas de aproximación" junto con las habituales "matemáticas de precisión". Dado que su sugerencia quedó sin respuesta en ese momento, los físicos de principios del siglo anterior resolvieron sus problemas en su propio marco conceptual, utilizando métodos de probabilidad y leyes estadísticas. Lo que implicaba básicamente la declaración de Max Born era que las leyes no lineales y las ecuaciones deterministas pueden proporcionar respuestas impredecibles. Al mismo tiempo, en efecto, señaló que las ecuaciones no lineales a menudo reaccionan con una sensibilidad inesperada a los cambios más leves en las condiciones iniciales y, por lo tanto, de repente brindan respuestas inesperadamente diferentes. Esta fue una percepción revolucionaria, expresada por primera vez por Poincaré a principios del siglo anterior, pero desapercibida durante mucho tiempo:
+—--------------------------------------------------
+
+
+“Une cause tr`es petite, qui nous ´echappe, d´etermine un effet consid´erable que nous ne pouvons pas ne pas voir, et alors nous disons que cet effet est dˆu au hasard. Si nous connaissions exactement les lois de la nature et la situation de l’univers `a l’instant initial, nous pourrions pr´edire exactement la situation de ce mˆeme univers `a un instant ult´erieur. Mais, lors mˆeme que les lois naturelles n’auraient plus de secret pour nous, nous ne pourrons connaˆıtre la situation initiale qu’approximativement. Si cela nous permet de pr´evoir la situation ult´erieure avec la mˆeme approximation, c’est tout ce qu’il nous faut, nous disons que le ph´enom`ene a ´et´e pr´evu, qu’il est r´egi par des lois; mais il n’en est pas toujours ainsi, il peut arriver que de petites diff´erences dans les conditions initiales en engendrent de tr`es grandes dans les ph´enom`enes finaux; une petite erreur sur les premi`eres produirait une erreur ´enorme sur les derniers. La pr´ediction devient impossible et nous avons le ph´enom`ene fortuit.” (Poincar´e, 1908)
+
+In the first two decades of the 20th century, the attempt was initally made to explain the motion of the atoms and molecules according to the basic precepts of classical mechanics, in the spirit of Newton. The result, however, was an entanglement of inextricable contradictions. For example, in accordance with classical physics, a charged electron was supposed to orbit around the atomic nucleus and constantly emit radiation until it collapsed into the nucleus due to loss of energy. However, the electron paths devised in the model were unstable. It was obvious to Niels Bohr that, on the basis of Planck’s theory, the paths of the electrons are stationary, that the electron, as long as it sticks to its path, does not emit any radiation, but that a change of path is accompanied by a loss of energy. 
+—------------------------------------------------------------------------
+En las dos primeras décadas del siglo XX se intentó inicialmente explicar el movimiento de los átomos y moléculas según los preceptos básicos de la mecánica clásica, en el espíritu de Newton. El resultado, sin embargo, fue un enredo de contradicciones inextricables. Por ejemplo, de acuerdo con la física clásica, se suponía que un electrón cargado orbitaba alrededor del núcleo atómico y emitía radiación constantemente hasta que colapsaba en el núcleo debido a la pérdida de energía. Sin embargo, los caminos de electrones ideados en el modelo eran inestables. Era obvio para Niels Bohr que, sobre la base de la teoría de Planck, los caminos de los electrones son estacionarios, que el electrón, mientras se mantiene en su camino, no emite ninguna radiación, sino que va acompañado de un cambio de camino. por una pérdida de energía.
+—------------------------------------------------------------------------
+
+
+
+
+Bohr solved this contradiction not by changing his concept of the model, as could have been expected, but rather by maintaining that classical physics was not applicable to the description of the dynamical behaviour of atomic relations. The fact that loss of energy which takes place in irregular bursts and in stages when an electron changes its path should lead to the assumption that the radiation emittance of atoms is a statistical phenomenon was acceptable. It is also possible to tolerate, at least temporarily, a new type of mechanics, quantum mechanics, albeit at the expense of determinacy, when the stability of the atoms can thus be mathematically ensured. 
+—------------------------------------------------------------------------
+Bohr resolvió esta contradicción no cambiando su concepto de modelo, como era de esperar, sino manteniendo que la física clásica no era aplicable a la descripción del comportamiento dinámico de las relaciones atómicas. Era aceptable el hecho de que la pérdida de energía que tiene lugar en ráfagas irregulares y en etapas cuando un electrón cambia su trayectoria debería conducir a la suposición de que la emisión de radiación de los átomos es un fenómeno estadístico. También es posible tolerar, al menos temporalmente, un nuevo tipo de mecánica, la mecánica cuántica, aunque a expensas de la determinación, cuando la estabilidad de los átomos puede asegurarse matemáticamente.
+
+—------------------------------------------------------------------------
+
+But the bold assertion that it is fundamentally impossible to know all the necessary defining elements in order to achieve a complete determination of the processes – even Albert Einstein could not and would not accept this as true, even for atomic phenomena. For him, the quantum theory was only an instrument, temporarily necessary; it had emerged due to our lack of knowledge of all the canonical variables of the atomic process but could be suspended as soon as all these unknowns had been clarified. His opinion of quantum mechanics culminated in the statement, “God does not play dice”, to which Niels Bohr replied, “It would be presumptuous of us human beings to prescribe to the Almighty how he is to take his decisions.” What is it about the quantum theory that is so challengingly unfamiliar? It is the fact that the concept of the trajectory has been banned from a mechanical theory of the atom shell and replaced by irreducible probabilistic elements. 
+
+Pero la audaz afirmación de que es fundamentalmente imposible conocer todos los elementos definitorios necesarios para lograr una determinación completa de los procesos, ni siquiera Albert Einstein podía ni quería aceptarla como cierta, ni siquiera para los fenómenos atómicos. Para él, la teoría cuántica era sólo un instrumento, temporalmente necesario; había surgido debido a nuestra falta de conocimiento de todas las variables canónicas del proceso atómico, pero podía suspenderse tan pronto como se hubieran aclarado todas estas incógnitas. Su opinión sobre la mecánica cuántica culminó en la afirmación: “Dios no juega a los dados”, a lo que Niels Bohr respondió: “Sería presuntuoso por parte de los seres humanos prescribir al Todopoderoso cómo debe tomar sus decisiones”. ¿Qué tiene la teoría cuántica que resulta tan extrañamente desconocida? Es el hecho de que el concepto de trayectoria ha sido excluido de una teoría mecánica de la capa atómica y reemplazado por elementos probabilísticos irreducibles.
+
+
+
+This was imperative in order to ensure discrete energy levels, whose existence had been revealed by spectroscopy, in a mathematical equation for systems such as the atom. It was Werner Heisenberg who took this radical step in 1925 in his decisive work with the title “Uber quantentheoretische Umdeutungen kinematischer und mech- ¨ anischer Beziehungen” (Heisenberg, 1925). Here, the canonical variables position and impulse become non-commutative quantities; Max Born and Pascual Jordan recognised their matrix character. Although the fundamental features of this mathematical theory had already been set up, Heisenberg described the problem of atomic physics in a letter to Pauli in 1926 as completely unsolved. What caused him to make this negative statement? What was still missing was the link to the physical experiment (Heisenberg, 1969). The solution was provided, again by Heisenberg, by the indeterminacy relation in 1927 (Heisenberg, 1927). 
+
+Esto era imprescindible para asegurar niveles discretos de energía, cuya existencia había sido revelada por la espectroscopia, en una ecuación matemática para sistemas como el átomo. Fue Werner Heisenberg quien dio este paso radical en 1925 en su obra decisiva titulada “Uber quantentheoretische Umdeutungen kinematischer und mech- anischer Beziehungen” (Heisenberg, 1925). Aquí, las variables canónicas posición e impulso se convierten en magnitudes no conmutativas; Max Born y Pascual Jordan reconocieron su carácter matricial. Aunque los rasgos fundamentales de esta teoría matemática ya habían sido establecidos, Heisenberg describió el problema de la física atómica en una carta a Pauli en 1926 como completamente sin resolver. ¿Qué le llevó a hacer esta afirmación negativa? Lo que aún faltaba era el vínculo con el experimento físico (Heisenberg, 1969). La solución fue proporcionada, nuevamente por Heisenberg, mediante la relación de indeterminación en 1927 (Heisenberg, 1927).
+
+
+
+Position and velocity or momentum, the classical quantities for the determination of a particle trajectory, can be stated individually with arbitrary accuracy; simultaneously, however, this is impossible in the quantum philosophy, at least in the microworld of atomic physics. This is not an assumption in quantum mechanics, but the consequence of the laws of the quantum theory. It was thus clear that Newton’s mechanics, which assumes the exact knowledge of both position and momentum in order to calculate a mechanical course of motion, is not applicable to the atomic world. Although more than seventy years have passed since Bohr, Heisenberg, Born and others came to the conclusion that the quantum theory forces us to formulate the laws on the quantum level as statistical laws and to bid farewell to determinism, it is difficult to incorporate this into our general philosophy. For the atomic field, this call to abandon pure determinism may be valid. 
+
+La posición y la velocidad o el momento, magnitudes clásicas para determinar la trayectoria de una partícula, pueden enunciarse individualmente con una precisión arbitraria; sin embargo, al mismo tiempo esto es imposible en la filosofía cuántica, al menos en el micromundo de la física atómica. Esto no es una suposición de la mecánica cuántica, sino la consecuencia de las leyes de la teoría cuántica. Así pues, quedó claro que la mecánica de Newton, que presupone el conocimiento exacto tanto de la posición como del momento para calcular un curso mecánico del movimiento, no es aplicable al mundo atómico. Aunque han pasado más de setenta años desde que Bohr, Heisenberg, Born y otros llegaron a la conclusión de que la teoría cuántica nos obliga a formular las leyes a nivel cuántico como leyes estadísticas y a decir adiós al determinismo, es difícil incorporar esto a nuestra filosofía general. Para el campo atómico, este llamamiento a abandonar el determinismo puro puede ser válido.
+
+
+But to speak of absolute randomness and to assert that the classical idea of predictability is invalid in principle, although it was so successful in its search for order, regularity and natural laws, merely due to spontaneous nuclear disintegration for which there is neither cause nor explanation – this is something we still cannot and do not want to bring ourselves to accept. In contrast to this, it should be remembered that classical physics tacitly complements the principle of “identical” causality with the principle of “similar” causality. Laplace’s principle, “identical causes have identical effects”, was extended by the principle “similar causes have similar effects”. The reason is that it is a justifiable expectation to demand exactly identical causes so as to guarantee the reproducibility of physical processes, but that this is not feasible in practice. Any experimenter knows that, although he is at pains to obtain the same results for repeated measurings under the same test conditions, exactly identical repetitions of the test conditions are basically impossible. 
+
+Pero hablar de aleatoriedad absoluta y afirmar que la idea clásica de previsibilidad es inválida en principio, aunque haya tenido tanto éxito en su búsqueda de orden, regularidad y leyes naturales, simplemente debido a la desintegración nuclear espontánea para la que no hay causa ni explicación, es algo que todavía no podemos ni queremos aceptar. En cambio, hay que recordar que la física clásica complementa tácitamente el principio de causalidad “idéntica” con el principio de causalidad “similar”. El principio de Laplace “causas idénticas tienen efectos idénticos” fue ampliado con el principio “causas similares tienen efectos similares”. La razón es que es una expectativa justificable exigir causas exactamente idénticas para garantizar la reproducibilidad de los procesos físicos, pero que esto no es factible en la práctica. Cualquier experimentador sabe que, aunque se esfuerce por obtener los mismos resultados para mediciones repetidas en las mismas condiciones de prueba, las repeticiones exactamente idénticas de las condiciones de prueba son básicamente imposibles.
+
+
+
+The accuracy of measurements is limited, even though it may be extremely high with today’s technical sophistication. When the errors in the measurement results are of the same order as the inaccuracies of the experimental set-up, they are not exactly the same, but similar. In spite of statistical laws which we take as the basis of our experimenting, we still speak of the reproducibility of physical behaviour. Due to this discrepancy between abstract mathematical precision and unavoidable physical approximation, Max Born (1959) demands the re-formulation of the question of determinability in mechanics and, in its place, the differentiation between stable and unstable motions. Heisenberg and Born’s renunciation of the dogma of predictability may be valid for the field of atomics, but appears strange when viewed on the macroscopic scale which is directly accessible to our senses. 
+
+La precisión de las mediciones es limitada, aunque puede ser extremadamente alta con la sofisticación técnica actual. Cuando los errores en los resultados de las mediciones son del mismo orden que las inexactitudes del montaje experimental, no son exactamente los mismos, sino similares. A pesar de las leyes estadísticas que tomamos como base de nuestra experimentación, todavía hablamos de la reproducibilidad del comportamiento físico. Debido a esta discrepancia entre la precisión matemática abstracta y la inevitable aproximación física, Max Born (1959) exige la reformulación de la cuestión de la determinabilidad en mecánica y, en su lugar, la diferenciación entre movimientos estables e inestables. La renuncia de Heisenberg y Born al dogma de la predictibilidad puede ser válida para el campo de la atómica, pero parece extraña cuando se ve a escala macroscópica, que es directamente accesible a nuestros sentidos.
+
+
+
+We are, of course, aware that, in weather forecasting, we have to rely on probability estimates although the motion of the earth’s atmosphere follows exactly the same physical laws as the motion of the planets. Nevertheless, the weather retains a considerable amount of randomness. The reason for this is the exceptionally high number of unknowns necessary for a detailed description of the dynamics involving correlations and feedback reactions far beyond our knowledge. Until not so very long ago, there was little reason to doubt that, in this case, at least in principle, accurate predictions would ultimately be possible. In the spirit of Laplace’s demon, it was assumed that it was only necessary to gather sufficient information about the system and to process it with the necessary effort.
+
+Por supuesto, sabemos que, en la predicción del tiempo, debemos basarnos en estimaciones de probabilidad, aunque el movimiento de la atmósfera terrestre sigue exactamente las mismas leyes físicas que el movimiento de los planetas. Sin embargo, el tiempo conserva una considerable cantidad de aleatoriedad. La razón de ello es el número excepcionalmente alto de incógnitas necesarias para una descripción detallada de la dinámica que implica correlaciones y reacciones de retroalimentación que van mucho más allá de nuestro conocimiento. Hasta no hace mucho tiempo, había pocas razones para dudar de que, en este caso, al menos en principio, sería posible realizar predicciones precisas. Siguiendo el espíritu del demonio de Laplace, se suponía que solo era necesario recopilar suficiente información sobre el sistema y procesarla con el esfuerzo necesario.
+
+
+This mechanical conception of the world which was first shaken by quantum mechanics received a second blow as a result of an astonishing discovery, namely that even simple non-linear systems may generate irregular behaviour. We have to come to terms with the idea that such unpredictable behaviour is an intrinsic reality as it does not disappear, even after more information has been gathered. Such seemingly random behaviour which is generated in non-linear deterministic dynamics is called “deterministic chaos”. The fact that deterministic laws without stochastic elements cause chaos sounds as paradoxical as the concept of deterministic chaos itself. At this point, we would like to stress that there are various manifestations of chaotic behaviour between which we must carefully distinguish. In a vessel filled with gas, the atoms fly around wildly and collide and only in this case, as Boltzmann already established, does microscopic chaos prevail. 
+
+Esta concepción mecánica del mundo, que fue sacudida por primera vez por la mecánica cuántica, recibió un segundo golpe como resultado de un descubrimiento asombroso: que incluso los sistemas no lineales más simples pueden generar un comportamiento irregular. Tenemos que aceptar la idea de que este comportamiento impredecible es una realidad intrínseca, ya que no desaparece, incluso después de que se haya recopilado más información. Este comportamiento aparentemente aleatorio que se genera en la dinámica determinista no lineal se llama “caos determinista”. El hecho de que las leyes deterministas sin elementos estocásticos provoquen el caos suena tan paradójico como el propio concepto de caos determinista. En este punto, nos gustaría destacar que existen varias manifestaciones del comportamiento caótico entre las que debemos distinguir cuidadosamente. En un recipiente lleno de gas, los átomos vuelan salvajemente y chocan y solo en este caso, como ya estableció Boltzmann, prevalece el caos microscópico.
+
+
+
+In contrast to this, macroscopic or deterministic chaos dominates when purely random oscillations occur although the laws which describe the dynamics are deterministic. We have repeatedly mentioned the diametrically opposing conceptions of scientific knowledge: on the one hand, the idea of the atomists who stress random collision and, on the other hand, the mechanistic view of the world which is based on timeless dynamic laws. Both conceptions fail when it is a question of explaining both spatial and temporal structures, i.e. as occurring in undamped oscillations. Equilibrium thermodynamics and conventional statistical physics do not provide the methods to deal with such an oscillatory behaviour. A way out of this dilemma begins to emerge. What is this hope based on? It is the study of the physics of non-equilibrium states and on the other hand of the theory of dynamical systems. The physics of nonequilibrium states deals with systems far from thermodynamic equilibrium where chaos prevails on the microscopic level but is completely concealed on the macroscopic level by well-organised patterns. In the second discipline, the theory of dynamical systems, it is the instabilities that play the central role. At the point of instability, the system must “choose” between various possibilities. 
+
+En cambio, cuando se producen oscilaciones puramente aleatorias, aunque las leyes que describen la dinámica sean deterministas, predomina el caos macroscópico o determinista. Hemos mencionado en repetidas ocasiones las concepciones diametralmente opuestas del conocimiento científico: por un lado, la idea de los atomistas, que enfatizan la colisión aleatoria, y, por otro, la visión mecanicista del mundo, que se basa en leyes dinámicas atemporales. Ambas concepciones fracasan cuando se trata de explicar estructuras tanto espaciales como temporales, es decir, como si se produjeran en oscilaciones no amortiguadas. La termodinámica del equilibrio y la física estadística convencional no proporcionan los métodos para abordar un comportamiento oscilatorio de este tipo. Empieza a surgir una salida a este dilema. ¿En qué se basa esta esperanza? En el estudio de la física de los estados de no equilibrio y, por otro lado, en la teoría de los sistemas dinámicos. La física de los estados de no equilibrio se ocupa de sistemas que se encuentran lejos del equilibrio termodinámico, en los que el caos prevalece a nivel microscópico, pero está completamente oculto a nivel macroscópico por patrones bien organizados. En la segunda disciplina, la teoría de los sistemas dinámicos, son las inestabilidades las que desempeñan el papel central. En el punto de inestabilidad, el sistema debe “elegir” entre varias posibilidades.
+
+
+
+A small, nonpredictable fluctuation decides which course the dynamical process finally takes. This occurrence of unpredictability forces us to re-think our understanding of deterministic systems and the “long-term” prognoses we have won. Processes which are sustained by a continuous flow of energy and possibly matter from outside and which are characterised by their ordered, self-organised, collective behaviour are called evolutionary. A significant aspect of evolutionary processes is their causal coherence, although they may be interspersed with random outbursts. Anyone would reject the idea of regarding the random occurrences of a lottery as an evolutionary development. Intuitively, we demand that the current state of a system is fundamentally moulded, if not determined, by the preceding causes. This does not mean, however, that this demand for causality totally excludes random occurrences; evolutionary processes without mutation, symmetry breaking etc. are unthinkable. Random occurrences reduce the chance of exact predictions, they cannot be specified by laws, they weaken the deterministic net of cause and effect; yet it would be wrong to draw the conclusion that the pattern of reality were chaotic.
+
+Una pequeña fluctuación impredecible decide el curso que finalmente toma el proceso dinámico. Esta ocurrencia de imprevisibilidad nos obliga a repensar nuestra comprensión de los sistemas deterministas y los pronósticos “a largo plazo” que hemos ganado. Los procesos que se sostienen mediante un flujo continuo de energía y posiblemente materia desde el exterior y que se caracterizan por su comportamiento ordenado, autoorganizado y colectivo se denominan evolutivos. Un aspecto significativo de los procesos evolutivos es su coherencia causal, aunque pueden estar intercalados con estallidos aleatorios. Cualquiera rechazaría la idea de considerar los sucesos aleatorios de una lotería como un desarrollo evolutivo. Intuitivamente, exigimos que el estado actual de un sistema esté fundamentalmente moldeado, si no determinado, por las causas anteriores. Esto no significa, sin embargo, que esta exigencia de causalidad excluya totalmente los sucesos aleatorios; los procesos evolutivos sin mutación, ruptura de simetría, etc. son impensables. Los sucesos aleatorios reducen la posibilidad de predicciones exactas, no pueden especificarse mediante leyes, debilitan la red determinista de causa y efecto; Sin embargo, sería erróneo sacar la conclusión de que el patrón de la realidad fuera caótico.
+
+
+Thus, it is not only quantum physics, but also the chaos theory which throws considerable doubt on Laplace’s demon of absolute determinism. “F¨ur manchen mag dies eine Entt¨auschung sein. Aber vielleicht ist ja eine Welt sogar menschlicher, in der nicht alles determiniert und nicht alles berechenbar ist, eine Welt, in der es – dank der Quantenereignisse – Zufall, und damit auch Gl¨uck, gibt, in der – weil nicht alle Probleme algorithmisch l¨osbar sind – Phantasie und Einfallsreichtum, Raten und Probieren, Kreativit¨at und Originalit¨at noch gefragt sind und in der man, wie die Chaos-Theorie zeigt, auch bei chaotischem Verhalten immer noch sinnvoll nach einfachen Grundgesetzen suchen kann.” (Vollmer, 1988, p. 350) It is certainly a result of the historical development of the sciences that the unpredictable (and thus also the chaotic state) was first explicitly suspected and then formulated mathematically in the microworld of atomic physics. This does not mean that these phenomena do not appear in our daily macroscopic life. Chaotic responses of non-linear dynamical systems are almost a matter of course to us today. We draw attention to the appearance of such phenomena in a pendulum with a large amplitude and particularly so in the case of spatial oscillations. 
+
+Así pues, no es sólo la física cuántica, sino también la teoría del caos la que arroja considerables dudas sobre el demonio del determinismo absoluto de Laplace. “Para muchos es necesario descubrir algo. Aber vielleicht ist ja eine Welt sogar menschlicher, in der nicht alles determiniert und nicht alles berechenbar ist, eine Welt, in der es – dank der Quantenereignisse – Zufall, und damit auch Gl¨uck, gibt, in der – weil nicht alle Probleme algoritmisch l¨osbar sind – Phantasie und Einfallsreichtum, Raten und Pro bieren, Kreativit¨at und Originalit¨at noch gefragt sind und in der man, wie die Chaos-Theorie zeigt, auch bei chaotischem Verhalten immer noch sinnvoll nach einfachen Grundgesetzen suchen kann.” (Vollmer, 1988, p. 350) Sin duda, es un resultado del desarrollo histórico de las ciencias que lo impredecible (y, por lo tanto, también el estado caótico) se sospechara primero explícitamente y luego se formulara matemáticamente en el micromundo de la física atómica. Esto no significa que estos fenómenos no aparezcan en nuestra vida macroscópica diaria. Las reacciones caóticas de los sistemas dinámicos no lineales son casi algo normal para nosotros hoy en día. Llamamos la atención sobre la aparición de tales fenómenos en un péndulo de gran amplitud y, particularmente, en el caso de las oscilaciones espaciales.
+
+
+The well-known Duffing equation is another example. A further historical example is the well-known anorganic chemical reaction of Belousov-Zhabotinsky which offers a memorable display of colour. Yet the most impressive and still the most mysterious is the onset and development of turbulence in a fluid. Research into this problem – which is highly important in technology and of decisive significance in meteorology and combustion processes – has inspired many famous physicists since Osborne Reynolds to look for a physical-mathematical solution. In spite of admirable contributions of many scientists, even Heisenberg (Heisenberg, 1948) did not succeed in solving the problem. For fully developed turbulence, however, today’s chaos theory is still not broadly enough developed. In Chapter 9, we attempt to give an overview of the current status of turbulence research and to show that further extensive physical considerations and mathematical tools are necessary to model turbulent phenomena. 
+
+Otro ejemplo es la conocida ecuación de Duffing. Otro ejemplo histórico es la famosa reacción química inorgánica de Belousov-Zhabotinsky, que ofrece una memorable exhibición de colores. Sin embargo, lo más impresionante y aún más misterioso es el inicio y desarrollo de la turbulencia en un fluido. La investigación sobre este problema, que es muy importante en tecnología y de importancia decisiva en meteorología y procesos de combustión, ha inspirado a muchos físicos famosos desde Osborne Reynolds a buscar una solución físico-matemática. A pesar de las admirables contribuciones de muchos científicos, incluso Heisenberg (Heisenberg, 1948) no logró resolver el problema. Sin embargo, para que la turbulencia esté completamente desarrollada, la teoría del caos actual aún no está lo suficientemente desarrollada. En el capítulo 9, intentamos dar una visión general del estado actual de la investigación sobre la turbulencia y demostrar que son necesarias más consideraciones físicas y herramientas matemáticas para modelar los fenómenos turbulentos.
+
+
+
+Apart from the difficulties involved in an adequate comprehension of a complex process, there is a further obstacle that everyone breaking new ground must surmount, even – or especially – in science. No one but Werner Heisenberg could have expressed this so memorably: “Wenn wirkliches Neuland betreten wird, kann es aber vorkommen, daß nicht nur neue Inhalte aufzunehmen sind, sondern daß sich die Struktur des Denkens ¨andern muß, wenn man das Neue verstehen will. Dazu sind offenbar viele nicht bereit oder nicht in der Lage”, see (Heisenberg, 1969), p. 102. 
+
+Aparte de las dificultades que implica una comprensión adecuada de un proceso complejo, existe otro obstáculo que todo aquel que abre nuevos caminos debe superar, incluso –o especialmente– en la ciencia. Nadie más que Werner Heisenberg podría haber expresado esto de manera tan memorable: “Wenn wirkliches Neuland betreten wird, kann es aber vorkommen, daß nicht nur neue Inhalte aufzunehmen sind, sondern daß sich die Struktur des Denkens ¨andern muß, wenn man das Neue verstehen will. Dazu sind offenbar viele nicht bereit oder nicht in der Lage”, véase (Heisenberg, 1969), p. 102.
+
+
+
+2.2 Dynamical Systems – Examples 
+
+Before we move on to a detailed description of the chaotic behaviour of systems possessing deterministic equations of motion, we should like to lead up to this subject by beginning with four typical examples. 
+—-------------------------------------------
+Antes de pasar a una descripción detallada del comportamiento caótico de los sistemas que poseen ecuaciones de movimiento deterministas, nos gustaría llegar a este tema comenzando con cuatro ejemplos típicos.
+—------------------------------------------
+
+Our first example is a mechanical system with a single degree of freedom and no loss of energy due to friction. Let a small mass be hung on a spring and allowed to oscillate vertically (fig. 2.2.1). For small displacements, the motion of this undamped spring pendulum can be expressed by the linear differential equation in the two variables displacement x and its second derivative with respect to time t 
+—------------------------------------------
+Nuestro primer ejemplo es un sistema mecánico con un solo grado de libertad y sin pérdida de energía debido a la fricción. Cuelgue una pequeña masa de un resorte y déjela que oscile verticalmente (fig. 2.2.1). Para desplazamientos pequeños, el movimiento de este péndulo de resorte no amortiguado puede expresarse mediante la ecuación diferencial lineal en las dos variables desplazamiento x y su segunda derivada con respecto al tiempo t
+
+—------------------------------------------
+
+
+\[
+x¨ + ω2 0x = 0 (2.2.1) 
+\]
+
+where ω0 is the frequency of the oscillation. 
+
+Equation (2.2.1) has the general solution 
+
+x = A sin ω0t + B cos ω0t (2.2.2) 
+
+where the integration constants A and B are determined by the initial conditions. Denoting the initial values of x and ˙x at the instant t = 0 by x0 and ˙x0, we obtain for the displacement x 
+
+x = x˙ 0 ω0 sin ω0t + x0 cos ω0t (2.2.3) 
+
+and for the velocity ˙x x˙ = ˙x0 cos ω0t − x0ω0 sin ω0t (2.2.4) 
+
+Eliminating the time t from eqs. (2.2.3) and (2.2.4), we find 
+
+x2 + x˙ 2 ω2 0 = x2 0 + x˙ 2 0 ω2 0 (2.2.5) 
+
+The family of all ellipses in the x, x˙-plane designated by eq. (2.2.5) is called a phase portrait. On the right of fig. 2.2.1, the displacement x as a function of time for a concrete initial condition is shown and on the left, the trajectories in the twodimensional phase space for three different initial conditions. The state variables or coordinates x and ˙x which span the phase space characterise the single-mass system uniquely. 
+—------------------------------------------------------------
+La familia de todas las elipses en el plano x, x˙ designado por eq. (2.2.5) se llama retrato de fase. A la derecha de la fig. 2.2.1, se muestra el desplazamiento x en función del tiempo para una condición inicial concreta ya la izquierda, las trayectorias en el espacio de fase bidimensional para tres condiciones iniciales diferentes. Las variables de estado o coordenadas x y ˙x que abarcan el espacio de fase caracterizan el sistema de una sola masa de manera única.
+—------------------------------------------------------------
+
+In this idealised case where the energy is preserved, the mass returns periodically to its initial position. Also, the states of maximum deflection and zero velocity are repeated with a period of T = 2π/ω0.
+—------------------------------------------------------------
+
+En este caso idealizado donde se conserva la energía, la masa vuelve periódicamente a su posición inicial. Además, los estados de máxima deflexión y velocidad cero se repiten con un periodo de T = 2π/ω0.
+—------------------------------------------------------------
+
+
+In natura, it is practically impossible to realise the assumption “no loss of energy due to friction”. Loss of energy, for example due to air resistance, continuously decreases the deflection of the pendulum until at some stage, the mass remains in a state of equilibrium. During the transient phase, the aforementioned elliptical trajectories in the phase space then become spirals which all end in a point, the state of equilibrium (fig. 2.2.2). This point which captures all spirals is called an attractor, in this particular case a point attractor. 
+—------------------------------------------------------------
+
+En natura, es prácticamente imposible realizar la suposición "sin pérdida de energía debido a la fricción". La pérdida de energía, por ejemplo debido a la resistencia del aire, disminuye continuamente la desviación del péndulo hasta que, en algún momento, la masa permanece en un estado de equilibrio. Durante la fase transitoria, las trayectorias elípticas antes mencionadas en el espacio de fase se convierten en espirales que terminan todas en un punto, el estado de equilibrio (fig. 2.2.2). Este punto que captura todas las espirales se llama atractor, en este caso particular un atractor de puntos.
+—------------------------------------------------------------
+
+When the loss of energy of the pendulum due to friction is of a viscous nature, it can be reproduced by a damping term which depends to a first approximation linearly on the velocity. The linear differential equation (2.2.1) for a conservative system then takes the following standard form, again a linear system, 
+—------------------------------------------------------------
+Cuando la pérdida de energía del péndulo debido a la fricción es de naturaleza viscosa, puede reproducirse mediante un término de amortiguamiento que depende en una primera aproximación lineal de la velocidad. La ecuación diferencial lineal (2.2.1) para un sistema conservativo toma la siguiente forma estándar, nuevamente un sistema lineal,
+—------------------------------------------------------------
+
+
+x¨ + 2ζω0x˙ + ω2 0x = 0 (2.2.6)
+
+
+where the damping factor ζ > 0 controls the fading of the periodic transient response. In the case of damping ζ > 1, the system tends aperiodically towards the state of equilibrium x = 0. For 0 <ζ< 1, the case of sub-critical damping, the amplitudes also decrease; but the motion retains qualitatively the appearance of an oscillatory process. 
+—------------------------------------------------------------
+donde el factor de amortiguamiento ζ > 0 controla el desvanecimiento de la respuesta transitoria periódica. En el caso de amortiguamiento ζ > 1, el sistema tiende aperiódicamente hacia el estado de equilibrio x = 0. Para 0 <ζ< 1, en el caso de amortiguamiento subcrítico, las amplitudes también disminuyen; pero el movimiento retiene cualitativamente la apariencia de un proceso oscilatorio.
+
+—------------------------------------------------------------
+
+The loss of energy in a system can be compensated by means of the continuous supply of energy, e.g. a periodic external excitation (fig. 2.2.3). After a certain transient phase, the trajectories in the two-dimensional phase space approach asymptotically a closed curve, the so-called limit cycle, which is run through periodically. Beside the point attractor, the limit cycle is the only possible attractor in the two-dimensional phase space.
+—----------------------------------------------------
+La pérdida de energía en un sistema se puede compensar mediante el suministro continuo de energía, p. una excitación externa periódica (fig. 2.2.3). Después de una cierta fase transitoria, las trayectorias en el espacio de fase bidimensional se aproximan asintóticamente a una curva cerrada, el llamado ciclo límite, que se recorre periódicamente. Además del atractor puntual, el ciclo límite es el único atractor posible en el espacio de fase bidimensional.
+—---------------------------------------------------
+
+For a harmonically excited, viscously damped oscillator, the equation of motion in linearised form becomes 
+—------------------------------------------------------
+
+Para un oscilador amortiguado viscosamente excitado armónicamente, la ecuación de movimiento en forma linealizada se convierte en
+—---------------------------------------------------------
+
+x¨ + 2ζω0x˙ + ω2 0x = ω2 0x0 sin ωEt (2.2.7) 
+
+Here, the periodic external excitation is reproduced by a sinus term on the righthand side. Linear equations of this type are integrable and lead to a family of solutions, the individual curves of which are determined by the initial conditions. Since the dependence of a specific solution is relatively insensitive with regard to the initial conditions, small changes in the latter cause only small changes in the solution. Thus, our physical system is characterised by a “similar” connection between cause and effect. 
+—---------------------------------------------------------
+Aquí, la excitación externa periódica se reproduce mediante un término sinusoidal en el lado derecho. Las ecuaciones lineales de este tipo son integrables y conducen a una familia de soluciones, cuyas curvas individuales están determinadas por las condiciones iniciales. Dado que la dependencia de una solución específica es relativamente insensible con respecto a las condiciones iniciales, pequeños cambios en estas últimas provocan solo pequeños cambios en la solución. Así, nuestro sistema físico se caracteriza por una conexión “similar” entre causa y efecto.
+
+—---------------------------------------------------------
+
+The situation in the case of non-linear equations of motion is completely different. A simple dynamical system which leads to chaotic patterns of motion is the Duffing equation (see section 10.5). In its modified form, the restoring force is approximated by a polynomial of the third order, thus allowing, for example, the reproduction of larger deflections in an externally excited beam under shear and normal force. In this special case, the differential equation takes the form 
+—-----------------------------------------
+La situación en el caso de ecuaciones de movimiento no lineales es completamente diferente. Un sistema dinámico simple que conduce a patrones caóticos de movimiento es la ecuación de Duffing (ver sección 10.5). En su forma modificada, la fuerza restauradora se aproxima mediante un polinomio de tercer orden, lo que permite, por ejemplo, la reproducción de deflexiones más grandes en una viga excitada externamente bajo fuerza cortante y normal. En este caso especial, la ecuación diferencial toma la forma
+—------------------------------------------
+
+x¨ + 2ζω0x˙ − ω2 0x + δω2 0x3 = ω2 0x0 sin ωEt (2.2.8) 
+
+where the cubic term x3 possesses a stiffening effect. Due to its simple morphology, the Duffing equation and its modifications led to numerous investigations on the behaviour of dynamical systems both in mechanics and electrical engineering (Ueda, 1980a; Ueda, 1980b; Moon and Holmes, 1979; Seydel, 1980). We stress that the non-linearity – in x, but not in time t – is a necessary condition for chaotic behaviour, though not sufficient in itself. 
+—------------------------------------
+donde el término cúbico x3 posee un efecto de rigidez. Debido a su morfología simple, la ecuación de Duffing y sus modificaciones dieron lugar a numerosas investigaciones sobre el comportamiento de los sistemas dinámicos tanto en mecánica como en ingeniería eléctrica (Ueda, 1980a; Ueda, 1980b; Moon y Holmes, 1979; Seydel, 1980). Destacamos que la no linealidad –en x, pero no en el tiempo t– es una condición necesaria para el comportamiento caótico, aunque no suficiente en sí misma.
+—--------------------------------------------------
+
+If the substitution x1 = x, x2 = ˙x, x3 = t is carried out, the non-autonomous differential eq. (2.2.8) with the second derivative with respect to time, the righthand side of which depends explicitly on the time t, can be re-written as a system of non-linear, so-called autonomous first-order differential equations
+—----------------------------
+Si se realiza la sustitución x1 = x, x2 = ˙x, x3 = t, la ecuación diferencial no autónoma (2.2.8) con la segunda derivada con respecto al tiempo, cuyo lado derecho depende explícitamente del tiempo t, se puede reescribir como un sistema de ecuaciones diferenciales de primer orden no lineales, las llamadas autónomas
+—-----------------------------
+
+x˙ 1 = x2 
+x˙ 2 = −2ζω0x2 + ω2 0x1 − δω2 0x3 1 + ω2 0x0 sin(ωEx3) (2.2.9) 
+x˙ 3 = 1 
+
+This autonomous set of equations is equivalent to the non-autonomous eq. (2.2.8). As a generalisation, we can state that an autonomous differential equation may be put in the form 
+—-----------------------------
+Este conjunto autónomo de ecuaciones es equivalente a la ecuación no autónoma. (2.2.8). Como generalización, podemos afirmar que una ecuación diferencial autónoma puede expresarse en la forma
+—-----------------------------
+
+
+x˙ = F (x) (2.2.10) 
+
+where the non-linear vector function F (x) does not depend explicitly on the time. Thus, the introduction of additional variables transforms the non-autonomous eq. (2.2.8) with second-order derivatives with respect to time into a system of three first-order differential equations. Such a set of equations which is expressed directly in terms of displacement and velocity considerably simplifies a qualitative and quantitative discussion of the trajectories in phase space (the concept of the phase space is elucidated in section 2.3). 
+—-----------------------------
+
+donde la función vectorial no lineal F (x) no depende explícitamente del tiempo. Así, la introducción de variables adicionales transforma la ecuación no autónoma. (2.2.8) con derivadas de segundo orden con respecto al tiempo en un sistema de tres ecuaciones diferenciales de primer orden. Este conjunto de ecuaciones, que se expresa directamente en términos de desplazamiento y velocidad, simplifica considerablemente una discusión cualitativa y cuantitativa de las trayectorias en el espacio de fase (el concepto de espacio de fase se aclara en la sección 2.3).
+—-----------------------------
+
+The phase portrait of eq. (2.2.9) for the variables x1, x˙ 1 shows intersecting trajectories corresponding to specific choices of control parameters and initial conditions (fig. 2.2.4). Trajectories of the autonomous type of eq. (2.2.9) which do not intersect in the extended phase space with the coordinates x1, x˙ 1 and t do so in the projection onto the (x, x˙)-plane, the customary phase space. It is easy to imagine that for a non-periodic solution (i.e. an irregular or chaotic motion) for t → ∞, the phase portrait will be blackened to unrecognisability in a relatively short time. For this reason, this representation must be ruled out as an indicator of chaos since it would be futile to try to identify the corresponding trajectories which remain adjacent over a long time but diverge exponentially from one another at some stage. 
+—-----------------------------
+El retrato de fase de la ec. (2.2.9) para las variables x1, x˙ 1 muestra trayectorias que se cruzan correspondientes a elecciones específicas de parámetros de control y condiciones iniciales (fig. 2.2.4). Trayectorias del tipo autónomo de eq. (2.2.9) que no se cruzan en el espacio de fase ampliado con las coordenadas x1, x˙ 1 y t, lo hacen en la proyección sobre el plano (x, x˙), el espacio de fase habitual. Es fácil imaginar que para una solución no periódica (es decir, un movimiento irregular o caótico) para t → ∞, el retrato de fase se oscurecerá hasta volverse irreconocible en un tiempo relativamente corto. Por ello, esta representación debe descartarse como indicador de caos, ya que sería inútil tratar de identificar las trayectorias correspondientes que permanecen adyacentes durante mucho tiempo pero que divergen exponencialmente unas de otras en algún momento.
+—-----------------------------
+
+
+The most widespread form of a display of the equations of motion consists of plotting the deflection, for example, over time (fig. 2.2.5). However, to deduce a chaotic behaviour by means of this method is not realistic and is doomed to failure because the observed period of time is necessarily finite. Although the bizarre, non-periodic course of the curve in fig. 2.2.5 strongly suggests an erratic course of motion, it remains uncertain whether a periodic motion might not be established after all in case one observed a longer time interval.
+—-------------------------------------------------------
+La forma más extendida de visualización de las ecuaciones de movimiento consiste en trazar la desviación, por ejemplo, a lo largo del tiempo (fig. 2.2.5). Sin embargo, deducir un comportamiento caótico por medio de este método no es realista y está condenado al fracaso porque el período de tiempo observado es necesariamente finito. Aunque el curso extraño y no periódico de la curva en la fig. 2.2.5 sugiere fuertemente un curso de movimiento errático, sigue siendo incierto si un movimiento periódico podría no establecerse después de todo en caso de que se observara un intervalo de tiempo más largo.
+—-----------------------------------------------------
+
+ It may require skill and effort to distinguish between regular and irregular behaviour on the basis of the transient response of the variables of state of non-linear dynamical models; it is, however, even more difficult to differentiate in an experimentally established transient response between background noise and deterministic chaos. In order to assess dynamical behaviour, it is also possible to apply, apart from the representation in phase space and the temporal change of individual variables of state, the power spectrum method, well known to the engineer (see section 3.8). 
+—-----------------------------------------------------
+
+Puede requerir habilidad y esfuerzo distinguir entre comportamiento regular e irregular sobre la base de la respuesta transitoria de las variables de estado de modelos dinámicos no lineales; sin embargo, es aún más difícil diferenciar en una respuesta transitoria establecida experimentalmente entre el ruido de fondo y el caos determinista. Para evaluar el comportamiento dinámico, también es posible aplicar, además de la representación en el espacio de fase y el cambio temporal de variables de estado individuales, el método del espectro de potencia, bien conocido por el ingeniero (ver sección 3.8).
+—-----------------------------------------------------
+
+The recorded time series, which are evaluated in this method by means of a Fourier analysis, yield clearly defined peaks in the power spectrum diagram for periodic or quasi-periodic motions; in contrast, continuous curves or curves with a high noise level indicate chaotic or stochastic behaviour. This means that in the erratic case, the measured variables can no longer be represented as a discrete superposition of oscillations: from a critical value of this state variable in the Fourier-transformed signal onwards, a very high noise component in the spectrum emerges. 
+—-----------------------------------------------------
+Las series de tiempo registradas, que se evalúan en este método por medio de un análisis de Fourier, producen picos claramente definidos en el diagrama de espectro de potencia para movimientos periódicos o cuasi-periódicos; por el contrario, las curvas continuas o las curvas con un alto nivel de ruido indican un comportamiento caótico o estocástico. Esto significa que, en el caso errático, las variables medidas ya no pueden representarse como una superposición discreta de oscilaciones: a partir de un valor crítico de esta variable de estado en la señal transformada de Fourier, surge una componente de ruido muy alta en el espectro.
+—-----------------------------------------------------
+
+Since these power spectra can easily be determined experimentally, however, they offer themselves as a means of characterising the irregular behaviour of real systems. We can illustrate this with an example taken from fluid dynamics (fig. 2.2.6). As a consequence, simple spectral analysis does not suffice as a single tool for describing erratic behaviour in chaotic physical systems. Other methods of measuring must be found in order to describe the wide spectrum of regular and irregular motions qualitatively. 
+—-----------------------------------------------------
+Sin embargo, dado que estos espectros de potencia se pueden determinar fácilmente de forma experimental, se ofrecen como un medio para caracterizar el comportamiento irregular de los sistemas reales. Podemos ilustrar esto con un ejemplo tomado de la dinámica de fluidos (fig. 2.2.6). Como consecuencia, el análisis espectral simple no es suficiente como herramienta única para describir el comportamiento errático en sistemas físicos caóticos. Deben encontrarse otros métodos de medición para describir cualitativamente el amplio espectro de movimientos regulares e irregulares.
+—-----------------------------------------------------
+
+In recent years, a number of procedures have been proposed for noise reduction in measured data sets (see (Kantz and Schreiber, 1997) and references cited therein). Of particular interest is the method developed recently for analysing stochastic data which is based on the theory of Markov processes and which allows the determination of the model equations underlying the experimentally measured data (Friedrich and Peinke, 1997; Friedrich et al., 2000). In contrast to other methods, this is a parameter-free approach for reconstructing the model equations, i.e. a priori, because no assumption needs to be made about the type of these equations. 
+—-----------------------------------------------------
+En los últimos años, se han propuesto una serie de procedimientos para la reducción del ruido en conjuntos de datos medidos (ver (Kantz y Schreiber, 1997) y las referencias allí citadas). De particular interés es el método desarrollado recientemente para analizar datos estocásticos que se basa en la teoría de los procesos de Markov y que permite la determinación de las ecuaciones modelo subyacentes a los datos medidos experimentalmente (Friedrich y Peinke, 1997; Friedrich et al., 2000). A diferencia de otros métodos, este es un enfoque sin parámetros para reconstruir las ecuaciones del modelo, es decir, a priori, porque no es necesario hacer suposiciones sobre el tipo de estas ecuaciones.
+
+—-----------------------------------------------------
+
+
+Moreover, in many cases different types of noise can be separated from the deterministic part (Siefert and Peinke, 2004; B¨ottcher et al., 2006; Lehle, 2011; Friedrich et al., 2011). As a result, one obtains stochastic differential equations which contain both a deterministic and a stochastic part. However, in the following, we restrict our considerations to dynamical systems which can be described solely by deterministic equations. 
+—-----------------------------------------------------
+Además, en muchos casos se pueden separar diferentes tipos de ruido de la parte determinista (Siefert y Peinke, 2004; B¨ottcher et al., 2006; Lehle, 2011; Friedrich et al., 2011). Como resultado, se obtienen ecuaciones diferenciales estocásticas que contienen tanto una parte determinista como una estocástica. Sin embargo, a continuación, restringimos nuestras consideraciones a los sistemas dinámicos que pueden describirse únicamente mediante ecuaciones deterministas.
+—-----------------------------------------------------
+
+In the literature, a multitude of possible methods for characterising the occurrence of chaotic motions is presented. Apart from the power spectrum and autocorrelation, the two classic tools, we propose to concentrate on the following criteria: Lyapunov exponents, dimensions and Kolmogorov-Sinai entropy. An extensive discussion of these concepts can be found in the context of dissipative systems and attractors in Chapter 5. 
+—-----------------------------------------------------
+En la literatura, se presenta una multitud de métodos posibles para caracterizar la ocurrencia de movimientos caóticos. Aparte del espectro de potencia y la autocorrelación, las dos herramientas clásicas, proponemos concentrarnos en los siguientes criterios: exponentes de Lyapunov, dimensiones y entropía de Kolmogorov-Sinai. Se puede encontrar una discusión extensa de estos conceptos en el contexto de sistemas disipativos y atractores en el Capítulo 5.
+—-----------------------------------------------------
+
+The examples of mechanical systems mentioned here make it clear that the concept of the attractor plays a central role in the description of the behaviour of damped systems subject to deterministic equations of motion. We basically differentiate between two types: regular attractors and strange attractors. On the one hand, there are three classic types of motion: equilibrium, periodic motion and quasiperiodic motion. All three states are associated with regular attractors since, in the case of damping, the system tends towards one of these three states after the transient phase. The point attractor corresponds to the state of equilibrium, the limit cycle to periodic motion and the torus to quasi-periodic motion. On the other hand, there is a class of deterministic, but erratic, i.e. chaotic, motions which are not predictable if the initial conditions are subject to small fluctuations. Such long-term behaviour (t → ∞) is associated with the concept of the strange attractor. 
+—-----------------------------------------------------
+
+Los ejemplos de sistemas mecánicos mencionados aquí dejan claro que el concepto de atractor juega un papel central en la descripción del comportamiento de los sistemas amortiguados sujetos a ecuaciones deterministas de movimiento. Básicamente diferenciamos entre dos tipos: atractores regulares y atractores extraños. Por un lado, existen tres tipos clásicos de movimiento: equilibrio, movimiento periódico y movimiento cuasiperiódico. Los tres estados están asociados a atractores regulares ya que, en el caso del amortiguamiento, el sistema tiende hacia uno de estos tres estados después de la fase transitoria. El atractor puntual corresponde al estado de equilibrio, el ciclo límite al movimiento periódico y el toro al movimiento cuasi-periódico. Por otra parte, existe una clase de movimientos deterministas, pero erráticos, es decir, caóticos, que no son predecibles si las condiciones iniciales están sujetas a pequeñas fluctuaciones. Tal comportamiento a largo plazo (t → ∞) está asociado con el concepto del atractor extraño.
+—-----------------------------------------------------
+
+2.3 Phase Space 
+
+In the case of evolutionary processes which can be analysed quantitatively, we can record the modification of particular quantities as a function of time. These variations must stem from specific causes. If the state is defined completely at a given instant by n variables x1,...,xn, the evolution of the process may be described by a system of n ordinary differential equations 
+—-----------------------------------------------------
+En el caso de procesos evolutivos que pueden ser analizados cuantitativamente, podemos registrar la modificación de cantidades particulares en función del tiempo. Estas variaciones deben provenir de causas específicas. Si el estado está completamente definido en un instante dado por n variables x1,...,xn, la evolución del proceso puede describirse mediante un sistema de n ecuaciones diferenciales ordinarias
+
+—-----------------------------------------------------
+
+dx1 dt = F1(x1, x2,...,xn) 
+dx2 dt = F2(x1, x2,...,xn) (2.3.1) . . . 
+dxn dt = Fn(x1, x2,...,xn)
+
+The n time-dependent variables represent physical quantities such as location, velocity, temperature, pressure etc. Not only in physics, but also in other branches of science such as biology, chemistry, economic sciences and other fields, many real processes in time can be described by systems of ordinary differential equations. If we formally introduce the column vectors 
+—-----------------------------------------------------
+Las n variables dependientes del tiempo representan cantidades físicas como ubicación, velocidad, temperatura, presión, etc. No solo en física, sino también en otras ramas de la ciencia como biología, química, ciencias económicas y otros campos, muchos procesos reales en el tiempo pueden describirse mediante sistemas de ecuaciones diferenciales ordinarias. Si introducimos formalmente los vectores columna
+
+—-----------------------------------------------------
+
+
+x = {x1 x2 ...... xn} 
+F = {F1 F2 ...... Fn} (2.3.2) 
+
+we can write the system eq. (2.3.1) in a simplified form (see also eq. (2.2.10)) 
+
+dx dt = F (x) (2.3.3) 
+
+where n is the number of equations defining the whole system. The fact that the system consists exclusively of first-order differential equations is not a restriction since any system of ordinary differential equations of higher order can be transformed into a system of first order by the introduction of additional variables. 
+—-----------------------------------------------------
+
+donde n es el número de ecuaciones que definen todo el sistema. El hecho de que el sistema consista exclusivamente en ecuaciones diferenciales de primer orden no es una restricción ya que cualquier sistema de ecuaciones diferenciales ordinarias de orden superior puede transformarse en un sistema de primer orden mediante la introducción de variables adicionales.
+—-----------------------------------------------------
+
+
+We wish to stress once again that the system eq. (2.3.1) or (2.3.3) is autonomous since the right-hand side does not depend explicitly on the independent variable t. This is not a restriction either, as each non-autonomous system of equations can be transformed into an autonomous one by introducing an additional variable xn+1 = t and the trivial relationship ˙xn+1 = 1.
+—-----------------------------------------------------
+Deseamos enfatizar una vez más que el sistema eq. (2.3.1) o (2.3.3) es autónomo ya que el lado derecho no depende explícitamente de la variable independiente t. Esto tampoco es una restricción, ya que cada sistema de ecuaciones no autónomo puede transformarse en uno autónomo introduciendo una variable adicional xn+1 = t y la relación trivial ˙xn+1 = 1.
+
+—-----------------------------------------------------
+
+
+
+          Æ   				 
+
+
+
+ p49        
+
+It is very useful to represent the temporal evolution of a system in an abstract space, the phase space. It is n-dimensional and is spanned by the state variables or coordinates x1, x2,...,xn. In the phase space, the state of the system at a given time is represented by a point. This point moves with time and its velocity is specified by the vector F . Since the velocity F is known from eq. (2.3.3), the velocity field can be represented immediately in the phase space (see fig. 2.3.1). the whole set of directions specifies a direction field, reminiscent of the stream lines in a liquid.
+—-----------------------------------------------------
+
+Es muy útil para representar la evolución temporal de un sistema en un espacio abstracto, el espacio fase. Es n-dimensional y está atravesado por las variables de estado o coordenadas x1, x2,...,xn. En el espacio de fases, el estado del sistema en un momento dado se representa mediante un punto. Este punto se mueve con el tiempo y su velocidad está especificada por el vector F . Dado que la velocidad F se conoce a partir de la ec. (2.3.3), el campo de velocidad se puede representar inmediatamente en el espacio de fase (ver fig. 2.3.1). todo el conjunto de direcciones especifica un campo de dirección, que recuerda a las líneas de corriente en un líquido.
+—-----------------------------------------------------
+
+
+A point chosen arbitrarily at the instant t=t0 describes a curve in phase space which at each point is tangential to the vector field of velocities. The graph of the motion in the phase space is called trajectory, phase line or orbit and the total set of possible motions is denoted phase flow φt. The autonomous set of first-order equations (2.3.1) allows us to display the velocity field without integration directly in the phase space. We thus already obtain a first impression of the form of the solution. 
+—-----------------------------------------------------
+Un punto elegido arbitrariamente en el instante t=t0 describe una curva en el espacio de fase que en cada punto es tangencial al campo vectorial de velocidades. La gráfica del movimiento en el espacio de fase se denomina trayectoria, línea de fase u órbita y el conjunto total de movimientos posibles se denomina flujo de fase φt. El conjunto autónomo de ecuaciones de primer orden (2.3.1) nos permite mostrar el campo de velocidad sin integración directamente en el espacio de fase. Obtenemos así ya una primera impresión de la forma de la solución.
+—-----------------------------------------------------
+
+Through each point of the phase space, exactly one trajectory runs. Physically speaking, this means that if a state is known at a particular instant, both the future and the past are determined by integration. This also means that trajectories which represent a unique solution can never intersect. In the special case of the mechanics of a particle where the dynamical state of a mass point is specified in three-dimensional space by its position (three space coordinates) and by its velocity (three velocity components), the phase space is six-dimensional. For a single-degree-of-freedom oscillator, the phase space degenerates to the phase plane with the components displacement and velocity (fig. 2.2.1).
+—-----------------------------------------------------
+A través de cada punto del espacio de fase, pasa exactamente una trayectoria. Físicamente hablando, esto significa que si se conoce un estado en un instante particular, tanto el futuro como el pasado están determinados por integración. Esto también significa que las trayectorias que representan una solución única nunca pueden cruzarse. En el caso especial de la mecánica de una partícula donde el estado dinámico de un punto de masa se especifica en el espacio tridimensional por su posición (tres coordenadas espaciales) y por su velocidad (tres componentes de velocidad), el espacio de fase es de seis dimensiones. . Para un oscilador de un solo grado de libertad, el espacio de fase degenera al plano de fase con los componentes desplazamiento y velocidad (fig. 2.2.1).
+—-----------------------------------------------------
+
+
+2.4 First Integrals and Manifolds 
+
+In the distant past, when mathematical tradition demanded the solution of differential equations by analytical integration, the somewhat strange concept of “first integrals” was coined. What was then understood by an integral is nowadays called solution. 
+—-----------------------------------------------------
+En el pasado lejano, cuando la tradición matemática exigía la solución de ecuaciones diferenciales por integración analítica, se acuñó el concepto un tanto extraño de "primeras integrales". Lo que entonces se entendía por integral se llama hoy solución.
+—-----------------------------------------------------
+
+The definition of the first integral used here has been adopted from Arnold (Arnold, 1980). Let F be a vector field, and the individual components F1, F2 ...Fn differentiable functions. 
+—-----------------------------------------------------
+
+La definición de la primera integral utilizada aquí ha sido adoptada de Arnold (Arnold, 1980). Sea F un campo vectorial, y las componentes individuales F1, F2...Fn funciones diferenciables.
+—-----------------------------------------------------
+
+Definition: a function I(x) is called the first integral of the differential equation 
+
+x˙ = F (x) (2.4.1) 
+
+if its so-called Lie derivative LF (Olver, 1986) along the vector field F vanishes
+
+ LF ≡ F1 ∂I ∂x1 + ··· + Fn ∂I ∂xn = F t ∂I ∂xt = ∂I ∂xF = 0 (2.4.2) 
+
+where the notation adopts the following conventions:
+
+∂I ∂x = ∂I ∂x1 ∂I ∂x2 ······ ∂I ∂xn (2.4.3) 
+
+denotes a row vector and, correspondingly, 
+
+∂I ∂x t = ∂I ∂xt =  ∂I ∂x1 ∂I ∂x2 ······ ∂I ∂xn  (2.4.4) 
+
+a column vector. Equation (2.4.2) implies the following characteristics of the first integral: on the one hand, the function I(x1, x2 ...xn) remains constant along each given trajectory; on the other hand, each trajectory lies on a hypersurface in the phase space. The hypersurface is defined by I(x) = C, where C is a constant (see fig. 2.4.1 for a three-dimensional phase space). Each trajectory defined by the initial condition thus lies entirely on a smooth hypersurface or generates it.
+
+un vector columna. La ecuación (2.4.2) implica las siguientes características de la primera integral: por un lado, la función I(x1, x2 ...xn) permanece constante a lo largo de cada trayectoria dada; por otro lado, cada trayectoria se encuentra en una hipersuperficie en el espacio de fases. La hipersuperficie está definida por I(x) = C, donde C es una constante (véase la figura 2.4.1 para un espacio de fases tridimensional). Cada trayectoria definida por la condición inicial se encuentra, por tanto, completamente en una hipersuperficie lisa o la genera.
+
+The hypersurface defined by I(x) = C designates an (n − 1)-dimensional manifold (see also the discussion at the end of this section). If all possible values are assigned to the parameter C, this leads to a one-parameter family of manifolds which fills the phase space completely. If a first integral I is known, the equation I(x) = C for a given C can be solved with respect to xi. If this xi is substituted into the remaining (n − 1) equations of eq. (2.3.1), the whole set of equations is reduced to (n − 1) equations. 
+
+La hipersuperficie definida por I(x) = C designa una variedad de dimensión (n − 1) (véase también la discusión al final de esta sección). Si se asignan todos los valores posibles al parámetro C, se obtiene una familia de variedades de un parámetro que llena completamente el espacio de fases. Si se conoce una primera integral I, la ecuación I(x) = C para una C dada se puede resolver con respecto a xi. Si se sustituye este xi en las (n − 1) ecuaciones restantes de la ecuación (2.3.1), el conjunto completo de ecuaciones se reduce a (n − 1) ecuaciones.
+
+
+The more first integrals are known, the lower the number of equations and the lower the dimension of the manifold generated by the trajectory. In mechanics, it is the conservation theorems which often supply first integrals; unfortunately, however, no systematic rule is known which yields an easier derivation of first integrals. The Hamilton function which represents a first integral for conservative Hamilton systems is a stroke of luck. In addition, it can be shown that in the case of conservative forces, the Hamilton function – if it is not time-dependent – corresponds to the total energy, i.e. the sum of kinetic and potential energy (see also section 4.1).
+
+Cuanto más se conocen las primeras integrales, menor es el número de ecuaciones y menor la dimensión de la variedad generada por la trayectoria. En mecánica, son los teoremas de conservación los que a menudo proporcionan las primeras integrales; sin embargo, por desgracia, no se conoce ninguna regla sistemática que permita obtenerlas con mayor facilidad. La función de Hamilton que representa una primera integral para sistemas de Hamilton conservativos es un golpe de suerte. Además, se puede demostrar que, en el caso de fuerzas conservativas, la función de Hamilton, si no depende del tiempo, corresponde a la energía total, es decir, a la suma de la energía cinética y la potencial (véase también la sección 4.1).
+
+
+It is necessary to associate many phenomena with geometrical models which cannot be described in a simple form. In the case of dynamical systems, the geometrical models form manifolds. Manifolds play an important role in the determination of the global behaviour of trajectories. For example, non-chaotic attractors which specify the asymptotic state of many dynamical systems lie on manifolds or mould them.
+
+Muchos fenómenos que no se pueden describir de forma sencilla deben ser asociados a modelos geométricos. En el caso de los sistemas dinámicos, los modelos geométricos forman variedades. Las variedades desempeñan un papel importante en la determinación del comportamiento global de las trayectorias. Por ejemplo, los atractores no caóticos que especifican el estado asintótico de muchos sistemas dinámicos se encuentran en las variedades o las moldean.
+
+
+An n-dimensional manifold M is a topological space with the property that each point and its neighboorhood can be mapped by a one-to-one continuous bijective mapping that has a continuous inverse function, a so-called homeomorphism, onto an open subset of the n-dimensional Euclidean space E. Therefore, it is possible to use the coordinates of E as local coordinates on M, see (Abraham et al., 1993; Br¨ocker and J¨anich, 1990) and fig. 2.4.3. The underlying idea is to map globally complex, but still sufficiently smooth structures onto elementary structures in order to apply, for example, methods from differential geometry. It is well known that the earth’s surface cannot be treated as a Euclidean space; measurements on it must be performed in accordance with the laws of spherical trigonometry. Yet parts of the earth can be mapped on charts of an atlas and, when approaching a chart’s boundary, one has to switch to the next one.
+
+Una variedad n-dimensional M es un espacio topológico con la propiedad de que cada punto y su vecindad pueden ser mapeados por una aplicación biyectiva continua uno a uno que tiene una función inversa continua, un llamado homeomorfismo, sobre un subconjunto abierto del espacio euclidiano n-dimensional E. Por lo tanto, es posible utilizar las coordenadas de E como coordenadas locales en M, ver (Abraham et al., 1993; Br¨ocker y J¨anich, 1990) y fig. 2.4.3. La idea subyacente es mapear estructuras globalmente complejas, pero aún suficientemente suaves, sobre estructuras elementales para poder aplicar, por ejemplo, métodos de geometría diferencial. Es bien sabido que la superficie de la Tierra no puede ser tratada como un espacio euclidiano; las mediciones en ella deben realizarse de acuerdo con las leyes de la trigonometría esférica. Sin embargo, es posible representar partes de la Tierra en mapas de un atlas y, cuando uno se acerca al límite de un mapa, debe cambiar al siguiente.
+
+
+Geometries which may not admit an overall analytical representation are considered locally in their tangential plane, i.e. the neighborhood of each point can be described by local coordinates. By joining overlapping neighborhoods, so-called charts, the entire manifold and the corresponding mapping can be described analytically. We illustrate this approach using the limit cycle in fig. 2.4.2 as a simple example of a manifold. The limit cycle of fig. 2.4.2 can be subdivided into an assembly of overlapping subsets which can be mapped onto subintervals between 0 and 2π by a continuous one-to-one map. Thus, the ϕ-coordinate can be used directly as a local coordinate on the manifold, independent of the phase space coordinates which describe the limit cycle.
+
+Las geometrías que no admiten una representación analítica global se consideran localmente en su plano tangencial, es decir, la vecindad de cada punto se puede describir mediante coordenadas locales. Al unir vecindades superpuestas, denominadas gráficos, se puede describir analíticamente toda la variedad y la aplicación correspondiente. Ilustramos este enfoque utilizando el ciclo límite de la figura 2.4.2 como un ejemplo simple de una variedad. El ciclo límite de la figura 2.4.2 se puede subdividir en un conjunto de subconjuntos superpuestos que se pueden aplicar a subintervalos entre 0 y 2π mediante una aplicación continua uno a uno. Por lo tanto, la coordenada ϕ se puede utilizar directamente como una coordenada local en la variedad, independientemente de las coordenadas del espacio de fases que describen el ciclo límite.
+
+
+A further example of a manifold in three dimensions is the two-dimensional torus (fig. 2.4.5). For such a torus, each surface element can be mapped one-to-one onto an element in the plane. The assembly of all the overlapping surface elements once again forms a torus. In a corresponding manner, the surface elements on the associated plane can be joined together. Their assembly yields the square in fig. 2.4.6.
+
+Otro ejemplo de variedad tridimensional es el toro bidimensional (fig. 2.4.5). En este tipo de toro, cada elemento de superficie se puede proyectar uno a uno sobre un elemento del plano. El conjunto de todos los elementos de superficie superpuestos forma de nuevo un toro. De forma correspondiente, los elementos de superficie del plano asociado se pueden unir entre sí. Su ensamblaje da como resultado el cuadrado de la fig. 2.4.6.
+
+
+
+With scissors and glue and by rolling and bending, this square can be turned back into the torus; in this way, it becomes clear that each single point of the torus is defined by the coordinates ϕ1 and ϕ2. A “helical line” on the torus corresponds to a general straight line on the mapping plane. Figure 2.4.6 demonstrates both coordinate lines ϕ1 = const and ϕ2 = const. Since both the limit cycle and the torus are hypersurfaces in the phase space and a velocity vector F exists at each point, they form differentiable manifolds.
+
+Con tijeras y pegamento, y rodándolo y doblándolo, este cuadrado puede transformarse nuevamente en un toro; de esta manera, queda claro que cada punto del toro está definido por las coordenadas ϕ1 y ϕ2. Una “línea helicoidal” en el toro corresponde a una línea recta general en el plano de mapeo. La figura 2.4.6 muestra ambas líneas de coordenadas ϕ1 = const y ϕ2 = const. Dado que tanto el ciclo límite como el toro son hipersuperficies en el espacio de fases y existe un vector de velocidad F en cada punto, forman variedades diferenciables.
+
+
+2.5 Qualitative and Quantitative Approach
+
+There are basically two contrary approaches to the study and understanding of dynamical systems. In the first case, we concretise a particular problem as a dynamical system and gather as much information as possible about its behaviour. The logical consequence is a complicated set of equations, particularly since the equations must be formulated as realistically as possible in order to incorporate all the involved effects. In the second case, we are interested in the characteristics of dynamical systems in general and not in entering into detail. Here, too, we must differentiate between two cases:
+
+Básicamente, existen dos enfoques opuestos para el estudio y la comprensión de los sistemas dinámicos. En el primer caso, concretamos un problema particular como sistema dinámico y recopilamos la mayor cantidad de información posible sobre su comportamiento. La consecuencia lógica es un conjunto complicado de ecuaciones, sobre todo porque las ecuaciones deben formularse de la forma más realista posible para incorporar todos los efectos involucrados. En el segundo caso, nos interesan las características de los sistemas dinámicos en general y no entrar en detalles. Aquí también debemos diferenciar entre dos casos:
+
+
+i. A mathematical approximation in the classical sense which evolves and elucidates this new qualitative analysis of differential equations and develops it on the basis of assumptions and strict argumentation. Qualitative approaches are based on geometrical or topological methods which the great mathematician Henri Poincar´e (1854 – 1912) first applied to the investigation of the stability of our solar system. Topology, the study of qualitative geometry, has become an indispensible mathematical tool for describing the behaviour of dynamical systems in all their complexity.
+
+Aproximación matemática en el sentido clásico que evoluciona y dilucida este nuevo análisis cualitativo de ecuaciones diferenciales y lo desarrolla sobre la base de hipótesis y argumentación estricta. Los enfoques cualitativos se basan en métodos geométricos o topológicos que el gran matemático Henri Poincaré (1854 – 1912) aplicó por primera vez a la investigación de la estabilidad de nuestro sistema solar. La topología, el estudio de la geometría cualitativa, se ha convertido en una herramienta matemática indispensable para describir el comportamiento de los sistemas dinámicos en toda su complejidad.
+
+
+ii. An approximation or simulation in the sense of experimental mathematics, an approach made possible by the computer. In this case, the aim is to arrive at generally valid statements on dynamical systems on the basis of simple nonlinear dynamical systems, the behaviour of which is studied numerically. The choice of representative examples in dynamical systems has to be guided by intuition and experience in order to discover characteristic patterns of response and thus obtain informative results for a broader class of dynamical systems.
+
+Aproximación o simulación en el sentido de las matemáticas experimentales, un método que se hace posible gracias a la computadora. En este caso, el objetivo es llegar a afirmaciones de validez general sobre sistemas dinámicos a partir de sistemas dinámicos no lineales simples, cuyo comportamiento se estudia numéricamente. La elección de ejemplos representativos en sistemas dinámicos debe guiarse por la intuición y la experiencia para descubrir patrones característicos de respuesta y así obtener resultados informativos para una clase más amplia de sistemas dinámicos.
+
+
+

@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>c01 &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="c01">
+<h1>c01<a class="headerlink" href="#c01" title="Link to this heading">¶</a></h1>
+<p>An_Intro_Chaotic_Dyna_Sys_2E_Robert_Devaney_C01</p>
+<p>An Introduction to
+Chaotic Dynamical Systems
+s e c o n d e d i t i o n
+Robert L. Devaney
+Department of Mathematics
+Boston University</p>
+<p>p17</p>
+<p>Chapter One
+One-Dimensional Dynamics</p>
+<p>The goal of this first chapter is to introduce many of the basic techniques from the theory of dynamical systems in a setting that is as simple as possible. Accordingly, all of the dynamical systems that we will encounter take place in one dimension, either on the real line or on the unit circle in the plane. For that reason, much of this chapter can be read with only a solid background in calculus.
+—-----------------------------------------------------
+El objetivo de este primer capítulo es presentar muchas de las técnicas básicas de la teoría de sistemas dinámicos en un entorno lo más simple posible. En consecuencia, todos los sistemas dinámicos que encontraremos tienen lugar en una dimensión, ya sea en la línea real o en el círculo unitario en el plano. Por esa razón, gran parte de este capítulo se puede leer solo con una base sólida en cálculo.
+—-----------------------------------------------------</p>
+<p>We regard the first twelve sections of this chapter as central to the theory of dynamical systems. Here we introduce such topics as hyperbolicity, symbolic dynamics, topological conjugacy, structural stability, and chaos. These form the essential background for all that follows. Indeed, the last two chapters of this text may be regarded as extensions and refinements of the material presented in these introductory sections.
+—-----------------------------------------------------</p>
+<p>Consideramos las primeras doce secciones de este capítulo como centrales para la teoría de los sistemas dinámicos. Aquí presentamos temas como la hiperbolicidad, la dinámica simbólica, la conjugación topológica, la estabilidad estructural y el caos. Estos forman el trasfondo esencial para todo lo que sigue. De hecho, los dos últimos capítulos de este texto pueden considerarse extensiones y refinamientos del material presentado en estas secciones introductorias.
+—-----------------------------------------------------</p>
+<p>Our main thrust in this chapter is to understand what it means for a dynamical system to be chaotic. We feel that this is best understood in light of examples. Hence most of our initial effort revolves around a single family of examples, the family of quadratic maps Fμ(x) = μx(1 − x). Later, using such tools as Sarkovskii’s Theorem and the Schwarzian derivative, we will show that the seemingly specialized results for the quadratic map actually hold for a large collection of dynamical systems.
+—-----------------------------------------------------
+Nuestro objetivo principal en este capítulo es comprender lo que significa que un sistema dinámico sea caótico. Creemos que esto se entiende mejor a la luz de los ejemplos. Por lo tanto, la mayor parte de nuestro esfuerzo inicial gira en torno a una sola familia de ejemplos, la familia de funciones cuadráticas Fμ(x) = μx(1 − x). Más tarde, utilizando herramientas como el teorema de Sarkovskii y la derivada de Schwarzian, mostraremos que los resultados aparentemente especializados para el mapa cuadrático en realidad se mantienen para una gran colección de sistemas dinámicos.</p>
+<p>—-----------------------------------------------------</p>
+<p>The next four sections in this chapter present material which is somewhat more technical than the preceding material. The concepts introduced – subshifts of finite type, Morse-Smale maps, the rotation number, and homoclinic bifurcation – are important in the sequel, however. The final three sections on the kneading theory and the period-doubling route to chaos should be regarded as special topics. They will not be used in what follows. However, for the reader interested in recent work on the transition to chaotic dynamics, these sections should provide an introduction to many of the topics in the current literature.</p>
+<p>—-----------------------------------------------------
+Las próximas cuatro secciones de este capítulo presentan material que es algo más técnico que el material anterior. Sin embargo, los conceptos introducidos (subdesplazamientos de tipo finito, mapas de Morse-Smale, el número de rotación y la bifurcación homoclínica) son importantes en la secuela. Las tres secciones finales sobre la teoría del amasado y la ruta de la duplicación del período hacia el caos deben considerarse temas especiales. No se utilizarán en lo que sigue. Sin embargo, para el lector interesado en el trabajo reciente sobre la transición a la dinámica caótica, estas secciones deben proporcionar una introducción a muchos de los temas de la literatura actual.
+—-----------------------------------------------------</p>
+<p>1.1 EXAMPLES OF DYNAMICAL SYSTEMS</p>
+<p>This brief section is intended merely as motivation for the succeeding sections. Our aim is to give a couple of simple examples of dynamical systems. These examples show how dynamical systems occur in the “real world” and how some very simple phenomena from nature yield rather complicated dynamical systems.
+—-----------------------------------------------------
+Esta breve sección pretende ser simplemente una motivación para las secciones subsiguientes. Nuestro objetivo es dar un par de ejemplos simples de sistemas dinámicos. Estos ejemplos muestran cómo ocurren los sistemas dinámicos en el “mundo real” y cómo algunos fenómenos muy simples de la naturaleza producen sistemas dinámicos bastante complicados.</p>
+<p>—-----------------------------------------------------</p>
+<p>First, what is a dynamical system? The answer is quite simple: take a scientific calculator and input any number whatsoever. Then start striking one of the function keys over and over again. This iterative procedure is an example of a discrete dynamical system. For example, if we repeatedly strike the “exp” key, given an initial input x, we are computing the sequence of
+numbers
+—-----------------------------------------------------
+Primero, ¿qué es un sistema dinámico? La respuesta es bastante simple: tome una calculadora científica e ingrese cualquier número. Luego comience a presionar una de las teclas de función una y otra vez. Este procedimiento iterativo es un ejemplo de un sistema dinámico discreto. Por ejemplo, si presionamos repetidamente la tecla &quot;exp&quot;, dada una entrada inicial x, estamos calculando la secuencia de
+números</p>
+<p>—-----------------------------------------------------</p>
+<p>x, ex eex
+, eeex
+, . . . .</p>
+<p>That is, we are iterating the exponential function. If this experiment is performed over and over again, it becomes apparent that any choice of initial x leads rather quickly to an “overflow” message from the calculator: that is, successive iterations of exp(x) tend to ∞. This is, in fact, the main question we will ask in the sequel: given a function f and an initial value x0, what ultimately happens to the sequence of iterates
+—-----------------------------------------------------
+Es decir, estamos iterando la función exponencial. Si este experimento se realiza una y otra vez, se hace evidente que cualquier elección de x inicial conduce con bastante rapidez a un mensaje de &quot;desbordamiento&quot; de la calculadora: es decir, iteraciones sucesivas de exp(x) tienden a ∞. Esta es, de hecho, la pregunta principal que haremos a continuación: dada una función f y un valor inicial x0, ¿qué sucede finalmente con la secuencia de iteraciones?
+—-----------------------------------------------------</p>
+<p>x0, f(x0), f(f(x0)), f(f(f(x0))), . . . .</p>
+<p>As another example, consider sin x. A few keystrokes on the calculator will be enough to convince the reader that any initial x0 leads to a sequence of iterates which tends to 0. Similarly, for cos x, any x0 yields a sequence which converges fairly rapidly to .73908 . . . (in radians, or to .99984 . . . in degrees).
+—-----------------------------------------------------
+Como otro ejemplo, considere sen x. Unas pocas pulsaciones de teclas en la calculadora serán suficientes para convencer al lector de que cualquier x0 inicial conduce a una secuencia de iteraciones que tiende a 0. De manera similar, para cos x, cualquier x0 produce una secuencia que converge con bastante rapidez a .73908. . . (en radianes, o hasta .99984 . . . en grados).
+—-----------------------------------------------------</p>
+<p>The reader may begin to suspect that iteration of a given function on a given initial value always yields a sequence that converges to a fixed limit (maybe x0, maybe 0, in any case a unique limit). Actually, nothing could be further from the truth. Very simple functions, even the simplest quadratic functions on the real line, lead to bizarre and unpredictable results when iterated. For example, program a computer or calculator to iterate the simple function f(x) = 4x(1 − x). Input a random number between 0 and 1 and watch the results of the iteration. One gets dramatically different behaviors depending upon which initial x is input. Sometimes the values repeat; other times they do not.
+—-----------------------------------------------------</p>
+<p>El lector puede comenzar a sospechar que la iteración de una función dada en un valor inicial dado siempre produce una secuencia que converge a un límite fijo (tal vez x0, tal vez 0, en cualquier caso un límite único). En realidad, nada podría estar más lejos de la verdad. Las funciones muy simples, incluso las funciones cuadráticas más simples en la línea real, conducen a resultados extraños e impredecibles cuando se iteran. Por ejemplo, programe una computadora o calculadora para iterar la función simple f(x) = 4x(1 − x). Ingrese un número aleatorio entre 0 y 1 y observe los resultados de la iteración. Uno obtiene comportamientos dramáticamente diferentes dependiendo de qué x inicial se ingrese. A veces los valores se repiten; otras veces no.
+—-----------------------------------------------------</p>
+<p>Most often they wander aimlessly about the unit interval with no discernible pattern. Now change the parameter from 4 to 3.839, i.e., iterate the function f(x) = 3.839x(1−x). For a random entry between 0 and 1, one observes that the iterates of this point eventually settle down to a repeating cycle of three numbers, .149888 . . . , .489172 . . . , and .959299 . . . , repeated over and over again in succession. Two comments are in order. The first example illustrates the phenomenon of chaos or unpredictability that forms one of the major themes of this book. Despite its complexity, we will see how to analyze this unpredictability completely. Second, chaos occurs in many, many dynamical systems.
+—-----------------------------------------------------</p>
+<p>La mayoría de las veces deambulan sin rumbo por el intervalo unitario sin un patrón perceptible. Ahora cambie el parámetro de 4 a 3.839, es decir, itere la función f(x) = 3.839x(1−x). Para una entrada aleatoria entre 0 y 1, se observa que las iteraciones de este punto eventualmente se establecen en un ciclo repetitivo de tres números, .149888. . . , .489172 . . . , y .959299 . . . , repetido una y otra vez en sucesión. Dos comentarios están en orden. El primer ejemplo ilustra el fenómeno del caos o la imprevisibilidad que constituye uno de los temas principales de este libro. A pesar de su complejidad, veremos cómo analizar completamente esta imprevisibilidad. Segundo, el caos ocurre en muchos, muchos sistemas dinámicos.
+—-----------------------------------------------------</p>
+<p>The second example above, which seems comparatively rather tame, also admits a set of initial x values which behave just as unpredictably as in the first example. However, due to roundoff or “experimental” error, we do not see this randomness at first glance. Nevertheless, as we shall see, it lurks in the background and has an increasingly important effect on the system as the accuracy of the computations is increased.
+—-----------------------------------------------------</p>
+<p>El segundo ejemplo anterior, que parece comparativamente bastante dócil, también admite un conjunto de valores iniciales de x que se comportan de manera tan impredecible como en el primer ejemplo. Sin embargo, debido al redondeo o error “experimental”, no vemos esta aleatoriedad a primera vista. Sin embargo, como veremos, acecha en el fondo y tiene un efecto cada vez más importante en el sistema a medida que aumenta la precisión de los cálculos.
+—-----------------------------------------------------</p>
+<p>At this juncture, we should note that there are many other types of dynamical systems besides iterated functions. For example, differential equations are examples of continuous, as opposed to discrete, dynamical systems. In this book, we will not deal with these types of systems at all. These types of systems are much easier to understand once the basic behavior of discrete systems has been mastered.
+—-----------------------------------------------------
+En este punto, debemos notar que hay muchos otros tipos de sistemas dinámicos además de las funciones iteradas. Por ejemplo, las ecuaciones diferenciales son ejemplos de sistemas dinámicos continuos, a diferencia de los discretos. En este libro no nos ocuparemos en absoluto de este tipo de sistemas. Estos tipos de sistemas son mucho más fáciles de entender una vez que se domina el comportamiento básico de los sistemas discretos.
+—-----------------------------------------------------</p>
+<p>Let us now consider several “applied” examples. Dynamical systems
+occur in all branches of science, from the differential equations of classical
+mechanics in physics to the difference equations of mathematical economics
+and biology. We will first describe a simple model from population biology
+which will serve as motivation for all of the succeeding chapter.
+Population biologists are interested in the long-term behavior of the population
+of a certain species or collection of species. Given certain observed
+or experimentally determined parameters (number of predators, severity of
+climate, availability of food, etc.), the biologist sets up a mathematical model
+to describe the fluctuations in the population. This may take the form of a
+differential equation or a difference equation, depending upon whether the
+population is assumed to change continuously or discretely, such as when the
+population is measured once a year or once a generation. In either case, the
+population biologist is interested in what happens to an initial population of
+P0 members. Does the population tend to zero as time goes on, leading to
+extinction of the species? Does the population become arbitrarily large, indicating
+eventual overcrowding? Or does the population fluctuate periodically
+or even randomly? Thus the problem facing the population biologist is a
+typical dynamical systems question: given P0, can one predict the long-term
+behavior of the population?</p>
+<p>Several simple biological models are encountered in elementary calculus
+courses. For example, the differential equation of exponential growth or
+decay is often the first differential equation a student is exposed to. In
+this model, we assume that the population of a single species changes at
+a rate that is directly proportional to the population present at the given
+time. This is, of course, an extremely naive model, which does not take into
+account obvious factors such as overcrowding, the death rate, etc. However,
+this model does produce an especially simple differential equation which is
+readily solved. If P(t) denotes the population at time t, the assumptions
+above may be translated into
+dP
+dt
+= kP.
+The solution to this equation is P(t) = P0ekt where P0 = P(0) is the initial
+population of the species. Hence, if the constant of proportionality is positive,
+P(t)→∞as t→∞leading to population explosion. Ifk &lt; 0, then P(t) → 0
+as t→∞, leading to extinction.
+This procedure illustrates (in an exceedingly simple situation) the typical
+application of dynamical systems in science. A population biologist sets up
+a mathematical model for which the mathematician is asked to provide some
+idea about the long-term behavior of the solutions.
+This simple model can also be studied as a difference equation. Let us
+write Pn = population after n generations, where n is a natural number.
+The simplest growth law one can imagine is that the population in the next
+generation is directly proportional to that in the present generation. That is
+Pn+1 = k Pn
+where again k is a constant.</p>
+<p>We have
+P1 = kP0
+P2 = kP1 = k2P0
+P3 = kP2 = k3P0
+...
+Pn = kPn−1 = knP0
+so that the ultimate fate of the population is again easy to decide. If k &gt;
+1, Pn→∞, whereas if 0 &lt; k &lt; 1, then Pn → 0.
+For later use, let us recast this difference equation as a function. Let x =
+P0 and set f(x) = kx. Note that, in the above terms, f(x) = P1, f(f(x)) =
+k2x = P2, f(f(f(x))) = P3, etc. Hence the ultimate behavior of the population
+is intimately related to the asymptotic behavior of the iteration of the
+function f.
+In either of the above models, one has a rather idealized situation. There
+are essentially only two possibilities: unchecked growth or extinction. Experience
+tells the population biologist that more complicated patterns arise
+in nature. So the biologist tries to incorporate additional constraints or parameters
+in the model, hoping for a better reflection of reality. One such
+approach again often encountered in calculus is to assume that there is some
+limiting value L for the population. If P(t) exceeds L, the population should
+tend to decrease (there is overcrowding, not enough food, etc.) On the other
+hand, if P(t) &lt; L, there is room for more of the species so P(t) should
+increase. The simplest biological model leading to this behavior is
+dP
+dt
+= kP(L − P)
+Note that we have simply tacked on the factor L−P to the previous model.
+Let us assume that k &gt; 0, the case that previously led to unlimited
+growth. Here we note that
+1. if P = L ,
+dP
+dt
+= 0
+2. if P &gt;L ,
+dP
+dt
+&lt; 0
+3. if P &lt;L ,
+dP
+dt
+&gt; 0</p>
+<p>Thus elementary calculus shows that this model behaves according to our
+expectations. The population remains constant, decreases, or increases depending
+upon whether P = L, P &gt; L, or P &lt; L. In fact, one can explicitly
+solve the above differential equation via separation of variables and integration
+by partial fractions. One finds that
+P(t) = LP0eLkt
+L − P0 + P0eLkt .
+Using this formula, one may easily sketch the solutions of this system.
+While this model conforms more to reality than the exponential growth
+model, nevertheless we see no cyclic behavior or other fluctuations in the population.
+One might naively expect that the corresponding difference equation
+behaves similarly. However, we are in for a great surprise: the analogous difference
+equation leads to one of the most complicated dynamical systems
+imaginable. To this day, the dynamics of this system are not completely understood.
+Moreover, this system exhibits many of the pathologies of higher
+dimensional systems and for this reason may be considered as one of the
+most basic nonlinear dynamical systems. We will return to it throughout
+the chapter as it provides a rich source of illustrative examples.
+Let us make a simplification in our model. Let us assume that L = 1
+is the limiting value. Obviously, we are not now talking about populations
+but rather percentage of population. Pn represents the percentage of the
+limiting population present in generation n. The population is then assumed
+to satisfy the following difference equation
+Pn+1 = kPn(1 − Pn),
+where again k is a positive constant. As before, we may write x = P0 and
+f(x) = kx(1−x). This, of course, is the quadratic function mentioned above.
+We have
+P1 = f(x)
+P2 = f(f(x))
+P3 = f(f(f(x))),
+and so on. Thus to determine the fate of a population for a given constant
+k, we must determine the asymptotic behavior of the function kx(1 − x).
+This function, known as the logistic function, and its dynamics have been
+the subject of much contemporary mathematical research. In the following
+chapters, we will only begin to describe the complications and pathologies
+that arise in this simple system.</p>
+<p>Another example of a dynamical system which arises in practical applications
+is Newton’s method for finding the roots of a polynomial. Let
+Q(x) = anxn + an−1xn−1 + . . . + a0
+be a polynomial. In general, it is impossible to factor Q if the degree of Q
+is high. Nevertheless, it is often important in applications to find a root of
+Q. One such procedure for doing this is the classical recursion scheme of
+Newton. Let x0 be a real number. Consider the recursion
+x1 = x0 − Q(x0)
+Q (x0)
+x2 = x1 − Q(x1)
+Q (x1)
+...
+xn = xn−1 − Q(xn−1)
+Q (xn−1).
+For most choices of the initial value x0, it is well known from calculus that
+the sequence of values x0, x1, x2, . . . converges to one of the roots of Q.
+Given the polynomial Q, we thus see that Newton’s method determines
+a dynamical system. Let
+N(x) = x − Q(x)
+Q (x).
+As long as Q (x)  = 0, this function is well defined. As in our population
+model, Newton’s method reduces to the iteration of N. Again we ask the
+same question: given x, what happens as we compute successively higher
+iterates of N at x ?
+We remark that Newton’s method does not always converge. For certain
+initial values x0, the iterative scheme does not yield convergence to a root of
+Q. The structure of the set where N fails to converge is extremely interesting
+(especially in the complex plane) and leads to unpredictable behavior similar
+to the logistic function. We will take up this topic in chapter three.</p>
+<p>1.2 PRELIMINARIES FROM CALCULUS</p>
+<p>In this section, we recall some elementary (and not-so-elementary) notions
+from single variable and multivariable calculus.</p>
+<p>In the sequel, we will
+also need a few notions from point-set topology, so we include them here as
+well.</p>
+<p>First, we fix some notation.</p>
+<p>R denotes the real numbers. I or J will
+always denote closed intervals in R, i.e., all points x satisfying a ≤ x ≤ b for
+some a and b.</p>
+<p>R2 denotes the Cartesian plane.</p>
+<p>pp</p>
+<p>Let f:R → R be a function. We denote the derivative of f at x by f’(x),
+the second derivative by f’’(x), and higher derivatives by f(r)(x).</p>
+<p>We say
+that f is of class Cr on I if f(r)(x) exists and is continuous at all x ∈ I.</p>
+<blockquote>
+<div><p>A</p>
+</div></blockquote>
+<p>function is said to be smooth if it is of class C1. The function f(x) is C∞
+if all derivatives exist and are continuous.</p>
+<p>Throughout this book, function
+means C∞ function; occasionally we will use functions which are continuous
+but non-differentiable as examples, but in general, when we say function, we
+mean C∞ function.</p>
+<p>pp</p>
+<p>There are other classes of functions which are commonly studied in calculus.</p>
+<p>For example, analytic functions (i.e., those with convergent power
+series representations) are often encountered.</p>
+<p>For our purposes in this chapter,
+these types of functions are too rigid in the following sense.</p>
+<p>We wish to allow small changes in or perturbations of the functions which will change the function in a certain interval but not everywhere.
+&gt;&gt; Deseamos permitir pequeños cambios o perturbaciones de las funciones que cambiarán la función en un cierto intervalo pero no en todas partes.</p>
+<p>This is accomplished by the use of bump functions which we will introduce in the Exercises.
+&gt;&gt; Esto se logra mediante el uso de funciones de choque que presentaremos en los Ejercicios.</p>
+<p>These
+small changes are impossible if we are restricted to analytic functions, for
+a small change in any of the coefficients of the power series affects the behavior
+of the function everywhere.</p>
+<p>Later, in chapter three, when we discuss
+complex analytic dynamical systems, we will restrict our attention solely to
+these types of functions.</p>
+<p>pp</p>
+<p>There are some special classes of functions that often arise.</p>
+<p>The function
+f(x) is linear if f(x) = ax for some constant a; f(x) is affine if f(x) =
+ax + b; f(x) is piecewise linear if f(x) is affine on a collection of intervals.</p>
+<p>For example, f(x) = <a href="#id1"><span class="problematic" id="id2">|x|</span></a> is piecewise linear, the “pieces” being the positive
+and negative reals on each of which f(x) is linear.</p>
+<p>Definition 2.1. f(x) is one-to-one if f(x)  = f(y) whenever x  = y.</p>
+<p>p25</p>
+<p>Clearly, increasing or decreasing functions are the only types of continuous
+one-to-one functions of a real variable.</p>
+<p>If f: I → J is one-to-one, then
+we may define the inverse of f, written f−1(x), by the rule f−1(x) = y
+if and only if f(y) = x.</p>
+<p>For example, if f(x) = x3, then f−1(x) = 3
+√
+x
+and if g(x) = tanx, then g−1(x) = arctanx. Here g: (−π/2 , π/2) → R so
+g−1:R → (−π/2 , π/2).</p>
+<p>Definition 2.2. Let I and J be intervals and f: I → J. The function f is
+onto if for any y in J there is an x ∈ I such that f(x) = y. See Fig. 2.1.</p>
+<p>Definition 2.3. Let f: I → J. The function f(x) is a homeomorphism if
+f(x) is one-to-one, onto, and continuous, and f−1(x) is also continuous.</p>
+<p>Fig. 2.1. In a. f(x) is one-to-one on the interval [0, 1];
+in b. f(x) is onto the interval [0, 1].</p>
+<p>pp</p>
+<p>For example, tan x is a homeomorphism between (−π/2 , π/2) and R.
+Thus we say the open interval (−π/2 , π/2) is homeomorphic to R. Functions
+which are one-to-one are also said to be injective, while functions which are
+onto are also called surjective.</p>
+<p>Definition 2.4. Let f: I → J. The function f(x) is a Cr-diffeomorphism if
+f(x) is a Cr-homeomorphism such that f−1(x) is also Cr.</p>
+<p>pp</p>
+<p>For example, it is easy to see that tan x is a C∞ diffeomorphism from
+(−π/2 , π/2) to R, whereas f(x) = x3 is a homeomorphism which is not a
+diffeomorphism since f−1(x) = x1/3 and (f−1) (0) does not exist.</p>
+<p>p26</p>
+<p>We will see in subsequent chapters that diffeomorphisms on the real
+line are extremely simple, dynamically speaking.</p>
+<p>Therefore, in this chapter,
+we will primarily consider non-invertible functions.</p>
+<blockquote>
+<div><p>In higher dimensions,</p>
+</div></blockquote>
+<p>diffeomorphisms become much more interesting and therefore become the
+focal point for dynamical systems theory.</p>
+<p>We denote the composition of two functions by f ◦ g(x) = f(g(x)).</p>
+<p>The n-fold composition of f with itself recurs over and over again in the sequel.
+&gt;&gt; La composición de n-pliegues de f consigo misma se repite una y otra vez en la continuación.</p>
+<p>We denote this function by fn(x) = f ◦ . . . ◦      f
+n times
+(x).</p>
+<p>Note that fn does not
+mean f(x) raised to the nth power, a function which we will never use, nor
+does it mean the nth derivative of f(x), which we denote by f(n)(x). If f−1(x)
+exists, we write f−n(x) = f−1 ◦ . . . ◦ f−1(x).</p>
+<p>Perhaps the most important feature from elementary calculus that we
+will use is the Chain Rule:</p>
+<p>Proposition 2.5. If f and g are functions, then</p>
+<p>(f ◦ g) (x) = f
+ (g(x))g
+ (x).</p>
+<p>In particular, if h(x) = fn(x), then</p>
+<p>h
+ (x) = f
+ (fn−1(x)) . f
+ (fn−2(x)) . . . . . f
+ (x).</p>
+<p>Another important notion from elementary calculus is the Mean Value
+Theorem:</p>
+<p>Theorem 2.6. Suppose f: [a, b] → R is C1. Then there exists c ∈ [a, b] such
+that
+f(b) − f(a) = f
+ (c)(b − a).</p>
+<p>Fig. 2.2 illustrates the content of the Mean Value Theorem. The third
+important result from calculus is the Intermediate Value Theorem:</p>
+<p>Theorem 2.7. Suppose f: [a, b] → R is continuous. Suppose that f(a) = u
+and f(b) = v. Then for any z between u and v, there exists c, a ≤ c ≤ b,
+such that f(c) = z.</p>
+<p>One of the most abstract and seemingly useless theorems from multivariable
+calculus is the Implicit Function Theorem. Most beginning students</p>
+<p>p27</p>
+<p>have no appreciation of the power of this Theorem when they encounter it in
+their first analysis course.</p>
+<p>We hope that the geometric results in bifurcation theory that we will encounter later will help dispel any misconceptions about the usefulness of this theorem.</p>
+<p>&gt;&gt; Esperamos que los resultados geométricos en la teoría de la bifurcación que encontraremos más adelante ayuden a disipar cualquier concepto erróneo sobre la utilidad de este teorema.</p>
+<p>Theorem 2.8. Suppose G:R2 → R1 is a C1-function (i.e., both partial
+derivatives of G exist and are continuous.) Suppose further that
+1. G(x0, y0) = 0
+2. ∂G
+∂y
+(x0, y0)  = 0.</p>
+<p>p28</p>
+<p>Then there exist open intervals I about x0 and J about y0 and a C1-function
+p: I → J satisfying</p>
+<ol class="arabic simple">
+<li><p>p(x0) = y0</p></li>
+<li><p>G(x, p(x)) = 0 for all x ∈ I.</p></li>
+</ol>
+<p>Fig. 2.4. The Implicit Function Theorem.</p>
+<p>Rather than prove the Implicit Function Theorem, we give several examples
+of how to apply it.</p>
+<blockquote>
+<div><p>While these examples are obviously concocted, they nevertheless are typical, as we shall see later.</p>
+</div></blockquote>
+<p>&gt;&gt; Si bien estos ejemplos son obviamente inventados, sin embargo son típicos, como veremos más adelante.</p>
+<p>Example 2.9. Let G(x, y) = x2 + y2 − 1. The level sets of G are clearly
+circles, and G = 0 defines the unit circle in the plane.
+Suppose G(x0, y0) = 0 and y0 &gt; 0, i.e., (x0, y0) is a point on the upper
+semicircle. Clearly,
+∂G
+∂y
+(x0, y0) = 2y0  = 0</p>
+<p>so the Implicit Function Theorem applies.</p>
+<p>The result is a function p(x) which
+satisfies G(x, p(x)) = 0 for all x sufficiently close to x0. What is p(x)? In
+this case, we can construct p(x) explicitly.</p>
+<p>Clearly, p(x) =
+√
+1 − x2, which
+is C∞ as long as x  = Å}1 (when y = 0). We have G(x,
+√
+1 − x2) = 0 for
+<a href="#id3"><span class="problematic" id="id4">|x|</span></a> &lt; 1, as the Implicit Function Theorem guarantees.</p>
+<p>If y0 &lt; 0, then we
+must choose p(x) = −
+√
+1 − x2.</p>
+<p>pp</p>
+<p>It is important to realize that, in practice, one cannot very often solve
+for the function p(x) as we did here.</p>
+<p>Nevertheless, the Implicit Function</p>
+<p>p29</p>
+<p>Theorem guarantees its existence (whether or not we can explicitly write it
+down), and that is often exactly what we need.
+Example 2.10. G(x, y) = x5y4 − xy5 − yx2 + 1 satisfies G(1, 1) = 0 and
+∂G
+∂y
+(1, 1) = −2.
+Hence there is a function p(x) defined in some interval about x = 1 and
+which satisfies G(x, p(x)) = 0. Solving G(x, y) = 0 for y = p(x) is impossible,
+however.
+Fixed points for functions are points x which satisfy f(x) = x. These
+points will play a dominant role in the theory of dynamical systems. The
+following easy application of the Intermediate Value Theorem gives an important
+criterion for the existence of a fixed point. See Fig. 2.5.
+Proposition 2.11. Let I = [a, b] be an interval and let f: I → I be continuous.
+Then f has at least one fixed point in I.
+Proof. Let g(x) = f(x) − x. Clearly, g(x) is continuous on I. Suppose
+f(a) &gt; a and f(b) &lt; b (otherwise, one of a or b is fixed). We thus have
+g(a) &gt; 0 and g(b) &lt; 0, so the Intermediate Value Theorem gives the existence
+of c between a and b for which g(c) = 0. Therefore, f(c) = c and we are done.
+q.e.d.</p>
+<p>This theorem is a special case of a much more general theorem called
+the Brouwer Fixed Point Theorem, which gives a similar sufficient condition
+for the existence of fixed points in higher dimensions. One can actually do
+better with a little differentiability. The following result is a special case of
+the Contraction Mapping Theorem.
+Proposition 2.12. Let f: I → I and assume that <a href="#id5"><span class="problematic" id="id6">|f (x)|</span></a> &lt; 1 for all x in I.
+Then there exists a unique fixed point for f in I. Moreover
+<a href="#id7"><span class="problematic" id="id8">|f(x) − f(y)|</span></a> &lt; <a href="#id9"><span class="problematic" id="id10">|x − y|</span></a>
+for all x, y ∈ I, x  = y.
+Proof. Proposition 2.11 guarantees at least one fixed point for f, so we
+suppose that both x and y are fixed points, x  = y. By the Mean Value
+Theorem, there is a c between x and y such that
+f
+ (c) = f(y) − f(x)
+y − x
+= 1.
+But this contradicts our assumption that <a href="#id11"><span class="problematic" id="id12">|f (c)|</span></a> &lt; 1 for all c in I. Hence
+x = y.
+To establish the second assertion of the Proposition, we again use the
+Mean Value Theorem to assert that for any x, y ∈ I, x  = y
+<a href="#id13"><span class="problematic" id="id14">|f(y) − f(x)|</span></a> = <a href="#id15"><span class="problematic" id="id16">|f
+ (c)||y − x|</span></a> &lt; <a href="#id17"><span class="problematic" id="id18">|y − x|</span></a>
+as required.
+q.e.d.
+We close this section with a few notions from general topology. In general,
+these notions are beyond the scope of elementary calculus courses. However,
+many of them occur in the simplest possible setting on the real line, and this
+is precisely the setting in which we will work.
+Definition 2.13. Let S ⊂ R. A point x ∈ R is a limit point of S if there is
+a sequence of distinct points xn ∈ S converging to x. S is a closed set if it
+contains all of its limit points.
+Clearly, closed intervals of the form a ≤ x ≤ b are closed sets. Any finite
+union of closed sets is also closed. Infinite unions of closed sets, however,
+need not be closed, as the following example shows.</p>
+<p>Example 2.14. Let In = [1n
+, 1]. Then
+∞
+n=1
+In = (0, 1]
+which is not closed, since 0 is a limit point of S which is not in S.
+Intersections of closed sets yield closed sets, however (the empty set is, by
+definition, a closed set.) Moreover, if In is a closed, non-empty, and bounded
+interval for each n and In+1 ⊂ In, then ∩∞
+n=1 In is a closed, non-empty set.
+The crucial word here is, of course, non-empty.
+Definition 2.15. Let S ⊂ R. S is an open set if, for any x ∈ S, there is
+an   &gt; 0 such that all points t in the open interval x −   &lt; t &lt; x +   are
+contained in S.
+It is clear that the complement of a closed set is open and vice versa.
+Unlike closed sets, infinite unions of open intervals are open sets in R. However,
+infinite intersections of open intervals are not open sets. For example,
+if Jn = (−1n
+, 1n
+), then ∩∞
+n=1 Jn = {0} which is closed.
+For any set S, we denote the closure of S by S. S consists of all points in
+S together with all limit points of S. For example, if S is the open interval
+(0, 1), then S is the closed interval [0, 1]. Clearly, if S is closed, then S = S.
+Definition 2.16. A subset U of S is dense in S if U = S.
+For example, any open set S is dense in its closure S. A more interesting
+example is the set of rational numbers Q, which is dense in R. Similarly,
+the irrationals are dense in R. We caution the reader against thinking that
+dense subsets are necessarily large. Even open and dense sets may be quite
+small in the sense of total length. Here is an example in the unit interval I
+given by 0 ≤ x ≤ 1. Since the rationals form a countable set in I, we may
+list them in some order. One such ordering is
+0 , 1,
+1
+2,
+1
+3,
+2
+3,
+1
+4,
+3
+4,
+1
+5,
+2
+5,
+3
+5,
+4
+5,
+1
+6, . . . .
+Now let   &gt; 0 be small. Consider the open interval of length  n about the
+nth rational in this list. The union of all of these intervals is an open set in
+I which is clearly dense since it contains all of the rationals in I. However,
+the total length of this set is quite small. Indeed, the length is given by
+∞
+n=1
+ n =
+1 −</p>
+<p>This example shows clearly the difference between the topological approach
+to dynamics that we will adopt in the sequel and the measure theoretic
+approach. In a topological sense, an open, dense subset is considered
+“large.” These sets may or may not be large in a measure theoretic sense,
+i.e., in the sense of total length.
+Exercises
+1. Decide whether each of the following functions are one-to-one, onto,
+homeomorphisms, or diffeomorphisms on their domains of definition.
+a. f(x) = x5/3
+b. f(x) = x4/3
+c. f(x) = 3x + 5
+d. f(x) = ex
+e. f(x) = 1/x
+f. f(x) = 1/x2
+2. Identify which of the following subsets of R are closed, open, or neither.
+a. {x|x is an integer }
+b. {x|x is a rational number }
+c. {x|x = 1n
+for some natural number n}
+d. {x| sin(1x
+) = 0}
+e. {x|x sin(1x
+) = 0}
+f. {x| sin(1x
+) &gt; 0}
+3. Prove that the set of rational numbers of the form p/2n for p, n ∈ Z is
+dense in R.
+The goal of the next few exercises is to construct special functions which will
+be useful later when we perturb or change slightly a given function. These
+functions are called “bump functions.” Define
+B(x) =</p>
+<p>exp(−1/x2) if x &gt; 0
+0 if x ≤ 0
+4. Sketch the graph of B(x).
+5. Prove that B (0) = 0.</p>
+<p>6. Inductively prove that B(n)(0) = 0 for all n. Conclude that B(x) is a
+C∞ function.
+7. Modify B(x) to construct a C∞ function C(x) which satisfies
+a. C(x) = 0 if x ≤ 0.
+b. C(x) = 1 if x ≥ 1.
+c. C (x) &gt; 0 if 0 &lt; x &lt; 1.
+8. Modify C(x) to construct a C∞ bump function D(x) on the interval
+[a, b], i.e., D(x) satisfies
+a. D(x) = 1 for a ≤ x ≤ b.
+b. D(x) = 0 for x &lt; α and x &gt; β where α &lt; a and β &gt; b.
+c. D (x)  = 0 on the intervals (α, a) and (b, β).
+9. Use a bump function to construct a diffeomorphism f: [a, b] → [c, d]
+which satisfies f (a) = f (b) = 1 and f(a) = c, f(b) = d.
+Åò1.3 ELEMENTARY DEFINITIONS
+The basic goal of the theory of dynamical systems is to understand the
+eventual or asymptotic behavior of an iterative process. If this process is a
+differential equation whose independent variable is time, then the theory attempts
+to predict the ultimate behavior of solutions of the equation in either
+the distant future (t→∞) or the distant past (t → −∞). If the process is
+a discrete process such as the iteration of a function, then the theory hopes
+to understand the eventual behavior of the points x, f(x), f2(x), . . . , fn(x)
+as n becomes large. That is, dynamical systems asks the somewhat nonmathematical
+sounding question: where do points go and what do they do
+when they get there? In this chapter, we will attempt to answer this question
+at least partially for one of the simplest classes of dynamical systems, functions
+of a single real variable. Functions which determine dynamical systems
+are also called mappings, or maps, for short. This terminology connotes the
+geometric process of taking one point to another. As much of the sequel will
+in fact be geometric, we will use all of these terms synonymously.
+Definition 3.1. The forward orbit of x is the set of points x, f(x), f2(x), . . .
+and is denoted by O+(x). If f is a homeomorphism, we may define the full</p>
+<p>orbit of x, O(x), as the set of points fn(x) for n ∈ Z, and the backward orbit
+of x, O−(x), as the set of points x, f−1(x), f−2(x), . . . .
+Thus our basic goal is to understand all orbits of a map. Orbits and
+forward orbits of points can be quite complicated sets, even for very simple
+nonlinear mappings. However, there are some orbits which are especially
+simple and which will play a central role in the study of the entire system.
+Definition 3.2. The point x is a fixed point for f if f(x) = x. The point x
+is a periodic point of period n if fn(x) = x. The least positive n for which
+fn(x) = x is called the prime period of x. We denote the set of periodic
+points of (not necessarily prime) period n by Pern(f), and the set of fixed
+points by Fix (f). The set of all iterates of a periodic point form a periodic
+orbit.
+Maps may have many fixed points. For example, the identity map
+id(x) = x fixes all points in R, whereas the map f(x) = −x fixes the origin,
+while all other points have period 2. These, however, are atypical dynamical
+systems; maps with intervals of fixed or periodic points are rare in a sense
+which will be made precise later. Most of the dynamical systems we will
+encounter will have isolated periodic points.
+Example 3.3. The map f(x) = x3 has 0, 1, and −1 as fixed points and no
+other periodic points. The map P(x) = x2−1 has fixed points at (1Å}
+√
+5)/2,
+while the points 0 and −1 lie on a periodic orbit of period 2.
+Example 3.4. Let S1 denote the unit circle in the plane. We denote a point
+in S1 by its angle θ measured in radians in the standard manner. Hence a
+point is determined by any angle of the form θ + 2kπ for an integer k. Now
+let f(θ) = 2θ. (Note that f(θ + 2π) = f(θ) on the circle so this map is well
+defined.) Now fn(θ) = 2nθ, so that θ is periodic of period n if and only if
+2nθ = θ +2kπ for some integer k, i.e., if and only if θ = 2kπ/(2n − 1) where
+0 ≤ k ≤ 2n is an integer. Hence the periodic points of period n for f are the
+(2n − 1)th roots of unity. It follows that the set of periodic points are dense
+in S1. See Exercise 10.
+Definition 3.5. A point x is eventually periodic of period n if x is not
+periodic but there exists m &gt; 0 such that fn+i(x) = fi(x) for all i ≥ m.
+That is, fi(x) is periodic for i ≥ m.
+Example 3.6. Let f(x) = x2. Then f(1) = 1 is fixed, while f(−1) = 1 is
+eventually fixed.</p>
+<p>Example 3.7. Let f(θ) = 2θ on the circle. Note that f(0) = 0 is fixed. If
+θ = 2kπ/2n then fn(θ) = 2kπ so that θ is eventually fixed. It follows that
+eventually fixed points are also dense in S1. See Exercise 11.
+We remark that eventually periodic points cannot occur if the map is a
+homeomorphism.
+Definition 3.8. Let p be periodic of period n. A point x is forward asymptotic
+to p if limi→∞ fin(x) = p. The stable set of p, denoted by Ws(p),
+consists of all points forward asymptotic to p.
+If p is non-periodic, we may still define forward asymptotic points by
+requiring <a href="#id19"><span class="problematic" id="id20">|fi(x) − fi(p)|</span></a> → 0 as i→∞. Also, if f is invertible, we may consider
+backward asymptotic points by letting i→−∞in the above definition.
+The set of points backwards asymptotic to p is called the unstable set of p
+and is denoted by Wu(p).
+Example 3.9. Let f(x) = x3. Then Ws(0) is the open interval −1 &lt; x &lt; 1.
+Wu(1) is the positive real axis, whereas Wu(−1) is the negative real axis.
+Definition 3.10. A point x is a critical point of f if f (x) = 0. The critical
+point is non-degenerate if f  (x)  = 0. The critical point is degenerate if
+f  (x) = 0.
+For example f(x) = x2 has a non-degenerate critical point at 0, but
+f(x) = xn forn &gt; 2 has a degenerate critical point at 0. Note that degenerate
+critical points may be maxima, minima, or saddle points (as in the case of
+f(x) = x3). But non-degenerate critical points must be either maxima or
+minima. Critical points cannot occur for diffeomorphisms, but their existence
+for non-invertible maps is one reason why these kinds of maps are more
+complicated.
+The goal of dynamical systems is to understand the nature of all orbits,
+and to identify the set of orbits which are periodic, eventually periodic,
+asymptotic, etc. Generally, this is an impossible task. For example, if f(x) is
+a quadratic polynomial, then finding explicitly the periodic points of period
+n necessitates solving the equation f n(x) = x, which is a polynomial equation
+of degree 2n. A computer does not help matters much, for numerical
+computations of periodic points are often misleading. Round-off errors tend
+to accumulate and make many periodic points invisible to the computer.
+Therefore we are left with only qualitative or geometric techniques to understand
+the dynamics of a given system. This means that we should look for</p>
+<p>a geometric picture of the behavior of all orbits of a system. This geometric
+picture is provided by the phase portrait which we now discuss.
+The graph of a function on the reals provides information about its first
+iterate, but gives very little information about subsequent iterates. To understand
+higher iterates, we could attempt to sketch each of their graphs, but
+this is a cumbersome procedure. There is a much more efficient, geometric
+method for describing the orbits of a dynamical system, the phase portrait.
+This is a picture, on the real line itself, as opposed to the plane, of all orbits
+of a system. For example, to indicate that all non-zero orbits of f(x) = −x
+have period 2, we could sketch the phase portrait as in Fig. 3.1.a. This figure
+also depicts the phase portraits of some other simple maps.
+Fig. 3.1. The phase portraits of
+a. f(x) = −x, b. f(x) = 2x,
+c. f(x) = 12
+x, d. f(x) = x3.
+The graph of f(x) does of course contain information about the first
+iteration of f. We may use it to gain insight into higher iterations and
+hence the phase portrait via the following procedure which we call graphical
+analysis. Identify the diagonal Δ = {(x, x)|x ∈ R} with R in the obvious
+way. A vertical line from (p, p) to the graph of f meets the graph at (p, f(p)).
+Then a horizontal line from (p, f(p)) to Δ meets the diagonal at (f(p), f(p)).
+Hence a vertical line to the graph followed by a horizontal line back to Δ
+yields the image of the point p under f on the diagonal. We may thus visualize
+the phase portrait of a map as taking place on the diagonal rather than</p>
+<p>on the x-axis. Then an orbit is given by repeatedly drawing line segments
+vertically from Δ to the graph and then horizontally from the graph to Δ.
+Fig. 3.2 illustrates this procedure for g(x) = x3 and f(x) = 2x − x2.
+Diffeomorphisms of the circle form an interesting class of maps which are
+somewhat different from maps of R. The following example is typical.
+Example 3.11. Let f(θ) = θ +   sin(2θ) for 0 &lt;   &lt; 1/2. Note that f has
+fixed points at 0, π/2, π, and 3π/2. We compute f (0) = f (π) = 1+2  &gt; 1
+whereas f (π/2) = f (3π/2) = 1 − 2  &lt; 1. Hence 0 and π are repelling fixed
+points and π/2 and 3π/2 are attracting. More generally, f(θ) = θ+  sin(Nθ)
+has N attracting and N repelling fixed points arranged alternately around
+the circle as long as 0 &lt;   &lt; 1/N.
+The phase portraits of these maps may be sketched as in Fig. 3.3. Another
+important class of circle maps are the translation maps.
+Example 3.12. Translations of the circle. Let λ ∈ R and Tλ(θ) = θ +2πλ.
+The maps Tλ behave quite differently depending upon the rationality or
+irrationality of λ. If λ = p/q, where p and q are integers, then Tq
+λ(θ) = θ +
+2πp = θ so that all points are fixed by Tq
+λ. When λ is irrational, the situation
+is quite different. The following result is known as Jacobi’s Theorem.</p>
+<p>Theorem 3.13. Each orbit Tλ is dense in S1 if λ is irrational.
+Proof. Let θ ∈ S1. The points on the orbit of θ are distinct for if Tn
+λ (θ) =
+Tm
+λ (θ) we would have (n − m)λ ∈ Z, so that n = m. Any infinite set of
+points on the circle must have a limit point. Thus, given any   &gt; 0, there
+must be integers n and m for which <a href="#id21"><span class="problematic" id="id22">|Tn
+λ (θ) − Tm
+λ (θ)|</span></a> &lt;  . Let k = n − m.
+Then <a href="#id23"><span class="problematic" id="id24">|Tk
+λ (θ) − θ|</span></a> &lt;  .
+Now Tλ preserves lengths in S1. Consequently, Tk
+λ maps the arc connecting
+θ to Tk
+λ (θ) to the arc connecting Tk
+λ (θ) and T2k
+λ (θ) which has length less
+than  . In particular it follows that the points θ, Tk
+λ (θ), T2k
+λ (θ), . . . partition
+S1 into arcs of length less than  . Since   was arbitrary, this completes the
+proof.
+q.e.d.
+Exercises
+1. Use a calculator to iterate each of the following functions (using an
+arbitrary initial value) and explain these results.
+a. C(x) = cos(x)
+b. S(x) = sin(x)
+c. E(x) = ex
+d. F(x) = 1e
+ex
+e. A(x) = arctan(x)</p>
+<p>2. Using the graph of the function, identify the fixed points for each of the
+maps in the previous Exercise.
+3. List all periodic points for each of the following maps. Then use the
+graph of f(x) to sketch the phase portrait of f(x) on the indicated interval.
+a. f(x) = −12
+x, −∞ &lt; x &lt; ∞
+b. f(x) = −3x, −∞ &lt; x &lt; ∞
+c. f(x) = x − x2, 0 ≤ x ≤ 1
+d. f(x) = π2
+sin x, 0 ≤ x ≤ π
+e. f(x) = −x3, −∞ &lt; x &lt; ∞
+f. f(x) = 12
+(x3 + x), −1 ≤ x ≤ 1
+4. Identify the stable sets of each of the fixed points for the maps in the
+previous Exercise.
+5. For each of the following functions, list all critical points and decide
+whether each is degenerate or non-degenerate.
+a. f(x) = x3 − x
+b. S(x) = sin(x)
+c. f(x) = x4 − 2x2
+d. g(x) = x3 + x4
+6. Describe the phase portrait of the map of the circle given by
+f(θ) = θ +
+2π
+n
++   sin(nθ)
+for 0 &lt;   &lt; 1/n.
+7. Prove that a homeomorphism of R can have no periodic points with
+prime period greater than 2. Give an example of a homeomorphism that has
+a periodic point of period 2.
+8. Prove that a homeomorphism cannot have eventually periodic points.
+9. Let S: S1 → S1 be given by S(θ) = θ + ω +   sin(θ) where ω and   are
+constants. Prove that S is a homeomorphism of the circle if | | &lt; 1.
+10. Let f(θ) = 2θ be the map of S1 discussed in Example 3.4. Prove that
+periodic points of f are dense in S1.
+11. Prove that eventually fixed points for the map in Exercise 10 are also
+dense in S1.</p>
+<p>Åò1.4 HYPERBOLICITY
+Simple maps like id(x) = x and f(x) = −x are, unfortunately, atypical
+among dynamical systems. There are many reasons why this is so, but
+perhaps the most unusual feature of these maps is the fact that all points
+are periodic under iteration of these maps. Most maps do not have this type
+of behavior. Periodic points tend to be more spread out on the line. In this
+section we will introduce one of the main themes of this book, hyperbolicity.
+Maps with hyperbolic periodic points are the ones that occur typically in
+many dynamical systems and, moreover, they provide the simplest types of
+periodic behavior to analyze.
+Definition 4.1. Let p be a periodic point of prime period n. The point p is
+hyperbolic if <a href="#id25"><span class="problematic" id="id26">|(fn) (p)|</span></a>  = 1. The number (fn) (p) is called the multiplier of
+the periodic point.
+Example 4.2. Consider the diffeomorphism f(x) = 12(x3 + x). There are
+3 fixed points: x = 0, 1, and −1. Note that f (0) = 1/2 and f (Å}1) = 2.
+Hence each fixed point is hyperbolic. The graph and phase portrait of f(x)
+are depicted in Fig. 4.1.
+Example 4.3. Let f(x) = −12
+(x3 + x). 0 is a hyperbolic fixed point,
+with f (0) = −12
+. The points Å}1 now lie on a periodic orbit of period 2.
+We compute (f2) (Å}1) = f (1) . f (−1) = 4 by the chain rule. Hence this
+periodic point is hyperbolic, and the phase portrait is depicted in Fig. 4.2.
+Note that points in the interval (−1, 1) spiral toward 0 and away from Å}1.
+We observe that, in the above two examples, we have <a href="#id27"><span class="problematic" id="id28">|f (0)|</span></a> &lt; 1 and
+that points close to 0 are forward asymptotic to 0. This situation occurs
+often:
+Proposition 4.4. Let p be a hyperbolic fixed point with <a href="#id29"><span class="problematic" id="id30">|f (p)|</span></a> &lt; 1. Then
+there is an open interval U about p such that if x ∈ U, then
+lim
+n→∞fn(x) = p.</p>
+<p>Proof. Since f is C1, there is   &gt; 0 such that <a href="#id31"><span class="problematic" id="id32">|f (x)|</span></a> &lt; A &lt; 1 for x ∈
+[p −  , p +  ]. By the Mean Value Theorem
+<a href="#id33"><span class="problematic" id="id34">|f(x) − p|</span></a> = <a href="#id35"><span class="problematic" id="id36">|f(x) − f(p)|</span></a> ≤ A|x − p| &lt; <a href="#id37"><span class="problematic" id="id38">|x − p|</span></a> ≤  .
+Hence f(x) is contained in [p −  , p +  ] and, in fact, is closer to p than x is.
+Via the same argument
+<a href="#id39"><span class="problematic" id="id40">|fn(x) − p|</span></a> ≤ An|x − p|
+so that fn(x) → p as n→∞.
+q.e.d.
+Remarks.
+1. It follows that the interval [p −  , p +  ] is contained in the stable set
+associated to p, Ws(p).
+2. A similar result is true for hyperbolic periodic points of period n. In
+this case, we get an open interval U about p which is mapped inside itself
+by fn. Of course, the assumption in this case is that <a href="#id41"><span class="problematic" id="id42">|(fn) (p)|</span></a> &lt; 1.
+Definition 4.5. Let p be a hyperbolic periodic point of period n with
+<a href="#id43"><span class="problematic" id="id44">|(fn) (p)|</span></a> &lt; 1. The point p is called an attracting periodic point (an attractor)
+or a sink.</p>
+<p>Attracting periodic points of period n thus have neighborhoods which
+are mapped inside themselves by fn. Such a neighborhood is called the local
+stable set and is denoted by Ws
+loc. We may actually distinguish three different
+types of attracting fixed points, namely those where f (p) = 0, 0 &lt; f (p) &lt; 1,
+and −1 &lt; f (p) &lt; 0. The behavior near these types of fixed points is
+illustrated in Fig. 4.3.
+The behavior of a map near periodic points where the derivative is larger
+than one in absolute value is quite different from that of sinks.
+Proposition 4.6. Let p be a hyperbolic fixed point with <a href="#id45"><span class="problematic" id="id46">|f (p)|</span></a> &gt; 1. Then
+there is an open interval U of p such that, if x ∈ U, x  = p, then there exists
+k &gt; 0 such that fk(x)  ∈ U.
+The proof is similar to the proof of the preceding proposition and is
+therefore left as an exercise. Graphically, the result is quite clear; see Fig. 4.4.
+Definition 4.7. A fixed point p with <a href="#id47"><span class="problematic" id="id48">|f (p)|</span></a> &gt; 1 is called a repelling fixed
+point (a repellor) or source. The neighborhood described in the Proposition
+is called the local unstable set and denoted Wu
+loc.</p>
+<p>We remark that periodic points of period n exhibit similar behavior when
+<a href="#id49"><span class="problematic" id="id50">|(fn) (p)|</span></a> &gt; 1.
+Hyperbolic periodic points therefore have local behavior which is governed
+by the derivative at the periodic point. This is not true when the
+point is indifferent or non-hyperbolic, as the following example shows.
+Example 4.8. Each of the maps in Fig. 4.5 satisfy f(0) = 0 and f (0) = 1,
+but each have vastly different phase portraits near 0. In a., the map f(x) =
+x + x3 has a weakly repelling fixed point at 0. In b., the map f(x) = x − x3</p>
+<p>has a weakly attracting fixed point at 0. In c., the map f(x) = x + x2 is
+weakly repelling from the right but weakly attracting from the left.
+Most maps have only hyperbolic periodic points, as we shall see later.
+However, non-hyperbolic periodic points often occur in families of maps.
+When this happens, the periodic point structure often undergoes a bifurcation.
+We will deal with bifurcation theory more extensively later, but for
+now we give several examples.
+Example 4.9. Consider the family of quadratic functions Qc(x) = x2 + c,
+where c is a parameter. The graphs of Qc assume three different positions
+relative to the diagonal depending upon whether c &gt; 1/4, c = 1/4, or c &lt;
+1/4. See Fig. 4.6. Note that Qc has no fixed points for c &gt; 1/4. When
+c = 1/4, Qc has a unique non-hyperbolic fixed point at x = 1/2. And when
+c &lt; 1/4, Qc has a pair of fixed points, one attracting and one repelling. Thus
+the phase portrait of Qc changes as c decreases through 1/4. This change is
+an example of a bifurcation.
+Example 4.10. Let Fμ(x) = μx(1 − x) with μ &gt; 1. Fμ has two fixed
+points: one at 0 and the other at pμ = (μ − 1)/μ. Note that F
+μ(0) = μ
+and F
+μ(pμ) = 2 − μ. Hence 0 is a repelling fixed point for μ &gt; 1 and pμ is
+attracting for 1 &lt; μ &lt; 3. When μ = 3, F
+μ(pμ) = −1. We sketch the graphs
+of F2
+μ for μ near 3. See Fig. 4.7. Note that 2 new fixed points for F2
+μ appear
+as μ increases through 3. These are new periodic points of period 2. Another
+bifurcation has occurred: this time we have a change in Per2(Fμ).
+This quadratic family actually exhibits many of the phenomena that are
+crucial in the general theory. The next section is devoted entirely to this
+function.</p>
+<p>Exercises
+1. Find all periodic points for each of the following maps and classify them
+as attracting, repelling, or neither. Sketch the phase portraits.
+a. f(x) = x − x2
+b. f(x) = 2(x − x2)
+c. f(x) = x3 − 19
+x
+d. f(x) = x3 − x</p>
+<p>e. S(x) = 12
+sin(x)
+f. S(x) = sin(x)
+g. E(x) = ex−1
+h. E(x) = ex
+i. A(x) = arctan x
+j. A(x) = π4
+arctan x</p>
+<p>k. A(x) = −π4
+arctan x
+2. Discuss the bifurcations which occur in the following families of maps
+for the indicated parameter value
+a. Sλ(x) = λ sin x, λ = 1
+b. Eλ(x) = λex, λ= 1/e
+c. Eλ(x) = λex, λ= −e
+d. Qc(x) = x2 + c, c = −3/4
+e. Fμ(x) = μx(1 − x), μ= 1
+f. Aλ(x) = λ arctan x, λ = 1
+g. Aλ(x) = λ arctan x, λ = −1
+3. Suppose f is a diffeomorphism. Prove that all hyperbolic periodic points
+are isolated.
+4. Show via an example that hyperbolic periodic points need not be isolated.
+5. Find an example of a C1 diffeomorphism with a non-hyperbolic fixed
+point which is an accumulation point of other hyperbolic fixed points.
+6. Discuss the dynamics of the family fα(x) = x3 − αx for −∞ &lt; α ≤ 1.
+Find all parameter values where bifurcations occur. Describe how the phase
+portrait of fα changes at these points.
+7. Consider the linear maps fk(x) = kx. Show that there are four open sets
+of parameters for which the phase portraits of fk are similar. The exceptional
+cases are k = 0, Å}1.
+Åò1.5 AN EXAMPLE: THE QUADRATIC FAMILY
+In this section, we will continue the discussion of the quadratic family
+Fμ(x) = μx(1 − x). Actually, we will return to this example repeatedly
+throughout the remainder of this chapter, since it illustrates many of the
+most important phenomena that occur in dynamical systems.</p>
+<p>Proposition 5.1.
+1. Fμ(0) = Fμ(1) = 0 and Fμ(pμ) = pμ, where pμ = μ − 1
+μ
+.
+2. 0 &lt; pμ &lt; 1 if μ &gt; 1.
+The proof of this Proposition is straightforward. From now on we will
+concentrate on the case μ &gt; 1. The following Proposition shows that most
+points behave rather tamely under iteration of Fμ: all points which do not
+lie in the interval [0, 1] tend to −∞.
+Proposition 5.2. Suppose μ &gt; 1. If x &lt; 0, then Fn
+μ (x)→−∞ as n→∞.
+Similarly, if x &gt; 1, then Fn
+μ (x)→−∞ as n→∞.
+Proof. Ifx &lt; 0, then μx(1−x) &lt; xso Fμ(x) &lt; x. Hence Fn
+μ (x) is a decreasing
+sequence of points. This sequence cannot converge to p, for then we would
+have Fn+1
+μ (x) → Fμ(p) &lt; p, whereas Fn
+μ (x) → p. Hence Fn
+μ (p) → −∞ as
+required. If x &gt; 1, then Fμ(x) &lt; 0 so Fn
+μ (x)→−∞ as well.
+q.e.d.
+Graphical analysis yields the above results easily, as shown in Fig. 5.1.
+As a consequence of this Proposition, all of the interesting dynamics of the
+quadratic family occur in the unit interval I = {x | 0 ≤ x ≤ 1}. For low
+values of μ, the dynamics of Fμ are not too complicated.
+Proposition 5.3. Let 1 &lt; μ &lt; 3.
+1. Fμ has an attracting fixed point at pμ = (μ − 1)/μ and a repelling
+fixed point at 0.
+2. If 0 &lt; x &lt; 1, then
+lim
+n→∞Fn
+μ (x) = pμ.
+Proof. Part 1 was proved in Example 4.10 at the end of the last section. For
+part 2, we first deal with the case 1 &lt; μ &lt; 2. Suppose x lies in the interval
+(0, 1/2]. Then graphical analysis immediately shows that
+<a href="#id51"><span class="problematic" id="id52">|Fμ(x) − pμ|</span></a> &lt; <a href="#id53"><span class="problematic" id="id54">|x − pμ|</span></a>
+if x  = pμ. See Fig. 5.2. Consequently, Fn
+μ (x) → pμ as n → ∞. If, on the
+other hand, x lies in the interval (1/2, 1), then Fμ(x) lies in (0, 1/2), so that
+the previous argument implies
+Fn
+μ (x) = Fn−1
+μ (Fμ(x)) → pμ
+as n→∞.</p>
+<p>The case when 2 &lt; μ &lt; 3 is more difficult. Graphical analysis shows
+what is different in this case. See Fig. 5.2. Note that 1/2 &lt; pμ &lt; 1. Let
+ˆpμ denote the unique point in the interval (0, 1/2) that is mapped onto pμ
+by Fμ. Then the reader may easily check that F2
+μ maps the interval [ˆpμ, pμ]
+inside [1/2, pμ]. It follows that Fn
+μ (x) → pμ as n → ∞ for all x ∈ [ˆpμ, pμ].
+Now suppose x &lt; ˆpμ. Again graphical analysis shows that there exists k &gt; 0
+such that Fk
+μ (x) ∈ [ˆpμ, pμ]. Thus Fk+n
+μ (x) → pμ as n → ∞ in this case as
+well. Finally, as before, Fμ maps the interval (pμ, 1) onto (0, pμ), so the result
+follows here as well. Since (0, 1) = (0, ˆpμ) ∪ [ˆpμ, pμ] ∪ (pμ, 1), we are finished.
+We leave the intermediate case μ= 2 to the reader. See Exercise 1.
+q.e.d.
+Hence for 1 &lt; μ &lt; 3, Fμ has only two fixed points and all other points in
+I are asymptotic to pμ. Thus the dynamics of Fμ are completely understood
+for μ in this range. The phase portraits of Fμ are depicted in Fig. 5.3.
+As we showed in Example 4.10 in the previous section, as μ passes
+through 3, the dynamics of Fμ become slightly more complicated: a new
+periodic point of period 2 is born. This is the beginning of a long story: as μ
+continues to increase the dynamics of Fμ become increasingly more complicated
+until the phase portrait of Fμ is dramatically different from the above
+picture. This is a scenario that we will investigate in much more detail later.</p>
+<p>We now turn to the case when μ &gt; 4. For the remainder of this section,
+we will drop the subscript μ and write F instead of Fμ. As above, all of
+the interesting dynamics of F occur in the unit interval I. Note that, since
+μ &gt; 4, the maximum value μ/4 of F is larger than one. Hence certain points
+leave I after one iteration of F. Denote the set of such points by A0. Clearly,
+A0 is an open interval centered at 12
+and has the property that, if x ∈ A0,
+then F(x) &gt; 1, so F2(x) &lt; 0 and Fn(x) → −∞. A0 is the set of points
+which immediately escape from I. All other points in I remain in I after one
+iteration of F.
+Let A1 = {x ∈ I | F(x) ∈ A0}. If x ∈ A1, then F2(x) &gt; 1, F3(x) &lt; 0,
+and so, as before, Fn(x)→−∞. Inductively, let An = {x ∈ I|Fn(x) ∈ A0}.</p>
+<p>That is, An = {x ∈ I|Fi(x) ∈ I for i ≤ n but Fn+1(x)  ∈ I}, so that An
+consists of all points which escape from I at the n+1st iteration. As above,
+if x lies in An, it follows that the orbit of x tends eventually to −∞. Since
+we therefore know the ultimate fate of any point which lies in the An, it
+therefore remains only to analyze the behavior of those points which never
+escape from I, i.e., the set of points which lie in
+I −
+  ∞
+n=0
+An</p>
+<p>.
+Let us denote this set by Λ. Our first question is: what precisely is this
+set of points? To understand Λ, we describe more carefully its recursive
+construction.
+Since A0 is an open interval centered at 1/2, I−A0 consists of two closed
+intervals, I0 on the left and I1 on the right. See Fig. 5.4.
+Note that F maps both I0 and I1 monotonically onto I; F is increasing
+on I0 and decreasing on I1. Since F(I0) = F(I1) = I, there are a pair of
+open intervals, one in I0 and one in I1, which are mapped into A0 by F.
+Therefore this pair of intervals is precisely the set A1.
+Now consider I − (A0 ∪ A1). This set consists of 4 closed intervals and
+F maps each of them monotonically onto either I0 or I1. Consequently F2
+maps each of them onto I. We therefore see that each of the four intervals in</p>
+<p>I −(A0 ∪A1) contains an open subinterval which is mapped by F2 onto A0.
+Therefore, points in these intervals escape from I upon the third iteration
+of F. This is the set we called A2. For later use, we observe that F2 is
+alternately increasing and decreasing on these four intervals. It follows that
+the graph of F2 must therefore have two humps as shown in Fig. 5.5.
+Continuing in this manner we note two facts. First, An consists of 2n
+disjoint open intervals. Hence I − (A0 ∪ . . . ∪ An) consists of 2n+1 closed
+intervals since
+1 + 2 + 22 + . . . + 2n = 2n+1 − 1.
+Secondly, Fn+1 maps each of these closed intervals monotonically onto I.
+In fact, the graph of Fn+1 is alternately increasing and decreasing on these
+intervals. Thus the graph of Fn+1 has exactly 2n humps on I, and it follows
+that the graph of Fn crosses the line y = x at least 2n times. This implies
+that Fn has at least 2n fixed points or, equivalently, Pern(F) consists of 2n
+points in I. Clearly, the structure of Λ is much more complicated when μ &gt; 4
+than the earlier case μ &lt; 3.
+The construction of Λ is reminiscent of the construction of the Cantor
+Middle Thirds set: Λ is obtained by successively removing open intervals
+from the “middles” of a set of closed intervals.</p>
+<p>Definition 5.4. A set Λ is a Cantor set if it is a closed, totally disconnected,
+and perfect subset of I. A set is totally disconnected if it contains no intervals;
+a set is perfect if every point in it is an accumulation point or limit
+point of other points in the set.
+Example 5.5. The Cantor Middle-Thirds Set. This is the classical example
+of a Cantor set. Start with I but remove the open “middle third,” i.e., the
+interval (13
+, 23
+). Next, remove from what remains the two middle thirds again,
+i.e., the pair of intervals (19
+, 29
+) and (79
+, 89
+). Continue removing middle thirds
+in this fashion; note that 2n open intervals are removed at the nth stage of
+this process. Thus, this procedure is entirely analogous to our construction
+above. Exercise 7 shows that the Cantor Middle-Thirds set is indeed a Cantor
+set as defined in 5.4.
+Remark. The Cantor Middle-Thirds set is an example of a fractal. Intuitively,
+a fractal is a set which is self-similar under magnification. In the
+Cantor Middle-Thirds set, suppose we look only at those points which lie in
+the left-hand interval [0, 13
+]. Under a microscope which magnifies this interval
+by a factor of three, the “piece” of the Cantor set in [0, 13
+] looks exactly like
+the original set. More precisely, the linear map L(x) = 3x maps the portion
+of the Cantor set in [0, 13
+] homeomorphically onto the entire set. See Exercise
+10. This process does not stop at the first level: one may magnify any piece
+of the Cantor set at the nth stage of the construction by a factor of 3n and
+obtain the original set. See Exercise 11.
+To guarantee that our set Λ is a Cantor set, we need an additional hypothesis
+on μ. Let us assume that μ is large enough so that <a href="#id55"><span class="problematic" id="id56">|F (x)|</span></a> &gt; 1 for
+all x ∈ I0 ∪ I1. The reader may check that μ &gt; 2 +
+√
+5 suffices. Hence, for
+these values of μ, there exists λ &gt; 1 such that <a href="#id57"><span class="problematic" id="id58">|F (x)|</span></a> &gt; λ for all x ∈ Λ.
+By the chain rule, it follows that <a href="#id59"><span class="problematic" id="id60">|(Fn) (x)|</span></a> &gt; λn as well. We claim that
+Λ contains no intervals. Indeed, if this were so, we could choose x, y ∈ Λ,
+x  = y, with the closed interval [x, y] ⊂ Λ. But then, <a href="#id61"><span class="problematic" id="id62">|(Fn) (α)|</span></a> &gt; λn for all
+α ∈ [x, y]. Choose n so that λn|y − x| &gt; 1. By the Mean Value Theorem,
+it then follows that <a href="#id63"><span class="problematic" id="id64">|Fn(y) − Fn(x)|</span></a> ≥ λn|y − x| &gt; 1, which implies that at
+least one of Fn(y) or Fn(x) lies outside of I. This is a contradiction, and so
+Λ is totally disconnected.
+Since Λ is a nested intersection of closed intervals, Λ is closed. We now
+prove that Λ is perfect. First note that any endpoint of an Ak is in Λ: indeed,
+such points are eventually mapped to the fixed point at 0, and so they stay
+in I under iteration. Now if p ∈ Λ were isolated, every nearby point must
+leave I under iteration of F. Such points must belong to some Ak. Either
+there is a sequence of endpoints of the Ak converging to p, or else all points</p>
+<p>in a deleted neighborhood of p are mapped out of I by some power of F.
+In the former case, we are done as the endpoints of the Ak map to 0 and
+hence are in Λ. In the latter, we may assume that Fn maps p to 0 and all
+other points in a neighborhood of p into the negative real axis. But then Fn
+has a maximum at p so that (Fn) (p) = 0. By the chain rule, we must have
+F (Fi(p)) = 0 for some i &lt; n. Hence Fi(p) = 1/2. But then Fi+1(p)  ∈ I
+and so Fn(p)→−∞, contradicting the fact that Fn(p) = 0.
+Hence we have proved
+Theorem 5.6. If μ &gt; 2 +
+√
+5, then Λ is a Cantor set.
+Remark. The theorem is true for μ &gt; 4, but the proof is more delicate.
+We have now succeeded in understanding the gross behavior of orbits of
+Fμ when μ &gt; 4. Either a point tends to −∞ under iteration of Fμ, or else
+its entire orbit lies in Λ. Hence we understand the orbit of a point under Fμ
+perfectly well as long as the point does not lie in Λ. In the next section, we
+will complete the analysis of the dynamics of Fμ by analyzing the dynamics
+of Fμ on Λ.
+When μ &gt; 2 +
+√
+5, we have shown that <a href="#id65"><span class="problematic" id="id66">|F
+μ(x)|</span></a> &gt; 1 on I0 ∪ I1. This
+implies that <a href="#id67"><span class="problematic" id="id68">|F
+μ(x)|</span></a> &gt; 1 on Λ. This is a condition similar to the hyperbolicity
+condition of Åò3, except that we require <a href="#id69"><span class="problematic" id="id70">|F
+μ(x)|</span></a>  = 1 on a whole set, not just
+at a periodic point. This motivates the definition of a hyperbolic set:
+Definition 5.7. A set Γ ⊂ R is a repelling (resp. attracting) hyperbolic
+set for f if Γ is closed, bounded and invariant under f and there exists an
+N &gt;0 such that <a href="#id71"><span class="problematic" id="id72">|(fn) (x)|</span></a> &gt; 1 (resp. &lt; 1) for all n ≥ N and all x ∈ Γ.
+The Cantor set Λ for the quadratic map when μ &gt; 2+
+√
+5 is of course a
+repelling hyperbolic set with N = 1.
+Exercises
+1. Prove that F2(x) = 2x(1 − x) satisfies: if 0 &lt; x &lt; 1, then Fn
+2 (x) →
+1/2 as n→∞.
+2. Sketch the graph of Fn
+4 (x) on the unit interval, where F4(x) = 4x(1−x).
+Conclude that F4 has at least 2n periodic points of period n.
+3. Sketch the graph of the tent map
+T2(x) =</p>
+<p>2x 0 ≤ x ≤ 1/2
+2 − 2x 12
+≤ x ≤ 1
+on the unit interval. Use the graph of Tn
+2 to conclude that T2 has exactly 2n
+periodic points of period n.</p>
+<ol class="arabic simple" start="4">
+<li><p>Prove that the set of all periodic points of T(x) are dense in [0, 1].</p></li>
+</ol>
+<p>5. Sketch the graph of the baker map
+B(x) =</p>
+<p>2x 0 ≤ x &lt; 1/2
+2x −1 1/2 ≤ x &lt; 1 .
+How many periodic points of period n does B have?
+6. The following exercises deal with the family of functions F(x) = x3−λx
+for λ &gt; 0.
+a. Find all periodic points and classify them when 0 &lt; λ &lt; 1.
+b. Prove that, if <a href="#id73"><span class="problematic" id="id74">|x|</span></a> is sufficiently large, then <a href="#id75"><span class="problematic" id="id76">|fn(x)|</span></a> →∞.
+c. Prove that if λ is sufficiently large, then the set of points which do
+not tend to infinity is a Cantor set.
+7. Prove that the Cantor Middle-Thirds set described in Example 5.5 is
+closed, nonempty, perfect, and totally disconnected.
+8. Show that, at the nth stage of the construction of the Cantor Middle-
+Thirds set, the sum of the lengths of the remaining intervals is
+1 − 1
+3
+  n
+i=1
+ 2
+3
+ i−1
+.
+Conclude that the sum of the lengths of these intervals tends to 0 as n→∞.
+9. Construct a Middle-Fifths Cantor set in which the middle fifth of each
+remaining subinterval of the unit interval is removed. What can be said
+about the sum of the lengths of the remaining intervals in this case?
+10. Let Γ be the Cantor Middle-Thirds set. Prove that the linear map
+L(x) = 3x maps Γ ∩ [0, 13
+] homeomorphically onto Γ.
+11. Generalize Exercise 10 to show that the portion of Γ contained in an
+interval remaining at the nth stage of the construction of Γ is homeomorphic
+to Γ.
+Åò1.6 SYMBOLIC DYNAMICS
+Our goal in this section is to give a model for the rich dynamical structure
+of the quadratic map on the Cantor set Λ discussed in the previous section.
+To do this we will set up a model mapping which is completely equivalent
+to F. At first, this model may seem artificial and unintuitive. But, as we go</p>
+<p>along, it will become clear that such symbolic models describe the dynamics
+of F completely and also in the simplest possible way.
+We need a “space” on which our model map will act. The points in
+this space will be infinite sequences of 0’s and 1’s. We don’t worry about
+convergence of these sequences; rather, the difficult notion here is to imagine
+such an infinite sequence as representing a single “point” in space.
+Definition 6.1. Σ2 = {s = (s0s1s2 . . .)|sj = 0 or 1}.
+Σ2 is called the sequence space on the two symbols 0 and 1. More generally,
+we can consider the space Σn consisting of infinite sequences of integers
+between 0 and n − 1. Elements of Σ2 are infinite strings of integers, like
+(000...) or (0101...). We may make Σ2 into a metric space as follows. For
+two sequences s = (s0s1s2 . . .) and t = (t0t1t2 . . .), define the distance between
+them by
+d[s, t] =
+∞
+i=0
+<a href="#id77"><span class="problematic" id="id78">|si − ti|</span></a>
+2i
+Since <a href="#id79"><span class="problematic" id="id80">|si − ti|</span></a> is either 0 or 1, this infinite series is dominated by the
+geometric series
+∞
+i=0
+1
+2i = 2
+and therefore it converges.
+For example, if s = (000...) and t = (111...), then d[s, t] = 2. If r =
+(1010...), then
+d[s, r] =
+∞
+i=0
+1
+22i =
+1
+1 − 14
+=
+4
+3.
+Proposition 6.2. d is a metric on Σ2.
+Proof. Clearly, d[s, t] ≥ 0 for any s, t ∈ Σ2, and d[s, t] = 0 iff si = ti for all
+i. Since <a href="#id81"><span class="problematic" id="id82">|si − ti|</span></a> = <a href="#id83"><span class="problematic" id="id84">|ti − si|</span></a>, it follows that d[s, t] = d[t, s]. Finally, if r, s,
+and t ∈ Σ2, then <a href="#id85"><span class="problematic" id="id86">|ri − si|</span></a> + <a href="#id87"><span class="problematic" id="id88">|si − ti|</span></a> ≥ <a href="#id89"><span class="problematic" id="id90">|ri − ti|</span></a> from which we deduce that
+d[r, s] + d[s, t] ≥ d[r, t].
+q.e.d.
+The metric d allows us to decide which subsets of Σ2 are open and which
+are closed, as well as which sequences are close to each other.</p>
+<p>Proposition 6.3. Let s, t ∈ Σ2 and suppose si = ti for i = 0, 1, . . . , n. Then
+d[s, t] ≤ 1/2n. Conversely, if d[s, t] &lt; 1/2n, then si = ti for i ≤ n.
+Proof. If si = ti for i ≤ n, then
+d[s, t] =
+ n
+i=0
+<a href="#id91"><span class="problematic" id="id92">|si − si|</span></a>
+2i +
+∞
+i=n+1
+<a href="#id93"><span class="problematic" id="id94">|si − ti|</span></a>
+2i
+≤
+∞
+i=n+1
+1
+2i =
+1
+2n .
+On the other hand, if sj  = tj for some j ≤ n, then we must have
+d[s, t] ≥ 1
+2j
+≥ 1
+2n
+consequently, if d[s, t] &lt; 1/2n, then si = ti for i ≤ n.
+q.e.d.
+The importance of this result is that we can decide quickly whether or
+not two sequences are close to each other. Intuitively, this result says that
+two sequences in Σ2 are close provided their first few entries agree. We now
+define the most important ingredient in symbolic dynamics, the shift map
+on Σ2.
+Definition 6.4. The shift map σ: Σ2 → Σ2 is given by σ(s0s1s2 . . .) =
+(s1s2s3 . . .).
+The shift map simply “forgets” the first entry in a sequence, and shifts
+all other entries one place to the left. Clearly, σ is a two-to-one map of Σ2,
+as s0 may be either 0 or 1. Moreover, in the metric defined above, σ is a
+continuous map.
+Proposition 6.5. σ:Σ2 → Σ2 is continuous.
+Proof. Let   &gt; 0 and s = s0s1s2 . . .. Pick n such that 1/2n &lt;  . Let
+δ = 1/2n+1. If t = t0t1t2 . . . satisfies d[s, t] &lt; δ, then by Proposition 6.3 we
+have si = ti for i ≤ n + 1. Hence the ith entries of σ(s) and σ(t) agree for
+i ≤ n. Therefore d[σ(s), σ(t)] ≤ 1/2n &lt;  .
+q.e.d.
+In the next section, we will show that the shift map is an exact model
+for the quadratic map Fμ when μ &gt; 4. Here we will simply show that
+the dynamics of σ can be understood completely. For example, periodic</p>
+<p>points correspond exactly to repeating sequences, i.e., sequences of the form
+s = (s0 . . . sn−1, s0 . . . sn−1, s0 . . . sn−1 . . .). Hence there are 2n periodic points
+of period n for σ, each generated by one of the 2n finite sequence of 0’s and
+1’s of length n.
+Eventually periodic points are equally abundant and easy to recognize.
+For example, any sequence of the form (s0 . . . sn1111 . . .) is eventually fixed,
+while any eventually repeating sequence is eventually periodic for σ.
+Another interesting fact about σ is that periodic points form a dense
+subset of Σ2. Recall that a subset is dense in Σ2 provided its closure is the
+entire space Σ2. To prove that Per(σ) is dense, we must produce a sequence of
+periodic points τn which converge to an arbitrary point s = (s0s1s2 . . .) in Σ2.
+We define the sequence τn = (s0 . . . sn, s0 . . . sn, . . .), i.e., τn is the repeating
+sequence whose entries agree with s up to the nth entry. By Proposition 6.3,
+d[τn, s] ≤ 1/2n, so that we have τn → s.
+Of course, not all points in Σ2 are periodic or eventually periodic. Any
+non-repeating sequence can never be periodic. In fact, the non-periodic
+sequences greatly outnumber the periodic sequences in Σ2. Moreover, there
+are non-periodic orbits in Σ2 which wind densely about Σ2, i.e., the closure
+of the orbit is Σ2 itself. Another way to say this is there are points in Σ2
+whose orbit comes arbitrarily close to any given sequence in Σ2. To see this,
+consider
+s∗ = (  0  1
+1blocks
+| 00 01 10 11
+2blocks
+| 000 001 . . .</p>
+<p>3blocks
+| ...</p>
+<p>4blocks
+).
+s∗ is constructed by successively listing all blocks of 0’s and 1’s of length n,
+then length n+1, etc. Clearly, some iterate of σ applied to s∗ yields a sequence
+which agrees with any given sequence in an arbitrarily large number
+of places. Mappings which have dense orbits are called topologically transitive.
+Let us list these properties of σ:
+Proposition 6.6.
+1. The cardinality of Pern(σ) is 2n.
+2. Per(σ) is dense in Σ2.
+3. There exists a dense orbit for σ in Σ2.
+In the next section, we will show that the shift map on Σ2 is in fact the
+“same” map as f on Λ.
+Symbolic dynamics is one of the main themes of this book. It will appear
+in various guises throughout, including later in this chapter when we</p>
+<p>introduce subshifts of finite type and also the kneading theory to describe
+the dynamics of Fμ when μ &lt; 4.
+Exercises
+1. Let
+s = (001 001 001 . . .)
+t = (01 01 01 . . .)
+r = (10 10 10 . . .).
+Compute:
+a. d[s, t]
+b. d[t, r]
+c. d[s, r].
+2. Identify all sequences in Σ2 which are periodic points of period 3 for σ.
+Which sequences lie on the same orbit under σ?
+3. Rework Exercise 2 for periods four and five.
+4. Let Σ  consist of all sequences in Σ2 satisfying: if sj = 0 then sj+1 = 1.
+In other words, Σ  consists of only those sequences in Σ2 which never have
+two consecutive zeros.
+a. Show that σ preserves Σ  and that Σ  is a closed subset of Σ.
+b. Show that periodic points of σ are dense in Σ .
+c. Show that there is a dense orbit in Σ .
+d. How many fixed points are there for σ, σ2, σ3 in Σ  ?
+e. Find a recursive formula for the number of fixed points of σn in terms
+of the number of fixed points of σn−1 and σn−2.
+5. Let ΣN consist of all sequences of natural numbers 1, 2, . . . , N. There is
+a natural shift on ΣN.
+a. How many periodic points does σ have in ΣN ?
+b. Show that σ has a dense orbit in ΣN.
+6. Let s ∈ Σ2. Define the stable set of s, Ws(s), to be the set of sequences
+t such that d[σi(s), σi(t)] → 0 as i → ∞. Identify all of the sequences in
+Ws(s).</p>
+<p>Åò1.7 TOPOLOGICAL CONJUGACY
+The goal of this section is to relate the shift map discussed in the previous
+section to the quadratic map Fμ(x) = μx(1 − x) when μ is sufficiently
+large. Recall that all points in R tend to −∞ under iteration of Fμ with
+the exception of those points in the Cantor set Λ. In order to complete the
+description of the dynamics of Fμ, we must then understand the restriction
+of Fμ to Λ.
+Recall first that Λ ⊂ I0 ∪I1. If x ∈ Λ, then all points on the orbit of x lie
+in Λ and hence in one of these two intervals. We can thus get a rough idea
+of the behavior of the orbit by noting in which of these intervals the various
+iterates of x fall. Accordingly, we make the following definition.
+Definition 7.1. The itinerary of x is a sequence S(x) = s0s1s2 . . . where
+sj = 0 if Fjμ
+(x) ∈ I0, sj = 1 if Fjμ
+(x) ∈ I1.
+Thus the itinerary of x is an infinite sequence of 0’s and 1’s. That is,
+S(x) is a point in the sequence space Σ2. We think of S as a map from Λ to
+Σ2. This map has several interesting properties.
+Theorem 7.2. If μ &gt; 2 +
+√
+5, then S : Λ → Σ2 is a homeomorphism.
+Proof. We first show that S is one-to-one. Let x, y ∈ Λ and suppose S(x) =
+S(y). Then, for each n, Fn
+μ (x) and Fn
+μ (y) lie on the same side of 1/2.
+This implies that Fμ is monotonic on the interval between Fn
+μ (x) and Fn
+μ (y).
+Consequently, all points in this interval remain in I0 ∪ I1. This contradicts
+the fact that Λ is totally disconnected.
+To see that S is onto, we first introduce the following notation. Let J ⊂ I
+be a closed interval. Let
+F
+−n
+μ (J) = {x ∈ I|Fn
+μ (x) ∈ J}.
+In particular, F−1
+μ (J) denotes the preimage of J. Observe that, if J ⊂ I is a
+closed interval, then F−1
+μ (J) consists of two subintervals, one in I0 and one
+in I1. See Fig. 7.1.</p>
+<p>Now let s = s0s1s2 . . . . We must produce x ∈ Λ with S(x) = s. To that
+end we define
+Is0s1...sn = {x ∈ I|x ∈ Is0, Fμ(x) ∈ Is1, . . . , F n
+μ (x) ∈ Isn
+}
+= Is0
+∩ F
+−1
+μ (Is1) ∩ . . . ∩ F
+−n
+μ (Isn).
+We claim that the Is0...sn form a nested sequence of nonempty closed intervals
+as n→∞. Note that
+Is0s1...sn = Is0
+∩ F
+−1
+μ (Is1...sn).
+By induction, we may assume that Is1...sn is a nonempty subinterval, so that,
+by the observation above, F−1
+μ (Is1...sn) consists of two closed intervals, one
+in I0 and one in I1. Hence Is0
+∩ F−1
+μ (Is1...sn) is a single closed interval.
+These intervals are nested because
+Is0...sn = Is0...sn−1
+∩ F
+−n
+μ (Isn) ⊂ Is0...sn−1 .
+Therefore we conclude that
+n≥0
+Is0s1...sn
+is nonempty. Note that if x ∈ ∩n≥0Is0s1...sn, then x ∈ Is0 , Fμ(x) ∈ Is1, etc.
+Hence S(x) = (s0s1 . . .). This proves that S is onto.</p>
+<p>Note that ∩n≥0Is0s1...sn consists of a unique point. This follows immediately
+from the fact that S is one-to-one. In particular, we have that
+diam Is0s1...sn
+→ 0 as n→∞.
+Finally, to prove continuity of S, we choose x ∈ Λ and suppose that
+S(x) = s0s1s2 . . . . Let   &gt; 0. Pick n so that 1/2n &lt;  . Consider the closed
+subintervals It0t1...tn defined above for all possible combinations t0t1 . . . tn.
+These subintervals are all disjoint, and Λ is contained in their union. There
+are 2n+1 such subintervals, and Is0s1...sn is one of them. Hence we may choose
+δ such that <a href="#id95"><span class="problematic" id="id96">|x − y|</span></a> &lt; δ and y ∈ Λ implies that y ∈ Is0s1...sn. Therefore, S(y)
+agrees with S(x) in the first n + 1 terms. Hence, by Proposition 6.3,
+d[S(x), S(y)] &lt;
+1
+2n &lt;  .
+This proves the continuity of S. It is easy to check that S−1 is also continuous.
+Thus, S is a homeomorphism.
+q.e.d.
+This theorem shows that, as sets, Λ and Σ2 are the same. More importantly,
+the coding S also gives an equivalence between the dynamics of Fμ
+on Λ and σ on Σ2. This is the content of the following theorem.
+Theorem 7.3. S ◦ Fμ = σ ◦ S.
+Proof. A point x in Λ may be defined uniquely by the nested sequence of
+intervals
+n≥0
+Is0s1...sn...
+determined by the itinerary S(x). Now
+Is0...sn = Is0
+∩ F
+−1
+μ (Is1) ∩ . . . ∩ F
+−n
+μ (Isn)
+so that Fμ(Is0...sn) may be written
+Is1
+∩ F
+−1
+μ (Is2) ∩ . . . F
+−n+1
+μ (Isn) = Is1...sn ,
+since Fμ(Is0) = I. Hence
+SFμ(x) = SFμ</p>
+<p>∩∞
+n=0Is0s1...sn</p>
+<p>= S</p>
+<p>∩∞
+n=1Is1...sn</p>
+<p>= s1s2... = σS(x).</p>
+<p>Definition 7.4. Let f:A → A and g:B → B be two maps. f and g are said
+to be topologically conjugate if there exists a homeomorphism h:A → B such
+that, h ◦ f = g ◦ h. The homeomorphism h is called a topological conjugacy.
+Mappings which are topologically conjugate are completely equivalent in
+terms of their dynamics. For example, if f is topologically conjugate to g via
+h, and p is a fixed point for f, then h(p) is fixed for g. Indeed, h(p) = hf(p) =
+gh(p). Similarly, h gives a one-to-one correspondence between Pern(f) and
+Pern(g). One may also check that eventually periodic and asymptotic orbits
+for f go over via h to similar orbits for g, and that f is topologically transitive
+if and only if g is. In particular, since Fμ on Λ is topologically conjugate
+to the shift, we have now proved that the quadratic map enjoys the striking
+properties we uncovered so easily for σ in the last section. These may be
+summarized as follows.
+Theorem 7.5. Let Fμ(x) = μx(1 − x) with μ &gt; 2 +
+√
+5. Then
+1. The cardinality of Pern(Fμ) is 2n.
+2. Per(Fμ) is dense in Λ.
+3. Fμ has a dense orbit in Λ.
+This Theorem shows the power of symbolic dynamics and topological
+conjugacy. Actually computing the 2n periodic points of period n for Fμ
+is a hopeless task. But topological conjugacy guarantees that these orbits
+are there, and, moreover, symbolic dynamics gives a rough measure of the
+complexity of the orbits in Λ. Thus these two notions provide justification
+for our statement that the shift map is an accurate model for the quadratic
+map.
+Exercises
+1. Let Qc(x) = x2 + c. Prove that if c &lt; 1/4, there is a unique μ &gt; 1 such
+that Qc is topologically conjugate to Fμ(x) = μx(1 − x) via a map of the
+form h(x) = αx + β.
+2. A point p is a non-wandering point for f, if, for any open interval J
+containing p, there exists x ∈ J and n &gt; 0 such that fn(x) ∈ J. Note
+that we do not require that p itself return to J. Let Ω(f) denote the set of
+non-wandering points for f.
+a. Prove that Ω(f) is a closed set.
+b. If Fμ is the quadratic map with μ &gt; 2 +
+√
+5, show that Ω(Fμ) = Λ.
+c. Identify Ω(Fμ) for each μ satisfying 0 &lt; μ ≤ 3.</p>
+<p>3. A point p is recurrent for f if, for any open interval J about p, there
+exists n &gt; 0 such that fn(p) ∈ J. Clearly, all periodic points are recurrent.
+a. Give an example of a non-periodic recurrent point for Fμ when μ &gt;
+2 +
+√
+5.
+b. Give an example of a non-wandering point for Fμ which is not recurrent.
+4. Order of the periodic points. Let Γn denote the set of repeating sequences
+of period n in Σ2. Identify such a sequence with a finite string s1, . . . , sn of
+0’s and 1’s in the natural way. Under the topological conjugacy, each element
+of Γn corresponds to a unique point in I for a given value of μ &gt; 2 +
+√
+5.
+a. Prove that the order of these points in I is independent of μ &gt; 2+
+√
+5.
+Let N(s1, . . . , sn) denote the integer between 0 and 2n−1 corresponding
+to this order, numbering from left to right, i.e., N(0, . . . , 0) = 0.
+Let B(s1, . . . , sn) denote N in binary form. That is, B(s1, . . . , sn) =
+(a1, . . . , an) where aj = 0 or 1 and
+N(s1, . . . , sn) = a1 . 2n−1 + a2 . 2n−2 + . . . + an . 20.
+b. Use induction to prove that B is given by the following formula:
+aj =
+ j
+i=1
+sj mod 2.
+For example, the fixed point 1, 1, 1 ∈ Γ3 occupies position 5 on the
+real line since
+a1 = s1 = 1
+a2 = s1 + s2 = 0 mod 2
+a3 = s1 + s2 + s3 = 1 mod 2.
+c. List all points in Γn for n = 2, 3, 4 according to this ordering.
+d. Describe an algorithm for ordering the points in Γn knowing the
+ordering of Γn−1.</p>
+<p>Åò1.8 CHAOS
+The quadratic map exhibits in stunning fashion a phenomenon which
+is only partially understood: the chaotic behavior of orbits of a dynamical
+system. There are many possible definitions of chaos, ranging from measure
+theoretic notions of randomness in ergodic theory to the topological approach
+we will adopt here.
+Definition 8.1. f: J → J is said to be topologically transitive if for any
+pair of open sets U, V ⊂ J there exists k &gt; 0 such that fk(U) ∩ V  = ∅.
+Intuitively, a topologically transitive map has points which eventually
+move under iteration from one arbitrarily small neighborhood to any other.
+Consequently, the dynamical system cannot be decomposed into two disjoint
+open sets which are invariant under the map. Note that if a map possesses
+a dense orbit, then it is clearly topologically transitive. The converse is also
+true (for compact subsets of R or S1 ), but we will not prove it here since
+the proof depends on the Baire Category Theorem.
+Definition 8.2. f: J → J has sensitive dependence on initial conditions if
+there exists δ &gt; 0 such that, for any x ∈ J and any neighborhood N of x,
+there exists y ∈ N and n ≥ 0 such that <a href="#id97"><span class="problematic" id="id98">|fn(x) − fn(y)|</span></a> &gt; δ.
+Intuitively, a map possesses sensitive dependence on initial conditions if
+there exist points arbitrarily close to x which eventually separate from x by
+at least δ under iteration of f. We emphasize that not all points near x need
+eventually separate from x under iteration, but there must be at least one
+such point in every neighborhood of x. If a map possesses sensitive dependence
+on initial conditions, then for all practical purposes, the dynamics of
+the map defy numerical computation. Small errors in computation which are
+introduced by round-off may become magnified upon iteration. The results
+of numerical computation of an orbit, no matter how accurate, may bear no
+resemblance whatsoever with the real orbit.
+Example 8.3. The quadratic map μx(1 − x) with μ &gt; 2 +
+√
+5 possesses
+sensitive dependence on initial conditions on Λ. To see this, choose δ less
+than the diameter of A0, where A0 is the gap between I0 and I1. Let x, y ∈ Λ.
+If x  = y, then S(x)  = S(y), so the itineraries of x and y must differ in at</p>
+<p>least one spot, say the nth. But this means that Fn
+μ (x) and Fn
+μ (y) lie on
+opposite sides of A0, so that
+<a href="#id99"><span class="problematic" id="id100">|Fn
+μ (x) − Fn
+μ (y)|</span></a> &gt; δ.
+Example 8.4. An irrational rotation of the circle is topologically transitive
+but not sensitive to initial conditions, since all points remain the same
+distance apart after iteration.
+We turn now to one of the main themes of this book, the notion of a
+chaotic dynamical system. There are many possible definitions of chaos in
+a dynamical system, some stronger and some weaker than ours. We choose
+this particular definition because it applies to a large number of important
+examples and because, in many cases, it is easy to verify.
+Definition 8.5. Let V be a set. f: V → V is said to be chaotic on V if
+1. f has sensitive dependence on initial conditions.
+2. f is topologically transitive.
+3. periodic points are dense in V .
+To summarize, a chaotic map possesses three ingredients: unpredictability,
+indecomposability, and an element of regularity. A chaotic system is
+unpredictable because of the sensitive dependence on initial conditions. It
+cannot be broken down or decomposed into two subsystems (two invariant
+open subsets) which do not interact under f because of topological transitivity.
+And, in the midst of this random behavior, we nevertheless have an
+element of regularity, namely the periodic points which are dense.
+Example 8.6. f: S1 → S1 given by f(θ) = 2θ is chaotic. As we have
+seen, the angular distance between two points is doubled upon iteration
+of f. Hence f is sensitive to initial conditions. Topological transitivity also
+follows from this observation since any small arc in S1 is eventually expanded
+by some fk to cover all of S1 and, in particular, any other arc in S1. The
+density of periodic points was established in Åò1.3. We remark that this map
+possesses a strong form of sensitive dependence called expansiveness.
+Definition 8.7. f: J → J is expansive if there exists ν &gt; 0 such that, for
+any x, y ∈ J, x  = y, there exists n such that <a href="#id101"><span class="problematic" id="id102">|fn(x) − fn(y)|</span></a> &gt; ν.
+Expansiveness differs from sensitive dependence in that all nearby points
+eventually separate by at least ν.
+Example 8.8. The quadratic maps Fμ(x) = μx(1 − x) are chaotic on Λ
+when μ &gt; 2 +
+√
+5.</p>
+<p>This example differs markedly from the previous example in that the
+chaos is confined to a small subset of I, namely the Cantor set Λ. A much
+larger chaotic region for a quadratic map is given by the following example.
+Example 8.9. F4(x) = 4x(1 − x) is chaotic on the interval I = [0, 1].
+Proof. Let g(θ) = 2θ be the map on S1 discussed in Example 8.6. Define
+h1: S1 → [−1, 1] by h1(θ) = cosθ. That is, h1 is just projection from S1 to
+the x-axis. Let q(x) = 2x2 − 1. Then we have
+h1 ◦ g(θ) = cos(2θ)
+= 2cos2 θ − 1
+= q ◦ h1(θ)
+so that h1 conjugates g with q. Now q is also topologically conjugate to F4.
+Indeed, if h2(t) = 12
+(1−t), then we have F4 ◦ h2 = h2 ◦ q. Hence we have the
+following diagram
+S1 g
+−→ S1
+h1
+h1
+[−1, 1] q
+−→ [−1, 1]
+h2
+h2
+[0, 1] F4
+−→ [0, 1].
+It follows immediately that F4 is topologically transitive, for if U and V are
+two open intervals in I, we may choose open arcs ˆU and ˆ V in S1 which project
+onto U and V under h2 ◦ h1. Since there exists k such that gk(ˆU ) ∩ ˆ V  = ∅,
+we therefore have Fk
+4 (U) ∩ V  = ∅.
+To prove sensitive dependence, we note that any neighborhood U of x ∈ I
+“lifts” to ˆU in S1. There exists n such that gn(ˆU ) covers S1, so Fn
+4 (U) covers
+I as well. Hence there are points in U which move at least δ = 1/2 away from
+x. Finally, density of periodic points for g implies that there is a g-periodic
+point in ˆU . The projection of this point in U is clearly F4-periodic.
+The technique introduced in this Example can also be used to produce
+other examples of maps which are chaotic on an interval. The so-called
+Tchebycheff polynomials are important classical examples which feature this
+type of behavior. See Exercises 1-3.
+We remark that the map h1 above is not a homeomorphism since it is a
+two-to-one at most points. Thus we have not shown that g(θ) = 2θ on S1</p>
+<p>and F4 are topologically conjugate. Rather, we say that these two maps are
+semi-conjugate.
+Exercises
+1. Use the method of Example 8.9 to prove that F(x) = 4x3−3x is chaotic
+on the interval [−1,1]. (Hint: consider g(θ) = 3θ on S1.)
+2. Prove that F(x) = 8x4 − 8x2 + 1 is chaotic on [−1, 1].
+3. The polynomial which is given as in Exercises 1 and 2 by projection of
+g(θ) = cosnθ onto the interval [−1, 1] is called the nth Tchebycheff polynomial,
+when properly normalized. Show that these polynomials satisfy the
+differential equation
+(1 − x2)y
+   − xy
+  + α2y = 0
+where α is a positive integer.
+4. Prove that T(x) = tanx is chaotic on the entire real line, despite the
+fact that there are a dense set of points at which an iterate of T fails to be
+defined.
+5. Prove that the baker map
+B(x) =
+2x 0 ≤ x ≤ 12 2x − 1 12
+≤ x ≤ 1
+is chaotic on [0, 1].
+The following exercises apply to the tent map
+T2(x) =
+2x 0 ≤ x ≤ 1/2
+2(1 − x) 1/2 ≤ x ≤ 1
+.
+Note that the maximum of T2 is 1 and occurs at x = 12
+. To describe the
+dynamics of T2 via symbolic dynamics, we thus need to modify Σ2 somewhat
+since there is an ambiguity in the sequence associated to any rational number
+of the form p/2k where p is an integer. For example, 1/2 may be described by
+either (11000...) or (01000...). To remedy this, we identify any two sequences
+of the form (s0 . . . sk−1∗1000...), where ∗ = 0 or 1. For example, the sequences
+(1101000...) and (1111000...) are to be thought of as representing the same
+point. Let Σ
+2 denote Σ2 with these identifications.
+6. Prove that S: I → Σ
+2 is one-to-one, where S(x) is defined as in Åò1.7.
+7. Prove that σ ◦ S = S ◦ T2.
+8. Prove that T2 has exactly 2n periodic points of period n.</p>
+<ol class="arabic simple" start="9">
+<li><p>Prove that T2 is chaotic on I.</p></li>
+</ol>
+<p>10. Prove that T2 is topologically conjugate to the quadratic map F4(x) =
+4x(1 − x).
+11. Construct a piecewise linear map on [0, 1] which is topologically conjugate
+to F(x) = 4x3 − 3x on [−1, 1].
+Åò1.9 STRUCTURAL STABILITY
+A very important notion in the study of dynamical systems is the stability
+or persistence of the system under small changes or perturbations. This is the
+concept of structural stability which we introduce in this section. Briefly, a
+map f is structurally stable if every “nearby” map is topologically conjugate
+to f and so has essentially the same dynamics. Clearly, we need to be precise
+about what nearby means, but the basic idea is simple. If, no matter how we
+perturb f or change f slightly, we get an equivalent dynamical system, then
+the dynamical structure of f is stable. Here, equivalent means topologically
+conjugate. If f and g are topologically conjugate, we will write f ∼ g.
+The notion of structural stability is extremely important in applications.
+Suppose our dynamical system is the solution of a differential equation or
+otherwise comes from a real world physical system. Ordinarily, the system
+itself will be only a model of real world phenomena: certain assumptions will
+have been made, and certain approximations and experimental errors will
+be present. Hence the dynamical system itself, albeit a completely accurate
+solution of the physical model, will nevertheless be only an approximation to
+reality since the model itself suffers this flaw. Now, if the dynamical system in
+question is not structurally stable, then the small errors and approximations
+made in the model have a chance of dramatically changing the structure of
+the real solution to the system. That is, our “solution” could be radically
+wrong or unstable. If, on the other hand, the dynamical system in question
+is structurally stable, then the small errors introduced by approximations
+and experimental errors may not matter at all: the solution to the model
+system may be equivalent or topologically conjugate to the actual solution.
+This does not mean that the only interesting physical systems are the
+structurally stable ones. Indeed, most dynamical systems that arise in classical
+mechanics are not structurally stable. There are also simple examples
+of systems such as the Lorenz system from meteorology that are “far” from
+being structurally stable. These systems cannot even be approximated in a</p>
+<p>sense to be made precise below by stable systems. Nevertheless, the concept
+of structural stability is an important one in applications of the theory of
+dynamical systems.
+To begin the discussion of structural stability, we need to make precise
+the notion of “nearness” of two functions.
+Definition 9.1. Let f and g be two maps. The C0-distance between f and
+g, written d0(f, g), is given by
+d0(f, g) = sup
+x∈R
+<a href="#id103"><span class="problematic" id="id104">|f(x) − g(x)|</span></a>.
+The Cr-distance dr(f, g) is given by
+dr(f, g) = sup
+x∈R
+(<a href="#id105"><span class="problematic" id="id106">|f(x) − g(x)|</span></a>, <a href="#id107"><span class="problematic" id="id108">|f
+ (x) − g
+ (x)|</span></a>, . . . , <a href="#id109"><span class="problematic" id="id110">|f(r)(x) − g(r)(x)|</span></a>).
+Intuitively, two maps are Cr-close provided they as well as their first r
+derivatives differ by only a small amount. We may also consider the Crdistance
+between two maps on an interval J ⊂ R by suitably restricting x
+and y. We caution the reader that dr does not give a useful metric on the set
+of all functions. Indeed, since the real line is unbounded, two maps can easily
+be infinitely far apart. Moreover, even if we assume this difficulty away, the
+resulting topology on the set of functions is nasty. Hence we will use the
+Cr-distance only as a measure of the proximity of two functions and not as
+a global metric on all maps.
+Example 9.2. f(x) = 2x and g(x) = (2+ )x have C0-distance infinity.
+But f(x) = 2x and g(x) = 2x +   are Cr-  apart for all r. Let J = [0, 10].
+Then f(x) = 2x and g(x) = (2+ )x are C0-10  apart (and, in fact, Cr-10
+apart) on the interval J.
+We will be primarily concerned with functions that are C1-close or, at
+most, C2-close. Fig. 9.1 illustrates the difference graphically between C0-
+close, C1-close, and C2-close.
+We now define Cr-structural stability.
+Definition 9.3. Let f: J → J. f is said to be Cr-structurally stable on J,
+if there exists   &gt; 0 such that whenever dr(f, g) &lt;   for g: J → J, it follows
+that f is topologically conjugate to g.
+Example 9.4. Let L(x) = 12
+x. Then L is C1-structurally stable on R. To
+see this, we must exhibit an   &gt; 0 such that, if d1(L, g) &lt;  , then L and
+g are topologically conjugate. We claim that any   &lt; 1/2 works. For if</p>
+<p>d1(L, g) &lt;  , then we must have 0 &lt; g (x) &lt; 1 for all x ∈ R. In particular,
+g(x) is everywhere increasing. Note also that g(x) has a unique attracting
+fixed point p in R and that all points in R tend to p under iteration. That
+g has a unique fixed point follows from the Mean Value Theorem: between
+any two fixed points of g must lie a point with derivative = 1, which cannot
+happen. Alternatively, since <a href="#id111"><span class="problematic" id="id112">|g (x)|</span></a> &lt; 1, g is a global contraction.
+This shows that L and g have the same dynamics, the basic idea behind
+structural stability. To be strictly precise, however, we must exhibit a
+topological conjugacy between L and g. To do this, we introduce the notion
+of a fundamental domain. This is best done by example. Consider the
+pair of intervals 5 &lt; <a href="#id113"><span class="problematic" id="id114">|x|</span></a> ≤ 10. Note that the L-orbit of any point in R
+(with the exception of 0) enters this set exactly once. For g, we may find
+a similar fundamental domain: indeed, it is easy to check that the intervals
+g(10) &lt; x ≤ 10 and −10 ≤ x &lt; g(−10) have the same property (Exercise 1.)
+We now construct a conjugacy h such that h ◦ L = g ◦ h. First define
+h: [5, 10] → [g(10), 10] and h: [−10,−5] → [−10, g(−10)] to be linear, i.e.,
+with a straight line graph. We require that h be increasing so that h(Å}10) =
+Å}10. (We remark that any other increasing homeomorphism works just as
+well.) We complete the definition of h as follows. Let x  = 0. There is an
+n ∈ Z such that Ln(x) belongs to the fundamental domain for L. Hence
+h◦Ln(x) is well-defined. We then set h(x) = g−n ◦h◦Ln(x). Note that h(x)
+is also well-defined, since g is a homeomorphism and so g−n makes sense.
+Clearly, we have gn ◦ h(x) = h ◦ Ln(x). Moreover, if we apply the same
+construction to L(x), we find that g ◦ h(x) = h ◦ L(x), as required. Finally,
+define h(0) = fixed point of g. It is easy to check that h as defined is a
+homeomorphism.</p>
+<p>Intuitively, a fundamental domain is visited exactly once by each orbit,
+except, of course, the fixed point. Hence we may define a conjugacy in
+virtually any way we please on the fundamental domain, and then extend
+in the only way possible by iterating the map. The only question is then
+whether or not we can extend the conjugacy to points whose orbits never
+enter the fundamental domain.
+We now return to the quadratic map Fμ(x) = μx(1 − x). As we saw in
+Åò1.5, all points tend to −∞ for this map with the exception of those in a set
+Λ on which Fμ is topologically conjugate to the shift. We claim that, if μ
+is large enough, then Fμ is C2-structurally stable. This may be proved by
+another fundamental domain argument.
+This is more complicated, but let us sketch the details. We first assume
+that μ &gt; 2 +
+√
+5, so that <a href="#id115"><span class="problematic" id="id116">|F
+μ(x)|</span></a> &gt; 1 on I0 ∪ I1. We will produce an   &gt; 0
+such that if g is C2-  close to Fμ, then g has the same dynamics as Fμ. Let
+us first choose  1 small enough so that if g is C2-  1 close to Fμ, then g   &lt; 0,
+i.e., so that the graph of g is concave down. This is clearly possible since
+F
+μ
+≡ −2μ. Next choose  2 &lt;  1 small enough so that if g is C1- 2 close to
+Fμ, then g has two fixed points, α and β, which satisfy
+1. α &lt; β,
+2. g (α) &gt; 1,
+3. g (β) &lt; −1.
+The fact that  2 may be chosen so that g has at most two fixed points follows
+from the concavity of the graph of g. The fact that g has at least two fixed
+points can be guaranteed by makingg C0-close to Fμ. Finally, the conditions
+on g  at the fixed points are controlled by the C1-distance of g from Fμ.
+Note that g has a unique critical point c and that there exist points α , β
+with g(α ) = α, g(β ) = β. The points α and α  play the same role as 0 and
+1 do for Fμ.
+We may finally choose   &lt;  2 such that, if g is C1-  close to Fμ, then
+g−1(α ) consists of a pair of points, a0 and a1, and moreover, if x ∈ [α, a0] ∪
+[a1, α ], then <a href="#id117"><span class="problematic" id="id118">|g (x)|</span></a> &gt; 1. Thus, if g is C2-  close (and therefore C0- and C1 -
+  close) to Fμ, then the graph of g has all of the qualitative properties of the
+graph of Fμ on the interval [α, α ]. See Fig. 9.2.
+More importantly, Fμ and g have the same dynamics. It follows immediately
+that if x &lt; α, then gn(x)→−∞. Similarly, if x &gt; α  or if x ∈ (a0, a1),
+then gn(x) → −∞ as well. A similar inductive procedure on the inverse
+images of (a0, a1) as in Åò1.5 shows that all points except those in a Cantor
+set Λg tend to −∞ eventually under iteration of g. On Λg , g is again topologically
+conjugate to the shift automorphism via arguments as in Åò1.5. We
+leave the details to the reader.</p>
+<p>To prove that Fμ ∼ g, we must construct fundamental domains for both
+Fμ and g in order to define the conjugacy. This can be accomplished as
+follows. First choose x0 &lt; min(g2(c), F2
+μ(c)). The intervals (Fμ(x0), x0) and
+(g(x0), x0) are easily seen to be fundamental domains for Fμ on R− and g
+on (−∞, α). The conjugacy may then be defined arbitrarily on (Fμ(x0), x0)
+and extended by h ◦ Fμ = g ◦ h to all of R−.
+We then extend h to the interval (1,∞) and finally to each An in the
+natural way. We remark that care must be taken on A0 since Fμ is two-toone
+on this interval. Once h is defined on all of R − Λ, we extend to Λ in
+the only way possible to make h a homeomorphism. We leave the tedious
+details to the reader.
+Alternatively, one can use the fact that both g on Λg and Fμ on Λ are
+topologically conjugate to the shift, hence to each other on these sets. The
+conjugacy may be extended off these sets by the above fundamental domain
+argument. In either event we have proved
+Theorem 9.5. The quadratic map Fμ(x) = μx(1 − x) is C2 structurally
+stable if μ &gt; 2 +
+√
+5.
+Perhaps more important than the question of when a given map is structurally
+stable is the converse question: when is it not structurally stable?
+One of the major ways a map can fail to be structurally stable occurs when
+there is a lack of hyperbolicity.
+Example 9.6. Let F0(x) = x−x2. Note that F0(0) = 0 and F
+0 (0) = 1, so 0
+is a non-hyperbolic fixed point. Consider F (x) = x − x2 +  . Clearly, F (x)</p>
+<p>is Cr-  close to F0. When   &gt; 0, F  is easily seen to have two fixed points,
+but when   &lt; 0, F  has none. Consequently, the F  do not have the same
+dynamics as F0 and therefore F0 is not structurally stable.
+Example 9.7. Let Tλ(x) = x3 − λx. For −1 &lt; λ ≤ 1, Tλ has three
+fixed points: at 0 and at Å}
+√
+λ + 1. All points between Å}
+√
+λ + 1 tend to
+the attracting fixed point at 0. When λ &gt; 1, this is no longer true. There
+exists x in the interval [−
+√
+λ + 1,
+√
+λ + 1] such that Tλ(x) = −x, i.e., the
+graph of Tλ crosses the line y = −x. Since Tλ(−x) = −Tλ(x), we also have
+Tλ(−x) = x, so that x is a periodic point of period 2. Hence the dynamics of
+Tλ is different for λ ≤ 1 and λ &gt; 1, so that T1 is not structurally stable. We
+remark that T−1 is also not structurally stable. See Exercise 2. Note that
+T
+1(0) = −1, so that the fixed point is again non-hyperbolic when structural
+stability fails to hold.
+A hyperbolic fixed point for f is C1 structurally stable locally. By this
+we mean there is a neighborhood of the fixed point and an   &gt; 0 such that,
+if a map g is C1-  close to f on this neighborhood, then f is topologically
+conjugate to g on this neighborhood. This fact is established in a series of
+exercises below. Along the way, we establish the one-dimensional version of
+Sternberg’s Theorem (sometimes called Hartman’s Theorem):
+Theorem 9.8. Let p be a hyperbolic fixed point for f and suppose f (p) = λ
+with <a href="#id119"><span class="problematic" id="id120">|λ|</span></a>  = 0, 1. Then there are neighborhoods U of p and V of 0 ∈ R and
+a homeomorphism h:U → R which conjugates f on U to the linear map
+L(x) = λx on V .
+Thus a map near a hyperbolic fixed point is always locally topologically
+conjugate to its derivative. This allows us to explain why we only require
+that the conjugacy map in the definition of topological conjugacy be a homeomorphism,
+not a diffeomorphism. Suppose f(p) = p and f (p) = λ. Let h
+be a diffeomorphism. Then g = h ◦ f ◦ h−1 has a fixed point at h(p), but we
+have
+g
+ (h(p)) = h
+ (f(p)) . f
+ (p) . (h
+−1) (h(p))
+= h
+ (p) . λ . 1
+h (p)
+= λ.
+Thus, the multiplier λ at the fixed point is preserved by differentiable conjugacies.
+As we have seen, maps may behave dynamically the same despite</p>
+<p>having different multipliers at the fixed points. Thus the weakened notion
+of topological conjugacy is more appropriate for our purposes.
+Exercises
+1. Suppose g(x) is as in Example 9.4. Prove that the intervals g(10) &lt; x ≤
+10 and −10 ≤ x &lt; g(−10) form a fundamental domain for g.
+2. Let T−1(x) = x3 + x. Prove that T−1 is not structurally stable.
+3. Let Tλ(x) = x3−λ(x). Prove that Tλ is structurally stable if −1 &lt; λ &lt; 0.
+4. Prove that Tλ0 is topologically conjugate to Tλ1 if −1 &lt; λ0, λ1 &lt; 0.
+5. Prove that F4(x) = 4x(1 − x) is not structually stable.
+6. Prove that S(x) = sin(x) is not structurally stable.
+7. Prove that, if f ∼ g via h and f has a local maximum at x0, then g has
+either a local maximum or minimum at h(x0).
+8. Give an example to show that we may have f ∼ g via h and x0 a local
+maximum for f and h(x0) a local minimum for g.
+9. Let Sλ(x) = λ sin(x). If 0 &lt; λ1 &lt; λ2 &lt; 1, prove that Sλ1
+∼ Sλ2 .
+10. Show, however, that neither Sλ1 nor Sλ2 is structurally stable.
+11. We may define a notion of linear structural stability for linear maps
+by replacing the notion of topological conjugacy by that of linear conjugacy.
+Two linear maps T1, T2:R → R are linearly conjugate if there is a linear
+map L such that T1 ◦ L = L ◦ T2. T1(x) = ax is linearly stable if there is
+a neighborhood N about a such that if b ∈ N, then T2(x) = bx is linearly
+conjugate to T1. Find all linearly stable maps and identify all elements of a
+given conjugacy class.
+12. (Sternberg’s Theorem) Let p be a hyperbolic fixed point for f with
+f (p) = λ and λ  = 0. Prove that f is locally topologically conjugate to its
+derivative map x → λx as described in Theorem 9.8.
+13. Combine Exercises 11 and 12 to prove that any small perturbation of
+a map near a hyperbolic fixed point is locally topologically conjugate to f.
+14. Let f: [0, 1] → [0, 1] be a diffeomorphism. Prove that, if f (x) &gt; 0, then
+f has only fixed points and no periodic points. Prove that, if f (x) &lt; 0, then
+f has a unique fixed point and all other periodic points have period two.
+15. A diffeomorphism f: [0, 1] → [0, 1] is called Morse-Smale if f has only
+hyperbolic periodic points. (Note that, since f is onto, the endpoints of [0, 1]
+are necessarily periodic.) Prove that a Morse-Smale diffeomorphism has only
+finitely many periodic points.</p>
+<ol class="arabic simple" start="16">
+<li><p>Prove that a Morse-Smale diffeomorphism of [0, 1] is structurally stable.</p></li>
+</ol>
+<p>17. Prove that the map f(x) = x3 + 34
+x is a Morse-Smale diffeomorphism
+on the interval [−12
+, 12
+].
+Åò1.10 SARKOVSKII’S THEOREM
+In this section, we will prove a remarkable theorem due to Sarkovskii.
+The theorem only holds for maps of the real line, but nevertheless is amazing
+for its lack of hypotheses (f is only assumed continuous) and strong conclusion.
+We caution the reader that, as this is our first major theorem, the
+material in this section is a little “heavier” than in previous sections. As a
+warmup, and also as a means of highlighting the importance of period three
+points, we will prove a special case.
+Theorem 10.1. Let f:R → R be continuous. Suppose f has a periodic
+point of period three. Then f has periodic points of all other periods.
+Proof. The proof will depend on two elementary observations. First, if I and
+J are closed intervals with I ⊂ J and f(I) ⊃ J, then f has a fixed point in I.
+This is, of course, a simple consequence of the Intermediate Value Theorem.
+See Fig. 10.1.</p>
+<p>The second observation is the following: suppose A0,A1, . . . , An are closed
+intervals and f(Ai) ⊃ Ai+1 for i = 0, . . . , n−1. Then there exists at least one
+subinterval J0 of A0 which is mapped onto A1. There is a similar subinterval
+in A1 which is mapped onto A2, and thus there is a subinterval J1 ⊂ J0
+having the property that f(J1) ⊂ A1 and f2(J1) = A2. Continuing in this
+fashion, we find a nested sequence of intervals which map into the various
+Ai in order. Thus there exists a point x ∈ A0 such that fi(x) ∈ Ai for each
+i. We say that f(Ai) covers Ai+1. See Exercise 1.
+To prove the Theorem, let a, b, c ∈ R and suppose f(a) = b, f(b) = c,
+and f(c) = a. We assume that a &lt; b &lt; c. The only other possibility,
+f(a) = c, is handled similarly. This situation arises in the quadratic map Fμ
+for sufficiently large μ, and even for some μ &lt; 4. In fact, we will exploit this
+fact later when we discuss the case μ = 3.839 in detail in Åò1.13. See Fig. 10.2.
+Let I0 = [a, b] and I1 = [b, c] and note that our assumptions imply
+f(I0) ⊃ I1 and f(I1) ⊃ I0 ∪ I1. The graph of f shows that there must be
+a fixed point for f between b and c. Similarly, f2 must have fixed points
+between a and b, and it is easy to see that at least one of these points must
+have period two. So we let n ≥ 2; our goal then is to produce a periodic
+point of prime period n &gt; 3.
+Inductively, we define a nested sequence of intervals A0,A1, . . . , An−2 ⊂
+I1 as follows. Set A0 = I1. Since f(I1) ⊃ I1, there is a subinterval A1 ⊂
+A0 such that f(A1) = A0 = I1. Then there is a subinterval A2 ⊂ A1
+such that f(A2) = A1, so that f2(A2) = A0 = I1. Continuing, we find</p>
+<p>a subinterval An−2 ⊂ An−3 such that f(An−2) = An−3. According to our
+second observation above, if x ∈ An−2, then f(x), f2(x), . . . , fn−2(x) ⊂ A0
+and, indeed, fn−2(An−2) = A0 = I1.
+Now since f(I1) ⊃ I0, there exists a subinterval An−1 ⊂ An−2 such that
+fn−1(An−1) = I0. Finally, since f(I0) ⊃ I1 we have, fn(An−1) ⊃ I1 so that
+fn(An−1) covers An−1. It follows from our first observations that fn has a
+fixed point p in An−1.
+We claim that p actually has prime period n. Indeed, the first n − 2
+iterations of p lie in I1, the (n − 1)st lies in I0, and the nth is p again. If
+fn−1(p) lies in the interior of I0 then it follows easily that p has prime period
+n. If fn−1(p) happens to lie on the boundary, then n = 2 or 3, and again we
+are done.
+q.e.d.
+This theorem is just the beginning of the story. Sarkovskii’s Theorem
+gives a complete accounting of which periods imply which other periods
+for continuous maps of R. Consider the following ordering of the natural
+numbers:
+3  5  7  . . .  2 . 3  2 . 5  . . .  22 . 3  22 . 5  . . .</p>
+<p>23 . 3  23 . 5  . . . . . .  23  22  2  1.
+That is, first list all odd numbers except one, followed by 2 times the odds, 22
+times the odds, 23 times the odds, etc. This exhausts all the natural numbers
+with the exception of the powers of two which we list last, in decreasing order.
+This is the Sarkovskii ordering of the natural numbers. Sarkovskii’s Theorem
+is:
+Theorem 10.2. Suppose f:R → R is continuous. Suppose f has a periodic
+point of prime period k. If k    in the above ordering, then f also has a
+periodic point of period  .
+Before proving this Theorem, we note several consequences.
+Remarks.
+1. If f has a periodic point whose period is not a power of two, then f necessarily
+has infinitely many period points. Conversely, if f has only finitely
+many periodic points, then they all necessarily have periods which are powers
+of two. This fact will reappear when we discuss the period-doubling route
+to chaos in a later section.
+2. Period 3 is the greatest period in the Sarkovskii ordering and therefore
+implies the existence of all other periods, as we saw above.</p>
+<p>3. The converse of Sarkovskii’s Theorem is also true! There are maps which
+have periodic points of period p and no “higher” period points according to
+the Sarkovskii ordering. We give several examples of this at the end of this
+section.
+We will give an elementary proof of Sarkovskii’s Theorem due to Block,
+Guckenheimer, Misiurewicz and Young. The proof rests mainly on the two
+observations which we used above. For two closed intervals, I1 and I2, we
+will introduce the notation I1 → I2 if f(I1) covers I2. If we find a sequence
+of intervals I1 → I2 → . . . → In → I1, then our previous observations show
+that there is a fixed point of fn in I1.
+We first assume that f has a periodic point x of period n with n odd
+and n &gt; 1. Suppose that f has no periodic points of odd period less than
+n. Let x1, . . . , xn be the points on the orbit of x, enumerated from left to
+right. Note that f permutes the xi. Clearly, f(xn) &lt; xn. Let us choose
+the largest i for which f(xi) &gt; xi. Let I1 be the interval [xi, xi+1]. Since
+f(xi+1) &lt; xi+1, it follows that f(xi+1) ≤ xi and so we have that f(I1) ⊃ I1.
+Therefore, I1 → I1.
+Since x does not have period 2, it cannot be that f(xi+1) = xi and
+f(xi) = xi+1 so that f(I1) contains at least one other interval of the form
+[xj, xj+1]. A priori, there may be several such intervals, but we will see below
+that in fact there is only one. Let O2 denote the union of intervals of the form
+[xj, xj+1] that are covered by f(I1). Hence we have O2 ⊃ I1 but O2  = I1,
+and if I2 is any interval in O2 of the form [xj, xj+1], then I1 → I2.
+Now let O3 denote the union of intervals of the form [xj, xj+1] that
+have the property that they are covered by the image of some interval in
+O2. Continuing inductively, we let O +1 be the union of intervals that are
+covered by the image of some interval in O . Note that, if I +1 is any interval
+in O +1, there is a collection of intervals I2, . . . , I  with Ij ⊂ Oj which satisfy
+I1 → I2 → . . . → I  → I +1.
+Now the O  form an increasing union of intervals. Since there are only
+finitely many xj , it follows that there is an   for which O +1 = O . For
+this   we must have that O  contains all intervals of the form [xj, xj+1], for
+otherwise x would have period less than n.
+We claim that there is at least one interval [xj, xj+1] different from I1 in
+some Ok whose image covers I1. This follows since there are more xi’s on
+one side of I1 than on the other (n is odd.) Hence some xi’s must change
+sides under the action of f, and some must not. Consequently, there is at
+least one interval whose image covers I1.
+Now let us consider chains of intervals I1 → I2 → . . . → Ik → I1 where
+each I  is of the form [xj, xj+1] for some j and where I2  = I1. We do not</p>
+<p>assume that I  ⊂ O . By the above observations, there is at least one such
+chain. Let us choose the smallest k for which this happens, i.e., I1 → I2 →
+. . . → Ik → I1 is the shortest path from I1 to I1 except, of course, I1 → I1.
+We therefore find a diagram as in Fig. 10.3.
+Fig. 10.3.
+Now, if k &lt; n − 1, then one of the loops I1 → I2 → . . . → Ik → I1 or
+I1 → . . . → Ik → I1 → I1 gives a fixed point of fm with m odd and m &lt; n.
+This point must have prime period &lt; k since I1 ∩ I2 consists of only one
+point, and that point has period &gt;m. Therefore k = n − 1.
+Since k is the smallest integer that works, we cannot have I  → Ij for
+any j &gt;   + 1. It follows that the orbit of x must be ordered in R in one of
+two possible ways, as depicted in Fig. 10.4.
+It follows that we can extend the diagram depicted in Fig. 10.3 to that
+shown in Fig. 10.5. Sarkovskii’s Theorem for the special case of n odd is now
+immediate. Periods larger than n are given by cycles of the form I1 → . . . →
+In−1 → I1 → . . . I1. The smaller even periods are given by cycles of the form
+In−1 → In−2 → In−1,
+In−1 → In−4 → In−3 → In−2 → In−1
+and so forth. For the case of n even, we first note that f must have a periodic
+point of period 2. This follows from the above arguments provided we can</p>
+<p>guarantee that some xi’s change sides under f and some do not (use the facts
+that In−1 ← In−2 and In−1 → In−2). If this is not the case, then all of the
+xi’s must change sides and so f[x1, xi] ⊃ [xi+1, xn] and f[xi+1, xN] ⊃ [x1, xi].
+But then, our observation above produces a period 2 point in [x1, xi].
+Fig. 10.5.
+The Theorem now will be proved for n = 2m as follows. Let k = 2  with
+  &lt; m. Consider g = fk/2. By assumption, g has a periodic point of period
+2m− +1. Therefore, g has a point which has period 2. This point has period
+2  for f.The final case is now n = p . 2m where p is odd. This case can be
+reduced to the previous two. We leave these reductions as Exercises.
+q.e.d.</p>
+<p>We now turn to the converse of Sarkovskii’s Theorem. To produce a map
+with period 5 and no period 3, consider a map f: [1, 5] → [1, 5] which satisfies
+f(1) = 3
+f(3) = 4
+f(4) = 2
+f(2) = 5
+f(5) = 1
+so that 1 is periodic of period 5. Suppose that f is linear between these
+integers, i.e., the graph is as shown in Fig. 10.6.
+Fig. 10.6.
+It is easy to check that
+f3[1, 2] = [2, 5]
+f3[2, 3] = [3, 5]
+f3[4, 5] = [1, 4]
+so f3 has no fixed points in any of these intervals. It is true that f3[3, 4] =
+[1, 5] so that f3 has at least one fixed point in [3, 4]. But we claim that this
+point is unique, and therefore must be the fixed point for f, not the period
+3 point. Indeed, f: [3, 4] → [2, 4] is monotonically decreasing, as is f: [2, 4] →
+[2, 5] and f: [2, 5] → [1, 5]. Therefore f3 is monotonically decreasing on [3, 4]
+and the fixed point is unique.</p>
+<p>The graph, shown in Fig. 10.7, produces period 7 but not period 5.
+This process is easily generalized to give the first portion of the Sarkovskii
+ordering. For the even periods, we will introduce a trick. Let f: I → I be
+continuous. We will construct a new function F, the double of f, whose
+periodic points will have exactly twice the period of those of f, plus one
+additional fixed point. The procedure for producing F is as follows. Divide
+the interval I into thirds. Compress the graph of f into the upper left corner
+of I Å~ I as shown on Fig. 10.8.a. The rest of the graph is filled in as in
+Fig. 10.8.b.</p>
+<p>The map F is piecewise linear on [1/3, 2/3] and [2/3, 1]. Moreover,
+F(23
+) = 0, F(1) = 13
+, and F is continuous.
+Note that F maps [0, 13
+] into [23
+, 1] and vice versa. Also note that if
+x ∈ [13
+, 23
+] and x is not the fixed point, then there exists n so that Fn(x) ∈
+[0, 13
+]∪[23
+, 1]. This implies that there are no other F-periodic points in (13
+, 23
+).
+Exercise 7 shows that if x is a periodic point of period n for f, then x/3 is
+periodic of period 2n for F. On the other hand, if y is F-periodic then either
+y or F(y) lies in [0, 13
+] and Exercise 9 shows that 3y or 3F(y) is f-periodic.
+Thus to produce a map with period 10 but not period 6, we need only double
+the graph of a function with period 5 but not period 3.
+As a final remark, we must emphasize that Sarkovskii’s Theorem is very
+definitely only a one-dimensional result. There is no higher dimensional
+analogue of this result. In fact, the Theorem does not even hold on the
+circle. For example, the map which rotates all points on the circle by 120o
+makes all points periodic with period three. There are no other periods
+whatsoever.
+Exercises
+1. Suppose A0,A1, . . . , An are closed intervals and f(Ai) ⊃ Ai+1 for i =
+0, . . . , n −1. Prove that there exists a point x ∈ A0 such that fi(x) ∈ Ai for
+each i.
+2. Prove that if f has period p . 2m with p odd, then f has period q . 2m
+with q odd, q &gt; p.
+3. Prove that if f has period p.2m with p odd, then f has period 2 ,   ≤ m.
+4. Prove that if f has period p . 2m with p odd, then f has period q . 2m
+with q even.
+5. Construct a piecewise linear map with period 2n + 1.
+6. Give a formula for F(x) in terms of f(x), where F(x) is the double of
+f(x).
+7. Prove that F(x), the double of f(x), has a periodic point of period 2n
+at x/3 iff x has f-period n.
+8. Construct a map that has periodic points of period 2j for j &lt;   but not
+period 2 .
+9. Prove that if F(x), the double of f(x), has a periodic point p that is not
+fixed, then either p or F(p) lies in [0, 13
+]. Prove that, in this case, either 3p
+or 3F(p) is a periodic point for f.</p>
+<p>Åò1.11 THE SCHWARZIAN DERIVATIVE
+In this section, we describe a tool first introduced into the study of onedimensional
+dynamical systems by Singer in 1978. This is the Schwarzian
+derivative. Actually, the Schwarzian derivative plays an important role in
+complex analysis, where it is used as a criterion for a complex function to
+be a linear fractional transformation. In one-dimensional dynamics, the
+Schwarzian derivative is a valuable tool for a number of reasons. In this
+section, we will show how it may be used to establish an upper bound on
+the number of attracting periodic orbits that certain maps may have. We
+will also use it to prove that other maps have an entire interval on which the
+map is chaotic. Later, in ÅòÅò 17–19, the Schwarzian derivative will play an
+important role in our discussion of how families of maps like the quadratic
+family make the transition from simple to chaotic dynamics.
+Definition 11.1 The Schwarzian derivative of a function f at x is
+Sf(x) = f   (x)
+f (x)
+− 3
+2</p>
+<p>f  (x)
+f (x)
+ 2
+.
+For example, if Fμ(x) = μx(1−x) is our quadratic model mapping, then
+SFμ(x) = −6/(1 − 2x)2, so that SFμ(x) &lt; 0 for all x (even x = 1/2, the
+critical point, at which SFμ(x) = −∞).
+For us, functions with negative Schwarzian derivative will be most important.
+Besides the quadratic map, many other functions have negative
+Schwarzian derivatives. For example, S(ex) = −1/2 and S(sin x) = −1 −
+32
+(tan2 x) &lt; 0. Many polynomials have this property, as the following proposition
+shows.
+Proposition 11.2. Let P(x) be a polynomial. If all of the roots of P (x)
+are real and distinct, then SP &lt; 0.
+Proof. Suppose
+P
+ (x) =
+N
+i=1
+(x − ai)</p>
+<p>with the ai distinct and real. Then we have
+P
+  (x) =
+N
+j=1
+P (x)
+x − aj
+=
+N
+j=1
+ Ni
+=1(x − ai)
+x − aj
+P
+   (x) =
+N
+j=1
+N
+k=1
+k =j
+ Ni
+=1(x − ai)
+(x − aj)(x − ak).
+Hence we have
+SP(x) =</p>
+<p>j =k
+1
+(x − aj)(x − ak)
+− 3
+2
+  N
+j=1
+1
+x − aj
+ 2
+= −1
+2
+N
+j=1
+  1
+x − aj
+ 2
+−
+  N
+j=1
+1
+x − aj
+ 2
+&lt; 0.
+q.e.d.
+One of the most important properties of functions which have negative
+Schwarzian derivative is the fact that this property is preserved under composition.
+Proposition 11.3. Suppose Sf &lt; 0 and Sg &lt; 0. Then S(f ◦ g) &lt; 0.
+Proof. Using the chain rule, one computes that
+(f ◦ g)  (x) = f
+  (g(x)) . (g
+ (x))2 + f
+ (g(x)) . g
+  (x)
+and
+(f ◦ g)   (x) = f
+   (g(x)) . (g
+ (x))3 + 3f
+  (g(x)) . g
+  (x) . g
+ (x)
++f
+ (g(x)) . g
+   (x).
+It follows that
+S(f ◦ g)(x) = Sf(g(x)) . (g
+ (x))2 + Sg(x)
+so that S(f ◦ g)(x) &lt; 0.
+q.e.d.
+Of primary importance for us is the immediate consequence that, if Sf &lt;
+0, then Sfn &lt; 0 for all n &gt; 1. The assumption that Sf &lt; 0 has surprising
+implications for the dynamics of a one-dimensional map. One of the major
+results of this section is</p>
+<p>Theorem 11.4. Suppose Sf &lt; 0 ( Sf(x) = −∞ is allowed.) Suppose f has
+n critical points. Then f has at most n + 2 attracting periodic orbits.
+Remarks.
+1. The quadratic function Fμ(x) = μx(1−x) has one critical point (x = 1/2).
+Hence, for each μ there exists at most three attracting periodic orbits. There
+may, of course, be none, as is the case for μ &gt; 2 +
+√
+5. Later we will see
+that the number of attracting periodic orbits can be reduced to at most one.
+Since, for large μ, themap Fμ has infinitely many periodic orbits, it is indeed
+a surprise that at most one may be attracting.
+2. This presents a computational dilemma. Suppose Fμ has an attracting
+periodic cycle of period three. By Sarkovskii’s Theorem, Fμ must have periodic
+points of all other periods, but none of them can be attracting. On
+a computer, only attracting periodic points are “visible,” so this raises the
+question: where are all of the other periodic points in this case? We will
+return to this question in Åò1.13.
+3. The proofs below extend to non-hyperbolic periodic points as well. Consequently,
+the quadratic map Fμ has at most one periodic orbit which is not
+repelling.
+To prove Theorem 11.4, we first need several lemmas.
+Lemma 11.5. If Sf &lt; 0, then f (x) cannot have a positive local minimum
+or a negative local maximum.
+Proof. Suppose x0 is a critical point of f (x), i.e., f  (x0) = 0. Since Sf(x0) &lt;
+0, we have f   (x0)/f (x0) &lt; 0 so that f   (x0) and f (x0) have opposite signs.
+q.e.d.
+It follows that, between any two successive critical points of f , the graph
+of f (x) must cross the x-axis. In particular, there must be a critical point
+for f between these two points.
+Lemma 11.6. If f(x) has finitely many critical points, then so does fm(x).
+Proof. For any c, f−1(c) is a finite set of points, since, between any two
+preimages of c, there must be at least one critical point of f. It follows easily
+that f−m(c) = {x|fm(x) = c} is also a finite set.
+Now suppose (fm) (x) = 0. By the Chain Rule, we have
+(fm) (x) =
+m −1
+i=0
+f
+ (fi(x)).</p>
+<p>Hence for some i, 0 ≤ i ≤ m−1, fi(x) is a critical point of f. Therefore the
+set of critical points of fm is given by the union of inverse images of order
+less than m of the critical point set of f together with their orbits. By the
+above observation, this is a finite set of points.
+q.e.d.
+Lemma 11.7. Suppose f(x) has finitely many critical points and Sf &lt; 0.
+Then f has only finitely many periodic points of period m for any integer m.
+Proof. Let g = fm. Then periodic points of period m for f are fixed points
+for g. By Proposition 11.3, Sg &lt; 0.
+Suppose g has infinitely many fixed points. By the Mean Value Theorem,
+there are infinitely many points at which g (x) = 1. Between any three
+successive points for which g (x) = 1, there must be a point for which g  &lt; 1.
+Indeed, g (x) is not identically equal to one on an interval, for then Sg = 0
+contradicting the fact that Sg &lt; 0. Furthermore, by Lemma 11.5, g  cannot
+have a positive local minimum between these three points. Hence there must
+be points for which g  &lt; 0. Consequently, there are points for which g  = 0.
+But this implies that g has infinitely many critical points. This contradicts
+Lemma 11.6 and completes the proof.
+q.e.d.
+We now complete the proof of Theorem 11.4. Let p be an attracting
+periodic point of period m for f. Let W(p) be the maximal interval about p
+in which all points tend asymptotically to p under fm, i.e., W(p) is the connected
+component of {x|fmj(x) → p as j →∞} which contains p. Clearly,
+W(p) is an open interval, and fm(W(p)) ⊂ W(p).
+Let us suppose for the moment that p is fixed. Since f(W(p)) ⊂ W(p)
+and W(p) is maximal, it follows that either f preserves the endpoints of
+W(p) = ( , r), or one or both of   and r are infinite. In the finite case, there
+are three possibilities
+1. f( ) =   and f(r) = r;
+2. f( ) = r and f(r) =  ;
+3. f( ) = f(r).
+If f( ) =   and f(r) = r, then the graph of f shows that there exists a, b
+satisfying   &lt; a &lt; p &lt; b &lt; r and f (a) = f (b) = 1. Since f (p) &lt; 1 and f
+cannot have a positive local minimum (by Lemma 11.5), it follows that there
+exists a critical point in the interval (a, b). The second case follows similarly
+by considering f2. In case 3, f must have a minimum or maximum between
+  and r, so that there is a critical point in W(p) in this case as well. In the
+case of   and/or r infinite, this proof fails. However, these cases add at most
+two stable fixed points.</p>
+<p>If p is periodic, the same arguments produce a critical point for fm in
+W(p). One point on the orbit of this critical point must in fact be a critical
+point for f because of the chain rule.
+q.e.d.
+The above Theorem may be extended to the case of non-hyperbolic periodic
+points. Indeed, more can be said. If f(x) has a fixed point c with
+multiplier Å}1, and Sf &lt; 0, then c must attract points from at least one side,
+and, as above, there must be a critical point in W(c).
+To see this, we first assume that f (c) = 1 (otherwise consider f2). By
+Lemma 11.7, f has only finitely many fixed points. Hence there is an interval
+about c in which f has no other fixed points.
+Suppose that c is a “repelling” fixed point, i.e., for x &lt; c and near c,
+f(x) &lt; x and for y &gt; c, f(y) &gt; y. Clearly, f  has a local minimum value of
+1 in this case. This contradicts Lemma 11.5 and shows that either f(x) &gt; x
+for a &lt; x &lt; c or f(x) &lt; x for c &lt; x &lt; b. Graphical analysis then shows that
+c is attracting from at least one side. See Fig. 11.1.
+Fig. 11.1. g(x) &lt; x for a &lt; x &lt; c.
+The above proof shows that periodic points with bounded stable sets
+must attract a critical point. If the stable sets are unbounded, this need not
+be the case, as the following examples show.</p>
+<p>Example 11.8. Let A(x) = λ arctan(x) with λ &gt; 1.
+SA(x) = −2/(1 + x2)2 &lt; 0.
+The graph of A shows that there are two attracting fixed points with unbounded
+stable sets but no critical points. See Fig. 11.2.
+Fig. 11.2. The graph and phase portrait of
+A(x) = λ arctan x with λ &gt; 1.
+Example 11.9. Let E(x) = ex−1. E has a single fixed point at p = 1 which
+weakly attracts all points to the left but repels all points to the right. Again,
+E has no critical points. See Fig. 11.3.
+This example will play a prominent role in the next section, when we
+discuss bifurcation theory.
+For our quadratic map, the above theorem implies that there exists at
+most three attracting periodic orbits. However, since we know the behavior
+of these maps near ∞, we can say more.
+Corollary 11.10. Suppose Fμ(x) = μx(1 − x). Then there exists at most
+one attracting periodic orbit for each μ.
+Proof. We have shown that SFμ &lt; 0 and that, if <a href="#id121"><span class="problematic" id="id122">|x|</span></a> is sufficiently large, then
+<a href="#id123"><span class="problematic" id="id124">|Fn
+μ (x)|</span></a> → ∞. Hence there are no attracting periodic points with infinite
+stable sets.
+q.e.d</p>
+<p>There may, of course, be no attracting periodic orbits, as in the case of
+μ &gt; 2 +
+√
+5 or μ = 4.
+Thus, when a map has negative Schwarzian derivative, the orbits of the
+critical points play an important role in determining the dynamics. Later,
+when we discuss the kneading theory, we will see that the orbits of critical
+points control all of the dynamics. For now, let us return to the quadratic
+map F4(x) = 4x(1 − x). Recall that, in Example 8.9, we proved that F4 is
+chaotic on the unit interval. Since the critical point for this map is mapped
+onto a repelling fixed point, we know from the above considerations that F4
+cannot have an attracting periodic orbit. But the fact that SF4 &lt; 0 actually
+gives much more: using this fact, we may demonstrate that repelling periodic
+points are dense in I. Unlike the very special proof of this fact given in
+Example 8.9, this proof is considerably more general and applies to a wide
+variety of maps (see Exercises 1-2). We will use these ideas again much later
+when we discuss Julia sets of complex analytic dynamical systems.
+Recall that F4 has a repelling fixed point at p = 3/4. Let ˆp = 1/4.
+Clearly, F4(ˆp) = p. Let J denote the half-open, half-closed interval [ˆp, p). We
+will describe a “first return map” R on the interior of J −{1/2}. Intuitively,
+R(x) = Fn
+4 (x) where n is the smallest integer for which Fn
+4 (x) ∈ J. To
+define R precisely, we first note that F4 maps J onto the interval [3/4, 1].
+That is, if x ∈ J, F4(x)  ∈ J. Now F4 maps [3/4, 1] homeomorphically onto
+the interval [0, 3/4], so certain points in J are mapped back into J by F2
+4 .
+Indeed, a glance at Fig. 11.4 shows that there are two intervals I2 and ˆI2 in
+J which are mapped homeomorphically onto J by F2
+4 . Note that both I2</p>
+<p>and ˆI2 are half-open and half-closed intervals. We will define R(x) = F2
+4 (x)
+for x ∈ I2 ∪ ˆI2.
+If x ∈ J but x  ∈ I2 ∪ ˆI2, then F2
+4 (x) ∈ [0, 14
+). Since F4 is increasing on
+[0, 1/4) and F[0, 1/4) = [0, 3/4), it follows that as long as x  = 1/2, the orbit
+of x eventually returns to J. More precisely, if x ∈ J − {1/2} there exists a
+least integer n ≥ 2 for which Fn
+4 (x) ∈ J. Let φ(x) be this smallest integer;
+hence φ gives the “time” of first return to J. Note that φ = 2 on I2 ∪ ˆI2.
+More generally, we define
+In = {x ∈ (1/2, p)|φ(x) = n}
+ˆIn = {x ∈ [ˆp, 1/2)|φ(x) = n}.
+It is easy to check that In and ˆIn are half-open, half-closed intervals
+and that Fn
+4 maps In and ˆIn homeomorphically onto J. We therefore define
+R: J − {1/2} → J by
+R(x) = Fφ(x)
+4 (x).
+Fig. 11.5 shows the graph of R. We emphasize that R is not defined at 12
+and
+has infinitely many points of discontinuity, Nevertheless, a good understanding
+of the return map provides all of the information that we need about
+F4.
+The fact that each Fn
+4 has negative Schwarzian derivative allows us to
+observe that if K is any interval on which (Fn
+4 )   = 0, then the minimum</p>
+<p>value of <a href="#id125"><span class="problematic" id="id126">|(Fn
+4 ) (x)|</span></a> occurs at one of the endpoints of K. This then allows us
+to prove the following fundamental result.
+Proposition 11.11. <a href="#id127"><span class="problematic" id="id128">|R (x)|</span></a> &gt; 1 for each x ∈ J.
+Proof. We work in the right hand intervals In; the result for ˆIn follows by
+symmetry. Let Ik = [ k, rk). Let
+Wk =
+∞
+n&gt;k
+In.
+Wk is an open interval bounded by 1/2 and  k. We must show that (Fk
+4 ) (x) &gt;
+1 for  k ≤ x ≤ rk. By the above observation, since (Fk
+4 )   = 0 on Ik, it suffices
+to verify this condition at  k and rk.
+Now Fk
+4 maps Ik ∪Wk homeomorphically onto (0, p) and Ik onto (ˆp, p).
+Since the length of Ik is less than 1/4, it follows that there exists xk ∈ Ik
+with (Fk
+4 ) (xk) &gt; 1. Now Fk
+4 must map Wk onto (0, ˆp). Since the length
+of Wk is less than 1/4 as well, it follows that there exists x
+k
+∈ Wk with
+(Fk
+4 ) (x
+k) &gt; 1. Since (Fk
+4 )  cannot have a positive local minimum, it follows
+that (Fk
+4 ) ( k) &gt; 1, since x
+k &lt;  k &lt; xk.</p>
+<p>To show that (Fk
+4 ) (rk) &gt; 1 as well, we note that
+(Fk
+4 ) (rk) = F
+ 4
+(Fk−1
+4 (rk)) . (Fk−1
+4 ) (rk)
+= F
+ 4
+(ˆp) . (Fk−1
+4 ) ( k−1)
+&gt; 1
+since both terms in this product are &gt; 1. This completes the proof.
+q.e.d.
+To prove that repelling points are dense, let U be any interval in I. We
+must produce a repelling periodic point in U. To do this we will find an
+n &gt; 0 such that Fn
+4 (U) is an interval containing U. The result then follows.
+Since <a href="#id129"><span class="problematic" id="id130">|F
+4 (x)|</span></a> &gt; 1 if x  ∈ J, there is an n &gt; 0 and a subinterval U0 ⊂ U
+with V = Fn
+4 (U0) ⊂ J. Now R expands the lengths of intervals in J by
+Proposition 11.11. Hence there is a k &gt; 0 and a subinterval V0 ⊂ V such
+that Rk(V0) contains a discontinuity point of R. Hence there is an m &gt; 0
+such that p ∈ Fm
+4 (V0). By graphical analysis, any neighborhood of p is
+eventually expanded under iteration so that it covers I. In particular, there
+is k &gt; 0 for which Fm+k
+4 (V0) covers I. The result then follows easily.
+Remarks.
+1. The above argument can be used to prove both sensitive dependence on
+initial conditions and topological transitivity as well. See Exercise 4.
+2. To apply this method to other examples, we note that the crucial property
+that was used was that Fk
+4 expanded both Wk and Ik over (0, ˆp) and
+J respectively. This can often be verified by direct calculation or with a
+computer.
+Example 11.12. Similar methods prove that S(x) = 2π sin x is chaotic on
+the interval [0, 2π], since sin x has negative Schwarzian derivative.
+Example 11.13. There exists a c &lt; 0 for which the quadratic map Qc(x) =
+x2+c has the property that Q3c
+(0) is a repelling fixed point −p. Numerically,
+c ≈ −1.543689 and p ≈ 0.839268 . . . . The graph of Qc is depicted in Fig. 11.6.
+One may check that Qc has a repelling periodic point of period 2 at
+q ≈ .39039 . . . . The graph of Q2c
+on the interval [−p, p] is shown in Fig. 11.7.
+Note how Q2c
+resembles F4 on this interval and that S(Qc) &lt; 0. One may
+thus use the techniques of this section to prove that Qc is chaotic on [−p, p].
+We will return to this example much later when we take up complex analytic
+dynamics.</p>
+<p>As a remark, the techniques introduced in this section allow us to prove
+more than just the fact that the dynamics of a map are chaotic. Since repelling
+periodic points are dense, it follows that there can never be an interval</p>
+<p>which wanders around under iteration of the map and never reintersects itself.
+Such an interval is called a wandering interval. Thus we may exploit the
+fact that a map has negative Schwarzian derivative to rule out the possibility
+of wandering intervals in certain cases. As we shall see in Åò1.14, nontrivial
+wandering intervals may exist.
+Exercises
+1. Prove that the map S(x) = 2π sin x is chaotic on the interval [0, 2π].
+2. Let Qc(x) = x2 +c where c ≈ −1.543689 as discussed in Example 11.13.
+Prove that there is an interval on which this map is chaotic.
+3. Give an example of a polynomial with real coefficients which does not
+have negative Schwarzian derivative.
+4. Use the return map R to prove that F4(x) = 4x(1 − x) has sensitive
+dependence on initial conditions and is topologically transitive.
+Åò1.12 BIFURCATION THEORY</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/index2.html">Mathematical_Biology_I_An_Introduction_3E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynam_Systems_Applica_Mathematica_Stephen/index2.html">Dynam_Systems_Applica_Mathematica_Stephen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Exploration_Dynamical_Systems_Chaos_Argyris/index2.html">An_Exploration_Dynamical_Systems_Chaos_Argyris$</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sistemas_Dinamicos.html">Sistemas_Dinamicos</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney/c01.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

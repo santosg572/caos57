@@ -15,5 +15,11 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   Mathematical_Biology_I_An_Introduction_3E/prefacio
-   Mathematical_Biology_I_An_Introduction_3E/c01
+   Mathematical_Biology_I_An_Introduction_3E/index2
+   Dynam_Systems_Applica_Mathematica_Stephen/index2
+   An_Exploration_Dynamical_Systems_Chaos_Argyris/index2
+   An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney/index2
+   An_Introduction_Dynamical_Systems_and_Chaos/index2
+   An_Introduction_to_Complex_Systems/index2
+   Sistemas_Dinamicos
+

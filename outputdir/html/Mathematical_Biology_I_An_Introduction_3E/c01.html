@@ -7,13 +7,15 @@
 
     <title>c01 &#8212; документација Caos 01</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
     <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <link rel="index" title="Индекс" href="../genindex.html" />
     <link rel="search" title="Претрага" href="../search.html" />
+    <link rel="next" title="c02" href="../Dynam_Systems_Applica_Mathematica_Stephen/c02.html" />
     <link rel="prev" title="Preface to the Third Edition" href="prefacio.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -41,6 +43,13 @@ species, bacterial or viral growth and so on, is a reﬂection of their use in h
 dynamic processes involved and in making practical predictions. The study of population change has a very
 long history: in 1202 an exercise in an arithmetic book written by Leonardo of Pisa involved building a
 mathematical model for a growing rabbit population; we discuss it later in Chapter 2.</p>
+<p>El creciente estudio de modelos matemáticos realistas y prácticos en biología de poblaciones, ya sea que se
+trate de una población humana con o sin su distribución por edades, una población de una especie en peligro
+de extinción, el crecimiento bacteriano o viral, etc., refleja su utilidad para comprender los procesos
+dinámicos involucrados y para realizar predicciones prácticas. El estudio del cambio poblacional tiene una
+larga historia: en 1202, un ejercicio en un libro de aritmética escrito por Leonardo de Pisa consistió en
+construir un modelo matemático para una población de conejos en crecimiento; lo analizaremos más adelante en
+el Capítulo 2.</p>
 <p>Ecology, basically the
 study of the interrelationship between species and their environment, in such areas as predator–prey and
 competition interactions, renewable resource management, evolution of pesticide resistant strains, ecological
@@ -52,24 +61,50 @@ in the following three chapters, we consider some deterministic models by way of
 ﬁeld. The excellent books by Hastings (1997) and Kot (2001) are speciﬁcally on ecological modelling.
 Elementary introductions are also given in the textbooks by Edelstein-Keshet (1988) and Hoppensteadt and
 Peskin (1992).</p>
+<p>La ecología, básicamente el estudio de la interrelación entre las especies y su entorno, en áreas como las
+interacciones depredador-presa y competencia, la gestión de recursos renovables, la evolución de cepas
+resistentes a plaguicidas, el control ecológico y genéticamente modificado de plagas, las sociedades
+multiespecie, los sistemas planta-herbívoro, etc., es ahora un campo enorme. La lista de aplicaciones, en
+constante expansión, es extensa, al igual que el número de libros sobre diversos aspectos del campo. También
+existen aplicaciones altamente prácticas de modelos de una sola especie en las ciencias biomédicas; en la
+Sección 1.5 analizamos dos ejemplos de estos que surgen en fisiología. Aquí, y en los tres capítulos
+siguientes, consideramos algunos modelos deterministas a modo de introducción al campo. Los excelentes libros
+de Hastings (1997) y Kot (2001) tratan específicamente sobre modelización ecológica. En los libros de texto
+de Edelstein-Keshet (1988) y Hoppensteadt y Peskin (1992) también se ofrecen introducciones elementales.</p>
 <p><strong>1.1 Continuous Growth Models</strong></p>
 <p>Single-species models are of relevance to laboratory studies in particular but, in the real world, can
 reﬂect a telescoping of effects which inﬂuence the population dynamics. Let N(t) be the population of the
 species at time t, then the rate of change</p>
-<div class="math notranslate nohighlight">
+<p>Los modelos de una sola especie son relevantes para los estudios de laboratorio en particular, pero en el
+mundo real pueden reflejar una acumulación de efectos que influyen en la dinámica de la población. Sea N(t)
+la población de la especie en el tiempo t, entonces la tasa de cambio</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
 \[\frac{dN}{dt} = births − deaths + migration\]</div>
+</div></blockquote>
 <p>(1.1)</p>
 <p>is a conservation equation for the population. The form of the various terms on the righthand side of (1.1)
 necessitates modelling the situation with which we are concerned. The simplest model has no migration and the
 birth and death terms are proportional to N. That is,</p>
-<div class="math notranslate nohighlight">
-\[\frac{dN}{dt} = bN -  dN ⇒ N(t) = _ 0 ^{ (b−d})dt\]</div>
+<p>es una ecuación de conservación para la población. La forma de los diversos términos del lado derecho de
+(1.1) requiere modelar la situación que nos ocupa. El modelo más simple no tiene migración y los términos de
+nacimiento y muerte son proporcionales a N. Es decir,</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\frac{dN}{dt} = bN -  dN ⇒ N(t) =N   0e ^ (b−tddt\]</div>
+</div></blockquote>
 <p>where b, d are positive constants and the initial population <span class="math notranslate nohighlight">\(N(0) = N_0\)</span>. Thus if b &gt; d the
 population grows
 exponentially while if b &lt; d it dies out. This approach, due to Malthus 2 in 1798, is fairly unrealistic.
 However, if we consider the past and predicted growth estimates for the total world population from the 17th
 to 21st centuries it is perhaps less unrealistic, as seen in Table 1.1 (United Nations median projections for
 the 21st century). Since 1900 it has grown exponentially.</p>
+<p>donde b y d son constantes positivas y la población inicial es . Por lo tanto, si b &gt; d, la población crece
+exponencialmente, mientras que si b &lt; d, se extingue. Este enfoque, debido a Malthus II en 1798, es bastante
+irrealista. Sin embargo, si consideramos las estimaciones de crecimiento pasadas y previstas para la
+población mundial total desde el siglo XVII hasta el XXI, es quizás menos irrealista, como se observa en la
+Tabla 1.1 (proyecciones medianas de las Naciones Unidas para el siglo XXI). Desde 1900, ha crecido
+exponencialmente.</p>
 <p>Notwithstanding such growth, many demographers now fret about whether or not there will be enough people in
 the future! In 1975 about 18% of the world population lived in countries where the fertility rate was at or
 below replacement level (approximately 2.1 children per woman) while in 1997 it was 44% with 67% predicted
@@ -77,12 +112,25 @@ below replacement level (approximately 2.1 children per woman) while in 1997 it 
 level. In 1970 there were 10 countries below replacement fertility levels while by 1995 there were 51 and by
 2015 it is estimated that 88 of the approximately 180 countries in the world will join the group with less
 than replacement fertility.</p>
+<p>A pesar de este crecimiento, muchos demógrafos se preguntan si habrá suficiente población en el futuro. En
+1975, alrededor del 18% de la población mundial vivía en países con una tasa de fecundidad igual o inferior
+al nivel de reemplazo (aproximadamente 2,1 hijos por mujer), mientras que en 1997 era del 44%, con una
+previsión del 67% (Naciones Unidas) para 2015. Más adelante, en el Capítulo 4, analizamos en detalle cómo
+calcular un nivel reproductivo de supervivencia. En 1970, había 10 países con tasas de fecundidad inferiores
+al nivel de reemplazo, mientras que en 1995 eran 51, y se estima que para 2015, 88 de los aproximadamente 180
+países del mundo se unirán al grupo con tasas de fecundidad inferiores al nivel de reemplazo.</p>
 <p>To mark the 20th anniversary of the World Health Organisation their report (1992)
 on human reproduction gave some interesting estimates for the world, such as 100 million acts of sexual
 intercourse every day which resulted in 910,000 conceptions and 356,000 cases of sexually transmitted
 diseases. They estimate that 300 million couples do not want any more children but lack family planning
 services. Of the 910,000 conceptions every day about half are unplanned. There are 150,000 abortions every
 day, a third in unsafe conditions resulting in 500 deaths.</p>
+<p>Para conmemorar el 20.º aniversario de la Organización Mundial de la Salud, su informe (1992) sobre
+reproducción humana ofreció algunas estimaciones interesantes a nivel mundial, como 100 millones de
+relaciones sexuales diarias que resultaron en 910 000 concepciones y 356 000 casos de enfermedades de
+transmisión sexual. Estiman que 300 millones de parejas no desean tener más hijos, pero carecen de servicios
+de planificación familiar. De las 910 000 concepciones diarias, aproximadamente la mitad no son planificadas.
+Se realizan 150 000 abortos al día, un tercio de ellos en condiciones inseguras, con un saldo de 500 muertes.</p>
 <p>One of the reasons for this digression is to highlight the problems of modelling such population problems. It
 is difﬁcult to make long term, or even relatively short term, predictions unless we know sufﬁcient facts to
 incorporate in the model to make it a reliable predictor although general trends can in themselves be useful
@@ -91,21 +139,49 @@ contraception,
 sterilisation being the most commonly used method (female sterilisation accounting for 26% of the total with
 male sterilisation accounting for 10%), enforced size of families, local famines, new diseases, increasing
 nonreplacement fertility rates and so on, the world population continues to increase alarmingly.</p>
-<p>2. Malthus’ essay, ﬁrst published anonymously, was immensely inﬂuential (on Charles Darwin, for example,
-who
-ﬁrst read it in 1838), but also roused much wrath in various quarters for much of the following century. He
+<p>Una de las razones de esta digresión es resaltar los problemas que plantea la modelización de este tipo de
+problemas demográficos. Resulta difícil realizar predicciones a largo plazo, o incluso a corto plazo, a menos
+que contemos con datos suficientes para incorporarlos al modelo y convertirlo en un predictor fiable, aunque
+las tendencias generales pueden ser útiles en sí mismas, incluso si, en última instancia, resultan
+cuantitativamente erróneas. No cabe duda, sin embargo, de que, a pesar de la amplia disponibilidad de
+anticonceptivos, siendo la esterilización el método más utilizado (la esterilización femenina representa el
+26 % del total, mientras que la masculina representa el 10 %), el tamaño forzado de las familias, las
+hambrunas locales, las nuevas enfermedades, el aumento de las tasas de fecundidad de reemplazo, etc., la
+población mundial sigue creciendo de forma alarmante.</p>
+<blockquote>
+<div><ol class="arabic simple" start="2">
+<li><p>Malthus’ essay, ﬁrst published anonymously, was immensely inﬂuential (on Charles Darwin, for example, who</p></li>
+</ol>
+</div></blockquote>
+<p>ﬁrst read it in 1838), but also roused much wrath in various quarters for much of the following century. He
 said in effect that unbounded population growth would be controlled by war, pestilence or famine. After the
 carnage of the First World War his predictions were again brought to the fore and widely discussed. Malthus,
 who married at 38, spent much of his life as an English country parson who, by all accounts, was a happy
 family man who thoroughly enjoyed life.</p>
+<p>2. El ensayo de Malthus, publicado inicialmente de forma anónima, tuvo una enorme influencia (por ejemplo, en
+Charles Darwin, quien lo leyó por primera vez en 1838), pero también provocó gran indignación en diversos
+sectores durante gran parte del siglo siguiente. En esencia, afirmaba que el crecimiento demográfico
+ilimitado se controlaría mediante la guerra, la peste o el hambre. Tras la carnicería de la Primera Guerra
+Mundial, sus predicciones volvieron a cobrar relevancia y fueron ampliamente debatidas. Malthus, que se casó
+a los 38 años, pasó gran parte de su vida como párroco rural inglés y, según todos los testimonios, fue un
+hombre de familia feliz que disfrutó plenamente de la vida.</p>
 <p>In the long run of course there must be some adjustment to such exponential growth. Verhulst (1838, 1845)
 proposed that a self-limiting process should operate when a population becomes too large. He suggested</p>
-<div class="math notranslate nohighlight">
+<p>A largo plazo, por supuesto, debe haber algún ajuste a dicho crecimiento exponencial. Verhulst (1838, 1845)
+propuso que debería operar un proceso de autolimitación cuando una población se vuelve demasiado grande.
+Sugirió</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
 \[\frac{dN}{dt} = r N(1 -  N/K)\]</div>
+</div></blockquote>
 <p>(1.2)</p>
 <p>where r and K are positive constants. This he called logistic growth in a population. In this model the per
 capita birth rate is r(1 − N/K); that is, it is dependent on N. The constant K is the carrying capacity of
 the environment, which is usually determined by the available sustaining resources.</p>
+<p>donde r y K son constantes positivas. A esto se le denomina crecimiento logístico en una población. En este
+modelo, la tasa de natalidad per cápita es r(1 − N/K); es decir, depende de N. La constante K representa la
+capacidad de carga del medio ambiente, que generalmente está determinada por los recursos disponibles para su
+sustento.</p>
 <p>There are two steady states or equilibrium states for (1.2), namely, N = 0 and N = K, that is, where dN/dt =
 0. N = 0 is unstable since linearization about it (that is, N 2 is neglected compared with N) gives dN/dt ≈
 r N, and so N grows exponentially from any small initial value. The other equilibrium N = K is stable:
@@ -1156,11 +1232,21 @@ say what you can about the birth rate if the population is not to die out.</p>
 
 
 
-<h3>Навигација</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="prefacio.html">Preface to the Third Edition</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">c01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynam_Systems_Applica_Mathematica_Stephen/c02.html">c02</a></li>
 </ul>
 
 <div class="relations">
@@ -1168,19 +1254,10 @@ say what you can about the birth rate if the population is not to die out.</p>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="prefacio.html" title="претходна глава">Preface to the Third Edition</a></li>
+      <li>Next: <a href="../Dynam_Systems_Applica_Mathematica_Stephen/c02.html" title="наредна глава">c02</a></li>
   </ul></li>
 </ul>
 </div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Брза претрага</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Тражи" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -1197,8 +1274,8 @@ say what you can about the birth rate if the population is not to die out.</p>
       &#169;2026, Leopoldo.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
       <a href="../_sources/Mathematical_Biology_I_An_Introduction_3E/c01.rst.txt"

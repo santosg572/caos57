@@ -1,0 +1,29 @@
+Sistemas_Dinamicos
+==================
+
+* An_Introduction_to_Complex_Systems
+* Applications_Dynam_Syst_Biol_Medicine_Trachette
+* A_Practical_Approach_Dynamical_Systems_Engineers_Patricia
+* Bifurcation_Chaos _Discontinuous_Continuous_Sy
+* Chaos_An_Introduction_Applied_Mathematicians_Andrew
+* CHAOS_An_Introduction_Dynamical_Systems
+* Chaos_Discrete_Dynamical_Systems_Ralph_Abraham
+* Chaos_Fradals_Heinz-Otto
+* CHAOS_Making_New_Science_James
+* DIFF_EQUA_DYNAMICAL_SYS,INT_CHAOS
+* Differential_Dynamical_Systems_James
+* Dynamical_Sys _Applic_Jan_Awrejcewicz
+* Dynamical_Systems_Chaos_Broer
+* Dynamics_and_Bifurcations
+* Elements_of_Applied_Bifurcation_Theory_4E_Yuri
+* Fractal_Modelling_Jaap_Kaandorp
+* Funda_Chaos_Fractals_Cardiology_Gary_Drzewiecki
+* Informal_Introduction_Stochastic_Processes_Maple
+* Intro_Applied_Nonlinear_Dynamical_Sys_Chaos_2E
+* INTRODUCTION_LINEAR_TIME-INVARIANT,_DYNAMIC_SYSTEMS_STUDENTS_ENGINEERING
+* Introduction_to_Stochastic_Processes_Using_R_Sivaprasad
+* LECTURE_NOTES_DYNA_SYST_CHAOS_FRACTAL_GEO_Geoffrey
+* Nonlinear_Diff_ Equa_Dynamical_Systems_2E_Ferdinand_Verhulst
+* NONLINEAR_DYNAMICS_CHAOS_Steven
+* Nonlinear Dynamics_George
+* The_Beauty_Fractals_Peitgen_Richter

@@ -1,0 +1,72 @@
+prefacio
+========
+
+An_Exploration_Dynamical_Systems_Chaos_Argyris_PREF
+
+Preface to the Second Edition
+
+In 1994, when the first edition has been published in English and in German, we did not anticipate that this introduction to the field of non-linear dynamics and chaos would meet with such lively interest. Although attention to the subject has lessened in the media and in popular scientific publications over the last 20 years, the fundamental ideas, the theoretical insights and the tools developed for the analysis of non-linear dynamical systems have continued to spread into the most diverse areas of science and technology as well as into the respective literature and are nowadays part of the classical curriculum in many study programmes. Since the English edition sold out many years ago, we decided to follow up the expanded and revised second German edition with another extended edition in English.
+—---------------------------------------------------------
+En 1994, cuando se publicó la primera edición en inglés y alemán, no anticipamos que esta introducción al campo de la dinámica no lineal y el caos encontraría un interés tan vivo. Aunque la atención al tema ha disminuido en los medios de comunicación y en las publicaciones científicas de divulgación durante los últimos 20 años, las ideas fundamentales, los conocimientos teóricos y las herramientas desarrolladas para el análisis de sistemas dinámicos no lineales han continuado difundiéndose en las áreas más diversas. de ciencia y tecnología, así como en la literatura respectiva y hoy en día forman parte del currículo clásico en muchos programas de estudio. Dado que la edición en inglés se agotó hace muchos años, decidimos seguir la segunda edición alemana ampliada y revisada con otra edición ampliada en inglés.
+—---------------------------------------------------------
+
+After John Argyris passed away in 2004 at the advanced age of 91, we considered it our obligation to continue work on this book in the original sense – first in a second German edition – attempting to explain the complex topic of non-linear dynamics to a wide audience as descriptively and vividly as possible.
+—---------------------------------------------------------
+Después de que John Argyris falleciera en 2004 a la avanzada edad de 91 años, consideramos nuestra obligación continuar trabajando en este libro en el sentido original, primero en una segunda edición en alemán, intentando explicar el complejo tema de la dinámica no lineal a un público amplio de la manera más descriptiva y vívida posible.
+
+—---------------------------------------------------------
+
+We took the opportunity to emphasise and further clarify the differences between purely temporal and spatio-temporal dynamics, in particular between chaos and turbulence. The initial hope – occasionally accompanied by euphoria – that insight into the special features of chaotic systems meant that scientists were about to solve the centuries-old problem of turbulence was not fulfilled. Without doubt, the elucidation of characteristics such as unpredictability and mixing in chaotic systems made a substantial contribution to understanding turbulent flows, yet the fundamental questions concerning fully developed turbulence are unsolved to this day.
+—---------------------------------------------------------
+
+Aprovechamos la oportunidad para enfatizar y aclarar aún más las diferencias entre dinámicas puramente temporales y espacio-temporales, en particular entre caos y turbulencia. La esperanza inicial, ocasionalmente acompañada de euforia, de que la comprensión de las características especiales de los sistemas caóticos significaba que los científicos estaban a punto de resolver el problema de las turbulencias, de siglos de antigüedad, no se cumplió. Sin duda, la elucidación de características como la imprevisibilidad y la mezcla en sistemas caóticos hizo una contribución sustancial a la comprensión de los flujos turbulentos, sin embargo, las preguntas fundamentales relacionadas con la turbulencia completamente desarrollada siguen sin resolverse hasta el día de hoy.
+
+
+—---------------------------------------------------------
+
+By enlarging the circle of authors to include Rudolf Friedrich, we were able to add with Chapter 9 a completely new and more ambitious chapter on turbulence, which comprises and critically scrutinises the fundamentals of turbulent flows and a series of classic turbulence models. While there is a multitude of excellent monographs on turbulence from the viewpoint of the engineering sciences, the new chapter mainly discusses the fundamental questions from the physical point of view, highlighting the common ground with concepts existing in chaos theory. To describe and investigate fully developed turbulence, it is indispensable to include probabilistic and stochastic methods. So that the reader can understand the chapter on turbulence better, we thought it appropriate to include two new sections in the mathematical introduction in Chapter 3: basic concepts of probability theory and invariant measure and ergodic orbits. Our aim in these sections was to present the basic ideas and concepts; we did not, however, strive for a complete description, rather referring the reader to the excellent literature on probability and stochastic processes.
+—---------------------------------------------------------
+Al ampliar el círculo de autores para incluir a Rudolf Friedrich, pudimos agregar con el Capítulo 9 un capítulo completamente nuevo y más ambicioso sobre turbulencia, que comprende y examina críticamente los fundamentos de los flujos turbulentos y una serie de modelos clásicos de turbulencia. Si bien hay una multitud de excelentes monografías sobre la turbulencia desde el punto de vista de las ciencias de la ingeniería, el nuevo capítulo analiza principalmente las cuestiones fundamentales desde el punto de vista físico, destacando el terreno común con los conceptos existentes en la teoría del caos. Para describir e investigar turbulencias completamente desarrolladas, es indispensable incluir métodos probabilísticos y estocásticos. Para que el lector pueda comprender mejor el capítulo de turbulencias, hemos creído oportuno incluir dos nuevos apartados en la introducción matemática del Capítulo 3: conceptos básicos de teoría de probabilidades y órbitas ergódicas y de medida invariante. Nuestro objetivo en estas secciones fue presentar las ideas y conceptos básicos; sin embargo, no buscamos una descripción completa, sino que remitimos al lector a la excelente literatura sobre probabilidad y procesos estocásticos.
+—---------------------------------------------------------
+In section 3.8.5, we added a brief introduction to wavelet transformation and outlined its relevance for time-frequency analyses of time series. The use of wavelets is especially favourable for analysing multifractal structures as described in section 8.5.2. In section 3.9.12, we also included a brief description of Markov analysis, a recently developed and far-reaching method which allows us to separate the deterministic part of the dynamics from the dynamical and even measurement noise. In section 9.6.8, this method is applied to velocity increments measured in turbulent flows. Section 8.7 contains an updated and extended section on routes out of chaos. Shilnikov bifurcations and spiral chaos received much attention in various applications, from chemical reactions to the propagation of nerve impulses and epileptic seizures. To understand such systems better, we also included a short overview in section 10.6. In addition, the paragraph on the kinetics of chemical reactions on surfaces has been largely revised in the hope of rendering this widely used field of application more comprehensible to a larger audience of students, see section 10.9. On the other hand, we dispensed with the section on celestial mechanics; this would have gone beyond the scope of this monograph.
+—---------------------------------------------------------
+
+En la sección 3.8.5, agregamos una breve introducción a la transformación wavelet y destacamos su relevancia para los análisis de frecuencia de tiempo de series de tiempo. El uso de wavelets es especialmente favorable para analizar estructuras multifractales como se describe en la sección 8.5.2. En la sección 3.9.12, también incluimos una breve descripción del análisis de Markov, un método de gran alcance recientemente desarrollado que nos permite separar la parte determinista de la dinámica del ruido dinámico e incluso de medición. En la sección 9.6.8, este método se aplica a los incrementos de velocidad medidos en flujos turbulentos. La Sección 8.7 contiene una sección actualizada y ampliada sobre rutas para salir del caos. Las bifurcaciones de Shilnikov y el caos espiral recibieron mucha atención en diversas aplicaciones, desde reacciones químicas hasta la propagación de impulsos nerviosos y ataques epilépticos. Para comprender mejor estos sistemas, también incluimos una breve descripción general en la sección 10.6. Además, el párrafo sobre la cinética de las reacciones químicas en las superficies se ha revisado en gran medida con la esperanza de hacer que este campo de aplicación ampliamente utilizado sea más comprensible para una audiencia más amplia de estudiantes, consulte la sección 10.9. Por otro lado, prescindimos del apartado de mecánica celeste; esto habría ido más allá del alcance de esta monografía.
+—---------------------------------------------------------
+
+
+Suddenly and unexpectedly, on 16th August 2012, Rudolf Friedrich passed away, taken from the midst of his life and work. His broad knowledge and interdisciplinary expertise made him extraordinarily inventive, not only in theoretical physics, his specialist field, but also in many other areas of science, including experimental and technical applications. We hope we have been able to complete the work on this book as he would have wished.
+
+—---------------------------------------------------------
+
+De repente e inesperadamente, el 16 de agosto de 2012, Rudolf Friedrich falleció, arrebatado en medio de su vida y obra. Su amplio conocimiento y experiencia interdisciplinaria lo hicieron extraordinariamente inventivo, no solo en física teórica, su campo de especialización, sino también en muchas otras áreas de la ciencia, incluidas las aplicaciones experimentales y técnicas. Esperamos haber podido completar el trabajo de este libro como él hubiera deseado.
+—---------------------------------------------------------
+
+Without the vigorous support of numerous friends and colleagues from many scientific
+disciplines, we would not have been able to finish this extended and updated
+second edition. To implement the original KeTEXversion in LaTeX and to generate
+and reconstruct the figures with the programme system AnT 4.669, we received professional
+help. We acknowledge the valuable hints for additions and improvements
+which we obtained in the course of many discussions and during proof-reading.
+We wish to thank all those who constantly and sedulously helped us and are especially
+indebted to Viktor Avrutin, Inna Avrutina, Rolf Bader, Anton Daitche,
+Martin Dziobek, Markus Eiswirth, Jan Friedrich, Jason Gallas, Svetlana Gurevich,
+Andreas Haase, Marion Hackenberg, Marcus Hauser, Oliver Kamps, David
+Kleinhans, Yuri A. Kuznetsov, Bernd Lehle, Pedro Lind, Johannes L¨ulff, Joachim
+Peinke, Peter Plath, G¨unter Radons, Michael Schanz, Susanne Schmidt, Daniel
+Stellbrink, Robert Stresing, Daniel H. Sugondo, Christian Uhl, Hans van den Berg,
+Judith Vogelsang, Georg Wackenhut and Michael Wilczek. Our special thanks go
+to Prudence Lawday, the translator of the first English edition, for her excellent
+help with this extended manuscript. We are also indebted to Michael Resch, the
+director of the High Performance Computing Center Stuttgart (HLRS) of the University
+of Stuttgart, for his generous assistance and to the Argyris Foundation for its
+financial support.
+
+
+Last but not least, we wish to thank the members of staff at Springer-Verlag for
+their professional co-operation, and in particular Thomas Ditzinger for his patience
+and continuous encouragement and support. Our sincere thanks go to everyone who
+supported us.
+
+
+
