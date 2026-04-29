@@ -8,17 +8,28 @@ application in such exciting new fields as systems biology, evolutionary game th
 of these recent developments, I’ve added about twenty substantial new exercises that I hope will entice you to learn more. 
 The fields and applications include (with the associated exercises listed in parentheses):
 
-Animal behavior: calling rhythms of Japanese tree frogs (8.6.9) Classical mechanics: driven pendulum with quadratic damping 
-(8.5.5) Ecology: predator-prey model; periodic harvesting (7.2.18, 8.5.4) Evolutionary biology: survival of the fittest 
-(2.3.5, 6.4.8) Evolutionary game theory: rock-paper-scissors (6.5.20, 7.3.12) Linguistics: language death (2.3.6) Prebiotic 
-chemistry: hypercycles (6.4.10) Psychology and literature: love dynamics in Gone with the Wind (7.2.19) Macroeconomics: 
-Keynesian cross model of a national economy (6.4.9) Mathematics: repeated exponentiation (10.4.11) Neuroscience: binocular 
-rivalry in visual perception (8.1.14, 8.2.17) Sociophysics: opinion dynamics (6.4.11, 8.1.15) Systems biology: protein 
+* Animal behavior: calling rhythms of Japanese tree frogs (8.6.9) 
+* Classical mechanics: driven pendulum with quadratic damping 
+(8.5.5) 
+* Ecology: predator-prey model; periodic harvesting (7.2.18, 8.5.4) 
+* Evolutionary biology: survival of the fittest 
+(2.3.5, 6.4.8) 
+* Evolutionary game theory: rock-paper-scissors (6.5.20, 7.3.12) 
+* Linguistics: language death (2.3.6) 
+* Prebiotic 
+chemistry: hypercycles (6.4.10) 
+* Psychology and literature: love dynamics in Gone with the Wind (7.2.19) 
+* Macroeconomics: 
+Keynesian cross model of a national economy (6.4.9) 
+* Mathematics: repeated exponentiation (10.4.11) 
+* Neuroscience: binocular 
+rivalry in visual perception (8.1.14, 8.2.17) 
+* Sociophysics: opinion dynamics (6.4.11, 8.1.15) 
+* Systems biology: protein 
 dynamics (3.7.7, 3.7.8)
 
 Thanks to my colleagues Danny Abrams, Bob Behringer, Dirk Brockmann, Michael Elowitz, Roy Goodman, Jeff Hasty, Chad 
 Higdon-Topaz, Mogens Jensen, Nancy Kopell, Tanya Leise, Govind Menon, Richard Murray, Mary
-
 Silber, Jim Sochacki, Jean-Luc Thiffeault, John Tyson, Chris Wiggins, and Mary Lou Zeeman for their suggestions about 
 possible new exercises. I am especially grateful to Bard Ermentrout for devising the exercises about Japanese tree frogs 
 (8.6.9) and binocular rivalry (8.1.14, 8.2.17), and to Jordi Garcia-Ojalvo for sharing his exercises about systems biology 
