@@ -1,49 +1,70 @@
-2.0 Introduction
+2. Flows on the line
+====================
+
+**2.0 Introduction**
+
 In Chapter 1, we introduced the general system
 
+.. math::
+
+   \begin{matrix}
+   \dot{x}_1 = & f_1(x_1, ...,x_n)  \\
+    ... & ...  \\
+   \dot{x}_n = & f_1(x_1, ...,x_n)  \\
+   \end{matrix}
 
 
-x f x x
-x f x x
-n
-nn n
-1 11
-1
-
-
-( , ... , )
-( , ... , )
 and mentioned that its solutions could be visualized as trajectories flowing through
-an n-dimensional phase space with coordinates ( x1, … , xn ). At the moment, this
+an n-dimensional phase space with coordinates :math:`(x_1, ... , x_n)`. At the moment, this
 idea probably strikes you as a mind-bending abstraction. So let’s start slowly,
 beginning here on earth with the simple case n  1. Then we get a single equation
 of the form
-x f   ( ) x .
-Here x ( t ) is a real-valued function of time t, and f ( x ) is a smooth real-valued function of x. We’ll call such equations 
+
+.. math::
+
+   \dot{x} = f(x).
+
+Here x(t) is a real-valued function of time t, and f ( x ) is a smooth real-valued function of x. We’ll call such equations 
 one-dimensional or first-order systems.
+
 Before there’s any chance of confusion, let’s dispense with two fussy points of
 terminology:
+
 1. The word system is being used here in the sense of a dynamical system,
 not in the classical sense of a collection of two or more equations. Thus
 a single equation can be a “system.”
+
 2. We do not allow f to depend explicitly on time. Time-dependent or
-“nonautonomous” equations of the form x f   ( , x t) are more complicated, because one needs two pieces of information, x and t, to 
-predict the future state of the system. Thus x f   ( , x t) should really be
+“nonautonomous” equations of the form :math:`\dot{x}= f(x, t)` are more complicated, because one needs two pieces of 
+information, x and t, to 
+predict the future state of the system. Thus :math:`\dot{x}= f(x, t)` should really be
 regarded as a two-dimensional or second-order system, and will therefore be discussed later in the book.
 
-2.1 A Geometric Way of Thinking
+**2.1 A Geometric Way of Thinking**
+
 Pictures are often more helpful than formulas for analyzing nonlinear systems.
 Here we illustrate this point by a simple example. Along the way we will introduce
 one of the most basic techniques of dynamics: interpreting a differential equation
 as a vector field.
+
 Consider the following nonlinear differential equation:
-x x   sin . (1)
+
+..math::
+
+  \dot{x} = \sin x . (1)
+
 To emphasize our point about formulas versus pictures, we have chosen one of
 the few nonlinear equations that can be solved in closed form. We separate the
 variables and then integrate:
-dt dx
-x  sin ,
+
+.. math:: 
+
+   dt = \frac{dx}{\sin x} ,
+
 which implies
+
+.. math:: 
+
 t x dx
 x xC
 =
