@@ -140,6 +140,8 @@ simple examples of chaos, and also as tools for analyzing periodic or chaotic so
 Now confining our attention to differential equations, the main distinction is between ordinary and partial differential 
 equations. For instance, the equation for a damped harmonic oscillator
 
+.. image:: tabla_1_1_1.png 
+
 .. math::
 
    m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0 
