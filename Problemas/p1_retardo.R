@@ -2,7 +2,7 @@
 #
 # y"- 5y'+ 4y = 0
 #
-# x2' = 5x2 - 4x1
+# x2' = 5x2 - 4x1(t-1)
 # x1' = x2
 # con valore inicial (0,1)
 #
