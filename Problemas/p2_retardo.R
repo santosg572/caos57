@@ -1,17 +1,11 @@
+rm(list=ls())
+
 # y'= 1/y(t-1), y[0] = 1
 #
 #
 # 
 
-del1 = .1
-
-x1 = 0
-x2 = 1000
-
-x = seq(x1, x2, del1)
-n = length(x)
-
-Integral <- function(n, y0){
+Integral <- function(del1=0,n=0, y0=0){
    y = rep(0, n)
    y[0] = y0
    x1 = 1
@@ -23,33 +17,43 @@ Integral <- function(n, y0){
    res <- y
 }
 
-Integral_ret <- function(Multao=0, del1=0, y0=0, tao=0){
-   n = tao/del1
-   print(n)
-   y = c(rep(y0, n), rep(0, Multao*n))
+Integral_ret <- function(del1=0, Mn=0, n=0, y0=0){
+   print(del1)
+   mn = Mn*n
+   y = c(rep(y0, n), rep(0, mn))
+   ny = length(y)
+   print(ny)
    x1 = y[n]
-   for (i in (n+1):Multao*n){
+   for (i in (n+1):(mn+n)){
      x2 = x1 + del1 / y[i-n]
      x1 = x2
      y[i] = x2
    }
    print(y)
-   res <- y[(n+1):Multao*n]
+   res <- y[n:(mn+n)]
 }
 
-yy = Integral(n, 1)
-yyr = Integral_ret(4, del1, 1, 1)
+del1 = .1   
+tao = 1  
+niter = 1000
+n = tao/del1
+x1 = 0
+x2 = 1000
 
+x = seq(x1, x2, del1)
+nx = length(x) 
+
+yy = Integral(del1, nx, 1)
 plot(x, yy, type='l')
 
-yt = sqrt(2*x+1)+1
-
+yt = sqrt(2*x+1)+2
 points(x, yt, type='l', col='red')
 
-xx = seq(0, 4, del1)
+yyr = Integral_ret(del1, niter, n, 1)
 
-print(length(xx))
-print(length(yyr))
+n = length(yyr)
 
-points(xx, yyr, type='l', col='red')
+xx = seq(0, x2, length.out=n)
+
+points(xx, yyr+3, type='l', col='blue')
 
