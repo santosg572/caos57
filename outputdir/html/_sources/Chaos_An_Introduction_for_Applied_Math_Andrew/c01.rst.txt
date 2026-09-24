@@ -1,9 +1,6 @@
-
-Chapter 1 Introduction
-======================
-
-**1.1 Limit Cycles**
-
+Chapter 1
+Introduction
+1.1 Limit Cycles
 The behaviour of autonomous (that is, where time is not represented explicitly)
 ordinary differential equations in R2 is well understood. The qualitative behaviour
 of the equation

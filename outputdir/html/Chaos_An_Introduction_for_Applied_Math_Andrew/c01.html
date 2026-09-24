@@ -1,9 +1,39 @@
+<!DOCTYPE html>
 
-Chapter 1 Introduction
-======================
+<html lang="sp" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-**1.1 Limit Cycles**
+    <title>&lt;no title&gt; &#8212; документација Caos 01</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=cb95fe6c"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Индекс" href="../genindex.html" />
+    <link rel="search" title="Претрага" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
 
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p>Chapter 1
+Introduction
+1.1 Limit Cycles
 The behaviour of autonomous (that is, where time is not represented explicitly)
 ordinary differential equations in R2 is well understood. The qualitative behaviour
 of the equation
@@ -14,13 +44,12 @@ of the Jacobian D f (x) at the fixed point. In particular, if these eigenvalues 
 plex conjugates, there is a spiral, or focus; if they are real and of opposite sign, there
 is a saddle; and if they are real and of the same sign, there is a node: see Fig. 1.1.
 Nodes and spirals may be stable or unstable depending on whether the eigenvalues λ
-have Re λ < 0 or Re λ > 0, respectively; saddles are always unstable. Other degen-
+have Re λ &lt; 0 or Re λ &gt; 0, respectively; saddles are always unstable. Other degen-
 erate cases (centre, degenerate node) can occur, if Re λ = 0, or if two eigenvalues
 coalesce.
 Knowledge of the behaviour of trajectories near fixed points informs the method
-of phase plane analysis. An example of its use is to find travelling solitary wave
-
-solutions of the Korteweg–de Vries equation
+of phase plane analysis. An example of its use is to find travelling solitary wave</p>
+<p>solutions of the Korteweg–de Vries equation
 ut + uu x + u x x x = 0 (1.2)
 in the form u = f (x − ct) = f (ξ ), so that
 − c f ′ + f f ′ + f ′′′ = 0, (1.3)
@@ -30,7 +59,7 @@ with first integral
 (so that f (±∞) = 0). This represents a nonlinear oscillator with potential V ( f ) =
 − 1
 2 c f 2 + 1
-6 f 3.1 If we take c > 0 (without loss of generality), then the phase plane is
+6 f 3.1 If we take c &gt; 0 (without loss of generality), then the phase plane is
 as in Fig. 1.2. There are two fixed points, f = 0, and f = 2c, which are respectively
 a saddle and a centre. (The latter persists as a centre in the presence of nonlinear
 terms by virtue of the existence of a first integral, which in turn is associated with the
@@ -44,9 +73,8 @@ represents a periodic time series) to which nearby trajectories tend either as t
 (stable limit cycle) or as t → −∞ (unstable limit cycle). A simple example (see also
 exercise 1.7) is offered by the system
 ˙x = x − y − x(x 2 + y2),
-˙y = x + y − y(x 2 + y2); (1.5)
-
-by transforming to polar coordinates (r, θ), it is straightforward to find the phase
+˙y = x + y − y(x 2 + y2); (1.5)</p>
+<p>by transforming to polar coordinates (r, θ), it is straightforward to find the phase
 plane shown in Fig. 1.3. There is a stable limit cycle at r = 1, and an unstable focus
 at r = 0.
 One is often interested in the behaviour of a (physical) system as a parameter
@@ -70,9 +98,8 @@ If we denote the angle of the arms of the governor to the downward vertical as �
 and the angular velocity of the shaft as , then the equation governing the dynamics
 is, ignoring friction (see question 5.1),
 ¨θ − 2 sin θ cos θ + 2
-c sin θ = 0, (1.7
-
-here
+c sin θ = 0, (1.7</p>
+<p>here
 c =
 √ g
 l , (1.8)
@@ -82,15 +109,15 @@ The steady states of the system are θ = 0, π, and also ± cos−1
 c
 2
 )
-if  > c.
+if  &gt; c.
 The function of the governor can be seen in the fact that we can have θ as an
-increasing function of  if  > c, thus opening the valve, and its operation relies
+increasing function of  if  &gt; c, thus opening the valve, and its operation relies
 on the existence of a pitchfork bifurcation at  = c. More precisely, if we linearise
 (1.7) near the origin, we see that
 ¨θ ≈ (2 − 2
 c
 ) θ, (1.9)
-and thus the vertical state loses stability for  > c. Expanding further in θ and also
+and thus the vertical state loses stability for  &gt; c. Expanding further in θ and also
 supposing that  − c is small, we have
 ¨θ ≈ (2 − 2
 c
@@ -103,26 +130,24 @@ non-zero fixed points. Bifurcation theory is discussed in more detail in Chap. 3
 The transition from steady to periodic behaviour is often associated with a Hopf
 bifurcation, as instanced by the following generalised version of (1.5):
 ˙x = μx − y − x(x 2 + y2),
-˙y = x + μy − y(x 2 + y2). (1.11)
-
-It is simple to find that the origin is a stable focus for μ < 0, an unstable focus
-for μ > 0 and that for μ > 0 a stable periodic solution exists, whose amplitude
-A = |z|max = |x + iy|max = O(√μ) (and in fact equals √μ).
+˙y = x + μy − y(x 2 + y2). (1.11)</p>
+<p>It is simple to find that the origin is a stable focus for μ &lt; 0, an unstable focus
+for μ &gt; 0 and that for μ &gt; 0 a stable periodic solution exists, whose amplitude
+A = <a href="#id1"><span class="problematic" id="id2">|z|max = |x + iy|max = O(√μ) (and in fact equals √μ).
 The bifurcation diagram is shown in Fig. 1.5. The salient features are that, if the
 linearised system has solutions ∝ eσ t , then a pair of complex conjugate eigenvalues
 σ = μ ± i of the fixed point cross the imaginary axis at μ = 0, at a non-zero ‘rate’
-(d[Re σ ]/dμ = 0), and as a result, a limit cycle exists in μ > 0. This is known as
+(d[Re σ ]/dμ = 0), and as a result, a limit cycle exists in μ &gt; 0. This is known as
 a Hopf bifurcation, and will be considered further in Chap. 3. Notice the fact that
-the limit cycle exists (for small μ) in either μ > 0 or μ < 0, so that its stability is
+the limit cycle exists (for small μ) in either μ &gt; 0 or μ &lt; 0, so that its stability is
 opposite to that of the fixed point with which it coexists. Furthermore, its amplitude
 is O(√μ). All these features are generally true.
 Fixed points and periodic solutions are ‘all’ that a two-dimensional system can
 exhibit. This is because trajectories cannot intersect in the phase space, due to the
 following existence theorem:
 Theorem (Picard) If ˙x = f (x) and x(0) = x0, and f is Lipschitz continuous (i.e.
-| f (x) − f (y)| < K |x − y| for some K ), then x exists locally (in t) and is unique.
-
-Here, in fact, we can take x ∈ Rn, provided a suitable norm is chosen. In terms
+| f (x) − f (y)|</span></a> &lt; K <a href="#id3"><span class="problematic" id="id4">|x − y|</span></a> for some K ), then x exists locally (in t) and is unique.</p>
+<p>Here, in fact, we can take x ∈ Rn, provided a suitable norm is chosen. In terms
 of differentiability, a sufficient condition on f is that f ∈ C 1 (i.e. f is continuously
 differentiable); the usual example for necessity is that of ˙x = x 1/2, x(0) = 0, which
 has infinitely many solutions of the form x = 1
@@ -136,16 +161,15 @@ repeats itself. Whether such trajectories can be realised is another matter, of 
 but Fig. 1.6 suggests that they can. This shows a numerical solution of a set of three
 ordinary differential equations, known as the Lorenz equations (written explicitly in
 (1.14) below, and which we shall meet again later, particularly in Chap. 4); the orbit
-appears to trace out a surface, albeit a convoluted one, on which the orbit is dense
-
-(i.e. it ‘fills out’ the surface). These observations raise certain conceptual problems.
+appears to trace out a surface, albeit a convoluted one, on which the orbit is dense</p>
+<p>(i.e. it ‘fills out’ the surface). These observations raise certain conceptual problems.
 We term a differential equation
 ˙x = f (x), x ∈ Rn, (1.12)
-dissipative if ∇. f < 0; the Lorenz equations are an example of a dissipative system.
+dissipative if ∇. f &lt; 0; the Lorenz equations are an example of a dissipative system.
 It is easy to show that an arbitrary volume V of initial points in phase space satisfies
 the equation ˙V = V ∇. f. (1.13)
-Therefore if ∇. f < 0 (and is bounded away from zero), then V → 0 as t → ∞. If,
-in addition, solutions are bounded for all t (e.g. if x. f < 0 for large ||x||), then all
+Therefore if ∇. f &lt; 0 (and is bounded away from zero), then V → 0 as t → ∞. If,
+in addition, solutions are bounded for all t (e.g. if x. f &lt; 0 for large ||x||), then all
 trajectories must be attracted to a set of zero volume.
 Consider the Lorenz equations in three dimensions. Intuition tells us to expect
 the zero volume attractor to be of dimension two, i.e. a surface. And yet, we have
@@ -161,9 +185,8 @@ the weather more than about a week ahead. Any initial uncertainties in today’s
 (e.g. due to an insufficient number of weather stations collecting information) are
 magnified exponentially in time, so that predictions beyond a few days are unreli-
 able. It is probably the case that nature abounds with such inherently unpredictable
-phenomena.
-
-1.4 Turbulence
+phenomena.</p>
+<p>1.4 Turbulence
 It has been a commonplace observation for centuries that water often flows in an
 irregular fashion. Figure 1.7 shows a drawing by Leonardo da Vinci of water flowing
 into a pool. It is a mass of bubbles and irregularly placed whorls. Osborne Reynolds
@@ -182,9 +205,8 @@ flow experiments, suggests that a useful strategy to understand these phenomena 
 be to study the bifurcations associated with the transitions. In some experiments, this
 approach has been markedly successful.
 The word ‘turbulence’ has come to have a particular meaning to fluid dynamicists
-who often associate it with transitions in shear flow, (e.g. Reynolds’ flows in a pipe
-
-or plane Poiseuille flow, or boundary layer flow). It is characterised by temporal
+who often associate it with transitions in shear flow, (e.g. Reynolds’ flows in a pipe</p>
+<p>or plane Poiseuille flow, or boundary layer flow). It is characterised by temporal
 and spatial disorder, and the existence of ‘eddies’ on many different length scales.
 Moreover, shear flows are unlike other fluid experiments, such as Rayleigh–Bénard
 convection (the motion induced by heating a layer of fluid from below), in that
@@ -218,12 +240,11 @@ planetary orbits—the two-body problem—are ellipses. The complication arises 
 one tries to include the perturbing effect of other planets on these simple elliptical
 trajectories. Although these perturbations are small, the increase in the number of
 degrees of freedom means that one can no longer be certain of the predictability of
-the orbits.
-
-The conundrum is this: methods of perturbation theory allow one to calculate
+the orbits.</p>
+<p>The conundrum is this: methods of perturbation theory allow one to calculate
 actual orbits as accurately as one wishes for a finite time. But the stability question is
 one which requires the study of the dynamics for all time. Schematically, we can find
-accurate series representations for small perturbations of O(ε), say, for t < T . That
+accurate series representations for small perturbations of O(ε), say, for t &lt; T . That
 is, one can accurately compute trajectories for fixed T as ε → 0. But the reality is
 that ε is small but finite, and one really wants to study the limit T → ∞. The series
 that one obtains are not necessarily convergent, but asymptotic.
@@ -258,9 +279,8 @@ devices such as tokamaks, operate by accelerating atomic particles around closed
 loops. They have to maintain almost circular orbits for many millions of rotations.
 In this case, the long-term stability of almost periodic motions is a central concern,
 which makes the study of the analogous celestial mechanics problem rather less
-academic.
-
-1.6 The Lorenz Equations
+academic.</p>
+<p>1.6 The Lorenz Equations
 The surge of recent interest in chaotic behaviour does not, however, stem from a
 breakthrough in studies of turbulence, nor in the revelations offered by the KAM
 theorem. Instead, it was a more mundane, if difficult, problem that initiated much of
@@ -290,13 +310,12 @@ of these equations can appear chaotic when viewed in phase space. Figure 1.8 sho
 a typical time series, which is apparently chaotic.
 Lorenz made several key observations, which led to a partial understanding of
 the behaviour he observed, and raised further questions for the theorist. First, the
-divergence of the right-hand side of (1.14) (taken as a vector) is −(σ + b + 1) < 0,
+divergence of the right-hand side of (1.14) (taken as a vector) is −(σ + b + 1) &lt; 0,
 and thus phase volumes contract uniformly in time. Second, orbits are bounded
 in phase space. Therefore, there is a bounded attracting set, which all trajectories
 approach. From his numerical integrations, Lorenz guessed that he might be able to
-characterise orbits by some single feature such as the maximum value of z as the
-
-loop round. He thus tabulated the sequence of maxima in z, {Mn}, and plotted Mn+1
+characterise orbits by some single feature such as the maximum value of z as the</p>
+<p>loop round. He thus tabulated the sequence of maxima in z, {Mn}, and plotted Mn+1
 versus Mn: the result is shown in Fig. 1.9.
 On the face of it, it seems that one can use Mn as a predictor for Mn+1. In some
 sense, the sequence {Mn} encodes the orbits, and thus we are led to studying the
@@ -306,26 +325,25 @@ we shall return to it in Chap. 4. We shall have more to say about one-dimensiona
 maps in Chap. 2. For the moment, we follow Lorenz, who opted to study the simpler
 tent map given by
 Mn+1 =
-{ 2Mn, Mn < 1
+{ 2Mn, Mn &lt; 1
 2 ,
-2 − 2Mn, Mn > 1
+2 − 2Mn, Mn &gt; 1
 2 , (1.15)
 which is shown in Fig. 1.10. Its dynamics are extremely complicated, but nevertheless
 simple to understand.
 Lorenz argued as follows. Iterates of (1.15) satisfy
-Mn = mn ± 2n M0, (1.16
-
-where mn is even. Consider first an initial value M0 = u/2 p, where u is odd (and
-M0 < 1
+Mn = mn ± 2n M0, (1.16</p>
+<p>where mn is even. Consider first an initial value M0 = u/2 p, where u is odd (and
+M0 &lt; 1
 2 ). Then M p−1 = 1
 2 , M p = 1 and M p+1 = 0. There are thus a countable num-
 ber of trajectories which are bi-asymptotic to 0 (that is, Mi → 0 as i → ±∞); such
 trajectories are called homoclinic trajectories. If M0 = u
 2 pv , where u, v are relatively
-prime (and odd), then for all k < 0, M p+k = uk
+prime (and odd), then for all k &lt; 0, M p+k = uk
 v , where uk, v are relatively prime and
 uk is even. Hence all such values of M0 lead to asymptotically periodic sequences,
-since for any v, only a finite number of even values of uk < v can occur. Finally,
+since for any v, only a finite number of even values of uk &lt; v can occur. Finally,
 suppose that M0 is irrational; it is easy to see from (1.16) that Mn+k = Mn for all
 values of n and k, and thus such sequences are aperiodic. In consequence,
 (i) there are a countable number of periodic orbits;
@@ -346,11 +364,10 @@ will ‘look’ chaotic. A fourth ingredient, not considered by Lorenz, is
 (iv) the existence of a dense7 orbit.
 That is to say, there is an orbit which approaches any point in the invariant set
 arbitrarily closely. It is easy to see that a dense orbit exists for (1.15). First, (1.16)
-implies that if M0 is written as a binary expansion M0 = .a1a2a3 . . . the
-
-Mn = .anan+1an+2 . . . or 1 − .anan+1an+2 . . . . (1.18)
+implies that if M0 is written as a binary expansion M0 = .a1a2a3 . . . the</p>
+<p>Mn = .anan+1an+2 . . . or 1 − .anan+1an+2 . . . . (1.18)
 Let s ∈ (0, 1) have binary expansion s = .s1s2s3 . . . , then if ˜s = .s1s2 . . . sk,
-we have |s − ˜s| < 2−k. Suppose also ˜t = 1 − ˜s = .t1t2 . . . tk. Then if M0 = a0a1
+we have <a href="#id5"><span class="problematic" id="id6">|s − ˜s|</span></a> &lt; 2−k. Suppose also ˜t = 1 − ˜s = .t1t2 . . . tk. Then if M0 = a0a1
 . . . s1s2 . . . skt1t2 . . . t k . . ., we see that some iterate of M0 lies within 2−k of s. By
 sequentially including all such numbers for larger and larger k, we thus create an
 M0 whose iterates come arbitrarily close (and infinitely often) to any point in the
@@ -385,9 +402,8 @@ rather Gallic debate between the three authors. Arnold’s (1983) book is full o
 things, though it shares with Guckenheimer and Holmes’s book a somewhat perverse
 ordering.
 Altogether different is the book by Thompson and Stewart (1986) (second edition
-from 2002), engineers by training. It is very clear and readable, though it stops short
-
-of the kind of detail needed to satisfy even an applied mathematician. It is very
+from 2002), engineers by training. It is very clear and readable, though it stops short</p>
+<p>of the kind of detail needed to satisfy even an applied mathematician. It is very
 useful as a reference. Mackay and Meiss (1987) is a large collection of reprints in
 Hamiltonian mechanics, including classic papers by Kolmogorov and Arnold on the
 KAM theorem. Another book with the Hamiltonian flavour is that of Tabor (1989).
@@ -425,9 +441,8 @@ de la Mécanique Céleste (Poincaré 1993). Interestingly, the two historical ac
 diverge slightly in interpretation. Poincaré’s original submission contained a mistake,
 spotted by the reviewer Phragmén, which involved the assumption that the stable and
 unstable manifolds8 of fixed points of a Poincaré map for a Hamiltonian system would
-intersect (if at all) smoothly. In fact this is not necessarily the case, and transverse
-
-intersection provides an explicit mechanism for chaotic behaviour, as explained in
+intersect (if at all) smoothly. In fact this is not necessarily the case, and transverse</p>
+<p>intersection provides an explicit mechanism for chaotic behaviour, as explained in
 Chap. 5, Section 5.3.6. The error was corrected in the eventually published memoir in
 Acta Mathematica, but was a cause of some embarrassment to the prize committee,
 none of whom had noticed it.
@@ -460,9 +475,8 @@ for debate.
 In practice, present-day forecasts attempt to circumvent the issue by using ensem-
 ble forecasts, in which a suite of different predictions are made using a distribution
 of different initial conditions. The forecasts then become probabilistic in nature. See,
-for example, Gneiting and Raftery (2005).
-
-1.8 Exercises
+for example, Gneiting and Raftery (2005).</p>
+<p>1.8 Exercises
 1.1 The pair of equations
 ˙x = f (x, y),
 ˙y = g(x, y)
@@ -480,23 +494,22 @@ point is a saddle, (stable or unstable) node, etc.
 ˙x = −σ x + σ y,
 ˙y = (r − z)x − y,
 ˙z = x y − bz,
-where r, σ, b > 0. Show that the origin is a stable equilibrium point if r < 1,
-and unstable if r > 1.
-Show that if r > 1, there are two further equilibria C±, given by x = y =
+where r, σ, b &gt; 0. Show that the origin is a stable equilibrium point if r &lt; 1,
+and unstable if r &gt; 1.
+Show that if r &gt; 1, there are two further equilibria C±, given by x = y =
 ±√b(r − 1), z = r − 1, and show that the eigenvalues λ of the Jacobian of
 the linearised equations at either equilibrium satisfy
 p(λ, r) ≡ λ3 + (σ + b + 1)λ2 + b(σ + r)λ + 2bσ (r − 1) = 0.
-By consideration of the graph of p for r > 1 show that there is always at least
-one root of p which is negative, and show that λ = 0 is never a root for r > 1.
+By consideration of the graph of p for r &gt; 1 show that there is always at least
+one root of p which is negative, and show that λ = 0 is never a root for r &gt; 1.
 Show that when r = 1, the other two roots are also negative. Deduce that
 this is also the case if r ≈ 1. [Hint: as r varies, the roots λ(r) of p = 0 vary
 continuously—why?]
 Show that the two roots other than the negative one can be an imaginary pair
 ±i only if r = rc, where
 rc = σ (σ + b + 3)
-σ − b − 
-
-1.3 If x ∈ R satisfies ˙x = f (x, μ), with
+σ − b −</p>
+<p>1.3 If x ∈ R satisfies ˙x = f (x, μ), with
 f (0, 0) = 0, fx (0, 0) = 0,
 write down an approximate equation for x near 0 by expanding f in a Taylor
 series, retaining terms up to degree 3. By considering the relative magnitude
@@ -520,7 +533,7 @@ fork bifurcations, respectively.]
 1.4 Show that the system
 ˙x = μ − x 2,
 ˙y = −y, (1.20)
-has a bifurcation at μ = 0 where a saddle in x < 0 joins a node in x > 0 (hence
+has a bifurcation at μ = 0 where a saddle in x &lt; 0 joins a node in x &gt; 0 (hence
 the name saddle-node bifurcation).
 1.5 The Lotka–Volterra equations are
 ˙x = ax − bx y,
@@ -529,16 +542,15 @@ Show by a scaling argument that they can be written in the dimensionless form
 ˙x = x(1 − y),
 ˙y = γ y(x − 1),
 and define γ in terms of a, b, c and d.
-Show that there is a (linear) centre at (1, 1) and a saddle at (0, 0)
-
-By considering dy/dx or otherwise, find a first integral, and deduce carefully
+Show that there is a (linear) centre at (1, 1) and a saddle at (0, 0)</p>
+<p>By considering dy/dx or otherwise, find a first integral, and deduce carefully
 that trajectories of the nonlinear system form closed orbits about (1, 1). Hence
 construct the phase plane for the Lotka–Volterra equations.
 1.6 The Van der Pol equation is
 ¨x + μ(x 2 − 1) ˙x + x = 0.
 By an appropriate definition of y, write this equation as a pair of first-order
 equations for x and y. Show that there is a unique fixed point, and show that it
-is stable if μ < 0 and unstable if μ > 0.
+is stable if μ &lt; 0 and unstable if μ &gt; 0.
 What kind of bifurcation occurs at μ = 0?
 1.7 A λ-ω system is given by
 ˙u = λu − ωv,
@@ -553,21 +565,20 @@ Deduce that if ω(r) ≡ 1 and λ(r) = μ − r 2, a Hopf bifurcation occurs at
 If, instead, λ = μr 2 − r 4, show that the bifurcation diagram remains the same.
 Does a Hopf bifurcation occur in this case? If not, why not?
 1.8 Sketch the bifurcation diagrams for the systems
-(i) ˙x = x(μ − c − μbx), b, c > 0;
-(ii) ˙x = μx − bx 2 + cx 3, b > 0;
-(iii) ˙x = −x(x 2 − 2bx − μ), b > 0;
+(i) ˙x = x(μ − c − μbx), b, c &gt; 0;
+(ii) ˙x = μx − bx 2 + cx 3, b &gt; 0;
+(iii) ˙x = −x(x 2 − 2bx − μ), b &gt; 0;
 indicate stability of the solution branches. (You should not necessarily assume
 that the critical value of μ is zero.)
 1.9 Describe the (x, y) phase portrait of the following systems, written in polar
-coordinates (r, θ), for μ >
-< 0, and determine which of them has a Hopf bifur-
+coordinates (r, θ), for μ &gt;
+&lt; 0, and determine which of them has a Hopf bifur-
 cation at μ = 0:
 (a) ˙r = r(μ − r 2)(2μ − r 2)2;
 (b) ˙r = r(r + μ)(r − μ);
 (c) ˙r = −μ2r(r + μ)2(r − μ)2;
-with ˙θ = 1 in all cases
-
-1.10 A feedback control system is modelled by
+with ˙θ = 1 in all cases</p>
+<p>1.10 A feedback control system is modelled by
 ¨x + δ ˙x + x(x 2 − 1) = −z,
 ˙z + αz = αγ x,
 where x is the amplitude of a damped, nonlinear spring and z is the controller.
@@ -588,11 +599,84 @@ If x ∗ is an equilibrium point, derive a transcendental equation for the expon
 σ of infinitesimal perturbations eσ t to x ∗, for the delay equation. Hence show
 that if ∣
 ∣ f ′∣
-∣ < 1, the fixed point is stable. Is there a corresponding result for the
+∣ &lt; 1, the fixed point is stable. Is there a corresponding result for the
 (N + 1)-dimensional approximation?
 [This is called a delay-recruitment equation. If the map x → f (x) has chaotic
 dynamics, then so does the delay-differential equation for small enough ε. The
-fixed point x ∗ loses stability by a Hopf bifurcation (if f ′(x ∗) < −1), and then
-period doubles9 towards chaotic behaviour.
+fixed point x ∗ loses stability by a Hopf bifurcation (if f ′(x ∗) &lt; −1), and then
+period doubles9 towards chaotic behaviour.</p>
 
 
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Caos</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Тражи" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Навигација</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Mathematical_Biology_I_An_Introduction_3E/index2.html">Mathematical_Biology_I_An_Introduction_3E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynam_Systems_Applica_Mathematica_Stephen/index2.html">Dynam_Systems_Applica_Mathematica_Stephen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Exploration_Dynamical_Systems_Chaos_Argyris/index2.html">An_Exploration_Dynamical_Systems_Chaos_Argyris$</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney/index2.html">An_Intro_Chaotic_Dynamical_Systems_3E_Robert_Devaney$</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Introduction_Dynamical_Systems_and_Chaos/index2.html">An_Introduction_Dynamical_Systems_and_Chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../An_Introduction_to_Complex_Systems/index2.html">An_Introduction_to_Complex_Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sistemas_Dinamicos.html">Sistemas_Dinamicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index2.html">Caos documentation -2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Leopoldo.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/Chaos_An_Introduction_for_Applied_Math_Andrew/c01.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
