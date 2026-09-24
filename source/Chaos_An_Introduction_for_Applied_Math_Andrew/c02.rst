@@ -1,6 +1,8 @@
-Chapter 2
-One-Dimensional Maps
-2.1 Chaos in Maps
+Chapter 2 One-Dimensional Maps
+==============================
+
+**2.1 Chaos in Maps**
+
 The study of differential equations is naturally bound to the study of maps. Depending
 on your point of view, difference equations are of interest in their own right, and an
 extreme position leads to such esoteric (but elegant!) subjects as that of the study of
