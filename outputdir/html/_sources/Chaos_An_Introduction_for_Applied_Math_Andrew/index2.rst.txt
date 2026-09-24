@@ -1,4 +1,4 @@
-Caos documentation -2
+Chaos_An_Introduction_for_Applied_Math_Andrew
 ==================
 
 .. toctree::
