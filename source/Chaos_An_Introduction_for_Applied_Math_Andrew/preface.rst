@@ -1,0 +1,94 @@
+prefacio
+========
+
+The modern theory of chaos arguably stems from the publication of Ed Lorenz’s
+remarkable paper in 1963 on deterministic nonperiodic flow. It took a while for it to
+be noticed outside the meteorological literature, but by the 1970s, the subject was
+gaining momentum, courses were created and in the 1980s books started to appear.
+At first few in number, but eventually they too became a roaring current. The
+subject is now well established, and as well as plentiful literature, there are a
+number of dedicated journals.
+So the first thing an author needs to do is to provide an excuse for why another
+book should be added to the list. There are two reasons, both of which provided a
+motivation for the original drafting of this material, and both of which remain valid
+in my opinion.
+The first is that most of the books on dynamical systems take a particular point of
+view, whereas actually the subject is a composite of a number of different historical
+strands. For example, Poincaré’s (1892) early investigations were motivated by the
+problem of predictability in celestial mechanics, particularly with regard to the
+stability of the solar system, and that work led in one way to the KAM theorem and
+much of the material concerning stochasticity in Hamiltonian systems; but equally it
+led (via the Poincaré–Lindstedt method) to modern methods of perturbation theory
+and bifurcation theory. This homogeneity of the subject has largely been lost in
+books on chaos, which mostly focus on one subject area or another. The intention
+here is to provide a view which accommodates all the different directions the
+subject has taken, whether it be Hamiltonian systems, maps or bifurcation theory.
+The second reason is found in the book’s title; I am an applied mathematician,
+and this means I chart a middle course between that of the physicist and that of the
+purer mathematician. But most of the books on chaos are by people who reside in
+one or other of these camps, and the flavour of the applied mathematician is rather
+different
+
+Applied mathematicians are less interested in theorems and proofs,1 because
+most of what they do is too hard to prove anything about. That is not always true,
+but it mostly is. They are interested in practicalities, and often this means
+approximations. An applied mathematician is less interested in a proof that, for
+example, the Lorenz equations have chaotic solutions: he2 is willing to take it on
+trust since there is no reason not to think it so. On the other hand, he is a mathe-
+matician, and will therefore be worried by the minutiae of (for example) dealing
+with homoclinic bifurcations, where it is necessary for peace of mind to pursue the
+details and mechanism of proof: these would not be items of much concern for
+physicists, who are yet more interested in observations, to the exclusion of some
+of the technical detail.
+For both these reasons, I, or rather we, feel that the present text will fill a small
+gap in the literature. We provide in chapter one a semi-historical overview of the
+development and context of the subject, and then in the following chapters we tell
+the story of the four horsemen: maps, Hopf and homoclinic bifurcations and
+Hamiltonian systems. The final chapter represents an exploration of other topics of
+more recent and practical or simply intellectual interest. The treatment is succinct,
+but in places we push it to a more challenging level. Such excursions provide
+another deviation from other texts. In order to preserve what readability there is, we
+have not cluttered the text with references, and we certainly do not aim to be overly
+extensive in our bibliography. The ‘Notes and references’ sections at the end of
+each chapter provide both citations and also further commentary on, or elaboration
+of, some of the earlier text.
+The material may be suitable for final-year undergraduate or graduate courses; it
+assumes a working knowledge of applied mathematics curricular subjects such as
+differential equations, mechanics and nonlinear dynamics. In places, it may assume
+a familiarity with other likely staples of the curriculum: fluid mechanics and
+mathematical biology, for example. But it also dabbles with material which may be
+less familiar to the intended audience, though still essential to the text: point set
+topology, and some elements of functional analysis.
+In preparing this book for publication, I have taken on as co-author my
+long-standing colleague and good friend Mark McGuinness, whose personal
+entwinement with my career dates back 40 years. Mark and I met as postdoctoral
+research fellows in Dublin in 1979, and we proceeded to write several papers on
+chaos in the Lorenz equations, before going our separate ways: he to CalTech and
+eventually Wellington, I to M. I. T. and eventually Oxford and subsequently
+Limerick. And, eventually, we met up again, and have since been frequent visitors
+to each other's institutions. The plan to finish this book coincided with a visit by m
+
+to Victoria University, Wellington, where Mark is Professor in the School of
+Mathematics and Statistics, and I have a position of Adjunct Professor, and I am
+grateful for this award, without which this book might never have seen the light of
+day!
+Kilkee, Co. Clare, Ireland Andrew Fowler
+February 2019
+I am delighted to be involved in writing a book on chaos with my colleague,
+co-author and friend Andrew Fowler. It is apposite that this book began during a
+visit to Victoria University of Wellington from Andrew in his capacity as Adjunct
+Professor, and was completed during my first visit as Adjunct Professor to the
+University of Limerick.
+My first forays into chaotic dynamics were in 1979 with Andrew and with John
+Gibbon, in Dublin, Ireland. We were all newly in town and fresh out of our Ph.D.s,
+and free and willing to talk about mathematics in Irish pubs and over meals at each
+other’s homes. It was classic stuff, scribbling on napkins, finding connections
+between soliton equations and the Lorenz equations, sharpening cusps and using
+asymptotic methods to make the connection between differential equations and
+one-dimensional maps. It was not until much later that I was to realise that what
+happened collaboratively and instinctively in Ireland was very special indeed. This
+book is in many ways a celebration of those good times, and of the very productive
+years that followed.
+Wellington, New Zealand Mark McGuinness
+
+
