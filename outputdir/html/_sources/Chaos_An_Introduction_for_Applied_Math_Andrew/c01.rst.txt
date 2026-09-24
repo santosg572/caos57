@@ -6,7 +6,11 @@ Chapter 1 Introduction
 The behaviour of autonomous (that is, where time is not represented explicitly)
 ordinary differential equations in R2 is well understood. The qualitative behaviour
 of the equation
-˙x = f (x), x ∈ R2, (1.1)
+
+.. math::
+
+   \dot{x} = f (x), x \in  R22, (1.1)
+
 is organised by its fixed points, where ˙x = f (x) = 0. Elementary texts show how
 these maybe classified into saddles, spirals and nodes depending on the eigenvalues
 of the Jacobian D f (x) at the fixed point. In particular, if these eigenvalues are com-
@@ -16,16 +20,27 @@ Nodes and spirals may be stable or unstable depending on whether the eigenvalues
 have Re λ < 0 or Re λ > 0, respectively; saddles are always unstable. Other degen-
 erate cases (centre, degenerate node) can occur, if Re λ = 0, or if two eigenvalues
 coalesce.
+
 Knowledge of the behaviour of trajectories near fixed points informs the method
 of phase plane analysis. An example of its use is to find travelling solitary wave
-
 solutions of the Korteweg–de Vries equation
-ut + uu x + u x x x = 0 (1.2)
+
+.. math::
+
+   ut + uu x + u x x x = 0 (1.2)
+
 in the form u = f (x − ct) = f (ξ ), so that
-− c f ′ + f f ′ + f ′′′ = 0, (1.3)
+
+.. math::
+
+   − c f ′ + f f ′ + f ′′′ = 0, (1.3)
+
 with first integral
-− c f + 1
-2 f 2 + f ′′ = 0 (1.4)
+
+.. math::
+
+   − c f + 12 f 2 + f ′′ = 0 (1.4)
+
 (so that f (±∞) = 0). This represents a nonlinear oscillator with potential V ( f ) =
 − 1
 2 c f 2 + 1
@@ -37,27 +52,38 @@ absence of a damping term.) Solitary waves exist, by virtue of the homoclinic or
 which connects 0 to itself. We see in addition that there exists a family of periodic
 orbits lying within the homoclinic loop. One can think of the homoclinic orbit as a
 limiting member of this family with infinite period.
+
 More generally, periodic behaviour occurs in two-dimensional systems at isolated
 limit cycles. A limit cycle is a closed curve in a phase space (which, therefore,
 represents a periodic time series) to which nearby trajectories tend either as t → +∞
 (stable limit cycle) or as t → −∞ (unstable limit cycle). A simple example (see also
 exercise 1.7) is offered by the system
-˙x = x − y − x(x 2 + y2),
-˙y = x + y − y(x 2 + y2); (1.5)
+
+.. math::
+
+   ˙x = x − y − x(x 2 + y2),
+   ˙y = x + y − y(x 2 + y2); (1.5)
 
 by transforming to polar coordinates (r, θ), it is straightforward to find the phase
 plane shown in Fig. 1.3. There is a stable limit cycle at r = 1, and an unstable focus
 at r = 0.
+
 One is often interested in the behaviour of a (physical) system as a parameter
 changes (e.g. the Earth’s climate as the atmospheric CO2 level changes). In this case,
 one might study differential equations of the form
-˙x = f (x, μ), (1.6)
+
+.. math::
+
+   ˙x = f (x, μ), (1.6)
+
 where μ is a parameter. For some ranges of μ, the system may exhibit steady
 behaviour, in others it may behave periodically. One then wishes to chart regions
 in parameter space where such qualitative changes occur. These delineate particular
 values of μ at which such bifurcations take place, and μ is then called a bifurcation
 parameter.
-1.2 Bifurcation Theory
+
+**1.2 Bifurcation Theory**
+
 The Watt governor (see Fig. 1.4) is a device invented by James Watt around 1788 to
 control the flow of steam into the cylinders of an engine. It is a simple but efficient
 device, which acts on the basis of bifurcation theory. As shown in the figure, the
@@ -65,48 +91,63 @@ device consists in essence of a pair of rigid pendulums attached to a central sh
 which rotates about its axis at a rate determined by the pressure of steam in the engine.
 The object is to have a device such that if this rotation rate becomes too large, then
 the arms of the device rise, thus opening a valve which alleviates the pressure.
+
 If we denote the angle of the arms of the governor to the downward vertical as θ,
 and the angular velocity of the shaft as , then the equation governing the dynamics
 is, ignoring friction (see question 5.1),
-¨θ − 2 sin θ cos θ + 2
-c sin θ = 0, (1.7
+
+.. math::
+
+   ¨θ − 2 sin θ cos θ + 2c sin θ = 0, (1.7
 
 here
-c =
-√ g
-l , (1.8)
+
+.. math::
+
+    c =√ gl , (1.8)
+
 g is the acceleration due to gravity and l is the length of the pendulum arms.
+
 The steady states of the system are θ = 0, π, and also ± cos−1
 ( 2
 c
 2
 )
 if  > c.
+
 The function of the governor can be seen in the fact that we can have θ as an
 increasing function of  if  > c, thus opening the valve, and its operation relies
 on the existence of a pitchfork bifurcation at  = c. More precisely, if we linearise
 (1.7) near the origin, we see that
-¨θ ≈ (2 − 2
-c
-) θ, (1.9)
+
+.. math::
+
+  ¨θ ≈ (2 − 2c) θ, (1.9)
+
 and thus the vertical state loses stability for  > c. Expanding further in θ and also
 supposing that  − c is small, we have
-¨θ ≈ (2 − 2
-c
-) θ − 1
-2 2
-cθ 3 . . . , (1.10)
+
+.. math::
+
+  ¨θ ≈ (2 − 2c) θ − 12 2cθ 3 . . . , (1.10)
+
 which shows explicitly that there is an exchange of stability between θ = 0 and the
 non-zero fixed points. Bifurcation theory is discussed in more detail in Chap. 3.
-1.2.1 Hopf Bifurcation
+
+**1.2.1 Hopf Bifurcation**
+
 The transition from steady to periodic behaviour is often associated with a Hopf
 bifurcation, as instanced by the following generalised version of (1.5):
-˙x = μx − y − x(x 2 + y2),
-˙y = x + μy − y(x 2 + y2). (1.11)
+
+.. math::
+
+   ˙x = μx − y − x(x 2 + y2),
+   ˙y = x + μy − y(x 2 + y2). (1.11)
 
 It is simple to find that the origin is a stable focus for μ < 0, an unstable focus
 for μ > 0 and that for μ > 0 a stable periodic solution exists, whose amplitude
 A = |z|max = |x + iy|max = O(√μ) (and in fact equals √μ).
+
 The bifurcation diagram is shown in Fig. 1.5. The salient features are that, if the
 linearised system has solutions ∝ eσ t , then a pair of complex conjugate eigenvalues
 σ = μ ± i of the fixed point cross the imaginary axis at μ = 0, at a non-zero ‘rate’
@@ -115,10 +156,12 @@ a Hopf bifurcation, and will be considered further in Chap. 3. Notice the fact t
 the limit cycle exists (for small μ) in either μ > 0 or μ < 0, so that its stability is
 opposite to that of the fixed point with which it coexists. Furthermore, its amplitude
 is O(√μ). All these features are generally true.
+
 Fixed points and periodic solutions are ‘all’ that a two-dimensional system can
 exhibit. This is because trajectories cannot intersect in the phase space, due to the
 following existence theorem:
-Theorem (Picard) If ˙x = f (x) and x(0) = x0, and f is Lipschitz continuous (i.e.
+
+**Theorem** (Picard) If ˙x = f (x) and x(0) = x0, and f is Lipschitz continuous (i.e.
 | f (x) − f (y)| < K |x − y| for some K ), then x exists locally (in t) and is unique.
 
 Here, in fact, we can take x ∈ Rn, provided a suitable norm is chosen. In terms
@@ -127,7 +170,9 @@ differentiable); the usual example for necessity is that of ˙x = x 1/2, x(0) = 
 has infinitely many solutions of the form x = 1
 4 [t − t0]2
 +, where t0 ≥ 0.2
-1.3 Strange Attractors
+
+**1.3 Strange Attractors**
+
 In three or more dimensions, it is still true that trajectories do not intersect, but no
 longer does this constrain the orbits in the way that it does in two dimensions. It
 is quite possible to imagine a bounded trajectory in three dimensions which never
@@ -136,16 +181,25 @@ but Fig. 1.6 suggests that they can. This shows a numerical solution of a set of
 ordinary differential equations, known as the Lorenz equations (written explicitly in
 (1.14) below, and which we shall meet again later, particularly in Chap. 4); the orbit
 appears to trace out a surface, albeit a convoluted one, on which the orbit is dense
-
 (i.e. it ‘fills out’ the surface). These observations raise certain conceptual problems.
 We term a differential equation
-˙x = f (x), x ∈ Rn, (1.12)
+
+.. math::
+
+   ˙x = f (x), x ∈ Rn, (1.12)
+
 dissipative if ∇. f < 0; the Lorenz equations are an example of a dissipative system.
 It is easy to show that an arbitrary volume V of initial points in phase space satisfies
-the equation ˙V = V ∇. f. (1.13)
+the equation 
+
+.. math::
+
+   ˙V = V ∇. f. (1.13)
+
 Therefore if ∇. f < 0 (and is bounded away from zero), then V → 0 as t → ∞. If,
 in addition, solutions are bounded for all t (e.g. if x. f < 0 for large ||x||), then all
 trajectories must be attracted to a set of zero volume.
+
 Consider the Lorenz equations in three dimensions. Intuition tells us to expect
 the zero volume attractor to be of dimension two, i.e. a surface. And yet, we have
 already pointed out that orbits on a surface cannot be more exciting than periodic,
@@ -162,7 +216,8 @@ magnified exponentially in time, so that predictions beyond a few days are unrel
 able. It is probably the case that nature abounds with such inherently unpredictable
 phenomena.
 
-1.4 Turbulence
+**1.4 Turbulence**
+
 It has been a commonplace observation for centuries that water often flows in an
 irregular fashion. Figure 1.7 shows a drawing by Leonardo da Vinci of water flowing
 into a pool. It is a mass of bubbles and irregularly placed whorls. Osborne Reynolds
@@ -175,20 +230,22 @@ time-dependent, turbulent one. This parameter, now called the Reynolds number
 sition to ‘turbulence’ in fluids, for example in thermal convection, rotating Couette
 flow, rotating stratified flows, etc., are associated with changes in Rayleigh number
 Ra, Taylor number Ta and Rossby number Ro.
+
 The analogy between the transition in ordinary differential equations from fixed
 point to periodic motion and ultimately to chaos, and similar transitions in some fluid
 flow experiments, suggests that a useful strategy to understand these phenomena may
 be to study the bifurcations associated with the transitions. In some experiments, this
 approach has been markedly successful.
+
 The word ‘turbulence’ has come to have a particular meaning to fluid dynamicists
 who often associate it with transitions in shear flow, (e.g. Reynolds’ flows in a pipe
-
 or plane Poiseuille flow, or boundary layer flow). It is characterised by temporal
 and spatial disorder, and the existence of ‘eddies’ on many different length scales.
 Moreover, shear flows are unlike other fluid experiments, such as Rayleigh–Bénard
 convection (the motion induced by heating a layer of fluid from below), in that
 the mechanisms of transition show no obvious analogy with transitions in finite-
 dimensional systems. As such, they lie apart from more ‘well-behaved’ experiments.
+
 Some mathematicians and physicists have trod on this sacred turf, by annexing the
 word ‘turbulence’ for their own purposes, sometimes simply to characterise chaotic
 motion in ordinary differential equations, or as a general term to describe spatio-
@@ -196,7 +253,9 @@ temporal disorder. In doing so, this has alienated some fluid dynamicists, which
 pity, since there is little doubt that (in the words of Ed Spiegel) ‘turbulence is chaos,
 but chaos is not turbulence’. But the clue to the understanding of turbulence in fluids
 lies in the modern theory of chaos in dynamical systems.
-1.5 Stochasticity
+
+**1.5 Stochasticity**
+
 Osborne Reynolds began his experiments on pipe flow in 1880, and the first paper
 reporting his results appeared in 1883. A second, outlining the basis for the statistical
 description of turbulence, and introducing the Reynolds stresses, appeared in 1885. In
@@ -207,6 +266,7 @@ points, the prize asked for convergent series representations of their trajector
 all time. Put another way, it raised the question as to whether Laplace’s famous prin-
 ciple of determinism3 could be put into practice: are the motions of celestial bodies
 predictable; is the solar system stable?
+
 At first sight such a question seems ludicrous; the solar system, in particular, seems
 the very epitome of predictability. Treating the planets as mass points interacting
 according to Newtonian gravitation, one can predict in detail the trajectories of the
@@ -226,6 +286,7 @@ accurate series representations for small perturbations of O(ε), say, for t < T
 is, one can accurately compute trajectories for fixed T as ε → 0. But the reality is
 that ε is small but finite, and one really wants to study the limit T → ∞. The series
 that one obtains are not necessarily convergent, but asymptotic.
+
 The non-convergence of the perturbation series representations for planetary tra-
 jectories is associated with the phenomenon of stochasticity in Hamiltonian dynam-
 ics. A system such as the solar system (nine4 planets plus the Sun, let us say) is
@@ -240,6 +301,7 @@ perturbed to H? The question is whether the nine torus is robust to perturbation
 also whether, if so, trajectories on it are close to quasi-periodic (i.e. have no more
 than nine independent frequencies). In fact, there is a one parameter family of 9-tori
 corresponding to different values of the energy H .
+
 Poincaré won the King’s prize by showing amongst other things that series expan-
 sions in ε (if H − H0 ∼ ε) were divergent, and he also knew that such divergence
 was associated with the destruction of certain tori. The achievement of Kolmogorov,
@@ -249,6 +311,7 @@ question: is the solar system stable? is: probably. However, near the tori which
 destroyed by a perturbation, there exist regions of irregular, stochastic behaviour,
 and as the perturbation grows in amplitude, the regions of stochasticity grow in size,
 until eventually, they envelop the phase space.
+
 Celestial stability is a classical problem, and of interest for its own sake. Nev-
 ertheless, the question of whether the solar system might fly apart in a few million
 years might seem overly abstruse. There are, however, other more practical problems
@@ -259,11 +322,13 @@ In this case, the long-term stability of almost periodic motions is a central co
 which makes the study of the analogous celestial mechanics problem rather less
 academic.
 
-1.6 The Lorenz Equations
+**1.6 The Lorenz Equations**
+
 The surge of recent interest in chaotic behaviour does not, however, stem from a
 breakthrough in studies of turbulence, nor in the revelations offered by the KAM
 theorem. Instead, it was a more mundane, if difficult, problem that initiated much of
 what followed: predicting the weather.
+
 Ed Lorenz was a meteorologist at M. I. T., interested in medium-range weather
 forecasting, and particularly the issue of whether weather was in principle predictable
 beyond some optimum time. Given that the initial conditions (the weather today) can
@@ -276,27 +341,33 @@ the initial conditions x = 0 or x = ε. Lorenz wished to show that a ‘realisti
 nonlinear equations (i.e. which bear some relation to a physical model) could exhibit
 the same behaviour, and moreover that the solutions themselves could be irregular
 and aperiodic.
+
 The minimum requirement is a set of three nonlinear, ordinary differential equa-
 tions, and Lorenz derived the equations named for him by writing down a Fourier
 series representation for the stream function and temperature in two-dimensional,
 Boussinesq6 convection. By retaining only three terms, he obtained the following:
-˙x = −σ x + σ y,
-˙y = (r − z)x − y,
-˙z = x y − bz. (1.14)
+
+.. math::
+
+   ˙x = −σ x + σ y,
+   ˙y = (r − z)x − y,
+   ˙z = x y − bz. (1.14)
+
 The three parameters r, σ , b are all positive; r represents external forcing and is nor-
 mally used as a bifurcation parameter. We have already seen, in Fig. 1.6, that solutions
 of these equations can appear chaotic when viewed in phase space. Figure 1.8 shows
 a typical time series, which is apparently chaotic.
+
 Lorenz made several key observations, which led to a partial understanding of
 the behaviour he observed, and raised further questions for the theorist. First, the
 divergence of the right-hand side of (1.14) (taken as a vector) is −(σ + b + 1) < 0,
 and thus phase volumes contract uniformly in time. Second, orbits are bounded
 in phase space. Therefore, there is a bounded attracting set, which all trajectories
 approach. From his numerical integrations, Lorenz guessed that he might be able to
-characterise orbits by some single feature such as the maximum value of z as the
-
+characterise orbits by some single feature such as the maximum value of z as they
 loop round. He thus tabulated the sequence of maxima in z, {Mn}, and plotted Mn+1
 versus Mn: the result is shown in Fig. 1.9.
+
 On the face of it, it seems that one can use Mn as a predictor for Mn+1. In some
 sense, the sequence {Mn} encodes the orbits, and thus we are led to studying the
 difference map given in Fig. 1.9. The issue of why the differential equation should be
@@ -304,15 +375,23 @@ thus encoded, and how one should derive Fig. 1.9 from (1.14) is rather more diff
 we shall return to it in Chap. 4. We shall have more to say about one-dimensional
 maps in Chap. 2. For the moment, we follow Lorenz, who opted to study the simpler
 tent map given by
-Mn+1 =
+
+.. math::
+
+   Mn+1 =
 { 2Mn, Mn < 1
 2 ,
 2 − 2Mn, Mn > 1
 2 , (1.15)
+
 which is shown in Fig. 1.10. Its dynamics are extremely complicated, but nevertheless
 simple to understand.
+
 Lorenz argued as follows. Iterates of (1.15) satisfy
-Mn = mn ± 2n M0, (1.16
+
+.. math::
+
+   Mn = mn ± 2n M0, (1.16
 
 where mn is even. Consider first an initial value M0 = u/2 p, where u is odd (and
 M0 < 1
@@ -327,40 +406,61 @@ uk is even. Hence all such values of M0 lead to asymptotically periodic sequence
 since for any v, only a finite number of even values of uk < v can occur. Finally,
 suppose that M0 is irrational; it is easy to see from (1.16) that Mn+k = Mn for all
 values of n and k, and thus such sequences are aperiodic. In consequence,
+
 (i) there are a countable number of periodic orbits;
+
 (ii) there are an uncountable number of aperiodic orbits.
+
 Furthermore, if M ′
 0 = M0 + ε, ε 1, then for sufficiently small ε and given k,
-M ′
-k = Mk ± 2k . (1.17)
+
+.. math::
+ 
+   M ′k = Mk ± 2k . (1.17)
+
 It follows from this that
+
 (iii) the map displays sensitive dependence on initial conditions.
+
 No matter how close two initial values M0 and M ′
 0 are, their iterates diverge after a
 finite number of terms.
+
 The three ingredients above are often taken as the definition of deterministic
 chaos. That is, an invariant set which includes (i) and (ii) and displays (iii) is said to
 be chaotic. Since (iii) implies that periodic orbits are unstable, it follows that orbits
 will ‘look’ chaotic. A fourth ingredient, not considered by Lorenz, is
+
 (iv) the existence of a dense7 orbit.
+
 That is to say, there is an orbit which approaches any point in the invariant set
 arbitrarily closely. It is easy to see that a dense orbit exists for (1.15). First, (1.16)
-implies that if M0 is written as a binary expansion M0 = .a1a2a3 . . . the
+implies that if M0 is written as a binary expansion M0 = .a1a2a3 . . . then
 
-Mn = .anan+1an+2 . . . or 1 − .anan+1an+2 . . . . (1.18)
+.. math::
+
+   Mn = .anan+1an+2 . . . or 1 − .anan+1an+2 . . . . (1.18)
+
 Let s ∈ (0, 1) have binary expansion s = .s1s2s3 . . . , then if ˜s = .s1s2 . . . sk,
 we have |s − ˜s| < 2−k. Suppose also ˜t = 1 − ˜s = .t1t2 . . . tk. Then if M0 = a0a1
 . . . s1s2 . . . skt1t2 . . . t k . . ., we see that some iterate of M0 lies within 2−k of s. By
 sequentially including all such numbers for larger and larger k, we thus create an
 M0 whose iterates come arbitrarily close (and infinitely often) to any point in the
 interval. For example,
-M0 = .01011011001010011100101110111 . . . (1.19)
+
+.. math::
+
+   M0 = .01011011001010011100101110111 . . . (1.19)
+
 is such a point. And there are countably many such points.
-1.7 Notes and References
+
+**1.7 Notes and References**
+
 The methods of nonlinear dynamics describing bifurcation theory, phase plane anal-
 ysis and so on are discussed in any number of books on differential equations; two
 popular ones which carry on into dynamical systems and chaos are those by Strogatz
 (1994) and Alligood et al. (1997).
+
 Although dynamical systems may be thought to start with the work of Poincaré
 over a hundred years ago, the subject of chaos really burst into flower in the 1980s.
 In Chaos II (1990), a collection of important reprints, Hao Bao-Lin lists 117 books
@@ -368,36 +468,42 @@ or conference proceedings up to the end of 1989 (not all on chaos, though). Amon
 the first of these was that of Guckenheimer and Holmes (1983). There is a lot of
 information packed in this book, although the order will not be to everyone’s taste,
 and the style is solidly mathematical. The strengths are in differential equation theory.
+
 The book by Devaney (1986) (there is a second edition from 2003) is solely
 concerned with maps, and is a good undergraduate mathematics text. On the other
 hand, there are a number of books by physicists; one such is that by Lichtenberg and
 Lieberman (1983) (with a second edition from 1992 and a paperback edition from
 2010), which is comprehensive but largely concerned with Hamiltonian systems and
 their perturbations, and not easy to read.
+
 The reprint collection by Hao Bao-Lin (1990) contains a very useful introduction
 to chaos, as does that by Cvitanoviˇc (1984), and both books are very useful sources of
 journal articles. The introduction in the latter, in particular, contains a lucid discussion
 of period-doubling (better than Feigenbaum’s original papers (1978, 1979), which
 are rather dense reading).
+
 A nice book, again by physicists, is that by Bergé et al. (1986), which ends with a
 rather Gallic debate between the three authors. Arnold’s (1983) book is full of good
 things, though it shares with Guckenheimer and Holmes’s book a somewhat perverse
 ordering.
+
 Altogether different is the book by Thompson and Stewart (1986) (second edition
 from 2002), engineers by training. It is very clear and readable, though it stops short
-
 of the kind of detail needed to satisfy even an applied mathematician. It is very
 useful as a reference. Mackay and Meiss (1987) is a large collection of reprints in
 Hamiltonian mechanics, including classic papers by Kolmogorov and Arnold on the
 KAM theorem. Another book with the Hamiltonian flavour is that of Tabor (1989).
+
 A lovely book on the Lorenz equations is that of Sparrow (1982), which gave an
 early emphasis to the importance of homoclinic bifurcations. A book which considers
 these in enormous detail is that of Wiggins (1990). The prolific Hao Bao-Lin (1989)
 has also written a nice book on symbolic dynamics.
+
 Books on related subjects are those by Carr (1981) on centre manifold theory,
 Hassard et al. (1981) on the Hopf bifurcation theorem (but including normal forms)
 and the book on ordinary differential equations by Hartman (1982), which contains
 many smoothness results which are used in the various bifurcation analyses.
+
 It can be seen from the above that there was a bloom in books on chaos in the
 1980s and 1990s, and many of these are now considered classics. Of course, books on
 chaos continue to be published, often as much later second editions. Recent examples
@@ -410,13 +516,16 @@ et al. is a monster at over 800 pages, and is suitably thorough; in particular, 
 liberal use of illustration. The main topics, though, are just those in the older books,
 though with some eclectic add-ons: for example, the last chapter on the dynamics of
 surface chemical reactions.
+
 One of the principal developments in the subject in more recent years has been the
 development of the subject of non-smooth, or piecewise discontinuous, dynamical
 systems. These arise in a variety of applications, for example, involving impact
 oscillators, systems with friction, and so on, and there are already a number of books
 on the subject, for example, that by di Bernardo et al. (2008). However, their study
 goes beyond the aspiration of the present book.
-1.7.1 Poincaré and the Swedish Prize
+
+**1.7.1 Poincaré and the Swedish Prize**
+
 An extensive account of King Oscar’s prize competition, its conduct and the award
 of the prize to Poincaré is given by Barrow-Green (1997), and to a lesser extent by
 Daniel Goroff in his introduction to the translation of Poincaré’s Méthodes nouvelles
@@ -425,12 +534,13 @@ diverge slightly in interpretation. Poincaré’s original submission contained 
 spotted by the reviewer Phragmén, which involved the assumption that the stable and
 unstable manifolds8 of fixed points of a Poincaré map for a Hamiltonian system would
 intersect (if at all) smoothly. In fact this is not necessarily the case, and transverse
-
 intersection provides an explicit mechanism for chaotic behaviour, as explained in
 Chap. 5, Section 5.3.6. The error was corrected in the eventually published memoir in
 Acta Mathematica, but was a cause of some embarrassment to the prize committee,
 none of whom had noticed it.
-1.7.2 Weather Predictability
+
+**1.7.2 Weather Predictability**
+
 We mentioned the weather briefly in Sect. 1.3, and again in Sect. 1.6. The problem
 of predicting the weather is confounded by two issues. The first of these is that,
 most probably, the model equations which describe weather patterns have chaotic
@@ -445,6 +555,7 @@ butterfly’s wings in Brazil set off a tornado in Texas?’ Interestingly, exac
 idea (and even with a butterfly playing the key rôle) occurs in Ray Bradbury’s short
 story ‘The sound of thunder’, which appears in his collection ‘The golden apples of
 the sun’; the story was published originally in 1952.
+
 The consequence of this is that, even if the model equations could be solved
 exactly (which they can not be), the necessary imprecision in specification of the
 initial conditions for the variables, due to incomplete knowledge of the state of
@@ -456,17 +567,34 @@ weather from that which actually occurs. Sensitive dependence on initial conditi
 leads to exponential divergence in time of neighbouring solution trajectories, while
 model error causes linear growth; which of these is the more important is a matter
 for debate.
+
 In practice, present-day forecasts attempt to circumvent the issue by using ensem-
 ble forecasts, in which a suite of different predictions are made using a distribution
 of different initial conditions. The forecasts then become probabilistic in nature. See,
 for example, Gneiting and Raftery (2005).
 
-1.8 Exercises
+**1.8 Exercises**
+
 1.1 The pair of equations
-˙x = f (x, y),
-˙y = g(x, y)
-has an equilibrium point at x = x0, y = y0.
+
+.. math::
+
+   \begin{matrix}
+   \dot{x} = f(x,y) \\
+   \dot{y} = g(x,y)
+   \end{matrix}
+
+has an equilibrium point at :math:`x = x_0, y = y_0`.
+
 If the matrix A is given by
+
+.. math:
+
+   A = \begin{pmatrix}
+    &  \\
+    &  \\
+   \end{pmatrix}
+
 A =
 ( fx f y
 gx gy
