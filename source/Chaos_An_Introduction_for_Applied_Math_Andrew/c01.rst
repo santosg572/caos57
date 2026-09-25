@@ -4,21 +4,21 @@ Chapter 1 Introduction
 **1.1 Limit Cycles**
 
 The behaviour of autonomous (that is, where time is not represented explicitly)
-ordinary differential equations in R2 is well understood. The qualitative behaviour
+ordinary differential equations in :math:`\mathbb{R}^2` is well understood. The qualitative behaviour
 of the equation
 
 .. math::
 
-   \dot{x} = f (x), x \in  R22, (1.1)
+   \dot{x} = f (x), x \in  \mathbb{R}^2, (1.1)
 
-is organised by its fixed points, where ˙x = f (x) = 0. Elementary texts show how
+is organised by its fixed points, where :math:`\dot{x} = f (x) = 0`. Elementary texts show how
 these maybe classified into saddles, spirals and nodes depending on the eigenvalues
 of the Jacobian D f (x) at the fixed point. In particular, if these eigenvalues are com-
 plex conjugates, there is a spiral, or focus; if they are real and of opposite sign, there
 is a saddle; and if they are real and of the same sign, there is a node: see Fig. 1.1.
-Nodes and spirals may be stable or unstable depending on whether the eigenvalues λ
-have Re λ < 0 or Re λ > 0, respectively; saddles are always unstable. Other degen-
-erate cases (centre, degenerate node) can occur, if Re λ = 0, or if two eigenvalues
+Nodes and spirals may be stable or unstable depending on whether the eigenvalues :math:`\lambda` 
+have :math:`Re \lambda < 0` or :math:`Re \lambda > 0`, respectively; saddles are always unstable. Other degen-
+erate cases (centre, degenerate node) can occur, if :math:`Re \lambda = 0`, or if two eigenvalues
 coalesce.
 
 Knowledge of the behaviour of trajectories near fixed points informs the method
@@ -27,24 +27,22 @@ solutions of the Korteweg–de Vries equation
 
 .. math::
 
-   ut + uu x + u x x x = 0 (1.2)
+   u_t + u u_x + u_{xxx} = 0 (1.2)
 
-in the form u = f (x − ct) = f (ξ ), so that
+in the form :math:`u = f (x − ct) = f \xi `), so that
 
 .. math::
 
-   − c f ′ + f f ′ + f ′′′ = 0, (1.3)
+   − c  ′ + f  ′ +  ′′′ = 0, (1.3)
 
 with first integral
 
 .. math::
 
-   − c f + 12 f 2 + f ′′ = 0 (1.4)
+   -cf + \frac{1}{2} f^2 + f′′ = 0 (1.4)
 
-(so that f (±∞) = 0). This represents a nonlinear oscillator with potential V ( f ) =
-− 1
-2 c f 2 + 1
-6 f 3.1 If we take c > 0 (without loss of generality), then the phase plane is
+(so that :math:`f(\pm \infty) = 0`). This represents a nonlinear oscillator with potential 
+:math:`V( f ) = - \frac{1}{2} c f^2 + \frac{1}{6} f^3`.1 If we take c > 0 (without loss of generality), then the phase plane is
 as in Fig. 1.2. There are two fixed points, f = 0, and f = 2c, which are respectively
 a saddle and a centre. (The latter persists as a centre in the presence of nonlinear
 terms by virtue of the existence of a first integral, which in turn is associated with the
@@ -55,18 +53,21 @@ limiting member of this family with infinite period.
 
 More generally, periodic behaviour occurs in two-dimensional systems at isolated
 limit cycles. A limit cycle is a closed curve in a phase space (which, therefore,
-represents a periodic time series) to which nearby trajectories tend either as t → +∞
-(stable limit cycle) or as t → −∞ (unstable limit cycle). A simple example (see also
+represents a periodic time series) to which nearby trajectories tend either as :math:`t \to +\infty`
+(stable limit cycle) or as :math:`t \to -\infty` (unstable limit cycle). A simple example (see also
 exercise 1.7) is offered by the system
 
 .. math::
+  
+   \begin{matrix}
+   \dot{x} = x - y - x(x^2 + y^2),\\
+   \dot{y} = x + y - y(x^2 + y^2); (1.5)
+   \end{matrix}
 
-   ˙x = x − y − x(x 2 + y2),
-   ˙y = x + y − y(x 2 + y2); (1.5)
-
-by transforming to polar coordinates (r, θ), it is straightforward to find the phase
+by transforming to polar coordinates :math:`(r, \theta)`, it is straightforward to find the phase
 plane shown in Fig. 1.3. There is a stable limit cycle at r = 1, and an unstable focus
 at r = 0.
+
 
 One is often interested in the behaviour of a (physical) system as a parameter
 changes (e.g. the Earth’s climate as the atmospheric CO2 level changes). In this case,
@@ -74,12 +75,12 @@ one might study differential equations of the form
 
 .. math::
 
-   ˙x = f (x, μ), (1.6)
+   \dot{x} = f (x, \mu), (1.6)
 
-where μ is a parameter. For some ranges of μ, the system may exhibit steady
+where :math:`\mu` is a parameter. For some ranges of :math:`\mu`, the system may exhibit steady
 behaviour, in others it may behave periodically. One then wishes to chart regions
 in parameter space where such qualitative changes occur. These delineate particular
-values of μ at which such bifurcations take place, and μ is then called a bifurcation
+values of :math:`\mu` at which such bifurcations take place, and :math:`\mu` is then called a bifurcation
 parameter.
 
 **1.2 Bifurcation Theory**
@@ -92,46 +93,44 @@ which rotates about its axis at a rate determined by the pressure of steam in th
 The object is to have a device such that if this rotation rate becomes too large, then
 the arms of the device rise, thus opening a valve which alleviates the pressure.
 
-If we denote the angle of the arms of the governor to the downward vertical as θ,
-and the angular velocity of the shaft as , then the equation governing the dynamics
+If we denote the angle of the arms of the governor to the downward vertical as :math:`\theta`,
+and the angular velocity of the shaft as :math:`\Omega`, then the equation governing the dynamics
 is, ignoring friction (see question 5.1),
 
 .. math::
 
-   ¨θ − 2 sin θ cos θ + 2c sin θ = 0, (1.7
+   \ddot{\theta} −\Omega^ 2\ si \thetan\ co \thetaθ +\Omega_2^2c\ sin\thetaθ = 0, (1.7
 
 here
 
 .. math::
 
-    c =√ gl , (1.8)
+   \Omega_c = \sqrt{\frac{g}{l}}  , (1.8)
 
 g is the acceleration due to gravity and l is the length of the pendulum arms.
 
-The steady states of the system are θ = 0, π, and also ± cos−1
-( 2
-c
-2
-)
-if  > c.
+The steady states of the system are :math:`\tetha = 0, \pi`, and also
+:math:`\pm \cos^{-1}(\frac{\Omega_c^2}{\Omega^2}) si \Omega > \Omega_c` 
 
-The function of the governor can be seen in the fact that we can have θ as an
-increasing function of  if  > c, thus opening the valve, and its operation relies
-on the existence of a pitchfork bifurcation at  = c. More precisely, if we linearise
+The function of the governor can be seen in the fact that we can have :math:`\theta` as an
+increasing function of :math:`\Omega` if :math:`\Omega > \Omega_c`, thus opening the valve, and its operation relies
+on the existence of a pitchfork bifurcation at :math:`\Omega = \Omega_c`. More precisely, if we linearise
 (1.7) near the origin, we see that
 
 .. math::
 
-  ¨θ ≈ (2 − 2c) θ, (1.9)
+   \ddot{\theta} \approx (\Omega^2 - \Omega_c^2) \theta
 
-and thus the vertical state loses stability for  > c. Expanding further in θ and also
-supposing that  − c is small, we have
+and thus the vertical state loses stability for :math:`\Omega  > \Omega_c`. Expanding further 
+in :math:`\theta` and also
+supposing that :math:`\Omega - \Omega_c` is small, we have
+
 
 .. math::
 
-  ¨θ ≈ (2 − 2c) θ − 12 2cθ 3 . . . , (1.10)
+   \ddot{\theta} \approx (\Omega^2 - \Omega_c^2) \theta - \frac{1}{2} \Omega_c^2 \theta^3 ...
 
-which shows explicitly that there is an exchange of stability between θ = 0 and the
+which shows explicitly that there is an exchange of stability between :math:`\theta = 0` and the
 non-zero fixed points. Bifurcation theory is discussed in more detail in Chap. 3.
 
 **1.2.1 Hopf Bifurcation**
@@ -141,15 +140,16 @@ bifurcation, as instanced by the following generalised version of (1.5):
 
 .. math::
 
-   ˙x = μx − y − x(x 2 + y2),
-   ˙y = x + μy − y(x 2 + y2). (1.11)
+   \dot{x} = \mu x - \Omega y -  x(x^2 + y^2),
+   \dor{y} = \Omega x + \muy -  y(x^2 + y^2). (1.11)
 
-It is simple to find that the origin is a stable focus for μ < 0, an unstable focus
-for μ > 0 and that for μ > 0 a stable periodic solution exists, whose amplitude
-A = |z|max = |x + iy|max = O(√μ) (and in fact equals √μ).
+It is simple to find that the origin is a stable focus for :math:`\mu < 0`, an unstable focus
+for :math:`\mu  > 0` and that for :math:`\mu > 0` a stable periodic solution exists, whose amplitude
+:math:`A = |z|_{max} = |x + iy|_{max} = O(\sqrt{\mu}`) (and in fact equals :math:`\sqrt{\mu}`).
 
 The bifurcation diagram is shown in Fig. 1.5. The salient features are that, if the
-linearised system has solutions ∝ eσ t , then a pair of complex conjugate eigenvalues
+linearised system has solutions :math:`\propto  e^{\sigma t}` , then a pair of complex conjugate
+ eigenvalues
 σ = μ ± i of the fixed point cross the imaginary axis at μ = 0, at a non-zero ‘rate’
 (d[Re σ ]/dμ = 0), and as a result, a limit cycle exists in μ > 0. This is known as
 a Hopf bifurcation, and will be considered further in Chap. 3. Notice the fact that

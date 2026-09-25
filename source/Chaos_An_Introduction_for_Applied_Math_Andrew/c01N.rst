@@ -1,0 +1,32 @@
+Chapter 1 Introduction
+=======================
+
+**1.1 Limit Cycles**
+
+El comportamiento de las ecuaciones diferenciales ordinarias autónomas (es decir, aquellas en las que el tiempo no aparece explícitamente) en R² se comprende bien. El comportamiento cualitativo de la ecuación
+
+.. math::
+
+   \dot{x} = f(x), x \in R^2
+
+se organiza en torno a sus **puntos fijos**, donde :math:`\dot{x} = f(x) = 0`. 
+Los textos elementales muestran cómo estos pueden clasificarse en **puntos de silla, 
+espirales y nodos**, dependiendo de los valores propios de la **matriz jacobiana** Df(x) 
+en el punto fijo. En particular, si dichos **valores propios** son complejos conjugados, 
+se trata de una **espiral o foco**; si son reales y de signo opuesto, de un **punto de silla**; 
+y si son reales y del mismo signo, de un **nodo** (véase la Fig. 1.1). 
+Los nodos y las espirales pueden ser estables o inestables según 
+si los valores propios :math:`\lambda` cumplen :math:`\text{Re}(\lambda) < 0` o
+:math:`\text{Re}(\lambda) > 0`, respectivamente; 
+los puntos de silla son siempre inestables. 
+Pueden darse otros casos degenerados (centro, nodo degenerado) si 
+:math:`\text{Re}(\lambda) = 0` o si dos valores propios coinciden.
+
+El conocimiento del comportamiento de las trayectorias cerca de los puntos fijos 
+fundamenta el método de análisis del **plano de fase**. 
+Un ejemplo de su aplicación es la búsqueda de soluciones de onda solitaria viajera para la ecuación de Korteweg-de Vries.
+
+.. math::
+
+   u_t + uu_x + u_{xxx} = 0 (1.2)
+
